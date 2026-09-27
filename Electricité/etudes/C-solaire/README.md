@@ -14,18 +14,22 @@ Le bilan estimé donne environ **65 Ah par jour au mouillage** et 92 Ah par jour
 
 ## Questions préalables
 
-- **Q17** : port d'attache et zone de navigation. L'ensoleillement dépend beaucoup de la latitude et de la saison.
-- **Q18** : bimini, capote, portique, surfaces libres et ombrage de la bôme.
+- **Q17** (traitée le 27/09) : étang de Berre (Saint-Chamas), navigation en Méditerranée. C'est l'un des sites les mieux ensoleillés de France.
+- **Q18** (traitée le 27/09) : **une capote seulement**, pas de bimini ni de portique.
+
+## Ordre de grandeur de la production
+
+Pour 100 Wc en Provence, il faut compter **environ 25 à 35 Ah par jour en été et 10 à 15 Ah en hiver**, selon l'orientation, l'ombrage de la bôme et le régulateur. Pour couvrir les 65 Ah par jour estimés au mouillage, il faut donc **environ 200 Wc en été**. Ces chiffres sont à affiner avec PVGIS (outil gratuit de la Commission européenne) pour Saint-Chamas, et avec un bilan mesuré au shunt.
 
 ## Hypothèses à explorer
 
 | | Principe | Ordre de grandeur | Dépend de |
 |---|---|---|---|
-| H1 | Panneaux rigides sur un portique ou un bimini | 150 à 250 Wc | Q18 (support existant ou à créer) |
-| H2 | Panneaux souples sur le rouf ou la capote | 100 à 150 Wc | Q18, ombrage |
+| H1 | Panneaux rigides sur un portique ou un bimini **à créer** | 150 à 250 Wc | coût et fardage du support, seule hypothèse qui atteint facilement 200 Wc |
+| H2 | Panneaux souples sur le rouf ou sur la capote | 100 à 150 Wc | ombrage de la bôme et des voiles, tenue sur la toile de capote |
 | H3 | Panneau mobile orientable, posé au mouillage | 100 Wc | rangement à bord |
 
-Pour chaque hypothèse : production en Ah par jour selon la saison (d'après Q17), régulateur MPPT à choisir, et raccordement sur la barrette de servitude de l'étude A (fusible à la batterie et au régulateur).
+Pour chaque hypothèse : production en Ah par jour selon la saison (PVGIS, Saint-Chamas), régulateur MPPT à choisir, et raccordement sur la barrette de servitude de l'étude A (fusible à la batterie et au régulateur).
 
 ## Critères de comparaison
 
@@ -35,4 +39,4 @@ Pour chaque hypothèse : production en Ah par jour selon la saison (d'après Q17
 
 ## Décision
 
-En attente des réponses à Q17 et Q18.
+Prochaine étape : chiffrer H1, H2 et H3 avec PVGIS, puis les confronter au bilan mesuré dès qu'un shunt sera posé (étude A).
