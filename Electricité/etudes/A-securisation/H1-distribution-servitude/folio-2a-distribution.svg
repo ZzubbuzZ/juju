@@ -113,7 +113,7 @@
   <path class="n w2" d="M700 490 V512"/>
   <rect class="flag" x="660" y="512" width="80" height="18"/>
   <text class="id mid" x="700" y="525">→ node006</text>
-  <text class="idn" x="748" y="525">wire105 · 6</text>
+  <text class="id" x="748" y="525">wire023 · existant</text>
 
   <!-- Frigo -->
   <path class="p w2" d="M860 380 H930"/>

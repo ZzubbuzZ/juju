@@ -10,7 +10,7 @@ Statut : **proposition**. Les longueurs sont estimées pour un Gib'Sea 31. Elles
 ## 1. Ce que traite cette hypothèse
 
 - **A1** (tableau de la table à carte alimenté sans protection) : **traitée**. Barrette + et fusible de 50 A à la source.
-- **A6** (tableau Scheiber alimenté sans protection) : **traitée**. Fusible de 30 A sur la barrette ; wire022 et wire023 sont remplacés par wire104 et wire105, dimensionnés pour ce fusible.
+- **A6** (tableau Scheiber alimenté sans protection) : **traitée**. Fusible de 30 A sur la barrette ; le + du tableau (wire022) est repris sur ce fusible par wire104. La masse existante (wire023, déjà en 6 mm²) est conservée.
 - **Pompe de cale** : elle est aujourd'hui manuelle, sans flotteur (Q4). Elle devient automatique, et sa masse est ramenée côté batteries : une pompe branchée sur node006 serait coupée quand on ferme le bateau.
 - **Ne traite pas** A2 (fusibles de batterie), A3 (cosses) ni A4 (fusibles du coupleur et du chargeur). Ces points relèvent d'autres hypothèses de l'étude A.
 
@@ -60,15 +60,15 @@ Chute de tension de l'alimentation du tableau (10 mm², 3 m) : environ 1,3 % à 
 
 Proposition de principe (schéma : [folio 2a](folio-2a-distribution.svg)) :
 
-- **Alimentation du tableau** : depuis le fusible de 30 A de la barrette, en 6 mm² (wire104, wire105). Elle remplace l'alimentation actuelle prise directement sur les coupe-circuits (wire022, wire023).
-- **Frigo** : liaison inchangée (wire024, wire025, puis wire027 et wire028 en 3,5 mm² vers le groupe froid). Le fusible de 15 A est celui que préconise Danfoss pour ce compresseur : on le garde. Les bornes de l'EPS 100 n'acceptent que des cosses SV 2-4 (2,5 mm² au plus). Si la chute de tension s'avère trop forte (sections à relever, Q25), il faudra monter en section jusqu'à un bornier placé près de l'EPS, puis finir en 2,5 mm² sur quelques centimètres.
-- **Pompe de cale** : elle devient une pompe **automatique permanente**. Le flotteur est alimenté en direct depuis la batterie, avant le coupe-circuit, par son propre fusible de 10 A (wire106 à wire108). L'interrupteur du tableau reste la marche forcée, par le fil existant wire026, conservé si sa section convient (Q25). La masse de la pompe revient **côté batteries** (node005, wire110) : la pompe fonctionne donc même quand tous les coupe-circuits sont ouverts.
+- **Alimentation du tableau** : le + part du fusible de 30 A de la barrette, en 6 mm² (wire104), au lieu de node010 (wire022). Si le câble existant est assez long, il suffit de déplacer sa cosse. La masse reste wire023.
+- **Frigo** : liaison inchangée (wire024, wire025, puis wire027 et wire028 en 3,5 mm² vers le groupe froid). Le fusible de 15 A est celui que préconise Danfoss pour ce compresseur : on le garde. Les bornes de l'EPS 100 n'acceptent que des cosses SV 2-4 (2,5 mm² au plus). La liaison vers le groupe froid est aujourd'hui vissée sans cosse (A7, traitée par H3). Si la chute de tension s'avère trop forte (section du départ frigo à relever, Q29), il faudra monter en section jusqu'à un bornier placé près de l'EPS, puis finir en 2,5 mm² sur quelques centimètres.
+- **Pompe de cale** : elle devient une pompe **automatique permanente**. Le flotteur est alimenté en direct depuis la batterie, avant le coupe-circuit, par son propre fusible de 10 A (wire106 à wire108). L'interrupteur du tableau reste la marche forcée, par le fil existant wire026, déjà en 2,5 mm², conservé. La masse de la pompe revient **côté batteries** (node005, wire110) : la pompe fonctionne donc même quand tous les coupe-circuits sont ouverts. **Le fil actuel wire036, qui relie cette masse à la barrette du tableau, doit être déposé** : sinon la pompe relierait les deux côtés du coupe-circuit des négatifs, qui ne couperait plus rien.
 
 Le flotteur et l'interrupteur manuel sont branchés en parallèle sur le + de la pompe. Il n'y a pas besoin de diode.
 
 ## 5. Données
 
-La netlist et la wirelist de cette hypothèse sont dans [cablage.yaml](cablage.yaml) : nœuds node054, node055 et node060 à node066 et node120 à node153, fils wire100 à wire110 et wire120 à wire153. Cinq fils du relevé sont supprimés et remplacés : wire016 par wire103, wire017 par wire100, wire019 par wire102, wire022 par wire104 et wire023 par wire105.
+La netlist et la wirelist de cette hypothèse sont dans [cablage.yaml](cablage.yaml) : nœuds node054, node055 et node060 à node066 et node120 à node153, fils wire100 à wire104, wire106 à wire108, wire110 et wire120 à wire153. Cinq fils du relevé sont supprimés et remplacés : wire016 par wire103, wire017 par wire100, wire019 par wire102, wire022 par wire104 et wire036 par wire110.
 
 Chute de tension calculée pour chaque fil (longueurs estimées) :
 
@@ -90,4 +90,4 @@ Chute de tension calculée pour chaque fil (longueurs estimées) :
 
 ## 6. Questions liées
 
-Ouvertes : Q5, Q7, Q8, Q9, Q10, Q11, Q12 et Q25, dans [questions.md](../../../releve/questions.md). Déjà traitées et prises en compte : Q4 (pas de flotteur), Q6 (bornes de l'EPS 100), Q16 (liaison EPS 100 → groupe froid).
+Ouvertes : Q5, Q7, Q8, Q9, Q10, Q11, Q12 et Q29, dans [questions.md](../../../releve/questions.md). Déjà traitées et prises en compte : Q4 (pas de flotteur), Q6 (bornes de l'EPS 100), Q16 (liaison EPS 100 → groupe froid), Q25 (raccordement du tableau Scheiber et de la pompe).

@@ -7,7 +7,7 @@ titre: Distribution de servitude
 base: releve
 
 supprime:
-  fils: [wire016, wire017, wire019, wire022, wire023]
+  fils: [wire016, wire017, wire019, wire022, wire036]
 
 equipements:
   - { id: barrette-servitude, type: barrette, designation: "Barrette + de servitude", emplacement: "Près des coupe-circuits", statut: propose }
@@ -76,13 +76,12 @@ fils:
   - { id: wire102, de: node062, vers: node100, section_mm2: 10, couleur: rouge, longueur_m: 3, remplace: wire019, statut: propose }
   - { id: wire103, de: node006, vers: node101, section_mm2: 10, couleur: noir, longueur_m: 3, remplace: wire016, statut: propose }
   - { id: wire104, de: node064, vers: node050, section_mm2: 6, couleur: rouge, longueur_m: 2, remplace: wire022, statut: propose }
-  - { id: wire105, de: node006, vers: node051, section_mm2: 6, couleur: noir, longueur_m: 2, remplace: wire023, statut: propose }
 
   # --- Pompe de cale ---------------------------------------------------------------
   - { id: wire106, de: node009, vers: node065, section_mm2: 2.5, couleur: rouge, longueur_m: 0.15, statut: propose }
   - { id: wire107, de: node066, vers: node054, section_mm2: 2.5, couleur: rouge, longueur_m: 3, statut: propose }
   - { id: wire108, de: node055, vers: node056, section_mm2: 2.5, couleur: rouge, longueur_m: 0.5, statut: propose }
-  - { id: wire110, de: node057, vers: node005, section_mm2: 2.5, couleur: noir, longueur_m: 3, statut: propose, note: "Masse côté batteries : la pompe reste active coupe-circuits ouverts" }
+  - { id: wire110, de: node057, vers: node005, section_mm2: 2.5, couleur: noir, longueur_m: 3, remplace: wire036, statut: propose, note: "Masse côté batteries : la pompe reste active coupe-circuits ouverts. wire036 (vers la barrette du tableau) doit être déposé, sinon le coupe-circuit des négatifs est contourné" }
 
   # --- Feux (feu route, feu moteur, mouillage, projecteur) ---------------------------
   - { id: wire120, de: node102, vers: node120, section_mm2: 2.5, couleur: rouge, longueur_m: 8, statut: propose }
