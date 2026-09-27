@@ -1,0 +1,136 @@
+# yaml-language-server: $schema=../../../outils/schema/donnees.schema.json
+#
+# A-H1 : différences avec le relevé. Longueurs estimées (Q12), à mesurer à bord.
+
+hypothese: A-H1
+titre: Distribution de servitude
+base: releve
+
+supprime:
+  fils: [wire016, wire017, wire019]
+
+equipements:
+  - { id: barrette-servitude, type: barrette, designation: "Barrette + de servitude", emplacement: "Près des coupe-circuits", statut: propose }
+  - { id: fus-tableau-servitude, type: fusible, designation: "Fusible du tableau de la table à carte", calibre_A: 50, statut: propose }
+  - { id: fus-tableau-scheiber, type: fusible, designation: "Fusible du tableau Scheiber 2 voies", calibre_A: 30, statut: propose }
+  - { id: fus-pompe-cale, type: fusible, designation: "Fusible de la pompe de cale automatique", calibre_A: 10, emplacement: "À moins de 18 cm de la borne de node009", statut: propose }
+  - { id: flotteur, type: interrupteur, designation: "Flotteur de la pompe de cale", statut: propose, questions: [Q4] }
+  - { id: connecteur-mat, type: connecteur, designation: "Connecteur de pont au pied de mât, 6 broches", statut: propose }
+  - { id: bornier-eclairage, type: bornier, designation: "Bornier de départ de l'éclairage", statut: propose, questions: [Q9] }
+  - { id: bornier-instruments, type: bornier, designation: "Bornier des instruments, un fusible par appareil", statut: propose, questions: [Q11] }
+
+nodes:
+  # --- Distribution --------------------------------------------------------------
+  - { id: node060, equipement: barrette-servitude, borne: "barre", polarite: "+" }
+  - { id: node061, equipement: fus-tableau-servitude, borne: "1", polarite: "+", monte_sur: node060 }
+  - { id: node062, equipement: fus-tableau-servitude, borne: "2", polarite: "+" }
+  - { id: node063, equipement: fus-tableau-scheiber, borne: "1", polarite: "+", monte_sur: node060 }
+  - { id: node064, equipement: fus-tableau-scheiber, borne: "2", polarite: "+" }
+  - { id: node065, equipement: fus-pompe-cale, borne: "1", polarite: "+" }
+  - { id: node066, equipement: fus-pompe-cale, borne: "2", polarite: "+" }
+
+  # --- Tableau Scheiber 2 voies et pompe de cale ---------------------------------
+  - { id: node050, equipement: tableau-scheiber, borne: "+ alimentation", polarite: "+" }
+  - { id: node051, equipement: tableau-scheiber, borne: "- masse", polarite: "-" }
+  - { id: node052, equipement: tableau-scheiber, borne: "sortie frigo (15 A)", polarite: "+" }
+  - { id: node053, equipement: tableau-scheiber, borne: "sortie pompe de cale, marche forcée (10 A)", polarite: "+" }
+  - { id: node054, equipement: flotteur, borne: "entrée", polarite: "+" }
+  - { id: node055, equipement: flotteur, borne: "sortie", polarite: "+" }
+  - { id: node056, equipement: pompe-cale, borne: "+", polarite: "+" }
+  - { id: node057, equipement: pompe-cale, borne: "-", polarite: "-" }
+
+  # --- Récepteurs du tableau de servitude ----------------------------------------
+  - { id: node120, equipement: feu-bicolore, borne: "+", polarite: "+" }
+  - { id: node121, equipement: feu-bicolore, borne: "-", polarite: "-" }
+  - { id: node122, equipement: feu-poupe, borne: "+", polarite: "+" }
+  - { id: node123, equipement: feu-poupe, borne: "-", polarite: "-" }
+  - { id: node124, equipement: connecteur-mat, borne: "b1 feu moteur +", polarite: "+" }
+  - { id: node125, equipement: connecteur-mat, borne: "b2 mouillage +", polarite: "+" }
+  - { id: node126, equipement: connecteur-mat, borne: "b3 projecteur +", polarite: "+" }
+  - { id: node127, equipement: connecteur-mat, borne: "b4 feu moteur -", polarite: "-" }
+  - { id: node128, equipement: connecteur-mat, borne: "b5 mouillage -", polarite: "-" }
+  - { id: node129, equipement: connecteur-mat, borne: "b6 projecteur -", polarite: "-" }
+  - { id: node130, equipement: feu-tete-mat, borne: "+", polarite: "+" }
+  - { id: node131, equipement: feu-tete-mat, borne: "-", polarite: "-" }
+  - { id: node132, equipement: feu-mouillage, borne: "+", polarite: "+" }
+  - { id: node133, equipement: feu-mouillage, borne: "-", polarite: "-" }
+  - { id: node134, equipement: projecteur, borne: "+", polarite: "+" }
+  - { id: node135, equipement: projecteur, borne: "-", polarite: "-" }
+  - { id: node136, equipement: pompe-eau, borne: "+", polarite: "+" }
+  - { id: node137, equipement: pompe-eau, borne: "-", polarite: "-" }
+  - { id: node138, equipement: autoradio, borne: "+", polarite: "+" }
+  - { id: node139, equipement: autoradio, borne: "-", polarite: "-" }
+  - { id: node140, equipement: prises-12v, borne: "prise 1 +", polarite: "+" }
+  - { id: node141, equipement: prises-12v, borne: "prise 1 -", polarite: "-" }
+  - { id: node142, equipement: prises-12v, borne: "prise 2 +", polarite: "+" }
+  - { id: node143, equipement: prises-12v, borne: "prise 2 -", polarite: "-" }
+  - { id: node144, equipement: bornier-eclairage, borne: "+", polarite: "+" }
+  - { id: node145, equipement: bornier-eclairage, borne: "-", polarite: "-" }
+  - { id: node146, equipement: compas, borne: "+", polarite: "+" }
+  - { id: node147, equipement: compas, borne: "-", polarite: "-" }
+  - { id: node148, equipement: pilote, borne: "+", polarite: "+" }
+  - { id: node149, equipement: pilote, borne: "-", polarite: "-" }
+  - { id: node150, equipement: vhf, borne: "+", polarite: "+" }
+  - { id: node151, equipement: vhf, borne: "-", polarite: "-" }
+  - { id: node152, equipement: bornier-instruments, borne: "+", polarite: "+" }
+  - { id: node153, equipement: bornier-instruments, borne: "-", polarite: "-" }
+
+fils:
+  # --- Distribution --------------------------------------------------------------
+  - { id: wire100, de: node010, vers: node060, section_mm2: 35, couleur: rouge, longueur_m: 0.3, remplace: wire017, statut: propose }
+  - { id: wire101, de: node060, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 0.3, statut: propose }
+  - { id: wire102, de: node062, vers: node100, section_mm2: 10, couleur: rouge, longueur_m: 3, remplace: wire019, statut: propose }
+  - { id: wire103, de: node006, vers: node101, section_mm2: 10, couleur: noir, longueur_m: 3, remplace: wire016, statut: propose }
+  - { id: wire104, de: node064, vers: node050, section_mm2: 6, couleur: rouge, longueur_m: 2, statut: propose }
+  - { id: wire105, de: node006, vers: node051, section_mm2: 6, couleur: noir, longueur_m: 2, statut: propose }
+
+  # --- Pompe de cale ---------------------------------------------------------------
+  - { id: wire106, de: node009, vers: node065, section_mm2: 2.5, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire107, de: node066, vers: node054, section_mm2: 2.5, couleur: rouge, longueur_m: 3, statut: propose }
+  - { id: wire108, de: node055, vers: node056, section_mm2: 2.5, couleur: rouge, longueur_m: 0.5, statut: propose }
+  - { id: wire109, de: node053, vers: node056, section_mm2: 2.5, couleur: rouge, longueur_m: 2, statut: propose }
+  - { id: wire110, de: node057, vers: node005, section_mm2: 2.5, couleur: noir, longueur_m: 3, statut: propose, note: "Masse côté batteries : la pompe reste active coupe-circuits ouverts" }
+
+  # --- Frigo -------------------------------------------------------------------------
+  - { id: wire111, de: node052, vers: node042, section_mm2: 6, couleur: rouge, longueur_m: 1.5, statut: propose }
+  - { id: wire112, de: node051, vers: node043, section_mm2: 6, couleur: noir, longueur_m: 1.5, statut: propose }
+  - { id: wire113, de: node044, vers: node040, section_mm2: 6, couleur: rouge, longueur_m: 1, statut: propose, questions: [Q16] }
+  - { id: wire114, de: node045, vers: node041, section_mm2: 6, couleur: noir, longueur_m: 1, statut: propose, questions: [Q16] }
+
+  # --- Feux (feu route, feu moteur, mouillage, projecteur) ---------------------------
+  - { id: wire120, de: node102, vers: node120, section_mm2: 2.5, couleur: rouge, longueur_m: 8, statut: propose }
+  - { id: wire121, de: node101, vers: node121, section_mm2: 2.5, couleur: noir, longueur_m: 8, statut: propose }
+  - { id: wire122, de: node102, vers: node122, section_mm2: 1.5, couleur: rouge, longueur_m: 5, statut: propose }
+  - { id: wire123, de: node101, vers: node123, section_mm2: 1.5, couleur: noir, longueur_m: 5, statut: propose }
+  - { id: wire124, de: node103, vers: node124, section_mm2: 2.5, couleur: rouge, longueur_m: 3, statut: propose }
+  - { id: wire125, de: node101, vers: node127, section_mm2: 2.5, couleur: noir, longueur_m: 3, statut: propose }
+  - { id: wire126, de: node109, vers: node125, section_mm2: 2.5, couleur: rouge, longueur_m: 3, statut: propose }
+  - { id: wire127, de: node101, vers: node128, section_mm2: 2.5, couleur: noir, longueur_m: 3, statut: propose }
+  - { id: wire128, de: node108, vers: node126, section_mm2: 2.5, couleur: rouge, longueur_m: 3, statut: propose }
+  - { id: wire129, de: node101, vers: node129, section_mm2: 2.5, couleur: noir, longueur_m: 3, statut: propose }
+  - { id: wire130, de: node124, vers: node130, section_mm2: 2.5, couleur: rouge, longueur_m: 7, statut: propose, note: "Dans le mât (câble 6 × 2,5 mm²)" }
+  - { id: wire131, de: node127, vers: node131, section_mm2: 2.5, couleur: noir, longueur_m: 7, statut: propose }
+  - { id: wire132, de: node125, vers: node132, section_mm2: 2.5, couleur: rouge, longueur_m: 12, statut: propose }
+  - { id: wire133, de: node128, vers: node133, section_mm2: 2.5, couleur: noir, longueur_m: 12, statut: propose }
+  - { id: wire134, de: node126, vers: node134, section_mm2: 2.5, couleur: rouge, longueur_m: 6, statut: propose }
+  - { id: wire135, de: node129, vers: node135, section_mm2: 2.5, couleur: noir, longueur_m: 6, statut: propose }
+
+  # --- Autres circuits ---------------------------------------------------------------
+  - { id: wire136, de: node104, vers: node136, section_mm2: 2.5, couleur: rouge, longueur_m: 3, statut: propose }
+  - { id: wire137, de: node101, vers: node137, section_mm2: 2.5, couleur: noir, longueur_m: 3, statut: propose }
+  - { id: wire138, de: node105, vers: node138, section_mm2: 1.5, couleur: rouge, longueur_m: 1.5, statut: propose }
+  - { id: wire139, de: node101, vers: node139, section_mm2: 1.5, couleur: noir, longueur_m: 1.5, statut: propose }
+  - { id: wire140, de: node106, vers: node140, section_mm2: 2.5, couleur: rouge, longueur_m: 3, statut: propose }
+  - { id: wire141, de: node101, vers: node141, section_mm2: 2.5, couleur: noir, longueur_m: 3, statut: propose }
+  - { id: wire142, de: node140, vers: node142, section_mm2: 2.5, couleur: rouge, longueur_m: 1, statut: propose }
+  - { id: wire143, de: node141, vers: node143, section_mm2: 2.5, couleur: noir, longueur_m: 1, statut: propose }
+  - { id: wire144, de: node107, vers: node144, section_mm2: 2.5, couleur: rouge, longueur_m: 8, statut: propose }
+  - { id: wire145, de: node101, vers: node145, section_mm2: 2.5, couleur: noir, longueur_m: 8, statut: propose }
+  - { id: wire146, de: node110, vers: node146, section_mm2: 1.5, couleur: rouge, longueur_m: 3, statut: propose }
+  - { id: wire147, de: node101, vers: node147, section_mm2: 1.5, couleur: noir, longueur_m: 3, statut: propose }
+  - { id: wire148, de: node111, vers: node148, section_mm2: 4, couleur: rouge, longueur_m: 5, statut: propose }
+  - { id: wire149, de: node101, vers: node149, section_mm2: 4, couleur: noir, longueur_m: 5, statut: propose }
+  - { id: wire150, de: node112, vers: node150, section_mm2: 2.5, couleur: rouge, longueur_m: 1, statut: propose }
+  - { id: wire151, de: node101, vers: node151, section_mm2: 2.5, couleur: noir, longueur_m: 1, statut: propose }
+  - { id: wire152, de: node113, vers: node152, section_mm2: 2.5, couleur: rouge, longueur_m: 1, statut: propose }
+  - { id: wire153, de: node101, vers: node153, section_mm2: 2.5, couleur: noir, longueur_m: 1, statut: propose }
