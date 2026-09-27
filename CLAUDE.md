@@ -37,7 +37,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 ## Git
 
 - `main` : le relevé et les décisions validées.
-- `etude/securisation`, `etude/chauffe-eau`, `etude/solaire` : une branche par axe. Les hypothèses sont des dossiers dans la branche, pas des branches, pour pouvoir les comparer côte à côte.
+- `etude/securisation`, `etude/chauffe-eau`, `etude/solaire`, `etude/shunt` : une branche par axe. Les hypothèses sont des dossiers dans la branche, pas des branches, pour pouvoir les comparer côte à côte.
 - Ordre de fusion prévu : la sécurisation d'abord (prérequis), puis rebase des autres branches.
 - **Une branche d'étude ne modifie que son dossier `etudes/<X-axe>/`.** Le relevé, `commun/`, `outils/`, les README généraux et CLAUDE.md se modifient sur `main`, puis les branches sont rebasées. Sinon, chaque rebase produit des conflits.
 - Un commit = un sujet. Tag `rev-X` quand une révision des schémas est publiée.

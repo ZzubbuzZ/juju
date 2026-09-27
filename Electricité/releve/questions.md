@@ -51,6 +51,11 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 - **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
 
+### Pour l'étude D (shunt)
+
+- **Q27** Coffre de la batterie de servitude : place libre pour un shunt (environ 10 × 5 cm) entre la borne − et le coupe-circuit des négatifs ? Le câble wire009 est-il accessible sur toute sa longueur ?
+- **Q28** Tableau de la table à carte : place pour un afficheur rond encastré (environ 6 cm de diamètre), et passage possible pour un câble fin depuis la cabine de poupe ?
+
 ### Réseau 230 V
 
 - **Q26** Reste du réseau 230 V :
