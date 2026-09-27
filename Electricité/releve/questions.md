@@ -1,8 +1,17 @@
 # Questions à relever à bord
 
-La liste à emporter lors de la prochaine visite. Une question traitée passe dans « Réponses », avec la date, et la donnée correspondante est corrigée dans les fichiers YAML.
+La liste à emporter lors de la prochaine visite.
 
-Format d'une ligne (lu par `outils/verifier.py`) : `- **Qn** texte`.
+**Pour répondre**, écrire la réponse juste sous la question, en retrait, précédée de `→` :
+
+```
+- **Q21** Disjoncteur du guindeau : cabine de proue ou cabine de poupe ? …
+  → 12/10 : cabine de poupe, fixé sous l'ouverture. Calibre 80 A. Photo : disj-guindeau.jpg
+```
+
+Une réponse partielle ou un « je ne sais pas » est utile aussi. Les photos vont dans `photos/`. Ensuite, demander à Claude d'« intégrer les réponses » : les données, les schémas et cette liste sont mis à jour, et les questions traitées passent dans « Réponses ».
+
+Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ## Ouvertes
 

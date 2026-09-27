@@ -34,10 +34,10 @@ Dans VS Code, l'extension YAML de Red Hat valide les fichiers en direct grâce �
 
 ## Déroulé d'une visite à bord
 
-1. Emporter [questions.md](releve/questions.md).
-2. Au retour, noter les réponses (section « Réponses », avec la date) et corriger les YAML : retirer `statut: estime` des valeurs mesurées, ajouter les fils relevés.
-3. Mettre à jour le folio 1, lancer le vérificateur, commiter sur `main`.
-4. Rebaser les branches d'étude sur `main`.
+1. Emporter [questions.md](releve/questions.md), sur papier ou sur téléphone.
+2. Noter les réponses sous chaque question, précédées de `→` et de la date. Déposer les photos dans `releve/photos/`.
+3. Demander à Claude d'« intégrer les réponses ». Il met à jour les YAML (en retirant `statut: estime` des valeurs mesurées), le folio 1, l'état des lieux et la liste des questions, lance le vérificateur, commite sur `main`, rebase les branches d'étude et republie la page. Il signale aussi les conséquences sur les études en cours.
+4. Relire le commit, puis pousser.
 
 ## Déroulé d'une hypothèse
 
