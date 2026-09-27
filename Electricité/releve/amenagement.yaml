@@ -44,3 +44,7 @@ zones:
   - id: pont-avant
     designation: Pont avant, au-dessus du puits de chaîne
     bord: axe
+
+  - id: carre
+    designation: Carré
+    bord: axe

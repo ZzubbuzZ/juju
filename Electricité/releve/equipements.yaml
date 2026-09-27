@@ -80,8 +80,8 @@ equipements:
     designation: Disjoncteur thermique du guindeau
     zone: cabine-poupe
     emplacement: Sous l'ouverture d'accès aux coupe-circuits
-    calibre_A: 50
-    note: Calibre d'après la documentation constructeur.
+    note: La notice Lewmar (tableau 7.5) préconise 70 A pour le Pro-Series 1000. Calibre installé à lire sur l'appareil.
+    questions: [Q34]
 
   - id: relais-guindeau
     type: relais
@@ -96,9 +96,8 @@ equipements:
     zone: pont-avant
     emplacement: Posé sur le pont, au-dessus du puits de chaîne
     puissance_W: 700
-    courant_A: 60
-    statut: estime
-    note: 700 W / 12 V ≈ 60 A. Cohérent avec le disjoncteur de 50 A préconisé par la documentation constructeur.
+    courant_A: 50
+    note: "Notice Lewmar (tableau 7.5) : courant normal 50 A, disjoncteur 70 A, charge de travail 114 kg, traction maximale 454 kg, fils de commande 1,5 mm²."
 
   - id: telecommande-guindeau
     type: commande
@@ -118,7 +117,6 @@ equipements:
     zone: descente
     emplacement: Contremarche, près de l'appareillage moteur
     note: Alimenté par les coupe-circuits voisins.
-    questions: [Q25]
 
   # --- Récepteurs --------------------------------------------------------------
   - id: groupe-froid
@@ -219,6 +217,7 @@ equipements:
   - id: pilote
     type: recepteur
     designation: Pilote automatique de barre franche
+    modele: Raymarine ST1000+ ou ST2000+ (notice présente à la table à carte)
     courant_max_A: 5
     statut: estime
     questions: [Q10]
@@ -240,8 +239,10 @@ equipements:
 
   - id: repetiteur-gps
     type: recepteur
-    designation: Répétiteur GPS du cockpit
+    designation: Répétiteur GPS
     modele: MLR FX312
+    note: Décrit « dans le cockpit », mais la photo Vue-GPS-table-a-carte le montre fixé près de la table à carte.
+    questions: [Q32]
 
   - id: loch
     type: recepteur
@@ -266,10 +267,10 @@ equipements:
 
   - id: boitier-230v
     type: tableau
-    designation: Boîtier de distribution 230 V du chargeur
+    designation: Boîtier d'arrivée 230 V
     zone: cockpit-coffre-tribord
     emplacement: À côté du chargeur de quai
-    questions: [Q26]
+    note: Différentiel 30 mA / 25 A en tête, puis un disjoncteur 10 A (chargeur) et un disjoncteur 16 A (reste du bord).
 
   - id: ddr-230v
     type: disjoncteur
@@ -284,3 +285,80 @@ equipements:
     zone: cockpit-coffre-tribord
     emplacement: Dans le boîtier 230 V du chargeur
     calibre_A: 10
+
+  - id: disj-230-reste
+    type: disjoncteur
+    designation: Disjoncteur 16 A du reste du bord
+    zone: cockpit-coffre-tribord
+    emplacement: Dans le boîtier d'arrivée 230 V
+    calibre_A: 16
+    questions: [Q31]
+
+  - id: boitier-230-tribord
+    type: tableau
+    designation: Boîtier de distribution 230 V tribord
+    questions: [Q31]
+
+  - id: disj-trib-eclairage
+    type: disjoncteur
+    designation: Disjoncteur éclairage 230 V tribord
+    calibre_A: 10
+    questions: [Q31]
+
+  - id: disj-trib-prises
+    type: disjoncteur
+    designation: Disjoncteur prises 230 V tribord
+    calibre_A: 16
+    questions: [Q31]
+
+  - id: boitier-230-babord
+    type: tableau
+    designation: Boîtier de distribution 230 V bâbord
+    questions: [Q31]
+
+  - id: disj-bab-eclairage
+    type: disjoncteur
+    designation: Disjoncteur éclairage 230 V bâbord
+    calibre_A: 10
+    note: Aucun point lumineux 230 V relevé sur ce départ.
+    questions: [Q31]
+
+  - id: disj-bab-prises
+    type: disjoncteur
+    designation: Disjoncteur prises 230 V bâbord
+    calibre_A: 16
+    questions: [Q31]
+
+  - id: prise-230-eps100
+    type: prise
+    designation: Prise 230 V du frigo (EPS 100)
+    zone: cuisine
+
+  - id: prise-230-cuisine
+    type: prise
+    designation: Prise 230 V de la cuisine
+    zone: cuisine
+
+  - id: plafonnier-230
+    type: recepteur
+    designation: Plafonnier 230 V
+    note: Terre non raccordée (la terre n'arrive qu'aux prises).
+    questions: [Q31]
+
+  - id: prise-230-table-a-carte
+    type: prise
+    designation: Prise 230 V de la table à carte
+    zone: table-a-carte
+
+  - id: prise-230-carre
+    type: prise
+    designation: Prise 230 V du carré
+    zone: carre
+
+  # --- Instruments -------------------------------------------------------------
+  - id: indicateur-charge
+    type: recepteur
+    designation: Indicateur de charge à aiguille (« CHARGE »)
+    zone: table-a-carte
+    emplacement: Au tableau de servitude, entre les deux prises 12 V
+    note: Emplacement prévu pour l'afficheur du moniteur de batterie (étude D, Q28).

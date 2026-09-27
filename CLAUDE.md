@@ -6,7 +6,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 
 | Dossier | Contenu | Règle |
 |---|---|---|
-| `releve/` | L'existant : état des lieux, `amenagement.yaml` (zones du bateau), `equipements.yaml`, `netlist.yaml`, `wirelist.yaml`, `anomalies.md`, `questions.md`, `photos/` | **Uniquement des faits constatés à bord.** Une valeur supposée porte `statut: estime`. Ne modifier ce dossier que sur une information donnée par l'utilisateur, et le signaler. |
+| `releve/` | L'existant : état des lieux, `amenagement.yaml` (zones du bateau), `equipements.yaml`, `netlist.yaml`, `wirelist.yaml`, `anomalies.md`, `questions.md`, `photos/`, `documentation/` (notices, fiches) | **Uniquement des faits constatés à bord.** Une valeur supposée porte `statut: estime`. Ne modifier ce dossier que sur une information donnée par l'utilisateur, et le signaler. |
 | `schemas/` | Folios SVG de l'existant | Doivent refléter `releve/` exactement. |
 | `etudes/<X-axe>/H<n>-<nom>/` | Une hypothèse : `proposition.md`, `cablage.yaml` (delta), folios SVG | Le `cablage.yaml` décrit uniquement les différences avec sa `base` (le relevé ou une autre hypothèse). |
 | `commun/` | `bilan-energetique.yaml`, partagé par les études | |
@@ -20,7 +20,8 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 - **Ne pas supposer, demander.** Une information manquante devient une question `Qn` dans `releve/questions.md` et une pastille bleue sur le schéma concerné.
 - **Calcul des sections** : S = 2 × L × I × 0,0175 / ΔU. ΔU = 3 % pour les feux, l'électronique, le pilote, la pompe de cale et le frigo ; 10 % pour le confort. Sections normalisées uniquement. Le fusible protège le câble et se place à sa source.
 - **Couleurs** : + rouge, − noir ; en 230 V, phase marron, neutre bleu, terre vert-jaune.
-- **Section ou couleur inconnue** : ne pas l'inventer, omettre le champ et poser une question.
+- **Section ou couleur inconnue** : ne pas l'inventer, omettre le champ et poser une question. Une section relevée approximativement (AWG, câble non normalisé) porte `section_indicative: true`.
+- **Anomalies** : une anomalie infondée passe dans « Levées » d'`anomalies.md`, avec sa justification, et garde son numéro.
 
 ## Conventions des SVG
 
@@ -29,7 +30,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 - Classes : `p` / `n` (fil + / −), `w1`…`w5` (épaisseur selon la section), `u` (zone d'ombre en pointillés bleus), `box`, `box-new` (nouveau, en vert), `box-unk`, `fuse`, `fuse-new`, `flag` (renvoi vers un nœud), `mk-a` / `mk-q` (pastilles d'anomalie et de question).
 - Écrire les identifiants en entier dans les étiquettes (`wire020 / wire021`, jamais `wire020/021`) : le vérificateur les recherche dans le texte.
 - Dans une hypothèse, ce qui est nouveau est en vert (`box-new`, `fuse-new`, `idn`, `tn`).
-- 230 V : `ph` (phase), `ne` (neutre), `pe` + `pey` superposés (terre vert-jaune).
+- 230 V : le folio 3 est unifilaire (un trait par câble, barres obliques = nombre de conducteurs) ; les trois fils du câble sont cités dans l'étiquette. Classes `ph`, `ne`, `pe` + `pey` réservées au multifilaire.
 - Folios : 0 implantation, 1 câblage 12 V actuel, 3 réseau 230 V ; les hypothèses ont leurs propres folios (2a, 2b…).
 - Plan d'implantation (`folio-0-implantation.svg`) : chaque zone porte `data-zone="id"`, chaque équipement placé `data-equipement="id"` (un `<tspan>` vide suffit pour un équipement regroupé avec un autre). Classes `hull`, `zone`, `zone-pont`, `callout`, `leader`. Le vérificateur exige que tout équipement ayant une `zone` y figure.
 - Le bloc `<style>` évolue : quand une classe est ajoutée, la reporter dans tous les folios et dans le gabarit de `outils/page.py`.

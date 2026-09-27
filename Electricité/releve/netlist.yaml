@@ -67,7 +67,7 @@ nodes:
   - { id: node052, equipement: tableau-scheiber, borne: "sortie frigo (15 A)", polarite: "+" }
   - { id: node053, equipement: tableau-scheiber, borne: "sortie pompe de cale (10 A)", polarite: "+" }
   - { id: node056, equipement: pompe-cale, borne: "+", polarite: "+" }
-  - { id: node057, equipement: pompe-cale, borne: "-", polarite: "-", questions: [Q25] }
+  - { id: node057, equipement: pompe-cale, borne: "-", polarite: "-" }
 
   # --- Tableau de servitude (table à carte) --------------------------------------
   - { id: node100, equipement: tableau-servitude, borne: "+ alimentation", polarite: "+" }
@@ -99,3 +99,34 @@ nodes:
   - { id: node210, equipement: disj-chargeur, borne: "entrée", polarite: 230V-phase }
   - { id: node211, equipement: disj-chargeur, borne: "sortie", polarite: 230V-phase }
   - { id: node212, equipement: boitier-230v, borne: "barrette de terre", polarite: 230V-terre }
+  - { id: node213, equipement: disj-230-reste, borne: "entrée", polarite: 230V-phase }
+  - { id: node214, equipement: disj-230-reste, borne: "sortie", polarite: 230V-phase }
+  - { id: node220, equipement: boitier-230-tribord, borne: "barre de phase", polarite: 230V-phase }
+  - { id: node221, equipement: boitier-230-tribord, borne: "barrette de neutre", polarite: 230V-neutre }
+  - { id: node222, equipement: boitier-230-tribord, borne: "barrette de terre", polarite: 230V-terre }
+  - { id: node223, equipement: disj-trib-eclairage, borne: "entrée", polarite: 230V-phase, monte_sur: node220 }
+  - { id: node224, equipement: disj-trib-eclairage, borne: "sortie", polarite: 230V-phase }
+  - { id: node225, equipement: disj-trib-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node220 }
+  - { id: node226, equipement: disj-trib-prises, borne: "sortie", polarite: 230V-phase }
+  - { id: node240, equipement: boitier-230-babord, borne: "barre de phase", polarite: 230V-phase }
+  - { id: node241, equipement: boitier-230-babord, borne: "barrette de neutre", polarite: 230V-neutre }
+  - { id: node242, equipement: boitier-230-babord, borne: "barrette de terre", polarite: 230V-terre }
+  - { id: node243, equipement: disj-bab-eclairage, borne: "entrée", polarite: 230V-phase, monte_sur: node240 }
+  - { id: node244, equipement: disj-bab-eclairage, borne: "sortie", polarite: 230V-phase }
+  - { id: node245, equipement: disj-bab-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node240 }
+  - { id: node246, equipement: disj-bab-prises, borne: "sortie", polarite: 230V-phase }
+  - { id: node227, equipement: prise-230-eps100, borne: "phase", polarite: 230V-phase }
+  - { id: node228, equipement: prise-230-eps100, borne: "neutre", polarite: 230V-neutre }
+  - { id: node229, equipement: prise-230-eps100, borne: "terre", polarite: 230V-terre }
+  - { id: node230, equipement: prise-230-cuisine, borne: "phase", polarite: 230V-phase }
+  - { id: node231, equipement: prise-230-cuisine, borne: "neutre", polarite: 230V-neutre }
+  - { id: node232, equipement: prise-230-cuisine, borne: "terre", polarite: 230V-terre }
+  - { id: node247, equipement: prise-230-table-a-carte, borne: "phase", polarite: 230V-phase }
+  - { id: node248, equipement: prise-230-table-a-carte, borne: "neutre", polarite: 230V-neutre }
+  - { id: node249, equipement: prise-230-table-a-carte, borne: "terre", polarite: 230V-terre }
+  - { id: node250, equipement: prise-230-carre, borne: "phase", polarite: 230V-phase }
+  - { id: node251, equipement: prise-230-carre, borne: "neutre", polarite: 230V-neutre }
+  - { id: node252, equipement: prise-230-carre, borne: "terre", polarite: 230V-terre }
+  - { id: node233, equipement: plafonnier-230, borne: "phase", polarite: 230V-phase }
+  - { id: node234, equipement: plafonnier-230, borne: "neutre", polarite: 230V-neutre }
+  - { id: node235, equipement: plafonnier-230, borne: "terre (non raccordée)", polarite: 230V-terre, questions: [Q31] }

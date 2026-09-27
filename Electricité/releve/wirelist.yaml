@@ -33,22 +33,49 @@ fils:
   - { id: wire020, de: node024, vers: node029, section_mm2: 10, couleur: rouge, longueur_m: 0.5 }
   - { id: wire021, de: node025, vers: node030, section_mm2: 10, couleur: noir, longueur_m: 0.5 }
 
-  # --- Tableau Scheiber 2 voies (Q3) : existence relevée, bornes et sections à confirmer (Q25)
-  - { id: wire022, de: node010, vers: node050, statut: a_verifier, questions: [Q25], note: "Alimenté par les coupe-circuits voisins ; borne côté charges du CC servitude supposée" }
-  - { id: wire023, de: node006, vers: node051, statut: a_verifier, questions: [Q25], note: "Masse prise au CC des négatifs, côté charges (supposé)" }
-  - { id: wire024, de: node052, vers: node042, statut: a_verifier, questions: [Q25] }
-  - { id: wire025, de: node051, vers: node043, statut: a_verifier, questions: [Q25], note: "Retour de l'EPS 100 vers la masse du tableau (supposé)" }
-  - { id: wire026, de: node053, vers: node056, statut: a_verifier, questions: [Q25] }
+  # --- Tableau Scheiber 2 voies (Q3, Q25)
+  - { id: wire022, de: node010, vers: node050, section_mm2: 6, note: "Sans fusible (A6)" }
+  - { id: wire023, de: node006, vers: node051, section_mm2: 6 }
+  - { id: wire024, de: node052, vers: node042, questions: [Q29] }
+  - { id: wire025, de: node051, vers: node043, statut: a_verifier, questions: [Q29], note: "Retour de l'EPS 100 vers la masse du tableau (supposé)" }
+  - { id: wire026, de: node053, vers: node056, section_mm2: 2.5 }
+  - { id: wire036, de: node057, vers: node051, section_mm2: 2.5, note: "Masse de la pompe sur la barrette du tableau Scheiber" }
 
   # --- Frigo : EPS 100 vers groupe froid (Q16) -----------------------------------
-  - { id: wire027, de: node044, vers: node040, section_mm2: 3.5, longueur_m: 3, note: "Longueur estimée" }
-  - { id: wire028, de: node045, vers: node041, section_mm2: 3.5, longueur_m: 3, note: "Longueur estimée" }
+  - { id: wire027, de: node044, vers: node040, section_mm2: 3.5, section_indicative: true, longueur_m: 3, note: "Longueur estimée. Câble étamé vissé sans cosse dans les bornes de l'EPS 100 (A7)" }
+  - { id: wire028, de: node045, vers: node041, section_mm2: 3.5, section_indicative: true, longueur_m: 3, note: "Longueur estimée. Câble étamé vissé sans cosse dans les bornes de l'EPS 100 (A7)" }
 
-  # --- 230 V du chargeur (Q23) : chemin déduit de la description, sections à relever (Q26)
-  - { id: wire029, de: node203, vers: node206, statut: a_verifier, questions: [Q26] }
-  - { id: wire030, de: node204, vers: node207, statut: a_verifier, questions: [Q26] }
-  - { id: wire031, de: node208, vers: node210, statut: a_verifier, questions: [Q26] }
-  - { id: wire032, de: node211, vers: node200, statut: a_verifier, questions: [Q26] }
-  - { id: wire033, de: node209, vers: node201, statut: a_verifier, questions: [Q26] }
-  - { id: wire034, de: node205, vers: node212, statut: a_verifier, questions: [Q26] }
-  - { id: wire035, de: node212, vers: node202, statut: a_verifier, questions: [Q26] }
+  # --- 230 V : boîtier d'arrivée et chargeur (Q23, Q26) ---------------------------
+  - { id: wire029, de: node203, vers: node206, section_mm2: 2.5 }
+  - { id: wire030, de: node204, vers: node207, section_mm2: 2.5 }
+  - { id: wire031, de: node208, vers: node210, section_mm2: 2.5 }
+  - { id: wire032, de: node211, vers: node200, section_mm2: 2.5 }
+  - { id: wire033, de: node209, vers: node201, section_mm2: 2.5 }
+  - { id: wire034, de: node205, vers: node212, section_mm2: 2.5 }
+  - { id: wire035, de: node212, vers: node202, section_mm2: 2.5 }
+
+  # --- 230 V : distribution (description du 28/09, photo Circuit-electrique-230v)
+  - { id: wire037, de: node208, vers: node213, note: "Câblage interne du boîtier d'arrivée" }
+  - { id: wire038, de: node214, vers: node220, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
+  - { id: wire039, de: node209, vers: node221, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
+  - { id: wire040, de: node212, vers: node222, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
+  - { id: wire041, de: node214, vers: node240, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
+  - { id: wire042, de: node209, vers: node241, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
+  - { id: wire043, de: node212, vers: node242, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
+  - { id: wire044, de: node226, vers: node227, section_mm2: 2.5 }
+  - { id: wire045, de: node221, vers: node228, section_mm2: 2.5 }
+  - { id: wire046, de: node222, vers: node229, section_mm2: 2.5 }
+  - { id: wire047, de: node226, vers: node230, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
+  - { id: wire048, de: node221, vers: node231, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
+  - { id: wire049, de: node222, vers: node232, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
+  - { id: wire050, de: node224, vers: node233, section_mm2: 1.5 }
+  - { id: wire051, de: node221, vers: node234, section_mm2: 1.5 }
+  - { id: wire052, de: node047, vers: node227, note: "Cordon de l'EPS 100, branché sur sa prise" }
+  - { id: wire053, de: node048, vers: node228 }
+  - { id: wire054, de: node046, vers: node229 }
+  - { id: wire055, de: node246, vers: node247, section_mm2: 2.5 }
+  - { id: wire056, de: node241, vers: node248, section_mm2: 2.5 }
+  - { id: wire057, de: node242, vers: node249, section_mm2: 2.5 }
+  - { id: wire058, de: node246, vers: node250, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
+  - { id: wire059, de: node241, vers: node251, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
+  - { id: wire060, de: node242, vers: node252, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }

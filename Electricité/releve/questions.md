@@ -21,11 +21,9 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q2** Télécommande du guindeau : d'où vient son 12 V, et est-il protégé par un fusible ?
 - **Q12** Longueurs réelles des fils du tableau de servitude, circuit par circuit.
   → 27/09 : pas d'information pour l'instant. À mesurer lors d'un démontage du tableau.
-- **Q25** Tableau Scheiber 2 voies :
-  - Sur quelles bornes des coupe-circuits sont pris son + et sa masse ? Y a-t-il un fusible sur ce départ ?
-  - Quelles sections pour son alimentation, pour le départ vers l'EPS 100 et pour le départ vers la pompe de cale ?
-  - Où est reliée la masse de la pompe de cale ?
-  - Comment le câble de 3,5 mm² est-il raccordé aux bornes de l'EPS 100, prévues pour des cosses SV 2-4 (2,5 mm² au plus) ? Est-ce du 3,5 mm² ou de l'AWG 12 (3,3 mm²) ?
+- **Q29** Tableau Scheiber : section du départ frigo vers l'EPS 100 (wire024), et le retour de l'EPS 100 arrive-t-il bien sur la barrette de masse du tableau (wire025) ?
+- **Q30** Longueur réelle de wire009 (− batterie de servitude → coupe-circuit des négatifs). Le relevé indique 1 m, mais le trajet décrit (cloison vers le moteur, puis remontée derrière la descente) semble plus long.
+- **Q34** Calibre inscrit sur le disjoncteur du guindeau. La notice Lewmar préconise 70 A pour le Pro-Series 1000.
 
 ### Équipements
 
@@ -34,12 +32,14 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q7** Feux de navigation, de mouillage et projecteur : LED ou incandescents ?
 - **Q8** Autoradio : le fil de mémoire permanente est-il présent, et branché sur un + permanent ?
   → 27/09 : sans doute présent, branchement à vérifier.
-- **Q9** Éclairage intérieur : emplacement des 5 ou 6 lampes et trajet des câbles.
+- **Q9** Éclairage intérieur : emplacement des 6 points lumineux LED et trajet des câbles.
   → 27/09 : pas d'information.
-- **Q10** Pilote automatique de barre franche : marque et modèle.
+- **Q10** Pilote automatique de barre franche : modèle exact.
   → 27/09 : pilote de barre franche. À demander à Julie pour le reste.
+  → 28/09 : la photo Vue-tableau-table-a-carte montre une notice « ST1000 Plus & ST2000 Plus » : Raymarine ST1000+ ou ST2000+, à confirmer.
 - **Q11** Radar : marque, modèle et point d'alimentation. Le sondeur est-il celui intégré au GPSMAP xsv ?
   → 27/09 : pas d'information.
+- **Q32** Répétiteur GPS MLR FX312 : décrit « dans le cockpit », mais la photo Vue-GPS-table-a-carte le montre près de la table à carte. Où est-il fixé ?
 
 ### Moteur
 
@@ -47,21 +47,23 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q14** Alternateur : ampérage, borne de sortie (B+), présence d'une borne W pour un compte-tours.
   → 27/09 : à demander à Julie.
 
+### Aménagement
+
+- **Q33** La fiche du Gib'Sea 31 (documentation/Infos-gibsea-31.md) indique une quille aileron, sans dérive. Que désigne le « puits de dérive » près duquel sont le groupe froid et l'EPS 100 (pied de mât, épontille, coffre) ?
+
 ### Pour les études B (chauffe-eau) et C (solaire)
 
 - **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
-
-### Pour l'étude D (shunt)
-
-- **Q27** Coffre de la batterie de servitude : place libre pour un shunt (environ 10 × 5 cm) entre la borne − et le coupe-circuit des négatifs ? Le câble wire009 est-il accessible sur toute sa longueur ?
-- **Q28** Tableau de la table à carte : place pour un afficheur rond encastré (environ 6 cm de diamètre), et passage possible pour un câble fin depuis la cabine de poupe ?
+  → 28/09 : pas encore de réponse.
 
 ### Réseau 230 V
 
-- **Q26** Reste du réseau 230 V :
-  - Le boîtier du chargeur (différentiel 30 mA / 25 A, disjoncteur 10 A) est-il l'un des « 2 boîtiers, un par bord » de l'état des lieux ?
-  - Comment l'autre boîtier est-il alimenté, et que protègent ses disjoncteurs (prises, EPS 100 du frigo, éclairage LED) ?
-  - Sections et couleurs des fils, depuis la prise de quai jusqu'au chargeur.
+- **Q31** Détails du réseau 230 V :
+  - Les disjoncteurs 10 A et 16 A coupent-ils la phase et le neutre (bipolaires, ou « phase + neutre ») ? À quai en France, la phase et le neutre peuvent être inversés.
+  - Le plafonnier 230 V est-il métallique (classe I, terre obligatoire) ou en plastique à double isolation (classe II, marqué d'un double carré) ?
+  - La terre 230 V est-elle reliée quelque part à la masse 12 V (bloc moteur, négatif) ? Y a-t-il un isolateur galvanique près de la prise de quai ?
+  - Où sont fixés les deux boîtiers de distribution, et chacun contient-il bien un 10 A et un 16 A ?
+  - Les prises sont-elles alimentées chacune depuis le boîtier (en étoile), ou l'une après l'autre (en chaîne) ? Comment les boîtiers sont-ils reliés au boîtier d'arrivée (boîte de dérivation ?) ?
 
 ## Réponses
 
@@ -73,6 +75,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 27/09 : bornes à vis d'environ 8 mm de large, prévues pour des cosses à fourche SV 2-4, soit AWG 16-14 (1,5 à 2,5 mm²).
 - **Q15** Calibre du disjoncteur thermique du guindeau.
   → 27/09 : 50 A, d'après la documentation constructeur.
+  → 28/09 : correction après lecture de la notice (tableau 7.5) : 50 A est le courant normal du Pro-Series 1000 ; le disjoncteur préconisé est de 70 A. Calibre installé à lire (Q34).
 - **Q16** Fils EPS 100 → groupe froid : section et longueur.
   → 27/09 : 3,5 mm², longueur estimée à 3 m (wire027, wire028).
 - **Q17** Port d'attache et zone de navigation habituelle.
@@ -89,3 +92,11 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 27/09 : d'un boîtier de distribution voisin, alimenté par la prise de quai EU placée sous le banc tribord du cockpit. Le boîtier contient un différentiel 30 mA / 25 A et un disjoncteur 10 A pour le chargeur.
 - **Q24** Plan d'aménagement du Gib'Sea 31.
   → 27/09 : `photos/gibsea-31-drawing.jpg` (plan de brochure, de faible résolution).
+- **Q25** Tableau Scheiber 2 voies : raccordement, sections, masse de la pompe, raccordement de l'EPS 100.
+  → 28/09 : + sur node010 et masse sur node006, en 6 mm² (wire022, wire023), sans fusible (A6). Départ pompe en 2,5 mm² (wire026). Masse de la pompe sur la barrette du tableau (wire036). Câble étamé vissé sans cosse sur l'EPS 100 (nouvelle anomalie A7) ; la différence entre 3,5 mm² et AWG 12 est sans conséquence. Section du départ frigo reportée en Q29.
+- **Q26** Reste du réseau 230 V.
+  → 28/09 : trois boîtiers. Boîtier d'arrivée (coffre de cockpit tribord) : différentiel 30 mA / 25 A, disjoncteurs 10 A (chargeur) et 16 A (reste du bord). Deux boîtiers de distribution, un par bord, avec 10 A pour l'éclairage et 16 A pour les prises. Tribord : prise du frigo (EPS 100), prise de la cuisine, plafonnier. Bâbord : prise de la table à carte, prise du carré. Prises en 3 × 2,5 mm², éclairage en 3 × 1,5 mm², arrivée et chargeur en 3 × 2,5 mm². Détails reportés en Q31. Schéma : folio 3.
+- **Q27** Place pour le shunt près de la batterie de servitude.
+  → 28/09 : wire009 part du coffre de batterie, traverse la cloison vers le compartiment moteur, puis remonte derrière la descente jusqu'au coupe-circuit des négatifs. Le shunt peut donc se placer soit au départ, dans le coffre de batterie, soit à l'arrivée, derrière la descente, accessible par l'ouverture côté cabine de poupe (voir étude D). Longueur à vérifier : Q30.
+- **Q28** Place pour un afficheur à la table à carte.
+  → 28/09 : oui, en remplacement de l'ancien indicateur de charge à aiguille.

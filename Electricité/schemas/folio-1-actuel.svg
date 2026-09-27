@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" role="img" aria-label="Câblage 12 V actuel : deux batteries, quatre coupe-circuits, coupleur et chargeur branchés sans fusible, tableau de servitude alimenté sans protection depuis l'entrée du disjoncteur du guindeau, tableau Scheiber alimenté directement par les coupe-circuits.">
   <title>Folio 1 · Câblage 12 V actuel</title>
-  <desc>Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² depuis l'entrée du disjoncteur du guindeau, donc sans aucune protection (A1). Le tableau Scheiber (frigo, pompe de cale) est lui aussi alimenté directement par les coupe-circuits (A6). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n'est plus alimentée.</desc>
+  <desc>Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² depuis l'entrée du disjoncteur du guindeau, donc sans aucune protection (A1). Le tableau Scheiber (frigo, pompe de cale) est lui aussi alimenté en 6 mm² directement par les coupe-circuits, sans fusible (A6), et la liaison EPS 100 → groupe froid est vissée sans cosse (A7). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n'est plus alimentée.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -200,7 +200,7 @@
   <text class="tb mid" x="945" y="624">Tableau Scheiber</text>
   <text class="ts mid" x="945" y="641">2 voies · contremarche</text>
   <text class="ts mid" x="945" y="659">cale 10 A · frigo 15 A</text>
-  <g class="mk-q"><circle cx="1020" cy="602" r="11"/><text class="mid" x="1020" y="605.5">Q25</text></g>
+  <g class="mk-q"><circle cx="1020" cy="602" r="11"/><text class="mid" x="1020" y="605.5">Q29</text></g>
   <path class="n w2" d="M880 670 V716"/>
   <text class="id" x="886" y="702">wire023</text>
   <!-- Pompe de cale -->
@@ -210,9 +210,9 @@
   <text class="tb mid" x="870" y="805">P</text>
   <text class="tb mid" x="870" y="842">Pompe de cale</text>
   <text class="ts mid" x="870" y="858">manuelle, sans flotteur</text>
-  <path class="u" d="M848 800 H812"/>
-  <text class="ts end tu" x="806" y="796">masse ?</text>
-  <g class="mk-q"><circle cx="786" cy="812" r="11"/><text class="mid" x="786" y="815.5">Q25</text></g>
+  <path class="n w2" d="M848 800 H820"/>
+  <rect class="flag" x="708" y="791" width="112" height="18"/>
+  <text class="id mid" x="764" y="804">wire036 → node051</text>
   <!-- Frigo -->
   <path class="p w2" d="M980 670 V780 H1000"/>
   <text class="id mid" x="993" y="725" transform="rotate(-90 993 725)">wire024</text>
@@ -225,6 +225,7 @@
   <rect class="box" x="1110" y="758" width="80" height="44" rx="2"/>
   <text class="tb mid" x="1150" y="777">Groupe froid</text>
   <text class="ts mid" x="1150" y="793">CU-55</text>
+  <g class="mk-a"><circle cx="1150" cy="822" r="10"/><text class="mid" x="1150" y="825.5">A7</text></g>
   <path class="n w2" d="M1040 802 V818"/>
   <rect class="flag" x="985" y="818" width="110" height="18"/>
   <text class="id mid" x="1040" y="831">wire025 → node051</text>

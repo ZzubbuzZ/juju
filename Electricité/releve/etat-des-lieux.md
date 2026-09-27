@@ -26,6 +26,8 @@ Les points suivants sont à revoir sur le circuit 12v :
 ### Circuit 220v
 
 - Il faudrait ajouter un petit chauffe eau 10-15l
+- La terre n'est présente que sur les PE. Quelles sont les bonnes pratiques à bord d'un bateau sur ce point, sachant que la coque est en plastique est qu'elle ne conduit pas l'electricité?
+  - Réponse et pistes : étude A (sécurisation), section « Terre 230 V ». Points à relever : Q31.
 
 ## Equipements
 
@@ -37,7 +39,7 @@ Coupe circuit dédié sur pole 12v
 ### Equipements de servitudes
 
 - Batterie 12v 110Ah au Plomb sans entretien
-- Lampes 12v x 5 ou 6
+- 6 points lumineux (LED) 12v
 - Panneau de controle des equipements de bord (coté moteur) :
   - Interrupteur réfrigérateur + fusible 15A
   - Interrupteur Pompe de cale moteur + fusible 10A (pompe manuelle, sans flotteur)
@@ -72,7 +74,8 @@ Coupe circuit dédié sur pole 12v
 
 Lewmar Pro-Series 1000 700W
 Relai de commande à proximité du guindeau
-Disjoncteur thermique de 50 A (documentation constructeur), proche du sectionneur
+Disjoncteur thermique, proche du sectionneur. Calibre à lire sur l'appareil (Q34) ; la notice préconise 70 A.
+Notice Lewmar (tableau 7.5, [documentation](documentation/OSCULATI-Notice-LEWMAR-Guindeau-Pro-Série.pdf)) : courant normal 50 A.
 Cablage en 50mm2
 Telecommande
 
@@ -103,14 +106,19 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 - 1 coupe circuit sur pole - des 2 batteries en haut à gauche
 - 1 coupe circuit de couplage des 2 batteries en bas à gauche (couple la batterie de servitude à l'alternateur/démarreur du moteur).
 
-### Distribution 220v
+### Distribution 230v
 
-- 2 boitiers électriques (un par bord) avec différentiel et 2 discjonteurs (1 pour PE, l'autre pour le reste)
-- Une PE pour alimentation groupe froid Dometic EPS 100
-- 4 autres PE
-- 6 points lumineux (LED)
-- Le boîtier du chargeur (voir « Chargeur de quai ») est peut-être l'un de ces deux boîtiers (Q26).
+3 boitiers électriques : 
+- Boitier d'arrivée dans le coffre cockpit tribord avec dicjoncteur différentiel 30mA/25A protégeant tout le circuit + 1 disjoncteur 10A pour le chargeur de quai, et 1 disjonteur 16A pour le reste.
+- 2 boitiers de distribution (1 par bord) avec 4 disjonteurs (2x10A pour éclairage, 2x16A pour PE). L'installation semble surdimenssionnée.
+- Une PE pour alimentation groupe froid Dometic EPS 100 sur boitier tribord
+- Une PE pour la cuisine sur boitier tribord
+- Un plafonnier d'éclairage sur boitier tribord
+- Une PE pour la table à carte sur boitier babord
+- Une PE pour le carré sur boitier babord
 - Au ponton de Saint-Chamas, la prise de quai ne fournit que **6 A, soit environ 1 400 W** pour tout le bord (12 A à quai).
+- Prises en 3 × 2,5 mm², éclairage en 3 × 1,5 mm², arrivée et chargeur en 3 × 2,5 mm².
+- Schéma : [folio 3](../schemas/folio-3-230v.svg), d'après la description ci-dessus et le [plan manuscrit](photos/Circuit-electrique-230v.jpeg).
 
 ## Implantation
 
@@ -141,3 +149,8 @@ La netlist et la wirelist sont désormais tenues dans des fichiers structurés, 
 - [questions.md](questions.md) : ce qu'il reste à relever à bord (Q1…).
 
 Schémas : [folio 1](../schemas/folio-1-actuel.svg) pour le 12 V, [folio 3](../schemas/folio-3-230v.svg) pour le 230 V.
+
+## Documentation et photos
+
+- [documentation/](documentation/) : fiche du Gib'Sea 31, notice Lewmar du guindeau, abaque de sections 12 V.
+- [photos/](photos/) : platine des coupe-circuits, tableaux de la descente et de la table à carte, moteur, instruments, plans manuscrits 230 V et 12 V. Le plan manuscrit 12 V (`Circuit-electrique-12v-faux.jpeg`) est faux, comme son nom l'indique : il ne sert pas de source.

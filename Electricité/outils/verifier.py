@@ -231,7 +231,7 @@ def controler(m: Modele, questions: set[str], traitees: set[str], r: Rapport) ->
                     and couleur not in COULEURS_230V[p]:
                 r.avert(ou, f"{f['id']} : conducteur {p} de couleur {couleur} "
                             f"({' ou '.join(sorted(COULEURS_230V[p]))} attendu)")
-        if "section_mm2" in f and f["section_mm2"] not in SECTIONS_NORMALISEES:
+        if "section_mm2" in f and f["section_mm2"] not in SECTIONS_NORMALISEES and not f.get("section_indicative"):
             r.avert(ou, f"{f['id']} : section de {f['section_mm2']} mm² hors série normalisée "
                         f"(câble AWG ou mesure approximative ?)")
 

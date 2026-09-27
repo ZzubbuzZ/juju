@@ -315,6 +315,10 @@
           "type": "number",
           "exclusiveMinimum": 0
         },
+        "section_indicative": {
+          "description": "Section relevée de façon approximative (câble non normalisé, AWG…) : pas d'avertissement « hors série ».",
+          "type": "boolean"
+        },
         "couleur": {
           "enum": [
             "rouge",
