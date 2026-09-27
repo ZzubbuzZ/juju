@@ -56,18 +56,18 @@ fils:
 
   # --- 230 V : distribution (description du 28/09, photo Circuit-electrique-230v)
   - { id: wire037, de: node208, vers: node213, note: "Câblage interne du boîtier d'arrivée" }
-  - { id: wire038, de: node214, vers: node220, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
-  - { id: wire039, de: node209, vers: node221, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
-  - { id: wire040, de: node212, vers: node222, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
-  - { id: wire041, de: node214, vers: node240, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
-  - { id: wire042, de: node209, vers: node241, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
-  - { id: wire043, de: node212, vers: node242, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Chemin exact (boîte de dérivation ?) à confirmer" }
+  - { id: wire038, de: node214, vers: node220, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
+  - { id: wire039, de: node209, vers: node221, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
+  - { id: wire040, de: node212, vers: node222, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
+  - { id: wire041, de: node214, vers: node240, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
+  - { id: wire042, de: node209, vers: node241, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
+  - { id: wire043, de: node212, vers: node242, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
   - { id: wire044, de: node226, vers: node227, section_mm2: 2.5 }
   - { id: wire045, de: node221, vers: node228, section_mm2: 2.5 }
   - { id: wire046, de: node222, vers: node229, section_mm2: 2.5 }
-  - { id: wire047, de: node226, vers: node230, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
-  - { id: wire048, de: node221, vers: node231, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
-  - { id: wire049, de: node222, vers: node232, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
+  - { id: wire047, de: node226, vers: node230, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire048, de: node221, vers: node231, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire049, de: node222, vers: node232, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
   - { id: wire050, de: node224, vers: node233, section_mm2: 1.5 }
   - { id: wire051, de: node221, vers: node234, section_mm2: 1.5 }
   - { id: wire052, de: node047, vers: node227, note: "Cordon de l'EPS 100, branché sur sa prise" }
@@ -76,6 +76,6 @@ fils:
   - { id: wire055, de: node246, vers: node247, section_mm2: 2.5 }
   - { id: wire056, de: node241, vers: node248, section_mm2: 2.5 }
   - { id: wire057, de: node242, vers: node249, section_mm2: 2.5 }
-  - { id: wire058, de: node246, vers: node250, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
-  - { id: wire059, de: node241, vers: node251, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
-  - { id: wire060, de: node242, vers: node252, section_mm2: 2.5, statut: a_verifier, questions: [Q31], note: "Raccordement en étoile depuis le boîtier supposé" }
+  - { id: wire058, de: node246, vers: node250, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire059, de: node241, vers: node251, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire060, de: node242, vers: node252, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }

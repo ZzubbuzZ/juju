@@ -43,13 +43,9 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ### Moteur
 
-- **Q13** La plaque signalétique indique 3GMD (et non 3GM30). Le moteur est-il refroidi à l'eau de mer (pompe à eau de mer seule) ou à l'eau douce (vase d'expansion avec bouchon de liquide de refroidissement, échangeur) ? Décisif pour le chauffe-eau (étude B).
-- **Q14** Alternateur : ampérage, borne de sortie (B+), présence d'une borne W pour un compte-tours.
+- **Q14** Alternateur : ampérage exact (plaque), borne de sortie (B+), présence d'une borne W pour un compte-tours.
   → 27/09 : à demander à Julie.
-
-### Aménagement
-
-- **Q33** La fiche du Gib'Sea 31 (documentation/Infos-gibsea-31.md) indique une quille aileron, sans dérive. Que désigne le « puits de dérive » près duquel sont le groupe froid et l'EPS 100 (pied de mât, épontille, coffre) ?
+  → 28/09 : d'après les spécifications et les photos, l'alternateur d'origine donne 20 A au plus ; celui de Juju semble plus récent mais semblable. Plaque et bornes à relever.
 
 ### Pour les études B (chauffe-eau) et C (solaire)
 
@@ -61,9 +57,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q31** Détails du réseau 230 V :
   - Les disjoncteurs 10 A et 16 A coupent-ils la phase et le neutre (bipolaires, ou « phase + neutre ») ? À quai en France, la phase et le neutre peuvent être inversés.
   - Le plafonnier 230 V est-il métallique (classe I, terre obligatoire) ou en plastique à double isolation (classe II, marqué d'un double carré) ?
-  - La terre 230 V est-elle reliée quelque part à la masse 12 V (bloc moteur, négatif) ? Y a-t-il un isolateur galvanique près de la prise de quai ?
-  - Où sont fixés les deux boîtiers de distribution, et chacun contient-il bien un 10 A et un 16 A ?
-  - Les prises sont-elles alimentées chacune depuis le boîtier (en étoile), ou l'une après l'autre (en chaîne) ? Comment les boîtiers sont-ils reliés au boîtier d'arrivée (boîte de dérivation ?) ?
+  → 28/09 : terre 230 V et masse 12 V séparées, pas d'isolateur galvanique (anomalie A8). Boîtier bâbord dans le placard entre la table à carte et la cabine de poupe ; boîtier tribord sur la cloison entre le cabinet de toilette et le coffre de cockpit. Raccordement des prises (étoile ou chaîne) : non relevé, jugé secondaire.
 
 ## Réponses
 
@@ -100,3 +94,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 28/09 : wire009 part du coffre de batterie, traverse la cloison vers le compartiment moteur, puis remonte derrière la descente jusqu'au coupe-circuit des négatifs. Le shunt peut donc se placer soit au départ, dans le coffre de batterie, soit à l'arrivée, derrière la descente, accessible par l'ouverture côté cabine de poupe (voir étude D). Longueur à vérifier : Q30.
 - **Q28** Place pour un afficheur à la table à carte.
   → 28/09 : oui, en remplacement de l'ancien indicateur de charge à aiguille.
+- **Q13** Refroidissement du moteur 3GMD.
+  → 28/09 : refroidissement direct à l'eau de mer (spécifications constructeur et photos), sans trace de modification. L'échangeur pour le chauffe-eau (étude B, H2) est donc exclu.
+- **Q33** Que désigne le « puits de dérive » ?
+  → 28/09 : la quille est en deux parties : un aileron lesté en polyester et une dérive relevable en fonte, qui remonte dans un puits situé entre la table à carte et la cuisine (plus en arrière que sur la première version du folio 0).

@@ -63,8 +63,8 @@
   <text class="ts mid" x="520" y="512">Cuisine</text>
   <rect class="zone" data-zone="carre" x="600" y="235" width="215" height="230" rx="3"/>
   <text class="ts mid" x="690" y="300">Carré</text>
-  <rect class="bound" x="620" y="352" width="120" height="16"/>
-  <text class="pin mid" x="680" y="364">puits de dérive</text>
+  <rect class="bound" x="452" y="352" width="116" height="16"/>
+  <text class="pin mid" x="510" y="364">puits de dérive</text>
   <path class="zone" data-zone="cabine-proue" d="M830 262 L975 288 L975 432 L830 458 Z"/>
   <text class="ts mid" x="902" y="425">Cabine de proue</text>
   <rect class="zone-pont" data-zone="pont-avant" x="1010" y="332" width="92" height="56" rx="3"/>
@@ -95,12 +95,13 @@
   <text class="t" x="332" y="82" data-equipement="coupleur">Coupleur (derrière la platine)</text>
   <text class="t" x="332" y="101" data-equipement="tableau-scheiber">Tableau Scheiber 2 voies</text>
 
-  <path class="leader" d="M640 130 L520 262"/>
-  <rect class="callout" x="580" y="40" width="230" height="90" rx="2"/>
+  <path class="leader" d="M640 149 L520 262"/>
+  <rect class="callout" x="580" y="40" width="230" height="109" rx="2"/>
   <text class="tb" x="592" y="60">Table à carte · bâbord</text>
   <text class="t" x="592" y="80" data-equipement="tableau-servitude">Tableau de servitude, 12 circuits</text>
   <text class="t" x="592" y="99" data-equipement="indicateur-charge">Indicateur de charge à aiguille</text>
   <text class="t" x="592" y="118" data-equipement="prise-230-table-a-carte">Prise 230 V</text>
+  <text class="t" x="592" y="137" data-equipement="boitier-230-babord">Boîtier 230 V bâbord (placard)</text>
 
   <path class="leader" d="M930 92 L902 360"/>
   <rect class="callout" x="830" y="40" width="200" height="52" rx="2"/>
@@ -114,12 +115,13 @@
 
   <!-- Tribord et axe : bulles du bas -->
   <path class="leader" d="M185 580 L207 440"/>
-  <rect class="callout" x="40" y="580" width="290" height="108" rx="2"/>
+  <rect class="callout" x="40" y="580" width="290" height="127" rx="2"/>
   <text class="tb" x="52" y="600">Coffre de cockpit · tribord</text>
   <text class="t" x="52" y="619" data-equipement="bat-moteur">Batterie moteur 110 Ah</text>
   <text class="t" x="52" y="638" data-equipement="chargeur-quai">Chargeur de quai (au-dessus)</text>
   <text class="t" x="52" y="657" data-equipement="prise-quai">Prise de quai (sous le banc)</text>
   <text class="t" x="52" y="676"><tspan data-equipement="boitier-230v">Boîtier d'arrivée 230 V :</tspan> <tspan data-equipement="ddr-230v">diff. 30 mA,</tspan> <tspan data-equipement="disj-chargeur">10 A,</tspan> <tspan data-equipement="disj-230-reste">16 A</tspan></text>
+  <text class="t" x="52" y="695" data-equipement="boitier-230-tribord">Boîtier 230 V tribord (cloison)</text>
 
   <path class="leader" d="M455 595 L361 345"/>
   <rect class="callout" x="350" y="595" width="210" height="70" rx="2"/>
@@ -139,5 +141,5 @@
   <text class="tb" x="852" y="615">Carré</text>
   <text class="t" x="852" y="634" data-equipement="prise-230-carre">Prise 230 V</text>
 
-  <text class="ts" x="40" y="722">Plan schématique d'après la brochure (photos/gibsea-31-drawing.jpg) : proportions approximatives, pas à l'échelle. Boîtiers de distribution 230 V et plafonnier non placés (Q31).</text>
+  <text class="ts" x="40" y="722">Plan schématique d'après la brochure (photos/gibsea-31-drawing.jpg) : proportions approximatives, pas à l'échelle. Plafonnier 230 V non placé.</text>
 </svg>

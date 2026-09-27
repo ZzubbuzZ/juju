@@ -32,7 +32,8 @@ Les points suivants sont à revoir sur le circuit 12v :
 ## Equipements
 
 ### Moteur
-Moteur Yanmar 3GMD, d'après la plaque signalétique (d'abord noté 3GM30). Refroidissement eau de mer ou eau douce à confirmer (Q13).
+Moteur Yanmar 3GMD, d'après la plaque signalétique (d'abord noté 3GM30). Refroidissement direct à l'eau de mer.
+Alternateur d'environ 20 A (spécification d'origine ; celui de Juju semble plus récent mais semblable, plaque à relever : Q14).
 Batterie Varta 110Ah au Plomb sans entretien
 Coupe circuit dédié sur pole 12v
 
@@ -116,6 +117,8 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 - Un plafonnier d'éclairage sur boitier tribord
 - Une PE pour la table à carte sur boitier babord
 - Une PE pour le carré sur boitier babord
+- Boîtier bâbord dans le placard entre la table à carte et la cabine de poupe ; boîtier tribord sur la cloison entre le cabinet de toilette et le coffre de cockpit.
+- La terre 230 V n'est reliée ni à la masse 12 V ni à un isolateur galvanique (anomalie A8).
 - Au ponton de Saint-Chamas, la prise de quai ne fournit que **6 A, soit environ 1 400 W** pour tout le bord (12 A à quai).
 - Prises en 3 × 2,5 mm², éclairage en 3 × 1,5 mm², arrivée et chargeur en 3 × 2,5 mm².
 - Schéma : [folio 3](../schemas/folio-3-230v.svg), d'après la description ci-dessus et le [plan manuscrit](photos/Circuit-electrique-230v.jpeg).
@@ -134,6 +137,7 @@ Les zones de l'aménagement sont décrites dans [amenagement.yaml](amenagement.y
 - **Relais du guindeau** : dans un boîtier de type boîte de dérivation près du guindeau, accessible depuis la cabine de proue.
 - **Guindeau** : à la proue, posé sur le pont au-dessus du puits de chaîne.
 - **Groupe froid et EPS 100** : cuisine (tribord), entre le puits de dérive et la glacière, dans la partie droite du meuble bas sous l'évier.
+- **Puits de dérive** : entre la table à carte et la cuisine. La quille est en deux parties : un aileron lesté en polyester et une dérive relevable en fonte, qui remonte dans ce puits.
 - **Tableau de servitude** : table à carte (bâbord).
 
 Plan : [folio 0](../schemas/folio-0-implantation.svg), d'après le [plan de brochure](photos/gibsea-31-drawing.jpg).

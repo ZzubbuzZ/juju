@@ -10,6 +10,7 @@ Format d'une ligne (lu par `outils/verifier.py`) : `- **An** texte`.
 - **A4** Fils du coupleur et du chargeur (wire002, wire003, wire007, wire008, 6 mm²) branchés en direct sur les batteries, sans fusible.
 - **A6** wire022 : l'alimentation du tableau Scheiber (6 mm²) est prise sur node010, côté charges du coupe-circuit de servitude, sans fusible. Même risque que A1.
 - **A7** wire027 et wire028 : le câble étamé qui relie l'EPS 100 au groupe froid est vissé directement dans les bornes, prévues pour des cosses à fourche SV 2-4. Contact médiocre : échauffement et chute de tension au démarrage du compresseur, qui se coupe en sous-tension.
+- **A8** Terre 230 V et masse 12 V ne sont reliées nulle part, et il n'y a pas d'isolateur galvanique. Les normes nautiques (ISO 13297, ABYC E-11) demandent une liaison en un point unique, pour qu'un défaut 230 V sur une partie métallique du circuit 12 V fasse déclencher le différentiel. Cette liaison se pose avec un isolateur galvanique (étude A, H4).
 
 ## Levées
 

@@ -71,8 +71,8 @@ equipements:
     designation: Moteur Yanmar (démarreur + alternateur)
     modele: Yanmar 3GMD (plaque signalétique)
     zone: compartiment-moteur
-    note: L'état des lieux initial indiquait 3GM30. Mode de refroidissement à confirmer (Q13).
-    questions: [Q1, Q13, Q14]
+    note: L'état des lieux initial indiquait 3GM30. Refroidissement direct à l'eau de mer. Alternateur d'environ 20 A (spécification d'origine ; celui de Juju semble plus récent mais semblable).
+    questions: [Q1, Q14]
 
   # --- Guindeau ----------------------------------------------------------------
   - id: disj-guindeau
@@ -297,7 +297,8 @@ equipements:
   - id: boitier-230-tribord
     type: tableau
     designation: Boîtier de distribution 230 V tribord
-    questions: [Q31]
+    zone: cockpit-coffre-tribord
+    emplacement: Sur la cloison entre le cabinet de toilette et le coffre de cockpit
 
   - id: disj-trib-eclairage
     type: disjoncteur
@@ -314,7 +315,8 @@ equipements:
   - id: boitier-230-babord
     type: tableau
     designation: Boîtier de distribution 230 V bâbord
-    questions: [Q31]
+    zone: table-a-carte
+    emplacement: Dans le placard entre la table à carte et la cabine de poupe
 
   - id: disj-bab-eclairage
     type: disjoncteur
