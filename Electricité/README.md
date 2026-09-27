@@ -2,14 +2,14 @@
 
 ## Où en est-on
 
-| Axe | Branche | État |
+| Axe | Branche | État détaillé |
 |---|---|---|
 | Relevé de l'existant | `main` | 21 fils relevés, 20 questions ouvertes ([questions.md](releve/questions.md)), 5 anomalies ([anomalies.md](releve/anomalies.md)) |
-| A · Sécurisation de l'existant | `etude/securisation` | H1 (distribution de servitude) rédigée, à valider |
-| B · Chauffe-eau | `etude/chauffe-eau` | Cadrage |
-| C · Panneaux solaires | `etude/solaire` | Cadrage |
+| A · Sécurisation de l'existant | `etude/securisation` | [README de l'étude](https://github.com/ZzubbuzZ/juju/blob/etude/securisation/Electricit%C3%A9/etudes/A-securisation/README.md) |
+| B · Chauffe-eau | `etude/chauffe-eau` | [README de l'étude](https://github.com/ZzubbuzZ/juju/blob/etude/chauffe-eau/Electricit%C3%A9/etudes/B-chauffe-eau/README.md) |
+| C · Panneaux solaires | `etude/solaire` | [README de l'étude](https://github.com/ZzubbuzZ/juju/blob/etude/solaire/Electricit%C3%A9/etudes/C-solaire/README.md) |
 
-Schéma de l'existant : [folio 1](schemas/folio-1-actuel.svg).
+Schéma de l'existant : [folio 1](schemas/folio-1-actuel.svg). L'état de chaque étude est tenu dans son propre README, sur sa branche : ce fichier-ci n'est modifié que sur `main`, pour éviter les conflits de rebase.
 
 ## Organisation
 
