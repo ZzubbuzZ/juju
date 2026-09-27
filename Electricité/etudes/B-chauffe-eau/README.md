@@ -6,7 +6,7 @@
 
 ## Questions préalables
 
-- **Q13** (ouverte) : la plaque indique 3GMD. Un échangeur sur le circuit moteur n'est possible que si le moteur a un circuit d'eau douce (vase d'expansion, échangeur). À vérifier à bord.
+- **Q13** (traitée le 28/09) : le 3GMD est refroidi directement à l'eau de mer. Il n'a pas de circuit d'eau douce sur lequel brancher un ballon à échangeur.
 - **Q19** (ouverte) : place disponible pour le ballon, distance au moteur et au circuit d'eau douce.
 - **Q20** (traitée le 27/09) : **6 A au ponton de Saint-Chamas, soit environ 1 400 W pour tout le bord.**
 
@@ -30,7 +30,7 @@ Conséquences :
 | | Principe | Eau chaude au quai | En navigation | Au mouillage | Dépend de |
 |---|---|---|---|---|---|
 | H1 | Résistance 230 V seule (500 W au plus) | oui | non | non | Q19 |
-| H2 | Résistance 230 V + échangeur sur le circuit moteur | oui | oui, moteur en marche | non | Q13 (circuit d'eau douce obligatoire) |
+| ~~H2~~ | ~~Résistance 230 V + échangeur sur le circuit moteur~~ | | | | **Écartée** (Q13) : moteur refroidi à l'eau de mer. Faire passer de l'eau de mer dans le ballon l'exposerait à la corrosion et au sel ; il faudrait remotoriser ou ajouter un circuit d'eau douce |
 | H3 | Résistance 230 V + résistance 12 V sur le surplus solaire | oui | partiel | partiel | étude C, régulateur avec sortie de délestage |
 | H4 | Résistance 230 V alimentée par un convertisseur en navigation | oui | oui | oui | à chiffrer pour l'écarter proprement : 500 W représentent environ 45 A sur une batterie de 110 Ah au plomb |
 
@@ -42,4 +42,4 @@ Conséquences :
 
 ## Décision
 
-En attente des réponses à Q13 et Q19.
+Sans H2, l'eau chaude en navigation et au mouillage ne peut venir que de l'électricité : H3 (surplus solaire, étude C) ou H4 (convertisseur, peu réaliste avec la batterie actuelle). H1 reste la base au ponton. En attente de Q19 (place disponible).
