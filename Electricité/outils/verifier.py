@@ -250,6 +250,8 @@ def controler(m: Modele, questions: set[str], traitees: set[str], r: Rapport) ->
                 elif q in traitees:
                     r.avert(ou, f"{elem['id']} : cite {q}, déjà traitée (retirer la référence)")
 
+    controler_contournements(m, r)
+
     sans_section = sorted(f["id"] for f in m.fils.values() if "section_mm2" not in f)
     if sans_section:
         r.info(f"{len(sans_section)} fil(s) de section inconnue : {', '.join(sans_section)}")
@@ -267,6 +269,36 @@ def controler(m: Modele, questions: set[str], traitees: set[str], r: Rapport) ->
     if sans_zone:
         r.info(f"{len(sans_zone)} équipement(s) sans zone (non placés sur le plan) : {', '.join(sans_zone)}")
     r.ok(f"{len(m.zones)} zones, {len(m.equipements)} équipements, {len(m.nodes)} nœuds, {len(m.fils)} fils")
+
+
+COUPURES = {"coupe-circuit", "fusible", "disjoncteur", "interrupteur"}
+
+
+def controler_contournements(m: Modele, r: Rapport) -> None:
+    """Un coupe-circuit, fusible, disjoncteur ou interrupteur à deux bornes ne doit pas être
+    contourné : si ses deux bornes sont reliées par des fils seuls, il ne coupe plus rien."""
+    parent = {n: n for n in m.nodes}
+
+    def racine(n):
+        while parent[n] != n:
+            parent[n] = parent[parent[n]]
+            n = parent[n]
+        return n
+
+    liaisons = [(f["de"], f["vers"]) for f in m.fils.values()]
+    liaisons += [(n["id"], n["monte_sur"]) for n in m.nodes.values() if "monte_sur" in n]
+    for a, b in liaisons:
+        if a in parent and b in parent:
+            parent[racine(a)] = racine(b)
+
+    bornes = {}
+    for n in m.nodes.values():
+        bornes.setdefault(n["equipement"], []).append(n["id"])
+    for eq, ns in sorted(bornes.items()):
+        e = m.equipements.get(eq)
+        if e and e["type"] in COUPURES and len(ns) == 2 and racine(ns[0]) == racine(ns[1]):
+            r.erreur(m.nom, f"{eq} est contourné : ses bornes {ns[0]} et {ns[1]} sont reliées par des fils, "
+                            f"il ne coupe plus rien")
 
 
 def controler_svg(svgs: list[Path], fils_attendus: set[str], fils_existants: set[str],
