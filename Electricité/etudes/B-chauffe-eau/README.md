@@ -2,7 +2,7 @@
 
 **Objectif** : de l'eau chaude à bord, avec un ballon de 10 à 15 L.
 
-**Base** : le relevé. L'étude A (sécurisation) doit être décidée avant le câblage définitif. Le réseau 230 V n'est relevé qu'en partie ([folio 3](../../schemas/folio-3-230v.svg)) : seul le circuit du chargeur est connu (Q26).
+**Base** : le relevé. L'étude A (sécurisation) doit être décidée avant le câblage définitif. Le réseau 230 V est relevé ([folio 3](../../schemas/folio-3-230v.svg)) : boîtier d'arrivée avec différentiel 30 mA, 10 A pour le chargeur, 16 A pour le reste ; à tribord, un départ 16 A alimente les prises de la cuisine et du frigo. Un ballon pourrait se brancher sur ce départ, ou mieux sur un disjoncteur dédié dans le boîtier d'arrivée.
 
 ## Questions préalables
 
@@ -42,4 +42,4 @@ Conséquences :
 
 ## Décision
 
-En attente des réponses à Q13 et Q19, et du reste du relevé 230 V (Q26).
+En attente des réponses à Q13 et Q19.
