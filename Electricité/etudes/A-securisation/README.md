@@ -10,7 +10,9 @@
 |---|---|---|---|
 | [H1](H1-distribution-servitude/proposition.md) | Barrette + de servitude avec fusibles, tableau de la table à carte refait (12 circuits), tableau Scheiber protégé, pompe de cale rendue automatique | A1, A6 | Rédigée, à valider · mise à jour avec les réponses du 27/09 |
 | H2 | Fusibles en sortie de batterie (MRBF sur les bornes) et fusibles sur les fils du coupleur et du chargeur | A2, A4 | À écrire |
-| H3 | Cosses serties sur la batterie moteur, câble du guindeau entre relais et moteur selon la notice Lewmar | A3, A5 | À écrire |
+| H3 | Cosses serties sur les câbles de la batterie moteur | A3 | À écrire |
+
+A5 (section du guindeau) a été levée le 27/09 : elle n'est plus à traiter.
 
 H2 et H3 complètent H1 plutôt qu'elles ne la concurrencent. La décision finale sera probablement « H1 + H2 + H3 », avec `base: A-H1` pour H2, puis `base: A-H2` pour H3.
 

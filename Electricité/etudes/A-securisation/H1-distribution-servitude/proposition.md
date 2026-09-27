@@ -12,7 +12,7 @@ Statut : **proposition**. Les longueurs sont estimées pour un Gib'Sea 31. Elles
 - **A1** (tableau de la table à carte alimenté sans protection) : **traitée**. Barrette + et fusible de 50 A à la source.
 - **A6** (tableau Scheiber alimenté sans protection) : **traitée**. Fusible de 30 A sur la barrette ; wire022 et wire023 sont remplacés par wire104 et wire105, dimensionnés pour ce fusible.
 - **Pompe de cale** : elle est aujourd'hui manuelle, sans flotteur (Q4). Elle devient automatique, et sa masse est ramenée côté batteries : une pompe branchée sur node006 serait coupée quand on ferme le bateau.
-- **Ne traite pas** A2 (fusibles de batterie), A3 (cosses), A4 (fusibles du coupleur et du chargeur) ni A5 (section du guindeau). Ces points relèvent d'autres hypothèses de l'étude A.
+- **Ne traite pas** A2 (fusibles de batterie), A3 (cosses) ni A4 (fusibles du coupleur et du chargeur). Ces points relèvent d'autres hypothèses de l'étude A.
 
 ## 2. Hypothèses de calcul
 
