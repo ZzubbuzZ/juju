@@ -8,7 +8,7 @@
 
 | | Contenu | Anomalies traitées | État |
 |---|---|---|---|
-| [H1](H1-distribution-servitude/proposition.md) | Barrette + de servitude avec fusibles, tableau de la table à carte refait (12 circuits), tableau Scheiber, pompe de cale automatique | A1 | Rédigée, à valider |
+| [H1](H1-distribution-servitude/proposition.md) | Barrette + de servitude avec fusibles, tableau de la table à carte refait (12 circuits), tableau Scheiber protégé, pompe de cale rendue automatique | A1, A6 | Rédigée, à valider · mise à jour avec les réponses du 27/09 |
 | H2 | Fusibles en sortie de batterie (MRBF sur les bornes) et fusibles sur les fils du coupleur et du chargeur | A2, A4 | À écrire |
 | H3 | Cosses serties sur la batterie moteur, câble du guindeau entre relais et moteur selon la notice Lewmar | A3, A5 | À écrire |
 

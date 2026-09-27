@@ -7,14 +7,14 @@ titre: Distribution de servitude
 base: releve
 
 supprime:
-  fils: [wire016, wire017, wire019]
+  fils: [wire016, wire017, wire019, wire022, wire023]
 
 equipements:
   - { id: barrette-servitude, type: barrette, designation: "Barrette + de servitude", emplacement: "Près des coupe-circuits", statut: propose }
   - { id: fus-tableau-servitude, type: fusible, designation: "Fusible du tableau de la table à carte", calibre_A: 50, statut: propose }
   - { id: fus-tableau-scheiber, type: fusible, designation: "Fusible du tableau Scheiber 2 voies", calibre_A: 30, statut: propose }
   - { id: fus-pompe-cale, type: fusible, designation: "Fusible de la pompe de cale automatique", calibre_A: 10, emplacement: "À moins de 18 cm de la borne de node009", statut: propose }
-  - { id: flotteur, type: interrupteur, designation: "Flotteur de la pompe de cale", statut: propose, questions: [Q4] }
+  - { id: flotteur, type: interrupteur, designation: "Flotteur de la pompe de cale", statut: propose }
   - { id: connecteur-mat, type: connecteur, designation: "Connecteur de pont au pied de mât, 6 broches", statut: propose }
   - { id: bornier-eclairage, type: bornier, designation: "Bornier de départ de l'éclairage", statut: propose, questions: [Q9] }
   - { id: bornier-instruments, type: bornier, designation: "Bornier des instruments, un fusible par appareil", statut: propose, questions: [Q11] }
@@ -29,15 +29,9 @@ nodes:
   - { id: node065, equipement: fus-pompe-cale, borne: "1", polarite: "+" }
   - { id: node066, equipement: fus-pompe-cale, borne: "2", polarite: "+" }
 
-  # --- Tableau Scheiber 2 voies et pompe de cale ---------------------------------
-  - { id: node050, equipement: tableau-scheiber, borne: "+ alimentation", polarite: "+" }
-  - { id: node051, equipement: tableau-scheiber, borne: "- masse", polarite: "-" }
-  - { id: node052, equipement: tableau-scheiber, borne: "sortie frigo (15 A)", polarite: "+" }
-  - { id: node053, equipement: tableau-scheiber, borne: "sortie pompe de cale, marche forcée (10 A)", polarite: "+" }
+  # --- Flotteur (le tableau Scheiber et la pompe sont dans le relevé) -----------
   - { id: node054, equipement: flotteur, borne: "entrée", polarite: "+" }
   - { id: node055, equipement: flotteur, borne: "sortie", polarite: "+" }
-  - { id: node056, equipement: pompe-cale, borne: "+", polarite: "+" }
-  - { id: node057, equipement: pompe-cale, borne: "-", polarite: "-" }
 
   # --- Récepteurs du tableau de servitude ----------------------------------------
   - { id: node120, equipement: feu-bicolore, borne: "+", polarite: "+" }
@@ -81,21 +75,14 @@ fils:
   - { id: wire101, de: node060, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 0.3, statut: propose }
   - { id: wire102, de: node062, vers: node100, section_mm2: 10, couleur: rouge, longueur_m: 3, remplace: wire019, statut: propose }
   - { id: wire103, de: node006, vers: node101, section_mm2: 10, couleur: noir, longueur_m: 3, remplace: wire016, statut: propose }
-  - { id: wire104, de: node064, vers: node050, section_mm2: 6, couleur: rouge, longueur_m: 2, statut: propose }
-  - { id: wire105, de: node006, vers: node051, section_mm2: 6, couleur: noir, longueur_m: 2, statut: propose }
+  - { id: wire104, de: node064, vers: node050, section_mm2: 6, couleur: rouge, longueur_m: 2, remplace: wire022, statut: propose }
+  - { id: wire105, de: node006, vers: node051, section_mm2: 6, couleur: noir, longueur_m: 2, remplace: wire023, statut: propose }
 
   # --- Pompe de cale ---------------------------------------------------------------
   - { id: wire106, de: node009, vers: node065, section_mm2: 2.5, couleur: rouge, longueur_m: 0.15, statut: propose }
   - { id: wire107, de: node066, vers: node054, section_mm2: 2.5, couleur: rouge, longueur_m: 3, statut: propose }
   - { id: wire108, de: node055, vers: node056, section_mm2: 2.5, couleur: rouge, longueur_m: 0.5, statut: propose }
-  - { id: wire109, de: node053, vers: node056, section_mm2: 2.5, couleur: rouge, longueur_m: 2, statut: propose }
   - { id: wire110, de: node057, vers: node005, section_mm2: 2.5, couleur: noir, longueur_m: 3, statut: propose, note: "Masse côté batteries : la pompe reste active coupe-circuits ouverts" }
-
-  # --- Frigo -------------------------------------------------------------------------
-  - { id: wire111, de: node052, vers: node042, section_mm2: 6, couleur: rouge, longueur_m: 1.5, statut: propose }
-  - { id: wire112, de: node051, vers: node043, section_mm2: 6, couleur: noir, longueur_m: 1.5, statut: propose }
-  - { id: wire113, de: node044, vers: node040, section_mm2: 6, couleur: rouge, longueur_m: 1, statut: propose, questions: [Q16] }
-  - { id: wire114, de: node045, vers: node041, section_mm2: 6, couleur: noir, longueur_m: 1, statut: propose, questions: [Q16] }
 
   # --- Feux (feu route, feu moteur, mouillage, projecteur) ---------------------------
   - { id: wire120, de: node102, vers: node120, section_mm2: 2.5, couleur: rouge, longueur_m: 8, statut: propose }
