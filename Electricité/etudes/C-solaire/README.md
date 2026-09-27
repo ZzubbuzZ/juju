@@ -6,9 +6,13 @@
 
 ## Constat de départ
 
-Le bilan estimé donne environ **65 Ah par jour au mouillage** et 92 Ah par jour en navigation (moteur non compté). Or une batterie de servitude de 110 Ah au plomb ne fournit qu'environ 55 Ah sans être abîmée (décharge à 50 %). Elle ne tient donc même pas une journée au mouillage. Trois leviers sont à combiner :
+Le bilan estimé donne environ **65 Ah par jour au mouillage** et 92 Ah par jour en navigation (moteur non compté). Or une batterie de servitude de 110 Ah au plomb ne fournit qu'environ 55 Ah sans être abîmée (décharge à 50 %). Elle ne tient donc même pas une journée au mouillage.
 
-1. **Mesurer** plutôt qu'estimer : un shunt sur la batterie de servitude. Il est prévu dans les critères de l'étude A.
+Le moteur n'y suffit pas non plus : l'alternateur donne environ **20 A au plus** (Q14), et moins en pratique une fois la batterie à moitié chargée. Récupérer 50 Ah demande donc plusieurs heures de moteur. Le solaire est le seul moyen réaliste de tenir au mouillage.
+
+Trois leviers sont à combiner :
+
+1. **Mesurer** plutôt qu'estimer : un shunt sur la batterie de servitude (étude D).
 2. **Produire** : c'est l'objet de cette étude.
 3. **Stocker** davantage : LiFePO4, plus de capacité utile. Ce serait une étude à part entière, qui ferait évoluer le coupleur et le chargeur.
 
