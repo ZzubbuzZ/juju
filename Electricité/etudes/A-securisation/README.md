@@ -11,7 +11,7 @@
 | [H1](H1-distribution-servitude/proposition.md) | Barrette + de servitude avec fusibles, tableau de la table à carte refait (12 circuits), tableau Scheiber protégé, pompe de cale rendue automatique | A1, A6 | Rédigée, à valider · mise à jour avec les réponses du 27/09 |
 | H2 | Fusibles en sortie de batterie (MRBF sur les bornes) et fusibles sur les fils du coupleur et du chargeur | A2, A4 | À écrire |
 | H3 | Cosses serties : câbles de la batterie moteur, liaison EPS 100 → groupe froid (cosses à fourche SV 2-4) | A3, A7 | À écrire |
-| H4 | Terre 230 V : terre sur tous les appareils de classe I, liaison terre / masse 12 V, isolateur galvanique, disjoncteurs bipolaires | à définir après Q31 | À écrire |
+| H4 | Terre 230 V : liaison terre / masse 12 V en un point, avec isolateur galvanique à l'arrivée ; terre du plafonnier s'il est de classe I ; disjoncteurs bipolaires si besoin | A8 (et Q31 pour le reste) | À écrire |
 
 A5 (section du guindeau) a été levée le 27/09 : elle n'est plus à traiter.
 
@@ -28,7 +28,7 @@ La coque isolante ne change rien au principe : à bord, **la protection contre l
 3. **Liaison entre la terre 230 V et la masse 12 V**. Les normes nautiques la demandent en un point unique : si un défaut met du 230 V sur une partie métallique du circuit 12 V (carcasse du chargeur, bloc moteur), le courant de défaut trouve un chemin vers la terre du quai et le différentiel déclenche.
 4. **Isolateur galvanique**. Cette même liaison relie les masses métalliques immergées (hélice, arbre, anodes) à celles des autres bateaux du ponton, par la terre du quai : c'est une source de corrosion galvanique. Un isolateur galvanique (ou un transformateur d'isolement) sur le conducteur de terre, à l'arrivée, bloque ces faibles courants tout en laissant passer un courant de défaut.
 
-La réponse à Q31 dira ce qui existe déjà. L'hypothèse H4 en découlera.
+Relevé du 28/09 : la terre et la masse 12 V ne sont reliées nulle part, et il n'y a pas d'isolateur galvanique (A8). H4 portera donc au minimum sur la liaison et l'isolateur. Restent à relever : la coupure bipolaire des disjoncteurs et la classe du plafonnier (Q31).
 
 ## Critères de comparaison
 
