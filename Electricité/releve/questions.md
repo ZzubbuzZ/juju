@@ -31,6 +31,13 @@ Format d'une ligne (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q13** Le moteur est-il un 3GM30 (refroidi à l'eau de mer) ou un 3GM30F (circuit d'eau douce avec échangeur) ? Décisif pour le chauffe-eau (étude B).
 - **Q14** Alternateur : ampérage, borne de sortie (B+), présence d'une borne W pour un compte-tours.
 
+### Pour les études B (chauffe-eau) et C (solaire)
+
+- **Q17** Port d'attache et zone de navigation habituelle (pour estimer l'ensoleillement).
+- **Q18** Bimini, capote, portique : lesquels existent ? Quelles surfaces libres sur le pont et le rouf, et quelles zones sont ombragées par la bôme ?
+- **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
+- **Q20** Prise de quai : calibre du disjoncteur de quai (10 ou 16 A) et puissance habituellement disponible au port.
+
 ## Réponses
 
 _Aucune pour l'instant._

@@ -4,7 +4,7 @@
 
 | Axe | Branche | État |
 |---|---|---|
-| Relevé de l'existant | `main` | 21 fils relevés, 16 questions ouvertes ([questions.md](releve/questions.md)), 5 anomalies ([anomalies.md](releve/anomalies.md)) |
+| Relevé de l'existant | `main` | 21 fils relevés, 20 questions ouvertes ([questions.md](releve/questions.md)), 5 anomalies ([anomalies.md](releve/anomalies.md)) |
 | A · Sécurisation de l'existant | `etude/securisation` | H1 (distribution de servitude) rédigée, à valider |
 | B · Chauffe-eau | `etude/chauffe-eau` | Cadrage |
 | C · Panneaux solaires | `etude/solaire` | Cadrage |
