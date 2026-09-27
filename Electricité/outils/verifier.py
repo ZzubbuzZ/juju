@@ -31,7 +31,8 @@ except ImportError:
 
 RACINE = Path(__file__).resolve().parent.parent  # dossier Electricité/
 RELEVE = RACINE / "releve"
-FICHIERS_RELEVE = ["equipements.yaml", "netlist.yaml", "wirelist.yaml"]
+FICHIERS_RELEVE = ["amenagement.yaml", "equipements.yaml", "netlist.yaml", "wirelist.yaml"]
+CATEGORIES = ("zones", "equipements", "nodes", "fils")
 POLARITES_12V = {"+", "-"}
 POLARITES_230V = {"230V-phase", "230V-neutre", "230V-terre"}
 
@@ -135,12 +136,13 @@ def ids_svg(chemins: list[Path]) -> tuple[set[str], set[str], set[str]]:
 @dataclass
 class Modele:
     nom: str
+    zones: dict = field(default_factory=dict)
     equipements: dict = field(default_factory=dict)
     nodes: dict = field(default_factory=dict)
     fils: dict = field(default_factory=dict)
 
     def ajouter(self, data: dict, source: str, r: Rapport) -> None:
-        for cle in ("equipements", "nodes", "fils"):
+        for cle in CATEGORIES:
             cible = getattr(self, cle)
             for elem in data.get(cle, []):
                 if elem["id"] in cible:
@@ -149,9 +151,9 @@ class Modele:
 
 
 def appliquer_delta(base: Modele, delta: dict, nom: str, source: str, r: Rapport) -> Modele:
-    m = Modele(nom, copy.deepcopy(base.equipements), copy.deepcopy(base.nodes), copy.deepcopy(base.fils))
+    m = Modele(nom, *(copy.deepcopy(getattr(base, c)) for c in CATEGORIES))
     supprime = delta.get("supprime", {})
-    for cle in ("equipements", "nodes", "fils"):
+    for cle in CATEGORIES:
         cible = getattr(m, cle)
         for ident in supprime.get(cle, []):
             if ident not in cible:
@@ -170,6 +172,9 @@ def appliquer_delta(base: Modele, delta: dict, nom: str, source: str, r: Rapport
 
 def controler(m: Modele, questions: set[str], r: Rapport) -> None:
     ou = m.nom
+    for e in m.equipements.values():
+        if "zone" in e and e["zone"] not in m.zones:
+            r.erreur(ou, f"{e['id']} : zone inconnue « {e['zone']} » (voir releve/amenagement.yaml)")
     for n in m.nodes.values():
         if n["equipement"] not in m.equipements:
             r.erreur(ou, f"{n['id']} : équipement inconnu « {n['equipement']} »")
@@ -201,7 +206,7 @@ def controler(m: Modele, questions: set[str], r: Rapport) -> None:
             if pols == {"-"} and f["couleur"] not in ("noir", "jaune"):
                 r.avert(ou, f"{f['id']} : fil négatif de couleur {f['couleur']} (noir ou jaune attendu)")
 
-    for cle in ("equipements", "nodes", "fils"):
+    for cle in CATEGORIES:
         for elem in getattr(m, cle).values():
             for q in elem.get("questions", []):
                 if q not in questions:
@@ -216,7 +221,10 @@ def controler(m: Modele, questions: set[str], r: Rapport) -> None:
     sans_node = sorted(set(m.equipements) - {n["equipement"] for n in m.nodes.values()})
     if sans_node:
         r.info(f"{len(sans_node)} équipement(s) sans nœud : {', '.join(sans_node)}")
-    r.ok(f"{len(m.equipements)} équipements, {len(m.nodes)} nœuds, {len(m.fils)} fils")
+    sans_zone = sorted(e["id"] for e in m.equipements.values() if "zone" not in e)
+    if sans_zone:
+        r.info(f"{len(sans_zone)} équipement(s) sans zone (non placés sur le plan) : {', '.join(sans_zone)}")
+    r.ok(f"{len(m.zones)} zones, {len(m.equipements)} équipements, {len(m.nodes)} nœuds, {len(m.fils)} fils")
 
 
 def controler_svg(svgs: list[Path], fils_attendus: set[str], fils_existants: set[str],

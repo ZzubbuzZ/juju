@@ -91,6 +91,7 @@ Scheiber 38.14700.00
 ### Chargeur de quai
 
 Dolphin 12v 20A
+Alimenté en 230 V (phase, neutre, terre : node200 à node202). Origine de cette alimentation à relever (Q23).
 
 ### Coupes circuits 12v
 
@@ -106,6 +107,21 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 - Une PE pour alimentation groupe froid Dometic EPS 100
 - 4 autres PE
 - 6 points lumineux (LED)
+
+## Implantation
+
+Les zones de l'aménagement sont décrites dans [amenagement.yaml](amenagement.yaml), et la position de chaque équipement dans [equipements.yaml](equipements.yaml) (champs `zone` et `emplacement`).
+
+- **Batterie moteur** : coffre de cockpit tribord, contre la paroi du cabinet de toilette.
+- **Chargeur de quai** : au-dessus de la batterie moteur.
+- **Batterie de servitude** : cabine de poupe bâbord, dans un coffre, au sol, contre le coffre moteur.
+- **Coupe-circuits** : sur une contremarche de l'escalier de descente. Le coupleur est derrière. On accède au coupleur et à la connectique des coupe-circuits par une ouverture qui donne sur la cabine de poupe.
+- **Tableau Scheiber 2 voies** : sur une contremarche de la descente, près de l'appareillage moteur.
+- **Moteur** : derrière l'escalier de descente, dans l'axe, entre le cabinet de toilette et la cabine de poupe.
+- **Disjoncteur du guindeau** : cabine de proue, sous l'ouverture d'accès aux coupe-circuits (zone à confirmer, Q21).
+- **Relais du guindeau** : dans un boîtier de type boîte de dérivation près du guindeau, accessible depuis la cabine de proue.
+- **Guindeau** : à la proue, posé sur le pont au-dessus du puits de chaîne.
+- **Groupe froid et EPS 100** : cuisine, entre le puits de dérive et la glacière, dans la partie droite du meuble bas sous l'évier.
 
 ## Câblage
 

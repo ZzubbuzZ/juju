@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../outils/schema/donnees.schema.json
+#
+# Zones de l'aménagement du Gib'Sea 31, de l'arrière vers l'avant.
+# Elles servent à placer les équipements sur le plan d'implantation.
+# Les positions sur le plan seront ajoutées quand le plan d'aménagement sera disponible (Q24).
+
+zones:
+  - id: cockpit-coffre-tribord
+    designation: Coffre de cockpit tribord
+    bord: tribord
+
+  - id: cabinet-toilette
+    designation: Cabinet de toilette
+    bord: tribord
+    statut: estime
+    note: Côté déduit du coffre de cockpit tribord, dont une paroi donne sur le cabinet de toilette.
+
+  - id: cabine-poupe
+    designation: Cabine de poupe
+    bord: babord
+
+  - id: compartiment-moteur
+    designation: Compartiment moteur
+    bord: axe
+    note: Derrière l'escalier de descente, entre le cabinet de toilette et la cabine de poupe.
+
+  - id: descente
+    designation: Descente (escalier d'accès au carré)
+    bord: axe
+
+  - id: cuisine
+    designation: Cuisine
+    questions: [Q22]
+    note: Meuble bas sous l'évier, entre le puits de dérive et la glacière.
+
+  - id: table-a-carte
+    designation: Table à carte
+    questions: [Q22]
+
+  - id: cabine-proue
+    designation: Cabine de proue
+    bord: axe
+
+  - id: pont-avant
+    designation: Pont avant, au-dessus du puits de chaîne
+    bord: axe

@@ -16,6 +16,7 @@
       "type": "string",
       "pattern": "^(releve|[A-Z]-H[0-9]+)$"
     },
+    "zones": { "type": "array", "items": { "$ref": "#/definitions/zone" } },
     "equipements": { "type": "array", "items": { "$ref": "#/definitions/equipement" } },
     "nodes": { "type": "array", "items": { "$ref": "#/definitions/node" } },
     "fils": { "type": "array", "items": { "$ref": "#/definitions/fil" } },
@@ -24,6 +25,7 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "zones": { "type": "array", "items": { "$ref": "#/definitions/idZone" }, "uniqueItems": true },
         "equipements": { "type": "array", "items": { "$ref": "#/definitions/idEquipement" }, "uniqueItems": true },
         "nodes": { "type": "array", "items": { "$ref": "#/definitions/idNode" }, "uniqueItems": true },
         "fils": { "type": "array", "items": { "$ref": "#/definitions/idFil" }, "uniqueItems": true }
@@ -32,6 +34,21 @@
   },
   "definitions": {
     "idEquipement": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "idZone": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "zone": {
+      "description": "Zone de l'aménagement du bateau, servant à positionner les équipements sur le plan.",
+      "type": "object",
+      "required": ["id", "designation"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/idZone" },
+        "designation": { "type": "string", "minLength": 1 },
+        "bord": { "enum": ["babord", "tribord", "axe"] },
+        "statut": { "$ref": "#/definitions/statut" },
+        "questions": { "type": "array", "items": { "$ref": "#/definitions/idQuestion" }, "uniqueItems": true },
+        "note": { "type": "string" }
+      }
+    },
     "idNode": { "type": "string", "pattern": "^node[0-9]{3}$" },
     "idFil": { "type": "string", "pattern": "^wire[0-9]{3}$" },
     "idQuestion": { "type": "string", "pattern": "^Q[0-9]+$" },
@@ -52,7 +69,8 @@
         },
         "designation": { "type": "string", "minLength": 1 },
         "modele": { "type": "string" },
-        "emplacement": { "type": "string" },
+        "zone": { "$ref": "#/definitions/idZone" },
+        "emplacement": { "description": "Position précise dans la zone.", "type": "string" },
         "capacite_Ah": { "type": "number", "exclusiveMinimum": 0 },
         "technologie": { "enum": ["plomb", "agm", "gel", "lifepo4"] },
         "puissance_W": { "type": "number", "minimum": 0 },

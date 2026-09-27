@@ -10,6 +10,8 @@ equipements:
     type: batterie
     designation: Batterie moteur
     modele: Varta 110 Ah plomb sans entretien
+    zone: cockpit-coffre-tribord
+    emplacement: Contre la paroi du cabinet de toilette
     capacite_Ah: 110
     technologie: plomb
     note: Câbles sans cosses serties, abîmés par le connecteur actuel (anomalie A3).
@@ -18,64 +20,80 @@ equipements:
     type: batterie
     designation: Batterie de servitude
     modele: 110 Ah plomb sans entretien
+    zone: cabine-poupe
+    emplacement: Dans un coffre, au sol, contre le coffre moteur
     capacite_Ah: 110
     technologie: plomb
 
   - id: cc-moteur
     type: coupe-circuit
     designation: Coupe-circuit + moteur
-    emplacement: Platine des coupe-circuits, en haut à droite
+    zone: descente
+    emplacement: Platine sur une contremarche, en haut à droite. Connectique accessible par une ouverture côté cabine de poupe
 
   - id: cc-servitude
     type: coupe-circuit
     designation: Coupe-circuit + servitude
-    emplacement: Platine des coupe-circuits, en bas à droite
+    zone: descente
+    emplacement: Platine sur une contremarche, en bas à droite. Connectique accessible par une ouverture côté cabine de poupe
 
   - id: cc-masse
     type: coupe-circuit
     designation: Coupe-circuit des négatifs (commun aux deux batteries)
-    emplacement: Platine des coupe-circuits, en haut à gauche
+    zone: descente
+    emplacement: Platine sur une contremarche, en haut à gauche. Connectique accessible par une ouverture côté cabine de poupe
 
   - id: cc-couplage
     type: coupe-circuit
     designation: Coupe-circuit de couplage (servitude vers démarreur/alternateur)
-    emplacement: Platine des coupe-circuits, en bas à gauche
+    zone: descente
+    emplacement: Platine sur une contremarche, en bas à gauche. Connectique accessible par une ouverture côté cabine de poupe
 
   # --- Charge ------------------------------------------------------------------
   - id: coupleur
     type: coupleur
     designation: Coupleur de charge à relais
     modele: Scheiber 38.14700.00
+    zone: descente
+    emplacement: Derrière la platine des coupe-circuits, accessible par l'ouverture côté cabine de poupe
     note: Prévu pour plomb uniquement. Sa masse est prise côté charges du coupe-circuit des négatifs.
 
   - id: chargeur-quai
     type: chargeur
     designation: Chargeur de quai
     modele: Dolphin 12 V 20 A, 3 sorties plomb
+    zone: cockpit-coffre-tribord
+    emplacement: Au-dessus de la batterie moteur
     note: Sortie 3 libre. Branché en direct sur les batteries, sans passer par les coupe-circuits.
+    questions: [Q23]
 
   - id: moteur
     type: moteur
     designation: Moteur Yanmar (démarreur + alternateur)
     modele: Yanmar 3GM30
+    zone: compartiment-moteur
     questions: [Q1, Q13, Q14]
 
   # --- Guindeau ----------------------------------------------------------------
   - id: disj-guindeau
     type: disjoncteur
     designation: Disjoncteur thermique du guindeau
-    emplacement: Près des coupe-circuits
-    questions: [Q15]
+    zone: cabine-proue
+    emplacement: Sous l'ouverture d'accès aux coupe-circuits (zone à confirmer)
+    questions: [Q15, Q21]
 
   - id: relais-guindeau
     type: relais
     designation: Boîtier relais du guindeau
-    emplacement: Près du guindeau
+    zone: cabine-proue
+    emplacement: Boîtier de type boîte de dérivation près du guindeau, accessible depuis la cabine de proue
 
   - id: guindeau
     type: recepteur
     designation: Guindeau
     modele: Lewmar Pro-Series 1000
+    zone: pont-avant
+    emplacement: Posé sur le pont, au-dessus du puits de chaîne
     puissance_W: 700
     courant_max_A: 80
     statut: estime
@@ -90,13 +108,14 @@ equipements:
   - id: tableau-servitude
     type: tableau
     designation: Tableau de servitude (table à carte)
-    emplacement: Table à carte
+    zone: table-a-carte
     note: 12 interrupteurs et 12 fusibles. Câblage arrière en « plat de spaghettis ».
 
   - id: tableau-scheiber
     type: tableau
     designation: Tableau Scheiber 2 voies (frigo 15 A, pompe de cale 10 A)
-    emplacement: Contremarche de la descente, près de l'appareillage moteur
+    zone: descente
+    emplacement: Contremarche, près de l'appareillage moteur
     questions: [Q3]
 
   # --- Récepteurs --------------------------------------------------------------
@@ -104,6 +123,8 @@ equipements:
     type: recepteur
     designation: Groupe froid
     modele: WAECO ColdMachine CU-55 12/24 V
+    zone: cuisine
+    emplacement: Meuble bas sous l'évier, partie droite
     puissance_W: 40
     courant_A: 3.5
     courant_max_A: 5
@@ -113,6 +134,8 @@ equipements:
     type: convertisseur
     designation: Alimentation 12 V / 230 V du frigo
     modele: Dometic EPS 100
+    zone: cuisine
+    emplacement: Meuble bas sous l'évier, partie droite, à côté du groupe froid
     questions: [Q6]
 
   - id: pompe-cale

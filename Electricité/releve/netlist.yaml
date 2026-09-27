@@ -2,7 +2,8 @@
 #
 # Nœuds du circuit : une borne d'un équipement = un nœud.
 # Plages de numéros : 001-019 batteries et charge, 020-039 guindeau et moteur,
-# 040-049 frigo, 050-099 réservé aux propositions, 100-199 tableau de servitude.
+# 040-049 frigo, 050-099 réservé aux propositions, 100-199 tableau de servitude,
+# 200-299 réseau 230 V (sauf node046-048 de l'EPS 100, numérotés avant la création de cette plage).
 
 nodes:
   # --- Batterie moteur et coupe-circuit moteur ---------------------------------
@@ -74,3 +75,8 @@ nodes:
   - { id: node111, equipement: tableau-servitude, borne: "pilote (10 A)", polarite: "+" }
   - { id: node112, equipement: tableau-servitude, borne: "VHF (10 A)", polarite: "+" }
   - { id: node113, equipement: tableau-servitude, borne: "GPS loch (10 A)", polarite: "+" }
+
+  # --- Réseau 230 V --------------------------------------------------------------
+  - { id: node200, equipement: chargeur-quai, borne: "230 V phase", polarite: 230V-phase, questions: [Q23] }
+  - { id: node201, equipement: chargeur-quai, borne: "230 V neutre", polarite: 230V-neutre, questions: [Q23] }
+  - { id: node202, equipement: chargeur-quai, borne: "230 V terre", polarite: 230V-terre, questions: [Q23] }

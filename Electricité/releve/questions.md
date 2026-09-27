@@ -38,6 +38,13 @@ Format d'une ligne (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
 - **Q20** Prise de quai : calibre du disjoncteur de quai (10 ou 16 A) et puissance habituellement disponible au port.
 
+### Implantation
+
+- **Q21** Disjoncteur du guindeau : cabine de proue ou cabine de poupe ? Il est décrit « sous l'ouverture d'accès aux coupe-circuits », ouverture qui donne sur la cabine de poupe, et wire017 ne mesure que 0,5 m depuis les coupe-circuits.
+- **Q22** De quel bord sont la cuisine et la table à carte ?
+- **Q23** Chargeur de quai : d'où vient son 230 V (quel boîtier, quel disjoncteur, quelle section) ?
+- **Q24** Plan d'aménagement du Gib'Sea 31 (brochure, notice, photo du plan) à déposer dans `releve/photos/`, pour le plan d'implantation.
+
 ## Réponses
 
 _Aucune pour l'instant._

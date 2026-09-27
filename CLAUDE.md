@@ -6,7 +6,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GM30. Ce dépôt suit sa 
 
 | Dossier | Contenu | Règle |
 |---|---|---|
-| `releve/` | L'existant : état des lieux, `equipements.yaml`, `netlist.yaml`, `wirelist.yaml`, `anomalies.md`, `questions.md`, `photos/` | **Uniquement des faits constatés à bord.** Une valeur supposée porte `statut: estime`. Ne modifier ce dossier que sur une information donnée par l'utilisateur, et le signaler. |
+| `releve/` | L'existant : état des lieux, `amenagement.yaml` (zones du bateau), `equipements.yaml`, `netlist.yaml`, `wirelist.yaml`, `anomalies.md`, `questions.md`, `photos/` | **Uniquement des faits constatés à bord.** Une valeur supposée porte `statut: estime`. Ne modifier ce dossier que sur une information donnée par l'utilisateur, et le signaler. |
 | `schemas/` | Folios SVG de l'existant | Doivent refléter `releve/` exactement. |
 | `etudes/<X-axe>/H<n>-<nom>/` | Une hypothèse : `proposition.md`, `cablage.yaml` (delta), folios SVG | Le `cablage.yaml` décrit uniquement les différences avec sa `base` (le relevé ou une autre hypothèse). |
 | `commun/` | `bilan-energetique.yaml`, partagé par les études | |
@@ -16,7 +16,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GM30. Ce dépôt suit sa 
 
 - **Lancer `python Electricité/outils/verifier.py` après toute modification de données ou de SVG.** Zéro erreur exigé ; le hook `pre-commit` bloque sinon. Les avertissements sont à lire, pas forcément à corriger.
 - **Ne jamais renuméroter un identifiant existant** : les fils seront étiquetés à bord avec leur numéro. Un fil modifié garde son id ; un fil remplacé est supprimé (`supprime.fils`) et le nouveau porte `remplace:`.
-- **Plages de numéros.** Nœuds : 001-019 batteries et charge, 020-039 guindeau et moteur, 040-049 frigo, 050-099 propositions, 100-199 tableau de servitude. Fils : wire001-099 relevé, wire100 et suivants propositions.
+- **Plages de numéros.** Nœuds : 001-019 batteries et charge, 020-039 guindeau et moteur, 040-049 frigo, 050-099 propositions, 100-199 tableau de servitude, 200-299 réseau 230 V (exception historique : node046-048 de l'EPS 100). Fils : wire001-099 relevé, wire100 et suivants propositions.
 - **Ne pas supposer, demander.** Une information manquante devient une question `Qn` dans `releve/questions.md` et une pastille bleue sur le schéma concerné.
 - **Calcul des sections** : S = 2 × L × I × 0,0175 / ΔU. ΔU = 3 % pour les feux, l'électronique, le pilote, la pompe de cale et le frigo ; 10 % pour le confort. Sections normalisées uniquement. Le fusible protège le câble et se place à sa source.
 - **Couleurs** : + rouge, − noir.

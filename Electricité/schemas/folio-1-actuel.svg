@@ -107,6 +107,10 @@
   <text class="ts mid" x="260" y="278">Dolphin 12 V · 20 A</text>
   <text class="ts mid" x="260" y="295">3 sorties · Pb</text>
   <text class="id mid" x="260" y="316">sortie 3 libre</text>
+  <path class="u" d="M205 285 H94"/>
+  <text class="ts mid tu" x="150" y="277">entrée 230 V</text>
+  <text class="id mid" x="150" y="300">node200–202</text>
+  <g class="mk-q"><circle cx="82" cy="285" r="11"/><text class="mid" x="82" y="288.5">Q23</text></g>
   <path class="p w2" d="M280 330 V470"/>
   <circle class="dp" cx="280" cy="470" r="4.5"/>
   <text class="id mid" x="293" y="400" transform="rotate(-90 293 400)">wire008 · 6</text>
