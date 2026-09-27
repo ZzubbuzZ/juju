@@ -51,14 +51,35 @@ def folio(chemin: Path, contexte: str) -> str:
 </section>"""
 
 
-def liste_md(chemin: Path, prefixe: str, classe: str) -> str:
-    if not chemin.exists():
-        return ""
+def inline(texte: str) -> str:
+    texte = html.escape(texte)
+    texte = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", texte)
+    return re.sub(r"`([^`]+)`", r"<code>\1</code>", texte)
+
+
+def liste_md(texte: str, prefixe: str, classe: str) -> str:
+    """Liste « - **Xn** texte » avec ses lignes en retrait : sous-points (« - ») et réponses (« → »)."""
     items = []
-    for ident, texte in re.findall(rf"^- \*\*({prefixe}\d+)\*\* (.*)$", chemin.read_text(encoding="utf-8"), re.M):
-        texte = re.sub(r"`([^`]+)`", r"<code>\1</code>", html.escape(texte))
-        items.append(f'<li><span class="tag {classe}">{ident}</span><span>{texte}</span></li>')
-    return "\n".join(items)
+    for bloc in re.finditer(rf"^- \*\*({prefixe}\d+)\*\* (.*)\n((?:[ \t]+\S.*\n?)*)", texte, re.M):
+        ident, tete, suite = bloc.groups()
+        sous, reponses = [], []
+        for ligne in suite.splitlines():
+            ligne = ligne.strip()
+            if ligne.startswith(("→", "->")):
+                reponses.append(f'<p class="rep">{inline(ligne.lstrip("→->").strip())}</p>')
+            elif ligne.startswith("- "):
+                sous.append(f"<li>{inline(ligne[2:])}</li>")
+        corps = inline(tete) + (f'<ul class="sous">{"".join(sous)}</ul>' if sous else "") + "".join(reponses)
+        items.append(f'<li><span class="tag {classe}">{ident}</span><div>{corps}</div></li>')
+    return "\n".join(items) or '<li class="vide">Aucune.</li>'
+
+
+def scinder(chemin: Path, titre: str) -> tuple[str, str]:
+    """Sépare un fichier Markdown en deux au niveau du titre « ## titre »."""
+    texte = chemin.read_text(encoding="utf-8") + "\n" if chemin.exists() else ""
+    texte = re.sub(r"^```.*?^```", "", texte, flags=re.S | re.M)  # les exemples ne sont pas des entrées
+    avant, _, apres = texte.partition(f"\n## {titre}")
+    return avant, apres
 
 
 def main() -> None:
@@ -67,12 +88,14 @@ def main() -> None:
         folios.append(folio(c, f"Étude {c.parent.parent.name} · hypothèse {c.parent.name}"))
 
     branche, commit = git("rev-parse", "--abbrev-ref", "HEAD"), git("rev-parse", "--short", "HEAD")
-    anomalies = liste_md(RACINE / "releve/anomalies.md", "A", "tag-a")
-    questions = liste_md(RACINE / "releve/questions.md", "Q", "tag-q")
+    actives, levees = scinder(RACINE / "releve/anomalies.md", "Levées")
+    ouvertes, traitees = scinder(RACINE / "releve/questions.md", "Réponses")
 
     page = GABARIT.format(
         branche=html.escape(branche), commit=html.escape(commit), date=date.today().strftime("%d/%m/%Y"),
-        folios="\n".join(folios), anomalies=anomalies, questions=questions)
+        folios="\n".join(folios),
+        anomalies=liste_md(actives, "A", "tag-a"), levees=liste_md(levees, "A", "tag-a"),
+        questions=liste_md(ouvertes, "Q", "tag-q"), reponses=liste_md(traitees, "Q", "tag-q"))
     SORTIE.parent.mkdir(exist_ok=True)
     SORTIE.write_text(page, encoding="utf-8", newline="\n")
     print(f"{len(folios)} folio(s) -> {SORTIE.relative_to(RACINE.parent).as_posix()}")
@@ -131,6 +154,11 @@ figcaption{{font-size:14px;color:var(--muted);max-width:85ch}}
 .notes h3{{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}}
 .notes ol{{list-style:none;padding:0;margin:0;display:grid;gap:9px}}
 .notes li{{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:baseline}}
+.notes li.vide{{display:block;color:var(--muted)}}
+.notes ul.sous{{margin:4px 0 0;padding-left:18px;display:grid;gap:3px}}
+.notes ul.sous li{{display:list-item}}
+.notes .rep{{margin:4px 0 0;padding-left:10px;border-left:2px solid var(--line);color:var(--muted)}}
+.notes.traitees{{padding-top:20px;border-top:1px solid var(--line)}}
 .tag{{font-family:var(--mono);font-size:11px;font-weight:500;text-align:center;border-radius:999px;padding:1px 0;line-height:1.5}}
 .tag-a{{background:var(--warn);color:var(--on-warn)}}
 .tag-q{{border:1.5px solid var(--unk);color:var(--unk)}}
@@ -196,13 +224,21 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
 </header>
 {folios}
 <section class="folio">
-  <div class="folio-head"><span class="folio-no">RELEVÉ</span><h2>Anomalies et questions ouvertes</h2></div>
+  <div class="folio-head"><span class="folio-no">RELEVÉ</span><h2>Anomalies et questions</h2></div>
   <div class="notes">
-    <div><h3>Anomalies</h3><ol>
+    <div><h3>Anomalies en cours</h3><ol>
 {anomalies}
     </ol></div>
     <div><h3>Questions à relever</h3><ol>
 {questions}
+    </ol></div>
+  </div>
+  <div class="notes traitees">
+    <div><h3>Anomalies levées</h3><ol>
+{levees}
+    </ol></div>
+    <div><h3>Réponses reçues</h3><ol>
+{reponses}
     </ol></div>
   </div>
 </section>

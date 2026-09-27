@@ -127,15 +127,20 @@ def valider(data: dict, schema: dict, chemin: Path, r: Rapport) -> bool:
 def lire_ids_md(chemin: Path, prefixe: str) -> set[str]:
     if not chemin.exists():
         return set()
-    return set(re.findall(rf"^- \*\*({prefixe}\d+)\*\*", chemin.read_text(encoding="utf-8"), re.M))
+    return set(re.findall(rf"^- \*\*({prefixe}\d+)\*\*", lire_md(chemin), re.M))
 
 
-def lire_questions_traitees(chemin: Path) -> set[str]:
-    """Questions listées sous le titre « ## Réponses »."""
+def lire_md(chemin: Path) -> str:
+    """Texte Markdown sans ses blocs de code : les exemples ne sont pas des entrées."""
+    return re.sub(r"^```.*?^```", "", chemin.read_text(encoding="utf-8"), flags=re.S | re.M)
+
+
+def lire_ids_section(chemin: Path, prefixe: str, titre: str) -> set[str]:
+    """Identifiants listés sous le titre « ## titre » (questions traitées, anomalies levées)."""
     if not chemin.exists():
         return set()
-    _, _, reponses = chemin.read_text(encoding="utf-8").partition("\n## Réponses")
-    return set(re.findall(r"^- \*\*(Q\d+)\*\*", reponses, re.M))
+    _, _, section = lire_md(chemin).partition(f"\n## {titre}")
+    return set(re.findall(rf"^- \*\*({prefixe}\d+)\*\*", section, re.M))
 
 
 def ids_svg(chemins: list[Path]) -> tuple[set[str], set[str], set[str]]:
@@ -265,7 +270,8 @@ def controler(m: Modele, questions: set[str], traitees: set[str], r: Rapport) ->
 
 
 def controler_svg(svgs: list[Path], fils_attendus: set[str], fils_existants: set[str],
-                  questions: set[str], traitees: set[str], anomalies: set[str], ou: str, r: Rapport) -> None:
+                  questions: set[str], traitees: set[str], anomalies: set[str], levees: set[str],
+                  ou: str, r: Rapport) -> None:
     if not svgs:
         r.avert(ou, "aucun schéma SVG trouvé")
         return
@@ -280,6 +286,8 @@ def controler_svg(svgs: list[Path], fils_attendus: set[str], fils_existants: set
         r.avert(ou, f"pastille {q} sur un schéma alors que la question est traitée")
     for a in sorted(ans - anomalies):
         r.erreur(ou, f"pastille {a} sur un schéma, absente de releve/anomalies.md")
+    for a in sorted(ans & levees):
+        r.avert(ou, f"pastille {a} sur un schéma alors que l'anomalie est levée")
     r.ok(f"{len(svgs)} schéma(s), {len(dessin & fils_existants)} fils dessinés")
 
 
@@ -333,7 +341,8 @@ def main() -> int:
     schema_bilan = json.loads((RACINE / "outils/schema/bilan.schema.json").read_text(encoding="utf-8"))
     questions = lire_ids_md(RELEVE / "questions.md", "Q")
     anomalies = lire_ids_md(RELEVE / "anomalies.md", "A")
-    traitees = lire_questions_traitees(RELEVE / "questions.md")
+    traitees = lire_ids_section(RELEVE / "questions.md", "Q", "Réponses")
+    levees = lire_ids_section(RELEVE / "anomalies.md", "A", "Levées")
 
     # ---- Relevé
     r.section("Relevé (releve/)")
@@ -360,11 +369,11 @@ def main() -> int:
         print(f"\n{r.erreurs} erreur(s), {r.avertissements} avertissement(s)")
         return 1
     controler(releve, questions, traitees, r)
-    r.info(f"{len(questions) - len(traitees)} questions ouvertes, {len(traitees)} traitées, {len(anomalies)} anomalies")
+    r.info(f"{len(questions) - len(traitees)} questions ouvertes, {len(traitees)} traitées, {len(anomalies) - len(levees)} anomalies en cours, {len(levees)} levées")
 
     r.section("Schémas du relevé (schemas/)")
     controler_svg(sorted((RACINE / "schemas").glob("*.svg")), set(releve.fils), set(releve.fils),
-                  questions, traitees, anomalies, "schemas", r)
+                  questions, traitees, anomalies, levees, "schemas", r)
     controler_implantation(releve, r)
 
     # ---- Hypothèses
@@ -406,7 +415,7 @@ def main() -> int:
         controler(m, questions, traitees, r)
         ajoutes = {f["id"] for f in data.get("fils", [])}
         controler_svg(sorted(chemin.parent.glob("*.svg")), ajoutes, set(m.fils),
-                      questions, traitees, anomalies, rel(chemin.parent), r)
+                      questions, traitees, anomalies, levees, rel(chemin.parent), r)
 
     # ---- Bilan
     r.section("Bilan énergétique (commun/bilan-energetique.yaml)")

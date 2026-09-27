@@ -30,8 +30,8 @@ fils:
   - { id: wire017, de: node010, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 0.5 }
   - { id: wire018, de: node021, vers: node022, section_mm2: 50, couleur: rouge, longueur_m: 10 }
   - { id: wire019, de: node020, vers: node100, section_mm2: 6, couleur: rouge, longueur_m: 3, note: "Aucune protection (A1)" }
-  - { id: wire020, de: node024, vers: node029, section_mm2: 10, couleur: rouge, longueur_m: 0.5, note: "Section à vérifier (A5)" }
-  - { id: wire021, de: node025, vers: node030, section_mm2: 10, couleur: noir, longueur_m: 0.5, note: "Section à vérifier (A5)" }
+  - { id: wire020, de: node024, vers: node029, section_mm2: 10, couleur: rouge, longueur_m: 0.5 }
+  - { id: wire021, de: node025, vers: node030, section_mm2: 10, couleur: noir, longueur_m: 0.5 }
 
   # --- Tableau Scheiber 2 voies (Q3) : existence relevée, bornes et sections à confirmer (Q25)
   - { id: wire022, de: node010, vers: node050, statut: a_verifier, questions: [Q25], note: "Alimenté par les coupe-circuits voisins ; borne côté charges du CC servitude supposée" }

@@ -1,6 +1,6 @@
 # Anomalies constatées
 
-Défauts de l'installation existante, par ordre de gravité. Ils sont repérés par des pastilles orange sur le folio 1. L'étude A (sécurisation) doit tous les traiter.
+Défauts de l'installation existante, par ordre de gravité. Ils sont repérés par des pastilles orange sur le folio 1. L'étude A (sécurisation) doit traiter toutes les anomalies en cours. Une anomalie qui s'avère infondée passe dans « Levées », avec la raison, et garde son numéro.
 
 Format d'une ligne (lu par `outils/verifier.py`) : `- **An** texte`.
 
@@ -8,5 +8,9 @@ Format d'une ligne (lu par `outils/verifier.py`) : `- **An** texte`.
 - **A2** Aucun fusible en sortie des batteries moteur et servitude.
 - **A3** Cosses non serties sur les câbles de la batterie moteur, qui sont abîmés par le connecteur actuel.
 - **A4** Fils du coupleur et du chargeur (wire002, wire003, wire007, wire008, 6 mm²) branchés en direct sur les batteries, sans fusible.
-- **A5** wire020 et wire021 : 10 mm² entre le relais et le moteur du guindeau, pour environ 80 A. Vérifier la section préconisée par Lewmar.
 - **A6** wire022 : l'alimentation du tableau Scheiber part des coupe-circuits, a priori sans fusible en amont. Même risque que A1 (point de raccordement et section à confirmer, Q25).
+
+## Levées
+
+- **A5** wire020 et wire021 : 10 mm² entre le relais et le moteur du guindeau.
+  → 27/09 : levée. L'estimation de 80 A n'était étayée par aucune donnée. 700 W sous 12 V donnent environ 60 A, et la documentation Lewmar prévoit un disjoncteur de 50 A. Sur 0,5 m, 10 mm² à 60 A ne perdent qu'environ 0,1 V (0,9 %) ; les abaques admettent même 6 mm² jusqu'à environ 1,4 m pour 50 A. Même si 700 W était la puissance mécanique du moteur (environ 85 A absorbés), la chute resterait d'environ 1,2 %.

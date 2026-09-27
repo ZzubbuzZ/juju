@@ -96,9 +96,9 @@ equipements:
     zone: pont-avant
     emplacement: Posé sur le pont, au-dessus du puits de chaîne
     puissance_W: 700
-    courant_max_A: 80
+    courant_A: 60
     statut: estime
-    note: Courant estimé en charge, à confirmer avec la notice Lewmar (anomalie A5).
+    note: 700 W / 12 V ≈ 60 A. Cohérent avec le disjoncteur de 50 A préconisé par la documentation constructeur.
 
   - id: telecommande-guindeau
     type: commande
