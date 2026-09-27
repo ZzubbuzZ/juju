@@ -2,7 +2,8 @@
 #
 # Nœuds du circuit : une borne d'un équipement = un nœud.
 # Plages de numéros : 001-019 batteries et charge, 020-039 guindeau et moteur,
-# 040-049 frigo, 050-099 réservé aux propositions, 100-199 tableau de servitude,
+# 040-049 frigo, 050-059 tableau Scheiber 2 voies et pompe de cale, 060-099 réservé
+# aux propositions, 100-199 tableau de servitude,
 # 200-299 réseau 230 V (sauf node046-048 de l'EPS 100, numérotés avant la création de cette plage).
 
 nodes:
@@ -60,6 +61,14 @@ nodes:
   - { id: node047, equipement: eps100, borne: "230 V phase", polarite: 230V-phase }
   - { id: node048, equipement: eps100, borne: "230 V neutre", polarite: 230V-neutre }
 
+  # --- Tableau Scheiber 2 voies et pompe de cale ---------------------------------
+  - { id: node050, equipement: tableau-scheiber, borne: "+ alimentation", polarite: "+" }
+  - { id: node051, equipement: tableau-scheiber, borne: "- masse", polarite: "-" }
+  - { id: node052, equipement: tableau-scheiber, borne: "sortie frigo (15 A)", polarite: "+" }
+  - { id: node053, equipement: tableau-scheiber, borne: "sortie pompe de cale (10 A)", polarite: "+" }
+  - { id: node056, equipement: pompe-cale, borne: "+", polarite: "+" }
+  - { id: node057, equipement: pompe-cale, borne: "-", polarite: "-", questions: [Q25] }
+
   # --- Tableau de servitude (table à carte) --------------------------------------
   - { id: node100, equipement: tableau-servitude, borne: "+ alimentation", polarite: "+" }
   - { id: node101, equipement: tableau-servitude, borne: "- barre de masse", polarite: "-" }
@@ -77,6 +86,16 @@ nodes:
   - { id: node113, equipement: tableau-servitude, borne: "GPS loch (10 A)", polarite: "+" }
 
   # --- Réseau 230 V --------------------------------------------------------------
-  - { id: node200, equipement: chargeur-quai, borne: "230 V phase", polarite: 230V-phase, questions: [Q23] }
-  - { id: node201, equipement: chargeur-quai, borne: "230 V neutre", polarite: 230V-neutre, questions: [Q23] }
-  - { id: node202, equipement: chargeur-quai, borne: "230 V terre", polarite: 230V-terre, questions: [Q23] }
+  - { id: node200, equipement: chargeur-quai, borne: "230 V phase", polarite: 230V-phase }
+  - { id: node201, equipement: chargeur-quai, borne: "230 V neutre", polarite: 230V-neutre }
+  - { id: node202, equipement: chargeur-quai, borne: "230 V terre", polarite: 230V-terre }
+  - { id: node203, equipement: prise-quai, borne: "phase", polarite: 230V-phase }
+  - { id: node204, equipement: prise-quai, borne: "neutre", polarite: 230V-neutre }
+  - { id: node205, equipement: prise-quai, borne: "terre", polarite: 230V-terre }
+  - { id: node206, equipement: ddr-230v, borne: "entrée phase", polarite: 230V-phase }
+  - { id: node207, equipement: ddr-230v, borne: "entrée neutre", polarite: 230V-neutre }
+  - { id: node208, equipement: ddr-230v, borne: "sortie phase", polarite: 230V-phase }
+  - { id: node209, equipement: ddr-230v, borne: "sortie neutre", polarite: 230V-neutre }
+  - { id: node210, equipement: disj-chargeur, borne: "entrée", polarite: 230V-phase }
+  - { id: node211, equipement: disj-chargeur, borne: "sortie", polarite: 230V-phase }
+  - { id: node212, equipement: boitier-230v, borne: "barrette de terre", polarite: 230V-terre }

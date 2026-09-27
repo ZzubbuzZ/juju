@@ -2,7 +2,7 @@
 #
 # Zones de l'aménagement du Gib'Sea 31, de l'arrière vers l'avant.
 # Elles servent à placer les équipements sur le plan d'implantation.
-# Les positions sur le plan seront ajoutées quand le plan d'aménagement sera disponible (Q24).
+# Plan d'implantation : schemas/folio-0-implantation.svg, d'après photos/gibsea-31-drawing.jpg.
 
 zones:
   - id: cockpit-coffre-tribord
@@ -30,12 +30,12 @@ zones:
 
   - id: cuisine
     designation: Cuisine
-    questions: [Q22]
+    bord: tribord
     note: Meuble bas sous l'évier, entre le puits de dérive et la glacière.
 
   - id: table-a-carte
     designation: Table à carte
-    questions: [Q22]
+    bord: babord
 
   - id: cabine-proue
     designation: Cabine de proue

@@ -1,18 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 770" role="img" aria-label="Câblage 12 V actuel : deux batteries, quatre coupe-circuits, coupleur et chargeur branchés sans fusible, tableau de servitude alimenté sans protection depuis l'entrée du disjoncteur du guindeau.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" role="img" aria-label="Câblage 12 V actuel : deux batteries, quatre coupe-circuits, coupleur et chargeur branchés sans fusible, tableau de servitude alimenté sans protection depuis l'entrée du disjoncteur du guindeau, tableau Scheiber alimenté directement par les coupe-circuits.">
   <title>Folio 1 · Câblage 12 V actuel</title>
-  <desc>Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² depuis l'entrée du disjoncteur du guindeau, donc sans aucune protection (A1). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n'est plus alimentée.</desc>
+  <desc>Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² depuis l'entrée du disjoncteur du guindeau, donc sans aucune protection (A1). Le tableau Scheiber (frigo, pompe de cale) est lui aussi alimenté directement par les coupe-circuits (A6). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n'est plus alimentée.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
-    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8}
-    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f}}
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
     .bg{fill:var(--sheet)}
     text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
     .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
     .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
     .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
     .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
-    .p,.n,.u,.lever,.bound{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
     .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
     .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
     .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
     .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
@@ -26,6 +27,11 @@
     .lever{stroke:var(--ink);stroke-width:2}
     .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
     .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
     .mk-a circle{fill:var(--warn)}
     .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
     .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
@@ -48,7 +54,8 @@
   <text class="id end" x="236" y="742">node005</text>
   <text class="id" x="304" y="742">node006</text>
   <!-- masse côté charges -->
-  <path class="n w4" d="M304 720 H830"/>
+  <path class="n w4" d="M304 720 H880"/>
+  <circle class="dn" cx="830" cy="720" r="4.5"/>
   <circle class="dn" cx="575" cy="720" r="4.5"/><circle class="dn" cx="715" cy="720" r="4.5"/><circle class="dn" cx="805" cy="720" r="4.5"/>
   <text class="ts mid" x="450" y="742">masse côté charges</text>
 
@@ -74,7 +81,7 @@
   <text class="id mid" x="497" y="91">wire012 · 35</text>
   <!-- Moteur -->
   <rect class="box" x="600" y="60" width="170" height="85" rx="2"/>
-  <text class="tb mid" x="685" y="87">Yanmar 3GM30</text>
+  <text class="tb mid" x="685" y="87">Yanmar 3GMD</text>
   <text class="ts mid" x="685" y="105">démarreur + alternateur</text>
   <text class="id mid" x="685" y="127">node031 / node032</text>
   <path class="n w4" d="M770 125 H805 V720"/>
@@ -107,10 +114,9 @@
   <text class="ts mid" x="260" y="278">Dolphin 12 V · 20 A</text>
   <text class="ts mid" x="260" y="295">3 sorties · Pb</text>
   <text class="id mid" x="260" y="316">sortie 3 libre</text>
-  <path class="u" d="M205 285 H94"/>
-  <text class="ts mid tu" x="150" y="277">entrée 230 V</text>
-  <text class="id mid" x="150" y="300">node200–202</text>
-  <g class="mk-q"><circle cx="82" cy="285" r="11"/><text class="mid" x="82" y="288.5">Q23</text></g>
+  <path class="n w1" d="M205 285 H94"/>
+  <text class="ts mid" x="150" y="277">entrée 230 V</text>
+  <text class="id mid" x="150" y="300">node200–202 · folio 3</text>
   <path class="p w2" d="M280 330 V470"/>
   <circle class="dp" cx="280" cy="470" r="4.5"/>
   <text class="id mid" x="293" y="400" transform="rotate(-90 293 400)">wire008 · 6</text>
@@ -187,9 +193,40 @@
   <path class="n w2" d="M715 670 V716"/>
   <text class="id" x="722" y="700">wire016 · 6</text>
   <!-- Tableau Scheiber 2 voies -->
-  <rect class="box" x="870" y="595" width="150" height="75" rx="2"/>
-  <text class="tb mid" x="945" y="620">Tableau Scheiber</text>
-  <text class="ts mid" x="945" y="637">2 voies · contremarche</text>
-  <text class="ts mid tu" x="945" y="657">alim. et masse ?</text>
-  <g class="mk-q"><circle cx="1020" cy="597" r="11"/><text class="mid" x="1020" y="600.5">Q3</text></g>
+  <path class="p w2" d="M930 600 V590"/>
+  <rect class="flag" x="875" y="572" width="110" height="18"/>
+  <text class="id mid" x="930" y="585">wire022 → node010</text>
+  <g class="mk-a"><circle cx="1000" cy="581" r="10"/><text class="mid" x="1000" y="584.5">A6</text></g>
+  <rect class="box" x="870" y="600" width="150" height="70" rx="2"/>
+  <text class="tb mid" x="945" y="624">Tableau Scheiber</text>
+  <text class="ts mid" x="945" y="641">2 voies · contremarche</text>
+  <text class="ts mid" x="945" y="659">cale 10 A · frigo 15 A</text>
+  <g class="mk-q"><circle cx="1020" cy="602" r="11"/><text class="mid" x="1020" y="605.5">Q25</text></g>
+  <path class="n w2" d="M880 670 V716"/>
+  <text class="id" x="886" y="702">wire023</text>
+  <!-- Pompe de cale -->
+  <path class="p w2" d="M930 670 V800 H892"/>
+  <text class="id mid" x="943" y="740" transform="rotate(-90 943 740)">wire026</text>
+  <circle class="box" cx="870" cy="800" r="22"/>
+  <text class="tb mid" x="870" y="805">P</text>
+  <text class="tb mid" x="870" y="842">Pompe de cale</text>
+  <text class="ts mid" x="870" y="858">manuelle, sans flotteur</text>
+  <path class="u" d="M848 800 H812"/>
+  <text class="ts end tu" x="806" y="796">masse ?</text>
+  <g class="mk-q"><circle cx="786" cy="812" r="11"/><text class="mid" x="786" y="815.5">Q25</text></g>
+  <!-- Frigo -->
+  <path class="p w2" d="M980 670 V780 H1000"/>
+  <text class="id mid" x="993" y="725" transform="rotate(-90 993 725)">wire024</text>
+  <rect class="box" x="1000" y="758" width="80" height="44" rx="2"/>
+  <text class="tb mid" x="1040" y="777">EPS 100</text>
+  <text class="ts mid" x="1040" y="793">12 V / 230 V</text>
+  <path class="p w2" d="M1080 770 H1110"/>
+  <path class="n w2" d="M1080 790 H1110"/>
+  <text class="id mid" x="1095" y="750">wire027 / wire028 · 3,5</text>
+  <rect class="box" x="1110" y="758" width="80" height="44" rx="2"/>
+  <text class="tb mid" x="1150" y="777">Groupe froid</text>
+  <text class="ts mid" x="1150" y="793">CU-55</text>
+  <path class="n w2" d="M1040 802 V818"/>
+  <rect class="flag" x="985" y="818" width="110" height="18"/>
+  <text class="id mid" x="1040" y="831">wire025 → node051</text>
 </svg>

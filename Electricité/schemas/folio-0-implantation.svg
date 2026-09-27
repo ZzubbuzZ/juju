@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Plan d'implantation vu de dessus : zones de l'aménagement du Gib'Sea 31 et équipements électriques placés dans chaque zone.">
+  <title>Folio 0 · Implantation des équipements</title>
+  <desc>Vue de dessus, avant à droite. Les batteries sont aux deux extrémités arrière (coffre de cockpit tribord, cabine de poupe bâbord), la distribution se concentre autour de la descente, et le guindeau est seul à l'avant, relié par 10 m de câble de 50 mm².</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+  <!-- Coque (vue de dessus, avant à droite) -->
+  <path class="hull" d="M66 226 C 130 204, 400 178, 600 180 C 820 184, 1000 250, 1140 360 C 1000 470, 820 536, 600 540 C 400 542, 130 516, 66 494 Q 56 360 66 226 Z"/>
+  <path class="bound" d="M70 360 H1130"/>
+  <text class="ts mid" x="720" y="172">BÂBORD</text>
+  <text class="ts mid" x="740" y="558">TRIBORD</text>
+  <text class="tb" x="1152" y="365">AV</text>
+  <text class="tb end" x="50" y="365">AR</text>
+
+  <!-- Zones -->
+  <rect class="zone" data-zone="cabine-poupe" x="100" y="232" width="225" height="96" rx="3"/>
+  <text class="ts mid" x="160" y="318">Cabine de poupe</text>
+  <rect class="zone" data-zone="cockpit-coffre-tribord" x="100" y="392" width="215" height="100" rx="3"/>
+  <text class="ts mid" x="160" y="410">Coffre de cockpit</text>
+  <rect class="zone" data-zone="compartiment-moteur" x="330" y="300" width="62" height="80" rx="3"/>
+  <text class="ts mid" x="361" y="316">Moteur</text>
+  <rect class="zone" data-zone="cabinet-toilette" x="330" y="388" width="62" height="100" rx="3"/>
+  <text class="ts mid" x="361" y="478">Toilette</text>
+  <rect class="zone" data-zone="descente" x="398" y="300" width="42" height="110" rx="3"/>
+  <text class="ts mid" x="424" y="372" transform="rotate(-90 424 372)">Descente</text>
+  <rect class="zone" data-zone="table-a-carte" x="450" y="200" width="105" height="90" rx="3"/>
+  <text class="ts mid" x="490" y="220">Table à carte</text>
+  <rect class="zone" data-zone="cuisine" x="450" y="425" width="140" height="98" rx="3"/>
+  <text class="ts mid" x="520" y="512">Cuisine</text>
+  <text class="ts mid" x="690" y="300">Carré</text>
+  <rect class="bound" x="620" y="352" width="120" height="16"/>
+  <text class="pin mid" x="680" y="364">puits de dérive</text>
+  <path class="zone" data-zone="cabine-proue" d="M830 262 L975 288 L975 432 L830 458 Z"/>
+  <text class="ts mid" x="902" y="425">Cabine de proue</text>
+  <rect class="zone-pont" data-zone="pont-avant" x="1010" y="332" width="92" height="56" rx="3"/>
+  <text class="pin mid" x="1056" y="382">pont avant</text>
+
+  <!-- Points d'ancrage -->
+  <circle class="dn" cx="212" cy="290" r="4"/>
+  <circle class="dn" cx="207" cy="440" r="4"/>
+  <circle class="dn" cx="361" cy="345" r="4"/>
+  <circle class="dn" cx="419" cy="316" r="4"/>
+  <circle class="dn" cx="520" cy="262" r="4"/>
+  <circle class="dn" cx="520" cy="470" r="4"/>
+  <circle class="dn" cx="902" cy="360" r="4"/>
+  <circle class="dn" cx="1056" cy="355" r="4"/>
+
+  <!-- Bâbord : bulles du haut -->
+  <path class="leader" d="M180 112 L212 290"/>
+  <rect class="callout" x="60" y="40" width="240" height="72" rx="2"/>
+  <text class="tb" x="72" y="60">Cabine de poupe · bâbord</text>
+  <text class="t" x="72" y="80" data-equipement="bat-servitude">Batterie de servitude 110 Ah</text>
+  <text class="t" x="72" y="99" data-equipement="disj-guindeau">Disjoncteur du guindeau 50 A</text>
+
+  <path class="leader" d="M440 112 L419 316"/>
+  <rect class="callout" x="320" y="24" width="240" height="88" rx="2"/>
+  <text class="tb" x="332" y="44">Descente · contremarches</text>
+  <text class="t" x="332" y="63"><tspan data-equipement="cc-moteur">Platine des 4 coupe-circuits</tspan><tspan data-equipement="cc-servitude"/><tspan data-equipement="cc-masse"/><tspan data-equipement="cc-couplage"/></text>
+  <text class="t" x="332" y="82" data-equipement="coupleur">Coupleur (derrière la platine)</text>
+  <text class="t" x="332" y="101" data-equipement="tableau-scheiber">Tableau Scheiber 2 voies</text>
+
+  <path class="leader" d="M640 92 L520 262"/>
+  <rect class="callout" x="580" y="40" width="220" height="52" rx="2"/>
+  <text class="tb" x="592" y="60">Table à carte · bâbord</text>
+  <text class="t" x="592" y="80" data-equipement="tableau-servitude">Tableau de servitude, 12 circuits</text>
+
+  <path class="leader" d="M930 92 L902 360"/>
+  <rect class="callout" x="830" y="40" width="200" height="52" rx="2"/>
+  <text class="tb" x="842" y="60">Cabine de proue</text>
+  <text class="t" x="842" y="80" data-equipement="relais-guindeau">Relais du guindeau</text>
+
+  <path class="leader" d="M1095 172 L1056 355"/>
+  <rect class="callout" x="1000" y="120" width="190" height="52" rx="2"/>
+  <text class="tb" x="1012" y="140">Pont avant</text>
+  <text class="t" x="1012" y="160" data-equipement="guindeau">Guindeau Lewmar 700 W</text>
+
+  <!-- Tribord et axe : bulles du bas -->
+  <path class="leader" d="M185 580 L207 440"/>
+  <rect class="callout" x="40" y="580" width="290" height="108" rx="2"/>
+  <text class="tb" x="52" y="600">Coffre de cockpit · tribord</text>
+  <text class="t" x="52" y="619" data-equipement="bat-moteur">Batterie moteur 110 Ah</text>
+  <text class="t" x="52" y="638" data-equipement="chargeur-quai">Chargeur de quai (au-dessus)</text>
+  <text class="t" x="52" y="657" data-equipement="prise-quai">Prise de quai (sous le banc)</text>
+  <text class="t" x="52" y="676"><tspan data-equipement="boitier-230v">Boîtier 230 V :</tspan> <tspan data-equipement="ddr-230v">différentiel 30 mA,</tspan> <tspan data-equipement="disj-chargeur">disj. 10 A</tspan></text>
+
+  <path class="leader" d="M455 595 L361 345"/>
+  <rect class="callout" x="350" y="595" width="210" height="70" rx="2"/>
+  <text class="tb" x="362" y="615">Compartiment moteur</text>
+  <text class="t" x="362" y="634" data-equipement="moteur">Moteur Yanmar 3GMD</text>
+  <text class="t" x="362" y="653" data-equipement="pompe-cale">Pompe de cale (cale moteur)</text>
+
+  <path class="leader" d="M650 595 L520 470"/>
+  <rect class="callout" x="580" y="595" width="240" height="70" rx="2"/>
+  <text class="tb" x="592" y="615">Cuisine · tribord</text>
+  <text class="t" x="592" y="634" data-equipement="groupe-froid">Groupe froid CU-55</text>
+  <text class="t" x="592" y="653" data-equipement="eps100">EPS 100 (sous l'évier, à droite)</text>
+
+  <text class="ts" x="850" y="610">Plan schématique d'après la brochure</text>
+  <text class="ts" x="850" y="626">(photos/gibsea-31-drawing.jpg).</text>
+  <text class="ts" x="850" y="642">Proportions approximatives,</text>
+  <text class="ts" x="850" y="658">pas à l'échelle.</text>
+</svg>

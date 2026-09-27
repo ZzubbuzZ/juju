@@ -7,10 +7,14 @@ Contrôles :
   1. syntaxe YAML, clés en double comprises (PyYAML les écrase sans prévenir) ;
   2. conformité aux schémas JSON de outils/schema/ ;
   3. identifiants uniques, références existantes (nœuds, équipements, questions) ;
-  4. règles électriques : pas de fil entre un + et un -, couleur cohérente ;
+  4. règles électriques : pas de fil entre un + et un -, couleur cohérente,
+     section normalisée, pas deux fils en parallèle sur les mêmes nœuds ;
   5. chaque fil des données figure sur les schémas SVG, et inversement ;
+     chaque équipement placé dans une zone figure sur le plan d'implantation ;
   6. hypothèses des études : application du delta sur leur base, puis mêmes contrôles ;
   7. bilan énergétique : Ah consommés par jour pour chaque profil.
+Les questions traitées (section « Réponses » de questions.md) ne doivent plus
+être citées par les données ni par les schémas.
 
 Code de retour : 1 s'il y a au moins une erreur, 0 sinon (les avertissements ne bloquent pas).
 """
@@ -35,6 +39,10 @@ FICHIERS_RELEVE = ["amenagement.yaml", "equipements.yaml", "netlist.yaml", "wire
 CATEGORIES = ("zones", "equipements", "nodes", "fils")
 POLARITES_12V = {"+", "-"}
 POLARITES_230V = {"230V-phase", "230V-neutre", "230V-terre"}
+SECTIONS_NORMALISEES = {0.75, 1, 1.5, 2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95, 120}
+COULEURS_230V = {"230V-phase": {"marron", "noir", "gris", "rouge"}, "230V-neutre": {"bleu"},
+                 "230V-terre": {"vert-jaune"}}
+IMPLANTATION = RACINE / "schemas" / "folio-0-implantation.svg"
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -122,6 +130,14 @@ def lire_ids_md(chemin: Path, prefixe: str) -> set[str]:
     return set(re.findall(rf"^- \*\*({prefixe}\d+)\*\*", chemin.read_text(encoding="utf-8"), re.M))
 
 
+def lire_questions_traitees(chemin: Path) -> set[str]:
+    """Questions listées sous le titre « ## Réponses »."""
+    if not chemin.exists():
+        return set()
+    _, _, reponses = chemin.read_text(encoding="utf-8").partition("\n## Réponses")
+    return set(re.findall(r"^- \*\*(Q\d+)\*\*", reponses, re.M))
+
+
 def ids_svg(chemins: list[Path]) -> tuple[set[str], set[str], set[str]]:
     fils, questions, anomalies = set(), set(), set()
     for c in chemins:
@@ -170,7 +186,7 @@ def appliquer_delta(base: Modele, delta: dict, nom: str, source: str, r: Rapport
     return m
 
 
-def controler(m: Modele, questions: set[str], r: Rapport) -> None:
+def controler(m: Modele, questions: set[str], traitees: set[str], r: Rapport) -> None:
     ou = m.nom
     for e in m.equipements.values():
         if "zone" in e and e["zone"] not in m.zones:
@@ -201,16 +217,37 @@ def controler(m: Modele, questions: set[str], r: Rapport) -> None:
                 r.erreur(ou, f"{f['id']} relie le 230 V au circuit 12 V")
             if len(pols & POLARITES_230V) > 1:
                 r.erreur(ou, f"{f['id']} relie deux conducteurs 230 V différents ({' / '.join(sorted(pols))})")
-            if pols == {"+"} and f["couleur"] != "rouge":
-                r.avert(ou, f"{f['id']} : fil positif de couleur {f['couleur']} (rouge attendu)")
-            if pols == {"-"} and f["couleur"] not in ("noir", "jaune"):
-                r.avert(ou, f"{f['id']} : fil négatif de couleur {f['couleur']} (noir ou jaune attendu)")
+            couleur = f.get("couleur")
+            if couleur and pols == {"+"} and couleur != "rouge":
+                r.avert(ou, f"{f['id']} : fil positif de couleur {couleur} (rouge attendu)")
+            if couleur and pols == {"-"} and couleur not in ("noir", "jaune"):
+                r.avert(ou, f"{f['id']} : fil négatif de couleur {couleur} (noir ou jaune attendu)")
+            if couleur and len(pols) == 1 and (p := next(iter(pols))) in COULEURS_230V \
+                    and couleur not in COULEURS_230V[p]:
+                r.avert(ou, f"{f['id']} : conducteur {p} de couleur {couleur} "
+                            f"({' ou '.join(sorted(COULEURS_230V[p]))} attendu)")
+        if "section_mm2" in f and f["section_mm2"] not in SECTIONS_NORMALISEES:
+            r.avert(ou, f"{f['id']} : section de {f['section_mm2']} mm² hors série normalisée "
+                        f"(câble AWG ou mesure approximative ?)")
+
+    paires = {}
+    for f in m.fils.values():
+        paires.setdefault(frozenset((f["de"], f["vers"])), []).append(f["id"])
+    for ids in paires.values():
+        if len(ids) > 1:
+            r.avert(ou, f"{' et '.join(sorted(ids))} relient les mêmes nœuds : doublon, ou fil à supprimer ?")
 
     for cle in CATEGORIES:
         for elem in getattr(m, cle).values():
             for q in elem.get("questions", []):
                 if q not in questions:
                     r.erreur(ou, f"{elem['id']} : question {q} absente de releve/questions.md")
+                elif q in traitees:
+                    r.avert(ou, f"{elem['id']} : cite {q}, déjà traitée (retirer la référence)")
+
+    sans_section = sorted(f["id"] for f in m.fils.values() if "section_mm2" not in f)
+    if sans_section:
+        r.info(f"{len(sans_section)} fil(s) de section inconnue : {', '.join(sans_section)}")
 
     relies = {f[b] for f in m.fils.values() for b in ("de", "vers")}
     relies |= {n["id"] for n in m.nodes.values() if "monte_sur" in n}
@@ -228,7 +265,7 @@ def controler(m: Modele, questions: set[str], r: Rapport) -> None:
 
 
 def controler_svg(svgs: list[Path], fils_attendus: set[str], fils_existants: set[str],
-                  questions: set[str], anomalies: set[str], ou: str, r: Rapport) -> None:
+                  questions: set[str], traitees: set[str], anomalies: set[str], ou: str, r: Rapport) -> None:
     if not svgs:
         r.avert(ou, "aucun schéma SVG trouvé")
         return
@@ -239,9 +276,32 @@ def controler_svg(svgs: list[Path], fils_attendus: set[str], fils_existants: set
         r.erreur(ou, f"{w} figure sur un schéma mais n'existe pas dans les données")
     for q in sorted(qs - questions):
         r.erreur(ou, f"pastille {q} sur un schéma, absente de releve/questions.md")
+    for q in sorted(qs & traitees):
+        r.avert(ou, f"pastille {q} sur un schéma alors que la question est traitée")
     for a in sorted(ans - anomalies):
         r.erreur(ou, f"pastille {a} sur un schéma, absente de releve/anomalies.md")
     r.ok(f"{len(svgs)} schéma(s), {len(dessin & fils_existants)} fils dessinés")
+
+
+def controler_implantation(m: Modele, r: Rapport) -> None:
+    """Chaque zone et chaque équipement placé doivent figurer sur le plan (attributs data-zone / data-equipement)."""
+    ou = rel(IMPLANTATION)
+    if not IMPLANTATION.exists():
+        r.avert(ou, "plan d'implantation absent")
+        return
+    txt = IMPLANTATION.read_text(encoding="utf-8")
+    zones = set(re.findall(r'data-zone="([a-z0-9-]+)"', txt))
+    equip = set(re.findall(r'data-equipement="([a-z0-9-]+)"', txt))
+    places = {e["id"] for e in m.equipements.values() if "zone" in e}
+    for z in sorted(set(m.zones) - zones):
+        r.avert(ou, f"zone {z} absente du plan")
+    for z in sorted(zones - set(m.zones)):
+        r.erreur(ou, f"zone {z} dessinée mais absente de releve/amenagement.yaml")
+    for e in sorted(places - equip):
+        r.avert(ou, f"{e} a une zone mais n'est pas sur le plan")
+    for e in sorted(equip - set(m.equipements)):
+        r.erreur(ou, f"{e} dessiné mais absent des équipements")
+    r.ok(f"{len(zones & set(m.zones))} zones et {len(equip & places)} équipements placés sur le plan")
 
 
 def bilan(chemin: Path, schema: dict, equipements: dict, r: Rapport) -> None:
@@ -273,6 +333,7 @@ def main() -> int:
     schema_bilan = json.loads((RACINE / "outils/schema/bilan.schema.json").read_text(encoding="utf-8"))
     questions = lire_ids_md(RELEVE / "questions.md", "Q")
     anomalies = lire_ids_md(RELEVE / "anomalies.md", "A")
+    traitees = lire_questions_traitees(RELEVE / "questions.md")
 
     # ---- Relevé
     r.section("Relevé (releve/)")
@@ -298,12 +359,13 @@ def main() -> int:
         r.info(f"contrôles croisés suspendus tant que {', '.join(invalides)} est invalide : corriger d'abord les erreurs ci-dessus")
         print(f"\n{r.erreurs} erreur(s), {r.avertissements} avertissement(s)")
         return 1
-    controler(releve, questions, r)
-    r.info(f"{len(questions)} questions ouvertes ou traitées, {len(anomalies)} anomalies")
+    controler(releve, questions, traitees, r)
+    r.info(f"{len(questions) - len(traitees)} questions ouvertes, {len(traitees)} traitées, {len(anomalies)} anomalies")
 
     r.section("Schémas du relevé (schemas/)")
     controler_svg(sorted((RACINE / "schemas").glob("*.svg")), set(releve.fils), set(releve.fils),
-                  questions, anomalies, "schemas", r)
+                  questions, traitees, anomalies, "schemas", r)
+    controler_implantation(releve, r)
 
     # ---- Hypothèses
     hyps = {}
@@ -341,10 +403,10 @@ def main() -> int:
         m = resoudre(ident)
         if m is None:
             continue
-        controler(m, questions, r)
+        controler(m, questions, traitees, r)
         ajoutes = {f["id"] for f in data.get("fils", [])}
         controler_svg(sorted(chemin.parent.glob("*.svg")), ajoutes, set(m.fils),
-                      questions, anomalies, rel(chemin.parent), r)
+                      questions, traitees, anomalies, rel(chemin.parent), r)
 
     # ---- Bilan
     r.section("Bilan énergétique (commun/bilan-energetique.yaml)")

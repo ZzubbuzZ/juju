@@ -87,6 +87,7 @@ GABARIT = """<title>Schémas 12 V de Juju</title>
 :root{{
   --bg:#eef1f4; --sheet:#fbfcfd; --ink:#18212b; --muted:#5a6776; --grid:#e3e8ee; --line:#c9d1da;
   --pos:#c8231c; --unk:#1f6fbf; --warn:#e58a00; --on-warn:#1a1206; --new:#1d8a4a; --new-soft:#e2f3e8;
+  --zone:#e8edf2; --ph:#8a5a2b; --ne:#2563c4; --pe:#2f9e44; --pey:#e6b800;
   --font:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
 }}
@@ -94,12 +95,14 @@ GABARIT = """<title>Schémas 12 V de Juju</title>
   :root:not([data-theme="light"]){{
     --bg:#0f1419; --sheet:#151b22; --ink:#e3e8ee; --muted:#93a1b0; --grid:#1d252e; --line:#2c3743;
     --pos:#ff5a4f; --unk:#5aa9f5; --warn:#ffa53d; --on-warn:#1a1206; --new:#4fcf85; --new-soft:#15301f;
+    --zone:#1f2832; --ph:#c8915a; --ne:#6aa7ff; --pe:#51cf66; --pey:#ffd43b;
     color-scheme:dark;
   }}
 }}
 :root[data-theme="dark"]{{
   --bg:#0f1419; --sheet:#151b22; --ink:#e3e8ee; --muted:#93a1b0; --grid:#1d252e; --line:#2c3743;
   --pos:#ff5a4f; --unk:#5aa9f5; --warn:#ffa53d; --on-warn:#1a1206; --new:#4fcf85; --new-soft:#15301f;
+    --zone:#1f2832; --ph:#c8915a; --ne:#6aa7ff; --pe:#51cf66; --pey:#ffd43b;
   color-scheme:dark;
 }}
 body{{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.55;padding-inline:clamp(16px,4vw,48px);padding-block:32px 64px}}
@@ -139,7 +142,11 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
 .id{{font-family:var(--mono);font-size:10.5px;fill:var(--muted)}}.idn{{font-family:var(--mono);font-size:10.5px;fill:var(--new)}}
 .pin{{font-family:var(--mono);font-size:8.5px;fill:var(--ink)}}
 .tu{{fill:var(--unk)}}.tn{{fill:var(--new)}}.mid{{text-anchor:middle}}.end{{text-anchor:end}}
-.p,.n,.u,.lever,.bound{{fill:none;stroke-linecap:round;stroke-linejoin:round}}
+.p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{{fill:none;stroke-linecap:round;stroke-linejoin:round}}
+.ph{{stroke:var(--ph)}}.ne{{stroke:var(--ne)}}.pe{{stroke:var(--pe)}}.pey{{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}}
+.hull{{fill:var(--sheet);stroke:var(--ink);stroke-width:2}}.zone{{fill:var(--zone);stroke:var(--muted);stroke-width:1}}
+.zone-pont{{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}}.leader{{stroke:var(--muted);stroke-width:1}}
+.callout{{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}}
 .p{{stroke:var(--pos)}}.n{{stroke:var(--ink)}}
 .u{{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}}
 .bound{{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}}
@@ -162,8 +169,8 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Juju · Gib'Sea 31 · 1984 · circuit 12 V</div>
-  <h1>Schémas 12 V de Juju</h1>
+  <div class="eyebrow">Juju · Gib'Sea 31 · 1984 · électricité</div>
+  <h1>Schémas électriques de Juju</h1>
   <p class="lede">Page générée à partir des folios SVG du dépôt. Les données de câblage (YAML) et les schémas sont contrôlés par <code>outils/verifier.py</code>.</p>
   <dl class="cartouche">
     <div><dt>Navire</dt><dd>Juju · Gib'Sea 31</dd></div>
@@ -174,6 +181,9 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
   <div class="legend" aria-label="Légende">
     <span><svg width="34" height="10"><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--pos);stroke-width:3"/></svg>positif</span>
     <span><svg width="34" height="10"><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--ink);stroke-width:3"/></svg>négatif</span>
+    <span><svg width="34" height="10"><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--ph);stroke-width:3"/></svg>230 V phase</span>
+    <span><svg width="34" height="10"><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--ne);stroke-width:3"/></svg>neutre</span>
+    <span><svg width="34" height="10"><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--pe);stroke-width:3"/><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--pey);stroke-width:3;stroke-dasharray:6 6"/></svg>terre</span>
     <span><svg width="34" height="12"><line x1="2" y1="6" x2="32" y2="6" style="stroke:var(--muted);stroke-width:5.5"/></svg>35–50 mm²</span>
     <span><svg width="34" height="10"><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--muted);stroke-width:2.5"/></svg>4–10 mm²</span>
     <span><svg width="34" height="10"><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--muted);stroke-width:1.3"/></svg>1,5–2,5 mm²</span>

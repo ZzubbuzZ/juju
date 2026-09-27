@@ -4,12 +4,12 @@
 
 | Axe | Branche | État détaillé |
 |---|---|---|
-| Relevé de l'existant | `main` | 21 fils relevés, 24 questions ouvertes ([questions.md](releve/questions.md)), 5 anomalies ([anomalies.md](releve/anomalies.md)) |
+| Relevé de l'existant | `main` | 35 fils relevés (12 V et 230 V), 14 questions ouvertes ([questions.md](releve/questions.md)), 6 anomalies ([anomalies.md](releve/anomalies.md)) |
 | A · Sécurisation de l'existant | `etude/securisation` | [README de l'étude](https://github.com/ZzubbuzZ/juju/blob/etude/securisation/Electricit%C3%A9/etudes/A-securisation/README.md) |
 | B · Chauffe-eau | `etude/chauffe-eau` | [README de l'étude](https://github.com/ZzubbuzZ/juju/blob/etude/chauffe-eau/Electricit%C3%A9/etudes/B-chauffe-eau/README.md) |
 | C · Panneaux solaires | `etude/solaire` | [README de l'étude](https://github.com/ZzubbuzZ/juju/blob/etude/solaire/Electricit%C3%A9/etudes/C-solaire/README.md) |
 
-Schéma de l'existant : [folio 1](schemas/folio-1-actuel.svg). L'état de chaque étude est tenu dans son propre README, sur sa branche : ce fichier-ci n'est modifié que sur `main`, pour éviter les conflits de rebase.
+Schémas de l'existant : [folio 0 · implantation](schemas/folio-0-implantation.svg), [folio 1 · 12 V](schemas/folio-1-actuel.svg), [folio 3 · 230 V](schemas/folio-3-230v.svg). L'état de chaque étude est tenu dans son propre README, sur sa branche : ce fichier-ci n'est modifié que sur `main`, pour éviter les conflits de rebase.
 
 ## Organisation
 

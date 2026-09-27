@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="Réseau 230 V partiel : la prise de quai alimente, via un différentiel 30 mA et un disjoncteur 10 A, le chargeur de quai. Le reste du réseau est à relever.">
+  <title>Folio 3 · Réseau 230 V (partiel)</title>
+  <desc>Seul le circuit du chargeur est relevé : prise de quai, différentiel 30 mA, disjoncteur 10 A, chargeur. Le chemin des fils est déduit de la description, leurs sections restent à relever. Au ponton de Saint-Chamas, la prise ne fournit que 6 A, soit environ 1 400 W pour tout le bord.</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+  <!-- Prise de quai -->
+  <rect class="box" x="60" y="115" width="140" height="145" rx="2"/>
+  <text class="tb mid" x="130" y="140">Prise de quai</text>
+  <text class="ts mid" x="130" y="157">EU · sous le banc</text>
+  <text class="ts mid" x="130" y="172">tribord du cockpit</text>
+  <text class="id mid" x="130" y="250">node203–205</text>
+  <text class="ts mid" x="130" y="292">Ponton de Saint-Chamas :</text>
+  <text class="tb mid" x="130" y="309">6 A ≈ 1 400 W</text>
+  <text class="ts mid" x="130" y="326">pour tout le bord</text>
+
+  <!-- Boîtier 230 V du chargeur -->
+  <rect class="bound" x="300" y="80" width="400" height="200"/>
+  <text class="ts" x="310" y="98">Boîtier 230 V du chargeur · coffre de cockpit tribord</text>
+  <g class="mk-q"><circle cx="700" cy="80" r="11"/><text class="mid" x="700" y="83.5">Q26</text></g>
+  <rect class="box" x="340" y="125" width="110" height="85" rx="2"/>
+  <text class="tb mid" x="395" y="163">Différentiel</text>
+  <text class="ts mid" x="395" y="180">30 mA · 25 A</text>
+  <text class="id mid" x="395" y="200">node206–209</text>
+  <rect class="box" x="540" y="139" width="70" height="22"/>
+  <text class="ts mid" x="575" y="154">disj. 10 A</text>
+  <text class="id mid" x="575" y="176">node210–211</text>
+  <rect class="box" x="520" y="222" width="120" height="16"/>
+  <text class="pin mid" x="580" y="233">barrette de terre · node212</text>
+
+  <!-- Chargeur -->
+  <rect class="box" x="860" y="115" width="170" height="145" rx="2"/>
+  <text class="tb mid" x="945" y="140">Chargeur de quai</text>
+  <text class="ts mid" x="945" y="157">Dolphin 12 V · 20 A</text>
+  <text class="ts mid" x="945" y="174">sorties 12 V : folio 1</text>
+  <text class="id mid" x="945" y="250">node200–202</text>
+
+  <!-- Phase -->
+  <path class="ph w3" d="M200 150 H340"/>
+  <text class="id mid" x="270" y="142">wire029 · phase</text>
+  <path class="ph w3" d="M450 150 H540"/>
+  <text class="id mid" x="495" y="142">wire031</text>
+  <path class="ph w3" d="M610 150 H860"/>
+  <text class="id mid" x="735" y="142">wire032 · phase</text>
+  <!-- Neutre -->
+  <path class="ne w3" d="M200 190 H340"/>
+  <text class="id mid" x="270" y="182">wire030 · neutre</text>
+  <path class="ne w3" d="M450 190 H860"/>
+  <text class="id mid" x="735" y="182">wire033 · neutre</text>
+  <!-- Terre -->
+  <path class="pe w3" d="M200 230 H520"/>
+  <path class="pey w3" d="M200 230 H520"/>
+  <text class="id mid" x="270" y="222">wire034 · terre</text>
+  <path class="pe w3" d="M640 230 H860"/>
+  <path class="pey w3" d="M640 230 H860"/>
+  <text class="id mid" x="750" y="222">wire035 · terre</text>
+
+  <!-- Reste du réseau, non relevé -->
+  <rect class="box-unk" x="300" y="315" width="400" height="80" rx="2"/>
+  <text class="tb mid tu" x="500" y="341">Reste du réseau 230 V, à relever</text>
+  <text class="ts mid" x="500" y="359">second boîtier (différentiel + 2 disjoncteurs), prises,</text>
+  <text class="ts mid" x="500" y="375">EPS 100 du frigo (node046–048), éclairage LED</text>
+  <g class="mk-q"><circle cx="700" cy="315" r="11"/><text class="mid" x="700" y="318.5">Q26</text></g>
+  <path class="u" d="M200 252 H250 V355 H300"/>
+  <text class="ts tu" x="258" y="305">?</text>
+</svg>

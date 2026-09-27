@@ -64,23 +64,24 @@ equipements:
     modele: Dolphin 12 V 20 A, 3 sorties plomb
     zone: cockpit-coffre-tribord
     emplacement: Au-dessus de la batterie moteur
-    note: Sortie 3 libre. Branché en direct sur les batteries, sans passer par les coupe-circuits.
-    questions: [Q23]
+    note: Sortie 3 libre. Branché en direct sur les batteries, sans passer par les coupe-circuits. Alimenté en 230 V par le disjoncteur 10 A du boîtier voisin.
 
   - id: moteur
     type: moteur
     designation: Moteur Yanmar (démarreur + alternateur)
-    modele: Yanmar 3GM30
+    modele: Yanmar 3GMD (plaque signalétique)
     zone: compartiment-moteur
+    note: L'état des lieux initial indiquait 3GM30. Mode de refroidissement à confirmer (Q13).
     questions: [Q1, Q13, Q14]
 
   # --- Guindeau ----------------------------------------------------------------
   - id: disj-guindeau
     type: disjoncteur
     designation: Disjoncteur thermique du guindeau
-    zone: cabine-proue
-    emplacement: Sous l'ouverture d'accès aux coupe-circuits (zone à confirmer)
-    questions: [Q15, Q21]
+    zone: cabine-poupe
+    emplacement: Sous l'ouverture d'accès aux coupe-circuits
+    calibre_A: 50
+    note: Calibre d'après la documentation constructeur.
 
   - id: relais-guindeau
     type: relais
@@ -116,7 +117,8 @@ equipements:
     designation: Tableau Scheiber 2 voies (frigo 15 A, pompe de cale 10 A)
     zone: descente
     emplacement: Contremarche, près de l'appareillage moteur
-    questions: [Q3]
+    note: Alimenté par les coupe-circuits voisins.
+    questions: [Q25]
 
   # --- Récepteurs --------------------------------------------------------------
   - id: groupe-froid
@@ -136,12 +138,15 @@ equipements:
     modele: Dometic EPS 100
     zone: cuisine
     emplacement: Meuble bas sous l'évier, partie droite, à côté du groupe froid
-    questions: [Q6]
+    note: Bornes à vis d'environ 8 mm de large, prévues pour des cosses à fourche SV 2-4 (fils de 1,5 à 2,5 mm², AWG 16-14).
 
   - id: pompe-cale
     type: recepteur
     designation: Pompe de cale moteur
-    questions: [Q4, Q5]
+    zone: compartiment-moteur
+    emplacement: Cale moteur
+    note: Sans flotteur. Pompe manuelle, commandée depuis le tableau Scheiber.
+    questions: [Q5]
 
   - id: pompe-eau
     type: recepteur
@@ -213,7 +218,7 @@ equipements:
 
   - id: pilote
     type: recepteur
-    designation: Pilote automatique
+    designation: Pilote automatique de barre franche
     courant_max_A: 5
     statut: estime
     questions: [Q10]
@@ -251,3 +256,31 @@ equipements:
     type: recepteur
     designation: Radar
     questions: [Q11]
+
+  # --- Réseau 230 V ------------------------------------------------------------
+  - id: prise-quai
+    type: prise
+    designation: Prise de quai (norme EU)
+    zone: cockpit-coffre-tribord
+    emplacement: Sous le banc tribord du cockpit
+
+  - id: boitier-230v
+    type: tableau
+    designation: Boîtier de distribution 230 V du chargeur
+    zone: cockpit-coffre-tribord
+    emplacement: À côté du chargeur de quai
+    questions: [Q26]
+
+  - id: ddr-230v
+    type: disjoncteur
+    designation: Disjoncteur différentiel 30 mA
+    zone: cockpit-coffre-tribord
+    emplacement: Dans le boîtier 230 V du chargeur
+    calibre_A: 25
+
+  - id: disj-chargeur
+    type: disjoncteur
+    designation: Disjoncteur du chargeur de quai
+    zone: cockpit-coffre-tribord
+    emplacement: Dans le boîtier 230 V du chargeur
+    calibre_A: 10

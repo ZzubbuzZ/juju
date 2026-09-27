@@ -32,3 +32,23 @@ fils:
   - { id: wire019, de: node020, vers: node100, section_mm2: 6, couleur: rouge, longueur_m: 3, note: "Aucune protection (A1)" }
   - { id: wire020, de: node024, vers: node029, section_mm2: 10, couleur: rouge, longueur_m: 0.5, note: "Section à vérifier (A5)" }
   - { id: wire021, de: node025, vers: node030, section_mm2: 10, couleur: noir, longueur_m: 0.5, note: "Section à vérifier (A5)" }
+
+  # --- Tableau Scheiber 2 voies (Q3) : existence relevée, bornes et sections à confirmer (Q25)
+  - { id: wire022, de: node010, vers: node050, statut: a_verifier, questions: [Q25], note: "Alimenté par les coupe-circuits voisins ; borne côté charges du CC servitude supposée" }
+  - { id: wire023, de: node006, vers: node051, statut: a_verifier, questions: [Q25], note: "Masse prise au CC des négatifs, côté charges (supposé)" }
+  - { id: wire024, de: node052, vers: node042, statut: a_verifier, questions: [Q25] }
+  - { id: wire025, de: node051, vers: node043, statut: a_verifier, questions: [Q25], note: "Retour de l'EPS 100 vers la masse du tableau (supposé)" }
+  - { id: wire026, de: node053, vers: node056, statut: a_verifier, questions: [Q25] }
+
+  # --- Frigo : EPS 100 vers groupe froid (Q16) -----------------------------------
+  - { id: wire027, de: node044, vers: node040, section_mm2: 3.5, longueur_m: 3, note: "Longueur estimée" }
+  - { id: wire028, de: node045, vers: node041, section_mm2: 3.5, longueur_m: 3, note: "Longueur estimée" }
+
+  # --- 230 V du chargeur (Q23) : chemin déduit de la description, sections à relever (Q26)
+  - { id: wire029, de: node203, vers: node206, statut: a_verifier, questions: [Q26] }
+  - { id: wire030, de: node204, vers: node207, statut: a_verifier, questions: [Q26] }
+  - { id: wire031, de: node208, vers: node210, statut: a_verifier, questions: [Q26] }
+  - { id: wire032, de: node211, vers: node200, statut: a_verifier, questions: [Q26] }
+  - { id: wire033, de: node209, vers: node201, statut: a_verifier, questions: [Q26] }
+  - { id: wire034, de: node205, vers: node212, statut: a_verifier, questions: [Q26] }
+  - { id: wire035, de: node212, vers: node202, statut: a_verifier, questions: [Q26] }

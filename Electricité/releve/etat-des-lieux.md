@@ -30,7 +30,7 @@ Les points suivants sont à revoir sur le circuit 12v :
 ## Equipements
 
 ### Moteur
-Moteur Yanmar 3GM30
+Moteur Yanmar 3GMD, d'après la plaque signalétique (d'abord noté 3GM30). Refroidissement eau de mer ou eau douce à confirmer (Q13).
 Batterie Varta 110Ah au Plomb sans entretien
 Coupe circuit dédié sur pole 12v
 
@@ -40,7 +40,8 @@ Coupe circuit dédié sur pole 12v
 - Lampes 12v x 5 ou 6
 - Panneau de controle des equipements de bord (coté moteur) :
   - Interrupteur réfrigérateur + fusible 15A
-  - Interrupteur Pompe de cale moteur + fusible 10A
+  - Interrupteur Pompe de cale moteur + fusible 10A (pompe manuelle, sans flotteur)
+  - Alimenté par les coupe-circuits voisins (sections à relever, Q25)
 - Panneau de controle des equipements de bord (coté table à carte) :
   - 12 Interrupteurs + 12 fusibles de différents calibres
     - feu route fusible 10A
@@ -71,14 +72,15 @@ Coupe circuit dédié sur pole 12v
 
 Lewmar Pro-Series 1000 700W
 Relai de commande à proximité du guindeau
-Disjoncteur thermique proche du sectionneur
+Disjoncteur thermique de 50 A (documentation constructeur), proche du sectionneur
 Cablage en 50mm2
 Telecommande
 
 ### Refrigerateur
 
 WAECO ColdMachine CU-55 12/24V 40W
-Dometic EPS 100 pour permettre un fonctionnement en 12/220v
+Dometic EPS 100 pour permettre un fonctionnement en 12/220v. Bornes pour cosses à fourche SV 2-4 (1,5 à 2,5 mm²).
+Liaison EPS 100 → groupe froid : 3,5 mm², environ 3 m.
 
 ### Pompe à eau
 
@@ -91,7 +93,7 @@ Scheiber 38.14700.00
 ### Chargeur de quai
 
 Dolphin 12v 20A
-Alimenté en 230 V (phase, neutre, terre : node200 à node202). Origine de cette alimentation à relever (Q23).
+Alimenté en 230 V par un boîtier de distribution voisin (différentiel 30 mA / 25 A, disjoncteur 10 A dédié au chargeur), lui-même alimenté par la prise de quai EU placée sous le banc tribord du cockpit. Schéma : [folio 3](../schemas/folio-3-230v.svg).
 
 ### Coupes circuits 12v
 
@@ -107,21 +109,26 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 - Une PE pour alimentation groupe froid Dometic EPS 100
 - 4 autres PE
 - 6 points lumineux (LED)
+- Le boîtier du chargeur (voir « Chargeur de quai ») est peut-être l'un de ces deux boîtiers (Q26).
+- Au ponton de Saint-Chamas, la prise de quai ne fournit que **6 A, soit environ 1 400 W** pour tout le bord (12 A à quai).
 
 ## Implantation
 
 Les zones de l'aménagement sont décrites dans [amenagement.yaml](amenagement.yaml), et la position de chaque équipement dans [equipements.yaml](equipements.yaml) (champs `zone` et `emplacement`).
 
 - **Batterie moteur** : coffre de cockpit tribord, contre la paroi du cabinet de toilette.
-- **Chargeur de quai** : au-dessus de la batterie moteur.
+- **Chargeur de quai** : au-dessus de la batterie moteur, avec son boîtier 230 V à côté. La prise de quai est sous le banc tribord du cockpit.
 - **Batterie de servitude** : cabine de poupe bâbord, dans un coffre, au sol, contre le coffre moteur.
 - **Coupe-circuits** : sur une contremarche de l'escalier de descente. Le coupleur est derrière. On accède au coupleur et à la connectique des coupe-circuits par une ouverture qui donne sur la cabine de poupe.
 - **Tableau Scheiber 2 voies** : sur une contremarche de la descente, près de l'appareillage moteur.
-- **Moteur** : derrière l'escalier de descente, dans l'axe, entre le cabinet de toilette et la cabine de poupe.
-- **Disjoncteur du guindeau** : cabine de proue, sous l'ouverture d'accès aux coupe-circuits (zone à confirmer, Q21).
+- **Moteur** : derrière l'escalier de descente, dans l'axe, entre le cabinet de toilette et la cabine de poupe. La pompe de cale est dans la cale moteur.
+- **Disjoncteur du guindeau** : cabine de poupe, sous l'ouverture d'accès aux coupe-circuits.
 - **Relais du guindeau** : dans un boîtier de type boîte de dérivation près du guindeau, accessible depuis la cabine de proue.
 - **Guindeau** : à la proue, posé sur le pont au-dessus du puits de chaîne.
-- **Groupe froid et EPS 100** : cuisine, entre le puits de dérive et la glacière, dans la partie droite du meuble bas sous l'évier.
+- **Groupe froid et EPS 100** : cuisine (tribord), entre le puits de dérive et la glacière, dans la partie droite du meuble bas sous l'évier.
+- **Tableau de servitude** : table à carte (bâbord).
+
+Plan : [folio 0](../schemas/folio-0-implantation.svg), d'après le [plan de brochure](photos/gibsea-31-drawing.jpg).
 
 ## Câblage
 
@@ -133,4 +140,4 @@ La netlist et la wirelist sont désormais tenues dans des fichiers structurés, 
 - [anomalies.md](anomalies.md) : les défauts constatés (A1…) ;
 - [questions.md](questions.md) : ce qu'il reste à relever à bord (Q1…).
 
-Le schéma correspondant est [le folio 1](../schemas/folio-1-actuel.svg).
+Schémas : [folio 1](../schemas/folio-1-actuel.svg) pour le 12 V, [folio 3](../schemas/folio-3-230v.svg) pour le 230 V.
