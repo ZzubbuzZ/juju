@@ -26,15 +26,27 @@ Le coupe-circuit des négatifs (node005 → node006) reste en aval du shunt. Le 
 
 La mise en commun des masses ne gêne pas la mesure, tant que **seul le négatif de la batterie de servitude** est raccordé côté batterie du shunt. La batterie moteur reste sur node005 par wire004, sans passer par le shunt.
 
+### Deux emplacements possibles
+
+wire009 part du coffre de la batterie de servitude, traverse la cloison vers le compartiment moteur, puis remonte derrière la descente jusqu'au coupe-circuit des négatifs (Q27). Électriquement, le shunt peut se placer à n'importe quel point de ce fil. Deux emplacements sont pratiques :
+
+| | Emplacement | Pour | Contre |
+|---|---|---|---|
+| a | Au départ, dans le coffre de la batterie de servitude (cabine de poupe) | Fil d'alimentation du shunt très court jusqu'au + de la batterie | Coffre à ouvrir pour y accéder ; humidité éventuelle au fond du coffre |
+| b | À l'arrivée, derrière la descente, près du coupe-circuit des négatifs | Accessible par l'ouverture côté cabine de poupe, avec le coupleur ; près du tableau et de la table à carte | Fil d'alimentation du shunt plus long, jusqu'à la batterie ou au côté batterie du coupe-circuit de servitude (node009) |
+
+L'emplacement b regroupe les organes de coupure et de mesure au même endroit. Il faudra confirmer la longueur réelle de wire009 (Q30).
+
 ## Batterie moteur : un second shunt n'est pas nécessaire
 
 L'objectif fixé pour la batterie moteur est de **surveiller sa tension**, pas de compter ses ampères-heures. La plupart des moniteurs de batterie ont une entrée auxiliaire de tension prévue pour ça : un seul fil fin, protégé par un fusible à la borne + de la batterie moteur. Un second shunt ne se justifierait que pour suivre l'état de charge de la batterie moteur, ce qui a peu d'intérêt pour une batterie qui ne sert qu'à démarrer.
 
 ## Questions préalables
 
-- **Place autour de la batterie de servitude** (cabine de poupe, coffre au sol) : un shunt mesure environ 10 × 5 cm, et on remplace wire009 par deux câbles courts. Voir Q27.
+- **Place pour le shunt** (Q27, traitée) : deux emplacements possibles, voir ci-dessus.
 - **Lecture souhaitée** : l'application sur smartphone suffit-elle, ou faut-il un afficheur fixe à la table à carte ? C'est un choix à faire, qui distingue les hypothèses H1 et H2.
-- **Place pour un afficheur** au tableau de la table à carte (bâbord), et trajet de son câble depuis la cabine de poupe. Voir Q28.
+- **Place pour un afficheur** (Q28, traitée) : oui, à la place de l'ancien indicateur de charge à aiguille du tableau de servitude. H2 ne demande donc aucune découpe nouvelle.
+- **Longueur réelle de wire009** : Q30.
 
 ## Hypothèses à explorer
 
