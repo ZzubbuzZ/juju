@@ -1,0 +1,18 @@
+#!/bin/sh
+# Refuse le commit si les données électriques sont incohérentes.
+# Activation (une fois par clone) : git config core.hooksPath .githooks
+
+PY=python
+if ! "$PY" -c "import yaml, jsonschema" >/dev/null 2>&1; then
+  PY="$LOCALAPPDATA/Programs/Python/Python312/python.exe"
+fi
+if ! "$PY" -c "import yaml, jsonschema" >/dev/null 2>&1; then
+  echo "pre-commit : Python avec pyyaml et jsonschema introuvable, vérification ignorée." >&2
+  exit 0
+fi
+
+if ! sortie=$("$PY" "Electricité/outils/verifier.py" 2>&1); then
+  echo "$sortie" | grep -E "ERREUR|erreur\(s\)|^  in " >&2
+  echo "Commit refusé : corriger les erreurs ci-dessus (détail : python Electricité/outils/verifier.py)." >&2
+  exit 1
+fi

@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bilan énergétique de Juju",
+  "description": "Consommateurs et profils d'usage. outils/verifier.py en tire les Ah consommés par jour pour chaque profil.",
+  "type": "object",
+  "required": ["tension_V", "profils", "consommateurs"],
+  "additionalProperties": false,
+  "properties": {
+    "tension_V": { "type": "number", "exclusiveMinimum": 0 },
+    "profils": {
+      "description": "Situations d'usage (navigation, mouillage…).",
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["description"],
+        "additionalProperties": false,
+        "properties": { "description": { "type": "string" } }
+      }
+    },
+    "consommateurs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["equipement", "courant_A", "heures_par_jour"],
+        "additionalProperties": false,
+        "properties": {
+          "equipement": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+          "courant_A": { "type": "number", "minimum": 0 },
+          "rapport_cyclique": {
+            "description": "Part du temps où l'appareil consomme réellement (compresseur du frigo, pilote…). 1 par défaut.",
+            "type": "number", "minimum": 0, "maximum": 1
+          },
+          "heures_par_jour": {
+            "description": "Heures d'utilisation par jour, pour chaque profil.",
+            "type": "object",
+            "additionalProperties": { "type": "number", "minimum": 0, "maximum": 24 }
+          },
+          "statut": { "enum": ["releve", "estime", "a_verifier", "propose"] },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

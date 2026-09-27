@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../outils/schema/bilan.schema.json
+#
+# Bilan énergétique de la batterie de servitude. Il sert de base commune aux
+# études B (chauffe-eau) et C (solaire). Toutes les valeurs sont des estimations
+# de départ, à remplacer par des mesures (shunt) quand ce sera possible.
+# outils/verifier.py calcule les Ah consommés par jour pour chaque profil :
+#   Ah/jour = courant_A × rapport_cyclique × heures_par_jour
+
+tension_V: 12
+
+profils:
+  navigation:
+    description: Journée de navigation côtière en été, retour au mouillage en fin de journée.
+  mouillage:
+    description: 24 h au mouillage, sans moteur.
+
+consommateurs:
+  - equipement: groupe-froid
+    courant_A: 3.5
+    rapport_cyclique: 0.4
+    heures_par_jour: { navigation: 24, mouillage: 24 }
+    statut: estime
+    note: Le compresseur tourne environ 40 % du temps en été.
+
+  - equipement: gps
+    courant_A: 2
+    heures_par_jour: { navigation: 10, mouillage: 0 }
+    statut: estime
+
+  - equipement: vhf
+    courant_A: 0.5
+    heures_par_jour: { navigation: 10, mouillage: 2 }
+    statut: estime
+    note: Veille en réception ; l'émission est négligeable sur la journée.
+
+  - equipement: pilote
+    courant_A: 2
+    rapport_cyclique: 0.5
+    heures_par_jour: { navigation: 6, mouillage: 0 }
+    statut: estime
+
+  - equipement: feu-bicolore
+    courant_A: 2.1
+    heures_par_jour: { navigation: 1, mouillage: 0 }
+    statut: estime
+
+  - equipement: feu-poupe
+    courant_A: 0.8
+    heures_par_jour: { navigation: 1, mouillage: 0 }
+    statut: estime
+
+  - equipement: feu-mouillage
+    courant_A: 0.8
+    heures_par_jour: { navigation: 9, mouillage: 9 }
+    statut: estime
+
+  - equipement: eclairage
+    courant_A: 3
+    heures_par_jour: { navigation: 2, mouillage: 3 }
+    statut: estime
+
+  - equipement: pompe-eau
+    courant_A: 8
+    heures_par_jour: { navigation: 0.2, mouillage: 0.3 }
+    statut: estime
+
+  - equipement: autoradio
+    courant_A: 2
+    heures_par_jour: { navigation: 2, mouillage: 3 }
+    statut: estime
+
+  - equipement: prises-12v
+    courant_A: 2
+    heures_par_jour: { navigation: 3, mouillage: 3 }
+    statut: estime
+    note: Recharge des téléphones et de la tablette.

@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Données électriques de Juju",
+  "description": "Schéma commun aux fichiers du relevé (equipements.yaml, netlist.yaml, wirelist.yaml) et aux fichiers cablage.yaml des hypothèses. Les références croisées (un fil qui pointe vers un nœud existant, etc.) sont contrôlées par outils/verifier.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "hypothese": {
+      "description": "Identifiant de l'hypothèse (fichiers cablage.yaml uniquement), ex. A-H1.",
+      "type": "string",
+      "pattern": "^[A-Z]-H[0-9]+$"
+    },
+    "titre": { "type": "string" },
+    "base": {
+      "description": "Ce sur quoi l'hypothèse s'applique : le relevé, ou une autre hypothèse.",
+      "type": "string",
+      "pattern": "^(releve|[A-Z]-H[0-9]+)$"
+    },
+    "equipements": { "type": "array", "items": { "$ref": "#/definitions/equipement" } },
+    "nodes": { "type": "array", "items": { "$ref": "#/definitions/node" } },
+    "fils": { "type": "array", "items": { "$ref": "#/definitions/fil" } },
+    "supprime": {
+      "description": "Éléments de la base retirés par l'hypothèse.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "equipements": { "type": "array", "items": { "$ref": "#/definitions/idEquipement" }, "uniqueItems": true },
+        "nodes": { "type": "array", "items": { "$ref": "#/definitions/idNode" }, "uniqueItems": true },
+        "fils": { "type": "array", "items": { "$ref": "#/definitions/idFil" }, "uniqueItems": true }
+      }
+    }
+  },
+  "definitions": {
+    "idEquipement": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "idNode": { "type": "string", "pattern": "^node[0-9]{3}$" },
+    "idFil": { "type": "string", "pattern": "^wire[0-9]{3}$" },
+    "idQuestion": { "type": "string", "pattern": "^Q[0-9]+$" },
+    "statut": {
+      "description": "releve = constaté à bord ; estime = valeur supposée ; a_verifier = constaté mais douteux ; propose = élément d'une hypothèse.",
+      "enum": ["releve", "estime", "a_verifier", "propose"]
+    },
+    "equipement": {
+      "type": "object",
+      "required": ["id", "type", "designation"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/idEquipement" },
+        "type": {
+          "enum": ["batterie", "coupe-circuit", "coupleur", "chargeur", "moteur", "fusible", "disjoncteur",
+                   "interrupteur", "relais", "commande", "recepteur", "convertisseur", "tableau", "barrette",
+                   "connecteur", "bornier", "shunt", "source"]
+        },
+        "designation": { "type": "string", "minLength": 1 },
+        "modele": { "type": "string" },
+        "emplacement": { "type": "string" },
+        "capacite_Ah": { "type": "number", "exclusiveMinimum": 0 },
+        "technologie": { "enum": ["plomb", "agm", "gel", "lifepo4"] },
+        "puissance_W": { "type": "number", "minimum": 0 },
+        "courant_A": { "description": "Courant typique en fonctionnement.", "type": "number", "minimum": 0 },
+        "courant_max_A": { "description": "Courant de pointe (démarrage, émission…).", "type": "number", "minimum": 0 },
+        "calibre_A": { "description": "Calibre d'un fusible ou d'un disjoncteur.", "type": "number", "exclusiveMinimum": 0 },
+        "statut": { "$ref": "#/definitions/statut" },
+        "questions": { "type": "array", "items": { "$ref": "#/definitions/idQuestion" }, "uniqueItems": true },
+        "note": { "type": "string" }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": ["id", "equipement", "borne", "polarite"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/idNode" },
+        "equipement": { "$ref": "#/definitions/idEquipement" },
+        "borne": { "type": "string", "minLength": 1 },
+        "polarite": {
+          "description": "commute = polarité inversée selon le sens (moteur de guindeau) ; commande = signal de commande.",
+          "enum": ["+", "-", "commute", "commande", "230V-phase", "230V-neutre", "230V-terre"]
+        },
+        "monte_sur": {
+          "description": "Borne vissée directement sur un autre nœud, sans fil (ex. fusible monté sur une barrette).",
+          "$ref": "#/definitions/idNode"
+        },
+        "description": { "type": "string" },
+        "statut": { "$ref": "#/definitions/statut" },
+        "questions": { "type": "array", "items": { "$ref": "#/definitions/idQuestion" }, "uniqueItems": true }
+      }
+    },
+    "fil": {
+      "type": "object",
+      "required": ["id", "de", "vers", "section_mm2", "couleur"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/idFil" },
+        "de": { "$ref": "#/definitions/idNode" },
+        "vers": { "$ref": "#/definitions/idNode" },
+        "section_mm2": { "enum": [0.75, 1, 1.5, 2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95] },
+        "couleur": { "enum": ["rouge", "noir", "jaune", "bleu", "marron", "vert-jaune", "blanc", "gris", "orange"] },
+        "longueur_m": { "type": "number", "exclusiveMinimum": 0 },
+        "remplace": { "description": "Fil de la base que celui-ci remplace.", "$ref": "#/definitions/idFil" },
+        "statut": { "$ref": "#/definitions/statut" },
+        "questions": { "type": "array", "items": { "$ref": "#/definitions/idQuestion" }, "uniqueItems": true },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

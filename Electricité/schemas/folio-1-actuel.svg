@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 770" role="img" aria-label="Câblage 12 V actuel : deux batteries, quatre coupe-circuits, coupleur et chargeur branchés sans fusible, tableau de servitude alimenté sans protection depuis l'entrée du disjoncteur du guindeau.">
+  <title>Folio 1 · Câblage 12 V actuel</title>
+  <desc>Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² depuis l'entrée du disjoncteur du guindeau, donc sans aucune protection (A1). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n'est plus alimentée.</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+
+  <!-- masses côté batteries -->
+  <path class="n w4" d="M60 125 H40 V720 H240"/>
+  <path class="n w4" d="M60 495 H40"/>
+  <circle class="dn" cx="40" cy="495" r="4.5"/>
+  <text class="id mid" x="36" y="300" transform="rotate(-90 36 300)">wire004 · 35</text>
+  <text class="id mid" x="36" y="610" transform="rotate(-90 36 610)">wire009 · 35</text>
+  <path class="n w4" d="M225 330 V720"/>
+  <circle class="dn" cx="225" cy="720" r="4.5"/>
+  <!-- CC masse -->
+  <circle class="term" cx="240" cy="720" r="4"/><circle class="term" cx="300" cy="720" r="4"/>
+  <path class="lever" d="M240 720 L297 706"/>
+  <text class="ts mid" x="270" y="696">CC masse (−)</text>
+  <text class="id end" x="236" y="742">node005</text>
+  <text class="id" x="304" y="742">node006</text>
+  <!-- masse côté charges -->
+  <path class="n w4" d="M304 720 H830"/>
+  <circle class="dn" cx="575" cy="720" r="4.5"/><circle class="dn" cx="715" cy="720" r="4.5"/><circle class="dn" cx="805" cy="720" r="4.5"/>
+  <text class="ts mid" x="450" y="742">masse côté charges</text>
+
+  <!-- Batterie moteur -->
+  <rect class="box" x="60" y="70" width="130" height="70" rx="2"/>
+  <text class="tb mid" x="125" y="96">Batterie moteur</text>
+  <text class="ts mid" x="125" y="113">Varta 110 Ah · Pb</text>
+  <text class="id" x="66" y="133">node002</text>
+  <text class="id end" x="184" y="133">node001</text>
+  <path class="p w4" d="M190 100 H386"/>
+  <circle class="dp" cx="250" cy="100" r="4.5"/><circle class="dp" cx="350" cy="100" r="4.5"/>
+  <text class="id mid" x="300" y="91">wire001 · 35</text>
+  <g class="mk-a"><circle cx="212" cy="76" r="10"/><text class="mid" x="212" y="79.5">A2</text></g>
+  <g class="mk-a"><circle cx="236" cy="76" r="10"/><text class="mid" x="236" y="79.5">A3</text></g>
+  <!-- CC moteur -->
+  <circle class="term" cx="390" cy="100" r="4"/><circle class="term" cx="450" cy="100" r="4"/>
+  <path class="lever" d="M390 100 L447 87"/>
+  <text class="ts mid" x="420" y="76">CC moteur +</text>
+  <text class="id mid" x="390" y="120">node003</text>
+  <text class="id mid" x="452" y="120">node004</text>
+  <path class="p w4" d="M454 100 H600"/>
+  <circle class="dp" cx="540" cy="100" r="4.5"/>
+  <text class="id mid" x="497" y="91">wire012 · 35</text>
+  <!-- Moteur -->
+  <rect class="box" x="600" y="60" width="170" height="85" rx="2"/>
+  <text class="tb mid" x="685" y="87">Yanmar 3GM30</text>
+  <text class="ts mid" x="685" y="105">démarreur + alternateur</text>
+  <text class="id mid" x="685" y="127">node031 / node032</text>
+  <path class="n w4" d="M770 125 H805 V720"/>
+  <text class="id mid" x="818" y="300" transform="rotate(-90 818 300)">wire013 · 35</text>
+  <!-- Tableau moteur (zone d'ombre) -->
+  <path class="u" d="M770 85 H880"/>
+  <rect class="box-unk" x="880" y="55" width="210" height="70" rx="2"/>
+  <text class="tb mid" x="985" y="84">Tableau moteur</text>
+  <text class="ts mid" x="985" y="102">contact · jauges</text>
+  <text class="ts mid tu" x="985" y="148">alimenté par le câble du démarreur ?</text>
+  <text class="ts mid tu" x="985" y="164">fusible ?</text>
+  <g class="mk-q"><circle cx="1098" cy="58" r="11"/><text class="mid" x="1098" y="61.5">Q1</text></g>
+
+  <!-- Couplage -->
+  <path class="p w4" d="M540 100 V191"/>
+  <circle class="term" cx="540" cy="195" r="4"/><circle class="term" cx="540" cy="255" r="4"/>
+  <path class="lever" d="M540 255 L527 198"/>
+  <text class="ts" x="556" y="222">CC couplage</text>
+  <text class="id" x="556" y="238">node011–012</text>
+  <text class="id mid" x="553" y="150" transform="rotate(-90 553 150)">wire010</text>
+  <path class="p w4" d="M540 259 V400 H370 V466"/>
+  <circle class="dp" cx="370" cy="470" r="4.5"/>
+  <text class="id mid" x="455" y="392">wire011 · 35</text>
+
+  <!-- Chargeur -->
+  <path class="p w2" d="M250 100 V240"/>
+  <text class="id mid" x="263" y="170" transform="rotate(-90 263 170)">wire003 · 6</text>
+  <rect class="box" x="205" y="240" width="110" height="90" rx="2"/>
+  <text class="tb mid" x="260" y="261">Chargeur quai</text>
+  <text class="ts mid" x="260" y="278">Dolphin 12 V · 20 A</text>
+  <text class="ts mid" x="260" y="295">3 sorties · Pb</text>
+  <text class="id mid" x="260" y="316">sortie 3 libre</text>
+  <path class="p w2" d="M280 330 V470"/>
+  <circle class="dp" cx="280" cy="470" r="4.5"/>
+  <text class="id mid" x="293" y="400" transform="rotate(-90 293 400)">wire008 · 6</text>
+  <text class="id mid" x="221" y="600" transform="rotate(-90 221 600)">wire005 · 35</text>
+  <!-- Coupleur -->
+  <path class="p w2" d="M350 100 V250"/>
+  <text class="id mid" x="363" y="178" transform="rotate(-90 363 178)">wire002 · 6</text>
+  <rect class="box" x="335" y="250" width="120" height="80" rx="2"/>
+  <text class="tb mid" x="395" y="271">Coupleur</text>
+  <text class="ts mid" x="395" y="288">Scheiber 38.14700</text>
+  <text class="ts mid" x="395" y="305">relais · Pb</text>
+  <path class="p w2" d="M350 330 V470"/>
+  <circle class="dp" cx="350" cy="470" r="4.5"/>
+  <text class="id mid" x="346" y="400" transform="rotate(-90 346 400)">wire007 · 6</text>
+  <path class="n w2" d="M455 290 H575 V720"/>
+  <text class="id mid" x="588" y="630" transform="rotate(-90 588 630)">wire014 · 6</text>
+  <g class="mk-a"><circle cx="325" cy="226" r="10"/><text class="mid" x="325" y="229.5">A4</text></g>
+
+  <!-- Batterie servitude -->
+  <rect class="box" x="60" y="440" width="130" height="70" rx="2"/>
+  <text class="tb mid" x="125" y="466">Batterie servitude</text>
+  <text class="ts mid" x="125" y="483">110 Ah · Pb</text>
+  <text class="id" x="66" y="503">node008</text>
+  <text class="id end" x="184" y="503">node007</text>
+  <path class="p w4" d="M190 470 H386"/>
+  <text class="id mid" x="312" y="490">wire006 · 35</text>
+  <g class="mk-a"><circle cx="212" cy="446" r="10"/><text class="mid" x="212" y="449.5">A2</text></g>
+  <!-- CC servitude -->
+  <circle class="term" cx="390" cy="470" r="4"/><circle class="term" cx="450" cy="470" r="4"/>
+  <path class="lever" d="M390 470 L447 457"/>
+  <text class="ts mid" x="420" y="446">CC servitude +</text>
+  <text class="id mid" x="390" y="490">node009</text>
+  <text class="id mid" x="452" y="504">node010</text>
+  <path class="p w4" d="M454 470 H615"/>
+  <text class="id mid" x="522" y="490">wire017 · 35</text>
+  <!-- Disjoncteur guindeau -->
+  <circle class="dp" cx="600" cy="470" r="4.5"/>
+  <rect class="box" x="615" y="459" width="50" height="22"/>
+  <text class="ts mid" x="640" y="474">disj.</text>
+  <text class="ts mid" x="640" y="448">Disjoncteur guindeau</text>
+  <text class="id mid" x="650" y="497">node020 / 021</text>
+  <path class="p w5" d="M665 470 H860"/>
+  <text class="id mid" x="742" y="460">wire018 · 50</text>
+  <!-- Relais guindeau -->
+  <rect class="box" x="860" y="440" width="120" height="80" rx="2"/>
+  <text class="tb mid" x="920" y="466">Relais</text>
+  <text class="ts mid" x="920" y="483">guindeau</text>
+  <text class="id mid" x="920" y="505">node022–028</text>
+  <path class="p w3" d="M980 460 H1087"/>
+  <path class="n w3" d="M980 500 H1087"/>
+  <text class="id mid" x="1032" y="451">wire020 / wire021 · 10</text>
+  <g class="mk-a"><circle cx="1000" cy="522" r="10"/><text class="mid" x="1000" y="525.5">A5</text></g>
+  <circle class="box" cx="1112" cy="480" r="28"/>
+  <text class="tb mid" x="1112" y="485">M</text>
+  <text class="tb mid" x="1112" y="527">Guindeau Lewmar</text>
+  <text class="ts mid" x="1112" y="543">Pro-Series 1000 · 700 W</text>
+  <path class="n w5" d="M860 505 H830 V720"/>
+  <text class="id mid" x="843" y="580" transform="rotate(-90 843 580)">wire015 · 50</text>
+  <!-- Télécommande -->
+  <path class="u" d="M940 520 V558 H1115 V580"/>
+  <rect class="box-unk" x="1050" y="580" width="130" height="60" rx="2"/>
+  <text class="tb mid" x="1115" y="605">Télécommande</text>
+  <text class="ts mid tu" x="1115" y="623">alim. et fusible ?</text>
+  <g class="mk-q"><circle cx="1180" cy="580" r="11"/><text class="mid" x="1180" y="583.5">Q2</text></g>
+
+  <!-- Tableau table à carte -->
+  <path class="p w2" d="M600 474 V632 H640"/>
+  <text class="id mid" x="613" y="532" transform="rotate(-90 613 532)">wire019 · 6</text>
+  <g class="mk-a"><circle cx="600" cy="585" r="11"/><text class="mid" x="600" y="588.5">A1</text></g>
+  <rect class="box" x="640" y="595" width="150" height="75" rx="2"/>
+  <text class="tb mid" x="715" y="620">Tableau</text>
+  <text class="ts mid" x="715" y="637">table à carte</text>
+  <text class="id mid" x="715" y="657">12 circuits · folio 2b</text>
+  <path class="n w2" d="M715 670 V716"/>
+  <text class="id" x="722" y="700">wire016 · 6</text>
+  <!-- Tableau Scheiber 2 voies -->
+  <rect class="box" x="870" y="595" width="150" height="75" rx="2"/>
+  <text class="tb mid" x="945" y="620">Tableau Scheiber</text>
+  <text class="ts mid" x="945" y="637">2 voies · contremarche</text>
+  <text class="ts mid tu" x="945" y="657">alim. et masse ?</text>
+  <g class="mk-q"><circle cx="1020" cy="597" r="11"/><text class="mid" x="1020" y="600.5">Q3</text></g>
+</svg>

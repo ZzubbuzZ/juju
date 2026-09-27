@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../outils/schema/donnees.schema.json
+#
+# Fils relevés à bord. Longueurs en m, sections en mm².
+# Numéros : wire001-099 relevé, wire100 et suivants réservés aux propositions.
+
+fils:
+  # --- Batterie moteur -----------------------------------------------------------
+  - { id: wire001, de: node001, vers: node003, section_mm2: 35, couleur: rouge, longueur_m: 2 }
+  - { id: wire002, de: node003, vers: node013, section_mm2: 6, couleur: rouge, longueur_m: 0.5, note: "Sans fusible (A4)" }
+  - { id: wire003, de: node003, vers: node016, section_mm2: 6, couleur: rouge, longueur_m: 2, note: "Sans fusible (A4)" }
+  - { id: wire004, de: node002, vers: node005, section_mm2: 35, couleur: noir, longueur_m: 2 }
+  - { id: wire005, de: node018, vers: node005, section_mm2: 35, couleur: noir, longueur_m: 2 }
+
+  # --- Batterie de servitude -----------------------------------------------------
+  - { id: wire006, de: node007, vers: node009, section_mm2: 35, couleur: rouge, longueur_m: 1 }
+  - { id: wire007, de: node009, vers: node014, section_mm2: 6, couleur: rouge, longueur_m: 0.5, note: "Sans fusible (A4)" }
+  - { id: wire008, de: node009, vers: node017, section_mm2: 6, couleur: rouge, longueur_m: 2, note: "Sans fusible (A4)" }
+  - { id: wire009, de: node008, vers: node005, section_mm2: 35, couleur: noir, longueur_m: 1 }
+
+  # --- Couplage et moteur --------------------------------------------------------
+  - { id: wire010, de: node004, vers: node012, section_mm2: 35, couleur: rouge, longueur_m: 0.2 }
+  - { id: wire011, de: node009, vers: node011, section_mm2: 35, couleur: rouge, longueur_m: 0.2 }
+  - { id: wire012, de: node004, vers: node031, section_mm2: 35, couleur: rouge, longueur_m: 1 }
+  - { id: wire013, de: node006, vers: node032, section_mm2: 35, couleur: noir, longueur_m: 1 }
+  - { id: wire014, de: node006, vers: node015, section_mm2: 6, couleur: noir, longueur_m: 1, note: "Masse du coupleur côté charges" }
+
+  # --- Guindeau et tableau de servitude ------------------------------------------
+  - { id: wire015, de: node006, vers: node023, section_mm2: 50, couleur: noir, longueur_m: 10 }
+  - { id: wire016, de: node006, vers: node101, section_mm2: 6, couleur: noir, longueur_m: 3 }
+  - { id: wire017, de: node010, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 0.5 }
+  - { id: wire018, de: node021, vers: node022, section_mm2: 50, couleur: rouge, longueur_m: 10 }
+  - { id: wire019, de: node020, vers: node100, section_mm2: 6, couleur: rouge, longueur_m: 3, note: "Aucune protection (A1)" }
+  - { id: wire020, de: node024, vers: node029, section_mm2: 10, couleur: rouge, longueur_m: 0.5, note: "Section à vérifier (A5)" }
+  - { id: wire021, de: node025, vers: node030, section_mm2: 10, couleur: noir, longueur_m: 0.5, note: "Section à vérifier (A5)" }

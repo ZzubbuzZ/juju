@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../outils/schema/donnees.schema.json
+#
+# Nœuds du circuit : une borne d'un équipement = un nœud.
+# Plages de numéros : 001-019 batteries et charge, 020-039 guindeau et moteur,
+# 040-049 frigo, 050-099 réservé aux propositions, 100-199 tableau de servitude.
+
+nodes:
+  # --- Batterie moteur et coupe-circuit moteur ---------------------------------
+  - { id: node001, equipement: bat-moteur, borne: "+", polarite: "+" }
+  - { id: node002, equipement: bat-moteur, borne: "-", polarite: "-" }
+  - { id: node003, equipement: cc-moteur, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node004, equipement: cc-moteur, borne: "2 (côté charges)", polarite: "+" }
+
+  # --- Coupe-circuit des négatifs ------------------------------------------------
+  - { id: node005, equipement: cc-masse, borne: "1 (côté batteries)", polarite: "-" }
+  - { id: node006, equipement: cc-masse, borne: "2 (côté charges)", polarite: "-" }
+
+  # --- Batterie de servitude et coupe-circuits -----------------------------------
+  - { id: node007, equipement: bat-servitude, borne: "+", polarite: "+" }
+  - { id: node008, equipement: bat-servitude, borne: "-", polarite: "-" }
+  - { id: node009, equipement: cc-servitude, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node010, equipement: cc-servitude, borne: "2 (côté charges)", polarite: "+" }
+  - { id: node011, equipement: cc-couplage, borne: "1 (côté servitude)", polarite: "+" }
+  - { id: node012, equipement: cc-couplage, borne: "2 (côté moteur)", polarite: "+" }
+
+  # --- Coupleur et chargeur ------------------------------------------------------
+  - { id: node013, equipement: coupleur, borne: "batterie moteur", polarite: "+" }
+  - { id: node014, equipement: coupleur, borne: "batterie servitude", polarite: "+" }
+  - { id: node015, equipement: coupleur, borne: "masse", polarite: "-" }
+  - { id: node016, equipement: chargeur-quai, borne: "sortie 1 (moteur)", polarite: "+" }
+  - { id: node017, equipement: chargeur-quai, borne: "sortie 2 (servitude)", polarite: "+" }
+  - { id: node018, equipement: chargeur-quai, borne: "masse", polarite: "-" }
+
+  # --- Guindeau ------------------------------------------------------------------
+  - { id: node020, equipement: disj-guindeau, borne: "1 (primaire)", polarite: "+" }
+  - { id: node021, equipement: disj-guindeau, borne: "2 (secondaire)", polarite: "+" }
+  - { id: node022, equipement: relais-guindeau, borne: "entrée +", polarite: "+" }
+  - { id: node023, equipement: relais-guindeau, borne: "entrée -", polarite: "-" }
+  - { id: node024, equipement: relais-guindeau, borne: "sortie moteur A", polarite: commute }
+  - { id: node025, equipement: relais-guindeau, borne: "sortie moteur B", polarite: commute }
+  - { id: node026, equipement: relais-guindeau, borne: "commande montée", polarite: commande, questions: [Q2] }
+  - { id: node027, equipement: relais-guindeau, borne: "commande descente", polarite: commande, questions: [Q2] }
+  - { id: node028, equipement: relais-guindeau, borne: "commande masse", polarite: "-", questions: [Q2] }
+  - { id: node029, equipement: guindeau, borne: "A", polarite: commute }
+  - { id: node030, equipement: guindeau, borne: "B", polarite: commute }
+
+  # --- Moteur --------------------------------------------------------------------
+  - { id: node031, equipement: moteur, borne: "+ démarreur / alternateur", polarite: "+", questions: [Q1, Q14] }
+  - { id: node032, equipement: moteur, borne: "masse moteur", polarite: "-" }
+
+  # --- Frigo ---------------------------------------------------------------------
+  - { id: node040, equipement: groupe-froid, borne: "+ 12/24 V", polarite: "+" }
+  - { id: node041, equipement: groupe-froid, borne: "-", polarite: "-" }
+  - { id: node042, equipement: eps100, borne: "batterie +", polarite: "+" }
+  - { id: node043, equipement: eps100, borne: "batterie -", polarite: "-" }
+  - { id: node044, equipement: eps100, borne: "sortie groupe froid +", polarite: "+" }
+  - { id: node045, equipement: eps100, borne: "sortie groupe froid -", polarite: "-" }
+  - { id: node046, equipement: eps100, borne: "230 V terre", polarite: 230V-terre }
+  - { id: node047, equipement: eps100, borne: "230 V phase", polarite: 230V-phase }
+  - { id: node048, equipement: eps100, borne: "230 V neutre", polarite: 230V-neutre }
+
+  # --- Tableau de servitude (table à carte) --------------------------------------
+  - { id: node100, equipement: tableau-servitude, borne: "+ alimentation", polarite: "+" }
+  - { id: node101, equipement: tableau-servitude, borne: "- barre de masse", polarite: "-" }
+  - { id: node102, equipement: tableau-servitude, borne: "feu route (10 A)", polarite: "+" }
+  - { id: node103, equipement: tableau-servitude, borne: "feu moteur (10 A)", polarite: "+" }
+  - { id: node104, equipement: tableau-servitude, borne: "pompe à eau (15 A)", polarite: "+" }
+  - { id: node105, equipement: tableau-servitude, borne: "radio (10 A)", polarite: "+" }
+  - { id: node106, equipement: tableau-servitude, borne: "prises 12 V (10 A)", polarite: "+" }
+  - { id: node107, equipement: tableau-servitude, borne: "éclairage (10 A)", polarite: "+" }
+  - { id: node108, equipement: tableau-servitude, borne: "projecteur (10 A)", polarite: "+" }
+  - { id: node109, equipement: tableau-servitude, borne: "mouillage (10 A)", polarite: "+" }
+  - { id: node110, equipement: tableau-servitude, borne: "compas (5 A)", polarite: "+" }
+  - { id: node111, equipement: tableau-servitude, borne: "pilote (10 A)", polarite: "+" }
+  - { id: node112, equipement: tableau-servitude, borne: "VHF (10 A)", polarite: "+" }
+  - { id: node113, equipement: tableau-servitude, borne: "GPS loch (10 A)", polarite: "+" }

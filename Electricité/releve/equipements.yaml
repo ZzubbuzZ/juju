@@ -1,0 +1,230 @@
+# yaml-language-server: $schema=../outils/schema/donnees.schema.json
+#
+# Équipements électriques constatés à bord.
+# Ce fichier ne contient que l'existant : les propositions vont dans etudes/.
+# statut absent = relevé à bord.
+
+equipements:
+  # --- Stockage et coupure ---------------------------------------------------
+  - id: bat-moteur
+    type: batterie
+    designation: Batterie moteur
+    modele: Varta 110 Ah plomb sans entretien
+    capacite_Ah: 110
+    technologie: plomb
+    note: Câbles sans cosses serties, abîmés par le connecteur actuel (anomalie A3).
+
+  - id: bat-servitude
+    type: batterie
+    designation: Batterie de servitude
+    modele: 110 Ah plomb sans entretien
+    capacite_Ah: 110
+    technologie: plomb
+
+  - id: cc-moteur
+    type: coupe-circuit
+    designation: Coupe-circuit + moteur
+    emplacement: Platine des coupe-circuits, en haut à droite
+
+  - id: cc-servitude
+    type: coupe-circuit
+    designation: Coupe-circuit + servitude
+    emplacement: Platine des coupe-circuits, en bas à droite
+
+  - id: cc-masse
+    type: coupe-circuit
+    designation: Coupe-circuit des négatifs (commun aux deux batteries)
+    emplacement: Platine des coupe-circuits, en haut à gauche
+
+  - id: cc-couplage
+    type: coupe-circuit
+    designation: Coupe-circuit de couplage (servitude vers démarreur/alternateur)
+    emplacement: Platine des coupe-circuits, en bas à gauche
+
+  # --- Charge ------------------------------------------------------------------
+  - id: coupleur
+    type: coupleur
+    designation: Coupleur de charge à relais
+    modele: Scheiber 38.14700.00
+    note: Prévu pour plomb uniquement. Sa masse est prise côté charges du coupe-circuit des négatifs.
+
+  - id: chargeur-quai
+    type: chargeur
+    designation: Chargeur de quai
+    modele: Dolphin 12 V 20 A, 3 sorties plomb
+    note: Sortie 3 libre. Branché en direct sur les batteries, sans passer par les coupe-circuits.
+
+  - id: moteur
+    type: moteur
+    designation: Moteur Yanmar (démarreur + alternateur)
+    modele: Yanmar 3GM30
+    questions: [Q1, Q13, Q14]
+
+  # --- Guindeau ----------------------------------------------------------------
+  - id: disj-guindeau
+    type: disjoncteur
+    designation: Disjoncteur thermique du guindeau
+    emplacement: Près des coupe-circuits
+    questions: [Q15]
+
+  - id: relais-guindeau
+    type: relais
+    designation: Boîtier relais du guindeau
+    emplacement: Près du guindeau
+
+  - id: guindeau
+    type: recepteur
+    designation: Guindeau
+    modele: Lewmar Pro-Series 1000
+    puissance_W: 700
+    courant_max_A: 80
+    statut: estime
+    note: Courant estimé en charge, à confirmer avec la notice Lewmar (anomalie A5).
+
+  - id: telecommande-guindeau
+    type: commande
+    designation: Télécommande du guindeau
+    questions: [Q2]
+
+  # --- Tableaux ----------------------------------------------------------------
+  - id: tableau-servitude
+    type: tableau
+    designation: Tableau de servitude (table à carte)
+    emplacement: Table à carte
+    note: 12 interrupteurs et 12 fusibles. Câblage arrière en « plat de spaghettis ».
+
+  - id: tableau-scheiber
+    type: tableau
+    designation: Tableau Scheiber 2 voies (frigo 15 A, pompe de cale 10 A)
+    emplacement: Contremarche de la descente, près de l'appareillage moteur
+    questions: [Q3]
+
+  # --- Récepteurs --------------------------------------------------------------
+  - id: groupe-froid
+    type: recepteur
+    designation: Groupe froid
+    modele: WAECO ColdMachine CU-55 12/24 V
+    puissance_W: 40
+    courant_A: 3.5
+    courant_max_A: 5
+    statut: estime
+
+  - id: eps100
+    type: convertisseur
+    designation: Alimentation 12 V / 230 V du frigo
+    modele: Dometic EPS 100
+    questions: [Q6]
+
+  - id: pompe-cale
+    type: recepteur
+    designation: Pompe de cale moteur
+    questions: [Q4, Q5]
+
+  - id: pompe-eau
+    type: recepteur
+    designation: Pompe à eau douce
+    modele: Seaflow SFDP1-045-040
+    courant_A: 8
+    courant_max_A: 15
+    statut: estime
+
+  - id: feu-bicolore
+    type: recepteur
+    designation: Feu bicolore (proue)
+    puissance_W: 25
+    statut: estime
+    questions: [Q7]
+
+  - id: feu-poupe
+    type: recepteur
+    designation: Feu de poupe
+    puissance_W: 10
+    statut: estime
+    questions: [Q7]
+
+  - id: feu-tete-mat
+    type: recepteur
+    designation: Feu de tête de mât (moteur)
+    puissance_W: 25
+    statut: estime
+    questions: [Q7]
+
+  - id: feu-mouillage
+    type: recepteur
+    designation: Feu de mouillage
+    puissance_W: 10
+    statut: estime
+    questions: [Q7]
+
+  - id: projecteur
+    type: recepteur
+    designation: Projecteur de pont
+    puissance_W: 35
+    statut: estime
+    questions: [Q7]
+
+  - id: eclairage
+    type: recepteur
+    designation: Éclairage intérieur (5 ou 6 lampes)
+    courant_A: 5
+    statut: estime
+    questions: [Q9]
+
+  - id: prises-12v
+    type: recepteur
+    designation: Prises 12 V allume-cigare (x2)
+    courant_max_A: 10
+
+  - id: autoradio
+    type: recepteur
+    designation: Autoradio
+    courant_A: 5
+    statut: estime
+    questions: [Q8]
+
+  - id: compas
+    type: recepteur
+    designation: Éclairage du compas
+    courant_A: 0.1
+    statut: estime
+
+  - id: pilote
+    type: recepteur
+    designation: Pilote automatique
+    courant_max_A: 5
+    statut: estime
+    questions: [Q10]
+
+  - id: vhf
+    type: recepteur
+    designation: VHF
+    modele: Standard Horizon Matrix GX2200 AIS
+    courant_max_A: 6
+    statut: estime
+
+  - id: gps
+    type: recepteur
+    designation: GPS traceur (sondeur intégré ?)
+    modele: Garmin GPSMAP 7407 xsv ou xdv
+    courant_A: 2
+    statut: estime
+    questions: [Q11]
+
+  - id: repetiteur-gps
+    type: recepteur
+    designation: Répétiteur GPS du cockpit
+    modele: MLR FX312
+
+  - id: loch
+    type: recepteur
+    designation: Loch
+
+  - id: anemometre
+    type: recepteur
+    designation: Anémomètre / girouette
+    modele: Advansea
+
+  - id: radar
+    type: recepteur
+    designation: Radar
+    questions: [Q11]
