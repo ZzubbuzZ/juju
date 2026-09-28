@@ -71,7 +71,7 @@ equipements:
     designation: Moteur Yanmar (démarreur + alternateur)
     modele: Yanmar 3GMD (plaque signalétique)
     zone: compartiment-moteur
-    note: L'état des lieux initial indiquait 3GM30. Refroidissement direct à l'eau de mer. Alternateur d'environ 20 A (spécification d'origine ; celui de Juju semble plus récent mais semblable).
+    note: "L'état des lieux initial indiquait 3GM30. Refroidissement direct à l'eau de mer. Alternateur d'environ 20 A (spécification d'origine ; celui de Juju semble plus récent mais semblable). Démarreur (manuel d'atelier Yanmar) : 60 A à vide, 460 A rotor bloqué, puissance maximale entre 200 et 275 A."
     questions: [Q1, Q14]
 
   # --- Guindeau ----------------------------------------------------------------

@@ -34,6 +34,7 @@ Les points suivants sont à revoir sur le circuit 12v :
 ### Moteur
 Moteur Yanmar 3GMD, d'après la plaque signalétique (d'abord noté 3GM30). Refroidissement direct à l'eau de mer.
 Alternateur d'environ 20 A (spécification d'origine ; celui de Juju semble plus récent mais semblable, plaque à relever : Q14).
+Démarreur : 60 A à vide, 460 A rotor bloqué (couple maximal, vitesse nulle), puissance maximale entre 200 et 275 A ([manuel d'atelier Yanmar](documentation/YANMAR-WORKSHOP-MANUAL-1GM-2GM-3GM-3HM.pdf)).
 Batterie Varta 110Ah au Plomb sans entretien
 Coupe circuit dédié sur pole 12v
 
@@ -156,5 +157,5 @@ Schémas : [folio 1](../schemas/folio-1-actuel.svg) pour le 12 V, [folio 3](../s
 
 ## Documentation et photos
 
-- [documentation/](documentation/) : fiche du Gib'Sea 31, notice Lewmar du guindeau, abaque de sections 12 V.
+- [documentation/](documentation/) : fiche du Gib'Sea 31, notice Lewmar du guindeau, manuel d'atelier Yanmar (1GM, 2GM, 3GM, 3HM), abaque de sections 12 V.
 - [photos/](photos/) : platine des coupe-circuits, tableaux de la descente et de la table à carte, moteur, instruments, plans manuscrits 230 V et 12 V. Le plan manuscrit 12 V (`Circuit-electrique-12v-faux.jpeg`) est faux, comme son nom l'indique : il ne sert pas de source.
