@@ -19,9 +19,17 @@ Ce que la liaison apporte en plus : si un défaut met du 230 V sur le circuit 12
 |---|---|---|
 | Défaut 230 V sur un appareil touché | différentiel | différentiel |
 | Défaut 230 V sur le circuit 12 V | coupure immédiate | coupure au premier contact |
-| Corrosion par les autres bateaux | bloquée par l'isolateur | pas de chemin |
+| Risque de corrosion galvanique par les autres bateaux | faible : l'isolateur bloque les tensions galvaniques (quelques dixièmes de volt) sous son seuil d'environ 1,2 V. Le risque redevient entier si l'isolateur claque en court-circuit, panne typique d'une diode, sans que rien ne le signale | nul : pas de chemin entre les pièces immergées et le ponton |
+| Pièces touchées si le risque se réalise | les métaux immergés reliés au négatif 12 V : l'arbre et l'hélice par le moteur (si l'accouplement est métallique), l'anode si elle leur est reliée. L'anode se consomme d'abord, en quelques semaines au lieu d'une saison ; une fois usée, l'hélice (bronze) et l'arbre sont attaqués | aucune |
 | Coût | environ 140 € | 0 € |
 | Conformité ISO 13297 / ABYC E-11 | oui | non |
+
+Pour situer l'isolateur : la liaison (2) **sans** isolateur mettrait les pièces ci-dessus en permanence en contact avec la terre du ponton, donc avec les pièces immergées de tous les bateaux branchés au quai. Le métal le moins noble de l'ensemble, souvent l'anode de Juju, se consommerait au profit des autres.
+
+Deux points restent à vérifier à bord, car ils conditionnent la colonne « Sans liaison » :
+
+- **Liaison cachée** : certains chargeurs relient leur négatif de sortie à leur boîtier, donc à la terre. Si c'est le cas du Dolphin ou de l'EPS 100, la liaison (2) existe déjà, sans isolateur. À mesurer à l'ohmmètre, câble de quai débranché, entre la broche de terre de la prise de quai et le négatif 12 V.
+- **Pièces immergées réellement reliées au 12 V** : présence et emplacement de l'anode, type d'accouplement de l'arbre, liaison éventuelle de la dérive en fonte, des passe-coques ou de la sonde du sondeur à la masse. Non relevé à ce jour.
 
 Dans les deux cas, **tester le différentiel régulièrement** avec son bouton de test.
 
@@ -46,7 +54,8 @@ La vraie différence est donc **le moment où il coupe** :
 | Quelqu'un touche cette carcasse | rien, c'est déjà coupé | il reçoit une décharge, brève, que le différentiel coupe : normalement sans gravité, mais à bord, un sursaut peut suffire à une chute ou à un homme à la mer |
 | Le différentiel est défaillant (collé, oxydé) | le défaut n'est pas coupé, mais la carcasse est reliée au ponton, ce qui limite sa tension | rien ne protège la personne |
 | Fuites permanentes des filtres électroniques (chargeur, EPS 100) | écoulées par le vert-jaune | la carcasse « pique » légèrement au toucher |
-| Corrosion galvanique | aucune, tant que la liaison (2) n'est pas faite | aucune |
+| Risque de corrosion galvanique | nul tant que la liaison (2) n'est pas faite (ou faite avec un isolateur) : la terre du ponton n'atteint que les carcasses du chargeur et de l'EPS 100, hors de l'eau | nul |
+| Pièces touchées | aucune pièce immergée | aucune |
 
 **Conclusion** : sans (1), on garde la protection, mais on passe de deux protections indépendantes à une seule, et le défaut n'est découvert qu'au premier contact. Surtout, **on n'y gagne rien** : le problème de corrosion galvanique est déjà absent tant que la liaison (2) n'existe pas, ce qui est le cas aujourd'hui. Moins de sécurité pour aucun bénéfice : on garde (1).
 
