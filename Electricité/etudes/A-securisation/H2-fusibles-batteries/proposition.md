@@ -8,16 +8,26 @@ Nomenclature : [nomenclature.yaml](nomenclature.yaml). Le `cablage.yaml` et le f
 
 Un fusible protège le câble qui part de lui, et se place à sa source. Aujourd'hui, un court-circuit sur n'importe quel câble branché sur une batterie n'est coupé par rien.
 
-### Batterie de servitude
+### Ce que dit le démarreur
 
-- **Un fusible sur la borne +**, de type MRBF, vissé directement sur la borne. Il protège wire006 (35 mm²) et tout ce qui est en aval.
-- **Calibre à arrêter, entre 150 et 250 A.** Il doit laisser passer, en même temps, le guindeau (50 A en courant normal, disjoncteur de 70 A), le tableau de la table à carte (fusible de 50 A dans H1) et le tableau Scheiber (30 A). Il doit aussi supporter un **démarrage de secours, coupe-circuit de couplage fermé** : la batterie de servitude alimente alors le démarreur, et un fusible de 150 A risque de fondre. Deux choix : dimensionner pour ce démarrage (250 A, à comparer à la tenue du câble de 35 mm²), ou accepter qu'un démarrage couplé ne soit possible que sur la batterie moteur. À trancher avec l'intensité du démarreur du 3GMD.
+D'après le manuel d'atelier Yanmar : **60 A à vide, 200 à 275 A en démarrage normal** (zone de puissance maximale), et **460 A rotor bloqué**, pendant une fraction de seconde au lancement. Un fusible supporte largement plus que son calibre pendant quelques secondes. Un calibre de 300 A laisse donc passer un démarrage, y compris la pointe à 460 A, mais fond en quelques millisecondes sur un court-circuit franc, qui fait plusieurs milliers d'ampères. La courbe temps-courant du fusible choisi est à vérifier au moment de l'achat.
 
 ### Batterie moteur
 
-Les normes nautiques dispensent le circuit du démarreur de fusible, à cause du courant de démarrage. Mais le risque est le même que côté servitude : wire001 fait 2 m, et s'il frotte contre une masse, rien ne coupe. **On pose donc aussi un fusible MRBF sur la borne + de la batterie moteur**, de calibre supérieur au courant de démarrage (250 à 300 A, à arrêter avec l'intensité du démarreur du 3GMD). Il ne fondra pas au démarrage, mais il coupera un court-circuit franc.
+Les normes nautiques dispensent le circuit du démarreur de fusible. Mais wire001 fait 2 m, et s'il frotte contre une masse, rien ne coupe. **Fusible MRBF de 300 A sur la borne +.** Il ne gêne pas le démarrage et coupe un court-circuit franc.
 
-Les départs secondaires (coupleur, chargeur) doivent aussi être protégés : c'est l'objet de A4.
+### Batterie de servitude
+
+En temps normal, le circuit de servitude tire au plus 160 A environ : guindeau (50 A en courant normal), tableau de la table à carte (50 A), tableau Scheiber (30 A), pompe de cale. Mais il y a le **démarrage de secours** : on ferme le coupe-circuit de couplage parce que la batterie moteur est à plat, et c'est alors la batterie de servitude qui fournit seule les 200 à 275 A du démarreur, à travers son fusible.
+
+| | Option A (recommandée) | Option B |
+|---|---|---|
+| Fusible de la batterie de servitude | 300 A | 200 A |
+| Démarrage de secours couplé | possible | le fusible risque de fondre |
+| wire006 (batterie → coupe-circuit, 1 m) | remplacé par du 50 mm², pour que le câble tienne le calibre du fusible | conservé en 35 mm² |
+| Coût supplémentaire | environ 30 € (câble et cosses) | 0 € |
+
+Un fusible doit rester adapté à la tenue du câble qu'il protège. Avec 300 A, le 35 mm² actuel est trop juste, d'où son remplacement dans l'option A ; il ne fait qu'un mètre. Les valeurs de tenue sont à confirmer dans les tables de la norme ISO 10133 au moment de l'achat. Avec l'option A, les deux batteries ont le même fusible : une seule référence de rechange à bord.
 
 ### Départs du coupleur et du chargeur (A4)
 
@@ -34,5 +44,5 @@ Les porte-fusibles se fixent près de la platine des coupe-circuits, dans la zon
 
 ## Questions liées
 
-- Intensité du démarreur du Yanmar 3GMD (à ajouter aux questions si cette hypothèse est retenue).
 - Calibre du coupleur Scheiber 38.14700.
+- Choix entre les options A et B pour la batterie de servitude.

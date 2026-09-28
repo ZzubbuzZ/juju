@@ -25,6 +25,21 @@ Ce que la liaison apporte en plus : si un défaut met du 230 V sur le circuit 12
 
 Dans les deux cas, **tester le différentiel régulièrement** avec son bouton de test.
 
+## À ne pas confondre : couper la terre du ponton
+
+Il y a deux « terres » à bord, et deux liaisons distinctes :
+
+- **(1) terre du ponton ↔ terre 230 V du bord** : le conducteur vert-jaune du câble de quai, qui arrive aux prises, au chargeur et à l'EPS 100. **Elle existe et doit rester.**
+- **(2) terre 230 V du bord ↔ masse 12 V** : c'est la liaison discutée plus haut. Elle n'existe pas aujourd'hui (A8).
+
+**Ne pas faire (2)** est la variante ci-dessus : défendable. Et c'est elle qui supprime le problème de corrosion galvanique. Sans (2), aucune pièce immergée (hélice, arbre, anode, tous reliés au 12 V par le moteur) n'est reliée à la terre du ponton, donc aucun courant galvanique ne circule vers les autres bateaux. L'isolateur galvanique ne sert que si l'on fait (2).
+
+**Ne pas faire (1)**, c'est-à-dire couper le vert-jaune à la prise de quai, est **à proscrire**. Ce conducteur est la protection principale des appareils à carcasse métallique. Aujourd'hui, si le chargeur a un défaut d'isolement, sa carcasse est reliée à la terre du ponton : le courant de défaut s'écoule et le différentiel déclenche aussitôt. Sans (1), la carcasse reste sous 230 V, sans rien déclencher, jusqu'à ce que quelqu'un la touche en étant en contact avec l'eau, le ponton ou une autre masse. Le différentiel coupera alors, mais c'est le corps de cette personne qui ferme le circuit. En cas de différentiel défaillant, rien ne la protège. C'est aussi contraire aux règles d'installation en port (NF C 15-100, section 709) et aux normes nautiques.
+
+Le seul moyen d'isoler complètement le bord du ponton sans perdre la protection est un **transformateur d'isolement** : plusieurs centaines d'euros, et une trentaine de kilos. C'est disproportionné pour Juju.
+
+**Conclusion** : garder (1), et choisir entre « (2) avec isolateur galvanique » et « ni (2) ni isolateur ». Dans les deux cas, pas de problème de corrosion galvanique.
+
 ## Selon la réponse à Q31
 
 - **Disjoncteurs bipolaires** : si les disjoncteurs 10 A et 16 A ne coupent que la phase, les remplacer par des modèles phase + neutre. Jusqu'à 6 disjoncteurs (2 à l'arrivée, 2 par boîtier de distribution). Non chiffré tant que Q31 n'est pas tranchée.

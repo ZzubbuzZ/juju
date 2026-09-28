@@ -11,7 +11,7 @@ Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) 
 | Priorité | Hypothèse · lot | Anomalies | Coût estimé | Enjeu |
 |---|---|---|---|---|
 | 1 | [H1](H1-distribution-servitude/proposition.md) · distribution : barrette + et fusibles des tableaux | A1, A6 | 165 € | Deux câbles alimentés sans aucune protection : risque d'incendie |
-| 2 | [H2](H2-fusibles-batteries/proposition.md) · fusibles sur les bornes des deux batteries | A2 | 106 € | Rien ne coupe un court-circuit sur les câbles de batterie ; calibres à arrêter |
+| 2 | [H2](H2-fusibles-batteries/proposition.md) · fusibles de 300 A sur les bornes des deux batteries, wire006 refait en 50 mm² | A2 | 136 € | Rien ne coupe un court-circuit sur les câbles de batterie |
 | 2 | H2 · fusibles des départs coupleur et chargeur | A4 | 87 € | Quatre câbles de 6 mm² branchés en direct sur les batteries |
 | 3 | [H5](H5-passages-cloison/proposition.md) · passages de cloison | A9 | 44 € | Usure de l'isolant sur l'arête des trous, jusqu'au court-circuit |
 | 3 | [H3](H3-cosses/proposition.md) · cosses de la batterie moteur | A3 | 14 € (+60 € si les câbles sont à changer) | Contacts dégradés sur le circuit du démarreur |
@@ -22,9 +22,9 @@ Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) 
 | 5 | H4 · disjoncteurs phase + neutre | | à chiffrer, selon Q31 | Seulement si les disjoncteurs actuels ne coupent que la phase |
 | 6 | H1 · recâblage du tableau de la table à carte | | 407 € | Fiabilité et lisibilité (« plat de spaghettis ») plus que sécurité ; peut être différé |
 
-**Total des priorités 1 à 5 : environ 710 €** (575 € sans la liaison à la terre), outillage compris. Le recâblage complet du tableau de servitude ajoute environ 410 €.
+**Total des priorités 1 à 5 : environ 740 €** (605 € sans la liaison à la terre), outillage compris. Le recâblage complet du tableau de servitude ajoute environ 410 €.
 
-**Ordre proposé** : les priorités 1 et 2 suppriment les risques d'incendie pour environ 360 €. Tout se passe autour des batteries et de la platine des coupe-circuits, donc en une journée à bord. Les passages de cloison et les cosses (priorité 3) se font dans la foulée, sur les mêmes câbles et avec le même outillage.
+**Ordre proposé** : les priorités 1 et 2 suppriment les risques d'incendie pour environ 390 €. Tout se passe autour des batteries et de la platine des coupe-circuits, donc en une journée à bord. Les passages de cloison et les cosses (priorité 3) se font dans la foulée, sur les mêmes câbles et avec le même outillage.
 
 Dépendances : H2 dimensionne le fusible de la batterie de servitude en tenant compte des départs créés par H1, et H4 modifie le folio 3. A5 (section du guindeau) a été levée le 27/09 : elle n'est plus à traiter.
 
@@ -48,7 +48,7 @@ Relevé du 28/09 : la terre et la masse 12 V ne sont reliées nulle part, et il 
 - Les passages de cloison sont de simple trous au travers desquels passent les cables, sans plus de protection. Comment protéger efficacement les cables à ces endroits?
   - → Nouvelle anomalie A9 et hypothèse H5 : un passe-fil en caoutchouc dans chaque trou, et surtout des colliers vissés de part et d'autre de la cloison, pour que le câble ne bouge plus contre l'arête. Pas de mastic, qui masque l'usure. Recensement des passages : Q35.
 - Si relier la terre à bord et à quai pose un problème d'isolation galvanique, peut-être pouvons-nous ne pas le faire, sachant qu'un différentiel à bord s'occupe de préserver la sécurité des passagers?
-  - → C'est un choix défendable, décrit comme variante dans H4, avec un tableau comparatif. Le différentiel protège bien les personnes. Ce que la liaison ajoute : en cas de défaut 230 V sur le circuit 12 V (chargeur, EPS 100), la coupure est immédiate au lieu d'attendre qu'un courant passe par quelqu'un. À trancher lors de la décision.
+  - → Tout dépend de quelle liaison on parle ; voir [H4, « À ne pas confondre »](H4-terre-230v/proposition.md#à-ne-pas-confondre--couper-la-terre-du-ponton). Ne pas relier la terre 230 V à la masse 12 V : défendable, et cela suffit à supprimer la corrosion galvanique. Couper la terre du ponton : à proscrire, c'est la protection des appareils à carcasse métallique.
 
 ## Critères de comparaison
 
