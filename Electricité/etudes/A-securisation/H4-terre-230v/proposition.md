@@ -34,11 +34,30 @@ Il y a deux « terres » à bord, et deux liaisons distinctes :
 
 **Ne pas faire (2)** est la variante ci-dessus : défendable. Et c'est elle qui supprime le problème de corrosion galvanique. Sans (2), aucune pièce immergée (hélice, arbre, anode, tous reliés au 12 V par le moteur) n'est reliée à la terre du ponton, donc aucun courant galvanique ne circule vers les autres bateaux. L'isolateur galvanique ne sert que si l'on fait (2).
 
-**Ne pas faire (1)**, c'est-à-dire couper le vert-jaune à la prise de quai, est **à proscrire**. Ce conducteur est la protection principale des appareils à carcasse métallique. Aujourd'hui, si le chargeur a un défaut d'isolement, sa carcasse est reliée à la terre du ponton : le courant de défaut s'écoule et le différentiel déclenche aussitôt. Sans (1), la carcasse reste sous 230 V, sans rien déclencher, jusqu'à ce que quelqu'un la touche en étant en contact avec l'eau, le ponton ou une autre masse. Le différentiel coupera alors, mais c'est le corps de cette personne qui ferme le circuit. En cas de différentiel défaillant, rien ne la protège. C'est aussi contraire aux règles d'installation en port (NF C 15-100, section 709) et aux normes nautiques.
+**Ne pas faire (1)**, c'est-à-dire couper le vert-jaune à la prise de quai : que perd-on, puisque le différentiel 30 mA est en tête de tout le 230 V ?
 
-Le seul moyen d'isoler complètement le bord du ponton sans perdre la protection est un **transformateur d'isolement** : plusieurs centaines d'euros, et une trentaine de kilos. C'est disproportionné pour Juju.
+Ce qu'il faut d'abord reconnaître : **le différentiel est bien la protection des personnes, et il fonctionne sans conducteur de terre.** Il compare le courant qui part par la phase à celui qui revient par le neutre. Si quelqu'un touche une carcasse sous tension en étant en contact avec l'eau, le ponton ou le quai, le courant qui le traverse revient à la source par la terre, pas par le neutre : le différentiel voit l'écart et coupe dès 30 mA, en quelques dizaines de millisecondes. C'est pour ce cas qu'il existe. Au ponton, la terre seule ne suffirait d'ailleurs sans doute pas à faire déclencher un disjoncteur ordinaire : dans les deux cas, c'est le différentiel qui coupe.
 
-**Conclusion** : garder (1), et choisir entre « (2) avec isolateur galvanique » et « ni (2) ni isolateur ». Dans les deux cas, pas de problème de corrosion galvanique.
+La vraie différence est donc **le moment où il coupe** :
+
+| | Avec la terre du ponton (1) | Sans (1) |
+|---|---|---|
+| Un appareil à carcasse métallique a un défaut | le courant part par le vert-jaune, le différentiel coupe aussitôt, personne n'a rien touché | rien ne se passe : la carcasse reste sous tension, sans que personne le sache |
+| Quelqu'un touche cette carcasse | rien, c'est déjà coupé | il reçoit une décharge, brève, que le différentiel coupe : normalement sans gravité, mais à bord, un sursaut peut suffire à une chute ou à un homme à la mer |
+| Le différentiel est défaillant (collé, oxydé) | le défaut n'est pas coupé, mais la carcasse est reliée au ponton, ce qui limite sa tension | rien ne protège la personne |
+| Fuites permanentes des filtres électroniques (chargeur, EPS 100) | écoulées par le vert-jaune | la carcasse « pique » légèrement au toucher |
+| Corrosion galvanique | aucune, tant que la liaison (2) n'est pas faite | aucune |
+
+**Conclusion** : sans (1), on garde la protection, mais on passe de deux protections indépendantes à une seule, et le défaut n'est découvert qu'au premier contact. Surtout, **on n'y gagne rien** : le problème de corrosion galvanique est déjà absent tant que la liaison (2) n'existe pas, ce qui est le cas aujourd'hui. Moins de sécurité pour aucun bénéfice : on garde (1).
+
+Le différentiel porte donc presque tout. Deux vérifications s'imposent (Q36) :
+
+- **son type** : un chargeur à découpage peut produire des fuites que le type AC détecte mal ; le type A est préférable ;
+- **son fonctionnement** : appuyer sur le bouton de test en début de saison, puis régulièrement, en environnement salin.
+
+Le seul moyen d'isoler complètement le bord du ponton sans rien perdre est un **transformateur d'isolement** : plusieurs centaines d'euros et une trentaine de kilos, disproportionné pour Juju.
+
+**En résumé** : garder (1), et choisir entre « (2) avec isolateur galvanique » et « ni (2) ni isolateur ».
 
 ## Selon la réponse à Q31
 

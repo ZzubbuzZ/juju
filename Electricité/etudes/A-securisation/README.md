@@ -48,7 +48,7 @@ Relevé du 28/09 : la terre et la masse 12 V ne sont reliées nulle part, et il 
 - Les passages de cloison sont de simple trous au travers desquels passent les cables, sans plus de protection. Comment protéger efficacement les cables à ces endroits?
   - → Nouvelle anomalie A9 et hypothèse H5 : un passe-fil en caoutchouc dans chaque trou, et surtout des colliers vissés de part et d'autre de la cloison, pour que le câble ne bouge plus contre l'arête. Pas de mastic, qui masque l'usure. Recensement des passages : Q35.
 - Si relier la terre à bord et à quai pose un problème d'isolation galvanique, peut-être pouvons-nous ne pas le faire, sachant qu'un différentiel à bord s'occupe de préserver la sécurité des passagers?
-  - → Tout dépend de quelle liaison on parle ; voir [H4, « À ne pas confondre »](H4-terre-230v/proposition.md#à-ne-pas-confondre--couper-la-terre-du-ponton). Ne pas relier la terre 230 V à la masse 12 V : défendable, et cela suffit à supprimer la corrosion galvanique. Couper la terre du ponton : à proscrire, c'est la protection des appareils à carcasse métallique.
+  - → Tout dépend de quelle liaison on parle ; voir [H4, « À ne pas confondre »](H4-terre-230v/proposition.md#à-ne-pas-confondre--couper-la-terre-du-ponton). Ne pas relier la terre 230 V à la masse 12 V : défendable, et cela suffit à supprimer la corrosion galvanique. Couper la terre du ponton : le différentiel protégerait encore les personnes, mais on perdrait la coupure immédiate au défaut et la redondance, sans rien gagner, puisque la corrosion galvanique est déjà évitée sans la liaison terre / masse 12 V. On garde la terre du ponton.
 
 ## Critères de comparaison
 
