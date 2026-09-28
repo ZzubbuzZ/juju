@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nomenclature chiffrée d'une hypothèse",
+  "description": "Liste du matériel d'une hypothèse (etudes/<axe>/H<n>-<nom>/nomenclature.yaml). outils/verifier.py calcule les totaux par lot et signale les articles non chiffrés et les fils proposés absents de la nomenclature.",
+  "type": "object",
+  "required": ["hypothese", "articles"],
+  "additionalProperties": false,
+  "properties": {
+    "hypothese": { "type": "string", "pattern": "^[A-Z]-H[0-9]+$" },
+    "devise": { "const": "EUR" },
+    "lots": {
+      "description": "Lots de l'hypothèse, dans l'ordre d'affichage : un lot peut être réalisé indépendamment des autres.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["titre"],
+        "additionalProperties": false,
+        "properties": {
+          "titre": { "type": "string" },
+          "anomalies": { "type": "array", "items": { "type": "string", "pattern": "^A[0-9]+$" } },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "articles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["designation", "quantite", "unite", "statut"],
+        "additionalProperties": false,
+        "properties": {
+          "lot": { "type": "string" },
+          "designation": { "type": "string", "minLength": 1 },
+          "reference": { "description": "Référence fabricant, si connue.", "type": "string" },
+          "quantite": { "type": "number", "exclusiveMinimum": 0 },
+          "unite": { "enum": ["pièce", "m", "lot"] },
+          "prix_unitaire": { "description": "Prix TTC en euros, pour une unité.", "type": "number", "minimum": 0 },
+          "statut": {
+            "description": "devis = prix obtenu d'un fournisseur ; catalogue = prix public relevé ; estimation = ordre de grandeur non sourcé ; a_chiffrer = prix inconnu.",
+            "enum": ["devis", "catalogue", "estimation", "a_chiffrer"]
+          },
+          "source": { "description": "URL ou nom du fournisseur.", "type": "string" },
+          "date_prix": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+          "fils": {
+            "description": "Fils du cablage.yaml fournis par cet article (câble au mètre, cosses…).",
+            "type": "array",
+            "items": { "type": "string", "pattern": "^wire[0-9]{3}$" },
+            "uniqueItems": true
+          },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

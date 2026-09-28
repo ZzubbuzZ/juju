@@ -24,6 +24,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q29** Tableau Scheiber : section du départ frigo vers l'EPS 100 (wire024), et le retour de l'EPS 100 arrive-t-il bien sur la barrette de masse du tableau (wire025) ?
 - **Q30** Longueur réelle de wire009 (− batterie de servitude → coupe-circuit des négatifs). Le relevé indique 1 m, mais le trajet décrit (cloison vers le moteur, puis remontée derrière la descente) semble plus long.
 - **Q34** Calibre inscrit sur le disjoncteur du guindeau. La notice Lewmar préconise 70 A pour le Pro-Series 1000.
+- **Q35** Passages de cloison : combien y en a-t-il, avec quel diamètre de trou, et combien de câbles passent dans chacun ? Au minimum : batterie de servitude → compartiment moteur, compartiment moteur → descente, et les passages vers l'avant (guindeau, tableau).
 
 ### Équipements
 

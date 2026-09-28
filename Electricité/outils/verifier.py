@@ -344,6 +344,62 @@ def controler_implantation(m: Modele, r: Rapport) -> None:
     r.ok(f"{len(zones & set(m.zones))} zones et {len(equip & places)} équipements placés sur le plan")
 
 
+def euros(x: float) -> str:
+    return f"{x:,.0f} €".replace(",", " ")
+
+
+def nomenclature(chemin: Path, schema: dict, attendu: str, m: Modele | None, anomalies: set[str],
+                 delta: dict, r: Rapport) -> None:
+    """Nomenclature chiffrée : cohérence avec l'hypothèse, prix renseignés, fils couverts, totaux par lot."""
+    ou = rel(chemin)
+    data = lire_yaml(chemin, r)
+    if data is None or not valider(data, schema, chemin, r):
+        return
+    if data["hypothese"] != attendu:
+        r.erreur(ou, f"hypothese = {data['hypothese']}, le dossier indique {attendu}")
+    lots = data.get("lots", {})
+    for nom, lot in lots.items():
+        for a in lot.get("anomalies", []):
+            if a not in anomalies:
+                r.erreur(ou, f"lot {nom} : anomalie {a} absente de releve/anomalies.md")
+    totaux, manquants, estimes = {}, 0, 0
+    fils_couverts = set()
+    for art in data["articles"]:
+        lot = art.get("lot", "")
+        nom = f"« {art['designation']} »"
+        if lots and lot not in lots:
+            r.erreur(ou, f"{nom} : lot « {lot} » non déclaré dans lots")
+        if art["statut"] == "a_chiffrer":
+            manquants += 1
+            if "prix_unitaire" in art:
+                r.avert(ou, f"{nom} : statut a_chiffrer mais prix renseigné")
+        elif "prix_unitaire" not in art:
+            r.erreur(ou, f"{nom} : prix_unitaire manquant (ou statut a_chiffrer)")
+        if art["statut"] in ("catalogue", "devis") and not ("source" in art and "date_prix" in art):
+            r.avert(ou, f"{nom} : prix {art['statut']} sans source ni date")
+        if art["statut"] == "estimation":
+            estimes += 1
+        totaux[lot] = totaux.get(lot, 0) + art["quantite"] * art.get("prix_unitaire", 0)
+        fils = art.get("fils", [])
+        fils_couverts |= set(fils)
+        if m is not None:
+            inconnus = [w for w in fils if w not in m.fils]
+            for w in inconnus:
+                r.erreur(ou, f"{nom} : {w} n'existe pas dans l'hypothèse")
+            if art["unite"] == "m" and fils and not inconnus:
+                besoin = sum(m.fils[w].get("longueur_m", 0) for w in fils)
+                if art["quantite"] < besoin:
+                    r.avert(ou, f"{nom} : {art['quantite']} m commandés pour {besoin:g} m de fils")
+    proposes = {f["id"] for f in delta.get("fils", [])}
+    for w in sorted(proposes - fils_couverts):
+        r.avert(ou, f"{w} est proposé dans cablage.yaml mais absent de la nomenclature")
+    for nom in (list(lots) or sorted(totaux)):
+        titre = lots.get(nom, {}).get("titre", nom or "sans lot")
+        r.info(f"lot {nom or '-':<12} {euros(totaux.get(nom, 0)):>9}  {titre}")
+    r.info(f"{'total':<17}{euros(sum(totaux.values())):>9}  "
+           f"({estimes} prix estimé(s), {manquants} article(s) à chiffrer)")
+
+
 def bilan(chemin: Path, schema: dict, equipements: dict, r: Rapport) -> None:
     data = lire_yaml(chemin, r)
     if data is None or not valider(data, schema, chemin, r):
@@ -448,6 +504,14 @@ def main() -> int:
         ajoutes = {f["id"] for f in data.get("fils", [])}
         controler_svg(sorted(chemin.parent.glob("*.svg")), ajoutes, set(m.fils),
                       questions, traitees, anomalies, levees, rel(chemin.parent), r)
+
+    # ---- Nomenclatures chiffrées
+    schema_nomenc = json.loads((RACINE / "outils/schema/nomenclature.schema.json").read_text(encoding="utf-8"))
+    for chemin in sorted((RACINE / "etudes").glob("*/H*/nomenclature.yaml")):
+        attendu = f"{chemin.parent.parent.name[0]}-{chemin.parent.name.split('-')[0]}"
+        r.section(f"Nomenclature {attendu} ({rel(chemin)})")
+        delta = hyps.get(attendu, (None, {}))[1]
+        nomenclature(chemin, schema_nomenc, attendu, modeles.get(attendu), anomalies, delta, r)
 
     # ---- Bilan
     r.section("Bilan énergétique (commun/bilan-energetique.yaml)")
