@@ -59,6 +59,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   - Les disjoncteurs 10 A et 16 A coupent-ils la phase et le neutre (bipolaires, ou « phase + neutre ») ? À quai en France, la phase et le neutre peuvent être inversés.
   - Le plafonnier 230 V est-il métallique (classe I, terre obligatoire) ou en plastique à double isolation (classe II, marqué d'un double carré) ?
   → 28/09 : terre 230 V et masse 12 V séparées, pas d'isolateur galvanique (anomalie A8). Boîtier bâbord dans le placard entre la table à carte et la cabine de poupe ; boîtier tribord sur la cloison entre le cabinet de toilette et le coffre de cockpit. Raccordement des prises (étoile ou chaîne) : non relevé, jugé secondaire.
+- **Q36** Différentiel 30 mA du boîtier d'arrivée : de quel type est-il (AC, A ou F, symbole imprimé sur l'appareil) ? Déclenche-t-il quand on appuie sur son bouton de test ? Un chargeur à découpage peut produire des fuites que le type AC détecte mal.
 
 ## Réponses
 
