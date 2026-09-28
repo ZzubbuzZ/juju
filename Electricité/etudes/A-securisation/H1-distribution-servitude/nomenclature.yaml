@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# A-H1 : nomenclature chiffrée. Prix TTC en euros.
+# Tous les prix sont des estimations (28/09/2026) à remplacer par des prix
+# catalogue ou de devis (statut, source et date).
+# Câble : marin étamé, longueurs de cablage.yaml + environ 10 %.
+
+hypothese: A-H1
+devise: EUR
+
+lots:
+  distribution:
+    titre: Barrette + et fusibles des tableaux
+    anomalies: [A1, A6]
+  cale:
+    titre: Pompe de cale automatique
+    note: Le flotteur n'existe pas aujourd'hui (Q4).
+  servitude:
+    titre: Recâblage du tableau de la table à carte (12 circuits)
+    note: Fiabilité et lisibilité plus que sécurité ; peut être différé.
+
+articles:
+  # --- Lot distribution ----------------------------------------------------------
+  - { lot: distribution, designation: "Barrette positive 4 goujons, 150 A", quantite: 1, unite: pièce, prix_unitaire: 35, statut: estimation }
+  - { lot: distribution, designation: "Porte-fusible MIDI", quantite: 2, unite: pièce, prix_unitaire: 12, statut: estimation }
+  - { lot: distribution, designation: "Fusibles MIDI 50 A et 30 A", quantite: 2, unite: pièce, prix_unitaire: 6, statut: estimation }
+  - { lot: distribution, designation: "Câble étamé 35 mm² rouge", quantite: 1, unite: m, prix_unitaire: 14, statut: estimation, fils: [wire100, wire101] }
+  - { lot: distribution, designation: "Câble étamé 10 mm² rouge", quantite: 3.5, unite: m, prix_unitaire: 5, statut: estimation, fils: [wire102] }
+  - { lot: distribution, designation: "Câble étamé 10 mm² noir", quantite: 3.5, unite: m, prix_unitaire: 5, statut: estimation, fils: [wire103] }
+  - { lot: distribution, designation: "Câble étamé 6 mm² rouge", quantite: 2.5, unite: m, prix_unitaire: 3.5, statut: estimation, fils: [wire104] }
+  - { lot: distribution, designation: "Cosses tubulaires étamées 35 mm²", quantite: 4, unite: pièce, prix_unitaire: 3, statut: estimation }
+  - { lot: distribution, designation: "Cosses tubulaires étamées 6 et 10 mm²", quantite: 6, unite: pièce, prix_unitaire: 1.5, statut: estimation }
+  - { lot: distribution, designation: "Gaine thermorétractable à colle, assortiment", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation }
+
+  # --- Lot cale ------------------------------------------------------------------
+  - { lot: cale, designation: "Contacteur à flotteur pour pompe de cale", reference: "type Rule-A-Matic", quantite: 1, unite: pièce, prix_unitaire: 35, statut: estimation }
+  - { lot: cale, designation: "Porte-fusible étanche à lame + fusible 10 A", quantite: 1, unite: pièce, prix_unitaire: 10, statut: estimation }
+  - { lot: cale, designation: "Câble étamé 2,5 mm² rouge", quantite: 4, unite: m, prix_unitaire: 1.6, statut: estimation, fils: [wire106, wire107, wire108] }
+  - { lot: cale, designation: "Câble étamé 2,5 mm² noir", quantite: 3.5, unite: m, prix_unitaire: 1.6, statut: estimation, fils: [wire110] }
+  - { lot: cale, designation: "Connecteurs étanches thermorétractables", quantite: 1, unite: lot, prix_unitaire: 10, statut: estimation }
+
+  # --- Lot servitude -------------------------------------------------------------
+  - { lot: servitude, designation: "Câble étamé 2,5 mm² rouge", quantite: 65, unite: m, prix_unitaire: 1.6, statut: estimation,
+      fils: [wire120, wire124, wire126, wire128, wire130, wire132, wire134, wire136, wire140, wire142, wire144, wire150, wire152],
+      note: "Les fils du mât (wire130, wire132, wire134) peuvent être remplacés par un câble multiconducteur 6 × 2,5 mm²" }
+  - { lot: servitude, designation: "Câble étamé 2,5 mm² noir", quantite: 65, unite: m, prix_unitaire: 1.6, statut: estimation,
+      fils: [wire121, wire125, wire127, wire129, wire131, wire133, wire135, wire137, wire141, wire143, wire145, wire151, wire153] }
+  - { lot: servitude, designation: "Câble étamé 1,5 mm² rouge", quantite: 11, unite: m, prix_unitaire: 1.1, statut: estimation, fils: [wire122, wire138, wire146] }
+  - { lot: servitude, designation: "Câble étamé 1,5 mm² noir", quantite: 11, unite: m, prix_unitaire: 1.1, statut: estimation, fils: [wire123, wire139, wire147] }
+  - { lot: servitude, designation: "Câble étamé 4 mm² rouge", quantite: 6, unite: m, prix_unitaire: 2.5, statut: estimation, fils: [wire148] }
+  - { lot: servitude, designation: "Câble étamé 4 mm² noir", quantite: 6, unite: m, prix_unitaire: 2.5, statut: estimation, fils: [wire149] }
+  - { lot: servitude, designation: "Connecteur de pont 6 broches (pied de mât)", quantite: 1, unite: pièce, prix_unitaire: 60, statut: estimation }
+  - { lot: servitude, designation: "Boîte à fusibles 6 voies (bornier instruments)", quantite: 1, unite: pièce, prix_unitaire: 35, statut: estimation }
+  - { lot: servitude, designation: "Bornier de départ éclairage", quantite: 1, unite: pièce, prix_unitaire: 10, statut: estimation }
+  - { lot: servitude, designation: "Cosses isolées assorties 1,5 à 4 mm²", quantite: 1, unite: lot, prix_unitaire: 25, statut: estimation }
+  - { lot: servitude, designation: "Manchons de repérage des fils", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation }

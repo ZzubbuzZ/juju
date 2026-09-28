@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# A-H3 : nomenclature chiffrée. Prix TTC en euros, estimations du 28/09/2026.
+# L'outillage sert aussi aux autres hypothèses (H1, H2).
+
+hypothese: A-H3
+devise: EUR
+
+lots:
+  moteur:
+    titre: Cosses de la batterie moteur
+    anomalies: [A3]
+  frigo:
+    titre: Raccordement de l'EPS 100
+    anomalies: [A7]
+  outillage:
+    titre: Outillage de sertissage
+    note: Commun à toutes les hypothèses de l'étude A.
+
+articles:
+  - { lot: moteur, designation: "Cosses tubulaires étamées 35 mm² (trou selon les bornes)", quantite: 2, unite: pièce, prix_unitaire: 3, statut: estimation }
+  - { lot: moteur, designation: "Gaine thermorétractable à colle, gros diamètre", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation }
+  - { lot: frigo, designation: "Cosses à fourche isolées bleues SV 2-4 et jaunes (4 à 6 mm²)", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation }
+  - { lot: frigo, designation: "Raccords bout à bout thermorétractables", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation }
+  - { lot: frigo, designation: "Câble étamé 2,5 mm² rouge et noir (queues de raccordement)", quantite: 1, unite: m, prix_unitaire: 3.2, statut: estimation }
+  - { lot: outillage, designation: "Sertisseuse pour cosses tubulaires jusqu'à 50 mm² (hydraulique ou à frapper)", quantite: 1, unite: pièce, prix_unitaire: 45, statut: estimation }
+  - { lot: outillage, designation: "Pince à sertir à cliquet pour cosses isolées", quantite: 1, unite: pièce, prix_unitaire: 30, statut: estimation }

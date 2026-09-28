@@ -4,18 +4,29 @@
 
 **Base** : le relevé (branche `main`). Anomalies à traiter : [anomalies.md](../../releve/anomalies.md).
 
-## Hypothèses
+## Pistes d'amélioration et coûts
 
-| | Contenu | Anomalies traitées | État |
-|---|---|---|---|
-| [H1](H1-distribution-servitude/proposition.md) | Barrette + de servitude avec fusibles, tableau de la table à carte refait (12 circuits), tableau Scheiber protégé, pompe de cale rendue automatique | A1, A6 | Rédigée, à valider · mise à jour avec les réponses du 27/09 |
-| H2 | Fusibles en sortie de batterie (MRBF sur les bornes) et fusibles sur les fils du coupleur et du chargeur | A2, A4 | À écrire |
-| H3 | Cosses serties : câbles de la batterie moteur, liaison EPS 100 → groupe froid (cosses à fourche SV 2-4) | A3, A7 | À écrire |
-| H4 | Terre 230 V : liaison terre / masse 12 V en un point, avec isolateur galvanique à l'arrivée ; terre du plafonnier s'il est de classe I ; disjoncteurs bipolaires si besoin | A8 (et Q31 pour le reste) | À écrire |
+Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) et une `nomenclature.yaml` (le matériel chiffré, par lot). Les lots sont réalisables séparément. Les montants ci-dessous sont ceux que calcule `outils/verifier.py` à partir des nomenclatures : **ce sont des estimations du 28-29/09/2026**, à remplacer par des prix catalogue ou de devis. Le vérificateur compte les prix encore estimés.
 
-A5 (section du guindeau) a été levée le 27/09 : elle n'est plus à traiter.
+| Priorité | Hypothèse · lot | Anomalies | Coût estimé | Enjeu |
+|---|---|---|---|---|
+| 1 | [H1](H1-distribution-servitude/proposition.md) · distribution : barrette + et fusibles des tableaux | A1, A6 | 165 € | Deux câbles alimentés sans aucune protection : risque d'incendie |
+| 2 | [H2](H2-fusibles-batteries/proposition.md) · fusibles sur les bornes des deux batteries | A2 | 106 € | Rien ne coupe un court-circuit sur les câbles de batterie ; calibres à arrêter |
+| 2 | H2 · fusibles des départs coupleur et chargeur | A4 | 87 € | Quatre câbles de 6 mm² branchés en direct sur les batteries |
+| 3 | [H5](H5-passages-cloison/proposition.md) · passages de cloison | A9 | 44 € | Usure de l'isolant sur l'arête des trous, jusqu'au court-circuit |
+| 3 | [H3](H3-cosses/proposition.md) · cosses de la batterie moteur | A3 | 14 € (+60 € si les câbles sont à changer) | Contacts dégradés sur le circuit du démarreur |
+| 3 | H3 · raccordement de l'EPS 100 | A7 | 17 € | Contact médiocre, coupures du frigo au démarrage du compresseur |
+| 3 | H3 · outillage de sertissage | | 75 € | Sert à toutes les hypothèses |
+| 4 | H1 · pompe de cale automatique | | 67 € | Pompe aujourd'hui manuelle, sans flotteur |
+| 5 | [H4](H4-terre-230v/proposition.md) · isolateur galvanique et liaison terre / masse 12 V | A8 | 136 € (0 € dans la variante sans liaison) | Défaut 230 V sur le circuit 12 V ; corrosion au ponton |
+| 5 | H4 · disjoncteurs phase + neutre | | à chiffrer, selon Q31 | Seulement si les disjoncteurs actuels ne coupent que la phase |
+| 6 | H1 · recâblage du tableau de la table à carte | | 407 € | Fiabilité et lisibilité (« plat de spaghettis ») plus que sécurité ; peut être différé |
 
-H2 et H3 complètent H1 plutôt qu'elles ne la concurrencent. La décision finale sera probablement « H1 + H2 + H3 », avec `base: A-H1` pour H2, puis `base: A-H2` pour H3.
+**Total des priorités 1 à 5 : environ 710 €** (575 € sans la liaison à la terre), outillage compris. Le recâblage complet du tableau de servitude ajoute environ 410 €.
+
+**Ordre proposé** : les priorités 1 et 2 suppriment les risques d'incendie pour environ 360 €. Tout se passe autour des batteries et de la platine des coupe-circuits, donc en une journée à bord. Les passages de cloison et les cosses (priorité 3) se font dans la foulée, sur les mêmes câbles et avec le même outillage.
+
+Dépendances : H2 dimensionne le fusible de la batterie de servitude en tenant compte des départs créés par H1, et H4 modifie le folio 3. A5 (section du guindeau) a été levée le 27/09 : elle n'est plus à traiter.
 
 ## Terre 230 V : bonnes pratiques
 
@@ -33,8 +44,11 @@ Relevé du 28/09 : la terre et la masse 12 V ne sont reliées nulle part, et il 
 ## Elements supplémentaires
 
 - Je ne vois pas de fusible en sortie de batterie. Il est souvent recommandé de placer un fusible en sortie de batterie, en effet le cable allant de node007 à CC servitude ne fait d'un metre, mais il peut entrer en contact avec une masse et provoquer de graves dégats s'il s'enflamme. Il faut traiter les 2 batteries de cette façon, non?
+  - → Oui. C'est l'anomalie A2, traitée par H2, qui prévoit désormais un fusible MRBF sur la borne + des deux batteries. Côté moteur, les normes dispensent le démarreur de fusible, mais un fusible de calibre supérieur au courant de démarrage ne gêne pas le démarrage et coupe un court-circuit franc.
 - Les passages de cloison sont de simple trous au travers desquels passent les cables, sans plus de protection. Comment protéger efficacement les cables à ces endroits?
+  - → Nouvelle anomalie A9 et hypothèse H5 : un passe-fil en caoutchouc dans chaque trou, et surtout des colliers vissés de part et d'autre de la cloison, pour que le câble ne bouge plus contre l'arête. Pas de mastic, qui masque l'usure. Recensement des passages : Q35.
 - Si relier la terre à bord et à quai pose un problème d'isolation galvanique, peut-être pouvons-nous ne pas le faire, sachant qu'un différentiel à bord s'occupe de préserver la sécurité des passagers?
+  - → C'est un choix défendable, décrit comme variante dans H4, avec un tableau comparatif. Le différentiel protège bien les personnes. Ce que la liaison ajoute : en cas de défaut 230 V sur le circuit 12 V (chargeur, EPS 100), la coupure est immédiate au lieu d'attendre qu'un courant passe par quelqu'un. À trancher lors de la décision.
 
 ## Critères de comparaison
 

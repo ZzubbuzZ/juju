@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# A-H4 : nomenclature chiffrée. Prix TTC en euros, estimations du 28/09/2026.
+
+hypothese: A-H4
+devise: EUR
+
+lots:
+  terre:
+    titre: Isolateur galvanique et liaison terre / masse 12 V
+    anomalies: [A8]
+  bipolaires:
+    titre: Disjoncteurs phase + neutre (si Q31 le confirme)
+
+articles:
+  - { lot: terre, designation: "Isolateur galvanique 16 A", reference: "type Victron VDI-16", quantite: 1, unite: pièce, prix_unitaire: 120, statut: estimation }
+  - { lot: terre, designation: "Câble vert-jaune 6 mm² (liaison vers node005)", quantite: 3, unite: m, prix_unitaire: 3.5, statut: estimation }
+  - { lot: terre, designation: "Cosses tubulaires étamées 6 mm² et gaine", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation }
+  - { lot: bipolaires, designation: "Disjoncteur phase + neutre 10 ou 16 A", quantite: 6, unite: pièce, statut: a_chiffrer, note: "Seulement si les disjoncteurs actuels ne coupent que la phase (Q31)" }

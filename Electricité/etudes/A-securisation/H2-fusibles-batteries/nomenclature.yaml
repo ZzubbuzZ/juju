@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# A-H2 : nomenclature chiffrée. Prix TTC en euros, estimations du 28/09/2026.
+
+hypothese: A-H2
+devise: EUR
+
+lots:
+  batteries:
+    titre: Fusibles sur les bornes + des deux batteries
+    anomalies: [A2]
+    note: Calibres à arrêter (servitude 150 à 250 A, moteur 250 à 300 A), voir proposition.md.
+  departs:
+    titre: Fusibles des départs coupleur et chargeur
+    anomalies: [A4]
+
+articles:
+  - { lot: batteries, designation: "Porte-fusible MRBF sur borne de batterie", quantite: 2, unite: pièce, prix_unitaire: 35, statut: estimation }
+  - { lot: batteries, designation: "Fusibles MRBF (servitude 150 à 250 A, moteur 250 à 300 A)", quantite: 2, unite: pièce, prix_unitaire: 18, statut: estimation }
+  - { lot: departs, designation: "Porte-fusible MIDI", quantite: 4, unite: pièce, prix_unitaire: 12, statut: estimation }
+  - { lot: departs, designation: "Fusibles MIDI (2 × 30 A, 2 × 50 A)", quantite: 4, unite: pièce, prix_unitaire: 6, statut: estimation }
+  - { lot: departs, designation: "Câble étamé 6 mm² rouge (reprise des départs vers les porte-fusibles)", quantite: 2, unite: m, prix_unitaire: 3.5, statut: estimation }
+  - { lot: departs, designation: "Cosses tubulaires étamées 6 mm²", quantite: 8, unite: pièce, prix_unitaire: 1, statut: estimation }
