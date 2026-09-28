@@ -30,6 +30,12 @@ La coque isolante ne change rien au principe : à bord, **la protection contre l
 
 Relevé du 28/09 : la terre et la masse 12 V ne sont reliées nulle part, et il n'y a pas d'isolateur galvanique (A8). H4 portera donc au minimum sur la liaison et l'isolateur. Restent à relever : la coupure bipolaire des disjoncteurs et la classe du plafonnier (Q31).
 
+## Elements supplémentaires
+
+- Je ne vois pas de fusible en sortie de batterie. Il est souvent recommandé de placer un fusible en sortie de batterie, en effet le cable allant de node007 à CC servitude ne fait d'un metre, mais il peut entrer en contact avec une masse et provoquer de graves dégats s'il s'enflamme. Il faut traiter les 2 batteries de cette façon, non?
+- Les passages de cloison sont de simple trous au travers desquels passent les cables, sans plus de protection. Comment protéger efficacement les cables à ces endroits?
+- Si relier la terre à bord et à quai pose un problème d'isolation galvanique, peut-être pouvons-nous ne pas le faire, sachant qu'un différentiel à bord s'occupe de préserver la sécurité des passagers?
+
 ## Critères de comparaison
 
 - Anomalies traitées et risque résiduel.
