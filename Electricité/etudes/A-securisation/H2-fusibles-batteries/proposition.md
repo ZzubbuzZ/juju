@@ -16,6 +16,8 @@ D'après le manuel d'atelier Yanmar : **60 A à vide, 200 à 275 A en démarrage
 
 Les normes nautiques dispensent le circuit du démarreur de fusible. Mais wire001 fait 2 m, et s'il frotte contre une masse, rien ne coupe. **Fusible MRBF de 300 A sur la borne +.** Il ne gêne pas le démarrage et coupe un court-circuit franc.
 
+C'est d'ailleurs la pratique de l'automobile récente : sur un Ford Transit Custom, le démarreur et l'alternateur sont raccordés à la batterie à travers un fusible de 470 A, pour un démarreur de diesel plus puissant que celui du 3GMD. À bord, l'alternateur est lui aussi derrière ce fusible, puisqu'il charge la batterie moteur par le même câble que le démarreur (node031) : ses 20 A environ ne sollicitent pas un calibre de 300 A.
+
 ### Batterie de servitude
 
 En temps normal, le circuit de servitude tire au plus 160 A environ : guindeau (50 A en courant normal), tableau de la table à carte (50 A), tableau Scheiber (30 A), pompe de cale. Mais il y a le **démarrage de secours** : on ferme le coupe-circuit de couplage parce que la batterie moteur est à plat, et c'est alors la batterie de servitude qui fournit seule les 200 à 275 A du démarreur, à travers son fusible.
@@ -41,6 +43,14 @@ Quatre fils de 6 mm² partent directement des bornes côté batterie des coupe-c
 | wire007 | coupleur, côté batterie servitude | 50 A | idem |
 
 Les porte-fusibles se fixent près de la platine des coupe-circuits, dans la zone accessible par l'ouverture côté cabine de poupe.
+
+#### Le fusible de 25 A de la notice du chargeur
+
+La notice du Dolphin indique un « fusible de sortie F25A » : c'est le fusible **interne** du chargeur, côté batteries (rapide, 32 V), à remplacer à l'identique. Il protège le chargeur, notamment en cas d'inversion de polarité, mais pas les câbles : un court-circuit sur wire003 ou wire008 est alimenté par la batterie, de l'autre côté, et ce fusible interne ne le voit pas. D'où le fusible externe, à la batterie.
+
+Son calibre doit rester au-dessus du courant du chargeur (20 A ± 5 %, pendant des heures) et en dessous de la tenue du 6 mm². **30 A** laisse une marge pour un fusible qui travaille en continu dans un coffre chaud ; 25 A conviendrait aussi, mais tournerait à plus de 80 % de son calibre en début de charge.
+
+La notice préconise aussi des câbles batterie de 6 mm² sur **1,5 m au plus**. wire003 et wire008 font 2 m : la chute de tension, un peu plus forte que prévu, abaisse légèrement la tension de charge. Ce n'est pas un problème de sécurité ; à reprendre si ces fils sont refaits pour la pose des porte-fusibles.
 
 ## Questions liées
 
