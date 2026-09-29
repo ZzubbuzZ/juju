@@ -19,6 +19,7 @@ Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) 
 | 3 | H3 · outillage de sertissage | | 75 € | Sert à toutes les hypothèses |
 | 4 | H1 · pompe de cale automatique, fusibles de 3 A | A10 | 68 € | Pompe mise en route à la main, sans flotteur ; protégée en 10 A au lieu de 3 A |
 | 5 | [H4](H4-terre-230v/proposition.md) · isolateur galvanique et liaison terre / masse 12 V | A8 | 136 € (0 € dans la variante sans liaison) | Défaut 230 V sur le circuit 12 V ; corrosion au ponton |
+| 5 | H4 · variante : transformateur d'isolement, à la place du lot précédent | A8 | environ 800 € | Supprime la corrosion par le ponton et l'inversion phase / neutre ; 15 à 30 kg |
 | 5 | H4 · disjoncteurs phase + neutre | | à chiffrer, selon Q31 | Seulement si les disjoncteurs actuels ne coupent que la phase |
 | 6 | H1 · recâblage du tableau de la table à carte | | 407 € | Fiabilité et lisibilité (« plat de spaghettis ») plus que sécurité ; peut être différé |
 
@@ -37,7 +38,7 @@ La coque isolante ne change rien au principe : à bord, **la protection contre l
 1. **Terre sur tout appareil de classe I**, c'est-à-dire à carcasse métallique : prises, chargeur, et le plafonnier s'il est métallique. L'EPS 100 n'est pas relié à la terre (fiche à deux contacts) : il doit donc être de classe II, à confirmer sur son boîtier (Q38). Un appareil de classe II (double isolation, marqué d'un double carré) n'en a pas besoin. D'où la question Q31 sur le plafonnier : son câble en 3 × 1,5 mm² contient déjà un conducteur de terre, qu'il suffirait de raccorder.
 2. **Coupure bipolaire**. À quai, la phase et le neutre peuvent être inversés. Un disjoncteur qui ne coupe que la phase peut laisser un appareil sous tension par le neutre. Le disjoncteur d'arrivée au moins doit couper les deux conducteurs (Q31).
 3. **Liaison entre la terre 230 V et la masse 12 V**. Les normes nautiques la demandent en un point unique : si un défaut met du 230 V sur une partie métallique du circuit 12 V (carcasse du chargeur, bloc moteur), le courant de défaut trouve un chemin vers la terre du quai et le différentiel déclenche.
-4. **Isolateur galvanique**. Cette même liaison relie les masses métalliques immergées (hélice, arbre, anodes) à celles des autres bateaux du ponton, par la terre du quai : c'est une source de corrosion galvanique. Un isolateur galvanique (ou un transformateur d'isolement) sur le conducteur de terre, à l'arrivée, bloque ces faibles courants tout en laissant passer un courant de défaut.
+4. **Isolateur galvanique**. Cette même liaison relie les masses métalliques immergées (hélice, arbre, anodes) à celles des autres bateaux du ponton, par la terre du quai : c'est une source de corrosion galvanique. Un isolateur galvanique sur le conducteur de terre, à l'arrivée, bloque ces faibles courants tout en laissant passer un courant de défaut. Un transformateur d'isolement supprime complètement le lien avec le ponton ; plus lourd et plus cher, il est décrit comme variante dans [H4](H4-terre-230v/proposition.md#variante--transformateur-disolement).
 
 Relevé du 28/09 : la terre et la masse 12 V ne sont reliées nulle part, et il n'y a pas d'isolateur galvanique (A8). H4 portera donc au minimum sur la liaison et l'isolateur. Restent à relever : la coupure bipolaire des disjoncteurs et la classe du plafonnier (Q31).
 

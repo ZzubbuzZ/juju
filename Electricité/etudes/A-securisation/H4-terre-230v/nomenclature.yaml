@@ -11,9 +11,18 @@ lots:
     anomalies: [A8]
   bipolaires:
     titre: Disjoncteurs phase + neutre (si Q31 le confirme)
+  transformateur:
+    titre: "Variante : transformateur d'isolement (remplace le lot terre)"
+    anomalies: [A8]
+    note: Ne s'ajoute pas au lot terre, il le remplace.
 
 articles:
   - { lot: terre, designation: "Isolateur galvanique 16 A", reference: "type Victron VDI-16", quantite: 1, unite: pièce, prix_unitaire: 120, statut: estimation }
   - { lot: terre, designation: "Câble vert-jaune 6 mm² (liaison vers node005)", quantite: 3, unite: m, prix_unitaire: 3.5, statut: estimation }
   - { lot: terre, designation: "Cosses tubulaires étamées 6 mm² et gaine", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation }
   - { lot: bipolaires, designation: "Disjoncteur phase + neutre 10 ou 16 A", quantite: 4, unite: pièce, statut: a_chiffrer, note: "Seulement si les disjoncteurs actuels ne coupent que la phase (Q31)" }
+  - { lot: transformateur, designation: "Transformateur d'isolement 2 000 W, démarrage progressif", reference: "type Victron Isolation Transformer 2000W", quantite: 1, unite: pièce, prix_unitaire: 750, statut: estimation }
+  - { lot: transformateur, designation: "Disjoncteur phase + neutre 10 A au primaire", quantite: 1, unite: pièce, prix_unitaire: 30, statut: estimation, note: "Inutile si le modèle retenu l'intègre" }
+  - { lot: transformateur, designation: "Câble H07RN-F 3 × 2,5 mm² (prise de quai → transformateur → boîtier d'arrivée)", quantite: 2, unite: m, prix_unitaire: 4, statut: estimation }
+  - { lot: transformateur, designation: "Câble vert-jaune 6 mm² (liaison vers node005)", quantite: 3, unite: m, prix_unitaire: 3.5, statut: estimation }
+  - { lot: transformateur, designation: "Cosses tubulaires étamées 6 mm² et gaine", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation }

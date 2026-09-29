@@ -15,14 +15,19 @@ C'est un choix défendable, et répandu. Le différentiel 30 mA protège les per
 
 Ce que la liaison apporte en plus : si un défaut met du 230 V sur le circuit 12 V (panne interne du chargeur ou de l'EPS 100), tout le 12 V, y compris le bloc moteur, passe à 230 V par rapport à l'eau. Sans liaison, le différentiel ne déclenche qu'au moment où un courant s'écoule vers la terre, par exemple à travers quelqu'un qui touche le moteur. Il coupera alors dès que la fuite dépasse 30 mA, en quelques dizaines de millisecondes, ce qui protège normalement la personne, mais après le contact. Avec la liaison, il coupe dès l'apparition du défaut, avant tout contact.
 
-| | Avec liaison + isolateur | Sans liaison |
-|---|---|---|
-| Défaut 230 V sur un appareil touché | différentiel | différentiel |
-| Défaut 230 V sur le circuit 12 V | coupure immédiate | coupure au premier contact |
-| Risque de corrosion galvanique par les autres bateaux | faible : l'isolateur bloque les tensions galvaniques (quelques dixièmes de volt) sous son seuil d'environ 1,2 V. Le risque redevient entier si l'isolateur claque en court-circuit, panne typique d'une diode, sans que rien ne le signale | nul : pas de chemin entre les pièces immergées et le ponton |
-| Pièces touchées si le risque se réalise | les métaux immergés reliés au négatif 12 V : l'arbre et l'hélice par le moteur (si l'accouplement est métallique), l'anode si elle leur est reliée. L'anode se consomme d'abord, en quelques semaines au lieu d'une saison ; une fois usée, l'hélice (bronze) et l'arbre sont attaqués | aucune |
-| Coût | environ 140 € | 0 € |
-| Conformité ISO 13297 / ABYC E-11 | oui | non |
+Le tableau compare aussi une troisième variante, le [transformateur d'isolement](#variante--transformateur-disolement), décrite plus bas.
+
+| | Avec liaison + isolateur | Sans liaison | Transformateur d'isolement |
+|---|---|---|---|
+| Défaut 230 V sur un appareil touché | différentiel | différentiel | différentiel |
+| Défaut 230 V sur le circuit 12 V | coupure immédiate | coupure au premier contact | coupure immédiate |
+| Risque de corrosion galvanique par les autres bateaux | faible : l'isolateur bloque les tensions galvaniques (quelques dixièmes de volt) sous son seuil d'environ 1,2 V. Le risque redevient entier si l'isolateur claque en court-circuit, panne typique d'une diode, sans que rien ne le signale | nul : pas de chemin entre les pièces immergées et le ponton | nul : aucun conducteur ne relie le bord au ponton, la terre du quai s'arrête au transformateur |
+| Pièces touchées si le risque se réalise | les métaux immergés reliés au négatif 12 V : l'arbre et l'hélice par le moteur (si l'accouplement est métallique), l'anode si elle leur est reliée. L'anode se consomme d'abord, en quelques semaines au lieu d'une saison ; une fois usée, l'hélice (bronze) et l'arbre sont attaqués | aucune | aucune |
+| Inversion phase / neutre à la prise du ponton | à couvrir par des disjoncteurs phase + neutre (Q31) | idem | sans effet à bord : le neutre est défini au secondaire |
+| Poids et place | un boîtier de la taille d'une main | rien | 15 à 30 kg selon la puissance, le volume d'une boîte à chaussures (Q39) |
+| Au ponton de 6 A | sans effet | sans effet | courant d'appel à la mise sous tension : un modèle à démarrage progressif est indispensable |
+| Coût | environ 140 € | 0 € | environ 800 € |
+| Conformité ISO 13297 / ABYC E-11 | oui | non | oui |
 
 Pour situer l'isolateur : la liaison (2) **sans** isolateur mettrait les pièces ci-dessus en permanence en contact avec la terre du ponton, donc avec les pièces immergées de tous les bateaux branchés au quai. Le métal le moins noble de l'ensemble, souvent l'anode de Juju, se consommerait au profit des autres.
 
@@ -31,7 +36,25 @@ Deux points restent à vérifier à bord, car ils conditionnent la colonne « Sa
 - **Liaison cachée : écartée.** Certains chargeurs relient leur négatif de sortie à leur boîtier, donc à la terre, ce qui ferait exister la liaison (2) sans isolateur. Ce n'est le cas d'aucun des deux appareils : la notice du Dolphin annonce des sorties « isolées », et l'EPS 100 n'est pas relié à la terre (cordon à fiche deux contacts, Q38). Une mesure à l'ohmmètre le confirmerait sans frais : câble de quai débranché, entre la broche de terre de la prise de quai et le négatif 12 V, on doit lire un circuit ouvert.
 - **Pièces immergées réellement reliées au 12 V** : présence et emplacement de l'anode, type d'accouplement de l'arbre, liaison éventuelle de la dérive en fonte, des passe-coques ou de la sonde du sondeur à la masse. Non relevé à ce jour.
 
-Dans les deux cas, **tester le différentiel régulièrement** avec son bouton de test.
+Dans tous les cas, **tester le différentiel régulièrement** avec son bouton de test.
+
+## Variante : transformateur d'isolement
+
+Au lieu de filtrer la terre du quai, on coupe tout lien électrique entre le bord et le ponton : l'énergie passe par le champ magnétique d'un transformateur 230 V / 230 V, et le bord crée son propre réseau.
+
+1. **Primaire, côté quai** : le transformateur se place entre la prise de quai et le boîtier d'arrivée, dans le coffre de cockpit tribord. La phase et le neutre du quai arrivent au primaire à travers un disjoncteur phase + neutre (intégré à certains modèles). La terre du quai ne va qu'à l'écran placé entre les deux enroulements, et au boîtier selon le modèle : suivre sa notice. Elle ne pénètre pas plus loin à bord ; wire034 disparaît.
+2. **Secondaire, côté bord** : un des deux fils du secondaire devient le neutre du bord, relié à la terre du bord au transformateur. C'est la liaison terre-neutre qu'on ne pouvait pas faire à bord sans transformateur (voir le cas du chauffe-eau) : ici, le bord définit lui-même son neutre, et l'inversion au ponton ne compte plus. Le différentiel 30 mA existant reste en aval, dans le boîtier d'arrivée : un courant de défaut qui part vers la terre du bord revient au secondaire par la liaison terre-neutre, sans repasser par le différentiel, qui coupe.
+3. **Liaison terre du bord ↔ masse 12 V** (node005), comme au point 2 du principe. Elle ne pose plus de problème de corrosion, puisque la terre du bord ne touche plus le ponton : on garde la coupure immédiate d'un défaut 230 V sur le circuit 12 V, sans isolateur.
+
+**Ce qu'il règle** : la corrosion galvanique par le ponton, sans diodes ni risque de panne silencieuse ; l'inversion phase / neutre ; la liaison terre / masse 12 V ; le ballon à double résistance de l'étude B (H3), sans restriction.
+
+**Ce qu'il coûte** :
+
+- **Prix** : environ 800 € avec le raccordement, estimation à remplacer par un prix catalogue.
+- **Poids et place** : 15 à 30 kg selon la puissance, à loger près de la prise de quai (Q39).
+- **Puissance** : un modèle de 2 000 W couvre largement la prise de 6 A de Saint-Chamas (1 400 W). Sur une borne de 16 A, il limitera le bord à ses 2 000 W : suffisant pour un chauffe-eau de 500 W, le chargeur et le frigo. Un modèle de 3 600 W lève la limite, au prix d'une dizaine de kilos de plus.
+- **Courant d'appel** : à la mise sous tension, un transformateur appelle un courant bien supérieur à son courant nominal. Sur une borne de 6 A, cela suffit à la faire déclencher : un démarrage progressif (« soft start ») est indispensable, à vérifier sur la fiche du modèle.
+- **Pertes** : quelques dizaines de watts consommés en permanence tant que le bord est branché, même sans rien d'allumé.
 
 ## Que contient un isolateur galvanique ?
 
@@ -88,9 +111,9 @@ Le différentiel porte donc presque tout. Deux vérifications s'imposent (Q36) :
 - **son type** : un chargeur à découpage peut produire des fuites que le type AC détecte mal ; le type A est préférable ;
 - **son fonctionnement** : appuyer sur le bouton de test en début de saison, puis régulièrement, en environnement salin.
 
-Le seul moyen d'isoler complètement le bord du ponton sans rien perdre est un **transformateur d'isolement** : plusieurs centaines d'euros et une trentaine de kilos, disproportionné pour Juju.
+Le seul moyen d'isoler complètement le bord du ponton sans rien perdre est le **transformateur d'isolement** : voir [sa variante](#variante--transformateur-disolement). Il ne supprime pas la protection qu'apporte (1) : il la remplace par une terre propre au bord.
 
-**En résumé** : garder (1), et choisir entre « (2) avec isolateur galvanique » et « ni (2) ni isolateur ».
+**En résumé** : garder (1), et choisir entre trois variantes : « (2) avec isolateur galvanique », « ni (2) ni isolateur », ou « transformateur d'isolement », qui fait (2) sans isolateur.
 
 ## Cas du chauffe-eau (étude B)
 
@@ -103,7 +126,7 @@ Le chauffe-eau confirme donc la conclusion précédente : **la liaison (1) est i
 
 **Pourquoi ne pas relier la terre au neutre à bord, à la place du quai ?** Ce serait refaire à bord la liaison terre-neutre qui existe à terre, chez le distributeur. Le différentiel fonctionnerait, puisque le courant de défaut reviendrait par la terre sans repasser par lui. Mais la prise du ponton ne garantit pas quel conducteur est la phase : une fois sur deux, les carcasses du bord seraient reliées à la phase. Et si le neutre du ponton est coupé en amont, la terre du bord ne serait plus reliée à rien. Cette liaison n'est admise qu'au secondaire d'un transformateur d'isolement, où le bord crée son propre réseau. Sans transformateur, la terre du bord se relie à celle du quai, et seulement à elle.
 
-**Conséquence pour l'étude B, hypothèse H3** (résistance 12 V sur le surplus solaire, dans le même ballon) : la cuve, reliée à la terre, porterait aussi une résistance 12 V. Si le négatif de cette résistance touche la cuve, ou si la résistance 230 V se fend, la terre et le 12 V se rejoignent par le ballon : la liaison (2) existe alors de fait, sans isolateur, avec la corrosion galvanique qui va avec. Et un défaut de la résistance 230 V peut mettre du 230 V sur le circuit 12 V, le cas même où la liaison (2) fait couper le différentiel avant tout contact. **Si B-H3 est retenue, la variante « avec liaison + isolateur » s'impose.** Avec B-H1 (résistance 230 V seule), les deux variantes restent possibles.
+**Conséquence pour l'étude B, hypothèse H3** (résistance 12 V sur le surplus solaire, dans le même ballon) : la cuve, reliée à la terre, porterait aussi une résistance 12 V. Si le négatif de cette résistance touche la cuve, ou si la résistance 230 V se fend, la terre et le 12 V se rejoignent par le ballon : la liaison (2) existe alors de fait, sans isolateur, avec la corrosion galvanique qui va avec. Et un défaut de la résistance 230 V peut mettre du 230 V sur le circuit 12 V, le cas même où la liaison (2) fait couper le différentiel avant tout contact. **Si B-H3 est retenue, il faut la liaison (2) : avec un isolateur, ou avec un transformateur d'isolement.** Avec B-H1 (résistance 230 V seule), les trois variantes restent possibles.
 
 ## Selon la réponse à Q31
 
