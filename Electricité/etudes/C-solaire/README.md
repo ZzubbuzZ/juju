@@ -6,7 +6,7 @@
 
 ## Constat de départ
 
-Le bilan estimé donne environ **65 Ah par jour au mouillage** et 92 Ah par jour en navigation (moteur non compté). Or une batterie de servitude de 110 Ah au plomb ne fournit qu'environ 55 Ah sans être abîmée (décharge à 50 %). Elle ne tient donc même pas une journée au mouillage.
+Le bilan estimé donne environ **60 Ah par jour au mouillage** et 87 Ah par jour en navigation (moteur non compté ; feu de mouillage à LED, Q7). Or une batterie de servitude de 110 Ah au plomb ne fournit qu'environ 55 Ah sans être abîmée (décharge à 50 %). Elle ne tient donc même pas une journée au mouillage.
 
 Le moteur n'y suffit pas non plus : l'alternateur donne environ **20 A au plus** (Q14), et moins en pratique une fois la batterie à moitié chargée. Récupérer 50 Ah demande donc plusieurs heures de moteur. Le solaire est le seul moyen réaliste de tenir au mouillage.
 
@@ -23,7 +23,7 @@ Trois leviers sont à combiner :
 
 ## Ordre de grandeur de la production
 
-Pour 100 Wc en Provence, il faut compter **environ 25 à 35 Ah par jour en été et 10 à 15 Ah en hiver**, selon l'orientation, l'ombrage de la bôme et le régulateur. Pour couvrir les 65 Ah par jour estimés au mouillage, il faut donc **environ 200 Wc en été**. Ces chiffres sont à affiner avec PVGIS (outil gratuit de la Commission européenne) pour Saint-Chamas, et avec un bilan mesuré au shunt.
+Pour 100 Wc en Provence, il faut compter **environ 25 à 35 Ah par jour en été et 10 à 15 Ah en hiver**, selon l'orientation, l'ombrage de la bôme et le régulateur. Pour couvrir les 60 Ah par jour estimés au mouillage, il faut donc **environ 200 Wc en été**. Ces chiffres sont à affiner avec PVGIS (outil gratuit de la Commission européenne) pour Saint-Chamas, et avec un bilan mesuré au shunt.
 
 ## Hypothèses à explorer
 
