@@ -14,7 +14,8 @@ lots:
     anomalies: [A1, A6]
   cale:
     titre: Pompe de cale automatique
-    note: Le flotteur n'existe pas aujourd'hui (Q4).
+    anomalies: [A10]
+    note: Le flotteur n'existe pas aujourd'hui (Q4). Fusibles à 3 A, calibre du fabricant de la pompe (Q5).
   servitude:
     titre: Recâblage du tableau de la table à carte (12 circuits)
     note: Fiabilité et lisibilité plus que sécurité ; peut être différé.
@@ -34,7 +35,8 @@ articles:
 
   # --- Lot cale ------------------------------------------------------------------
   - { lot: cale, designation: "Contacteur à flotteur pour pompe de cale", reference: "type Rule-A-Matic", quantite: 1, unite: pièce, prix_unitaire: 35, statut: estimation }
-  - { lot: cale, designation: "Porte-fusible étanche à lame + fusible 10 A", quantite: 1, unite: pièce, prix_unitaire: 10, statut: estimation }
+  - { lot: cale, designation: "Porte-fusible étanche à lame + fusible 3 A", quantite: 1, unite: pièce, prix_unitaire: 10, statut: estimation }
+  - { lot: cale, designation: "Fusible 3 A pour la voie pompe du tableau Scheiber (au format du tableau)", quantite: 1, unite: pièce, prix_unitaire: 1, statut: estimation }
   - { lot: cale, designation: "Câble étamé 2,5 mm² rouge", quantite: 4, unite: m, prix_unitaire: 1.6, statut: estimation, fils: [wire106, wire107, wire108] }
   - { lot: cale, designation: "Câble étamé 2,5 mm² noir", quantite: 3.5, unite: m, prix_unitaire: 1.6, statut: estimation, fils: [wire110] }
   - { lot: cale, designation: "Connecteurs étanches thermorétractables", quantite: 1, unite: lot, prix_unitaire: 10, statut: estimation }

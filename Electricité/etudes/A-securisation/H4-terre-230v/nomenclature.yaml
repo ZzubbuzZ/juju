@@ -16,4 +16,4 @@ articles:
   - { lot: terre, designation: "Isolateur galvanique 16 A", reference: "type Victron VDI-16", quantite: 1, unite: pièce, prix_unitaire: 120, statut: estimation }
   - { lot: terre, designation: "Câble vert-jaune 6 mm² (liaison vers node005)", quantite: 3, unite: m, prix_unitaire: 3.5, statut: estimation }
   - { lot: terre, designation: "Cosses tubulaires étamées 6 mm² et gaine", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation }
-  - { lot: bipolaires, designation: "Disjoncteur phase + neutre 10 ou 16 A", quantite: 6, unite: pièce, statut: a_chiffrer, note: "Seulement si les disjoncteurs actuels ne coupent que la phase (Q31)" }
+  - { lot: bipolaires, designation: "Disjoncteur phase + neutre 10 ou 16 A", quantite: 4, unite: pièce, statut: a_chiffrer, note: "Seulement si les disjoncteurs actuels ne coupent que la phase (Q31)" }

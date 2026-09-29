@@ -70,5 +70,5 @@ Le seul moyen d'isoler complètement le bord du ponton sans rien perdre est un *
 
 ## Selon la réponse à Q31
 
-- **Disjoncteurs bipolaires** : si les disjoncteurs 10 A et 16 A ne coupent que la phase, les remplacer par des modèles phase + neutre. Jusqu'à 6 disjoncteurs (2 à l'arrivée, 2 par boîtier de distribution). Non chiffré tant que Q31 n'est pas tranchée.
+- **Disjoncteurs bipolaires** : si les disjoncteurs 10 A et 16 A ne coupent que la phase, les remplacer par des modèles phase + neutre. Jusqu'à 4 disjoncteurs (2 à l'arrivée, 2 dans le boîtier tribord ; la boîte de dérivation bâbord n'en a pas). Non chiffré tant que Q31 n'est pas tranchée.
 - **Plafonnier** : s'il est métallique (classe I), raccorder le conducteur de terre déjà présent dans son câble 3 × 1,5 mm². Aucun achat.

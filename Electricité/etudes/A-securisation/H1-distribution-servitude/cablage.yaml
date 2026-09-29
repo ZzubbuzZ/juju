@@ -13,7 +13,7 @@ equipements:
   - { id: barrette-servitude, type: barrette, designation: "Barrette + de servitude", emplacement: "Près des coupe-circuits", statut: propose }
   - { id: fus-tableau-servitude, type: fusible, designation: "Fusible du tableau de la table à carte", calibre_A: 50, statut: propose }
   - { id: fus-tableau-scheiber, type: fusible, designation: "Fusible du tableau Scheiber 2 voies", calibre_A: 30, statut: propose }
-  - { id: fus-pompe-cale, type: fusible, designation: "Fusible de la pompe de cale automatique", calibre_A: 10, emplacement: "À moins de 18 cm de la borne de node009", statut: propose }
+  - { id: fus-pompe-cale, type: fusible, designation: "Fusible de la pompe de cale automatique", calibre_A: 3, emplacement: "À moins de 18 cm de la borne de node009", statut: propose }
   - { id: flotteur, type: interrupteur, designation: "Flotteur de la pompe de cale", statut: propose }
   - { id: connecteur-mat, type: connecteur, designation: "Connecteur de pont au pied de mât, 6 broches", statut: propose }
   - { id: bornier-eclairage, type: bornier, designation: "Bornier de départ de l'éclairage", statut: propose, questions: [Q9] }

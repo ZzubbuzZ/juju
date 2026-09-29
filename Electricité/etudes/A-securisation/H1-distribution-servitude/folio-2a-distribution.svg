@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 645" role="img" aria-label="Distribution proposée : une barrette positive après le coupe-circuit de servitude alimente le guindeau, le tableau de la table à carte par un fusible de 50 A et le tableau Scheiber par un fusible de 30 A. La pompe de cale automatique est alimentée en direct depuis la batterie par un fusible de 10 A et renvoie sa masse côté batteries.">
   <title>Folio 2a · Distribution de servitude et tableau Scheiber</title>
-  <desc>Une seule barrette + remplace les deux départs sans protection (A1, A6). Chaque départ a son fusible, placé à la source du câble qu'il protège. La pompe de cale ne dépend plus d'aucun coupe-circuit : ni pour son positif, ni pour sa masse.</desc>
+  <desc>Une seule barrette + remplace les deux départs sans protection (A1, A6). Chaque départ a son fusible, placé à la source du câble qu'il protège. La pompe de cale ne dépend plus d'aucun coupe-circuit : ni pour son positif, ni pour sa masse. Ses deux fusibles passent à 3 A, le calibre du fabricant (A10).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -103,8 +103,8 @@
   <text class="ts mid" x="750" y="402">frigo</text>
   <!-- voie 2 -->
   <path class="p w2" d="M660 380 V450 H680"/>
-  <rect class="fuse" x="680" y="442" width="34" height="16"/>
-  <text class="id mid" x="697" y="454">10 A</text>
+  <rect class="fuse-new" x="680" y="442" width="34" height="16"/>
+  <text class="idn mid" x="697" y="454">3 A</text>
   <path class="p w2" d="M714 450 H730"/>
   <circle class="term" cx="730" cy="450" r="3.5"/><circle class="term" cx="770" cy="450" r="3.5"/>
   <path class="lever" d="M730 450 L768 440"/>
@@ -138,7 +138,7 @@
   <path class="p w2" d="M250 110 V170"/>
   <text class="idn mid" x="246" y="140" transform="rotate(-90 246 140)">wire106</text>
   <rect class="fuse-new" x="241" y="170" width="18" height="44"/>
-  <text class="ts tn" x="268" y="190">10 A · pris sur node009</text>
+  <text class="ts tn" x="268" y="190">3 A · pris sur node009</text>
   <text class="ts tn" x="268" y="206">au plus près de la borne</text>
   <path class="p w2" d="M250 214 V566 H776"/>
   <text class="idn mid" x="515" y="558">wire107 · 2,5</text>
@@ -153,8 +153,7 @@
   <circle class="box" cx="1110" cy="566" r="24"/>
   <text class="tb mid" x="1110" y="571">P</text>
   <text class="tb mid" x="1110" y="512">Pompe de cale</text>
-  <text class="ts mid tu" x="1110" y="528">modèle ?</text>
-  <g class="mk-q"><circle cx="1168" cy="520" r="11"/><text class="mid" x="1168" y="523.5">Q5</text></g>
+  <text class="ts mid" x="1110" y="528">Tsunami T500</text>
   <path class="n w2" d="M1110 590 V606 H900"/>
   <rect class="flag-new" x="786" y="597" width="114" height="18"/>
   <text class="idn mid" x="843" y="610">wire110 → node005</text>

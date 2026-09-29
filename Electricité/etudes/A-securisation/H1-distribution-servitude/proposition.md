@@ -11,7 +11,8 @@ Statut : **proposition**. Les longueurs sont estimées pour un Gib'Sea 31. Elles
 
 - **A1** (tableau de la table à carte alimenté sans protection) : **traitée**. Barrette + et fusible de 50 A à la source.
 - **A6** (tableau Scheiber alimenté sans protection) : **traitée**. Fusible de 30 A sur la barrette ; le + du tableau (wire022) est repris sur ce fusible par wire104. La masse existante (wire023, déjà en 6 mm²) est conservée.
-- **Pompe de cale** : elle est aujourd'hui manuelle, sans flotteur (Q4). Elle devient automatique, et sa masse est ramenée côté batteries : une pompe branchée sur node006 serait coupée quand on ferme le bateau.
+- **Pompe de cale** : sa mise en route est aujourd'hui manuelle, faute de flotteur (Q4). Elle devient automatique, et sa masse est ramenée côté batteries : une pompe branchée sur node006 serait coupée quand on ferme le bateau.
+- **A10** (pompe de cale protégée en 10 A au lieu de 3 A) : **traitée**. Le fusible du flotteur est de 3 A, et celui de la voie pompe du tableau Scheiber passe de 10 A à 3 A.
 - **Ne traite pas** A2 (fusibles de batterie), A3 (cosses) ni A4 (fusibles du coupleur et du chargeur). Ces points relèvent d'autres hypothèses de l'étude A.
 
 ## 2. Hypothèses de calcul
@@ -27,21 +28,21 @@ Section minimale : `S (mm²) = 2 × L × I × 0,0175 / ΔU`
 
 | Circuit | Consommation retenue | L aller est. | Remarque |
 |---|---|---|---|
-| Feu bicolore | 25 W → 2,1 A | 8 m | hypothèse incandescent ; en LED, les sections restent valables |
+| Feu bicolore | 25 W → 2,1 A | 8 m | incandescent (Q7) ; en LED, les sections restent valables |
 | Feu de poupe | 10 W → 0,8 A | 5 m | |
 | Feu de tête de mât (moteur) | 25 W → 2,1 A | 3 m + 7 m dans le mât | |
-| Feu de mouillage | 10 W → 0,8 A | 3 m + 12 m dans le mât | |
+| Feu de mouillage | 2 W → 0,2 A | 3 m + 12 m dans le mât | LED (Q7) |
 | Projecteur | 35 W → 2,9 A | 3 m + 6 m dans le mât | |
 | Pompe à eau Seaflow | 15 A max | 3 m | |
 | Autoradio | 5 A | 1,5 m | |
 | Prises 12v (x2) | 10 A au total | 3 m + 1 m | |
 | Éclairage (5-6 lampes) | 5 A (incandescent) | 8 m (départ vers l'avant) | |
 | Compas | 0,1 A | 3 m | |
-| Pilote | 5 A en pointe | 5 m | modèle à préciser |
+| Pilote | 5 A en pointe | 5 m | Raymarine ST2000+ (Q10) |
 | VHF GX2200 | 6 A en émission | 1 m | |
 | GPS / instruments | 3 A | 1 m | GPS 7407 + répéteur + loch + anémomètre |
 | Frigo CU-55 | 5 A au démarrage | 4 à 6 m depuis la batterie | le compresseur Danfoss se coupe en sous-tension |
-| Pompe de cale | 6 A | 3 m | |
+| Pompe de cale | 3 A | 3 m | Attwood Tsunami T500, fusible de 3 A (Q5) |
 
 ## 3. Distribution depuis la batterie de servitude
 
@@ -61,8 +62,8 @@ Chute de tension de l'alimentation du tableau (10 mm², 3 m) : environ 1,3 % à 
 Proposition de principe (schéma : [folio 2a](folio-2a-distribution.svg)) :
 
 - **Alimentation du tableau** : le + part du fusible de 30 A de la barrette, en 6 mm² (wire104), au lieu de node010 (wire022). Si le câble existant est assez long, il suffit de déplacer sa cosse. La masse reste wire023.
-- **Frigo** : liaison inchangée (wire024, wire025, puis wire027 et wire028 en 3,5 mm² vers le groupe froid). Le fusible de 15 A est celui que préconise Danfoss pour ce compresseur : on le garde. Les bornes de l'EPS 100 n'acceptent que des cosses SV 2-4 (2,5 mm² au plus). La liaison vers le groupe froid est aujourd'hui vissée sans cosse (A7, traitée par H3). Si la chute de tension s'avère trop forte (section du départ frigo à relever, Q29), il faudra monter en section jusqu'à un bornier placé près de l'EPS, puis finir en 2,5 mm² sur quelques centimètres.
-- **Pompe de cale** : elle devient une pompe **automatique permanente**. Le flotteur est alimenté en direct depuis la batterie, avant le coupe-circuit, par son propre fusible de 10 A (wire106 à wire108). L'interrupteur du tableau reste la marche forcée, par le fil existant wire026, déjà en 2,5 mm², conservé. La masse de la pompe revient **côté batteries** (node005, wire110) : la pompe fonctionne donc même quand tous les coupe-circuits sont ouverts. **Le fil actuel wire036, qui relie cette masse à la barrette du tableau, doit être déposé** : sinon la pompe relierait les deux côtés du coupe-circuit des négatifs, qui ne couperait plus rien.
+- **Frigo** : liaison inchangée (wire024, wire025, puis wire027 et wire028 en 3,5 mm² vers le groupe froid). Le fusible de 15 A est celui que préconise Danfoss pour ce compresseur : on le garde. Les bornes de l'EPS 100 n'acceptent que des cosses SV 2-4 (2,5 mm² au plus). La liaison vers le groupe froid est aujourd'hui vissée sans cosse (A7, traitée par H3). Le départ du tableau vers l'EPS 100 et son retour (wire024, wire025) sont eux aussi en 3,5 mm² (Q29, Q37). Si la chute de tension s'avère trop forte, il faudra monter en section jusqu'à un bornier placé près de l'EPS, puis finir en 2,5 mm² sur quelques centimètres.
+- **Pompe de cale** : elle devient une pompe **automatique permanente**. Le flotteur est alimenté en direct depuis la batterie, avant le coupe-circuit, par son propre fusible de 3 A (wire106 à wire108), calibre demandé par le fabricant de la pompe (Attwood Tsunami T500, Q5). L'interrupteur du tableau reste la marche forcée, par le fil existant wire026, déjà en 2,5 mm², conservé ; le fusible de 10 A de cette voie est remplacé par un 3 A (A10). La masse de la pompe revient **côté batteries** (node005, wire110) : la pompe fonctionne donc même quand tous les coupe-circuits sont ouverts. **Le fil actuel wire036, qui relie cette masse à la barrette du tableau, doit être déposé** : sinon la pompe relierait les deux côtés du coupe-circuit des négatifs, qui ne couperait plus rien.
 
 Le flotteur et l'interrupteur manuel sont branchés en parallèle sur le + de la pompe. Il n'y a pas besoin de diode.
 
@@ -74,12 +75,12 @@ Chute de tension calculée pour chaque fil (longueurs estimées) :
 
 | Fil | Circuit | Section | ΔU |
 |---|---|---|---|
-| wire107 | pompe de cale auto | 2,5 mm² | 2,1 % |
+| wire107 | pompe de cale auto | 2,5 mm² | 1,1 % |
 | wire104 | alimentation du tableau Scheiber | 6 mm² | 1,1 % à 11 A |
 | wire120 | feu bicolore | 2,5 mm² | 2,0 % |
 | wire122 | feu de poupe | 1,5 mm² | 0,8 % |
 | wire124 + wire130 | feu de tête de mât | 2,5 mm² | 2,5 % |
-| wire126 + wire132 | feu de mouillage | 2,5 mm² | 1,5 % |
+| wire126 + wire132 | feu de mouillage | 2,5 mm² | 0,4 % (LED ; 2,5 mm² gardé, même câble que les autres feux du mât) |
 | wire128 + wire134 | projecteur | 2,5 mm² | 3,0 % |
 | wire136 | pompe à eau | 2,5 mm² | 5,3 % à 15 A (environ 3 % en régime normal) |
 | wire138 | autoradio | 1,5 mm² | 1,5 % |
@@ -90,4 +91,4 @@ Chute de tension calculée pour chaque fil (longueurs estimées) :
 
 ## 6. Questions liées
 
-Ouvertes : Q5, Q7, Q8, Q9, Q10, Q11, Q12 et Q29, dans [questions.md](../../../releve/questions.md). Déjà traitées et prises en compte : Q4 (pas de flotteur), Q6 (bornes de l'EPS 100), Q16 (liaison EPS 100 → groupe froid), Q25 (raccordement du tableau Scheiber et de la pompe).
+Ouvertes : Q8, Q9, Q11 et Q12, dans [questions.md](../../../releve/questions.md). Déjà traitées et prises en compte : Q4 (pas de flotteur), Q5 (pompe Attwood Tsunami T500, fusible de 3 A), Q7 (seul le feu de mouillage est à LED), Q10 (pilote ST2000+), Q29 et Q37 (départ et retour du frigo en 3,5 mm²), Q6 (bornes de l'EPS 100), Q16 (liaison EPS 100 → groupe froid), Q25 (raccordement du tableau Scheiber et de la pompe).

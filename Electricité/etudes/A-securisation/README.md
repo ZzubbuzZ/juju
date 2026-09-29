@@ -17,7 +17,7 @@ Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) 
 | 3 | [H3](H3-cosses/proposition.md) · cosses de la batterie moteur | A3 | 14 € (+60 € si les câbles sont à changer) | Contacts dégradés sur le circuit du démarreur |
 | 3 | H3 · raccordement de l'EPS 100 | A7 | 17 € | Contact médiocre, coupures du frigo au démarrage du compresseur |
 | 3 | H3 · outillage de sertissage | | 75 € | Sert à toutes les hypothèses |
-| 4 | H1 · pompe de cale automatique | | 67 € | Pompe aujourd'hui manuelle, sans flotteur |
+| 4 | H1 · pompe de cale automatique, fusibles de 3 A | A10 | 68 € | Pompe mise en route à la main, sans flotteur ; protégée en 10 A au lieu de 3 A |
 | 5 | [H4](H4-terre-230v/proposition.md) · isolateur galvanique et liaison terre / masse 12 V | A8 | 136 € (0 € dans la variante sans liaison) | Défaut 230 V sur le circuit 12 V ; corrosion au ponton |
 | 5 | H4 · disjoncteurs phase + neutre | | à chiffrer, selon Q31 | Seulement si les disjoncteurs actuels ne coupent que la phase |
 | 6 | H1 · recâblage du tableau de la table à carte | | 407 € | Fiabilité et lisibilité (« plat de spaghettis ») plus que sécurité ; peut être différé |
