@@ -28,7 +28,7 @@ Pour situer l'isolateur : la liaison (2) **sans** isolateur mettrait les pièces
 
 Deux points restent à vérifier à bord, car ils conditionnent la colonne « Sans liaison » :
 
-- **Liaison cachée** : certains chargeurs relient leur négatif de sortie à leur boîtier, donc à la terre. Pour le Dolphin, la notice annonce des sorties « isolées » : on le retient tel quel. Reste l'EPS 100, dont on ne sait rien sur ce point. Si son négatif est relié à son boîtier, la liaison (2) existe déjà, sans isolateur. La mesure lèverait le doute pour les deux appareils à la fois : à l'ohmmètre, câble de quai débranché, entre la broche de terre de la prise de quai et le négatif 12 V.
+- **Liaison cachée : écartée.** Certains chargeurs relient leur négatif de sortie à leur boîtier, donc à la terre, ce qui ferait exister la liaison (2) sans isolateur. Ce n'est le cas d'aucun des deux appareils : la notice du Dolphin annonce des sorties « isolées », et l'EPS 100 n'est pas relié à la terre (cordon à fiche deux contacts, Q38). Une mesure à l'ohmmètre le confirmerait sans frais : câble de quai débranché, entre la broche de terre de la prise de quai et le négatif 12 V, on doit lire un circuit ouvert.
 - **Pièces immergées réellement reliées au 12 V** : présence et emplacement de l'anode, type d'accouplement de l'arbre, liaison éventuelle de la dérive en fonte, des passe-coques ou de la sonde du sondeur à la masse. Non relevé à ce jour.
 
 Dans les deux cas, **tester le différentiel régulièrement** avec son bouton de test.
@@ -49,7 +49,7 @@ Rappel : l'isolateur ne sert que si l'on fait la liaison (2). Dans la variante s
 
 Il y a deux « terres » à bord, et deux liaisons distinctes :
 
-- **(1) terre du ponton ↔ terre 230 V du bord** : le conducteur vert-jaune du câble de quai, qui arrive aux prises, au chargeur et à l'EPS 100. **Elle existe et doit rester.**
+- **(1) terre du ponton ↔ terre 230 V du bord** : le conducteur vert-jaune du câble de quai, qui arrive aux prises et au chargeur (pas à l'EPS 100, dont le cordon n'a pas de terre). **Elle existe et doit rester.**
 - **(2) terre 230 V du bord ↔ masse 12 V** : c'est la liaison discutée plus haut. Elle n'existe pas aujourd'hui (A8).
 
 **Ne pas faire (2)** est la variante ci-dessus : défendable. Et c'est elle qui supprime le problème de corrosion galvanique. Sans (2), aucune pièce immergée (hélice, arbre, anode, tous reliés au 12 V par le moteur) n'est reliée à la terre du ponton, donc aucun courant galvanique ne circule vers les autres bateaux. L'isolateur galvanique ne sert que si l'on fait (2).
@@ -65,8 +65,8 @@ La vraie différence est donc **le moment où il coupe** :
 | Un appareil à carcasse métallique a un défaut | le courant part par le vert-jaune, le différentiel coupe aussitôt, personne n'a rien touché | rien ne se passe : la carcasse reste sous tension, sans que personne le sache |
 | Quelqu'un touche cette carcasse | rien, c'est déjà coupé | il reçoit une décharge, brève, que le différentiel coupe : normalement sans gravité, mais à bord, un sursaut peut suffire à une chute ou à un homme à la mer |
 | Le différentiel est défaillant (collé, oxydé) | le défaut n'est pas coupé, mais la carcasse est reliée au ponton, ce qui limite sa tension | rien ne protège la personne |
-| Fuites permanentes des filtres électroniques (chargeur, EPS 100) | écoulées par le vert-jaune | la carcasse « pique » légèrement au toucher |
-| Risque de corrosion galvanique | nul tant que la liaison (2) n'est pas faite (ou faite avec un isolateur) : la terre du ponton n'atteint que les carcasses du chargeur et de l'EPS 100, hors de l'eau | nul |
+| Fuites permanentes des filtres électroniques (chargeur) | écoulées par le vert-jaune | la carcasse « pique » légèrement au toucher |
+| Risque de corrosion galvanique | nul tant que la liaison (2) n'est pas faite (ou faite avec un isolateur) : la terre du ponton n'atteint que la carcasse du chargeur et les prises, hors de l'eau | nul |
 | Pièces touchées | aucune pièce immergée | aucune |
 
 **Conclusion** : sans (1), on garde la protection, mais on passe de deux protections indépendantes à une seule, et le défaut n'est découvert qu'au premier contact. Surtout, **on n'y gagne rien** : le problème de corrosion galvanique est déjà absent tant que la liaison (2) n'existe pas, ce qui est le cas aujourd'hui. Moins de sécurité pour aucun bénéfice : on garde (1).
