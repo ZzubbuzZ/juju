@@ -35,7 +35,7 @@ wire009 part du coffre de la batterie de servitude, traverse la cloison vers le 
 | a | Au départ, dans le coffre de la batterie de servitude (cabine de poupe) | Fil d'alimentation du shunt très court jusqu'au + de la batterie | Coffre à ouvrir pour y accéder ; humidité éventuelle au fond du coffre |
 | b | À l'arrivée, derrière la descente, près du coupe-circuit des négatifs | Accessible par l'ouverture côté cabine de poupe, avec le coupleur ; près du tableau et de la table à carte | Fil d'alimentation du shunt plus long, jusqu'à la batterie ou au côté batterie du coupe-circuit de servitude (node009) |
 
-L'emplacement b regroupe les organes de coupure et de mesure au même endroit. Il faudra confirmer la longueur réelle de wire009 (Q30).
+L'emplacement b regroupe les organes de coupure et de mesure au même endroit. wire009 ne fait que 1 m (Q30, confirmé le 29/09) : la batterie est juste derrière la paroi latérale du bloc moteur, et la contremarche des coupe-circuits juste au-dessus. Le fil d'alimentation du shunt reste donc court dans les deux cas, ce qui ôte à a son principal avantage.
 
 ## Batterie moteur : un second shunt n'est pas nécessaire
 
@@ -46,7 +46,7 @@ L'objectif fixé pour la batterie moteur est de **surveiller sa tension**, pas d
 - **Place pour le shunt** (Q27, traitée) : deux emplacements possibles, voir ci-dessus.
 - **Lecture souhaitée** : l'application sur smartphone suffit-elle, ou faut-il un afficheur fixe à la table à carte ? C'est un choix à faire, qui distingue les hypothèses H1 et H2.
 - **Place pour un afficheur** (Q28, traitée) : oui, à la place de l'ancien indicateur de charge à aiguille du tableau de servitude. H2 ne demande donc aucune découpe nouvelle.
-- **Longueur réelle de wire009** : Q30.
+- **Longueur réelle de wire009** (Q30, traitée) : 1 m confirmé.
 
 ## Hypothèses à explorer
 
