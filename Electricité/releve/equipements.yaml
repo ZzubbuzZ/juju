@@ -142,7 +142,7 @@ equipements:
     modele: Dometic EPS 100
     zone: cuisine
     emplacement: Meuble bas sous l'évier, partie droite, à côté du groupe froid
-    note: Bornes à vis d'environ 8 mm de large, prévues pour des cosses à fourche SV 2-4 (fils de 1,5 à 2,5 mm², AWG 16-14).
+    note: "Bornes à vis d'environ 8 mm de large, prévues pour des cosses à fourche SV 2-4 (fils de 1,5 à 2,5 mm², AWG 16-14). Non relié à la terre : son cordon 230 V se termine par une fiche à deux contacts (29/09)."
 
   - id: pompe-cale
     type: recepteur

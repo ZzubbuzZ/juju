@@ -4,7 +4,7 @@
 # Plages de numéros : 001-019 batteries et charge, 020-039 guindeau et moteur,
 # 040-049 frigo, 050-059 tableau Scheiber 2 voies et pompe de cale, 060-099 réservé
 # aux propositions, 100-199 tableau de servitude,
-# 200-299 réseau 230 V (sauf node046-048 de l'EPS 100, numérotés avant la création de cette plage).
+# 200-299 réseau 230 V (sauf node047-048 de l'EPS 100, numérotés avant la création de cette plage).
 
 nodes:
   # --- Batterie moteur et coupe-circuit moteur ---------------------------------
@@ -62,7 +62,7 @@ nodes:
   - { id: node043, equipement: eps100, borne: "batterie -", polarite: "-" }
   - { id: node044, equipement: eps100, borne: "sortie groupe froid +", polarite: "+" }
   - { id: node045, equipement: eps100, borne: "sortie groupe froid -", polarite: "-" }
-  - { id: node046, equipement: eps100, borne: "230 V terre", polarite: 230V-terre }
+  # node046 (terre 230 V de l'EPS 100) supprimé le 29/09 : l'EPS 100 n'a pas de terre. Numéro à ne pas réutiliser.
   - { id: node047, equipement: eps100, borne: "230 V phase", polarite: 230V-phase }
   - { id: node048, equipement: eps100, borne: "230 V neutre", polarite: 230V-neutre }
 
