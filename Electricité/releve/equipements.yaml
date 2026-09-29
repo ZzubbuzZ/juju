@@ -61,10 +61,10 @@ equipements:
   - id: chargeur-quai
     type: chargeur
     designation: Chargeur de quai
-    modele: Dolphin 12 V 20 A, 3 sorties plomb
+    modele: Dolphin 12 V 20 A, 3 sorties plomb (REYA DOLBB.1220)
     zone: cockpit-coffre-tribord
     emplacement: Au-dessus de la batterie moteur
-    note: Sortie 3 libre. Branché en direct sur les batteries, sans passer par les coupe-circuits. Alimenté en 230 V par le disjoncteur 10 A du boîtier voisin.
+    note: "Sortie 3 libre. Branché en direct sur les batteries, sans passer par les coupe-circuits. Alimenté en 230 V par le disjoncteur 10 A du boîtier voisin. Notice (documentation/MANUAL-DOLBB-1210-1220-299519-299520.pdf) : 3 sorties dites « isolées », un négatif commun (-DC) ; fusible interne F25A côté batteries, T6A côté secteur ; câbles batterie préconisés 6 mm², 1,5 m au plus ; borne PE à raccorder à la terre ; boîtier en aluminium."
 
   - id: moteur
     type: moteur
