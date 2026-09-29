@@ -39,9 +39,21 @@ Deux bornes seulement et un gros radiateur : ce n'est pas une arnaque, c'est ce 
 
 - **Deux bornes**, parce qu'il se place en série sur un seul conducteur, la terre : une borne côté ponton, une borne côté bord. Il ne touche ni à la phase ni au neutre.
 - **Dedans**, des diodes de puissance : deux branches montées tête-bêche, chacune de deux diodes en série. Sous environ 1,2 V, dans un sens comme dans l'autre, aucune ne conduit : les courants galvaniques, qui naissent de quelques dixièmes de volt, sont bloqués. Au-delà, elles conduisent : un courant de défaut 230 V, alternatif, passe dans les deux sens et fait déclencher les protections. Certains modèles ajoutent un condensateur en parallèle, pour laisser passer les petites fuites alternatives des filtres, ou un voyant de contrôle.
-- **Le radiateur**, parce que ces diodes doivent conduire tout le courant de défaut, jusqu'à ce qu'une protection coupe, sans se détruire. Chaque diode dissipe environ 0,7 V fois le courant : à 16 A, une vingtaine de watts pour l'ensemble. D'où la taille du boîtier, et d'où le calibre de l'isolateur, à choisir au moins égal à celui de la protection d'arrivée : à vérifier sur la notice du modèle retenu, face au différentiel de 25 A de Juju.
+- **Le radiateur et les grosses diodes** répondent à deux cas qui ne se produisent que si le différentiel ne fait pas son travail, ou à l'instant du défaut :
+  - **la pointe d'un défaut franc** : une phase qui touche une carcasse fait passer dans la terre plusieurs centaines d'ampères, voire davantage, pendant les quelques dizaines de millisecondes que met le différentiel à couper. Les diodes doivent encaisser cette pointe sans s'ouvrir : c'est une question de taille de puce, pas de radiateur ;
+  - **un défaut qui dure** : si le différentiel est défaillant, ou absent comme sur beaucoup de bateaux (les normes, ABYC A-28 notamment, sont écrites pour ce cas), un défaut résistif peut faire passer dans la terre un courant juste inférieur au calibre d'un disjoncteur, sans que rien ne coupe. L'isolateur doit alors le supporter indéfiniment : environ 1,5 V × 16 A, soit 20 à 25 W en continu, dans un coffre fermé et chaud, sans ventilation. D'où le radiateur, dimensionné avec une marge large pour que les diodes restent froides.
 
-Le prix paie surtout ce radiateur et la tenue garantie au courant de défaut. C'est ce qui distingue un isolateur sérieux d'un bloc de diodes premier prix : une diode qui lâche **en circuit ouvert** coupe la terre du ponton sans que rien ne le signale, et l'on perd la liaison (1) en croyant l'avoir. Une qui lâche en court-circuit ne fait que supprimer la protection galvanique.
+Le prix paie surtout cette tenue garantie. C'est ce qui distingue un isolateur sérieux d'un bloc de diodes premier prix : une diode qui lâche **en circuit ouvert** coupe la terre du ponton sans que rien ne le signale, et l'on perd la liaison (1) en croyant l'avoir. Une qui lâche en court-circuit ne fait que supprimer la protection galvanique.
+
+### Quel modèle ?
+
+À Juju, avec un différentiel de 30 mA en tête, le courant de défaut ne dure normalement que quelques dizaines de millisecondes : le calibre en continu ne sert qu'en secours, si le différentiel est défaillant. Le calibre du différentiel (25 A) n'entre donc pas en compte ; c'est celui des disjoncteurs de départ (10 et 16 A) qui fixe le courant qu'un défaut durable peut faire passer. Critères :
+
+1. **Calibre de 16 A** : suffisant, puisqu'aucun départ n'est protégé au-delà de 16 A. La mention « à choisir au moins égal au différentiel de 25 A » d'une version précédente était trop prudente.
+2. **Défaillance en court-circuit garantie**, jamais en circuit ouvert (« fail-safe » au sens d'ABYC A-28) : c'est le critère principal, à lire sur la fiche technique. À défaut, un **voyant ou un contrôleur d'état**, qui signale une diode ouverte.
+3. Un **condensateur intégré** est un plus, pas une nécessité : il écoule les petites fuites alternatives des filtres du chargeur sans décaler le seuil des diodes.
+
+Le Victron VDI-16 de la nomenclature satisfait le premier critère ; le deuxième est à vérifier sur sa fiche avant l'achat. Un montage maison (quatre diodes sur un radiateur) coûterait bien moins cher, mais sans garantie sur la tenue à la pointe de défaut ni sur le mode de défaillance : c'est justement ce que l'on paie.
 
 Rappel : l'isolateur ne sert que si l'on fait la liaison (2). Dans la variante sans liaison, il n'a pas d'utilité.
 
