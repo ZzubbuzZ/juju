@@ -92,6 +92,19 @@ Le seul moyen d'isoler complètement le bord du ponton sans rien perdre est un *
 
 **En résumé** : garder (1), et choisir entre « (2) avec isolateur galvanique » et « ni (2) ni isolateur ».
 
+## Cas du chauffe-eau (étude B)
+
+Un chauffe-eau 230 V est l'appareil le plus exposé du bord : une résistance plongée dans l'eau, une cuve le plus souvent métallique, et des tuyaux qui amènent cette eau jusqu'à l'évier et la douche. Si la gaine de la résistance se fend, la phase se retrouve dans l'eau.
+
+- **Avec la terre du ponton (1)** : la cuve est reliée au vert-jaune, le courant de défaut s'y écoule, le différentiel coupe aussitôt. Personne n'a rien touché.
+- **Sans (1)** : l'eau et la cuve restent sous tension sans que rien ne coupe. Le premier qui ouvre un robinet en ayant les pieds mouillés devient le chemin vers la terre ; le différentiel le coupe, mais après le contact.
+
+Le chauffe-eau confirme donc la conclusion précédente : **la liaison (1) est indispensable**, et le ballon, de classe I, doit être raccordé à la terre.
+
+**Pourquoi ne pas relier la terre au neutre à bord, à la place du quai ?** Ce serait refaire à bord la liaison terre-neutre qui existe à terre, chez le distributeur. Le différentiel fonctionnerait, puisque le courant de défaut reviendrait par la terre sans repasser par lui. Mais la prise du ponton ne garantit pas quel conducteur est la phase : une fois sur deux, les carcasses du bord seraient reliées à la phase. Et si le neutre du ponton est coupé en amont, la terre du bord ne serait plus reliée à rien. Cette liaison n'est admise qu'au secondaire d'un transformateur d'isolement, où le bord crée son propre réseau. Sans transformateur, la terre du bord se relie à celle du quai, et seulement à elle.
+
+**Conséquence pour l'étude B, hypothèse H3** (résistance 12 V sur le surplus solaire, dans le même ballon) : la cuve, reliée à la terre, porterait aussi une résistance 12 V. Si le négatif de cette résistance touche la cuve, ou si la résistance 230 V se fend, la terre et le 12 V se rejoignent par le ballon : la liaison (2) existe alors de fait, sans isolateur, avec la corrosion galvanique qui va avec. Et un défaut de la résistance 230 V peut mettre du 230 V sur le circuit 12 V, le cas même où la liaison (2) fait couper le différentiel avant tout contact. **Si B-H3 est retenue, la variante « avec liaison + isolateur » s'impose.** Avec B-H1 (résistance 230 V seule), les deux variantes restent possibles.
+
 ## Selon la réponse à Q31
 
 - **Disjoncteurs bipolaires** : si les disjoncteurs 10 A et 16 A ne coupent que la phase, les remplacer par des modèles phase + neutre. Jusqu'à 4 disjoncteurs (2 à l'arrivée, 2 dans le boîtier tribord ; la boîte de dérivation bâbord n'en a pas). Non chiffré tant que Q31 n'est pas tranchée.
