@@ -12,6 +12,7 @@ Format d'une ligne (lu par `outils/verifier.py`) : `- **An** texte`.
 - **A7** wire027 et wire028 : le câble étamé qui relie l'EPS 100 au groupe froid est vissé directement dans les bornes, prévues pour des cosses à fourche SV 2-4. Contact médiocre : échauffement et chute de tension au démarrage du compresseur, qui se coupe en sous-tension.
 - **A8** Terre 230 V et masse 12 V ne sont reliées nulle part, et il n'y a pas d'isolateur galvanique. Les normes nautiques (ISO 13297, ABYC E-11) demandent une liaison en un point unique, pour qu'un défaut 230 V sur une partie métallique du circuit 12 V fasse déclencher le différentiel. Cette liaison se pose avec un isolateur galvanique (étude A, H4).
 - **A9** Passages de cloison : les câbles traversent les cloisons par de simples trous, sans passe-fil ni gaine. Les vibrations et les mouvements du bateau usent l'isolant sur l'arête du trou, jusqu'au court-circuit.
+- **A10** Pompe de cale (Attwood Tsunami T500) protégée par le fusible de 10 A du tableau Scheiber, alors que le fabricant demande 3 A. Le fusible protège le câble de 2,5 mm², mais pas le moteur : une pompe bloquée (turbine coincée par un débris) chauffe sans faire fondre le fusible, et son moteur peut griller.
 
 ## Levées
 

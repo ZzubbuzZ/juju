@@ -40,11 +40,16 @@ nodes:
   - { id: node023, equipement: relais-guindeau, borne: "entrée -", polarite: "-" }
   - { id: node024, equipement: relais-guindeau, borne: "sortie moteur A", polarite: commute }
   - { id: node025, equipement: relais-guindeau, borne: "sortie moteur B", polarite: commute }
-  - { id: node026, equipement: relais-guindeau, borne: "commande montée", polarite: commande, questions: [Q2] }
-  - { id: node027, equipement: relais-guindeau, borne: "commande descente", polarite: commande, questions: [Q2] }
-  - { id: node028, equipement: relais-guindeau, borne: "commande masse", polarite: "-", questions: [Q2] }
+  - { id: node026, equipement: relais-guindeau, borne: "commande montée", polarite: commande }
+  - { id: node027, equipement: relais-guindeau, borne: "commande descente", polarite: commande }
+  - { id: node028, equipement: relais-guindeau, borne: "commande masse", polarite: "-" }
   - { id: node029, equipement: guindeau, borne: "A", polarite: commute }
   - { id: node030, equipement: guindeau, borne: "B", polarite: commute }
+  - { id: node033, equipement: fus-telecommande-guindeau, borne: "1", polarite: "+" }
+  - { id: node034, equipement: fus-telecommande-guindeau, borne: "2", polarite: "+" }
+  - { id: node035, equipement: telecommande-guindeau, borne: "+", polarite: "+" }
+  - { id: node036, equipement: telecommande-guindeau, borne: "montée", polarite: commande }
+  - { id: node037, equipement: telecommande-guindeau, borne: "descente", polarite: commande }
 
   # --- Moteur --------------------------------------------------------------------
   - { id: node031, equipement: moteur, borne: "+ démarreur / alternateur", polarite: "+", questions: [Q1, Q14] }
@@ -108,13 +113,9 @@ nodes:
   - { id: node224, equipement: disj-trib-eclairage, borne: "sortie", polarite: 230V-phase }
   - { id: node225, equipement: disj-trib-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node220 }
   - { id: node226, equipement: disj-trib-prises, borne: "sortie", polarite: 230V-phase }
-  - { id: node240, equipement: boitier-230-babord, borne: "barre de phase", polarite: 230V-phase }
-  - { id: node241, equipement: boitier-230-babord, borne: "barrette de neutre", polarite: 230V-neutre }
-  - { id: node242, equipement: boitier-230-babord, borne: "barrette de terre", polarite: 230V-terre }
-  - { id: node243, equipement: disj-bab-eclairage, borne: "entrée", polarite: 230V-phase, monte_sur: node240 }
-  - { id: node244, equipement: disj-bab-eclairage, borne: "sortie", polarite: 230V-phase }
-  - { id: node245, equipement: disj-bab-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node240 }
-  - { id: node246, equipement: disj-bab-prises, borne: "sortie", polarite: 230V-phase }
+  - { id: node240, equipement: boitier-230-babord, borne: "phase", polarite: 230V-phase }
+  - { id: node241, equipement: boitier-230-babord, borne: "neutre", polarite: 230V-neutre }
+  - { id: node242, equipement: boitier-230-babord, borne: "terre", polarite: 230V-terre }
   - { id: node227, equipement: prise-230-eps100, borne: "phase", polarite: 230V-phase }
   - { id: node228, equipement: prise-230-eps100, borne: "neutre", polarite: 230V-neutre }
   - { id: node229, equipement: prise-230-eps100, borne: "terre", polarite: 230V-terre }

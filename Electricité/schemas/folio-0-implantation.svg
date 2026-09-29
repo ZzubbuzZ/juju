@@ -96,12 +96,13 @@
   <text class="t" x="332" y="101" data-equipement="tableau-scheiber">Tableau Scheiber 2 voies</text>
 
   <path class="leader" d="M640 149 L520 262"/>
-  <rect class="callout" x="580" y="40" width="230" height="109" rx="2"/>
-  <text class="tb" x="592" y="60">Table à carte · bâbord</text>
-  <text class="t" x="592" y="80" data-equipement="tableau-servitude">Tableau de servitude, 12 circuits</text>
-  <text class="t" x="592" y="99" data-equipement="indicateur-charge">Indicateur de charge à aiguille</text>
-  <text class="t" x="592" y="118" data-equipement="prise-230-table-a-carte">Prise 230 V</text>
-  <text class="t" x="592" y="137" data-equipement="boitier-230-babord">Boîtier 230 V bâbord (placard)</text>
+  <rect class="callout" x="580" y="21" width="242" height="128" rx="2"/>
+  <text class="tb" x="592" y="41">Table à carte · bâbord</text>
+  <text class="t" x="592" y="61" data-equipement="tableau-servitude">Tableau de servitude, 12 circuits</text>
+  <text class="t" x="592" y="80" data-equipement="indicateur-charge">Indicateur de charge à aiguille</text>
+  <text class="t" x="592" y="99" data-equipement="prise-230-table-a-carte">Prise 230 V</text>
+  <text class="t" x="592" y="118" data-equipement="boitier-230-babord">Boîte de dérivation 230 V</text>
+  <text class="t" x="592" y="137" data-equipement="repetiteur-gps">Répétiteur GPS (écran à la descente)</text>
 
   <path class="leader" d="M930 92 L902 360"/>
   <rect class="callout" x="830" y="40" width="200" height="52" rx="2"/>

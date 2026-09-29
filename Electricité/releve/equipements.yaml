@@ -80,8 +80,8 @@ equipements:
     designation: Disjoncteur thermique du guindeau
     zone: cabine-poupe
     emplacement: Sous l'ouverture d'accès aux coupe-circuits
-    note: La notice Lewmar (tableau 7.5) préconise 70 A pour le Pro-Series 1000. Calibre installé à lire sur l'appareil.
-    questions: [Q34]
+    calibre_A: 70
+    note: Calibre conforme à la notice Lewmar (tableau 7.5) du Pro-Series 1000.
 
   - id: relais-guindeau
     type: relais
@@ -99,10 +99,16 @@ equipements:
     courant_A: 50
     note: "Notice Lewmar (tableau 7.5) : courant normal 50 A, disjoncteur 70 A, charge de travail 114 kg, traction maximale 454 kg, fils de commande 1,5 mm²."
 
+  - id: fus-telecommande-guindeau
+    type: fusible
+    designation: Fusible de la télécommande du guindeau
+    calibre_A: 5
+    note: Pris sur le + d'entrée du relais du guindeau.
+
   - id: telecommande-guindeau
     type: commande
     designation: Télécommande du guindeau
-    questions: [Q2]
+    note: Alimentée par le + d'entrée du relais du guindeau, à travers un fusible de 5 A.
 
   # --- Tableaux ----------------------------------------------------------------
   - id: tableau-servitude
@@ -141,10 +147,10 @@ equipements:
   - id: pompe-cale
     type: recepteur
     designation: Pompe de cale moteur
+    modele: Attwood Tsunami T500 (réf. 4606 / 4640)
     zone: compartiment-moteur
     emplacement: Cale moteur
-    note: Sans flotteur. Pompe manuelle, commandée depuis le tableau Scheiber.
-    questions: [Q5]
+    note: Pompe électrique sans flotteur, mise en route manuelle depuis le tableau Scheiber. Fusible recommandé par le fabricant 3 A, protégée en 10 A (anomalie A10).
 
   - id: pompe-eau
     type: recepteur
@@ -159,35 +165,35 @@ equipements:
     designation: Feu bicolore (proue)
     puissance_W: 25
     statut: estime
-    questions: [Q7]
+    note: Incandescent.
 
   - id: feu-poupe
     type: recepteur
     designation: Feu de poupe
     puissance_W: 10
     statut: estime
-    questions: [Q7]
+    note: Incandescent.
 
   - id: feu-tete-mat
     type: recepteur
     designation: Feu de tête de mât (moteur)
     puissance_W: 25
     statut: estime
-    questions: [Q7]
+    note: Incandescent.
 
   - id: feu-mouillage
     type: recepteur
     designation: Feu de mouillage
-    puissance_W: 10
+    puissance_W: 2
     statut: estime
-    questions: [Q7]
+    note: LED. Puissance estimée pour un feu de mouillage à LED.
 
   - id: projecteur
     type: recepteur
     designation: Projecteur de pont
     puissance_W: 35
     statut: estime
-    questions: [Q7]
+    note: Incandescent.
 
   - id: eclairage
     type: recepteur
@@ -217,10 +223,9 @@ equipements:
   - id: pilote
     type: recepteur
     designation: Pilote automatique de barre franche
-    modele: Raymarine ST1000+ ou ST2000+ (notice présente à la table à carte)
+    modele: Raymarine ST2000+
     courant_max_A: 5
     statut: estime
-    questions: [Q10]
 
   - id: vhf
     type: recepteur
@@ -241,8 +246,8 @@ equipements:
     type: recepteur
     designation: Répétiteur GPS
     modele: MLR FX312
-    note: Décrit « dans le cockpit », mais la photo Vue-GPS-table-a-carte le montre fixé près de la table à carte.
-    questions: [Q32]
+    zone: table-a-carte
+    emplacement: Unité principale à la table à carte ; écran déporté au-dessus de la descente, côté cockpit
 
   - id: loch
     type: recepteur
@@ -313,22 +318,11 @@ equipements:
     questions: [Q31]
 
   - id: boitier-230-babord
-    type: tableau
-    designation: Boîtier de distribution 230 V bâbord
+    type: bornier
+    designation: Boîte de dérivation 230 V bâbord
     zone: table-a-carte
-    emplacement: Dans le placard entre la table à carte et la cabine de poupe
-
-  - id: disj-bab-eclairage
-    type: disjoncteur
-    designation: Disjoncteur éclairage 230 V bâbord
-    calibre_A: 10
-    note: Aucun point lumineux 230 V relevé sur ce départ.
-    questions: [Q31]
-
-  - id: disj-bab-prises
-    type: disjoncteur
-    designation: Disjoncteur prises 230 V bâbord
-    calibre_A: 16
+    emplacement: À l'arrière gauche de la table à carte
+    note: Simple boîte de dérivation, sans disjoncteur. Les prises bâbord ne sont protégées que par le disjoncteur 16 A du boîtier d'arrivée.
     questions: [Q31]
 
   - id: prise-230-eps100

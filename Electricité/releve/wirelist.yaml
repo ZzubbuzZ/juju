@@ -33,11 +33,17 @@ fils:
   - { id: wire020, de: node024, vers: node029, section_mm2: 10, couleur: rouge, longueur_m: 0.5 }
   - { id: wire021, de: node025, vers: node030, section_mm2: 10, couleur: noir, longueur_m: 0.5 }
 
-  # --- Tableau Scheiber 2 voies (Q3, Q25)
+  # --- Télécommande du guindeau (Q2) ----------------------------------------------
+  - { id: wire061, de: node022, vers: node033, note: "Pris sur le + d'entrée du relais" }
+  - { id: wire062, de: node034, vers: node035 }
+  - { id: wire063, de: node036, vers: node026 }
+  - { id: wire064, de: node037, vers: node027 }
+
+  # --- Tableau Scheiber 2 voies (Q3, Q25, Q29)
   - { id: wire022, de: node010, vers: node050, section_mm2: 6, note: "Sans fusible (A6)" }
   - { id: wire023, de: node006, vers: node051, section_mm2: 6 }
-  - { id: wire024, de: node052, vers: node042, questions: [Q29] }
-  - { id: wire025, de: node051, vers: node043, statut: a_verifier, questions: [Q29], note: "Retour de l'EPS 100 vers la masse du tableau (supposé)" }
+  - { id: wire024, de: node052, vers: node042, section_mm2: 3.5, section_indicative: true }
+  - { id: wire025, de: node051, vers: node043, questions: [Q37], note: "Retour de l'EPS 100 sur la barrette de masse du tableau" }
   - { id: wire026, de: node053, vers: node056, section_mm2: 2.5 }
   - { id: wire036, de: node057, vers: node051, section_mm2: 2.5, note: "Masse de la pompe sur la barrette du tableau Scheiber" }
 
@@ -73,9 +79,9 @@ fils:
   - { id: wire052, de: node047, vers: node227, note: "Cordon de l'EPS 100, branché sur sa prise" }
   - { id: wire053, de: node048, vers: node228 }
   - { id: wire054, de: node046, vers: node229 }
-  - { id: wire055, de: node246, vers: node247, section_mm2: 2.5 }
+  - { id: wire055, de: node240, vers: node247, section_mm2: 2.5 }
   - { id: wire056, de: node241, vers: node248, section_mm2: 2.5 }
   - { id: wire057, de: node242, vers: node249, section_mm2: 2.5 }
-  - { id: wire058, de: node246, vers: node250, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire058, de: node240, vers: node250, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
   - { id: wire059, de: node241, vers: node251, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
   - { id: wire060, de: node242, vers: node252, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }

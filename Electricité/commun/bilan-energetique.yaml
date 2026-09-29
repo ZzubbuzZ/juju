@@ -50,9 +50,10 @@ consommateurs:
     statut: estime
 
   - equipement: feu-mouillage
-    courant_A: 0.8
+    courant_A: 0.2
     heures_par_jour: { navigation: 9, mouillage: 9 }
     statut: estime
+    note: Feu à LED (Q7).
 
   - equipement: eclairage
     courant_A: 3

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="Réseau 230 V en unifilaire : prise de quai, boîtier d'arrivée avec différentiel 30 mA, chargeur, et deux boîtiers de distribution alimentant prises et plafonnier.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="Réseau 230 V en unifilaire : prise de quai, boîtier d'arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et plafonnier.">
   <title>Folio 3 · Réseau 230 V</title>
-  <desc>Trois boîtiers : l'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste), puis un boîtier de distribution par bord (10 A éclairage, 16 A prises). La terre n'arrive qu'aux prises, et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Au ponton de Saint-Chamas, la prise ne fournit que 6 A, soit environ 1 400 W pour tout le bord.</desc>
+  <desc>L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente un boîtier de distribution à tribord (10 A éclairage, 16 A prises) et une simple boîte de dérivation à bâbord, sans disjoncteur : les prises bâbord ne sont protégées que par le 16 A de l'arrivée. La terre n'arrive qu'aux prises, et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Au ponton de Saint-Chamas, la prise ne fournit que 6 A, soit environ 1 400 W pour tout le bord.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -139,21 +139,18 @@
   <text class="tb mid" x="330" y="578">EPS 100</text>
   <text class="ts mid" x="330" y="593">frigo · folio 1</text>
 
-  <!-- ============ Boîtier bâbord ============ -->
-  <rect class="bound" x="640" y="330" width="520" height="100"/>
-  <text class="ts" x="650" y="347">Boîtier de distribution bâbord · placard table à carte / cabine</text>
-  <path class="n w4" d="M730 365 H1070"/>
+  <!-- ============ Boîte de dérivation bâbord ============ -->
+  <rect class="bound" x="840" y="330" width="300" height="100"/>
+  <text class="ts" x="850" y="347">Boîte de dérivation bâbord · table à carte</text>
+  <path class="n w4" d="M900 365 H1080"/>
   <circle class="dn" cx="900" cy="365" r="3.5"/>
   <path class="n w2" d="M900 330 V365"/>
-  <path class="n w2" d="M750 365 V385 M990 365 V385"/>
-  <rect class="box" x="730" y="385" width="40" height="20"/>
-  <text class="ts mid" x="750" y="399">10 A</text>
-  <text class="ts" x="778" y="399">éclairage</text>
-  <rect class="box" x="970" y="385" width="40" height="20"/>
-  <text class="ts mid" x="990" y="399">16 A</text>
-  <text class="ts" x="1018" y="399">prises</text>
-  <path class="u" d="M750 405 V440"/>
-  <text class="ts mid tu" x="750" y="458">aucun circuit relevé</text>
+  <path class="n w2" d="M990 365 V405"/>
+  <circle class="dn" cx="990" cy="365" r="3.5"/>
+  <text class="ts" x="850" y="398">sans disjoncteur :</text>
+  <text class="ts" x="850" y="413">16 A de l'arrivée seulement</text>
+  <text class="id" x="1010" y="398">node240–242</text>
+  <g class="mk-q"><circle cx="1140" cy="330" r="11"/><text class="mid" x="1140" y="333.5">Q31</text></g>
 
   <!-- Prises bâbord -->
   <path class="n w2" d="M990 405 V450 M990 450 H910 V490 M990 450 H1070 V490"/>

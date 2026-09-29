@@ -44,27 +44,27 @@ Coupe circuit dédié sur pole 12v
 - 6 points lumineux (LED) 12v
 - Panneau de controle des equipements de bord (coté moteur) :
   - Interrupteur réfrigérateur + fusible 15A
-  - Interrupteur Pompe de cale moteur + fusible 10A (pompe manuelle, sans flotteur)
-  - Alimenté par les coupe-circuits voisins (sections à relever, Q25)
+  - Interrupteur Pompe de cale moteur + fusible 10A (Attwood Tsunami T500, sans flotteur, mise en route manuelle ; le fabricant demande un fusible de 3 A : anomalie A10)
+  - Alimenté par les coupe-circuits voisins en 6 mm² ; départ frigo en 3,5 mm², retour de l'EPS 100 sur la barrette de masse du tableau
 - Panneau de controle des equipements de bord (coté table à carte) :
   - 12 Interrupteurs + 12 fusibles de différents calibres
-    - feu route fusible 10A
+    - feu route fusible 10A (feux de navigation à incandescence)
     - feu moteur fusible 10A
     - pompe à eau potable fusible 15A
     - radio fusible 10A
     - prises 12v fusible 10A
     - éclairage 12v fusible 10A
-    - projecteur fusible 10A
-    - mouillage fusible 10A
+    - projecteur fusible 10A (incandescent)
+    - mouillage fusible 10A (feu à LED)
     - compas fusible 5A
-    - pilote fusible 10A
+    - pilote fusible 10A (Raymarine ST2000+, barre franche)
     - VHF fusible 10A
     - GPS Loch fusible 10A
   - Pompe à eau
   - Pompe de cale
   - sondeur
   - GPS Garmin Map 7407 xsv ou xdv
-  - Répéteur GPS MLR fx312 dans le cockpit
+  - Répéteur GPS MLR fx312 : unité principale à la table à carte, écran déporté au-dessus de la descente, côté cockpit
   - 2 x prises 12v allume cigare
   - VHF Standar horizon Matrix GX 2200 AIS
   - autoradio
@@ -76,10 +76,10 @@ Coupe circuit dédié sur pole 12v
 
 Lewmar Pro-Series 1000 700W
 Relai de commande à proximité du guindeau
-Disjoncteur thermique, proche du sectionneur. Calibre à lire sur l'appareil (Q34) ; la notice préconise 70 A.
+Disjoncteur thermique de 70 A, proche du sectionneur, conforme à la notice.
 Notice Lewmar (tableau 7.5, [documentation](documentation/OSCULATI-Notice-LEWMAR-Guindeau-Pro-Série.pdf)) : courant normal 50 A.
 Cablage en 50mm2
-Telecommande
+Télécommande alimentée par le + d'entrée du relais, à travers un fusible de 5 A
 
 ### Refrigerateur
 
@@ -112,13 +112,14 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 
 3 boitiers électriques : 
 - Boitier d'arrivée dans le coffre cockpit tribord avec dicjoncteur différentiel 30mA/25A protégeant tout le circuit + 1 disjoncteur 10A pour le chargeur de quai, et 1 disjonteur 16A pour le reste.
-- 2 boitiers de distribution (1 par bord) avec 4 disjonteurs (2x10A pour éclairage, 2x16A pour PE). L'installation semble surdimenssionnée.
+- Boîtier de distribution tribord avec 2 disjoncteurs (10A pour l'éclairage, 16A pour les PE).
+- Boîte de dérivation bâbord, sans disjoncteur, à l'arrière gauche de la table à carte : les PE bâbord ne sont protégées que par le 16A du boîtier d'arrivée.
 - Une PE pour alimentation groupe froid Dometic EPS 100 sur boitier tribord
 - Une PE pour la cuisine sur boitier tribord
 - Un plafonnier d'éclairage sur boitier tribord
-- Une PE pour la table à carte sur boitier babord
-- Une PE pour le carré sur boitier babord
-- Boîtier bâbord dans le placard entre la table à carte et la cabine de poupe ; boîtier tribord sur la cloison entre le cabinet de toilette et le coffre de cockpit.
+- Une PE pour la table à carte sur la boîte de dérivation bâbord
+- Une PE pour le carré sur la boîte de dérivation bâbord
+- Boîtier tribord sur la cloison entre le cabinet de toilette et le coffre de cockpit.
 - La terre 230 V n'est reliée ni à la masse 12 V ni à un isolateur galvanique (anomalie A8).
 - Au ponton de Saint-Chamas, la prise de quai ne fournit que **6 A, soit environ 1 400 W** pour tout le bord (12 A à quai).
 - Prises en 3 × 2,5 mm², éclairage en 3 × 1,5 mm², arrivée et chargeur en 3 × 2,5 mm².
@@ -139,7 +140,7 @@ Les zones de l'aménagement sont décrites dans [amenagement.yaml](amenagement.y
 - **Guindeau** : à la proue, posé sur le pont au-dessus du puits de chaîne.
 - **Groupe froid et EPS 100** : cuisine (tribord), entre le puits de dérive et la glacière, dans la partie droite du meuble bas sous l'évier.
 - **Puits de dérive** : entre la table à carte et la cuisine. La quille est en deux parties : un aileron lesté en polyester et une dérive relevable en fonte, qui remonte dans ce puits.
-- **Tableau de servitude** : table à carte (bâbord).
+- **Tableau de servitude** : table à carte (bâbord), avec la boîte de dérivation 230 V bâbord à l'arrière gauche et l'unité principale du répétiteur GPS. L'écran déporté du répétiteur est au-dessus de la descente, côté cockpit.
 
 Plan : [folio 0](../schemas/folio-0-implantation.svg), d'après le [plan de brochure](photos/gibsea-31-drawing.jpg).
 
