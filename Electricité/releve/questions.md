@@ -22,7 +22,6 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q12** Longueurs réelles des fils du tableau de servitude, circuit par circuit.
   → 27/09 : pas d'information pour l'instant. À mesurer lors d'un démontage du tableau.
 - **Q35** Passages de cloison : combien y en a-t-il, avec quel diamètre de trou, et combien de câbles passent dans chacun ? Au minimum : batterie de servitude → compartiment moteur, compartiment moteur → descente, et les passages vers l'avant (guindeau, tableau).
-- **Q37** Retour de l'EPS 100 vers la barrette de masse du tableau Scheiber (wire025) : même câble de 3,5 mm² que le départ (wire024) ?
 
 ### Équipements
 
@@ -109,6 +108,8 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 29/09 : Raymarine ST2000+.
 - **Q29** Tableau Scheiber : section du départ frigo vers l'EPS 100 (wire024), et le retour de l'EPS 100 arrive-t-il bien sur la barrette de masse du tableau (wire025) ?
   → 29/09 : départ en 3,5 mm² ; le retour arrive bien sur la barrette de masse du tableau. Section du retour : Q37.
+- **Q37** Retour de l'EPS 100 vers la barrette de masse du tableau Scheiber (wire025) : même câble de 3,5 mm² que le départ (wire024) ?
+  → 29/09 : oui, 3,5 mm² aussi.
 - **Q30** Longueur réelle de wire009 (− batterie de servitude → coupe-circuit des négatifs).
   → 29/09 : 1 m confirmé. La batterie est juste derrière la paroi latérale du bloc moteur, et la contremarche des coupe-circuits juste au-dessus.
 - **Q32** Répétiteur GPS MLR FX312 : où est-il fixé ?

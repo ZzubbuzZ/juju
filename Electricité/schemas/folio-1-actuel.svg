@@ -232,7 +232,6 @@
   <text class="ts mid" x="1150" y="793">CU-55</text>
   <g class="mk-a"><circle cx="1150" cy="822" r="10"/><text class="mid" x="1150" y="825.5">A7</text></g>
   <path class="n w2" d="M1040 802 V818"/>
-  <rect class="flag" x="985" y="818" width="110" height="18"/>
-  <text class="id mid" x="1040" y="831">wire025 → node051</text>
-  <g class="mk-q"><circle cx="970" cy="827" r="11"/><text class="mid" x="970" y="830.5">Q37</text></g>
+  <rect class="flag" x="962" y="818" width="156" height="18"/>
+  <text class="id mid" x="1040" y="831">wire025 · 3,5 → node051</text>
 </svg>

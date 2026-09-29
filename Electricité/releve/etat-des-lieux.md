@@ -45,7 +45,7 @@ Coupe circuit dédié sur pole 12v
 - Panneau de controle des equipements de bord (coté moteur) :
   - Interrupteur réfrigérateur + fusible 15A
   - Interrupteur Pompe de cale moteur + fusible 10A (Attwood Tsunami T500, sans flotteur, mise en route manuelle ; le fabricant demande un fusible de 3 A : anomalie A10)
-  - Alimenté par les coupe-circuits voisins en 6 mm² ; départ frigo en 3,5 mm², retour de l'EPS 100 sur la barrette de masse du tableau
+  - Alimenté par les coupe-circuits voisins en 6 mm² ; départ frigo et retour de l'EPS 100 (sur la barrette de masse du tableau) en 3,5 mm²
 - Panneau de controle des equipements de bord (coté table à carte) :
   - 12 Interrupteurs + 12 fusibles de différents calibres
     - feu route fusible 10A (feux de navigation à incandescence)

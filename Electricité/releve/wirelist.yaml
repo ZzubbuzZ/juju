@@ -43,7 +43,7 @@ fils:
   - { id: wire022, de: node010, vers: node050, section_mm2: 6, note: "Sans fusible (A6)" }
   - { id: wire023, de: node006, vers: node051, section_mm2: 6 }
   - { id: wire024, de: node052, vers: node042, section_mm2: 3.5, section_indicative: true }
-  - { id: wire025, de: node051, vers: node043, questions: [Q37], note: "Retour de l'EPS 100 sur la barrette de masse du tableau" }
+  - { id: wire025, de: node051, vers: node043, section_mm2: 3.5, section_indicative: true, note: "Retour de l'EPS 100 sur la barrette de masse du tableau" }
   - { id: wire026, de: node053, vers: node056, section_mm2: 2.5 }
   - { id: wire036, de: node057, vers: node051, section_mm2: 2.5, note: "Masse de la pompe sur la barrette du tableau Scheiber" }
 
