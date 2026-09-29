@@ -28,10 +28,22 @@ Pour situer l'isolateur : la liaison (2) **sans** isolateur mettrait les pièces
 
 Deux points restent à vérifier à bord, car ils conditionnent la colonne « Sans liaison » :
 
-- **Liaison cachée** : certains chargeurs relient leur négatif de sortie à leur boîtier, donc à la terre. Si c'est le cas du Dolphin ou de l'EPS 100, la liaison (2) existe déjà, sans isolateur. À mesurer à l'ohmmètre, câble de quai débranché, entre la broche de terre de la prise de quai et le négatif 12 V.
+- **Liaison cachée** : certains chargeurs relient leur négatif de sortie à leur boîtier, donc à la terre. Pour le Dolphin, la notice annonce des sorties « isolées » : on le retient tel quel. Reste l'EPS 100, dont on ne sait rien sur ce point. Si son négatif est relié à son boîtier, la liaison (2) existe déjà, sans isolateur. La mesure lèverait le doute pour les deux appareils à la fois : à l'ohmmètre, câble de quai débranché, entre la broche de terre de la prise de quai et le négatif 12 V.
 - **Pièces immergées réellement reliées au 12 V** : présence et emplacement de l'anode, type d'accouplement de l'arbre, liaison éventuelle de la dérive en fonte, des passe-coques ou de la sonde du sondeur à la masse. Non relevé à ce jour.
 
 Dans les deux cas, **tester le différentiel régulièrement** avec son bouton de test.
+
+## Que contient un isolateur galvanique ?
+
+Deux bornes seulement et un gros radiateur : ce n'est pas une arnaque, c'est ce qu'on attend de cet appareil.
+
+- **Deux bornes**, parce qu'il se place en série sur un seul conducteur, la terre : une borne côté ponton, une borne côté bord. Il ne touche ni à la phase ni au neutre.
+- **Dedans**, des diodes de puissance : deux branches montées tête-bêche, chacune de deux diodes en série. Sous environ 1,2 V, dans un sens comme dans l'autre, aucune ne conduit : les courants galvaniques, qui naissent de quelques dixièmes de volt, sont bloqués. Au-delà, elles conduisent : un courant de défaut 230 V, alternatif, passe dans les deux sens et fait déclencher les protections. Certains modèles ajoutent un condensateur en parallèle, pour laisser passer les petites fuites alternatives des filtres, ou un voyant de contrôle.
+- **Le radiateur**, parce que ces diodes doivent conduire tout le courant de défaut, jusqu'à ce qu'une protection coupe, sans se détruire. Chaque diode dissipe environ 0,7 V fois le courant : à 16 A, une vingtaine de watts pour l'ensemble. D'où la taille du boîtier, et d'où le calibre de l'isolateur, à choisir au moins égal à celui de la protection d'arrivée : à vérifier sur la notice du modèle retenu, face au différentiel de 25 A de Juju.
+
+Le prix paie surtout ce radiateur et la tenue garantie au courant de défaut. C'est ce qui distingue un isolateur sérieux d'un bloc de diodes premier prix : une diode qui lâche **en circuit ouvert** coupe la terre du ponton sans que rien ne le signale, et l'on perd la liaison (1) en croyant l'avoir. Une qui lâche en court-circuit ne fait que supprimer la protection galvanique.
+
+Rappel : l'isolateur ne sert que si l'on fait la liaison (2). Dans la variante sans liaison, il n'a pas d'utilité.
 
 ## À ne pas confondre : couper la terre du ponton
 
