@@ -11,6 +11,7 @@ Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) 
 | Priorité | Hypothèse · lot | Anomalies | Coût estimé | Décision du 30/09 | Enjeu |
 |---|---|---|---|---|---|
 | 1 | [H2](H2-fusibles-batteries/proposition.md) · fusible de 50 A à la source de wire019 (repris de H1) | A1 | 31 € | retenu | Tableau de la table à carte alimenté sans aucune protection : risque d'incendie |
+| 1 | H2 · fusible de 30 A à la source de wire022 (tableau Scheiber) | A6 | 31 € | retenu (01/10) | Tableau Scheiber alimenté sans aucune protection : risque d'incendie |
 | 2 | H2 · fusibles de 400 A près des deux batteries | A2 | 80 € | retenu (option A, 400 A) | Rien ne coupe un court-circuit sur les câbles de batterie |
 | 2 | H2 · fusibles des départs : chargeur 30 A, coupleur 40 A | A4 | 91 € | retenu | Quatre câbles de 6 mm² branchés en direct sur les batteries |
 | 3 | [H5](H5-passages-cloison/proposition.md) · une dizaine de passages de cloison | A9 | 44 € | retenu | Usure de l'isolant sur l'arête des trous, jusqu'au court-circuit |
@@ -19,17 +20,17 @@ Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) 
 | 3 | H3 · outillage de sertissage | | 75 € | retenu | Sert à toutes les hypothèses |
 | 4 | [H4](H4-terre-230v/proposition.md) · remplacement du différentiel d'arrivée par un type A | | 60 € | retenu | Seule protection des personnes en 230 V ; modèle actuel sans documentation (Q36) |
 | 5 | H4 · isolateur galvanique maison, sans liaison terre / masse 12 V | A8 | 58 € | retenu | Précaution contre la corrosion par le ponton si une liaison apparaît |
-| – | H1 · barrette + et fusible du tableau Scheiber | A6 | 165 € | différé | Tableau Scheiber alimenté sans protection |
+| – | H1 · barrette + regroupant les départs | | 165 € | différé | Simplifie la distribution ; A1 et A6 sont déjà traités par les fusibles de H2 |
 | – | H1 · pompe de cale automatique, fusibles de 3 A | A10 | 68 € | différé | Pompe mise en route à la main, sans flotteur ; protégée en 10 A au lieu de 3 A |
 | – | H1 · recâblage du tableau de la table à carte | | 407 € | différé | Fiabilité et lisibilité plus que sécurité |
 | – | H2 · wire006 refait en 50 mm² | A2 | 30 € | différé, long terme | Court-circuit partiel sur le câble de la batterie de servitude, plus probable avec l'usure ; à surveiller d'ici là par l'historique des consommations (étude D) |
 | – | H4 · transformateur d'isolement | A8 | environ 430 € | écarté | Supprimait tout lien avec le ponton |
 
-**Total retenu : environ 470 €**, outillage compris. Les lots différés représentent environ 670 € de plus, dont une partie (la barrette de H1) rendrait le fusible de 31 € inutile.
+**Total retenu : environ 500 €**, outillage compris. Les lots différés représentent environ 670 € de plus, dont une partie (la barrette de H1) rendrait le fusible de 31 € inutile.
 
-**Ordre proposé** : les priorités 1 et 2 suppriment les risques d'incendie pour environ 200 €. Tout se passe autour des batteries et de la platine des coupe-circuits, donc en une journée à bord. Les passages de cloison et les cosses (priorité 3) se font dans la foulée, sur les mêmes câbles et avec le même outillage. Le 230 V (priorités 4 et 5) se fait à part, câble de quai débranché.
+**Ordre proposé** : les priorités 1 et 2 suppriment les risques d'incendie pour environ 230 €. Tout se passe autour des batteries et de la platine des coupe-circuits, donc en une journée à bord. Les passages de cloison et les cosses (priorité 3) se font dans la foulée, sur les mêmes câbles et avec le même outillage. Le 230 V (priorités 4 et 5) se fait à part, câble de quai débranché.
 
-**Risques acceptés en attendant les lots différés** : A6 (tableau Scheiber alimenté sans fusible, comme l'était A1) et A10 (pompe de cale protégée en 10 A). A6 est le plus sérieux des deux : un fusible de 30 A à la source de wire022, sur le modèle de celui de wire019, coûterait une trentaine d'euros.
+**Risque accepté en attendant les lots différés** : A10 (pompe de cale protégée en 10 A au lieu de 3 A). A6 est traité depuis le 01/10 par un fusible de 30 A (H2).
 
 Dépendances : H4 modifie le folio 3 (isolateur à la place de wire034, nouveau différentiel). A5 (section du guindeau) a été levée le 27/09 : elle n'est plus à traiter.
 
@@ -66,12 +67,12 @@ Relevé du 28/09 : la terre et la masse 12 V ne sont reliées nulle part, et il 
 
 **30/09** : programme retenu dans le tableau des [pistes d'amélioration](#pistes-damélioration-et-coûts). En résumé :
 
-- **H1** différée, sauf un fusible de 50 A à la source de wire019 (A1), décrit dans H2 depuis le 01/10.
+- **H1** différée ; ses fusibles de source (50 A pour wire019, A1 ; 30 A pour wire022, A6) sont repris dans H2 le 01/10.
 - **H2** option A, avec des fusibles de 400 A sur les deux batteries, câbles de batterie conservés en 35 mm² (écart accepté) ; départs à 30 A (chargeur) et 40 A (coupleur, relais de 40 A).
 - **H3** cosses serties, câbles conservés.
 - **H4** terre du ponton conservée à travers un isolateur galvanique maison, sans liaison à la masse 12 V ; différentiel remplacé par un type A ; transformateur écarté.
 - **H5** une dizaine de passages de cloison.
 
-**Câblage (01/10)** : [H2](H2-fusibles-batteries/cablage.yaml) (base : le relevé, [folio 2c](H2-fusibles-batteries/folio-2c-fusibles.svg)) puis [H4](H4-terre-230v/cablage.yaml) (base : A-H2, [folio 2d](H4-terre-230v/folio-2d-terre.svg)) : le modèle de A-H4 cumule tout le programme retenu. H3 et H5 n'ajoutent ni ne suppriment aucun fil. Nouveaux numéros : node070 à node083, node256 et node257, wire160 à wire166, wire170 et wire171.
+**Câblage (01/10)** : [H2](H2-fusibles-batteries/cablage.yaml) (base : le relevé, [folio 2c](H2-fusibles-batteries/folio-2c-fusibles.svg)) puis [H4](H4-terre-230v/cablage.yaml) (base : A-H2, [folio 2d](H4-terre-230v/folio-2d-terre.svg)) : le modèle de A-H4 cumule tout le programme retenu. H3 et H5 n'ajoutent ni ne suppriment aucun fil. Nouveaux numéros : node070 à node085, node256 et node257, wire160 à wire167, wire170 et wire171.
 
 Reste à faire : fusionner dans `main`, poser le tag de révision, puis rebaser les autres études.

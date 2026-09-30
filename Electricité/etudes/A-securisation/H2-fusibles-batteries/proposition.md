@@ -1,6 +1,6 @@
 # A-H2 · Fusibles de batterie
 
-Hypothèse de l'étude A. Base : le relevé, ou A-H1 si elle est retenue. Anomalies traitées : **A2** (aucun fusible en sortie des batteries) et **A4** (fils du coupleur et du chargeur sans fusible).
+Hypothèse de l'étude A. Base : le relevé, ou A-H1 si elle est retenue. Anomalies traitées : **A2** (aucun fusible en sortie des batteries), **A4** (fils du coupleur et du chargeur sans fusible), et depuis le 01/10 **A1** et **A6** (câbles des tableaux de la table à carte et Scheiber sans fusible).
 
 - Données : [cablage.yaml](cablage.yaml) (base : le relevé).
 - Schéma : [folio 2c](folio-2c-fusibles.svg).
@@ -13,6 +13,7 @@ Les câbles existants gardent leur numéro : seule leur extrémité côté sourc
 - **Option A, avec un calibre de 400 A** sur les deux batteries (au lieu des 300 A étudiés d'abord) : même fusible des deux côtés, démarrage de secours couplé possible. **wire006 est conservé en 35 mm²** (décision du 30/09), comme wire001 : voir l'écart accepté plus bas.
 - **Départs** : 30 A pour le chargeur, **40 A pour le coupleur**, dont le relais est donné pour 40 A.
 - **Tableau de la table à carte (A1)** : fusible de 50 A à la source de wire019, repris de A-H1 le 01/10 (voir plus bas).
+- **Tableau Scheiber (A6)** : fusible de 30 A à la source de wire022, ajouté le 01/10 (voir plus bas).
 
 Le choix de 400 A et ses conséquences sont détaillés dans [Calibre retenu : 400 A](#calibre-retenu--400-a).
 
@@ -82,6 +83,10 @@ La notice préconise aussi des câbles batterie de 6 mm² sur **1,5 m au plus**.
 
 wire019 (6 mm², 3 m) part de la sortie du coupe-circuit de servitude (node010, relevé corrigé le 01/10) sans aucune protection. Un **fusible MIDI de 50 A** se place à sa source, près de la platine des coupe-circuits, avec les fusibles des départs : un tronçon court (wire166) va de node010 au porte-fusible, et wire019 est repris sur sa sortie. 50 A reste dans la tenue du 6 mm² et laisse passer la consommation du tableau (Q12 pour les longueurs exactes). C'est la seule partie de A-H1 retenue le 30/09.
 
+### Tableau Scheiber (A6)
+
+wire022 (6 mm²) part lui aussi de node010, sans fusible, vers le tableau Scheiber 2 voies (frigo 15 A, pompe de cale). Même traitement que wire019 : un **fusible MIDI de 30 A** à côté du premier, près de la platine ; un tronçon court (wire167) va de node010 au porte-fusible, et wire022 est repris sur sa sortie. 30 A couvre les deux voies du tableau et reste dans la tenue du 6 mm². C'était le lot « distribution » de A-H1 ; la barrette de A-H1 reste différée.
+
 ### Numéros
 
 | Fusible | Calibre | Tronçon court (nouveau) | Câble existant repris |
@@ -93,6 +98,7 @@ wire019 (6 mm², 3 m) part de la sortie du coupe-circuit de servitude (node010, 
 | coupleur, côté moteur | 40 A | wire164 (6 mm²) | wire002 |
 | coupleur, côté servitude | 40 A | wire165 (6 mm²) | wire007 |
 | tableau de la table à carte | 50 A | wire166 (6 mm²) | wire019 |
+| tableau Scheiber | 30 A | wire167 (6 mm²) | wire022 |
 
 ## Questions liées
 

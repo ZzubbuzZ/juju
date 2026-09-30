@@ -2,7 +2,8 @@
 #
 # A-H2 : différences avec le relevé (décision du 30/09).
 # Fusibles de 400 A près des batteries, fusibles des départs coupleur et chargeur,
-# fusible de 50 A à la source du câble du tableau de la table à carte (A1).
+# fusible de 50 A à la source du câble du tableau de la table à carte (A1),
+# fusible de 30 A à la source du câble du tableau Scheiber (A6, ajouté le 01/10).
 # Les fils existants gardent leur numéro : seule leur extrémité côté source est
 # reprise sur le porte-fusible (supprimés puis redéclarés avec leur nouvelle extrémité).
 
@@ -11,7 +12,7 @@ titre: Fusibles de batterie et des départs
 base: releve
 
 supprime:
-  fils: [wire001, wire002, wire003, wire006, wire007, wire008, wire019]
+  fils: [wire001, wire002, wire003, wire006, wire007, wire008, wire019, wire022]
 
 equipements:
   - { id: fus-bat-moteur, type: fusible, designation: "Fusible de la batterie moteur (MEGA)", calibre_A: 400, emplacement: "Porte-fusible vissé à côté de la batterie moteur", statut: propose }
@@ -20,6 +21,7 @@ equipements:
   - { id: fus-chargeur-servitude, type: fusible, designation: "Fusible du chargeur, sortie batterie de servitude (MIDI)", calibre_A: 30, emplacement: "Près de la platine des coupe-circuits", statut: propose }
   - { id: fus-coupleur-moteur, type: fusible, designation: "Fusible du coupleur, côté batterie moteur (MIDI)", calibre_A: 40, emplacement: "Près de la platine des coupe-circuits", statut: propose }
   - { id: fus-coupleur-servitude, type: fusible, designation: "Fusible du coupleur, côté batterie de servitude (MIDI)", calibre_A: 40, emplacement: "Près de la platine des coupe-circuits", statut: propose }
+  - { id: fus-source-tableau-scheiber, type: fusible, designation: "Fusible du câble du tableau Scheiber (MIDI)", calibre_A: 30, emplacement: "Près de la platine des coupe-circuits", statut: propose }
   - { id: fus-source-tableau-servitude, type: fusible, designation: "Fusible du câble du tableau de la table à carte (MIDI)", calibre_A: 50, emplacement: "Près de la platine des coupe-circuits", statut: propose }
 
 nodes:
@@ -37,6 +39,8 @@ nodes:
   - { id: node081, equipement: fus-coupleur-servitude, borne: "2", polarite: "+" }
   - { id: node082, equipement: fus-source-tableau-servitude, borne: "1 (côté source)", polarite: "+" }
   - { id: node083, equipement: fus-source-tableau-servitude, borne: "2", polarite: "+" }
+  - { id: node084, equipement: fus-source-tableau-scheiber, borne: "1 (côté source)", polarite: "+" }
+  - { id: node085, equipement: fus-source-tableau-scheiber, borne: "2", polarite: "+" }
 
 fils:
   # --- Batteries (A2) : tronçon court borne → porte-fusible, puis câble existant repris
@@ -58,3 +62,7 @@ fils:
   # --- Tableau de la table à carte (A1)
   - { id: wire166, de: node010, vers: node082, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
   - { id: wire019, de: node083, vers: node100, section_mm2: 6, couleur: rouge, longueur_m: 3, statut: propose, note: "Câble existant, repris sur le fusible" }
+
+  # --- Tableau Scheiber (A6)
+  - { id: wire167, de: node010, vers: node084, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire022, de: node085, vers: node050, section_mm2: 6, statut: propose, note: "Câble existant, repris sur le fusible (couleur non relevée)" }
