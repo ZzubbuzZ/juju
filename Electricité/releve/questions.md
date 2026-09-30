@@ -51,10 +51,11 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 29/09 : correction, il n'y a pas de disjoncteur à bâbord. Le « boîtier bâbord » est une simple boîte de dérivation, à l'arrière gauche de la table à carte (+ 1 PE). Seul le boîtier tribord porte deux disjoncteurs (10 A éclairage, 16 A prises).
   → 30/09 : chargeur sur un Merlin Gerin DT40 C10, éclairage et prises sur des Legrand DNX3 C10 et C16 : modèles phase + neutre, qui coupent les deux conducteurs. Le boîtier tribord porte un C10 (éclairage) et deux C16 (prises, un par bord). Cinq prises : table à carte et armoire derrière la table à carte (bâbord), groupe froid, cuisine et cabinet de toilette (tribord). Modèle du 16 A d'arrivée non relevé.
 - **Q38** EPS 100 : son cordon 230 V n'a pas de terre (fiche à deux contacts). Son boîtier est-il en plastique, et porte-t-il le double carré de la classe II ? Un boîtier métallique sans terre serait une anomalie.
-- **Q39** Coffre de cockpit tribord, près de la prise de quai : reste-t-il la place de fixer un transformateur d'isolement (15 à 30 kg, le volume d'une boîte à chaussures), sur une cloison ou un fond solide, à l'abri des embruns ?
 
 ## Réponses
 
+- **Q39** Coffre de cockpit tribord, près de la prise de quai : reste-t-il la place de fixer un transformateur d'isolement (15 à 30 kg, le volume d'une boîte à chaussures), sur une cloison ou un fond solide, à l'abri des embruns ?
+  → 30/09 : sans objet, le transformateur d'isolement est écarté (A-H4).
 - **Q35** Passages de cloison : combien y en a-t-il, avec quel diamètre de trou, et combien de câbles passent dans chacun ? Au minimum : batterie de servitude → compartiment moteur, compartiment moteur → descente, et les passages vers l'avant (guindeau, tableau).
   → 30/09 : une dizaine de passages ; diamètres non relevés, la nomenclature de A-H5 prévoit un assortiment.
 - **Q36** Différentiel 30 mA du boîtier d'arrivée : de quel type est-il (AC, A ou F, symbole imprimé sur l'appareil) ? Déclenche-t-il quand on appuie sur son bouton de test ? Un chargeur à découpage peut produire des fuites que le type AC détecte mal.
