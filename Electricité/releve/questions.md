@@ -37,6 +37,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q14** Alternateur : ampérage exact (plaque), borne de sortie (B+), présence d'une borne W pour un compte-tours.
   → 27/09 : à demander à Julie.
   → 28/09 : d'après les spécifications et les photos, l'alternateur d'origine donne 20 A au plus ; celui de Juju semble plus récent mais semblable. Plaque et bornes à relever.
+- **Q40** Pièces immergées reliées au moteur, donc à la masse 12 V (vérifiable depuis le bord) : l'accouplement entre l'arbre de l'inverseur et l'arbre d'hélice est-il métallique, ou comporte-t-il un manchon isolant (flector) ? Un câble de mise à la masse arrive-t-il sur le tube d'étambot ? Y a-t-il une anode sur l'arbre ? Conditionne la coupure du différentiel sans liaison terre / masse 12 V (A-H4).
 
 ### Pour les études B (chauffe-eau) et C (solaire)
 
