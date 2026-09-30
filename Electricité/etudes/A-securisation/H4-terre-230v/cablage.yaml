@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../../../outils/schema/donnees.schema.json
+#
+# A-H4 : différences avec A-H2 (décision du 30/09). Base A-H2 pour que le modèle
+# final cumule le programme retenu de l'étude A.
+# Isolateur galvanique maison sur la terre du ponton, à la place de wire034 ;
+# différentiel d'arrivée remplacé (même emplacement, mêmes nœuds node206 à node209).
+# Pas de liaison terre / masse 12 V (voir proposition.md et Q40).
+
+hypothese: A-H4
+titre: Terre 230 V et différentiel
+base: A-H2
+
+supprime:
+  equipements: [ddr-230v]
+  fils: [wire034]
+
+equipements:
+  - { id: ddr-230v, type: disjoncteur, designation: "Interrupteur différentiel bipolaire 30 mA type A", modele: "40 A, modulaire, à choisir", zone: cockpit-coffre-tribord, emplacement: "Dans le boîtier 230 V du chargeur, à la place du Power Safe ID55225", calibre_A: 40, statut: propose }
+  - { id: isolateur-galvanique, type: isolateur, designation: "Isolateur galvanique maison (pont redresseur 100 A, bornes + et − reliées)", zone: cockpit-coffre-tribord, emplacement: "Boîtier étanche près de la prise de quai", statut: propose, note: "Contrôle au multimètre à chaque début de saison (proposition.md)" }
+
+nodes:
+  - { id: node256, equipement: isolateur-galvanique, borne: "~ côté quai", polarite: 230V-terre }
+  - { id: node257, equipement: isolateur-galvanique, borne: "~ côté bord", polarite: 230V-terre }
+
+fils:
+  - { id: wire170, de: node205, vers: node256, section_mm2: 2.5, couleur: vert-jaune, longueur_m: 0.3, remplace: wire034, statut: propose }
+  - { id: wire171, de: node257, vers: node212, section_mm2: 2.5, couleur: vert-jaune, longueur_m: 0.3, remplace: wire034, statut: propose }

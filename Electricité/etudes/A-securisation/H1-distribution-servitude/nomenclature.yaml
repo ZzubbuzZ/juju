@@ -9,9 +9,6 @@ hypothese: A-H1
 devise: EUR
 
 lots:
-  fusible_a1:
-    titre: Fusible de 50 A à la source de wire019 (retenu le 30/09)
-    anomalies: [A1]
   distribution:
     titre: Barrette + et fusibles des tableaux (différé le 30/09)
     anomalies: [A1, A6]
@@ -24,11 +21,6 @@ lots:
     note: Fiabilité et lisibilité plus que sécurité.
 
 articles:
-  # --- Lot fusible_a1 (retenu) --------------------------------------------------
-  - { lot: fusible_a1, designation: "Porte-fusible MIDI", quantite: 1, unite: pièce, prix_unitaire: 12, statut: estimation }
-  - { lot: fusible_a1, designation: "Fusible MIDI 50 A", quantite: 2, unite: pièce, prix_unitaire: 6, statut: estimation, note: "Un en place, un de rechange" }
-  - { lot: fusible_a1, designation: "Cosses tubulaires étamées 6 mm² et gaine", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation }
-
   # --- Lot distribution ----------------------------------------------------------
   - { lot: distribution, designation: "Barrette positive 4 goujons, 150 A", quantite: 1, unite: pièce, prix_unitaire: 35, statut: estimation }
   - { lot: distribution, designation: "Porte-fusible MIDI", quantite: 2, unite: pièce, prix_unitaire: 12, statut: estimation }

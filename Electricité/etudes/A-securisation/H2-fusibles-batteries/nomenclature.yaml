@@ -2,30 +2,45 @@
 #
 # A-H2 : nomenclature chiffrée. Prix TTC en euros, estimations du 28/09/2026,
 # calibres mis à jour le 30/09 (400 A sur les batteries, 40 A au coupleur).
+# Le fusible du tableau de la table à carte (A1) vient de A-H1 depuis le 01/10.
 
 hypothese: A-H2
 devise: EUR
 
 lots:
   batteries:
-    titre: Fusibles sur les bornes + des deux batteries
+    titre: Fusibles de 400 A près des deux batteries
     anomalies: [A2]
-    note: 400 A sur les deux batteries, wire001 et wire006 conservés en 35 mm² (option A de proposition.md, décision du 30/09).
+    note: wire001 et wire006 conservés en 35 mm² (option A de proposition.md, décision du 30/09).
   departs:
     titre: Fusibles des départs coupleur et chargeur
     anomalies: [A4]
+  tableau:
+    titre: Fusible de 50 A à la source du câble du tableau de la table à carte
+    anomalies: [A1]
   long_terme:
     titre: wire006 refait en 50 mm² (différé, correction à long terme)
     note: Écart accepté le 30/09 ; à corriger quand l'installation vieillira, le court-circuit partiel devenant plus probable avec l'usure.
 
 articles:
+  # --- Lot batteries -------------------------------------------------------------
   - { lot: batteries, designation: "Porte-fusible MEGA, fixé à côté de la batterie", quantite: 2, unite: pièce, prix_unitaire: 15, statut: estimation }
   - { lot: batteries, designation: "Fusibles MEGA 400 A", quantite: 3, unite: pièce, prix_unitaire: 8, statut: estimation, note: "Deux en place, un de rechange" }
-  - { lot: batteries, designation: "Câble étamé 35 mm² rouge (borne de batterie → porte-fusible, deux tronçons courts)", quantite: 0.6, unite: m, prix_unitaire: 14, statut: estimation }
-  - { lot: batteries, designation: "Cosses tubulaires étamées 35 mm²", quantite: 4, unite: pièce, prix_unitaire: 3, statut: estimation }
+  - { lot: batteries, designation: "Câble étamé 35 mm² rouge (borne de batterie → porte-fusible, deux tronçons courts)", quantite: 0.6, unite: m, prix_unitaire: 14, statut: estimation, fils: [wire160, wire161] }
+  - { lot: batteries, designation: "Cosses tubulaires étamées 35 mm² (tronçons courts, et reprise de wire001 et wire006 sur les fusibles)", quantite: 6, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire160, wire161, wire001, wire006] }
+
+  # --- Lot départs ---------------------------------------------------------------
   - { lot: departs, designation: "Porte-fusible MIDI", quantite: 4, unite: pièce, prix_unitaire: 12, statut: estimation }
   - { lot: departs, designation: "Fusibles MIDI (2 × 30 A, 2 × 40 A)", quantite: 4, unite: pièce, prix_unitaire: 6, statut: estimation }
-  - { lot: departs, designation: "Câble étamé 6 mm² rouge (reprise des départs vers les porte-fusibles)", quantite: 2, unite: m, prix_unitaire: 3.5, statut: estimation }
-  - { lot: departs, designation: "Cosses tubulaires étamées 6 mm²", quantite: 8, unite: pièce, prix_unitaire: 1, statut: estimation }
+  - { lot: departs, designation: "Câble étamé 6 mm² rouge (coupe-circuit → porte-fusibles)", quantite: 2, unite: m, prix_unitaire: 3.5, statut: estimation, fils: [wire162, wire163, wire164, wire165] }
+  - { lot: departs, designation: "Cosses tubulaires étamées 6 mm² (tronçons courts, et reprise des câbles existants sur les fusibles)", quantite: 12, unite: pièce, prix_unitaire: 1, statut: estimation, fils: [wire162, wire163, wire164, wire165, wire002, wire003, wire007, wire008] }
+
+  # --- Lot tableau (A1) ------------------------------------------------------------
+  - { lot: tableau, designation: "Porte-fusible MIDI", quantite: 1, unite: pièce, prix_unitaire: 12, statut: estimation }
+  - { lot: tableau, designation: "Fusible MIDI 50 A", quantite: 2, unite: pièce, prix_unitaire: 6, statut: estimation, note: "Un en place, un de rechange" }
+  - { lot: tableau, designation: "Câble étamé 6 mm² rouge (disjoncteur du guindeau → porte-fusible)", quantite: 0.5, unite: m, prix_unitaire: 3.5, statut: estimation, fils: [wire166] }
+  - { lot: tableau, designation: "Cosses tubulaires étamées 6 mm² et gaine", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire166, wire019] }
+
+  # --- Lot long terme ----------------------------------------------------------------
   - { lot: long_terme, designation: "Câble étamé 50 mm² rouge (wire006 refait)", quantite: 1.2, unite: m, prix_unitaire: 18, statut: estimation }
   - { lot: long_terme, designation: "Cosses tubulaires étamées 50 mm²", quantite: 2, unite: pièce, prix_unitaire: 4, statut: estimation }

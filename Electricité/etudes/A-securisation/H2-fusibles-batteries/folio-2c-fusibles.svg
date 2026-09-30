@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Fusibles proposés : un fusible de 400 A près de chaque batterie, un fusible sur chacun des quatre départs du coupleur et du chargeur, et un fusible de 50 A à la source du câble du tableau de la table à carte.">
+  <title>Folio 2c · Fusibles de batterie et des départs</title>
+  <desc>Chaque câble branché sur une batterie est désormais protégé à sa source : 400 A près des batteries (A2), 30 A pour le chargeur et 40 A pour le coupleur (A4), 50 A pour le tableau de la table à carte (A1). Les câbles existants sont conservés et repris sur les porte-fusibles.</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+
+  <!-- ============ Batterie moteur ============ -->
+  <rect class="box" x="40" y="90" width="150" height="60" rx="2"/>
+  <text class="tb mid" x="115" y="114">Batterie moteur</text>
+  <text class="ts mid" x="115" y="131">110 Ah · coffre tribord</text>
+  <text class="id end" x="184" y="145">node001</text>
+  <path class="p w4" d="M190 120 H260"/>
+  <text class="idn mid" x="225" y="108">wire160 · 35</text>
+  <rect class="fuse-new" x="260" y="111" width="56" height="18"/>
+  <text class="idn mid" x="288" y="124">400 A</text>
+  <text class="ts mid tn" x="288" y="146">MEGA</text>
+  <g class="mk-a"><circle cx="288" cy="88" r="10"/><text class="mid" x="288" y="91.5">A2</text></g>
+  <path class="p w4" d="M316 120 H420"/>
+  <text class="id mid" x="370" y="110">wire001 · 35</text>
+  <!-- CC moteur -->
+  <circle class="term" cx="424" cy="120" r="4"/><circle class="term" cx="484" cy="120" r="4"/>
+  <path class="lever" d="M424 120 L481 107"/>
+  <text class="ts mid" x="454" y="94">CC moteur</text>
+  <text class="id end" x="413" y="140">node003</text>
+  <path class="p w4" d="M488 120 H560"/>
+  <rect class="flag" x="560" y="111" width="170" height="18"/>
+  <text class="ts mid" x="645" y="124">démarreur, couplage : folio 1</text>
+
+  <!-- Départs de node003 -->
+  <path class="p w2" d="M420 124 V190 H500"/>
+  <path class="p w2" d="M428 124 V230 H500"/>
+  <text class="idn" x="436" y="184">wire162 · 6</text>
+  <text class="idn" x="436" y="224">wire164 · 6</text>
+  <rect class="fuse-new" x="500" y="181" width="46" height="18"/>
+  <text class="idn mid" x="523" y="194">30 A</text>
+  <rect class="fuse-new" x="500" y="221" width="46" height="18"/>
+  <text class="idn mid" x="523" y="234">40 A</text>
+  <path class="p w2" d="M546 190 H700"/>
+  <path class="p w2" d="M546 230 H700"/>
+  <text class="id mid" x="623" y="184">wire003 · 6</text>
+  <text class="id mid" x="623" y="224">wire002 · 6</text>
+  <rect class="flag" x="700" y="181" width="215" height="18"/>
+  <text class="ts mid" x="807" y="194">chargeur, sortie 1 · node016</text>
+  <rect class="flag" x="700" y="221" width="215" height="18"/>
+  <text class="ts mid" x="807" y="234">coupleur, entrée moteur · node013</text>
+  <g class="mk-a"><circle cx="560" cy="210" r="10"/><text class="mid" x="560" y="213.5">A4</text></g>
+
+  <!-- ============ Batterie de servitude ============ -->
+  <rect class="box" x="40" y="300" width="150" height="60" rx="2"/>
+  <text class="tb mid" x="115" y="324">Batterie servitude</text>
+  <text class="ts mid" x="115" y="341">110 Ah · cabine de poupe</text>
+  <text class="id end" x="184" y="355">node007</text>
+  <path class="p w4" d="M190 330 H260"/>
+  <text class="idn mid" x="225" y="318">wire161 · 35</text>
+  <rect class="fuse-new" x="260" y="321" width="56" height="18"/>
+  <text class="idn mid" x="288" y="334">400 A</text>
+  <text class="ts mid tn" x="288" y="356">MEGA</text>
+  <g class="mk-a"><circle cx="288" cy="298" r="10"/><text class="mid" x="288" y="301.5">A2</text></g>
+  <path class="p w4" d="M316 330 H420"/>
+  <text class="id mid" x="370" y="320">wire006 · 35</text>
+  <!-- CC servitude -->
+  <circle class="term" cx="424" cy="330" r="4"/><circle class="term" cx="484" cy="330" r="4"/>
+  <path class="lever" d="M424 330 L481 317"/>
+  <text class="ts mid" x="454" y="304">CC servitude</text>
+  <text class="id end" x="413" y="350">node009</text>
+  <text class="id mid" x="484" y="350">node010</text>
+
+  <!-- Départs de node009 -->
+  <path class="p w2" d="M420 334 V400 H500"/>
+  <path class="p w2" d="M428 334 V440 H500"/>
+  <text class="idn" x="436" y="394">wire163 · 6</text>
+  <text class="idn" x="436" y="434">wire165 · 6</text>
+  <rect class="fuse-new" x="500" y="391" width="46" height="18"/>
+  <text class="idn mid" x="523" y="404">30 A</text>
+  <rect class="fuse-new" x="500" y="431" width="46" height="18"/>
+  <text class="idn mid" x="523" y="444">40 A</text>
+  <path class="p w2" d="M546 400 H700"/>
+  <path class="p w2" d="M546 440 H700"/>
+  <text class="id mid" x="623" y="394">wire008 · 6</text>
+  <text class="id mid" x="623" y="434">wire007 · 6</text>
+  <rect class="flag" x="700" y="391" width="215" height="18"/>
+  <text class="ts mid" x="807" y="404">chargeur, sortie 2 · node017</text>
+  <rect class="flag" x="700" y="431" width="215" height="18"/>
+  <text class="ts mid" x="807" y="444">coupleur, entrée servitude · node014</text>
+  <g class="mk-a"><circle cx="560" cy="420" r="10"/><text class="mid" x="560" y="423.5">A4</text></g>
+
+  <!-- ============ Guindeau et tableau de la table à carte ============ -->
+  <path class="p w4" d="M488 330 H940"/>
+  <text class="id mid" x="714" y="320">wire017 · 35 (inchangé)</text>
+  <circle class="dp" cx="940" cy="330" r="4.5"/>
+  <text class="id end" x="934" y="318">node020</text>
+  <rect class="box" x="960" y="310" width="130" height="40" rx="2"/>
+  <text class="tb mid" x="1025" y="328">Disj. guindeau</text>
+  <text class="ts mid" x="1025" y="343">vers le guindeau : folio 1</text>
+  <path class="p w4" d="M944 330 H960"/>
+  <path class="p w2" d="M940 334 V520 H980"/>
+  <text class="idn end" x="932" y="480">wire166 · 6</text>
+  <rect class="fuse-new" x="980" y="511" width="46" height="18"/>
+  <text class="idn mid" x="1003" y="524">50 A</text>
+  <g class="mk-a"><circle cx="1003" cy="494" r="10"/><text class="mid" x="1003" y="497.5">A1</text></g>
+  <path class="p w2" d="M1026 520 H1060 V560"/>
+  <text class="id" x="1068" y="545">wire019 · 6</text>
+  <rect class="flag" x="990" y="560" width="170" height="18"/>
+  <text class="ts mid" x="1075" y="573">tableau table à carte · node100</text>
+
+  <!-- Légende -->
+  <text class="ts" x="40" y="520">En vert : nouveau (porte-fusibles et tronçons courts).</text>
+  <text class="ts" x="40" y="538">Les fils existants gardent leur numéro : seule leur extrémité côté source passe sur le fusible.</text>
+  <text class="ts" x="40" y="556">wire001 et wire006 restent en 35 mm² sous 400 A : écart accepté le 30/09 (wire006 en 50 mm² à long terme).</text>
+  <text class="ts" x="40" y="574">Les tronçons wire160 et wire161, non protégés, doivent être aussi courts que possible.</text>
+</svg>

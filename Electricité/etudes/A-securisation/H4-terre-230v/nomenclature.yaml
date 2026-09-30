@@ -19,5 +19,5 @@ articles:
   - { lot: terre, designation: "Pont redresseur monophasé en module, 100 A, 1 000 V, IFSM ≥ 1 000 A, bornes à vis", quantite: 2, unite: pièce, prix_unitaire: 15, statut: estimation, note: "Un en place, un de rechange" }
   - { lot: terre, designation: "Radiateur aluminium et pâte thermique", quantite: 1, unite: lot, prix_unitaire: 10, statut: estimation }
   - { lot: terre, designation: "Boîtier étanche IP66 et presse-étoupes", quantite: 1, unite: pièce, prix_unitaire: 12, statut: estimation }
-  - { lot: terre, designation: "Câble vert-jaune 2,5 mm², cosses et pont de cuivre entre + et −", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation }
+  - { lot: terre, designation: "Câble vert-jaune 2,5 mm², cosses et pont de cuivre entre + et −", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation, fils: [wire170, wire171] }
   - { lot: differentiel, designation: "Interrupteur différentiel bipolaire 40 A 30 mA type A, modulaire", quantite: 1, unite: pièce, prix_unitaire: 60, statut: estimation }

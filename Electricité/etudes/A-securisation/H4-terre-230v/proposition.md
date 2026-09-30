@@ -2,7 +2,11 @@
 
 Hypothèse de l'étude A. Base : le relevé. Anomalie traitée : **A8** (terre 230 V et masse 12 V reliées nulle part, pas d'isolateur galvanique). Principes détaillés dans le [README de l'étude](../README.md#terre-230-v--bonnes-pratiques).
 
-Nomenclature : [nomenclature.yaml](nomenclature.yaml). Le `cablage.yaml` et la mise à jour du folio 3 restent à faire.
+- Données : [cablage.yaml](cablage.yaml) (base : A-H2, pour que le modèle cumule tout le programme retenu de l'étude).
+- Schéma : [folio 2d](folio-2d-terre.svg).
+- Nomenclature : [nomenclature.yaml](nomenclature.yaml).
+
+wire034 (terre de la prise de quai vers la barrette du boîtier d'arrivée) est remplacé par wire170, l'isolateur et wire171. Le nouveau différentiel reprend l'emplacement et les bornes de l'ancien (node206 à node209).
 
 ## Décision du 30/09
 

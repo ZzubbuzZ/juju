@@ -2,12 +2,17 @@
 
 Hypothèse de l'étude A. Base : le relevé, ou A-H1 si elle est retenue. Anomalies traitées : **A2** (aucun fusible en sortie des batteries) et **A4** (fils du coupleur et du chargeur sans fusible).
 
-Nomenclature : [nomenclature.yaml](nomenclature.yaml). Le `cablage.yaml` et le folio restent à faire.
+- Données : [cablage.yaml](cablage.yaml) (base : le relevé).
+- Schéma : [folio 2c](folio-2c-fusibles.svg).
+- Nomenclature : [nomenclature.yaml](nomenclature.yaml).
+
+Les câbles existants gardent leur numéro : seule leur extrémité côté source est reprise sur le porte-fusible.
 
 ## Décision du 30/09
 
 - **Option A, avec un calibre de 400 A** sur les deux batteries (au lieu des 300 A étudiés d'abord) : même fusible des deux côtés, démarrage de secours couplé possible. **wire006 est conservé en 35 mm²** (décision du 30/09), comme wire001 : voir l'écart accepté plus bas.
 - **Départs** : 30 A pour le chargeur, **40 A pour le coupleur**, dont le relais est donné pour 40 A.
+- **Tableau de la table à carte (A1)** : fusible de 50 A à la source de wire019, repris de A-H1 le 01/10 (voir plus bas).
 
 Le choix de 400 A et ses conséquences sont détaillés dans [Calibre retenu : 400 A](#calibre-retenu--400-a).
 
@@ -72,6 +77,22 @@ La notice du Dolphin indique un « fusible de sortie F25A » : c'est le fusible 
 Son calibre doit rester au-dessus du courant du chargeur (20 A ± 5 %, pendant des heures) et en dessous de la tenue du 6 mm². **30 A** laisse une marge pour un fusible qui travaille en continu dans un coffre chaud ; 25 A conviendrait aussi, mais tournerait à plus de 80 % de son calibre en début de charge.
 
 La notice préconise aussi des câbles batterie de 6 mm² sur **1,5 m au plus**. wire003 et wire008 font 2 m : la chute de tension, un peu plus forte que prévu, abaisse légèrement la tension de charge. Ce n'est pas un problème de sécurité ; à reprendre si ces fils sont refaits pour la pose des porte-fusibles.
+
+### Tableau de la table à carte (A1)
+
+wire019 (6 mm², 3 m) part de l'entrée du disjoncteur du guindeau (node020) sans aucune protection. Un **fusible MIDI de 50 A** se place à sa source, près du disjoncteur, dans la cabine de poupe : un tronçon court (wire166) va de node020 au porte-fusible, et wire019 est repris sur sa sortie. 50 A reste dans la tenue du 6 mm² et laisse passer la consommation du tableau (Q12 pour les longueurs exactes). C'est la seule partie de A-H1 retenue le 30/09.
+
+### Numéros
+
+| Fusible | Calibre | Tronçon court (nouveau) | Câble existant repris |
+|---|---|---|---|
+| batterie moteur | 400 A | wire160 (35 mm²) | wire001 |
+| batterie de servitude | 400 A | wire161 (35 mm²) | wire006 |
+| chargeur, sortie moteur | 30 A | wire162 (6 mm²) | wire003 |
+| chargeur, sortie servitude | 30 A | wire163 (6 mm²) | wire008 |
+| coupleur, côté moteur | 40 A | wire164 (6 mm²) | wire002 |
+| coupleur, côté servitude | 40 A | wire165 (6 mm²) | wire007 |
+| tableau de la table à carte | 50 A | wire166 (6 mm²) | wire019 |
 
 ## Questions liées
 

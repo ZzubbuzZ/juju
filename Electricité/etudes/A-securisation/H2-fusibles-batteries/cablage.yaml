@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../../../outils/schema/donnees.schema.json
+#
+# A-H2 : différences avec le relevé (décision du 30/09).
+# Fusibles de 400 A près des batteries, fusibles des départs coupleur et chargeur,
+# fusible de 50 A à la source du câble du tableau de la table à carte (A1).
+# Les fils existants gardent leur numéro : seule leur extrémité côté source est
+# reprise sur le porte-fusible (supprimés puis redéclarés avec leur nouvelle extrémité).
+
+hypothese: A-H2
+titre: Fusibles de batterie et des départs
+base: releve
+
+supprime:
+  fils: [wire001, wire002, wire003, wire006, wire007, wire008, wire019]
+
+equipements:
+  - { id: fus-bat-moteur, type: fusible, designation: "Fusible de la batterie moteur (MEGA)", calibre_A: 400, emplacement: "Porte-fusible vissé à côté de la batterie moteur", statut: propose }
+  - { id: fus-bat-servitude, type: fusible, designation: "Fusible de la batterie de servitude (MEGA)", calibre_A: 400, emplacement: "Porte-fusible vissé à côté de la batterie de servitude", statut: propose }
+  - { id: fus-chargeur-moteur, type: fusible, designation: "Fusible du chargeur, sortie batterie moteur (MIDI)", calibre_A: 30, emplacement: "Près de la platine des coupe-circuits", statut: propose }
+  - { id: fus-chargeur-servitude, type: fusible, designation: "Fusible du chargeur, sortie batterie de servitude (MIDI)", calibre_A: 30, emplacement: "Près de la platine des coupe-circuits", statut: propose }
+  - { id: fus-coupleur-moteur, type: fusible, designation: "Fusible du coupleur, côté batterie moteur (MIDI)", calibre_A: 40, emplacement: "Près de la platine des coupe-circuits", statut: propose }
+  - { id: fus-coupleur-servitude, type: fusible, designation: "Fusible du coupleur, côté batterie de servitude (MIDI)", calibre_A: 40, emplacement: "Près de la platine des coupe-circuits", statut: propose }
+  - { id: fus-source-tableau-servitude, type: fusible, designation: "Fusible du câble du tableau de la table à carte (MIDI)", calibre_A: 50, emplacement: "Près du disjoncteur du guindeau, cabine de poupe", statut: propose }
+
+nodes:
+  - { id: node070, equipement: fus-bat-moteur, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node071, equipement: fus-bat-moteur, borne: "2", polarite: "+" }
+  - { id: node072, equipement: fus-bat-servitude, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node073, equipement: fus-bat-servitude, borne: "2", polarite: "+" }
+  - { id: node074, equipement: fus-chargeur-moteur, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node075, equipement: fus-chargeur-moteur, borne: "2", polarite: "+" }
+  - { id: node076, equipement: fus-chargeur-servitude, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node077, equipement: fus-chargeur-servitude, borne: "2", polarite: "+" }
+  - { id: node078, equipement: fus-coupleur-moteur, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node079, equipement: fus-coupleur-moteur, borne: "2", polarite: "+" }
+  - { id: node080, equipement: fus-coupleur-servitude, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node081, equipement: fus-coupleur-servitude, borne: "2", polarite: "+" }
+  - { id: node082, equipement: fus-source-tableau-servitude, borne: "1 (côté source)", polarite: "+" }
+  - { id: node083, equipement: fus-source-tableau-servitude, borne: "2", polarite: "+" }
+
+fils:
+  # --- Batteries (A2) : tronçon court borne → porte-fusible, puis câble existant repris
+  - { id: wire160, de: node001, vers: node070, section_mm2: 35, couleur: rouge, longueur_m: 0.2, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire001, de: node071, vers: node003, section_mm2: 35, couleur: rouge, longueur_m: 2, statut: propose, note: "Câble existant, extrémité batterie reprise sur le fusible. 35 mm² sous 400 A : écart accepté le 30/09" }
+  - { id: wire161, de: node007, vers: node072, section_mm2: 35, couleur: rouge, longueur_m: 0.2, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire006, de: node073, vers: node009, section_mm2: 35, couleur: rouge, longueur_m: 1, statut: propose, note: "Câble existant, extrémité batterie reprise sur le fusible. 35 mm² sous 400 A : écart accepté le 30/09, 50 mm² à long terme" }
+
+  # --- Départs (A4) : fusible à la source, sur la borne côté batterie du coupe-circuit
+  - { id: wire162, de: node003, vers: node074, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire003, de: node075, vers: node016, section_mm2: 6, couleur: rouge, longueur_m: 2, statut: propose, note: "Câble existant, repris sur le fusible" }
+  - { id: wire163, de: node009, vers: node076, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire008, de: node077, vers: node017, section_mm2: 6, couleur: rouge, longueur_m: 2, statut: propose, note: "Câble existant, repris sur le fusible" }
+  - { id: wire164, de: node003, vers: node078, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire002, de: node079, vers: node013, section_mm2: 6, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Câble existant, repris sur le fusible" }
+  - { id: wire165, de: node009, vers: node080, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire007, de: node081, vers: node014, section_mm2: 6, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Câble existant, repris sur le fusible" }
+
+  # --- Tableau de la table à carte (A1)
+  - { id: wire166, de: node020, vers: node082, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire019, de: node083, vers: node100, section_mm2: 6, couleur: rouge, longueur_m: 3, statut: propose, note: "Câble existant, repris sur le fusible" }

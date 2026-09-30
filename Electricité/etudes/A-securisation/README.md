@@ -10,9 +10,9 @@ Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) 
 
 | Priorité | Hypothèse · lot | Anomalies | Coût estimé | Décision du 30/09 | Enjeu |
 |---|---|---|---|---|---|
-| 1 | [H1](H1-distribution-servitude/proposition.md) · fusible de 50 A à la source de wire019 | A1 | 29 € | retenu | Tableau de la table à carte alimenté sans aucune protection : risque d'incendie |
-| 2 | [H2](H2-fusibles-batteries/proposition.md) · fusibles de 400 A près des deux batteries | A2 | 74 € | retenu (option A, 400 A) | Rien ne coupe un court-circuit sur les câbles de batterie |
-| 2 | H2 · fusibles des départs : chargeur 30 A, coupleur 40 A | A4 | 87 € | retenu | Quatre câbles de 6 mm² branchés en direct sur les batteries |
+| 1 | [H2](H2-fusibles-batteries/proposition.md) · fusible de 50 A à la source de wire019 (repris de H1) | A1 | 31 € | retenu | Tableau de la table à carte alimenté sans aucune protection : risque d'incendie |
+| 2 | H2 · fusibles de 400 A près des deux batteries | A2 | 80 € | retenu (option A, 400 A) | Rien ne coupe un court-circuit sur les câbles de batterie |
+| 2 | H2 · fusibles des départs : chargeur 30 A, coupleur 40 A | A4 | 91 € | retenu | Quatre câbles de 6 mm² branchés en direct sur les batteries |
 | 3 | [H5](H5-passages-cloison/proposition.md) · une dizaine de passages de cloison | A9 | 44 € | retenu | Usure de l'isolant sur l'arête des trous, jusqu'au court-circuit |
 | 3 | [H3](H3-cosses/proposition.md) · cosses de la batterie moteur | A3 | 14 € | retenu, câbles conservés | Contacts dégradés sur le circuit du démarreur |
 | 3 | H3 · raccordement de l'EPS 100 | A7 | 17 € | retenu | Contact médiocre, coupures du frigo au démarrage du compresseur |
@@ -25,9 +25,9 @@ Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) 
 | – | H2 · wire006 refait en 50 mm² | A2 | 30 € | différé, long terme | Court-circuit partiel sur le câble de la batterie de servitude, plus probable avec l'usure ; à surveiller d'ici là par l'historique des consommations (étude D) |
 | – | H4 · transformateur d'isolement | A8 | environ 430 € | écarté | Supprimait tout lien avec le ponton |
 
-**Total retenu : environ 460 €**, outillage compris. Les lots différés représentent environ 670 € de plus, dont une partie (la barrette de H1) rendrait le fusible de 29 € inutile.
+**Total retenu : environ 470 €**, outillage compris. Les lots différés représentent environ 670 € de plus, dont une partie (la barrette de H1) rendrait le fusible de 31 € inutile.
 
-**Ordre proposé** : les priorités 1 et 2 suppriment les risques d'incendie pour environ 190 €. Tout se passe autour des batteries et de la platine des coupe-circuits, donc en une journée à bord. Les passages de cloison et les cosses (priorité 3) se font dans la foulée, sur les mêmes câbles et avec le même outillage. Le 230 V (priorités 4 et 5) se fait à part, câble de quai débranché.
+**Ordre proposé** : les priorités 1 et 2 suppriment les risques d'incendie pour environ 200 €. Tout se passe autour des batteries et de la platine des coupe-circuits, donc en une journée à bord. Les passages de cloison et les cosses (priorité 3) se font dans la foulée, sur les mêmes câbles et avec le même outillage. Le 230 V (priorités 4 et 5) se fait à part, câble de quai débranché.
 
 **Risques acceptés en attendant les lots différés** : A6 (tableau Scheiber alimenté sans fusible, comme l'était A1) et A10 (pompe de cale protégée en 10 A). A6 est le plus sérieux des deux : un fusible de 30 A à la source de wire022, sur le modèle de celui de wire019, coûterait une trentaine d'euros.
 
@@ -66,10 +66,12 @@ Relevé du 28/09 : la terre et la masse 12 V ne sont reliées nulle part, et il 
 
 **30/09** : programme retenu dans le tableau des [pistes d'amélioration](#pistes-damélioration-et-coûts). En résumé :
 
-- **H1** différée, sauf un fusible de 50 A à la source de wire019 (A1).
+- **H1** différée, sauf un fusible de 50 A à la source de wire019 (A1), décrit dans H2 depuis le 01/10.
 - **H2** option A, avec des fusibles de 400 A sur les deux batteries, câbles de batterie conservés en 35 mm² (écart accepté) ; départs à 30 A (chargeur) et 40 A (coupleur, relais de 40 A).
 - **H3** cosses serties, câbles conservés.
 - **H4** terre du ponton conservée à travers un isolateur galvanique maison, sans liaison à la masse 12 V ; différentiel remplacé par un type A ; transformateur écarté.
 - **H5** une dizaine de passages de cloison.
 
-Reste à faire avant la fusion dans `main` : les `cablage.yaml` et folios de H2, H3, H4 et H5, et le fusible de wire019 dans celui de H1.
+**Câblage (01/10)** : [H2](H2-fusibles-batteries/cablage.yaml) (base : le relevé, [folio 2c](H2-fusibles-batteries/folio-2c-fusibles.svg)) puis [H4](H4-terre-230v/cablage.yaml) (base : A-H2, [folio 2d](H4-terre-230v/folio-2d-terre.svg)) : le modèle de A-H4 cumule tout le programme retenu. H3 et H5 n'ajoutent ni ne suppriment aucun fil. Nouveaux numéros : node070 à node083, node256 et node257, wire160 à wire166, wire170 et wire171.
+
+Reste à faire : fusionner dans `main`, poser le tag de révision, puis rebaser les autres études.
