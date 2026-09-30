@@ -76,6 +76,7 @@ fils:
   - { id: wire049, de: node222, vers: node232, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
   - { id: wire050, de: node224, vers: node233, section_mm2: 1.5 }
   - { id: wire051, de: node221, vers: node234, section_mm2: 1.5 }
+  - { id: wire068, de: node222, vers: node235, section_mm2: 1.5, note: "Terre du plafonnier, raccordée (30/09)" }
   - { id: wire052, de: node047, vers: node227, note: "Cordon de l'EPS 100, branché sur sa prise ; fiche à deux contacts, sans terre (29/09)" }
   - { id: wire053, de: node048, vers: node228 }
   # wire054 (terre du cordon de l'EPS 100) supprimé le 29/09 : le cordon n'a pas de terre. Numéro à ne pas réutiliser.

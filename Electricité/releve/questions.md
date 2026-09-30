@@ -43,17 +43,16 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
   → 28/09 : pas encore de réponse.
 
-### Réseau 230 V
+## Réponses
 
-- **Q31** Détails du réseau 230 V (reste ouvert : le plafonnier) :
+- **Q31** Détails du réseau 230 V :
   - Le plafonnier 230 V est-il métallique (classe I, terre obligatoire) ou en plastique à double isolation (classe II, marqué d'un double carré) ?
   → 28/09 : terre 230 V et masse 12 V séparées, pas d'isolateur galvanique (anomalie A8). Boîtier tribord sur la cloison entre le cabinet de toilette et le coffre de cockpit. Raccordement des prises (étoile ou chaîne) : non relevé, jugé secondaire.
   → 29/09 : correction, il n'y a pas de disjoncteur à bâbord. Le « boîtier bâbord » est une simple boîte de dérivation, à l'arrière gauche de la table à carte (+ 1 PE). Seul le boîtier tribord porte deux disjoncteurs (10 A éclairage, 16 A prises).
   → 30/09 : chargeur sur un Merlin Gerin DT40 C10, éclairage et prises sur des Legrand DNX3 C10 et C16 : modèles phase + neutre, qui coupent les deux conducteurs. Le boîtier tribord porte un C10 (éclairage) et deux C16 (prises, un par bord). Cinq prises : table à carte et armoire derrière la table à carte (bâbord), groupe froid, cuisine et cabinet de toilette (tribord). Modèle du 16 A d'arrivée non relevé.
+  → 30/09 : le plafonnier est métallique, et sa terre est raccordée (wire068).
 - **Q38** EPS 100 : son cordon 230 V n'a pas de terre (fiche à deux contacts). Son boîtier est-il en plastique, et porte-t-il le double carré de la classe II ? Un boîtier métallique sans terre serait une anomalie.
-
-## Réponses
-
+  → 30/09 : la fiche n'a pas de contact de terre : l'appareil est donc de classe II, conçu pour fonctionner sans terre.
 - **Q39** Coffre de cockpit tribord, près de la prise de quai : reste-t-il la place de fixer un transformateur d'isolement (15 à 30 kg, le volume d'une boîte à chaussures), sur une cloison ou un fond solide, à l'abri des embruns ?
   → 30/09 : sans objet, le transformateur d'isolement est écarté (A-H4).
 - **Q35** Passages de cloison : combien y en a-t-il, avec quel diamètre de trou, et combien de câbles passent dans chacun ? Au minimum : batterie de servitude → compartiment moteur, compartiment moteur → descente, et les passages vers l'avant (guindeau, tableau).

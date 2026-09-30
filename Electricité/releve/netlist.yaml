@@ -135,4 +135,4 @@ nodes:
   - { id: node255, equipement: prise-230-toilette, borne: "terre", polarite: 230V-terre }
   - { id: node233, equipement: plafonnier-230, borne: "phase", polarite: 230V-phase }
   - { id: node234, equipement: plafonnier-230, borne: "neutre", polarite: 230V-neutre }
-  - { id: node235, equipement: plafonnier-230, borne: "terre (non raccordée)", polarite: 230V-terre, questions: [Q31] }
+  - { id: node235, equipement: plafonnier-230, borne: "terre", polarite: 230V-terre }

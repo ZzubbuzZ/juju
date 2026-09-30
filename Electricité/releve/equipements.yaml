@@ -300,7 +300,7 @@ equipements:
     zone: cockpit-coffre-tribord
     emplacement: Dans le boîtier d'arrivée 230 V
     calibre_A: 16
-    questions: [Q31]
+    note: Modèle non relevé.
 
   - id: boitier-230-tribord
     type: tableau
@@ -348,8 +348,7 @@ equipements:
   - id: plafonnier-230
     type: recepteur
     designation: Plafonnier 230 V
-    note: Terre non raccordée (la terre n'arrive qu'aux prises).
-    questions: [Q31]
+    note: Métallique (classe I), terre raccordée (30/09).
 
   - id: prise-230-table-a-carte
     type: prise
