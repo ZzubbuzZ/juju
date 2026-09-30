@@ -7,7 +7,7 @@ Nomenclature : [nomenclature.yaml](nomenclature.yaml). Le `cablage.yaml` et la m
 ## Décision du 30/09
 
 - **Terre du ponton ↔ terre du bord (1)** : conservée, à travers un **[isolateur galvanique maison](#isolateur-maison-retenu)**, à la place de wire034.
-- **Liaison terre / masse 12 V (2)** : **non faite**. Un défaut 230 V sur le circuit 12 V s'écoule par l'arbre, l'hélice et l'eau, et fait déclencher le différentiel sans attendre un contact (voir la variante ci-dessous), à condition que l'arbre soit relié électriquement au moteur : **à vérifier**.
+- **Liaison terre / masse 12 V (2)** : **non faite**. Un défaut 230 V sur le circuit 12 V s'écoule par l'arbre, l'hélice et l'eau, et fait déclencher le différentiel sans attendre un contact (voir la variante ci-dessous), à condition que l'arbre soit relié électriquement au moteur : **à vérifier depuis le bord** (Q40 : accouplement entre l'arbre de l'inverseur et l'arbre d'hélice, câble de masse sur le tube d'étambot).
 - L'isolateur est donc aujourd'hui une **précaution** : tant que (2) n'existe pas, il n'y a aucun courant galvanique à bloquer. Il servira si une liaison apparaît plus tard : chauffe-eau de l'étude B en H3, ou appareil dont le négatif serait relié au boîtier.
 - **Transformateur d'isolement** : écarté.
 - **Différentiel d'arrivée** : [remplacé par un type A](#remplacement-du-différentiel-darrivée-q36) (Q36).
@@ -26,7 +26,7 @@ C'est un choix défendable, et répandu. Le différentiel 30 mA protège les per
 
 Ce que la liaison apporte en plus : si un défaut met du 230 V sur le circuit 12 V (panne interne du chargeur ou de l'EPS 100), tout le 12 V, y compris le bloc moteur, passe à 230 V par rapport à l'eau. Avec la liaison, le courant de défaut part par le vert-jaune et le différentiel coupe aussitôt.
 
-Sans liaison, il coupe aussi sans attendre un contact, **si une pièce reliée au 12 V trempe dans l'eau**. Le courant s'écoule alors par l'arbre, l'hélice et le tube d'étambeau, puis par l'eau jusqu'à la terre, sans repasser par le neutre : le différentiel voit le déséquilibre et coupe dès 30 mA. L'eau de mer, et même l'eau saumâtre de l'étang de Berre, conduit assez pour que ce courant dépasse largement ce seuil. **L'avantage de la liaison disparaît donc pratiquement**, pourvu que l'arbre soit relié électriquement au moteur : accouplement métallique, sans manchon isolant (voir les pièces immergées ci-dessous). Sinon, le différentiel ne coupe qu'au moment où un courant traverse quelqu'un qui touche le moteur : après le contact.
+Sans liaison, il coupe aussi sans attendre un contact, **si une pièce reliée au 12 V trempe dans l'eau**. Le courant s'écoule alors par l'arbre, l'hélice et le tube d'étambot, puis par l'eau jusqu'à la terre, sans repasser par le neutre : le différentiel voit le déséquilibre et coupe dès 30 mA. L'eau de mer, et même l'eau saumâtre de l'étang de Berre, conduit assez pour que ce courant dépasse largement ce seuil. **L'avantage de la liaison disparaît donc pratiquement**, pourvu que l'arbre soit relié électriquement au moteur : accouplement métallique, sans manchon isolant (voir les pièces immergées ci-dessous). Sinon, le différentiel ne coupe qu'au moment où un courant traverse quelqu'un qui touche le moteur : après le contact.
 
 Le tableau compare aussi une troisième variante, le [transformateur d'isolement](#variante--transformateur-disolement), décrite plus bas.
 
@@ -47,7 +47,7 @@ Pour situer l'isolateur : la liaison (2) **sans** isolateur mettrait les pièces
 Deux points restent à vérifier à bord, car ils conditionnent la colonne « Sans liaison » :
 
 - **Liaison cachée : écartée.** Certains chargeurs relient leur négatif de sortie à leur boîtier, donc à la terre, ce qui ferait exister la liaison (2) sans isolateur. Ce n'est le cas d'aucun des deux appareils : la notice du Dolphin annonce des sorties « isolées », et l'EPS 100 n'est pas relié à la terre (cordon à fiche deux contacts, Q38). Une mesure à l'ohmmètre le confirmerait sans frais : câble de quai débranché, entre la broche de terre de la prise de quai et le négatif 12 V, on doit lire un circuit ouvert.
-- **Pièces immergées réellement reliées au 12 V** : présence et emplacement de l'anode, type d'accouplement de l'arbre, liaison éventuelle de la dérive en fonte, des passe-coques ou de la sonde du sondeur à la masse. Non relevé à ce jour.
+- **Pièces immergées réellement reliées au 12 V** (Q40) : type d'accouplement entre l'arbre de l'inverseur et l'arbre d'hélice, câble de masse sur le tube d'étambot, anode ; liaison éventuelle de la dérive en fonte, des passe-coques ou de la sonde du sondeur à la masse. Tout se vérifie depuis le bord.
 
 Dans tous les cas, **tester le différentiel régulièrement** avec son bouton de test.
 
