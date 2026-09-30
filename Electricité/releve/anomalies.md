@@ -4,7 +4,7 @@ Défauts de l'installation existante, par ordre de gravité. Ils sont repérés 
 
 Format d'une ligne (lu par `outils/verifier.py`) : `- **An** texte`.
 
-- **A1** wire019 : 6 mm² sur 3 m sans aucune protection, depuis l'entrée du disjoncteur du guindeau jusqu'au tableau de la table à carte. En cas de court-circuit, rien ne coupe avant la batterie.
+- **A1** wire019 : 6 mm² sur 3 m sans aucune protection, depuis la sortie du coupe-circuit de servitude (node010) jusqu'au tableau de la table à carte. En cas de court-circuit, rien ne coupe avant la batterie.
 - **A2** Aucun fusible en sortie des batteries moteur et servitude.
 - **A3** Cosses non serties sur les câbles de la batterie moteur, qui sont abîmés par le connecteur actuel.
 - **A4** Fils du coupleur et du chargeur (wire002, wire003, wire007, wire008, 6 mm²) branchés en direct sur les batteries, sans fusible.
