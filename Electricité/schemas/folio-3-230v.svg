@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="Réseau 230 V en unifilaire : prise de quai, boîtier d'arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et plafonnier.">
   <title>Folio 3 · Réseau 230 V</title>
-  <desc>L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente un boîtier de distribution à tribord (10 A éclairage, 16 A prises) et une simple boîte de dérivation à bâbord, sans disjoncteur : les prises bâbord ne sont protégées que par le 16 A de l'arrivée. La terre n'arrive qu'aux prises et au chargeur (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Au ponton de Saint-Chamas, la prise ne fournit que 6 A, soit environ 1 400 W pour tout le bord.</desc>
+  <desc>L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord : 10 A pour l'éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation. Tous les disjoncteurs coupent la phase et le neutre. La terre n'arrive qu'aux prises et au chargeur (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Au ponton de Saint-Chamas, la prise ne fournit que 6 A, soit environ 1 400 W pour tout le bord.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -80,26 +80,31 @@
   <text class="id mid" x="985" y="144">node200–202</text>
 
   <!-- Vers les boîtiers de distribution -->
-  <path class="n w2" d="M600 195 H640 V300 M640 300 H310 V330 M640 300 H900 V330"/>
-  <circle class="dn" cx="640" cy="300" r="3.5"/>
+  <path class="n w2" d="M600 195 H640 V300 H310 V330"/>
   <path class="n w1" d="M464 307 L472 293 M469 307 L477 293 M474 307 L482 293"/>
-  <path class="n w1" d="M764 307 L772 293 M769 307 L777 293 M774 307 L782 293"/>
   <text class="id mid" x="470" y="287">wire038 · wire039 · wire040 · 3 × 2,5</text>
-  <text class="id mid" x="775" y="287">wire041 · wire042 · wire043 · 3 × 2,5</text>
 
   <!-- ============ Boîtier tribord ============ -->
   <rect class="bound" x="60" y="330" width="500" height="100"/>
   <text class="ts" x="70" y="347">Boîtier de distribution tribord · cloison cabinet de toilette / coffre</text>
-  <path class="n w4" d="M130 365 H470"/>
+  <path class="n w4" d="M130 365 H530"/>
   <circle class="dn" cx="310" cy="365" r="3.5"/>
   <path class="n w2" d="M310 330 V365"/>
-  <path class="n w2" d="M150 365 V385 M410 365 V385"/>
+  <path class="n w2" d="M150 365 V385 M410 365 V385 M510 365 V385"/>
   <rect class="box" x="130" y="385" width="40" height="20"/>
   <text class="ts mid" x="150" y="399">10 A</text>
   <text class="ts" x="178" y="399">éclairage</text>
   <rect class="box" x="390" y="385" width="40" height="20"/>
   <text class="ts mid" x="410" y="399">16 A</text>
-  <text class="ts" x="438" y="399">prises</text>
+  <text class="ts end" x="402" y="422">prises tribord</text>
+  <rect class="box" x="490" y="385" width="40" height="20"/>
+  <text class="ts mid" x="510" y="399">16 A</text>
+  <text class="ts end" x="502" y="422">bâbord</text>
+
+  <!-- Vers la boîte de dérivation bâbord -->
+  <path class="n w2" d="M530 395 H815 V365 H900"/>
+  <path class="n w1" d="M694 402 L702 388 M699 402 L707 388 M704 402 L712 388"/>
+  <text class="id mid" x="700" y="382">wire041 · wire042 · wire043 · 3 × 2,5</text>
 
   <!-- Plafonnier -->
   <path class="n w2" d="M150 405 V500"/>
@@ -118,6 +123,14 @@
   <circle class="dn" cx="410" cy="450" r="3.5"/>
   <path class="n w1" d="M323 474 L337 466 M323 480 L337 472 M323 486 L337 478"/>
   <path class="n w1" d="M483 474 L497 466 M483 480 L497 472 M483 486 L497 478"/>
+  <path class="n w2" d="M490 450 H600 V490"/>
+  <path class="n w1" d="M593 474 L607 466 M593 480 L607 472 M593 486 L607 478"/>
+  <text class="id" x="612" y="462">wire065</text>
+  <text class="id" x="612" y="474">wire066</text>
+  <text class="id" x="612" y="486">wire067</text>
+  <rect class="box" x="580" y="490" width="40" height="28" rx="2"/>
+  <text class="pin mid" x="600" y="508">PC 16 A</text>
+  <text class="tb mid" x="600" y="536">Prise toilette</text>
   <text class="id end" x="318" y="462">wire044</text>
   <text class="id end" x="318" y="474">wire045</text>
   <text class="id end" x="318" y="486">wire046</text>
@@ -147,13 +160,11 @@
   <text class="ts" x="850" y="347">Boîte de dérivation bâbord · table à carte</text>
   <path class="n w4" d="M900 365 H1080"/>
   <circle class="dn" cx="900" cy="365" r="3.5"/>
-  <path class="n w2" d="M900 330 V365"/>
   <path class="n w2" d="M990 365 V405"/>
   <circle class="dn" cx="990" cy="365" r="3.5"/>
-  <text class="ts" x="850" y="398">sans disjoncteur :</text>
-  <text class="ts" x="850" y="413">16 A de l'arrivée seulement</text>
+  <text class="ts" x="850" y="398">sans disjoncteur, alimentée</text>
+  <text class="ts" x="850" y="413">par le 16 A bâbord</text>
   <text class="id" x="1010" y="398">node240–242</text>
-  <g class="mk-q"><circle cx="1140" cy="330" r="11"/><text class="mid" x="1140" y="333.5">Q31</text></g>
 
   <!-- Prises bâbord -->
   <path class="n w2" d="M990 405 V450 M990 450 H910 V490 M990 450 H1070 V490"/>
@@ -171,7 +182,7 @@
   <rect class="box" x="1050" y="490" width="40" height="28" rx="2"/>
   <text class="pin mid" x="1070" y="508">PC 16 A</text>
   <text class="tb mid" x="910" y="536">Prise table à carte</text>
-  <text class="tb mid" x="1070" y="536">Prise carré</text>
+  <text class="tb mid" x="1070" y="536">Prise armoire</text>
 
   <text class="ts" x="40" y="628">Schéma unifilaire : un trait par câble, les barres obliques donnent le nombre de conducteurs (3 : phase, neutre, terre).</text>
 </svg>

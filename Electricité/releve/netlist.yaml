@@ -113,6 +113,8 @@ nodes:
   - { id: node224, equipement: disj-trib-eclairage, borne: "sortie", polarite: 230V-phase }
   - { id: node225, equipement: disj-trib-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node220 }
   - { id: node226, equipement: disj-trib-prises, borne: "sortie", polarite: 230V-phase }
+  - { id: node236, equipement: disj-babord-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node220 }
+  - { id: node237, equipement: disj-babord-prises, borne: "sortie", polarite: 230V-phase }
   - { id: node240, equipement: boitier-230-babord, borne: "phase", polarite: 230V-phase }
   - { id: node241, equipement: boitier-230-babord, borne: "neutre", polarite: 230V-neutre }
   - { id: node242, equipement: boitier-230-babord, borne: "terre", polarite: 230V-terre }
@@ -125,9 +127,12 @@ nodes:
   - { id: node247, equipement: prise-230-table-a-carte, borne: "phase", polarite: 230V-phase }
   - { id: node248, equipement: prise-230-table-a-carte, borne: "neutre", polarite: 230V-neutre }
   - { id: node249, equipement: prise-230-table-a-carte, borne: "terre", polarite: 230V-terre }
-  - { id: node250, equipement: prise-230-carre, borne: "phase", polarite: 230V-phase }
-  - { id: node251, equipement: prise-230-carre, borne: "neutre", polarite: 230V-neutre }
-  - { id: node252, equipement: prise-230-carre, borne: "terre", polarite: 230V-terre }
+  - { id: node250, equipement: prise-230-armoire, borne: "phase", polarite: 230V-phase }
+  - { id: node251, equipement: prise-230-armoire, borne: "neutre", polarite: 230V-neutre }
+  - { id: node252, equipement: prise-230-armoire, borne: "terre", polarite: 230V-terre }
+  - { id: node253, equipement: prise-230-toilette, borne: "phase", polarite: 230V-phase }
+  - { id: node254, equipement: prise-230-toilette, borne: "neutre", polarite: 230V-neutre }
+  - { id: node255, equipement: prise-230-toilette, borne: "terre", polarite: 230V-terre }
   - { id: node233, equipement: plafonnier-230, borne: "phase", polarite: 230V-phase }
   - { id: node234, equipement: plafonnier-230, borne: "neutre", polarite: 230V-neutre }
   - { id: node235, equipement: plafonnier-230, borne: "terre (non raccordée)", polarite: 230V-terre, questions: [Q31] }

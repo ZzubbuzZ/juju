@@ -56,7 +56,7 @@ equipements:
     modele: Scheiber 38.14700.00
     zone: descente
     emplacement: Derrière la platine des coupe-circuits, accessible par l'ouverture côté cabine de poupe
-    note: Prévu pour plomb uniquement. Sa masse est prise côté charges du coupe-circuit des négatifs.
+    note: Prévu pour plomb uniquement. Sa masse est prise côté charges du coupe-circuit des négatifs. Relais donné pour 40 A (30/09).
 
   - id: chargeur-quai
     type: chargeur
@@ -275,18 +275,21 @@ equipements:
     designation: Boîtier d'arrivée 230 V
     zone: cockpit-coffre-tribord
     emplacement: À côté du chargeur de quai
-    note: Différentiel 30 mA / 25 A en tête, puis un disjoncteur 10 A (chargeur) et un disjoncteur 16 A (reste du bord).
+    note: Différentiel 30 mA / 25 A en tête, puis un disjoncteur 10 A (chargeur) et un disjoncteur 16 A (reste du bord, vers le boîtier tribord).
 
   - id: ddr-230v
     type: disjoncteur
     designation: Disjoncteur différentiel 30 mA
+    modele: Power Safe ID55225
     zone: cockpit-coffre-tribord
     emplacement: Dans le boîtier 230 V du chargeur
     calibre_A: 25
+    note: Aucune documentation trouvée (30/09). Type (AC ou A) inconnu ; le préfixe ID évoque un interrupteur différentiel, sans protection contre les surintensités.
 
   - id: disj-chargeur
     type: disjoncteur
     designation: Disjoncteur du chargeur de quai
+    modele: Merlin Gerin DT40 C10, phase + neutre
     zone: cockpit-coffre-tribord
     emplacement: Dans le boîtier 230 V du chargeur
     calibre_A: 10
@@ -304,26 +307,33 @@ equipements:
     designation: Boîtier de distribution 230 V tribord
     zone: cockpit-coffre-tribord
     emplacement: Sur la cloison entre le cabinet de toilette et le coffre de cockpit
+    note: Un disjoncteur 10 A pour l'éclairage et deux 16 A pour les prises, un par bord (30/09).
 
   - id: disj-trib-eclairage
     type: disjoncteur
-    designation: Disjoncteur éclairage 230 V tribord
+    designation: Disjoncteur éclairage 230 V
+    modele: Legrand DNX3 C10, phase + neutre
     calibre_A: 10
-    questions: [Q31]
 
   - id: disj-trib-prises
     type: disjoncteur
     designation: Disjoncteur prises 230 V tribord
+    modele: Legrand DNX3 C16, phase + neutre
     calibre_A: 16
-    questions: [Q31]
+
+  - id: disj-babord-prises
+    type: disjoncteur
+    designation: Disjoncteur prises 230 V bâbord
+    modele: Legrand DNX3 C16, phase + neutre
+    emplacement: Dans le boîtier de distribution tribord
+    calibre_A: 16
 
   - id: boitier-230-babord
     type: bornier
     designation: Boîte de dérivation 230 V bâbord
     zone: table-a-carte
     emplacement: À l'arrière gauche de la table à carte
-    note: Simple boîte de dérivation, sans disjoncteur. Les prises bâbord ne sont protégées que par le disjoncteur 16 A du boîtier d'arrivée.
-    questions: [Q31]
+    note: Simple boîte de dérivation, sans disjoncteur, alimentée par le disjoncteur 16 A bâbord du boîtier tribord (30/09).
 
   - id: prise-230-eps100
     type: prise
@@ -346,10 +356,16 @@ equipements:
     designation: Prise 230 V de la table à carte
     zone: table-a-carte
 
-  - id: prise-230-carre
+  - id: prise-230-armoire
     type: prise
-    designation: Prise 230 V du carré
-    zone: carre
+    designation: Prise 230 V de l'armoire derrière la table à carte
+    zone: table-a-carte
+    note: Notée « prise du carré » jusqu'au 29/09.
+
+  - id: prise-230-toilette
+    type: prise
+    designation: Prise 230 V du cabinet de toilette
+    zone: cabinet-toilette
 
   # --- Instruments -------------------------------------------------------------
   - id: indicateur-charge

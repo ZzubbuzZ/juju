@@ -65,9 +65,9 @@ fils:
   - { id: wire038, de: node214, vers: node220, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
   - { id: wire039, de: node209, vers: node221, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
   - { id: wire040, de: node212, vers: node222, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
-  - { id: wire041, de: node214, vers: node240, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
-  - { id: wire042, de: node209, vers: node241, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
-  - { id: wire043, de: node212, vers: node242, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
+  - { id: wire041, de: node237, vers: node240, section_mm2: 2.5, statut: a_verifier, note: "Depuis le disjoncteur 16 A bâbord du boîtier tribord (30/09) ; chemin exact non relevé" }
+  - { id: wire042, de: node221, vers: node241, section_mm2: 2.5, statut: a_verifier, note: "Depuis le boîtier tribord (30/09) ; chemin exact non relevé" }
+  - { id: wire043, de: node222, vers: node242, section_mm2: 2.5, statut: a_verifier, note: "Depuis le boîtier tribord (30/09) ; chemin exact non relevé" }
   - { id: wire044, de: node226, vers: node227, section_mm2: 2.5 }
   - { id: wire045, de: node221, vers: node228, section_mm2: 2.5 }
   - { id: wire046, de: node222, vers: node229, section_mm2: 2.5 }
@@ -85,3 +85,6 @@ fils:
   - { id: wire058, de: node240, vers: node250, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
   - { id: wire059, de: node241, vers: node251, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
   - { id: wire060, de: node242, vers: node252, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire065, de: node226, vers: node253, section_mm2: 2.5, statut: a_verifier, note: "Prise du cabinet de toilette (30/09) ; raccordement en étoile supposé, non relevé" }
+  - { id: wire066, de: node221, vers: node254, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé" }
+  - { id: wire067, de: node222, vers: node255, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé" }

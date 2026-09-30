@@ -79,7 +79,7 @@
   <circle class="dn" cx="520" cy="470" r="4"/>
   <circle class="dn" cx="902" cy="360" r="4"/>
   <circle class="dn" cx="1056" cy="355" r="4"/>
-  <circle class="dn" cx="760" cy="430" r="4"/>
+  <circle class="dn" cx="340" cy="440" r="4"/>
 
   <!-- Bâbord : bulles du haut -->
   <path class="leader" d="M180 112 L212 290"/>
@@ -100,7 +100,7 @@
   <text class="tb" x="592" y="41">Table à carte · bâbord</text>
   <text class="t" x="592" y="61" data-equipement="tableau-servitude">Tableau de servitude, 12 circuits</text>
   <text class="t" x="592" y="80" data-equipement="indicateur-charge">Indicateur de charge à aiguille</text>
-  <text class="t" x="592" y="99" data-equipement="prise-230-table-a-carte">Prise 230 V</text>
+  <text class="t" x="592" y="99">Prises 230 V : <tspan data-equipement="prise-230-table-a-carte">table,</tspan> <tspan data-equipement="prise-230-armoire">armoire</tspan></text>
   <text class="t" x="592" y="118" data-equipement="boitier-230-babord">Boîte de dérivation 230 V</text>
   <text class="t" x="592" y="137" data-equipement="repetiteur-gps">Répétiteur GPS (écran à la descente)</text>
 
@@ -137,10 +137,9 @@
   <text class="t" x="592" y="653" data-equipement="eps100">EPS 100 (sous l'évier, à droite)</text>
   <text class="t" x="592" y="672">Prises 230 V : <tspan data-equipement="prise-230-eps100">frigo,</tspan> <tspan data-equipement="prise-230-cuisine">cuisine</tspan></text>
 
-  <path class="leader" d="M900 595 L760 430"/>
-  <rect class="callout" x="840" y="595" width="200" height="52" rx="2"/>
-  <text class="tb" x="852" y="615">Carré</text>
-  <text class="t" x="852" y="634" data-equipement="prise-230-carre">Prise 230 V</text>
+  <path class="leader" d="M350 690 L340 440"/>
+  <rect class="callout" x="350" y="672" width="210" height="36" rx="2"/>
+  <text class="t" x="362" y="695"><tspan class="tb">Toilette · tribord :</tspan> <tspan data-equipement="prise-230-toilette">prise 230 V</tspan></text>
 
   <text class="ts" x="40" y="722">Plan schématique d'après la brochure (photos/gibsea-31-drawing.jpg) : proportions approximatives, pas à l'échelle. Plafonnier 230 V non placé.</text>
 </svg>
