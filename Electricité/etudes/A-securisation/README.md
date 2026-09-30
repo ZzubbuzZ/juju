@@ -22,9 +22,10 @@ Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) 
 | – | H1 · barrette + et fusible du tableau Scheiber | A6 | 165 € | différé | Tableau Scheiber alimenté sans protection |
 | – | H1 · pompe de cale automatique, fusibles de 3 A | A10 | 68 € | différé | Pompe mise en route à la main, sans flotteur ; protégée en 10 A au lieu de 3 A |
 | – | H1 · recâblage du tableau de la table à carte | | 407 € | différé | Fiabilité et lisibilité plus que sécurité |
+| – | H2 · wire006 refait en 50 mm² | A2 | 30 € | différé, long terme | Court-circuit partiel sur le câble de la batterie de servitude, plus probable avec l'usure ; à surveiller d'ici là par l'historique des consommations (étude D) |
 | – | H4 · transformateur d'isolement | A8 | environ 430 € | écarté | Supprimait tout lien avec le ponton |
 
-**Total retenu : environ 460 €**, outillage compris. Les lots différés représentent environ 640 € de plus, dont une partie (la barrette de H1) rendrait le fusible de 29 € inutile.
+**Total retenu : environ 460 €**, outillage compris. Les lots différés représentent environ 670 € de plus, dont une partie (la barrette de H1) rendrait le fusible de 29 € inutile.
 
 **Ordre proposé** : les priorités 1 et 2 suppriment les risques d'incendie pour environ 190 €. Tout se passe autour des batteries et de la platine des coupe-circuits, donc en une journée à bord. Les passages de cloison et les cosses (priorité 3) se font dans la foulée, sur les mêmes câbles et avec le même outillage. Le 230 V (priorités 4 et 5) se fait à part, câble de quai débranché.
 

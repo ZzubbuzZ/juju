@@ -14,6 +14,9 @@ lots:
   departs:
     titre: Fusibles des départs coupleur et chargeur
     anomalies: [A4]
+  long_terme:
+    titre: wire006 refait en 50 mm² (différé, correction à long terme)
+    note: Écart accepté le 30/09 ; à corriger quand l'installation vieillira, le court-circuit partiel devenant plus probable avec l'usure.
 
 articles:
   - { lot: batteries, designation: "Porte-fusible MEGA, fixé à côté de la batterie", quantite: 2, unite: pièce, prix_unitaire: 15, statut: estimation }
@@ -24,3 +27,5 @@ articles:
   - { lot: departs, designation: "Fusibles MIDI (2 × 30 A, 2 × 40 A)", quantite: 4, unite: pièce, prix_unitaire: 6, statut: estimation }
   - { lot: departs, designation: "Câble étamé 6 mm² rouge (reprise des départs vers les porte-fusibles)", quantite: 2, unite: m, prix_unitaire: 3.5, statut: estimation }
   - { lot: departs, designation: "Cosses tubulaires étamées 6 mm²", quantite: 8, unite: pièce, prix_unitaire: 1, statut: estimation }
+  - { lot: long_terme, designation: "Câble étamé 50 mm² rouge (wire006 refait)", quantite: 1.2, unite: m, prix_unitaire: 18, statut: estimation }
+  - { lot: long_terme, designation: "Cosses tubulaires étamées 50 mm²", quantite: 2, unite: pièce, prix_unitaire: 4, statut: estimation }
