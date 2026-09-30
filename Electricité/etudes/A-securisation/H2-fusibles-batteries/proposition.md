@@ -6,7 +6,7 @@ Nomenclature : [nomenclature.yaml](nomenclature.yaml). Le `cablage.yaml` et le f
 
 ## Décision du 30/09
 
-- **Option A, avec un calibre de 400 A** sur les deux batteries (au lieu des 300 A étudiés d'abord) : même fusible des deux côtés, démarrage de secours couplé possible, wire006 refait en 50 mm².
+- **Option A, avec un calibre de 400 A** sur les deux batteries (au lieu des 300 A étudiés d'abord) : même fusible des deux côtés, démarrage de secours couplé possible. **wire006 est conservé en 35 mm²** (décision du 30/09), comme wire001 : voir l'écart accepté plus bas.
 - **Départs** : 30 A pour le chargeur, **40 A pour le coupleur**, dont le relais est donné pour 40 A.
 
 Le choix de 400 A et ses conséquences sont détaillés dans [Calibre retenu : 400 A](#calibre-retenu--400-a).
@@ -33,8 +33,8 @@ En temps normal, le circuit de servitude tire au plus 160 A environ : guindeau (
 |---|---|---|
 | Fusible de la batterie de servitude | 300 A étudiés, 400 A retenus | 200 A |
 | Démarrage de secours couplé | possible | le fusible risque de fondre |
-| wire006 (batterie → coupe-circuit, 1 m) | remplacé par du 50 mm², pour que le câble tienne le calibre du fusible | conservé en 35 mm² |
-| Coût supplémentaire | environ 30 € (câble et cosses) | 0 € |
+| wire006 (batterie → coupe-circuit, 1 m) | 50 mm² proposés pour que le câble tienne le calibre du fusible ; **conservé en 35 mm²** (30/09) | conservé en 35 mm² |
+| Coût supplémentaire | 0 € depuis la décision du 30/09 (30 € avec wire006 en 50 mm²) | 0 € |
 
 Un fusible doit rester adapté à la tenue du câble qu'il protège. Avec 300 A, le 35 mm² actuel est trop juste, d'où son remplacement dans l'option A ; il ne fait qu'un mètre. Les valeurs de tenue sont à confirmer dans les tables de la norme ISO 13297:2020 (qui a remplacé l'ISO 10133 pour le courant continu) au moment de l'achat. Avec l'option A, les deux batteries ont le même fusible : une seule référence de rechange à bord.
 
@@ -45,7 +45,8 @@ Un fusible doit rester adapté à la tenue du câble qu'il protège. Avec 300 A,
 **Ce que 400 A changent** :
 
 - **Type de fusible** : la gamme MRBF, qui se fixe directement sur la borne, s'arrête à 300 A. À 400 A, il faut un fusible MEGA (ou ANL) dans un porte-fusible vissé à côté de la batterie, relié à la borne par un câble aussi court que possible (une vingtaine de centimètres au plus) : ce tronçon n'est protégé par rien.
-- **Tenue des câbles** : la règle usuelle limite le fusible à environ 150 % de la tenue du câble (ABYC E-11, à vérifier sur le texte). wire006, refait en 50 mm², reste dans cette limite. **wire001 (35 mm², batterie moteur) la dépasse** : 400 A coupent un court-circuit franc, de plusieurs milliers d'ampères, en quelques millisecondes, mais un court-circuit partiel de 300 à 400 A chaufferait le câble sans faire fondre le fusible. Écart accepté le 30/09 ; pour le supprimer, il faudrait refaire wire001 en 50 mm².
+- **Tenue des câbles** : la règle usuelle limite le fusible à environ 150 % de la tenue du câble (ABYC E-11, à vérifier sur le texte). **wire001 et wire006 (35 mm², un par batterie) la dépassent** : un 35 mm² supporte environ 210 A en continu, soit un fusible de 300 A au plus. 400 A coupent un court-circuit franc, de plusieurs milliers d'ampères, en quelques millisecondes, mais un court-circuit partiel de 300 à 400 A chaufferait le câble sans faire fondre le fusible. **Écart accepté le 30/09** pour les deux câbles : la chute de tension est négligeable sur ces longueurs, et le courant de service reste loin de 400 A. Pour le supprimer, il faudrait les refaire en 50 mm². En compensation : protéger soigneusement leurs passages de cloison (A-H5), les fixer pour qu'ils ne frottent nulle part, et vérifier que leurs cosses ne chauffent pas après un démarrage de secours couplé.
+- **Abaque de chute de tension** ([documentation](../../../releve/documentation/tabla-calcular-seccion-cable-12V.png)) : il donne 1,25 m pour 35 mm² sous 400 A. C'est la longueur qui garde la chute de tension sous 0,5 V, aller et retour compris ; ses cases « NA » signalent une longueur inférieure à 1 m, pas une limite d'échauffement. Il ne dit donc rien de la tenue thermique, qui est la limite déterminante sur un câble court.
 - **Batterie lithium** : si la batterie de servitude passe un jour en LiFePO4, son courant de court-circuit dépasse le pouvoir de coupure d'un MEGA ou d'un ANL. Il faudra alors un **fusible de classe T** de 400 A, qui existe à ce calibre.
 - **Disjoncteur 12 V à la place du fusible** : il en existe de ce calibre, réarmables et utilisables comme interrupteur, mais plus chers et plus encombrants, avec la même logique de courbe. Pas d'intérêt ici, les coupe-circuits jouant déjà le rôle d'interrupteur.
 
