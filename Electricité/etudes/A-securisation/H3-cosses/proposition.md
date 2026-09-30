@@ -8,7 +8,7 @@ Nomenclature : [nomenclature.yaml](nomenclature.yaml). Aucun fil n'est ajouté n
 
 Couper la partie abîmée des câbles wire001 (+) et wire004 (−) côté batterie, puis sertir des cosses tubulaires étamées de 35 mm². Le diamètre du trou de cosse doit correspondre aux bornes de la batterie, à vérifier avant l'achat. Il faut soit une pince hydraulique, soit une sertisseuse à frapper ; une cosse de 35 mm² ne se sertit pas correctement à la pince universelle. Gaine thermorétractable à colle sur chaque cosse.
 
-Si la longueur restante devient trop juste après la coupe, remplacer les deux câbles (environ 2 m chacun) : prévoir alors 4 m de 35 mm² de plus, soit environ 60 € d'après les estimations de H1.
+**Décision du 30/09** : les câbles sont conservés, seules les cosses sont serties. Ils ont assez de longueur pour que l'on coupe la partie abîmée.
 
 ## Liaison EPS 100 → groupe froid (A7)
 

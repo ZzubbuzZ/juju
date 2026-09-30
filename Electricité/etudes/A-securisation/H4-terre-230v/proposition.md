@@ -2,9 +2,20 @@
 
 Hypothèse de l'étude A. Base : le relevé. Anomalie traitée : **A8** (terre 230 V et masse 12 V reliées nulle part, pas d'isolateur galvanique). Principes détaillés dans le [README de l'étude](../README.md#terre-230-v--bonnes-pratiques).
 
-Nomenclature : [nomenclature.yaml](nomenclature.yaml). Le `cablage.yaml` et la mise à jour du folio 3 seront faits une fois l'hypothèse retenue.
+Nomenclature : [nomenclature.yaml](nomenclature.yaml). Le `cablage.yaml` et la mise à jour du folio 3 restent à faire.
 
-## Principe
+## Décision du 30/09
+
+- **Terre du ponton ↔ terre du bord (1)** : conservée, à travers un **[isolateur galvanique maison](#isolateur-maison-retenu)**, à la place de wire034.
+- **Liaison terre / masse 12 V (2)** : **non faite**. Un défaut 230 V sur le circuit 12 V s'écoule par l'arbre, l'hélice et l'eau, et fait déclencher le différentiel sans attendre un contact (voir la variante ci-dessous), à condition que l'arbre soit relié électriquement au moteur : **à vérifier**.
+- L'isolateur est donc aujourd'hui une **précaution** : tant que (2) n'existe pas, il n'y a aucun courant galvanique à bloquer. Il servira si une liaison apparaît plus tard : chauffe-eau de l'étude B en H3, ou appareil dont le négatif serait relié au boîtier.
+- **Transformateur d'isolement** : écarté.
+- **Différentiel d'arrivée** : [remplacé par un type A](#remplacement-du-différentiel-darrivée-q36) (Q36).
+- **Disjoncteurs** : tous coupent déjà la phase et le neutre (Q31), aucun achat.
+
+## Principe étudié
+
+La décision ne retient que le point 1, avec un isolateur maison ; le point 2 reste décrit pour mémoire.
 
 1. **Isolateur galvanique** en série sur le conducteur de terre, juste après la prise de quai, dans le coffre de cockpit tribord : entre la terre de la prise (node205) et la barrette de terre du boîtier d'arrivée (node212), à la place de wire034.
 2. **Liaison terre / masse 12 V en un point unique** : un fil vert-jaune de la barrette de terre du boîtier d'arrivée vers le négatif 12 V, **côté batteries du coupe-circuit des négatifs** (node005). Ainsi, la liaison n'est jamais ouverte par ce coupe-circuit. Le boîtier d'arrivée et la platine des coupe-circuits sont proches : quelques mètres de fil suffisent.
@@ -13,20 +24,22 @@ Nomenclature : [nomenclature.yaml](nomenclature.yaml). Le `cablage.yaml` et la m
 
 C'est un choix défendable, et répandu. Le différentiel 30 mA protège les personnes dans le cas le plus courant : un appareil 230 V en défaut, touché par quelqu'un. Sans liaison, il n'y a pas non plus de chemin galvanique vers les autres bateaux, donc pas besoin d'isolateur.
 
-Ce que la liaison apporte en plus : si un défaut met du 230 V sur le circuit 12 V (panne interne du chargeur ou de l'EPS 100), tout le 12 V, y compris le bloc moteur, passe à 230 V par rapport à l'eau. Sans liaison, le différentiel ne déclenche qu'au moment où un courant s'écoule vers la terre, par exemple à travers quelqu'un qui touche le moteur. Il coupera alors dès que la fuite dépasse 30 mA, en quelques dizaines de millisecondes, ce qui protège normalement la personne, mais après le contact. Avec la liaison, il coupe dès l'apparition du défaut, avant tout contact.
+Ce que la liaison apporte en plus : si un défaut met du 230 V sur le circuit 12 V (panne interne du chargeur ou de l'EPS 100), tout le 12 V, y compris le bloc moteur, passe à 230 V par rapport à l'eau. Avec la liaison, le courant de défaut part par le vert-jaune et le différentiel coupe aussitôt.
+
+Sans liaison, il coupe aussi sans attendre un contact, **si une pièce reliée au 12 V trempe dans l'eau**. Le courant s'écoule alors par l'arbre, l'hélice et le tube d'étambeau, puis par l'eau jusqu'à la terre, sans repasser par le neutre : le différentiel voit le déséquilibre et coupe dès 30 mA. L'eau de mer, et même l'eau saumâtre de l'étang de Berre, conduit assez pour que ce courant dépasse largement ce seuil. **L'avantage de la liaison disparaît donc pratiquement**, pourvu que l'arbre soit relié électriquement au moteur : accouplement métallique, sans manchon isolant (voir les pièces immergées ci-dessous). Sinon, le différentiel ne coupe qu'au moment où un courant traverse quelqu'un qui touche le moteur : après le contact.
 
 Le tableau compare aussi une troisième variante, le [transformateur d'isolement](#variante--transformateur-disolement), décrite plus bas.
 
-| | Avec liaison + isolateur | Sans liaison | Transformateur d'isolement |
+| | Avec liaison + isolateur | Sans liaison (retenue, avec isolateur en précaution) | Transformateur d'isolement (écarté) |
 |---|---|---|---|
 | Défaut 230 V sur un appareil touché | différentiel | différentiel | différentiel |
-| Défaut 230 V sur le circuit 12 V | coupure immédiate | coupure au premier contact | coupure immédiate |
+| Défaut 230 V sur le circuit 12 V | coupure immédiate | coupure immédiate si l'arbre est relié au moteur (fuite par l'hélice et l'eau) ; sinon, au premier contact | coupure immédiate |
 | Risque de corrosion galvanique par les autres bateaux | faible : l'isolateur bloque les tensions galvaniques (quelques dixièmes de volt) sous son seuil d'environ 1,2 V. Le risque redevient entier si l'isolateur claque en court-circuit, panne typique d'une diode, sans que rien ne le signale | nul : pas de chemin entre les pièces immergées et le ponton | nul : aucun conducteur ne relie le bord au ponton, la terre du quai s'arrête au transformateur |
 | Pièces touchées si le risque se réalise | les métaux immergés reliés au négatif 12 V : l'arbre et l'hélice par le moteur (si l'accouplement est métallique), l'anode si elle leur est reliée. L'anode se consomme d'abord, en quelques semaines au lieu d'une saison ; une fois usée, l'hélice (bronze) et l'arbre sont attaqués | aucune | aucune |
 | Inversion phase / neutre à la prise du ponton | à couvrir par des disjoncteurs phase + neutre (Q31) | idem | sans effet à bord : le neutre est défini au secondaire |
-| Poids et place | un boîtier de la taille d'une main | rien | 15 à 30 kg selon la puissance, le volume d'une boîte à chaussures (Q39) |
+| Poids et place | un boîtier de la taille d'une main | rien | environ 10 kg pour le modèle de 2 000 W |
 | Au ponton de 6 A | sans effet | sans effet | courant d'appel à la mise sous tension : un modèle à démarrage progressif est indispensable |
-| Coût | environ 140 € | 0 € | environ 800 € |
+| Coût | environ 140 € (60 € en fabrication maison, module de rechange compris) | 0 € | environ 430 € |
 | Conformité ISO 13297 / ABYC E-11 | oui | non | oui |
 
 Pour situer l'isolateur : la liaison (2) **sans** isolateur mettrait les pièces ci-dessus en permanence en contact avec la terre du ponton, donc avec les pièces immergées de tous les bateaux branchés au quai. Le métal le moins noble de l'ensemble, souvent l'anode de Juju, se consommerait au profit des autres.
@@ -40,6 +53,8 @@ Dans tous les cas, **tester le différentiel régulièrement** avec son bouton d
 
 ## Variante : transformateur d'isolement
 
+**Écartée le 30/09**, pour son prix. Décrite pour mémoire.
+
 Au lieu de filtrer la terre du quai, on coupe tout lien électrique entre le bord et le ponton : l'énergie passe par le champ magnétique d'un transformateur 230 V / 230 V, et le bord crée son propre réseau.
 
 1. **Primaire, côté quai** : le transformateur se place entre la prise de quai et le boîtier d'arrivée, dans le coffre de cockpit tribord. La phase et le neutre du quai arrivent au primaire à travers un disjoncteur phase + neutre (intégré à certains modèles). La terre du quai ne va qu'à l'écran placé entre les deux enroulements, et au boîtier selon le modèle : suivre sa notice. Elle ne pénètre pas plus loin à bord ; wire034 disparaît.
@@ -50,8 +65,8 @@ Au lieu de filtrer la terre du quai, on coupe tout lien électrique entre le bor
 
 **Ce qu'il coûte** :
 
-- **Prix** : environ 800 € avec le raccordement, estimation à remplacer par un prix catalogue.
-- **Poids et place** : 15 à 30 kg selon la puissance, à loger près de la prise de quai (Q39).
+- **Prix** : 381,60 € TTC pour le Victron 2000 W avec démarrage progressif (ITR040202041, prix remisé relevé sur mon-camping-car.com le 30/09), environ 430 € avec le raccordement.
+- **Poids et place** : environ 10 kg pour ce modèle, à loger près de la prise de quai.
 - **Puissance** : un modèle de 2 000 W couvre largement la prise de 6 A de Saint-Chamas (1 400 W). Sur une borne de 16 A, il limitera le bord à ses 2 000 W : suffisant pour un chauffe-eau de 500 W, le chargeur et le frigo. Un modèle de 3 600 W lève la limite, au prix d'une dizaine de kilos de plus.
 - **Courant d'appel** : à la mise sous tension, un transformateur appelle un courant bien supérieur à son courant nominal. Sur une borne de 6 A, cela suffit à la faire déclencher : un démarrage progressif (« soft start ») est indispensable, à vérifier sur la fiche du modèle.
 - **Pertes** : quelques dizaines de watts consommés en permanence tant que le bord est branché, même sans rien d'allumé.
@@ -76,7 +91,27 @@ Le prix paie surtout cette tenue garantie. C'est ce qui distingue un isolateur s
 2. **Défaillance en court-circuit garantie**, jamais en circuit ouvert (« fail-safe » au sens d'ABYC A-28) : c'est le critère principal, à lire sur la fiche technique. À défaut, un **voyant ou un contrôleur d'état**, qui signale une diode ouverte.
 3. Un **condensateur intégré** est un plus, pas une nécessité : il écoule les petites fuites alternatives des filtres du chargeur sans décaler le seuil des diodes.
 
-Le Victron VDI-16 de la nomenclature satisfait le premier critère ; le deuxième est à vérifier sur sa fiche avant l'achat. Un montage maison (quatre diodes sur un radiateur) coûterait bien moins cher, mais sans garantie sur la tenue à la pointe de défaut ni sur le mode de défaillance : c'est justement ce que l'on paie.
+Le Victron VDI-16 satisfait le premier critère ; le deuxième est à vérifier sur sa fiche. Un montage maison coûte bien moins cher, mais sans garantie de fabricant sur la tenue à la pointe de défaut ni sur le mode de défaillance : il faut compenser par des diodes largement dimensionnées et un contrôle régulier. C'est la solution retenue.
+
+### Isolateur maison (retenu)
+
+**Composant** : un **pont redresseur monophasé de puissance**, en module à bornes à vis et semelle métallique, de 100 A et 1 000 V au moins, avec un courant de pointe admissible (IFSM) d'au moins 1 000 A. Un pont contient exactement les quatre diodes d'un isolateur : en reliant ses bornes + et − par un pont de cuivre, les deux bornes « ~ » deviennent les deux bornes de l'isolateur, avec deux diodes en série dans chaque sens. Un petit pont de 35 ou 50 A (IFSM de 400 A) tiendrait le courant permanent, mais pas avec certitude la pointe d'un défaut franc pendant le temps de coupure du différentiel : on prend large, l'écart de prix est de quelques euros.
+
+**Montage** :
+
+1. Le module sur un radiateur en aluminium, avec de la pâte thermique, dans un boîtier étanche fixé près de la prise de quai, dans le coffre de cockpit tribord.
+2. Borne « ~ » 1 : la terre de la prise de quai (node205). Borne « ~ » 2 : la barrette de terre du boîtier d'arrivée (node212). Les deux fils en vert-jaune 2,5 mm², comme le reste de la terre ; ils remplacent wire034.
+3. Repérer le boîtier : « Isolateur galvanique : à contrôler chaque saison ».
+
+**Contrôle**, à inscrire dans l'entretien, en début de saison et après tout déclenchement du différentiel sur un défaut : câble de quai débranché, multimètre en position « diode » entre les deux bornes « ~ », dans un sens puis dans l'autre.
+
+| Lecture | Signification | Que faire |
+|---|---|---|
+| environ 0,9 à 1,2 V dans les deux sens | correct | rien |
+| 0 V, ou presque, dans un sens au moins | diode en court-circuit : la terre passe, la protection galvanique est perdue | remplacer le module, sans urgence |
+| « OL » (circuit ouvert) dans un sens au moins | diode ouverte : **la terre du ponton ne passe plus** | ne plus brancher le bord au quai avant d'avoir remplacé le module |
+
+Un module de rechange à bord permet de réparer sur place : la nomenclature en prévoit deux.
 
 Rappel : l'isolateur ne sert que si l'on fait la liaison (2). Dans la variante sans liaison, il n'a pas d'utilité.
 
@@ -126,9 +161,21 @@ Le chauffe-eau confirme donc la conclusion précédente : **la liaison (1) est i
 
 **Pourquoi ne pas relier la terre au neutre à bord, à la place du quai ?** Ce serait refaire à bord la liaison terre-neutre qui existe à terre, chez le distributeur. Le différentiel fonctionnerait, puisque le courant de défaut reviendrait par la terre sans repasser par lui. Mais la prise du ponton ne garantit pas quel conducteur est la phase : une fois sur deux, les carcasses du bord seraient reliées à la phase. Et si le neutre du ponton est coupé en amont, la terre du bord ne serait plus reliée à rien. Cette liaison n'est admise qu'au secondaire d'un transformateur d'isolement, où le bord crée son propre réseau. Sans transformateur, la terre du bord se relie à celle du quai, et seulement à elle.
 
-**Conséquence pour l'étude B, hypothèse H3** (résistance 12 V sur le surplus solaire, dans le même ballon) : la cuve, reliée à la terre, porterait aussi une résistance 12 V. Si le négatif de cette résistance touche la cuve, ou si la résistance 230 V se fend, la terre et le 12 V se rejoignent par le ballon : la liaison (2) existe alors de fait, sans isolateur, avec la corrosion galvanique qui va avec. Et un défaut de la résistance 230 V peut mettre du 230 V sur le circuit 12 V, le cas même où la liaison (2) fait couper le différentiel avant tout contact. **Si B-H3 est retenue, il faut la liaison (2) : avec un isolateur, ou avec un transformateur d'isolement.** Avec B-H1 (résistance 230 V seule), les trois variantes restent possibles.
+**Conséquence pour l'étude B, hypothèse H3** (résistance 12 V sur le surplus solaire, dans le même ballon) : la cuve, reliée à la terre, porterait aussi une résistance 12 V. Si le négatif de cette résistance touche la cuve, ou si la résistance 230 V se fend, la terre et le 12 V se rejoignent par le ballon : la liaison (2) existe alors de fait, sans isolateur, avec la corrosion galvanique qui va avec. Et un défaut de la résistance 230 V peut mettre du 230 V sur le circuit 12 V, le cas même où la liaison (2) fait couper le différentiel avant tout contact. **Si B-H3 est retenue, il faut la liaison (2).** L'isolateur étant déjà en place, il suffira d'ajouter le fil vers node005. Avec B-H1 (résistance 230 V seule), la décision du 30/09 reste valable.
 
-## Selon la réponse à Q31
+## Remplacement du différentiel d'arrivée (Q36)
 
-- **Disjoncteurs bipolaires** : si les disjoncteurs 10 A et 16 A ne coupent que la phase, les remplacer par des modèles phase + neutre. Jusqu'à 4 disjoncteurs (2 à l'arrivée, 2 dans le boîtier tribord ; la boîte de dérivation bâbord n'en a pas). Non chiffré tant que Q31 n'est pas tranchée.
-- **Plafonnier** : s'il est métallique (classe I), raccorder le conducteur de terre déjà présent dans son câble 3 × 1,5 mm². Aucun achat.
+L'appareil actuel, un Power Safe ID55225, n'a aucune documentation trouvable : on ne connaît ni son type ni son âge, et il porte à lui seul la protection des personnes. Il est remplacé par un modèle courant, au format modulaire du boîtier :
+
+- **Interrupteur différentiel bipolaire**, qui coupe la phase et le neutre. Un interrupteur suffit : les surintensités sont déjà coupées en aval par le DT40 C10 et le 16 A d'arrivée. Un disjoncteur différentiel ajouterait cette protection pour le câblage interne du boîtier, sans nécessité ici.
+- **30 mA**, pour la protection des personnes.
+- **Type A** : il détecte les fuites alternatives et les fuites « redressées » que produisent les appareils électroniques, comme le chargeur. Le type AC ne voit que les premières. Les types F et B, faits pour les onduleurs et les variateurs, ne sont pas nécessaires à bord.
+- **Calibre de 40 A** : ce calibre est celui du courant qu'il supporte, pas une protection. Il doit dépasser celui des protections placées en aval ; 40 A est le calibre courant, et le moins cher, de ces appareils.
+
+Tester son bouton chaque mois en saison : en atmosphère saline, un mécanisme qui ne sert jamais finit par se gripper.
+
+## Disjoncteurs (Q31)
+
+Le DT40 C10 du chargeur et les DNX3 C10 et C16 du boîtier tribord sont des modèles phase + neutre, qui coupent les deux conducteurs : l'inversion de la phase et du neutre à la prise du ponton est couverte, **aucun achat**. Seul le modèle du 16 A d'arrivée n'a pas été relevé.
+
+- **Plafonnier** : s'il est métallique (classe I), raccorder le conducteur de terre déjà présent dans son câble 3 × 1,5 mm². Aucun achat. Question toujours ouverte (Q31).

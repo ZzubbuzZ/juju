@@ -5,6 +5,8 @@ Hypothèse de l'étude A (sécurisation). Base : le [relevé](../../../releve/et
 - Données : [cablage.yaml](cablage.yaml), qui liste les ajouts et suppressions par rapport au relevé.
 - Schémas : [folio 2a](folio-2a-distribution.svg) (distribution, tableau Scheiber) et [folio 2b](folio-2b-tableau-servitude.svg) (12 circuits de la table à carte).
 
+**Décision du 30/09 : hypothèse différée**, sauf un **fusible de 50 A à la source de wire019** (node020, entrée du disjoncteur du guindeau), qui traite A1 seul, sans barrette. A6 (tableau Scheiber) et A10 (pompe de cale) restent en l'état pour l'instant ; le recâblage du tableau de la table à carte attendra. La suite du document décrit la solution complète, pour le jour où elle sera reprise.
+
 Statut : **proposition**. Les longueurs sont estimées pour un Gib'Sea 31. Elles sont à mesurer à bord (Q12), puis il faut recalculer les sections avec la formule ci-dessous.
 
 ## 1. Ce que traite cette hypothèse

@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
 #
-# A-H2 : nomenclature chiffrée. Prix TTC en euros, estimations du 28/09/2026.
+# A-H2 : nomenclature chiffrée. Prix TTC en euros, estimations du 28/09/2026,
+# calibres mis à jour le 30/09 (400 A sur les batteries, 40 A au coupleur).
 
 hypothese: A-H2
 devise: EUR
@@ -9,17 +10,19 @@ lots:
   batteries:
     titre: Fusibles sur les bornes + des deux batteries
     anomalies: [A2]
-    note: 300 A sur les deux batteries, avec wire006 refait en 50 mm² (option A de proposition.md).
+    note: 400 A sur les deux batteries, avec wire006 refait en 50 mm² (option A de proposition.md, décision du 30/09).
   departs:
     titre: Fusibles des départs coupleur et chargeur
     anomalies: [A4]
 
 articles:
-  - { lot: batteries, designation: "Porte-fusible MRBF sur borne de batterie", quantite: 2, unite: pièce, prix_unitaire: 35, statut: estimation }
-  - { lot: batteries, designation: "Fusibles MRBF 300 A", quantite: 2, unite: pièce, prix_unitaire: 18, statut: estimation }
+  - { lot: batteries, designation: "Porte-fusible MEGA, fixé à côté de la batterie", quantite: 2, unite: pièce, prix_unitaire: 15, statut: estimation }
+  - { lot: batteries, designation: "Fusibles MEGA 400 A", quantite: 3, unite: pièce, prix_unitaire: 8, statut: estimation, note: "Deux en place, un de rechange" }
+  - { lot: batteries, designation: "Câble étamé 35 mm² rouge (borne de batterie → porte-fusible, deux tronçons courts)", quantite: 0.6, unite: m, prix_unitaire: 14, statut: estimation }
+  - { lot: batteries, designation: "Cosses tubulaires étamées 35 mm²", quantite: 4, unite: pièce, prix_unitaire: 3, statut: estimation }
   - { lot: batteries, designation: "Câble étamé 50 mm² rouge (wire006 refait, option A)", quantite: 1.2, unite: m, prix_unitaire: 18, statut: estimation }
   - { lot: batteries, designation: "Cosses tubulaires étamées 50 mm²", quantite: 2, unite: pièce, prix_unitaire: 4, statut: estimation }
   - { lot: departs, designation: "Porte-fusible MIDI", quantite: 4, unite: pièce, prix_unitaire: 12, statut: estimation }
-  - { lot: departs, designation: "Fusibles MIDI (2 × 30 A, 2 × 50 A)", quantite: 4, unite: pièce, prix_unitaire: 6, statut: estimation }
+  - { lot: departs, designation: "Fusibles MIDI (2 × 30 A, 2 × 40 A)", quantite: 4, unite: pièce, prix_unitaire: 6, statut: estimation }
   - { lot: departs, designation: "Câble étamé 6 mm² rouge (reprise des départs vers les porte-fusibles)", quantite: 2, unite: m, prix_unitaire: 3.5, statut: estimation }
   - { lot: departs, designation: "Cosses tubulaires étamées 6 mm²", quantite: 8, unite: pièce, prix_unitaire: 1, statut: estimation }

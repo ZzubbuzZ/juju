@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
 #
 # A-H5 : nomenclature chiffrée. Prix TTC en euros, estimations du 29/09/2026.
-# Quantités à ajuster une fois les passages recensés (Q35).
+# Quantités pour une dizaine de passages (Q35, 30/09).
 
 hypothese: A-H5
 devise: EUR
@@ -15,4 +15,4 @@ articles:
   - { lot: passages, designation: "Passe-fils caoutchouc, assortiment de diamètres", quantite: 1, unite: lot, prix_unitaire: 12, statut: estimation }
   - { lot: passages, designation: "Profilé de protection de chant (pour les trous irréguliers)", quantite: 1, unite: m, prix_unitaire: 5, statut: estimation }
   - { lot: passages, designation: "Gaine annelée fendue, 13 et 23 mm", quantite: 10, unite: m, prix_unitaire: 1.2, statut: estimation }
-  - { lot: passages, designation: "Colliers anti-UV et embases à visser", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation }
+  - { lot: passages, designation: "Colliers anti-UV et embases à visser (une vingtaine)", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation }

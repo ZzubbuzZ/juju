@@ -21,4 +21,4 @@ Par ordre d'importance, ceux des câbles non protégés par un fusible :
 2. **Batterie moteur (coffre de cockpit) → platine des coupe-circuits** : wire001 et wire004.
 3. **Vers l'avant** : les deux câbles de 50 mm² du guindeau (wire015, wire018), sur 10 m, qui traversent plusieurs cloisons.
 
-Le nombre et le diamètre des trous sont à relever (Q35) : la nomenclature prévoit un assortiment.
+Il y a **une dizaine de passages** (Q35, 30/09). Leurs diamètres seront relevés à la pose : la nomenclature prévoit un assortiment de passe-fils, et deux embases par passage.

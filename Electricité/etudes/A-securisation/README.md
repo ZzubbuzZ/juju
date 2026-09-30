@@ -8,26 +8,29 @@
 
 Chaque hypothèse a son dossier : une `proposition.md` (le quoi et le pourquoi) et une `nomenclature.yaml` (le matériel chiffré, par lot). Les lots sont réalisables séparément. Les montants ci-dessous sont ceux que calcule `outils/verifier.py` à partir des nomenclatures : **ce sont des estimations du 28-29/09/2026**, à remplacer par des prix catalogue ou de devis. Le vérificateur compte les prix encore estimés.
 
-| Priorité | Hypothèse · lot | Anomalies | Coût estimé | Enjeu |
-|---|---|---|---|---|
-| 1 | [H1](H1-distribution-servitude/proposition.md) · distribution : barrette + et fusibles des tableaux | A1, A6 | 165 € | Deux câbles alimentés sans aucune protection : risque d'incendie |
-| 2 | [H2](H2-fusibles-batteries/proposition.md) · fusibles de 300 A sur les bornes des deux batteries, wire006 refait en 50 mm² | A2 | 136 € | Rien ne coupe un court-circuit sur les câbles de batterie |
-| 2 | H2 · fusibles des départs coupleur et chargeur | A4 | 87 € | Quatre câbles de 6 mm² branchés en direct sur les batteries |
-| 3 | [H5](H5-passages-cloison/proposition.md) · passages de cloison | A9 | 44 € | Usure de l'isolant sur l'arête des trous, jusqu'au court-circuit |
-| 3 | [H3](H3-cosses/proposition.md) · cosses de la batterie moteur | A3 | 14 € (+60 € si les câbles sont à changer) | Contacts dégradés sur le circuit du démarreur |
-| 3 | H3 · raccordement de l'EPS 100 | A7 | 17 € | Contact médiocre, coupures du frigo au démarrage du compresseur |
-| 3 | H3 · outillage de sertissage | | 75 € | Sert à toutes les hypothèses |
-| 4 | H1 · pompe de cale automatique, fusibles de 3 A | A10 | 68 € | Pompe mise en route à la main, sans flotteur ; protégée en 10 A au lieu de 3 A |
-| 5 | [H4](H4-terre-230v/proposition.md) · isolateur galvanique et liaison terre / masse 12 V | A8 | 136 € (0 € dans la variante sans liaison) | Défaut 230 V sur le circuit 12 V ; corrosion au ponton |
-| 5 | H4 · variante : transformateur d'isolement, à la place du lot précédent | A8 | environ 800 € | Supprime la corrosion par le ponton et l'inversion phase / neutre ; 15 à 30 kg |
-| 5 | H4 · disjoncteurs phase + neutre | | à chiffrer, selon Q31 | Seulement si les disjoncteurs actuels ne coupent que la phase |
-| 6 | H1 · recâblage du tableau de la table à carte | | 407 € | Fiabilité et lisibilité (« plat de spaghettis ») plus que sécurité ; peut être différé |
+| Priorité | Hypothèse · lot | Anomalies | Coût estimé | Décision du 30/09 | Enjeu |
+|---|---|---|---|---|---|
+| 1 | [H1](H1-distribution-servitude/proposition.md) · fusible de 50 A à la source de wire019 | A1 | 29 € | retenu | Tableau de la table à carte alimenté sans aucune protection : risque d'incendie |
+| 2 | [H2](H2-fusibles-batteries/proposition.md) · fusibles de 400 A près des deux batteries, wire006 refait en 50 mm² | A2 | 104 € | retenu (option A, 400 A) | Rien ne coupe un court-circuit sur les câbles de batterie |
+| 2 | H2 · fusibles des départs : chargeur 30 A, coupleur 40 A | A4 | 87 € | retenu | Quatre câbles de 6 mm² branchés en direct sur les batteries |
+| 3 | [H5](H5-passages-cloison/proposition.md) · une dizaine de passages de cloison | A9 | 44 € | retenu | Usure de l'isolant sur l'arête des trous, jusqu'au court-circuit |
+| 3 | [H3](H3-cosses/proposition.md) · cosses de la batterie moteur | A3 | 14 € | retenu, câbles conservés | Contacts dégradés sur le circuit du démarreur |
+| 3 | H3 · raccordement de l'EPS 100 | A7 | 17 € | retenu | Contact médiocre, coupures du frigo au démarrage du compresseur |
+| 3 | H3 · outillage de sertissage | | 75 € | retenu | Sert à toutes les hypothèses |
+| 4 | [H4](H4-terre-230v/proposition.md) · remplacement du différentiel d'arrivée par un type A | | 60 € | retenu | Seule protection des personnes en 230 V ; modèle actuel sans documentation (Q36) |
+| 5 | H4 · isolateur galvanique maison, sans liaison terre / masse 12 V | A8 | 58 € | retenu | Précaution contre la corrosion par le ponton si une liaison apparaît |
+| – | H1 · barrette + et fusible du tableau Scheiber | A6 | 165 € | différé | Tableau Scheiber alimenté sans protection |
+| – | H1 · pompe de cale automatique, fusibles de 3 A | A10 | 68 € | différé | Pompe mise en route à la main, sans flotteur ; protégée en 10 A au lieu de 3 A |
+| – | H1 · recâblage du tableau de la table à carte | | 407 € | différé | Fiabilité et lisibilité plus que sécurité |
+| – | H4 · transformateur d'isolement | A8 | environ 430 € | écarté | Supprimait tout lien avec le ponton |
 
-**Total des priorités 1 à 5 : environ 740 €** (605 € sans la liaison à la terre), outillage compris. Le recâblage complet du tableau de servitude ajoute environ 410 €.
+**Total retenu : environ 490 €**, outillage compris. Les lots différés représentent environ 640 € de plus, dont une partie (la barrette de H1) rendrait le fusible de 29 € inutile.
 
-**Ordre proposé** : les priorités 1 et 2 suppriment les risques d'incendie pour environ 390 €. Tout se passe autour des batteries et de la platine des coupe-circuits, donc en une journée à bord. Les passages de cloison et les cosses (priorité 3) se font dans la foulée, sur les mêmes câbles et avec le même outillage.
+**Ordre proposé** : les priorités 1 et 2 suppriment les risques d'incendie pour environ 220 €. Tout se passe autour des batteries et de la platine des coupe-circuits, donc en une journée à bord. Les passages de cloison et les cosses (priorité 3) se font dans la foulée, sur les mêmes câbles et avec le même outillage. Le 230 V (priorités 4 et 5) se fait à part, câble de quai débranché.
 
-Dépendances : H2 dimensionne le fusible de la batterie de servitude en tenant compte des départs créés par H1, et H4 modifie le folio 3. A5 (section du guindeau) a été levée le 27/09 : elle n'est plus à traiter.
+**Risques acceptés en attendant les lots différés** : A6 (tableau Scheiber alimenté sans fusible, comme l'était A1) et A10 (pompe de cale protégée en 10 A). A6 est le plus sérieux des deux : un fusible de 30 A à la source de wire022, sur le modèle de celui de wire019, coûterait une trentaine d'euros.
+
+Dépendances : H4 modifie le folio 3 (isolateur à la place de wire034, nouveau différentiel). A5 (section du guindeau) a été levée le 27/09 : elle n'est plus à traiter.
 
 ## Terre 230 V : bonnes pratiques
 
@@ -60,4 +63,12 @@ Relevé du 28/09 : la terre et la masse 12 V ne sont reliées nulle part, et il 
 
 ## Décision
 
-En attente.
+**30/09** : programme retenu dans le tableau des [pistes d'amélioration](#pistes-damélioration-et-coûts). En résumé :
+
+- **H1** différée, sauf un fusible de 50 A à la source de wire019 (A1).
+- **H2** option A, avec des fusibles de 400 A sur les deux batteries ; départs à 30 A (chargeur) et 40 A (coupleur, relais de 40 A).
+- **H3** cosses serties, câbles conservés.
+- **H4** terre du ponton conservée à travers un isolateur galvanique maison, sans liaison à la masse 12 V ; différentiel remplacé par un type A ; transformateur écarté.
+- **H5** une dizaine de passages de cloison.
+
+Reste à faire avant la fusion dans `main` : les `cablage.yaml` et folios de H2, H3, H4 et H5, et le fusible de wire019 dans celui de H1.
