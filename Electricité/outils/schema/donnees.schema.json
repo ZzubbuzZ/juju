@@ -178,7 +178,8 @@
             "bornier",
             "shunt",
             "source",
-            "prise"
+            "prise",
+            "isolateur"
           ]
         },
         "designation": {
