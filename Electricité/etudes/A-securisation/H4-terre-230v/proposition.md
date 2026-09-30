@@ -178,4 +178,4 @@ Tester son bouton chaque mois en saison : en atmosphère saline, un mécanisme q
 
 Le DT40 C10 du chargeur et les DNX3 C10 et C16 du boîtier tribord sont des modèles phase + neutre, qui coupent les deux conducteurs : l'inversion de la phase et du neutre à la prise du ponton est couverte, **aucun achat**. Seul le modèle du 16 A d'arrivée n'a pas été relevé.
 
-- **Plafonnier** : s'il est métallique (classe I), raccorder le conducteur de terre déjà présent dans son câble 3 × 1,5 mm². Aucun achat. Question toujours ouverte (Q31).
+- **Plafonnier** : métallique, et sa terre est raccordée (Q31, 30/09). Rien à faire.
