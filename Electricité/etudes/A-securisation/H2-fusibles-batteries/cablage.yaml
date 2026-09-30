@@ -20,7 +20,7 @@ equipements:
   - { id: fus-chargeur-servitude, type: fusible, designation: "Fusible du chargeur, sortie batterie de servitude (MIDI)", calibre_A: 30, emplacement: "Près de la platine des coupe-circuits", statut: propose }
   - { id: fus-coupleur-moteur, type: fusible, designation: "Fusible du coupleur, côté batterie moteur (MIDI)", calibre_A: 40, emplacement: "Près de la platine des coupe-circuits", statut: propose }
   - { id: fus-coupleur-servitude, type: fusible, designation: "Fusible du coupleur, côté batterie de servitude (MIDI)", calibre_A: 40, emplacement: "Près de la platine des coupe-circuits", statut: propose }
-  - { id: fus-source-tableau-servitude, type: fusible, designation: "Fusible du câble du tableau de la table à carte (MIDI)", calibre_A: 50, emplacement: "Près du disjoncteur du guindeau, cabine de poupe", statut: propose }
+  - { id: fus-source-tableau-servitude, type: fusible, designation: "Fusible du câble du tableau de la table à carte (MIDI)", calibre_A: 50, emplacement: "Près de la platine des coupe-circuits", statut: propose }
 
 nodes:
   - { id: node070, equipement: fus-bat-moteur, borne: "1 (côté batterie)", polarite: "+" }
@@ -56,5 +56,5 @@ fils:
   - { id: wire007, de: node081, vers: node014, section_mm2: 6, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Câble existant, repris sur le fusible" }
 
   # --- Tableau de la table à carte (A1)
-  - { id: wire166, de: node020, vers: node082, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire166, de: node010, vers: node082, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
   - { id: wire019, de: node083, vers: node100, section_mm2: 6, couleur: rouge, longueur_m: 3, statut: propose, note: "Câble existant, repris sur le fusible" }

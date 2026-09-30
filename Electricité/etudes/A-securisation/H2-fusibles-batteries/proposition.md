@@ -80,7 +80,7 @@ La notice préconise aussi des câbles batterie de 6 mm² sur **1,5 m au plus**.
 
 ### Tableau de la table à carte (A1)
 
-wire019 (6 mm², 3 m) part de l'entrée du disjoncteur du guindeau (node020) sans aucune protection. Un **fusible MIDI de 50 A** se place à sa source, près du disjoncteur, dans la cabine de poupe : un tronçon court (wire166) va de node020 au porte-fusible, et wire019 est repris sur sa sortie. 50 A reste dans la tenue du 6 mm² et laisse passer la consommation du tableau (Q12 pour les longueurs exactes). C'est la seule partie de A-H1 retenue le 30/09.
+wire019 (6 mm², 3 m) part de la sortie du coupe-circuit de servitude (node010, relevé corrigé le 01/10) sans aucune protection. Un **fusible MIDI de 50 A** se place à sa source, près de la platine des coupe-circuits, avec les fusibles des départs : un tronçon court (wire166) va de node010 au porte-fusible, et wire019 est repris sur sa sortie. 50 A reste dans la tenue du 6 mm² et laisse passer la consommation du tableau (Q12 pour les longueurs exactes). C'est la seule partie de A-H1 retenue le 30/09.
 
 ### Numéros
 

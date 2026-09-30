@@ -120,23 +120,24 @@
   <g class="mk-a"><circle cx="560" cy="420" r="10"/><text class="mid" x="560" y="423.5">A4</text></g>
 
   <!-- ============ Guindeau et tableau de la table à carte ============ -->
-  <path class="p w4" d="M488 330 H940"/>
-  <text class="id mid" x="714" y="320">wire017 · 35 (inchangé)</text>
-  <circle class="dp" cx="940" cy="330" r="4.5"/>
-  <text class="id end" x="934" y="318">node020</text>
+  <path class="p w4" d="M488 330 H960"/>
+  <text class="id mid" x="800" y="320">wire017 · 35 (inchangé)</text>
+  <text class="id end" x="954" y="346">node020</text>
   <rect class="box" x="960" y="310" width="130" height="40" rx="2"/>
   <text class="tb mid" x="1025" y="328">Disj. guindeau</text>
   <text class="ts mid" x="1025" y="343">vers le guindeau : folio 1</text>
-  <path class="p w4" d="M944 330 H960"/>
-  <path class="p w2" d="M940 334 V520 H980"/>
-  <text class="idn end" x="932" y="480">wire166 · 6</text>
-  <rect class="fuse-new" x="980" y="511" width="46" height="18"/>
-  <text class="idn mid" x="1003" y="524">50 A</text>
-  <g class="mk-a"><circle cx="1003" cy="494" r="10"/><text class="mid" x="1003" y="497.5">A1</text></g>
-  <path class="p w2" d="M1026 520 H1060 V560"/>
-  <text class="id" x="1068" y="545">wire019 · 6</text>
-  <rect class="flag" x="990" y="560" width="170" height="18"/>
-  <text class="ts mid" x="1075" y="573">tableau table à carte · node100</text>
+
+  <!-- Tableau de la table à carte, depuis node010 -->
+  <circle class="dp" cx="600" cy="330" r="4.5"/>
+  <path class="p w2" d="M600 326 V270 H640"/>
+  <text class="idn end" x="594" y="296">wire166 · 6</text>
+  <rect class="fuse-new" x="640" y="261" width="46" height="18"/>
+  <text class="idn mid" x="663" y="274">50 A</text>
+  <g class="mk-a"><circle cx="708" cy="262" r="10"/><text class="mid" x="708" y="265.5">A1</text></g>
+  <path class="p w2" d="M686 270 H1000"/>
+  <text class="id mid" x="850" y="264">wire019 · 6</text>
+  <rect class="flag" x="1000" y="261" width="180" height="18"/>
+  <text class="ts mid" x="1090" y="274">tableau table à carte · node100</text>
 
   <!-- Légende -->
   <text class="ts" x="40" y="520">En vert : nouveau (porte-fusibles et tronçons courts).</text>
