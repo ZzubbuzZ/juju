@@ -59,8 +59,9 @@ Les modèles cités sont des exemples de familles de produits. Leurs caractéris
 | [H2](H2-moniteur-afficheur/proposition.md) | Moniteur avec afficheur (type Victron BMV-712 Smart) | Afficheur rond à la place de l'indicateur à aiguille, et application | Tension par l'entrée auxiliaire | environ 165 €, plus l'adaptation de la découpe (Q41) | Rédigée, [folio 2f](H2-moniteur-afficheur/folio-2f-afficheur.svg) |
 | [H3](H3-simarine-pico/proposition.md) | Moniteur multi-capteurs (Simarine Pico et shunt SC503) | Afficheur couleur | Second shunt, ou mesure de tension | environ 400 € | Non développée, à écarter : voir ci-dessous |
 | [H4](H4-moniteur-generique/proposition.md) | Moniteur générique bas coût (type Junctek KH140F, 400 A) | Afficheur et application | Selon le modèle | environ 90 € | Non développée, à écarter : voir ci-dessous |
+| [H5](H5-cerbo-gx-touch/proposition.md) | SmartShunt de H1, centrale Victron Cerbo GX et écran tactile GX Touch 50 | Écran 5 pouces à la table à carte, application, portail VRM | Tension par l'entrée auxiliaire du shunt | environ 675 € | Rédigée, [folio 2g](H5-cerbo-gx-touch/folio-2g-cerbo.svg) ; place à relever (Q43) |
 
-H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire009 repris sur le shunt, wire180 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire181 à wire184). H2 ajoute le câble de données wire185 et l'afficheur. Nouveaux numéros : node086 à node095, wire180 à wire185.
+H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire009 repris sur le shunt, wire180 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire181 à wire184). H2 ajoute le câble de données wire185 et l'afficheur. Nouveaux numéros : node086 à node095, wire180 à wire185. H5 reprend H1 et ajoute un Cerbo GX alimenté après le coupe-circuit de servitude (fusible 3 A), relié au shunt par VE.Direct et à l'écran : node340 à node346, wire186 à wire190.
 
 **Pourquoi ne pas développer H3 et H4** (à confirmer) :
 
@@ -84,6 +85,8 @@ Une fois le shunt posé, un protocole simple permet de remplacer les estimations
 
 En attente. Le choix porte sur la lecture : smartphone seul (H1) ou afficheur fixe (H2).
 
-Proposition de Claude (01/10) : **H2**. L'afficheur prend la place de l'indicateur à aiguille sans découpe nouvelle, l'alarme de tension basse est visible sans téléphone, et un shunt connecté seul (H1) ne peut pas recevoir d'afficheur plus tard : passer de H1 à H2 reviendrait à racheter le shunt. Aux prix relevés le 01/10, les deux coûtent le même prix, environ 165 €. À trancher, ainsi que l'écartement de H3 et H4.
+Proposition de Claude (01/10) : **H2**. L'afficheur prend la place de l'indicateur à aiguille sans découpe nouvelle, l'alarme de tension basse est visible sans téléphone, et un shunt connecté seul (H1) n'accepte pas d'afficheur dédié : une lecture fixe ne pourrait s'y ajouter que par l'écran d'un Cerbo GX (H5), bien plus cher. Aux prix relevés le 01/10, les deux coûtent le même prix, environ 165 €. À trancher, ainsi que l'écartement de H3 et H4.
 
-Avant la pose : répondre à Q41 (branchement de l'indicateur à aiguille, diamètre du trou), pour H2 seulement.
+H5 (ajoutée le 01/10 à la demande de l'utilisateur) est l'option « tableau de bord » : environ quatre fois le prix de H2, avec une consommation d'environ 0,3 A tant que le Cerbo GX est allumé. Elle se justifie si l'on prévoit d'autres appareils Victron (régulateur solaire de l'étude C, chargeur, LiFePO4) ; sinon H2 donne la même mesure pour beaucoup moins. Elle peut aussi venir plus tard : le SmartShunt (H1) comme le BMV-712 (H2) ont un port VE.Direct et se raccordent au Cerbo GX sans rien racheter ; avec H2, l'afficheur rond reste en service à côté de l'écran.
+
+Avant la pose : répondre à Q41 (branchement de l'indicateur à aiguille, diamètre du trou) pour H2, à Q43 (place du Cerbo GX et de l'écran) pour H5.

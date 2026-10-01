@@ -9,7 +9,7 @@ points_forts:
   - Aucun câble à tirer jusqu'à la table à carte.
 points_faibles:
   - Lecture et alarme de tension basse sur le téléphone seulement.
-  - Aucun afficheur ne peut s'y ajouter plus tard ; passer à H2 obligerait à racheter le shunt.
+  - Pas d'afficheur dédié possible ; une lecture fixe ne peut s'ajouter que par l'écran d'un Cerbo GX (H5), bien plus cher.
 ---
 
 # D-H1 · Shunt connecté, lecture sur smartphone
@@ -57,6 +57,6 @@ La batterie moteur n'est suivie qu'en tension, par l'entrée auxiliaire. L'objec
 
 - **Consommation propre** : de l'ordre du milliampère d'après les fiches des modèles de ce type (à vérifier), soit quelques centièmes d'ampère-heure par jour. Négligeable devant les 60 Ah par jour du bilan au mouillage.
 - **Lecture** : il faut un smartphone à portée Bluetooth pour voir l'état de charge, et l'alarme de tension basse n'est visible que sur le téléphone. C'est la limite de cette hypothèse.
-- **Évolution** : un shunt connecté n'accepte pas d'afficheur dédié. Ajouter plus tard une lecture fixe demanderait un autre appareil (écran Bluetooth ou centrale). Si un afficheur est souhaité un jour, autant partir sur D-H2.
+- **Évolution** : un shunt connecté n'accepte pas d'afficheur dédié. Une lecture fixe ne pourra s'ajouter que par une centrale Cerbo GX et son écran (D-H5), qui reprend le SmartShunt sans le racheter. Si un simple afficheur est souhaité, autant partir sur D-H2.
 - **LiFePO4** : la chimie se règle dans l'application, sans changer de matériel.
 - **Solaire (étude C)** : les régulateurs de la même famille peuvent recevoir la tension et le courant du shunt par Bluetooth, pour une charge plus juste. À vérifier sur les fiches au moment du choix du régulateur.
