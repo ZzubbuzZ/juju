@@ -1,3 +1,17 @@
+---
+hypothese: D-H1
+titre: Shunt connecté, lecture sur smartphone
+etat: proposee
+resume: Shunt Bluetooth de 500 A sur le négatif de la batterie de servitude ; état de charge, historique et tension de la batterie moteur dans l'application.
+points_forts:
+  - Le plus simple à poser, rien à percer au tableau.
+  - Historique des consommations dans l'application.
+  - Aucun câble à tirer jusqu'à la table à carte.
+points_faibles:
+  - Lecture et alarme de tension basse sur le téléphone seulement.
+  - Aucun afficheur ne peut s'y ajouter plus tard ; passer à H2 obligerait à racheter le shunt.
+---
+
 # D-H1 · Shunt connecté, lecture sur smartphone
 
 Hypothèse de l'étude D. Base : **A-H4**, c'est-à-dire le programme retenu de l'étude A (fusibles de 400 A près des batteries compris). Aucune anomalie traitée : l'étude D ajoute une mesure, elle ne corrige pas un défaut.

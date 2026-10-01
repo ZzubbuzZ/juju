@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# D-H4 : nomenclature de comparaison. Prix TTC en euros du 01/10/2026 relevé par
+# recherche web (page non ouverte depuis la session) ; accessoires comme D-H1.
+
+hypothese: D-H4
+devise: EUR
+
+lots:
+  mesure:
+    titre: Moniteur générique 400 A avec afficheur, accessoires de pose
+
+articles:
+  - { lot: mesure, designation: "Junctek KH140F, moniteur 400 A avec afficheur et Bluetooth", reference: KH140F, quantite: 1, unite: pièce, prix_unitaire: 60, statut: catalogue, source: "https://usa.banggood.com/JUNCTEK-Bluetooth-Battery-Monitor-KH110F-KH140F-KH160F-Voltage-And-Current-Tester-Capacity-Indicator-VA-Battery-Gauge-p-1999072.html", date_prix: "2026-10-01", note: "Entre 48 et 63 € selon la version, hors frais de port ; site de vente en ligne international" }
+  - { lot: mesure, designation: "Porte-fusibles en ligne, fusibles 1 A, câble 0,75 mm², câble 35 mm², cosses et gaine (comme D-H1)", quantite: 1, unite: lot, prix_unitaire: 32, statut: estimation }

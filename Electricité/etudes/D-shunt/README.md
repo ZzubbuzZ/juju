@@ -51,21 +51,21 @@ L'objectif fixé pour la batterie moteur est de **surveiller sa tension**, pas d
 
 ## Hypothèses
 
-Les modèles cités sont des exemples de familles de produits. Leurs caractéristiques (entrée auxiliaire, longueur de câble fournie, consommation propre) sont à vérifier sur les fiches techniques au moment du choix. Les coûts sont ceux que calcule `outils/verifier.py` à partir des nomenclatures : **estimations du 01/10/2026**.
+Les modèles cités sont des exemples de familles de produits. Leurs caractéristiques (entrée auxiliaire, longueur de câble fournie, consommation propre) sont à vérifier sur les fiches techniques au moment du choix. Les coûts sont ceux que calcule `outils/verifier.py` à partir des nomenclatures : prix catalogue du 01/10/2026 pour le moniteur (relevés par recherche web, liens dans chaque nomenclature), estimations pour les accessoires. La page de consultation présente la même comparaison, avec les liens.
 
 | | Principe | Lecture | Batterie moteur | Coût estimé | État |
 |---|---|---|---|---|---|
 | [H1](H1-shunt-connecte/proposition.md) | Shunt connecté seul (type Victron SmartShunt 500 A) | Application sur smartphone | Tension par l'entrée auxiliaire | environ 160 € | Rédigée, [folio 2e](H1-shunt-connecte/folio-2e-shunt.svg) |
-| [H2](H2-moniteur-afficheur/proposition.md) | Moniteur avec afficheur (type Victron BMV-712 Smart) | Afficheur rond à la place de l'indicateur à aiguille, et application | Tension par l'entrée auxiliaire | environ 250 €, plus l'adaptation de la découpe (Q41) | Rédigée, [folio 2f](H2-moniteur-afficheur/folio-2f-afficheur.svg) |
-| H3 | Moniteur multi-shunts (type Simarine) | Afficheur couleur | Second shunt, ou mesure de tension | environ 350 à 450 € (ordre de grandeur, non chiffré) | Non développée, à écarter : voir ci-dessous |
-| H4 | Moniteur générique bas coût (shunt et afficheur sans marque) | Afficheur | Selon le modèle | environ 40 à 80 € (ordre de grandeur, non chiffré) | Non développée, à écarter : voir ci-dessous |
+| [H2](H2-moniteur-afficheur/proposition.md) | Moniteur avec afficheur (type Victron BMV-712 Smart) | Afficheur rond à la place de l'indicateur à aiguille, et application | Tension par l'entrée auxiliaire | environ 165 €, plus l'adaptation de la découpe (Q41) | Rédigée, [folio 2f](H2-moniteur-afficheur/folio-2f-afficheur.svg) |
+| [H3](H3-simarine-pico/proposition.md) | Moniteur multi-capteurs (Simarine Pico et shunt SC503) | Afficheur couleur | Second shunt, ou mesure de tension | environ 400 € | Non développée, à écarter : voir ci-dessous |
+| [H4](H4-moniteur-generique/proposition.md) | Moniteur générique bas coût (type Junctek KH140F, 400 A) | Afficheur et application | Selon le modèle | environ 90 € | Non développée, à écarter : voir ci-dessous |
 
 H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire009 repris sur le shunt, wire180 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire181 à wire184). H2 ajoute le câble de données wire185 et l'afficheur. Nouveaux numéros : node086 à node095, wire180 à wire185.
 
 **Pourquoi ne pas développer H3 et H4** (à confirmer) :
 
-- **H3** : son intérêt est de lire aussi les jauges de réservoir et plusieurs batteries. Juju n'a pas de jauge à relier, et l'objectif ne demande qu'une tension pour la batterie moteur. Elle coûte environ deux fois H2 sans répondre à un besoin listé.
-- **H4** : l'état de charge se calcule en additionnant le courant pendant des jours. Une petite erreur à faible courant (veille, pompe de cale) ou une dérive du zéro fausse le résultat, et c'est justement la consommation de veille que l'étude doit surveiller (détection du court-circuit résistif de A-H2). Sa tenue en milieu marin et sa consommation propre sont inconnues. L'économie, environ 100 à 200 €, ne compense pas une mesure à laquelle on ne peut pas se fier.
+- **H3** : son intérêt est de lire aussi les jauges de réservoir et plusieurs batteries. Juju n'a pas de jauge à relier, et l'objectif ne demande qu'une tension pour la batterie moteur. Elle coûte plus du double de H2 sans répondre à un besoin listé, et son kit standard n'a qu'un shunt de 300 A.
+- **H4** : l'état de charge se calcule en additionnant le courant pendant des jours. Une petite erreur à faible courant (veille, pompe de cale) ou une dérive du zéro fausse le résultat, et c'est justement la consommation de veille que l'étude doit surveiller (détection du court-circuit résistif de A-H2). Sa tenue en milieu marin et sa consommation propre sont inconnues. Son shunt de 400 A est en outre sous les 500 A visés. L'économie, environ 75 €, ne compense pas une mesure à laquelle on ne peut pas se fier.
 
 ## Critères de comparaison
 
@@ -84,6 +84,6 @@ Une fois le shunt posé, un protocole simple permet de remplacer les estimations
 
 En attente. Le choix porte sur la lecture : smartphone seul (H1) ou afficheur fixe (H2).
 
-Proposition de Claude (01/10) : **H2**. L'afficheur prend la place de l'indicateur à aiguille sans découpe nouvelle, l'alarme de tension basse est visible sans téléphone, et un shunt connecté seul (H1) ne peut pas recevoir d'afficheur plus tard : passer de H1 à H2 reviendrait à racheter le shunt. L'écart est d'environ 90 €. À trancher, ainsi que l'écartement de H3 et H4.
+Proposition de Claude (01/10) : **H2**. L'afficheur prend la place de l'indicateur à aiguille sans découpe nouvelle, l'alarme de tension basse est visible sans téléphone, et un shunt connecté seul (H1) ne peut pas recevoir d'afficheur plus tard : passer de H1 à H2 reviendrait à racheter le shunt. Aux prix relevés le 01/10, les deux coûtent le même prix, environ 165 €. À trancher, ainsi que l'écartement de H3 et H4.
 
 Avant la pose : répondre à Q41 (branchement de l'indicateur à aiguille, diamètre du trou), pour H2 seulement.
