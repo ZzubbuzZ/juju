@@ -46,8 +46,18 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 - Un commit = un sujet. Tag `rev-X` quand une révision des schémas est publiée.
 - Push : remote SSH `origin`, poussé par l'utilisateur (pas de clé GitHub configurée pour Claude).
 
-## Page de consultation
+## Pages de consultation
 
-`python Electricité/outils/page.py` produit `Electricité/build/schemas.html` (non versionné). Cette page est publiée en artifact privé : https://claude.ai/artifact/Vj1VV9bWUtJjnwGRuP5a36 (republier sur la même URL).
+`python Electricité/outils/page.py` produit une page par branche dans `Electricité/build/` (non versionné) : `releve.html` sur `main`, `<étude>.html` sur une branche d'étude (README de l'étude en tête, puis folios, comparaison des hypothèses, anomalies et questions). Chaque page est publiée en artifact sur sa propre adresse (republier sur la même URL) :
+
+| Page | Branche | Adresse |
+|---|---|---|
+| Relevé (stable) | `main` | https://claude.ai/artifact/Vj1VV9bWUtJjnwGRuP5a36 |
+| Étude B · chauffe-eau | `etude/chauffe-eau` | https://claude.ai/artifact/EraWYRB2Y1Qb7Dw1X2TnXB |
+| Étude C · solaire | `etude/solaire` | https://claude.ai/artifact/VayQ4vtWCg3tUMzGd8ZtHi |
+| Étude D · shunt | `etude/shunt` | https://claude.ai/artifact/SSRrmRv1NfgKTPA4Neofcz |
+| Étude E · batterie | `etude/batterie` | https://claude.ai/artifact/GFQGrFSsuakYQPAH8LGqrR |
+
+L'étude A, fusionnée dans `main`, figure sur la page du relevé. Après un changement sur `main`, régénérer et republier toutes les pages.
 
 Python 3.12 est installé pour l'utilisateur. S'il n'est pas dans le PATH : `%LOCALAPPDATA%\Programs\Python\Python312\python.exe`. Dépendances : `Electricité/outils/requirements.txt`.
