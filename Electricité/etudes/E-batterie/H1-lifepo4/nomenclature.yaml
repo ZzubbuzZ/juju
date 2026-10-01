@@ -13,7 +13,10 @@ lots:
     note: Dimensions à vérifier (Q45). Coupe-circuit de couplage et coupleur Scheiber déposés, sans coût.
   charge:
     titre: Chargeur DC/DC depuis la batterie moteur, à la place du coupleur Scheiber
-    note: Chargeur de quai Dolphin conservé sur la batterie moteur seule, sortie 2 débranchée ; seuils de démarrage du DC/DC abaissés pour suivre le floating du Dolphin.
+    note: DC/DC commandé par un + après contact (Q48), pour ne tourner qu'au moteur.
+  quai:
+    titre: Chargeur de quai dédié à la LiFePO4 ; Dolphin conservé pour la batterie moteur seule, sortie 2 débranchée
+    note: Emplacement selon Q49.
 
 articles:
   # --- Lot batterie -----------------------------------------------------------------
@@ -25,3 +28,9 @@ articles:
   - { lot: charge, designation: "Victron Orion XS 12/12-50A, chargeur DC/DC non isolé, Bluetooth", reference: ORI121217040, quantite: 1, unite: pièce, prix_unitaire: 276.55, statut: catalogue, source: "https://www.voelkner.de/products/12907028/Victron-Orion-XS-12-12-50A-700W-DC-DC-Batterieladegeraet.html", date_prix: "2026-10-01", note: "Prix relevé par recherche web (revendeur allemand), page non ouverte depuis la session ; environ 310 € en France. Courant à régler vers 15 A (alternateur de 20 A)" }
   - { lot: charge, designation: "Porte-fusibles et fusibles aux deux extrémités du DC/DC", quantite: 2, unite: lot, prix_unitaire: 15, statut: estimation, note: "Calibre selon la notice" }
   - { lot: charge, designation: "Câble étamé rouge et noir pour l'entrée et la sortie du DC/DC, cosses et gaine", quantite: 1, unite: lot, prix_unitaire: 30, statut: estimation, note: "Section selon la notice, la longueur et le courant réglé" }
+  - { lot: charge, designation: "Fil de commande « remote » du DC/DC depuis un + après contact, porte-fusible 1 A", quantite: 1, unite: lot, prix_unitaire: 10, statut: estimation }
+
+  # --- Lot quai ---------------------------------------------------------------------
+  - { lot: quai, designation: "Victron Blue Smart IP65 12/15, chargeur une sortie, profil LiFePO4, Bluetooth", quantite: 1, unite: pièce, prix_unitaire: 140, statut: estimation, note: "Prix relevés par recherche web autour de 130 € (eBay Allemagne, 128 €) ; référence européenne à vérifier. Variante intérieure : Blue Smart IP22 12/20 (1), environ 155 €" }
+  - { lot: quai, designation: "Câble 230 V 3 × 1,5 mm² depuis le disjoncteur du chargeur, ou prise dédiée", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Selon l'emplacement (Q49)" }
+  - { lot: quai, designation: "Câble 12 V rouge et noir vers la batterie de servitude, porte-fusible et fusible à la batterie, cosses", quantite: 1, unite: lot, prix_unitaire: 30, statut: estimation, note: "Section et longueur selon l'emplacement (Q49)" }
