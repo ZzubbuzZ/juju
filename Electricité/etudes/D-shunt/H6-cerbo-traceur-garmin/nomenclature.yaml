@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# D-H6 : nomenclature chiffrée complète (mesure comme D-H1, centrale sans écran,
+# réseau NMEA 2000 vers le traceur Garmin).
+# Prix TTC en euros du 01/10/2026 : catalogue relevé par recherche web pour le Cerbo-S GX
+# et le kit Garmin (pages non ouvertes depuis la session), estimations pour le reste.
+
+hypothese: D-H6
+devise: EUR
+
+lots:
+  mesure:
+    titre: SmartShunt sur le négatif de la batterie de servitude, tension de la batterie moteur (comme D-H1)
+    note: L'outillage de sertissage des cosses de 35 mm² est celui de A-H3.
+  supervision:
+    titre: Cerbo-S GX près des coupe-circuits, sans écran
+    note: Place selon Q43.
+  nmea2000:
+    titre: Réseau NMEA 2000 entre le Cerbo-S GX et le traceur
+    note: "À retirer en grande partie si le traceur est déjà sur un réseau NMEA 2000 (Q44) : il ne resterait que le câble VE.Can, un T et le bouchon VE.Can, environ 110 €."
+
+articles:
+  # --- Lot mesure -------------------------------------------------------------------
+  - { lot: mesure, designation: "Victron SmartShunt 500 A/50 mV (Bluetooth, entrée auxiliaire)", reference: SHU050150050, quantite: 1, unite: pièce, prix_unitaire: 129.47, statut: catalogue, source: "https://www.wattuneed.com/fr/made-in-europe/25348-controleur-de-batterie-intelligent-victron-energy-smartshunt-500a-50mv-0768563817632.html", date_prix: "2026-10-01", note: "Prix relevé par recherche web, page non ouverte depuis la session" }
+  - { lot: mesure, designation: "Porte-fusible en ligne étanche avec fusible 1 A", quantite: 2, unite: pièce, prix_unitaire: 4, statut: estimation }
+  - { lot: mesure, designation: "Fusibles 1 A de rechange", quantite: 2, unite: pièce, prix_unitaire: 0.5, statut: estimation }
+  - { lot: mesure, designation: "Câble étamé 0,75 mm² rouge (fils de mesure)", quantite: 2, unite: m, prix_unitaire: 1, statut: estimation, fils: [wire181, wire182, wire183, wire184] }
+  - { lot: mesure, designation: "Câble étamé 35 mm² noir (shunt → coupe-circuit des négatifs)", quantite: 0.5, unite: m, prix_unitaire: 14, statut: estimation, fils: [wire180] }
+  - { lot: mesure, designation: "Cosses tubulaires étamées 35 mm² (wire180, et reprise de wire009 sur le shunt)", quantite: 3, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire180, wire009] }
+  - { lot: mesure, designation: "Cosses à œillet 0,75 mm² et gaine thermorétractable", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire181, wire182, wire183, wire184] }
+
+  # --- Lot supervision --------------------------------------------------------------
+  - { lot: supervision, designation: "Victron Cerbo-S GX", reference: BPP900450120, quantite: 1, unite: pièce, prix_unitaire: 189.95, statut: catalogue, source: "https://nkon.nl/en/victron-energy-bpp900450120-cerbo-s-gx-controller.html", date_prix: "2026-10-01", note: "Prix relevé par recherche web (revendeur néerlandais), page non ouverte depuis la session ; autres revendeurs jusqu'à 220 €" }
+  - { lot: supervision, designation: "Câble VE.Direct 1,8 m", quantite: 1, unite: pièce, prix_unitaire: 12, statut: estimation }
+  - { lot: supervision, designation: "Porte-fusible en ligne étanche avec fusible 3 A, et fusible de rechange", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation }
+  - { lot: supervision, designation: "Câble étamé 0,75 mm² rouge et noir (alimentation du Cerbo-S GX), cosses et gaine", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation }
+
+  # --- Lot NMEA 2000 ----------------------------------------------------------------
+  - { lot: nmea2000, designation: "Câble Victron VE.Can vers NMEA 2000 (micro-C mâle)", reference: ASS030520200, quantite: 1, unite: pièce, prix_unitaire: 90, statut: estimation, note: "Prix européens relevés par recherche web entre 88 et 91 €, revendeurs non vérifiés" }
+  - { lot: nmea2000, designation: "Bouchon de terminaison VE.Can (RJ45) pour la seconde prise du Cerbo-S GX", quantite: 1, unite: pièce, prix_unitaire: 5, statut: estimation, note: "Peut-être fourni avec le Cerbo-S GX : à vérifier avant l'achat" }
+  - { lot: nmea2000, designation: "Kit de démarrage Garmin NMEA 2000 (câble principal 6 m, dérivation 2 m, câble d'alimentation, deux T, deux bouchons)", reference: 010-11442-00, quantite: 1, unite: pièce, prix_unitaire: 109, statut: catalogue, source: "https://www.nootica.com/pt/kit-garmin-nmea-2000.html", date_prix: "2026-10-01", note: "Prix relevé par recherche web (revendeur portugais), page non ouverte depuis la session" }
+  - { lot: nmea2000, designation: "Connecteur en T NMEA 2000 supplémentaire (pour le Cerbo-S GX)", quantite: 1, unite: pièce, prix_unitaire: 15, statut: estimation }
+  - { lot: nmea2000, designation: "Porte-fusible en ligne étanche et fusible pour l'alimentation du réseau NMEA 2000", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation, note: "Calibre selon la notice du kit" }
