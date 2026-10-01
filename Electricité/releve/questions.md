@@ -87,6 +87,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 27/09 : une capote seulement.
 - **Q20** Prise de quai : calibre du disjoncteur de quai.
   → 27/09 : à Saint-Chamas, 12 A à quai mais 6 A seulement au ponton. Juju aura une place au ponton : **6 A, soit environ 1 400 W au total**.
+  → 01/10 : correction, les bornes de quai du port fournissent **16 A, soit environ 3 700 W** (l'information précédente venait de la presse). Ce calibre n'est pas garanti en escale, où il est souvent plus faible.
 - **Q21** Disjoncteur du guindeau : cabine de proue ou cabine de poupe ?
   → 27/09 : cabine de poupe (erreur dans la première description).
 - **Q22** De quel bord sont la cuisine et la table à carte ?

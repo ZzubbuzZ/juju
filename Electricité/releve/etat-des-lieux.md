@@ -121,7 +121,7 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 - Une PE pour le carré sur la boîte de dérivation bâbord
 - Boîtier tribord dans le cabinet de toilette (correction du 01/10 : il était noté sur la cloison entre le cabinet de toilette et le coffre de cockpit).
 - La terre 230 V n'est reliée ni à la masse 12 V ni à un isolateur galvanique (anomalie A8).
-- Au ponton de Saint-Chamas, la prise de quai ne fournit que **6 A, soit environ 1 400 W** pour tout le bord (12 A à quai).
+- Aux bornes de quai du port de Saint-Chamas, ponton compris, la prise fournit **16 A, soit environ 3 700 W** pour tout le bord (correction du 01/10 : 6 A au ponton et 12 A à quai étaient notés d'après une information de presse). Rien ne garantit ce calibre dans les autres ports, où il est souvent plus faible : l'installation doit rester utilisable en escale sur une borne de moindre calibre.
 - Prises en 3 × 2,5 mm², éclairage en 3 × 1,5 mm², arrivée et chargeur en 3 × 2,5 mm².
 - Schéma : [folio 3](../schemas/folio-3-230v.svg), d'après la description ci-dessus et le [plan manuscrit](photos/Circuit-electrique-230v.jpeg).
 

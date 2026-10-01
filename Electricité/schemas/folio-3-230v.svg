@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="Réseau 230 V en unifilaire : prise de quai, boîtier d'arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et plafonnier.">
   <title>Folio 3 · Réseau 230 V</title>
-  <desc>L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord, dans le cabinet de toilette : 10 A pour l'éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation, et un second 10 A dont le circuit est à identifier (Q42). Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au plafonnier (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Au ponton de Saint-Chamas, la prise ne fournit que 6 A, soit environ 1 400 W pour tout le bord.</desc>
+  <desc>L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord, dans le cabinet de toilette : 10 A pour l'éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation, et un second 10 A dont le circuit est à identifier (Q42). Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au plafonnier (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Aux bornes du port de Saint-Chamas, la prise fournit 16 A, soit environ 3 700 W pour tout le bord ; en escale, le calibre est souvent plus faible.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -43,8 +43,9 @@
   <text class="tb mid" x="105" y="125">Prise de quai</text>
   <text class="ts mid" x="105" y="142">EU · banc tribord</text>
   <text class="id mid" x="105" y="170">node203–205</text>
-  <text class="tb mid" x="105" y="212">Ponton : 6 A</text>
-  <text class="ts mid" x="105" y="229">≈ 1 400 W pour tout le bord</text>
+  <text class="tb mid" x="105" y="212">Bornes du port : 16 A</text>
+  <text class="ts mid" x="105" y="229">≈ 3 700 W pour tout le bord</text>
+  <text class="ts mid" x="105" y="246">souvent moins en escale</text>
 
   <path class="n w2" d="M170 140 H330"/>
   <path class="n w1" d="M244 147 L252 133 M249 147 L257 133 M254 147 L262 133"/>
