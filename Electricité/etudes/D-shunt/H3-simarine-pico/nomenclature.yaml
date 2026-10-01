@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# D-H3 : nomenclature de comparaison. Prix TTC en euros du 01/10/2026 relevés par
+# recherche web (pages non ouvertes depuis la session) ; accessoires comme D-H1.
+
+hypothese: D-H3
+devise: EUR
+
+lots:
+  mesure:
+    titre: Afficheur Pico et shunt SC503 de 500 A, accessoires de pose
+    note: Le kit standard (afficheur, shunt SC303 de 300 A, module de réservoirs) coûte environ 399 € ; le shunt de 300 A est trop juste ici.
+
+articles:
+  - { lot: mesure, designation: "Simarine Pico, afficheur à encastrer (noir)", quantite: 1, unite: pièce, prix_unitaire: 239, statut: catalogue, source: "https://www.nautiradar.pt/en/products/simarine/pico-intelligent-battery-monitor-w-wi-fi-barograph-function-panel-mount-black-version", date_prix: "2026-10-01" }
+  - { lot: mesure, designation: "Simarine SC503, shunt 500 A pour Pico", reference: SC503, quantite: 1, unite: pièce, prix_unitaire: 124.95, statut: catalogue, source: "https://www.svb24.com/en/simarine-sc503-measuring-shunt-500-a.html", date_prix: "2026-10-01", note: "Autres revendeurs français entre 125 et 167 €" }
+  - { lot: mesure, designation: "Porte-fusibles en ligne, fusibles 1 A, câble 0,75 mm², câble 35 mm², cosses et gaine (comme D-H1)", quantite: 1, unite: lot, prix_unitaire: 32, statut: estimation }
