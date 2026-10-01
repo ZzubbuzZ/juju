@@ -16,7 +16,7 @@ points_faibles:
 
 Hypothèse de l'étude D. Base : **D-H1** (même shunt, même position, mêmes fils de mesure, sur le programme retenu de l'étude A).
 
-Câblage : [cablage.yaml](cablage.yaml), [folio 2f](folio-2f-afficheur.svg) ; les fils de mesure sont sur le [folio 2e](../H1-shunt-connecte/folio-2e-shunt.svg). Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **250 €**, plus une éventuelle adaptation de la découpe (Q41).
+Câblage : [cablage.yaml](cablage.yaml), [folio 2f](folio-2f-afficheur.svg) ; les fils de mesure sont sur le [folio 2e](../H1-shunt-connecte/folio-2e-shunt.svg). Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **165 €**, plus une éventuelle adaptation de la découpe (Q41).
 
 ## Principe
 
@@ -41,7 +41,7 @@ L'indicateur à aiguille est déposé. Son branchement n'est pas relevé (**Q41*
 | Lecture | Smartphone seulement | Afficheur fixe et smartphone |
 | Alarme de tension basse | Sur le téléphone | Sur l'afficheur (et relais d'alarme disponible) |
 | Travaux en plus | aucun | Câble de données à tirer, découpe du tableau (Q41) |
-| Coût estimé | environ 160 € | environ 250 € |
+| Coût estimé | environ 160 € | environ 165 € |
 
 ## Conséquences
 

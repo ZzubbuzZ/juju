@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../outils/schema/donnees.schema.json
+#
+# D-H5 : différences avec D-H1. Même SmartShunt, même position, mêmes fils de mesure ;
+# un Cerbo GX, posé près de la platine des coupe-circuits, lit le shunt par VE.Direct
+# et pilote un écran tactile GX Touch 50 à la table à carte.
+# Le Cerbo GX est alimenté côté charges du coupe-circuit de servitude (node010) :
+# il s'éteint bateau coupé, le SmartShunt (alimenté sur node009) continue de mesurer.
+# node094 reprend le rôle qu'il a dans D-H2 : le port de données du shunt.
+
+hypothese: D-H5
+titre: SmartShunt, Cerbo GX et écran GX Touch 50
+base: D-H1
+
+equipements:
+  - { id: cerbo-gx, type: commande, designation: "Centrale de supervision Victron Cerbo GX", zone: descente, emplacement: "Près de la platine des coupe-circuits, derrière la descente (place à confirmer)", statut: propose, questions: [Q43] }
+  - { id: gx-touch-50, type: recepteur, designation: "Écran tactile Victron GX Touch 50 (5 pouces), alimenté par le Cerbo GX", zone: table-a-carte, emplacement: "À la table à carte (place à confirmer)", statut: propose, questions: [Q43] }
+  - { id: fus-cerbo, type: fusible, designation: "Fusible en ligne de l'alimentation du Cerbo GX", calibre_A: 3, emplacement: "Sur le fil, contre la borne côté charges du coupe-circuit de servitude", statut: propose }
+
+nodes:
+  - { id: node094, equipement: shunt-servitude, borne: "données (VE.Direct)", polarite: commande }
+  - { id: node340, equipement: fus-cerbo, borne: "1 (côté source)", polarite: "+" }
+  - { id: node341, equipement: fus-cerbo, borne: "2", polarite: "+" }
+  - { id: node342, equipement: cerbo-gx, borne: "alimentation +", polarite: "+" }
+  - { id: node343, equipement: cerbo-gx, borne: "alimentation −", polarite: "-" }
+  - { id: node344, equipement: cerbo-gx, borne: "VE.Direct", polarite: commande }
+  - { id: node345, equipement: cerbo-gx, borne: "écran (HDMI et USB)", polarite: commande }
+  - { id: node346, equipement: gx-touch-50, borne: "câble HDMI et USB", polarite: commande }
+
+fils:
+  - { id: wire186, de: node010, vers: node340, section_mm2: 0.75, couleur: rouge, longueur_m: 0.1, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire187, de: node341, vers: node342, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Environ 0,3 A ; chute de tension négligeable" }
+  - { id: wire188, de: node343, vers: node006, section_mm2: 0.75, couleur: noir, longueur_m: 0.5, statut: propose, note: "Masse côté charges : la consommation du Cerbo GX passe par le shunt et est comptée" }
+  - { id: wire189, de: node094, vers: node344, longueur_m: 1.8, statut: propose, note: "Câble VE.Direct de 1,8 m" }
+  - { id: wire190, de: node345, vers: node346, longueur_m: 4, statut: propose, note: "Câble de l'écran (2 m, fourni) et rallonge de 2 m, sur le trajet de wire019 ; longueur à confirmer (Q43)" }

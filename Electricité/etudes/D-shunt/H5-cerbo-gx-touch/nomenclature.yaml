@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# D-H5 : nomenclature chiffrée complète (mesure comme D-H1, plus la supervision).
+# Prix TTC en euros du 01/10/2026 : catalogue pour les appareils Victron (relevés par
+# recherche web, pages non ouvertes depuis la session), estimations pour le reste.
+
+hypothese: D-H5
+devise: EUR
+
+lots:
+  mesure:
+    titre: SmartShunt sur le négatif de la batterie de servitude, tension de la batterie moteur (comme D-H1)
+    note: L'outillage de sertissage des cosses de 35 mm² est celui de A-H3.
+  supervision:
+    titre: Cerbo GX près des coupe-circuits, écran GX Touch 50 à la table à carte
+    note: Place et découpe selon Q43.
+
+articles:
+  # --- Lot mesure -------------------------------------------------------------------
+  - { lot: mesure, designation: "Victron SmartShunt 500 A/50 mV (Bluetooth, entrée auxiliaire)", reference: SHU050150050, quantite: 1, unite: pièce, prix_unitaire: 129.47, statut: catalogue, source: "https://www.wattuneed.com/fr/made-in-europe/25348-controleur-de-batterie-intelligent-victron-energy-smartshunt-500a-50mv-0768563817632.html", date_prix: "2026-10-01", note: "Prix relevé par recherche web, page non ouverte depuis la session" }
+  - { lot: mesure, designation: "Porte-fusible en ligne étanche avec fusible 1 A", quantite: 2, unite: pièce, prix_unitaire: 4, statut: estimation }
+  - { lot: mesure, designation: "Fusibles 1 A de rechange", quantite: 2, unite: pièce, prix_unitaire: 0.5, statut: estimation }
+  - { lot: mesure, designation: "Câble étamé 0,75 mm² rouge (fils de mesure)", quantite: 2, unite: m, prix_unitaire: 1, statut: estimation, fils: [wire181, wire182, wire183, wire184] }
+  - { lot: mesure, designation: "Câble étamé 35 mm² noir (shunt → coupe-circuit des négatifs)", quantite: 0.5, unite: m, prix_unitaire: 14, statut: estimation, fils: [wire180] }
+  - { lot: mesure, designation: "Cosses tubulaires étamées 35 mm² (wire180, et reprise de wire009 sur le shunt)", quantite: 3, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire180, wire009] }
+  - { lot: mesure, designation: "Cosses à œillet 0,75 mm² et gaine thermorétractable", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire181, wire182, wire183, wire184] }
+
+  # --- Lot supervision --------------------------------------------------------------
+  - { lot: supervision, designation: "Victron Cerbo GX MK2", reference: BPP900451100, quantite: 1, unite: pièce, prix_unitaire: 255.91, statut: catalogue, source: "https://www.fraron.de/en/home-storage/victron-cerbo-gx-mk2-bpp900450110-flexible-communication-centre/a-85941826/", date_prix: "2026-10-01", note: "Prix relevé par recherche web (revendeur allemand), page non ouverte depuis la session" }
+  - { lot: supervision, designation: "Victron GX Touch 50 (écran tactile 5 pouces, câble de 2 m fourni)", reference: BPP900455050, quantite: 1, unite: pièce, prix_unitaire: 209.75, statut: catalogue, source: "https://www.h2r-equipements.com/controleur-de-batterie-voltmetre-pour-bateau/29308-victron-gx-touch-50.html", date_prix: "2026-10-01", fils: [wire190], note: "Prix relevé par recherche web, page non ouverte depuis la session ; autres revendeurs jusqu'à 284 €" }
+  - { lot: supervision, designation: "Rallonge de 2 m pour le câble du GX Touch", quantite: 1, unite: pièce, prix_unitaire: 25, statut: estimation, fils: [wire190], note: "Référence à vérifier ; inutile si le Cerbo GX est posé à moins de 2 m de l'écran" }
+  - { lot: supervision, designation: "Câble VE.Direct 1,8 m", quantite: 1, unite: pièce, prix_unitaire: 12, statut: estimation, fils: [wire189] }
+  - { lot: supervision, designation: "Porte-fusible en ligne étanche avec fusible 3 A, et fusible de rechange", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation }
+  - { lot: supervision, designation: "Câble étamé 0,75 mm² rouge et noir (alimentation du Cerbo GX), cosses et gaine", quantite: 1, unite: lot, prix_unitaire: 6, statut: estimation, fils: [wire186, wire187, wire188] }
