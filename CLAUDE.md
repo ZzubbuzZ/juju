@@ -16,7 +16,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 
 - **Lancer `python Electricité/outils/verifier.py` après toute modification de données ou de SVG.** Zéro erreur exigé ; le hook `pre-commit` bloque sinon. Les avertissements sont à lire, pas forcément à corriger.
 - **Ne jamais renuméroter un identifiant existant** : les fils seront étiquetés à bord avec leur numéro. Un fil modifié garde son id ; un fil remplacé est supprimé (`supprime.fils`) et le nouveau porte `remplace:`.
-- **Plages de numéros.** Nœuds : 001-019 batteries et charge, 020-039 guindeau et moteur, 040-049 frigo, 050-059 tableau Scheiber et pompe de cale, 060-099 propositions, 100-199 tableau de servitude, 200-299 réseau 230 V (exception historique : node046-048 de l'EPS 100). Fils : wire001-099 relevé, wire100 et suivants propositions.
+- **Plages de numéros.** Nœuds : 001-019 batteries et charge, 020-039 guindeau et moteur, 040-049 frigo, 050-059 tableau Scheiber et pompe de cale, 060-099 propositions (plage pleine), 100-199 tableau de servitude, 200-299 réseau 230 V (exception historique : node046-048 de l'EPS 100), 300-399 propositions, par étude : 300-319 B, 320-339 C, 340-359 D, 360-399 en réserve. Fils : wire001-099 relevé, wire100 et suivants propositions.
 - **Ne pas supposer, demander.** Une information manquante devient une question `Qn` dans `releve/questions.md` et une pastille bleue sur le schéma concerné.
 - **Calcul des sections** : S = 2 × L × I × 0,0175 / ΔU. ΔU = 3 % pour les feux, l'électronique, le pilote, la pompe de cale et le frigo ; 10 % pour le confort. Sections normalisées uniquement. Le fusible protège le câble et se place à sa source.
 - **Couleurs** : + rouge, − noir ; en 230 V, phase marron, neutre bleu, terre vert-jaune.
