@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" role="img" aria-label="Plan d'implantation vu de dessus : zones de l'aménagement du Gib'Sea 31 et équipements électriques placés dans chaque zone.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Plan d'implantation vu de dessus : zones de l'aménagement du Gib'Sea 31 et équipements électriques placés dans chaque zone.">
   <title>Folio 0 · Implantation des équipements</title>
   <desc>Vue de dessus, avant à droite. Les batteries sont aux deux extrémités arrière (coffre de cockpit tribord, cabine de poupe bâbord), la distribution se concentre autour de la descente, et le guindeau est seul à l'avant, relié par 10 m de câble de 50 mm².</desc>
   <style>
@@ -116,13 +116,12 @@
 
   <!-- Tribord et axe : bulles du bas -->
   <path class="leader" d="M185 580 L207 440"/>
-  <rect class="callout" x="40" y="580" width="290" height="127" rx="2"/>
+  <rect class="callout" x="40" y="580" width="290" height="108" rx="2"/>
   <text class="tb" x="52" y="600">Coffre de cockpit · tribord</text>
   <text class="t" x="52" y="619" data-equipement="bat-moteur">Batterie moteur 110 Ah</text>
   <text class="t" x="52" y="638" data-equipement="chargeur-quai">Chargeur de quai (au-dessus)</text>
   <text class="t" x="52" y="657" data-equipement="prise-quai">Prise de quai (sous le banc)</text>
   <text class="t" x="52" y="676"><tspan data-equipement="boitier-230v">Boîtier d'arrivée 230 V :</tspan> <tspan data-equipement="ddr-230v">diff. 30 mA,</tspan> <tspan data-equipement="disj-chargeur">10 A,</tspan> <tspan data-equipement="disj-230-reste">16 A</tspan></text>
-  <text class="t" x="52" y="695" data-equipement="boitier-230-tribord">Boîtier 230 V tribord (cloison)</text>
 
   <path class="leader" d="M455 595 L361 345"/>
   <rect class="callout" x="350" y="595" width="210" height="70" rx="2"/>
@@ -137,9 +136,9 @@
   <text class="t" x="592" y="653" data-equipement="eps100">EPS 100 (sous l'évier, à droite)</text>
   <text class="t" x="592" y="672">Prises 230 V : <tspan data-equipement="prise-230-eps100">frigo,</tspan> <tspan data-equipement="prise-230-cuisine">cuisine</tspan></text>
 
-  <path class="leader" d="M350 690 L340 440"/>
-  <rect class="callout" x="350" y="672" width="210" height="36" rx="2"/>
-  <text class="t" x="362" y="695"><tspan class="tb">Toilette · tribord :</tspan> <tspan data-equipement="prise-230-toilette">prise 230 V</tspan></text>
+  <path class="leader" d="M350 704 L340 440"/>
+  <rect class="callout" x="350" y="690" width="400" height="28" rx="2"/>
+  <text class="t" x="362" y="709"><tspan class="tb">Toilette · tribord :</tspan> <tspan data-equipement="boitier-230-tribord">boîtier de distribution 230 V (4 disjoncteurs),</tspan> <tspan data-equipement="prise-230-toilette">prise 230 V</tspan></text>
 
-  <text class="ts" x="40" y="722">Plan schématique d'après la brochure (photos/gibsea-31-drawing.jpg) : proportions approximatives, pas à l'échelle. Plafonnier 230 V non placé.</text>
+  <text class="ts" x="40" y="746">Plan schématique d'après la brochure (photos/gibsea-31-drawing.jpg) : proportions approximatives, pas à l'échelle. Plafonnier 230 V non placé.</text>
 </svg>

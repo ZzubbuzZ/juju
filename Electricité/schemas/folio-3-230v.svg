@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="Réseau 230 V en unifilaire : prise de quai, boîtier d'arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et plafonnier.">
   <title>Folio 3 · Réseau 230 V</title>
-  <desc>L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord : 10 A pour l'éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation. Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au plafonnier (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Au ponton de Saint-Chamas, la prise ne fournit que 6 A, soit environ 1 400 W pour tout le bord.</desc>
+  <desc>L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord, dans le cabinet de toilette : 10 A pour l'éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation, et un second 10 A dont le circuit est à identifier (Q42). Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au plafonnier (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Au ponton de Saint-Chamas, la prise ne fournit que 6 A, soit environ 1 400 W pour tout le bord.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -86,7 +86,7 @@
 
   <!-- ============ Boîtier tribord ============ -->
   <rect class="bound" x="60" y="330" width="500" height="100"/>
-  <text class="ts" x="70" y="347">Boîtier de distribution tribord · cloison cabinet de toilette / coffre</text>
+  <text class="ts" x="70" y="347">Boîtier de distribution tribord · cabinet de toilette · 4 disjoncteurs Legrand DNX3</text>
   <path class="n w4" d="M130 365 H530"/>
   <circle class="dn" cx="310" cy="365" r="3.5"/>
   <path class="n w2" d="M310 330 V365"/>
@@ -94,6 +94,10 @@
   <rect class="box" x="130" y="385" width="40" height="20"/>
   <text class="ts mid" x="150" y="399">10 A</text>
   <text class="ts" x="178" y="399">éclairage</text>
+  <path class="u" d="M270 365 V385"/>
+  <rect class="box-unk" x="250" y="385" width="40" height="20"/>
+  <text class="ts mid tu" x="270" y="399">10 A</text>
+  <g class="mk-q"><circle cx="270" cy="420" r="11"/><text class="mid" x="270" y="423.5">Q42</text></g>
   <rect class="box" x="390" y="385" width="40" height="20"/>
   <text class="ts mid" x="410" y="399">16 A</text>
   <text class="ts end" x="402" y="422">prises tribord</text>

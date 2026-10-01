@@ -305,9 +305,10 @@ equipements:
   - id: boitier-230-tribord
     type: tableau
     designation: Boîtier de distribution 230 V tribord
-    zone: cockpit-coffre-tribord
-    emplacement: Sur la cloison entre le cabinet de toilette et le coffre de cockpit
-    note: Un disjoncteur 10 A pour l'éclairage et deux 16 A pour les prises, un par bord (30/09).
+    zone: cabinet-toilette
+    emplacement: Dans le cabinet de toilette (correction du 01/10, noté auparavant sur la cloison du coffre de cockpit)
+    questions: [Q42]
+    note: "Quatre disjoncteurs Legrand DNX3 phase + neutre, numérotés 1 à 4 sur l'étiquette, sans affectation écrite (photo Boitier-230v-cabinet-toilette.jpg, 01/10) : C10, C10, C16, C16. Circuits connus : éclairage (10 A), prises tribord et prises bâbord (16 A). Le second 10 A et la position de chaque circuit sont à relever (Q42)."
 
   - id: disj-trib-eclairage
     type: disjoncteur
@@ -320,6 +321,15 @@ equipements:
     designation: Disjoncteur prises 230 V tribord
     modele: Legrand DNX3 C16, phase + neutre
     calibre_A: 16
+
+  - id: disj-trib-10a-2
+    type: disjoncteur
+    designation: Second disjoncteur 10 A du boîtier du cabinet de toilette
+    modele: Legrand DNX3 C10, phase + neutre
+    emplacement: Dans le boîtier de distribution tribord
+    calibre_A: 10
+    questions: [Q42]
+    note: Vu sur la photo du 01/10 ; circuit alimenté inconnu.
 
   - id: disj-babord-prises
     type: disjoncteur

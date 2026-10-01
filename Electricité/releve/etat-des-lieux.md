@@ -112,14 +112,14 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 
 3 boitiers électriques : 
 - Boitier d'arrivée dans le coffre cockpit tribord avec dicjoncteur différentiel 30mA/25A protégeant tout le circuit + 1 disjoncteur 10A pour le chargeur de quai, et 1 disjonteur 16A pour le reste.
-- Boîtier de distribution tribord avec 2 disjoncteurs (10A pour l'éclairage, 16A pour les PE).
+- Boîtier de distribution tribord, dans le cabinet de toilette, avec 4 disjoncteurs Legrand DNX3 : deux 10A (dont l'éclairage) et deux 16A (PE, un par bord) ; le circuit du second 10A est à identifier (Q42). Correction du 01/10, photo Boitier-230v-cabinet-toilette.jpg.
 - Boîte de dérivation bâbord, sans disjoncteur, à l'arrière gauche de la table à carte : les PE bâbord ne sont protégées que par le 16A du boîtier d'arrivée.
 - Une PE pour alimentation groupe froid Dometic EPS 100 sur boitier tribord
 - Une PE pour la cuisine sur boitier tribord
 - Un plafonnier d'éclairage sur boitier tribord
 - Une PE pour la table à carte sur la boîte de dérivation bâbord
 - Une PE pour le carré sur la boîte de dérivation bâbord
-- Boîtier tribord sur la cloison entre le cabinet de toilette et le coffre de cockpit.
+- Boîtier tribord dans le cabinet de toilette (correction du 01/10 : il était noté sur la cloison entre le cabinet de toilette et le coffre de cockpit).
 - La terre 230 V n'est reliée ni à la masse 12 V ni à un isolateur galvanique (anomalie A8).
 - Au ponton de Saint-Chamas, la prise de quai ne fournit que **6 A, soit environ 1 400 W** pour tout le bord (12 A à quai).
 - Prises en 3 × 2,5 mm², éclairage en 3 × 1,5 mm², arrivée et chargeur en 3 × 2,5 mm².

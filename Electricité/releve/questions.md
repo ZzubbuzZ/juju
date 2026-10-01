@@ -20,6 +20,8 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q1** Tableau moteur (contact, jauges) : est-il branché sur le câble du démarreur (node031) ? Avec ou sans fusible ?
   → 29/09 : le faisceau d'origine Yanmar comporte un porte-fusible ; on ne sait pas encore si le motoriste de Juju l'a conservé.
   → 30/09 : sera vérifié, et traité si nécessaire, lors de la pose du compte-tours.
+- **Q42** Boîtier de distribution 230 V du cabinet de toilette : quatre disjoncteurs Legrand DNX3, numérotés 1 à 4 : C10, C10, C16, C16 (photo Boitier-230v-cabinet-toilette.jpg). Quel circuit sur chacun ? Le relevé connaît l'éclairage (10 A), les prises tribord et les prises bâbord (16 A) : que protège le second 10 A, ou est-il libre ?
+  → 01/10 : à vérifier lors d'une visite.
 - **Q12** Longueurs réelles des fils du tableau de servitude, circuit par circuit.
   → 27/09 : pas d'information pour l'instant. À mesurer lors d'un démontage du tableau.
 
@@ -56,6 +58,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 29/09 : correction, il n'y a pas de disjoncteur à bâbord. Le « boîtier bâbord » est une simple boîte de dérivation, à l'arrière gauche de la table à carte (+ 1 PE). Seul le boîtier tribord porte deux disjoncteurs (10 A éclairage, 16 A prises).
   → 30/09 : chargeur sur un Merlin Gerin DT40 C10, éclairage et prises sur des Legrand DNX3 C10 et C16 : modèles phase + neutre, qui coupent les deux conducteurs. Le boîtier tribord porte un C10 (éclairage) et deux C16 (prises, un par bord). Cinq prises : table à carte et armoire derrière la table à carte (bâbord), groupe froid, cuisine et cabinet de toilette (tribord). Modèle du 16 A d'arrivée non relevé.
   → 30/09 : le plafonnier est métallique, et sa terre est raccordée (wire068).
+  → 01/10 : correction, le boîtier tribord est dans le cabinet de toilette, et il porte quatre disjoncteurs : C10, C10, C16, C16 (photo Boitier-230v-cabinet-toilette.jpg ; affectation : Q42).
 - **Q38** EPS 100 : son cordon 230 V n'a pas de terre (fiche à deux contacts). Son boîtier est-il en plastique, et porte-t-il le double carré de la classe II ? Un boîtier métallique sans terre serait une anomalie.
   → 30/09 : la fiche n'a pas de contact de terre : l'appareil est donc de classe II, conçu pour fonctionner sans terre.
 - **Q39** Coffre de cockpit tribord, près de la prise de quai : reste-t-il la place de fixer un transformateur d'isolement (15 à 30 kg, le volume d'une boîte à chaussures), sur une cloison ou un fond solide, à l'abri des embruns ?
