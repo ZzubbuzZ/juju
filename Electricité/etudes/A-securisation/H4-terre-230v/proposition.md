@@ -42,7 +42,7 @@ Le tableau compare aussi une troisième variante, le [transformateur d'isolement
 | Pièces touchées si le risque se réalise | les métaux immergés reliés au négatif 12 V : l'arbre et l'hélice par le moteur (si l'accouplement est métallique), l'anode si elle leur est reliée. L'anode se consomme d'abord, en quelques semaines au lieu d'une saison ; une fois usée, l'hélice (bronze) et l'arbre sont attaqués | aucune | aucune |
 | Inversion phase / neutre à la prise du ponton | à couvrir par des disjoncteurs phase + neutre (Q31) | idem | sans effet à bord : le neutre est défini au secondaire |
 | Poids et place | un boîtier de la taille d'une main | rien | environ 10 kg pour le modèle de 2 000 W |
-| Au ponton de 6 A | sans effet | sans effet | courant d'appel à la mise sous tension : un modèle à démarrage progressif est indispensable |
+| Borne de quai de faible calibre (escale) | sans effet | sans effet | courant d'appel à la mise sous tension : un modèle à démarrage progressif est indispensable |
 | Coût | environ 140 € (60 € en fabrication maison, module de rechange compris) | 0 € | environ 430 € |
 | Conformité ISO 13297 / ABYC E-11 | oui | non | oui |
 
@@ -71,8 +71,8 @@ Au lieu de filtrer la terre du quai, on coupe tout lien électrique entre le bor
 
 - **Prix** : 381,60 € TTC pour le Victron 2000 W avec démarrage progressif (ITR040202041, prix remisé relevé sur mon-camping-car.com le 30/09), environ 430 € avec le raccordement.
 - **Poids et place** : environ 10 kg pour ce modèle, à loger près de la prise de quai.
-- **Puissance** : un modèle de 2 000 W couvre largement la prise de 6 A de Saint-Chamas (1 400 W). Sur une borne de 16 A, il limitera le bord à ses 2 000 W : suffisant pour un chauffe-eau de 500 W, le chargeur et le frigo. Un modèle de 3 600 W lève la limite, au prix d'une dizaine de kilos de plus.
-- **Courant d'appel** : à la mise sous tension, un transformateur appelle un courant bien supérieur à son courant nominal. Sur une borne de 6 A, cela suffit à la faire déclencher : un démarrage progressif (« soft start ») est indispensable, à vérifier sur la fiche du modèle.
+- **Puissance** : les bornes de Saint-Chamas fournissent 16 A, environ 3 700 W (Q20, corrigée le 01/10 : 6 A avait d'abord été noté). Un modèle de 2 000 W limitera le bord à ses 2 000 W : suffisant pour un chauffe-eau de 1 000 W, les chargeurs et le frigo. Un modèle de 3 600 W lève la limite, au prix d'une dizaine de kilos de plus.
+- **Courant d'appel** : à la mise sous tension, un transformateur appelle un courant bien supérieur à son courant nominal. Sur une borne de faible calibre, fréquente en escale (6 A par exemple), cela suffit à la faire déclencher : un démarrage progressif (« soft start ») est indispensable, à vérifier sur la fiche du modèle.
 - **Pertes** : quelques dizaines de watts consommés en permanence tant que le bord est branché, même sans rien d'allumé.
 
 ## Que contient un isolateur galvanique ?
