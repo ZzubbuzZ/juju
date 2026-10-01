@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../../../outils/schema/donnees.schema.json
+#
+# D-H1 : différences avec le programme retenu de l'étude A (A-H4, qui cumule A-H2).
+# Shunt de 500 A sur le négatif de la batterie de servitude, emplacement b :
+# derrière la descente, près du coupe-circuit des négatifs.
+# wire009 garde son numéro : seule son extrémité côté coupe-circuit est reprise
+# sur le shunt (supprimé puis redéclaré avec sa nouvelle extrémité).
+# Les deux fils de mesure partent du côté batterie des coupe-circuits, en aval des
+# fusibles de 400 A de A-H2 : le moniteur mesure même coupe-circuits ouverts.
+
+hypothese: D-H1
+titre: Shunt connecté, lecture sur smartphone
+base: A-H4
+
+supprime:
+  fils: [wire009]
+
+equipements:
+  - { id: shunt-servitude, type: shunt, designation: "Shunt connecté 500 A de la batterie de servitude (type Victron SmartShunt)", zone: descente, emplacement: "Derrière la platine des coupe-circuits, près du coupe-circuit des négatifs, accessible par l'ouverture côté cabine de poupe", statut: propose }
+  - { id: fus-shunt-alim, type: fusible, designation: "Fusible en ligne de l'alimentation du shunt", calibre_A: 1, emplacement: "Sur le fil, contre la borne côté batterie du coupe-circuit de servitude", statut: propose }
+  - { id: fus-shunt-aux, type: fusible, designation: "Fusible en ligne de l'entrée auxiliaire (tension de la batterie moteur)", calibre_A: 1, emplacement: "Sur le fil, contre la borne côté batterie du coupe-circuit moteur", statut: propose }
+
+nodes:
+  - { id: node086, equipement: shunt-servitude, borne: "− batterie", polarite: "-" }
+  - { id: node087, equipement: shunt-servitude, borne: "− système", polarite: "-" }
+  - { id: node088, equipement: shunt-servitude, borne: "+ alimentation et mesure (Vbatt+)", polarite: "+" }
+  - { id: node089, equipement: shunt-servitude, borne: "entrée auxiliaire (tension batterie moteur)", polarite: "+" }
+  - { id: node090, equipement: fus-shunt-alim, borne: "1 (côté source)", polarite: "+" }
+  - { id: node091, equipement: fus-shunt-alim, borne: "2", polarite: "+" }
+  - { id: node092, equipement: fus-shunt-aux, borne: "1 (côté source)", polarite: "+" }
+  - { id: node093, equipement: fus-shunt-aux, borne: "2", polarite: "+" }
+
+fils:
+  # --- Négatif de la batterie de servitude : seul fil côté batterie du shunt
+  - { id: wire009, de: node008, vers: node086, section_mm2: 35, couleur: noir, longueur_m: 1, statut: propose, note: "Câble existant, extrémité côté coupe-circuit reprise sur le shunt" }
+  - { id: wire180, de: node087, vers: node005, section_mm2: 35, couleur: noir, longueur_m: 0.2, statut: propose, note: "Tout le reste du bord (charges, chargeur, alternateur, batterie moteur) revient par ce fil" }
+
+  # --- Alimentation et mesure de la tension de servitude
+  - { id: wire181, de: node009, vers: node090, section_mm2: 0.75, couleur: rouge, longueur_m: 0.1, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire182, de: node091, vers: node088, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose }
+
+  # --- Tension de la batterie moteur (entrée auxiliaire)
+  - { id: wire183, de: node003, vers: node092, section_mm2: 0.75, couleur: rouge, longueur_m: 0.1, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire184, de: node093, vers: node089, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose }
