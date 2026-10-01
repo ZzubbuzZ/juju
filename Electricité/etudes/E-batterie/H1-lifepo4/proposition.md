@@ -7,7 +7,7 @@ points_forts:
   - Plus d'hydrogène dans la cabine de poupe (A11 traitée à la source).
   - 80 à 90 Ah utiles au lieu d'environ 55, plus qu'une journée au mouillage.
   - Environ 10 kg au lieu de 25 à 30 kg ; plusieurs milliers de cycles.
-  - Le chargeur DC/DC protège l'alternateur et charge la LiFePO4 avec le bon profil ; la batterie moteur reste indépendante pour le démarrage.
+  - Le chargeur DC/DC protège l'alternateur et charge la LiFePO4 avec le bon profil, au moteur comme au quai à travers le chargeur Dolphin ; la batterie moteur reste indépendante pour le démarrage.
 points_faibles:
   - Environ 660 €.
   - Pas de charge en dessous de 0 °C ; le BMS coupe la charge, ce qui est sans danger mais à savoir l'hiver (Q47).
@@ -47,14 +47,42 @@ Un **chargeur DC/DC** (type Victron Orion XS 12/12-50A) le remplace. Il prend le
 
 ### 3. Chargeur de quai
 
-Le chargeur Dolphin est prévu pour le plomb. Deux solutions :
+**Le Dolphin est-il vraiment inadapté au LiFePO4 ?** Pas tout à fait. Sa notice (relevé, `documentation/MANUAL-DOLBB-1210-1220-299519-299520.pdf`) donne deux profils, choisis par un sélecteur :
 
-| | Solution | Pour | Contre |
-|---|---|---|---|
-| a | **Garder le Dolphin sur la batterie moteur seule** : sa sortie 2 (wire008, et son fusible wire163) est débranchée. Au quai, le Dolphin charge la batterie moteur et le DC/DC transfère vers la LiFePO4. | Aucun achat ; le DC/DC applique le bon profil | La LiFePO4 n'est chargée au quai qu'à travers le DC/DC, à environ 15 A ; le DC/DC doit reconnaître la tension du chargeur comme « moteur en marche » (tension de démarrage réglable, à vérifier) |
-| b | **Remplacer le Dolphin** par un chargeur à plusieurs sorties avec profil LiFePO4 | Charge directe et rapide | Environ 250 € de plus |
+| Position | Absorption | Floating |
+|---|---|---|
+| « Norm » | 14,4 V | 13,6 V |
+| « Pb-Ca » | 15,0 V | 13,6 V |
 
-La solution **a** est retenue dans la nomenclature. La b peut venir plus tard, avec un 230 V plus puissant au ponton (16 A depuis le 01/10).
+Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de la batterie. Face au profil d'une LiFePO4 :
+
+- **En position « Norm », 14,4 V est dans la plage de charge** d'une LiFePO4 (14,2 à 14,6 V environ) : le Dolphin la chargerait à peu près complètement.
+- **Le floating permanent à 13,6 V est le vrai défaut.** Au quai, le chargeur reste branché des semaines : la LiFePO4 resterait à 100 % de charge en continu, ce qui accélère son vieillissement. Beaucoup de fabricants demandent pas de floating, ou un floating plus bas (Victron : 13,5 V). À comparer avec la fiche de la batterie choisie.
+- **La position « Pb-Ca » (15,0 V) est à proscrire** : au-dessus de la tension maximale d'une LiFePO4, le BMS couperait la charge. Ce n'est pas dangereux, mais c'est un mauvais usage. Un sélecteur basculé par erreur suffit.
+- **Pas de coupure de charge par temps froid** : seul le BMS protège la batterie sous 0 °C.
+- **Ses trois sorties partagent la même régulation** (« tolérance tensions ± 2 % ») : les deux batteries reçoivent le même profil. C'est la vraie raison pour laquelle il ne permet pas de traiter différemment deux technologies : sur « Norm », un plomb ouvert et une LiFePO4 se partageraient un profil acceptable pour les deux, mais optimal pour aucune.
+
+**Conclusion** : le Dolphin pourrait charger la LiFePO4 en dépannage, sur « Norm », mais pas dans de bonnes conditions au quai, à cause du floating permanent. **La sortie 2 (wire008, avec son fusible wire163 de A-H2) est donc débranchée**, comme prévu, et la LiFePO4 est chargée par le DC/DC, qui applique son propre profil.
+
+**Le DC/DC chargera-t-il la LiFePO4 quand le Dolphin charge la batterie moteur ?** Oui pendant l'absorption, pas de façon sûre pendant le floating, avec les réglages d'usine. L'Orion XS n'a pas de fil « moteur en marche » : il déduit que l'alternateur tourne de la tension de la batterie moteur. Réglages d'usine pour un alternateur classique (notice Victron) :
+
+| Seuil | Valeur | Avec le Dolphin |
+|---|---|---|
+| Démarrage immédiat | 14,0 V | Atteint pendant l'absorption (14,4 V) : le DC/DC démarre |
+| Démarrage différé | 13,8 V pendant 120 s | Jamais atteint en floating (13,6 V) |
+| Arrêt | 13,5 V | Le floating, 13,6 V à ± 2 %, n'est qu'à 0,1 V au-dessus |
+
+- Pendant l'**absorption** du Dolphin, le DC/DC démarre et charge la LiFePO4. Le Dolphin fournit 20 A au plus : réglé à 15 A, le DC/DC lui laisse de quoi tenir la batterie moteur.
+- Au passage en **floating**, la tension tombe à 13,6 V, trop près du seuil d'arrêt : la chute dans les câbles ou la tolérance du chargeur peuvent arrêter le DC/DC, qui ne redémarrera pas à 13,6 V. La LiFePO4 resterait alors partiellement chargée jusqu'à la prochaine absorption du Dolphin.
+
+Deux façons de le rendre fiable :
+
+1. **Abaisser les seuils** dans l'application VictronConnect, par exemple démarrage différé à 13,4 V et arrêt à 13,2 V. Le floating du Dolphin (13,6 V) reste alors au-dessus, tandis qu'une batterie au plomb au repos, sans charge, retombe vers 12,7 à 12,9 V et arrête le DC/DC. À valider sur place, avec la tension mesurée à l'entrée du DC/DC.
+2. **Commander le DC/DC par son entrée « remote »** plutôt que par la tension : un relais l'active quand le moteur tourne (contact) ou quand le 230 V du quai est présent. Plus sûr, mais un relais et des fils de plus.
+
+La première solution est retenue : elle ne demande aucun matériel. Le courant de sortie du DC/DC se règle de 1 à 50 A ; 15 A ménagent à la fois l'alternateur et le Dolphin.
+
+**Plus tard** : remplacer le Dolphin par un chargeur à plusieurs sorties avec un profil LiFePO4 (environ 250 €) chargerait la LiFePO4 directement et plus vite, avec le 16 A du ponton.
 
 ## Choix de la batterie
 
