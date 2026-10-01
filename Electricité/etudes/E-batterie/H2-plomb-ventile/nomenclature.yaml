@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# E-H2 : nomenclature chiffrée. Estimations du 01/10/2026 ; trajet de l'évent à relever (Q46).
+
+hypothese: E-H2
+devise: EUR
+
+lots:
+  ventilation:
+    titre: Coffre étanche côté cabine, évent haut vers l'extérieur, entrée d'air basse
+    note: Longueur du tuyau selon le trajet (Q46).
+
+articles:
+  - { lot: ventilation, designation: "Raccord d'évent pour coffre de batterie et tuyau de 16 à 19 mm", quantite: 1, unite: lot, prix_unitaire: 30, statut: estimation }
+  - { lot: ventilation, designation: "Aérateur ou passe-coque de sortie, à l'extérieur", quantite: 1, unite: pièce, prix_unitaire: 25, statut: estimation }
+  - { lot: ventilation, designation: "Grille d'entrée d'air basse", quantite: 1, unite: pièce, prix_unitaire: 10, statut: estimation }
+  - { lot: ventilation, designation: "Joint de couvercle et mastic de calfeutrage des passages de câbles", quantite: 1, unite: lot, prix_unitaire: 25, statut: estimation }
