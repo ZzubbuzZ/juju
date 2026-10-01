@@ -131,7 +131,7 @@ Les zones de l'aménagement sont décrites dans [amenagement.yaml](amenagement.y
 
 - **Batterie moteur** : coffre de cockpit tribord, contre la paroi du cabinet de toilette.
 - **Chargeur de quai** : au-dessus de la batterie moteur, avec son boîtier 230 V à côté. La prise de quai est sous le banc tribord du cockpit.
-- **Batterie de servitude** : cabine de poupe bâbord, dans un coffre, au sol, contre le coffre moteur.
+- **Batterie de servitude** : cabine de poupe bâbord, dans un coffre sous le matelas, au sol, contre le coffre moteur. Le local est peu aéré : l'hydrogène dégagé pendant la charge peut s'y accumuler (anomalie A11, précision du 01/10).
 - **Coupe-circuits** : sur une contremarche de l'escalier de descente. Le coupleur est derrière. On accède au coupleur et à la connectique des coupe-circuits par une ouverture qui donne sur la cabine de poupe.
 - **Tableau Scheiber 2 voies** : sur une contremarche de la descente, près de l'appareillage moteur.
 - **Moteur** : derrière l'escalier de descente, dans l'axe, entre le cabinet de toilette et la cabine de poupe. La pompe de cale est dans la cale moteur.

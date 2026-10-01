@@ -21,9 +21,10 @@ equipements:
     designation: Batterie de servitude
     modele: 110 Ah plomb sans entretien
     zone: cabine-poupe
-    emplacement: Dans un coffre, au sol, contre le coffre moteur
+    emplacement: Dans un coffre sous le matelas de la cabine de poupe, au sol, contre le coffre moteur. Local peu aéré (01/10)
     capacite_Ah: 110
     technologie: plomb
+    note: L'hydrogène dégagé pendant la charge peut s'accumuler dans le coffre et la cabine (anomalie A11).
 
   - id: cc-moteur
     type: coupe-circuit

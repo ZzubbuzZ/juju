@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" role="img" aria-label="Câblage 12 V actuel : deux batteries, quatre coupe-circuits, coupleur et chargeur branchés sans fusible, tableau de servitude alimenté sans protection depuis la sortie du coupe-circuit de servitude, tableau Scheiber alimenté directement par les coupe-circuits.">
   <title>Folio 1 · Câblage 12 V actuel</title>
-  <desc>Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² directement par la sortie du coupe-circuit de servitude, donc sans aucune protection (A1). Le tableau Scheiber (frigo, pompe de cale) est lui aussi alimenté en 6 mm² directement par les coupe-circuits, sans fusible (A6), la pompe de cale est protégée en 10 A au lieu de 3 A (A10), et la liaison EPS 100 → groupe froid est vissée sans cosse (A7). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n'est plus alimentée.</desc>
+  <desc>Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² directement par la sortie du coupe-circuit de servitude, donc sans aucune protection (A1). Le tableau Scheiber (frigo, pompe de cale) est lui aussi alimenté en 6 mm² directement par les coupe-circuits, sans fusible (A6), la pompe de cale est protégée en 10 A au lieu de 3 A (A10), et la liaison EPS 100 → groupe froid est vissée sans cosse (A7). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n'est plus alimentée. La batterie de servitude, au plomb, est dans un coffre peu aéré sous le matelas de la cabine de poupe (A11).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -144,6 +144,7 @@
   <path class="p w4" d="M190 470 H386"/>
   <text class="id mid" x="312" y="490">wire006 · 35</text>
   <g class="mk-a"><circle cx="212" cy="446" r="10"/><text class="mid" x="212" y="449.5">A2</text></g>
+  <g class="mk-a"><circle cx="236" cy="446" r="10"/><text class="mid" x="236" y="449.5">A11</text></g>
   <!-- CC servitude -->
   <circle class="term" cx="390" cy="470" r="4"/><circle class="term" cx="450" cy="470" r="4"/>
   <path class="lever" d="M390 470 L447 457"/>

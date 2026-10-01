@@ -46,6 +46,12 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
   → 28/09 : pas encore de réponse.
 
+### Pour l'étude E (batterie de servitude)
+
+- **Q45** Batterie de servitude : marque et référence exactes. Est-ce une batterie « ouverte » (bouchons sur le dessus, même scellés) ou une batterie étanche AGM ou gel (mention VRLA, AGM ou Gel sur l'étiquette) ? Dimensions de la batterie (longueur × largeur × hauteur) et dimensions intérieures du coffre.
+- **Q46** Coffre de la batterie de servitude : a-t-il une aération (trou, grille, tuyau) ? Pourrait-on faire sortir un évent vers l'extérieur (cockpit, tableau arrière) ou vers le compartiment moteur, et sur quelle longueur ? Existe-t-il un autre emplacement possible, ventilé et hors des cabines (coffre de cockpit tribord près de la batterie moteur, coffre bâbord), et à quelle distance de la platine des coupe-circuits ?
+- **Q47** Hivernage : Juju reste-t-il à flot l'hiver, et le bateau est-il utilisé ou chargé au quai par temps de gel ? Une batterie LiFePO4 ne doit pas être chargée en dessous de 0 °C.
+
 ### Pour l'étude D (shunt)
 
 - **Q41** Indicateur de charge à aiguille du tableau de servitude, que l'afficheur du moniteur remplacerait (Q28) : comment est-il branché (fil +, masse, disjoncteur du tableau) ? Diamètre du trou de découpe (52 mm, le format courant des cadrans ?) et profondeur libre derrière le tableau. Conditionne la pose de l'afficheur (D-H2).
