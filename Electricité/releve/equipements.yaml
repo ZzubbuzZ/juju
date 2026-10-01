@@ -372,4 +372,5 @@ equipements:
     designation: Indicateur de charge à aiguille (« CHARGE »)
     zone: table-a-carte
     emplacement: Au tableau de servitude, entre les deux prises 12 V
+    questions: [Q41]
     note: Emplacement prévu pour l'afficheur du moniteur de batterie (étude D, Q28).

@@ -44,6 +44,10 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
   → 28/09 : pas encore de réponse.
 
+### Pour l'étude D (shunt)
+
+- **Q41** Indicateur de charge à aiguille du tableau de servitude, que l'afficheur du moniteur remplacerait (Q28) : comment est-il branché (fil +, masse, disjoncteur du tableau) ? Diamètre du trou de découpe (52 mm, le format courant des cadrans ?) et profondeur libre derrière le tableau. Conditionne la pose de l'afficheur (D-H2).
+
 ## Réponses
 
 - **Q31** Détails du réseau 230 V :
