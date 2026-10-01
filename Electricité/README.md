@@ -4,7 +4,7 @@
 
 | Axe | Branche | État détaillé |
 |---|---|---|
-| Relevé de l'existant | `main` | 64 fils relevés (12 V et 230 V), 10 questions ouvertes ([questions.md](releve/questions.md)), 9 anomalies en cours et 1 levée ([anomalies.md](releve/anomalies.md)) |
+| Relevé de l'existant | `main` | 64 fils relevés (12 V et 230 V), 11 questions ouvertes ([questions.md](releve/questions.md)), 9 anomalies en cours et 1 levée ([anomalies.md](releve/anomalies.md)) |
 | A · Sécurisation de l'existant | `etude/securisation` | [README de l'étude](https://github.com/ZzubbuzZ/juju/blob/etude/securisation/Electricit%C3%A9/etudes/A-securisation/README.md) |
 | B · Chauffe-eau | `etude/chauffe-eau` | [README de l'étude](https://github.com/ZzubbuzZ/juju/blob/etude/chauffe-eau/Electricit%C3%A9/etudes/B-chauffe-eau/README.md) |
 | C · Panneaux solaires | `etude/solaire` | [README de l'étude](https://github.com/ZzubbuzZ/juju/blob/etude/solaire/Electricit%C3%A9/etudes/C-solaire/README.md) |

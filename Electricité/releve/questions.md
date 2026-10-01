@@ -49,6 +49,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 ### Pour l'étude D (shunt)
 
 - **Q41** Indicateur de charge à aiguille du tableau de servitude, que l'afficheur du moniteur remplacerait (Q28) : comment est-il branché (fil +, masse, disjoncteur du tableau) ? Diamètre du trou de découpe (52 mm, le format courant des cadrans ?) et profondeur libre derrière le tableau. Conditionne la pose de l'afficheur (D-H2).
+- **Q43** Place pour un Cerbo GX (boîtier d'environ 15 × 8 × 3 cm) près de la platine des coupe-circuits, derrière la descente ; et pour l'écran GX Touch 50 (environ 13 × 9 cm, en saillie ou encastré, profondeur environ 2 cm) à la table à carte : où, et faut-il découper le tableau ? Conditionne D-H5.
 
 ## Réponses
 
