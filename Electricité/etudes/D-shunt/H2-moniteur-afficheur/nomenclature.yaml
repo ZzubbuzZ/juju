@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# D-H2 : nomenclature chiffrée complète (mesure comme D-H1, avec le moniteur à afficheur).
+# Prix TTC en euros, estimations du 01/10/2026, à remplacer par des prix catalogue.
+
+hypothese: D-H2
+devise: EUR
+
+lots:
+  mesure:
+    titre: Moniteur à afficheur, shunt sur le négatif de la batterie de servitude, tension de la batterie moteur
+    note: Même pose que D-H1. L'outillage de sertissage des cosses de 35 mm² est celui de A-H3.
+  afficheur:
+    titre: Afficheur au tableau de servitude, à la place de l'indicateur à aiguille
+    note: Le câble de données est fourni avec le moniteur. Adaptation de la découpe selon Q41.
+
+articles:
+  # --- Lot mesure -------------------------------------------------------------------
+  - { lot: mesure, designation: "Moniteur de batterie 500 A avec afficheur, Bluetooth, entrée auxiliaire et câble de données de 10 m (type Victron BMV-712 Smart)", quantite: 1, unite: pièce, prix_unitaire: 210, statut: estimation, fils: [wire185] }
+  - { lot: mesure, designation: "Porte-fusible en ligne étanche avec fusible 1 A", quantite: 2, unite: pièce, prix_unitaire: 4, statut: estimation, note: "Le moniteur est souvent livré avec ses fils fusibles : à vérifier avant l'achat" }
+  - { lot: mesure, designation: "Fusibles 1 A de rechange", quantite: 2, unite: pièce, prix_unitaire: 0.5, statut: estimation }
+  - { lot: mesure, designation: "Câble étamé 0,75 mm² rouge (fils de mesure)", quantite: 2, unite: m, prix_unitaire: 1, statut: estimation, fils: [wire181, wire182, wire183, wire184] }
+  - { lot: mesure, designation: "Câble étamé 35 mm² noir (shunt → coupe-circuit des négatifs)", quantite: 0.5, unite: m, prix_unitaire: 14, statut: estimation, fils: [wire180] }
+  - { lot: mesure, designation: "Cosses tubulaires étamées 35 mm² (wire180, et reprise de wire009 sur le shunt)", quantite: 3, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire180, wire009] }
+  - { lot: mesure, designation: "Cosses à œillet 0,75 mm² et gaine thermorétractable", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire181, wire182, wire183, wire184] }
+
+  # --- Lot afficheur ------------------------------------------------------------------
+  - { lot: afficheur, designation: "Colliers et passe-fil pour le câble de données (trajet de wire019)", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation, fils: [wire185] }
+  - { lot: afficheur, designation: "Adaptation de la découpe du tableau (platine ou collerette) si le trou de l'indicateur ne fait pas 52 mm", quantite: 1, unite: lot, statut: a_chiffrer, note: "Selon Q41 ; rien à acheter si le trou fait déjà 52 mm" }
