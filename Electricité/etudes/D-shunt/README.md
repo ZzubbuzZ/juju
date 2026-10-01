@@ -2,7 +2,7 @@
 
 **Objectif** : mesurer et surveiller la consommation des équipements de servitude. Etablir la quantité d'energie disponible dans la batterie servitude. Surveiller la tension de la batterie moteur.
 
-**Base** : le relevé. L'étude A (sécurisation) doit être décidée avant le câblage définitif. La position du shunt vis à vis de la mise en commun des masses des batteries et l'opportunité d'un shunt sur la batterie moteur sont aussi à prendre en compte. Finalement, une "Build Of Materials" et une estimation du cout pour chaque hypothèse permettra le choix.
+**Base** : le programme retenu de l'étude A (A-H4, qui cumule A-H2), décidé le 30/09. Les fils de mesure du shunt partent ainsi en aval des fusibles de 400 A. La position du shunt vis à vis de la mise en commun des masses des batteries et l'opportunité d'un shunt sur la batterie moteur sont aussi à prendre en compte. Finalement, une "Build Of Materials" et une estimation du cout pour chaque hypothèse permettra le choix.
 
 ## Où placer le shunt
 
@@ -45,21 +45,27 @@ L'objectif fixé pour la batterie moteur est de **surveiller sa tension**, pas d
 
 - **Place pour le shunt** (Q27, traitée) : deux emplacements possibles, voir ci-dessus.
 - **Lecture souhaitée** : l'application sur smartphone suffit-elle, ou faut-il un afficheur fixe à la table à carte ? C'est un choix à faire, qui distingue les hypothèses H1 et H2.
-- **Place pour un afficheur** (Q28, traitée) : oui, à la place de l'ancien indicateur de charge à aiguille du tableau de servitude. H2 ne demande donc aucune découpe nouvelle.
+- **Place pour un afficheur** (Q28, traitée) : oui, à la place de l'ancien indicateur de charge à aiguille du tableau de servitude. H2 ne demande donc aucune découpe nouvelle, sous réserve du diamètre du trou.
+- **Indicateur à aiguille** (Q41, ouverte) : branchement, diamètre du trou et profondeur libre derrière le tableau. Utile pour H2 seulement.
 - **Longueur réelle de wire009** (Q30, traitée) : 1 m confirmé.
 
-## Hypothèses à explorer
+## Hypothèses
 
-Les modèles cités sont des exemples de familles de produits. Leurs caractéristiques (entrée auxiliaire, longueur de câble fournie, consommation propre) sont à vérifier sur les fiches techniques au moment du choix.
+Les modèles cités sont des exemples de familles de produits. Leurs caractéristiques (entrée auxiliaire, longueur de câble fournie, consommation propre) sont à vérifier sur les fiches techniques au moment du choix. Les coûts sont ceux que calcule `outils/verifier.py` à partir des nomenclatures : **estimations du 01/10/2026**.
 
-| | Principe | Lecture | Batterie moteur | Remarques |
-|---|---|---|---|---|
-| H1 | Shunt connecté seul (type Victron SmartShunt 500 A) | Application sur smartphone | Tension par l'entrée auxiliaire | Le plus simple à poser : rien à percer au tableau |
-| H2 | Moniteur avec afficheur (type Victron BMV-712) | Afficheur rond encastré à la table à carte, et application | Tension par l'entrée auxiliaire | Lecture sans téléphone, mais un câble de données à tirer depuis la cabine de poupe |
-| H3 | Moniteur multi-shunts (type Simarine) | Afficheur couleur | Second shunt, ou mesure de tension | Peut aussi lire des jauges de réservoir ; plus cher, surdimensionné si on ne suit que les batteries |
-| H4 | Moniteur générique bas coût (shunt et afficheur sans marque) | Afficheur | Selon le modèle | Précision, consommation propre et tenue en milieu marin incertaines |
+| | Principe | Lecture | Batterie moteur | Coût estimé | État |
+|---|---|---|---|---|---|
+| [H1](H1-shunt-connecte/proposition.md) | Shunt connecté seul (type Victron SmartShunt 500 A) | Application sur smartphone | Tension par l'entrée auxiliaire | environ 160 € | Rédigée, [folio 2e](H1-shunt-connecte/folio-2e-shunt.svg) |
+| [H2](H2-moniteur-afficheur/proposition.md) | Moniteur avec afficheur (type Victron BMV-712 Smart) | Afficheur rond à la place de l'indicateur à aiguille, et application | Tension par l'entrée auxiliaire | environ 250 €, plus l'adaptation de la découpe (Q41) | Rédigée, [folio 2f](H2-moniteur-afficheur/folio-2f-afficheur.svg) |
+| H3 | Moniteur multi-shunts (type Simarine) | Afficheur couleur | Second shunt, ou mesure de tension | environ 350 à 450 € (ordre de grandeur, non chiffré) | Non développée, à écarter : voir ci-dessous |
+| H4 | Moniteur générique bas coût (shunt et afficheur sans marque) | Afficheur | Selon le modèle | environ 40 à 80 € (ordre de grandeur, non chiffré) | Non développée, à écarter : voir ci-dessous |
 
-Pour chaque hypothèse retenue : un `cablage.yaml` (suppression de wire009, ajout du shunt et de ses fils) et la nomenclature chiffrée demandée dans l'objectif.
+H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire009 repris sur le shunt, wire180 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire181 à wire184). H2 ajoute le câble de données wire185 et l'afficheur. Nouveaux numéros : node086 à node095, wire180 à wire185.
+
+**Pourquoi ne pas développer H3 et H4** (à confirmer) :
+
+- **H3** : son intérêt est de lire aussi les jauges de réservoir et plusieurs batteries. Juju n'a pas de jauge à relier, et l'objectif ne demande qu'une tension pour la batterie moteur. Elle coûte environ deux fois H2 sans répondre à un besoin listé.
+- **H4** : l'état de charge se calcule en additionnant le courant pendant des jours. Une petite erreur à faible courant (veille, pompe de cale) ou une dérive du zéro fausse le résultat, et c'est justement la consommation de veille que l'étude doit surveiller (détection du court-circuit résistif de A-H2). Sa tenue en milieu marin et sa consommation propre sont inconnues. L'économie, environ 100 à 200 €, ne compense pas une mesure à laquelle on ne peut pas se fier.
 
 ## Critères de comparaison
 
@@ -76,4 +82,8 @@ Une fois le shunt posé, un protocole simple permet de remplacer les estimations
 
 ## Décision
 
-En attente.
+En attente. Le choix porte sur la lecture : smartphone seul (H1) ou afficheur fixe (H2).
+
+Proposition de Claude (01/10) : **H2**. L'afficheur prend la place de l'indicateur à aiguille sans découpe nouvelle, l'alarme de tension basse est visible sans téléphone, et un shunt connecté seul (H1) ne peut pas recevoir d'afficheur plus tard : passer de H1 à H2 reviendrait à racheter le shunt. L'écart est d'environ 90 €. À trancher, ainsi que l'écartement de H3 et H4.
+
+Avant la pose : répondre à Q41 (branchement de l'indicateur à aiguille, diamètre du trou), pour H2 seulement.
