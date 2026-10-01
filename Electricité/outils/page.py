@@ -1,25 +1,28 @@
-"""Assemble les folios SVG en une page HTML consultable (build/<page>.html).
+"""Assemble le relevé et toutes les études en une seule page HTML (build/juju.html).
 
 Usage : python Electricité/outils/page.py
 
-Une page par branche : build/releve.html sur main, build/<étude>.html sur une
-branche d'étude (par exemple build/D-shunt.html sur etude/shunt). Chaque page
-est publiée sur sa propre adresse (liste dans CLAUDE.md).
+Un menu en tête de page choisit la vue :
+- « Relevé » (branche main) : folios de l'existant et des études fusionnées,
+  comparaisons des hypothèses présentes sur main, anomalies et questions ;
+- une vue par branche d'étude (etude/<axe>) : le README de l'étude (cadrage),
+  les folios de ses hypothèses et leur comparaison.
 
-La page reprend, dans l'ordre : sur une branche d'étude, le README de l'étude
-(« cadrage »), puis les folios du relevé (schemas/), puis ceux des
-hypothèses présentes sur la branche courante (etudes/*/H*/), puis, pour chaque
-étude, la comparaison de ses hypothèses (en-tête YAML de proposition.md, total
-et liens de nomenclature.yaml), puis les listes d'anomalies et de questions.
-Les fichiers du dépôt restent la source : la page se régénère.
+Chaque branche est lue avec `git archive`, sans changer de branche ; la branche
+courante est lue sur le disque, modifications non commitées comprises. Une branche
+d'étude dont le dossier Electricité/ est identique à celui de main (étude fusionnée)
+n'a pas de vue propre. Les fichiers du dépôt restent la source : la page se régénère.
 """
 from __future__ import annotations
 
 import html
+import io
 import posixpath
 import re
 import subprocess
 import sys
+import tarfile
+import tempfile
 from datetime import date
 from pathlib import Path
 from urllib.parse import quote
@@ -41,7 +44,18 @@ def git(*args: str) -> str:
         return "?"
 
 
-def folio(chemin: Path, contexte: str) -> str:
+def extraire(branche: str, destination: Path) -> Path:
+    """Copie le dossier Electricité/ de la branche dans destination ; renvoie sa racine."""
+    depot = Path(git("rev-parse", "--show-toplevel"))
+    prefixe = RACINE.relative_to(depot).as_posix()
+    archive = subprocess.run(["git", "archive", "--format=tar", branche, "--", prefixe],
+                             cwd=depot, capture_output=True, check=True).stdout
+    with tarfile.open(fileobj=io.BytesIO(archive)) as tar:
+        tar.extractall(destination, filter="data")
+    return destination / prefixe
+
+
+def folio(chemin: Path, contexte: str, racine: Path) -> str:
     svg = chemin.read_text(encoding="utf-8")
     titre = re.search(r"<title>(.*?)</title>", svg, re.S)
     desc = re.search(r"<desc>(.*?)</desc>", svg, re.S)
@@ -53,7 +67,7 @@ def folio(chemin: Path, contexte: str) -> str:
   <div class="folio-head">
     <span class="folio-no">{html.escape(numero.upper())}</span>
     <h2>{html.escape(nom or numero)}</h2>
-    <p>{html.escape(contexte)} · <code>{html.escape(chemin.relative_to(RACINE).as_posix())}</code></p>
+    <p>{html.escape(contexte)} · <code>{html.escape(chemin.relative_to(racine).as_posix())}</code></p>
   </div>
   <figure>
     <div class="sheet">{svg}</div>
@@ -143,9 +157,10 @@ def carte(dossier: Path, e: dict) -> str:
 </article>"""
 
 
-def comparaisons() -> list[str]:
+def comparaisons(racine: Path, seulement: str = "") -> list[str]:
     sections = []
-    for axe in sorted(d for d in (RACINE / "etudes").iterdir() if d.is_dir()):
+    etudes = racine / "etudes"
+    for axe in sorted(d for d in etudes.iterdir() if d.is_dir() and (not seulement or d.name == seulement)) if etudes.exists() else []:
         dossiers = sorted(axe.glob("H*/proposition.md"), key=lambda c: int(re.match(r"H(\d+)", c.parent.name).group(1)))
         cartes = [carte(c.parent, e) for c in dossiers if (e := entete(c))]
         if not cartes:
@@ -158,7 +173,7 @@ def comparaisons() -> list[str]:
   <div class="folio-head">
     <span class="folio-no">{html.escape(numero.upper())}</span>
     <h2>{html.escape(nom or numero)} · comparaison des hypothèses</h2>
-    <p>Coûts : totaux des nomenclatures. Liens : relevés en ligne à la date indiquée, prix à confirmer avant achat. <code>{html.escape(axe.relative_to(RACINE).as_posix())}/H*/</code></p>
+    <p>Coûts : totaux des nomenclatures. Liens : relevés en ligne à la date indiquée, prix à confirmer avant achat. <code>{html.escape(axe.relative_to(racine).as_posix())}/H*/</code></p>
   </div>
   <div class="hyps">{"".join(cartes)}
   </div>
@@ -243,21 +258,21 @@ def markdown(texte: str, base: str = "") -> str:
     return "\n".join(blocs)
 
 
-def cadrage(branche: str, nom: str) -> str:
-    """Section « cadrage » d'une page d'étude : le README de l'étude, mis en forme."""
-    readme = RACINE / "etudes" / nom / "README.md"
-    if not branche.startswith("etude/") or not readme.exists():
+def cadrage(racine: Path, branche: str, dossier: str) -> str:
+    """Section « cadrage » d'une vue d'étude : le README de l'étude, mis en forme."""
+    readme = racine / "etudes" / dossier / "README.md"
+    if not readme.exists():
         return ""
-    base = f"{branche}/{readme.parent.relative_to(RACINE.parent).as_posix()}"
-    corps = markdown(readme.read_text(encoding="utf-8"), base)
-    titre = re.match(r"# (.*)", readme.read_text(encoding="utf-8"))
-    corps = re.sub(r"^<h2>.*?</h2>\n?", "", corps)
+    texte = readme.read_text(encoding="utf-8")
+    base = f"{branche}/{racine.name}/etudes/{dossier}"
+    corps = re.sub(r"^<h2>.*?</h2>\n?", "", markdown(texte, base))
+    titre = re.match(r"# (.*)", texte)
     return f"""
 <section class="folio">
   <div class="folio-head">
     <span class="folio-no">CADRAGE</span>
-    <h2>{html.escape(titre.group(1)) if titre else html.escape(nom)}</h2>
-    <p>README de l'étude · <code>{html.escape(readme.relative_to(RACINE).as_posix())}</code></p>
+    <h2>{html.escape(titre.group(1)) if titre else html.escape(dossier)}</h2>
+    <p>README de l'étude · <code>etudes/{html.escape(dossier)}/README.md</code></p>
   </div>
   <div class="readme">
 {corps}
@@ -265,38 +280,79 @@ def cadrage(branche: str, nom: str) -> str:
 </section>"""
 
 
-def page_de(branche: str) -> tuple[str, str]:
-    """Nom du fichier et libellé de la page : « releve » sur main, le dossier de l'étude sur etude/<axe>."""
-    if branche.startswith("etude/"):
-        axe = branche.removeprefix("etude/")
-        for dossier in sorted((RACINE / "etudes").glob(f"?-{axe}")):
-            return dossier.name, f"Étude {dossier.name[0]}"
-        return axe, f"Étude {axe}"
-    return "releve", "Relevé"
+def notes(racine: Path) -> str:
+    """Anomalies et questions du relevé."""
+    actives, levees = scinder(racine / "releve/anomalies.md", "Levées")
+    ouvertes, traitees = scinder(racine / "releve/questions.md", "Réponses")
+    return NOTES.format(anomalies=liste_md(actives, "A", "tag-a"), levees=liste_md(levees, "A", "tag-a"),
+                        questions=liste_md(ouvertes, "Q", "tag-q"), reponses=liste_md(traitees, "Q", "tag-q"))
+
+
+def entete_vue(branche: str, commit: str) -> str:
+    return (f'<p class="vue-source">Branche <code>{html.escape(branche)}</code> · '
+            f'commit <code>{html.escape(commit)}</code></p>')
+
+
+def vue_releve(racine: Path, branche: str, commit: str) -> str:
+    folios = [folio(c, "Relevé", racine) for c in sorted((racine / "schemas").glob("*.svg"))]
+    for c in sorted((racine / "etudes").glob("*/H*/*.svg")):
+        folios.append(folio(c, f"Étude {c.parent.parent.name} · hypothèse {c.parent.name}", racine))
+    return "\n".join([entete_vue(branche, commit), *folios, *comparaisons(racine), notes(racine)])
+
+
+def vue_etude(racine: Path, branche: str, commit: str, dossier: str) -> str:
+    folios = [folio(c, f"Étude {dossier} · hypothèse {c.parent.name}", racine)
+              for c in sorted((racine / "etudes" / dossier).glob("H*/*.svg"))]
+    renvoi = ('<p class="vue-renvoi">Folios de l\'existant, anomalies et questions : '
+              'voir la vue <a href="#releve">Relevé</a>.</p>')
+    return "\n".join([entete_vue(branche, commit), cadrage(racine, branche, dossier), *folios,
+                      *comparaisons(racine, dossier), renvoi])
+
+
+def dossier_etude(racine: Path, branche: str) -> tuple[str, str]:
+    """Dossier etudes/<X-axe> d'une branche etude/<axe>, et libellé court « X · Titre »."""
+    axe = branche.removeprefix("etude/")
+    for d in sorted((racine / "etudes").glob(f"?-{axe}")):
+        readme = d / "README.md"
+        titre = readme.read_text(encoding="utf-8").splitlines()[0].lstrip("# ") if readme.exists() else d.name
+        return d.name, f"{d.name[0]} · {titre.partition(' · ')[2] or axe}"
+    return "", axe
 
 
 def main() -> None:
-    folios = [folio(c, "Relevé") for c in sorted((RACINE / "schemas").glob("*.svg"))]
-    for c in sorted((RACINE / "etudes").glob("*/H*/*.svg")):
-        folios.append(folio(c, f"Étude {c.parent.parent.name} · hypothèse {c.parent.name}"))
+    courante = git("rev-parse", "--abbrev-ref", "HEAD")
+    etudes = [b for b in git("for-each-ref", "--format=%(refname:short)", "refs/heads/etude").splitlines() if b]
+    arbre_main = git("rev-parse", "main:" + RACINE.name)
+    vues, menu = [], []
+    with tempfile.TemporaryDirectory() as tmp:
+        def racine_de(branche: str) -> Path:
+            if branche == courante:
+                return RACINE
+            return extraire(branche, Path(tmp) / branche.replace("/", "_"))
 
-    branche, commit = git("rev-parse", "--abbrev-ref", "HEAD"), git("rev-parse", "--short", "HEAD")
-    nom, libelle = page_de(branche)
-    sortie = BUILD / f"{nom}.html"
-    actives, levees = scinder(RACINE / "releve/anomalies.md", "Levées")
-    ouvertes, traitees = scinder(RACINE / "releve/questions.md", "Réponses")
+        racine = racine_de("main")
+        vues.append(("releve", "Relevé", vue_releve(racine, "main", git("rev-parse", "--short", "main"))))
+        for branche in etudes:
+            if branche != courante and git("rev-parse", f"{branche}:{RACINE.name}") == arbre_main:
+                continue  # étude fusionnée : déjà dans la vue Relevé
+            racine = racine_de(branche)
+            dossier, libelle = dossier_etude(racine, branche)
+            if not dossier:
+                continue
+            vues.append((f"etude-{dossier[0]}", libelle,
+                         vue_etude(racine, branche, git("rev-parse", "--short", branche), dossier)))
 
-    page = GABARIT.format(
-        libelle=html.escape(libelle), cadrage=cadrage(branche, nom), branche=html.escape(branche), commit=html.escape(commit), date=date.today().strftime("%d/%m/%Y"),
-        folios="\n".join(folios), comparaisons="\n".join(comparaisons()),
-        anomalies=liste_md(actives, "A", "tag-a"), levees=liste_md(levees, "A", "tag-a"),
-        questions=liste_md(ouvertes, "Q", "tag-q"), reponses=liste_md(traitees, "Q", "tag-q"))
+    vues[1:] = sorted(vues[1:])
+    menu = "".join(f'<a href="#{i}" data-vue="{i}">{html.escape(l)}</a>' for i, l, _ in vues)
+    sections = "\n".join(f'<div class="vue" id="{i}" data-titre="{html.escape(l)}">\n{c}\n</div>' for i, l, c in vues)
+    page = GABARIT.format(date=date.today().strftime("%d/%m/%Y"), menu=menu, vues=sections)
+    sortie = BUILD / "juju.html"
     sortie.parent.mkdir(exist_ok=True)
     sortie.write_text(page, encoding="utf-8", newline="\n")
-    print(f"{len(folios)} folio(s) -> {sortie.relative_to(RACINE.parent).as_posix()}")
+    print(f"{len(vues)} vue(s) : {', '.join(l for _, l, _ in vues)} -> {sortie.relative_to(RACINE.parent).as_posix()}")
 
 
-GABARIT = """<title>Juju · {libelle}</title>
+GABARIT = """<title>Juju · schémas électriques</title>
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -384,6 +440,15 @@ code{{font-family:var(--mono);font-size:.88em}}
 .produits a:focus-visible{{outline:2px solid var(--unk);outline-offset:2px}}
 .produits span{{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}}
 .hyp-decision{{font-size:13px;border-left:2px solid var(--line);padding-left:8px;color:var(--muted)}}
+.menu{{display:flex;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:1;background:var(--bg);padding-block:10px;border-bottom:1.5px solid var(--ink)}}
+.menu a{{font-family:var(--mono);font-size:13px;color:var(--ink);text-decoration:none;border:1.5px solid var(--line);background:var(--sheet);padding:5px 12px;border-radius:999px;white-space:nowrap}}
+.menu a:hover{{border-color:var(--ink)}}
+.menu a:focus-visible{{outline:2px solid var(--unk);outline-offset:2px}}
+.menu a[aria-current]{{background:var(--ink);border-color:var(--ink);color:var(--bg)}}
+.vue{{display:grid;gap:48px}}
+.vue[hidden]{{display:none}}
+.vue-source,.vue-renvoi{{margin:0;color:var(--muted);font-size:14px}}
+.vue-renvoi a{{color:var(--ink);text-underline-offset:2px}}
 .readme{{max-width:85ch;display:grid;gap:12px}}
 .readme h2,.readme h3,.readme h4{{margin:14px 0 0;font-weight:600;text-wrap:balance}}
 .readme h2{{font-size:19px}}.readme h3{{font-size:16px}}.readme h4{{font-size:15px}}
@@ -430,13 +495,12 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Juju · Gib'Sea 31 · 1984 · électricité · {libelle}</div>
+  <div class="eyebrow">Juju · Gib'Sea 31 · 1984 · électricité</div>
   <h1>Schémas électriques de Juju</h1>
   <p class="lede">Page générée à partir des folios SVG du dépôt. Les données de câblage (YAML) et les schémas sont contrôlés par <code>outils/verifier.py</code>.</p>
   <dl class="cartouche">
     <div><dt>Navire</dt><dd>Juju · Gib'Sea 31</dd></div>
-    <div><dt>Branche</dt><dd><code>{branche}</code></dd></div>
-    <div><dt>Commit</dt><dd><code>{commit}</code></dd></div>
+    <div><dt>Contenu</dt><dd>relevé et études en cours</dd></div>
     <div><dt>Générée le</dt><dd>{date}</dd></div>
   </dl>
   <div class="legend" aria-label="Légende">
@@ -454,10 +518,29 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
     <span><svg width="30" height="16"><rect x="1" y="2" width="28" height="12" style="fill:var(--new-soft);stroke:var(--new);stroke-width:1.5"/></svg>nouveau (hypothèse)</span>
     <span><svg width="22" height="12"><circle cx="11" cy="6" r="4" style="fill:var(--ink)"/></svg>point = connexion ; croisement sans point = pas de connexion</span>
   </div>
+  <nav class="menu" aria-label="Choix de la vue">{menu}</nav>
 </header>
-{cadrage}
-{folios}
-{comparaisons}
+{vues}
+</div>
+<script>
+(function () {{
+  var vues = document.querySelectorAll(".vue"), liens = document.querySelectorAll(".menu a");
+  function afficher() {{
+    var id = location.hash.slice(1), cible = document.getElementById(id);
+    if (!cible || !cible.classList.contains("vue")) {{ cible = vues[0]; id = cible.id; }}
+    vues.forEach(function (v) {{ v.hidden = v !== cible; }});
+    liens.forEach(function (a) {{
+      if (a.dataset.vue === id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    }});
+    document.title = "Juju · " + cible.dataset.titre;
+  }}
+  window.addEventListener("hashchange", function () {{ afficher(); window.scrollTo(0, 0); }});
+  afficher();
+}})();
+</script>
+"""
+
+NOTES = """
 <section class="folio">
   <div class="folio-head"><span class="folio-no">RELEVÉ</span><h2>Anomalies et questions</h2></div>
   <div class="notes">
@@ -476,9 +559,7 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
 {reponses}
     </ol></div>
   </div>
-</section>
-</div>
-"""
+</section>"""
 
 if __name__ == "__main__":
     main()

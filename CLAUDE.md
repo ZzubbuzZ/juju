@@ -46,18 +46,10 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 - Un commit = un sujet. Tag `rev-X` quand une révision des schémas est publiée.
 - Push : remote SSH `origin`, poussé par l'utilisateur (pas de clé GitHub configurée pour Claude).
 
-## Pages de consultation
+## Page de consultation
 
-`python Electricité/outils/page.py` produit une page par branche dans `Electricité/build/` (non versionné) : `releve.html` sur `main`, `<étude>.html` sur une branche d'étude (README de l'étude en tête, puis folios, comparaison des hypothèses, anomalies et questions). Chaque page est publiée en artifact sur sa propre adresse (republier sur la même URL) :
+`python Electricité/outils/page.py` produit `Electricité/build/juju.html` (non versionné) : une seule page, avec un menu qui choisit la vue « Relevé » (branche `main` : folios de l'existant et des études fusionnées, anomalies, questions) ou une vue par branche d'étude (README de l'étude, folios et comparaison de ses hypothèses). Les branches sont lues par `git archive`, sans changer de branche ; la branche courante est lue sur le disque. Une étude fusionnée dans `main` n'a pas de vue propre.
 
-| Page | Branche | Adresse |
-|---|---|---|
-| Relevé (stable) | `main` | https://claude.ai/artifact/Vj1VV9bWUtJjnwGRuP5a36 |
-| Étude B · chauffe-eau | `etude/chauffe-eau` | https://claude.ai/artifact/EraWYRB2Y1Qb7Dw1X2TnXB |
-| Étude C · solaire | `etude/solaire` | https://claude.ai/artifact/VayQ4vtWCg3tUMzGd8ZtHi |
-| Étude D · shunt | `etude/shunt` | https://claude.ai/artifact/SSRrmRv1NfgKTPA4Neofcz |
-| Étude E · batterie | `etude/batterie` | https://claude.ai/artifact/GFQGrFSsuakYQPAH8LGqrR |
-
-L'étude A, fusionnée dans `main`, figure sur la page du relevé. Après un changement sur `main`, régénérer et republier toutes les pages.
+La page est publiée en artifact : https://claude.ai/artifact/Vj1VV9bWUtJjnwGRuP5a36 (republier sur la même URL après tout changement, sur n'importe quelle branche). Chaque vue a son ancre (`#releve`, `#etude-D`…).
 
 Python 3.12 est installé pour l'utilisateur. S'il n'est pas dans le PATH : `%LOCALAPPDATA%\Programs\Python\Python312\python.exe`. Dépendances : `Electricité/outils/requirements.txt`.
