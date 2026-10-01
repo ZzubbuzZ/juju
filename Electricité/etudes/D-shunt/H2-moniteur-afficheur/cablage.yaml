@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../../../outils/schema/donnees.schema.json
+#
+# D-H2 : différences avec D-H1. Même shunt, même position, mêmes fils de mesure ;
+# le shunt est celui d'un moniteur à afficheur (type Victron BMV-712 Smart),
+# relié par un câble de données à un afficheur encastré au tableau de servitude,
+# à la place de l'indicateur de charge à aiguille (Q28).
+# L'indicateur est déposé ; son branchement n'est pas relevé (Q41) : ses fils
+# seront retirés ou isolés sur place.
+
+hypothese: D-H2
+titre: Moniteur avec afficheur à la table à carte
+base: D-H1
+
+supprime:
+  equipements: [shunt-servitude, indicateur-charge]
+
+equipements:
+  - { id: shunt-servitude, type: shunt, designation: "Shunt 500 A du moniteur de batterie (type Victron BMV-712 Smart)", zone: descente, emplacement: "Derrière la platine des coupe-circuits, près du coupe-circuit des négatifs, accessible par l'ouverture côté cabine de poupe", statut: propose }
+  - { id: afficheur-batterie, type: recepteur, designation: "Afficheur du moniteur de batterie (rond, encastré), alimenté par le câble de données", zone: table-a-carte, emplacement: "Au tableau de servitude, à la place de l'indicateur de charge à aiguille", statut: propose, questions: [Q41] }
+
+nodes:
+  - { id: node094, equipement: shunt-servitude, borne: "données (RJ12)", polarite: commande }
+  - { id: node095, equipement: afficheur-batterie, borne: "données (RJ12)", polarite: commande }
+
+fils:
+  - { id: wire185, de: node094, vers: node095, longueur_m: 4, statut: propose, note: "Câble de données RJ12 fourni avec le moniteur (10 m). Longueur estimée sur le trajet de wire019 (3 m), avec de la marge" }
