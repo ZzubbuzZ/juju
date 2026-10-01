@@ -48,6 +48,7 @@ L'objectif fixé pour la batterie moteur est de **surveiller sa tension**, pas d
 - **Place pour un afficheur** (Q28, traitée) : oui, à la place de l'ancien indicateur de charge à aiguille du tableau de servitude. H2 ne demande donc aucune découpe nouvelle, sous réserve du diamètre du trou.
 - **Indicateur à aiguille** (Q41, ouverte) : branchement, diamètre du trou et profondeur libre derrière le tableau. Utile pour H2 seulement.
 - **Longueur réelle de wire009** (Q30, traitée) : 1 m confirmé.
+- **Traceur Garmin et réseau NMEA 2000** (Q44, ouverte) : modèle exact, réseau existant ou non, emplacement et alimentation. Utile pour H6 seulement.
 
 ## Hypothèses
 
@@ -60,6 +61,7 @@ Les modèles cités sont des exemples de familles de produits. Leurs caractéris
 | [H3](H3-simarine-pico/proposition.md) | Moniteur multi-capteurs (Simarine Pico et shunt SC503) | Afficheur couleur | Second shunt, ou mesure de tension | environ 400 € | Non développée, à écarter : voir ci-dessous |
 | [H4](H4-moniteur-generique/proposition.md) | Moniteur générique bas coût (type Junctek KH140F, 400 A) | Afficheur et application | Selon le modèle | environ 90 € | Non développée, à écarter : voir ci-dessous |
 | [H5](H5-cerbo-gx-touch/proposition.md) | SmartShunt de H1, centrale Victron Cerbo GX et écran tactile GX Touch 50 | Écran 5 pouces à la table à carte, application, portail VRM | Tension par l'entrée auxiliaire du shunt | environ 675 € | Rédigée, [folio 2g](H5-cerbo-gx-touch/folio-2g-cerbo.svg) ; place à relever (Q43) |
+| [H6](H6-cerbo-traceur-garmin/proposition.md) | SmartShunt de H1 et centrale Victron Cerbo-S GX sans écran, données transmises au traceur Garmin par NMEA 2000 | Traceur GPSMAP 7407 quand il est allumé, application, portail VRM | Tension par l'entrée auxiliaire du shunt (affichage sur le traceur à vérifier) | environ 600 €, 485 € si le traceur est déjà sur un réseau NMEA 2000 | Rédigée sans câblage, en attente de Q44 |
 
 H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire009 repris sur le shunt, wire180 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire181 à wire184). H2 ajoute le câble de données wire185 et l'afficheur. Nouveaux numéros : node086 à node095, wire180 à wire185. H5 reprend H1 et ajoute un Cerbo GX alimenté après le coupe-circuit de servitude (fusible 3 A), relié au shunt par VE.Direct et à l'écran : node340 à node346, wire186 à wire190.
 
@@ -89,4 +91,6 @@ Proposition de Claude (01/10) : **H2**. L'afficheur prend la place de l'indicate
 
 H5 (ajoutée le 01/10 à la demande de l'utilisateur) est l'option « tableau de bord » : environ quatre fois le prix de H2, avec une consommation d'environ 0,3 A tant que le Cerbo GX est allumé. Elle se justifie si l'on prévoit d'autres appareils Victron (régulateur solaire de l'étude C, chargeur, LiFePO4) ; sinon H2 donne la même mesure pour beaucoup moins. Elle peut aussi venir plus tard : le SmartShunt (H1) comme le BMV-712 (H2) ont un port VE.Direct et se raccordent au Cerbo GX sans rien racheter ; avec H2, l'afficheur rond reste en service à côté de l'écran.
 
-Avant la pose : répondre à Q41 (branchement de l'indicateur à aiguille, diamètre du trou) pour H2, à Q43 (place du Cerbo GX et de l'écran) pour H5.
+H6 (ajoutée le 01/10 à la demande de l'utilisateur) est une variante de H5 : le traceur Garmin sert d'afficheur à la place du GX Touch 50. Le GPSMAP 7407 n'accepte pas l'application Victron complète (OneHelm), mais il lit en NMEA 2000 l'état de charge, la tension et le courant publiés par le Cerbo. Elle n'économise qu'environ 75 € sur H5, car il faut créer le réseau NMEA 2000, sauf s'il existe déjà (Q44). Elle se justifie surtout si un réseau NMEA 2000 est prévu de toute façon pour d'autres instruments. H5 peut d'ailleurs passer au Cerbo-S GX, comme H6, pour environ 610 €.
+
+Avant la pose : répondre à Q41 (branchement de l'indicateur à aiguille, diamètre du trou) pour H2, à Q43 (place du Cerbo GX et de l'écran) pour H5 et H6, à Q44 (traceur et réseau NMEA 2000) pour H6.
