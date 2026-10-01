@@ -3,8 +3,10 @@
 Usage : python Electricité/outils/page.py
 
 La page reprend, dans l'ordre : les folios du relevé (schemas/), puis ceux des
-hypothèses présentes sur la branche courante (etudes/*/H*/), puis les listes
-d'anomalies et de questions. Les SVG restent la source : la page se régénère.
+hypothèses présentes sur la branche courante (etudes/*/H*/), puis, pour chaque
+étude, la comparaison de ses hypothèses (en-tête YAML de proposition.md, total
+et liens de nomenclature.yaml), puis les listes d'anomalies et de questions.
+Les fichiers du dépôt restent la source : la page se régénère.
 """
 from __future__ import annotations
 
@@ -14,6 +16,8 @@ import subprocess
 import sys
 from datetime import date
 from pathlib import Path
+
+import yaml
 
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "build" / "schemas.html"
@@ -82,6 +86,79 @@ def scinder(chemin: Path, titre: str) -> tuple[str, str]:
     return avant, apres
 
 
+ETATS = {"a_etudier": "À étudier", "proposee": "Proposée", "recommandee": "Recommandée",
+         "retenue": "Retenue", "differee": "Différée", "ecartee_proposee": "À écarter (proposé)",
+         "ecartee": "Écartée"}
+
+
+def entete(chemin: Path) -> dict | None:
+    m = re.match(r"---\n(.*?)\n---\n", chemin.read_text(encoding="utf-8"), re.S)
+    return (yaml.safe_load(m.group(1)) or {}) if m else None
+
+
+def euros(x: float) -> str:
+    return f"{x:,.0f} €".replace(",", " ")
+
+
+def carte(dossier: Path, e: dict) -> str:
+    total, estimes, a_chiffrer, produits = 0.0, 0, 0, []
+    chemin = dossier / "nomenclature.yaml"
+    if chemin.exists():
+        for art in (yaml.safe_load(chemin.read_text(encoding="utf-8")) or {}).get("articles", []):
+            total += art["quantite"] * art.get("prix_unitaire", 0)
+            estimes += art["statut"] == "estimation"
+            a_chiffrer += art["statut"] == "a_chiffrer"
+            source = art.get("source", "")
+            if source.startswith("http"):
+                infos = [euros(art["prix_unitaire"])] if "prix_unitaire" in art else []
+                if "date_prix" in art:
+                    infos.append(f"relevé le {date.fromisoformat(art['date_prix']).strftime('%d/%m/%Y')}")
+                produits.append(f'<li><a href="{html.escape(source)}" target="_blank" rel="noopener">'
+                                f'{inline(art["designation"])}</a><span>{" · ".join(infos)}</span></li>')
+    if chemin.exists():
+        detail = [f"{estimes} prix estimé(s)" if estimes else "prix relevés",
+                  f"{a_chiffrer} article(s) à chiffrer" if a_chiffrer else ""]
+        cout = (f'<p class="hyp-cout"><strong>≈ {euros(total)}</strong>'
+                f'<span>nomenclature · {", ".join(d for d in detail if d)}</span></p>')
+    else:
+        cout = '<p class="hyp-cout"><span>pas de nomenclature</span></p>'
+    plus = "".join(f"<li>{inline(x)}</li>" for x in e.get("points_forts", []))
+    moins = "".join(f"<li>{inline(x)}</li>" for x in e.get("points_faibles", []))
+    return f"""
+<article class="hyp etat-{e['etat']}">
+  <div class="hyp-head"><span class="hyp-id">{html.escape(e['hypothese'])}</span><span class="etat">{ETATS[e['etat']]}</span></div>
+  <h3>{inline(e['titre'])}</h3>
+  <p class="hyp-resume">{inline(e['resume'])}</p>
+  {cout}
+  {f'<ul class="plus">{plus}</ul>' if plus else ''}{f'<ul class="moins">{moins}</ul>' if moins else ''}
+  {f'<div class="produits"><h4>Produits</h4><ul>{"".join(produits)}</ul></div>' if produits else ''}
+  {f'<p class="hyp-decision">{inline(e["decision"])}</p>' if e.get("decision") else ''}
+</article>"""
+
+
+def comparaisons() -> list[str]:
+    sections = []
+    for axe in sorted(d for d in (RACINE / "etudes").iterdir() if d.is_dir()):
+        dossiers = sorted(axe.glob("H*/proposition.md"), key=lambda c: int(re.match(r"H(\d+)", c.parent.name).group(1)))
+        cartes = [carte(c.parent, e) for c in dossiers if (e := entete(c))]
+        if not cartes:
+            continue
+        readme = axe / "README.md"
+        titre = readme.read_text(encoding="utf-8").splitlines()[0].lstrip("# ") if readme.exists() else axe.name
+        numero, _, nom = titre.partition(" · ")
+        sections.append(f"""
+<section class="folio">
+  <div class="folio-head">
+    <span class="folio-no">{html.escape(numero.upper())}</span>
+    <h2>{html.escape(nom or numero)} · comparaison des hypothèses</h2>
+    <p>Coûts : totaux des nomenclatures. Liens : relevés en ligne à la date indiquée, prix à confirmer avant achat. <code>{html.escape(axe.relative_to(RACINE).as_posix())}/H*/</code></p>
+  </div>
+  <div class="hyps">{"".join(cartes)}
+  </div>
+</section>""")
+    return sections
+
+
 def main() -> None:
     folios = [folio(c, "Relevé") for c in sorted((RACINE / "schemas").glob("*.svg"))]
     for c in sorted((RACINE / "etudes").glob("*/H*/*.svg")):
@@ -93,7 +170,7 @@ def main() -> None:
 
     page = GABARIT.format(
         branche=html.escape(branche), commit=html.escape(commit), date=date.today().strftime("%d/%m/%Y"),
-        folios="\n".join(folios),
+        folios="\n".join(folios), comparaisons="\n".join(comparaisons()),
         anomalies=liste_md(actives, "A", "tag-a"), levees=liste_md(levees, "A", "tag-a"),
         questions=liste_md(ouvertes, "Q", "tag-q"), reponses=liste_md(traitees, "Q", "tag-q"))
     SORTIE.parent.mkdir(exist_ok=True)
@@ -163,6 +240,32 @@ figcaption{{font-size:14px;color:var(--muted);max-width:85ch}}
 .tag-a{{background:var(--warn);color:var(--on-warn)}}
 .tag-q{{border:1.5px solid var(--unk);color:var(--unk)}}
 code{{font-family:var(--mono);font-size:.88em}}
+.hyps{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:16px;align-items:start}}
+.hyp{{background:var(--sheet);border:1px solid var(--line);padding:14px 16px 16px;display:grid;gap:10px;min-width:0}}
+.hyp.etat-recommandee,.hyp.etat-retenue{{border:1.5px solid var(--new);box-shadow:inset 0 3px 0 var(--new)}}
+.hyp.etat-ecartee,.hyp.etat-ecartee_proposee{{opacity:.78}}
+.hyp-head{{display:flex;justify-content:space-between;align-items:center;gap:8px}}
+.hyp-id{{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em}}
+.etat{{font-family:var(--mono);font-size:11px;font-weight:500;border:1.5px solid var(--unk);color:var(--unk);border-radius:999px;padding:0 9px;line-height:1.6;white-space:nowrap}}
+.etat-recommandee .etat,.etat-retenue .etat{{border-color:var(--new);background:var(--new-soft);color:var(--new)}}
+.etat-differee .etat{{border-color:var(--warn);color:var(--warn)}}
+.etat-ecartee .etat,.etat-ecartee_proposee .etat{{border-color:var(--muted);color:var(--muted)}}
+.hyp h3{{font-size:17px;font-weight:600;margin:0;line-height:1.25;text-wrap:balance}}
+.hyp p{{margin:0}}
+.hyp-resume{{color:var(--muted);font-size:14px}}
+.hyp-cout{{display:grid;gap:0;border-block:1px solid var(--line);padding-block:6px}}
+.hyp-cout strong{{font-size:24px;font-weight:600;font-variant-numeric:tabular-nums}}
+.hyp-cout span{{font-size:12px;color:var(--muted)}}
+.hyp ul{{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:14px}}
+.hyp ul.plus li,.hyp ul.moins li{{display:grid;grid-template-columns:16px 1fr;gap:4px}}
+.hyp ul.plus li::before{{content:"+";color:var(--new);font-weight:600}}
+.hyp ul.moins li::before{{content:"−";color:var(--pos);font-weight:600}}
+.produits h4{{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}}
+.produits li{{display:grid;gap:0}}
+.produits a{{color:var(--ink);text-underline-offset:2px;overflow-wrap:anywhere}}
+.produits a:focus-visible{{outline:2px solid var(--unk);outline-offset:2px}}
+.produits span{{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}}
+.hyp-decision{{font-size:13px;border-left:2px solid var(--line);padding-left:8px;color:var(--muted)}}
 /* dessin */
 .bg{{fill:transparent}}
 svg text{{font-family:var(--font);fill:var(--ink)}}
@@ -223,6 +326,7 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
   </div>
 </header>
 {folios}
+{comparaisons}
 <section class="folio">
   <div class="folio-head"><span class="folio-no">RELEVÉ</span><h2>Anomalies et questions</h2></div>
   <div class="notes">

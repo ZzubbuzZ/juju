@@ -8,7 +8,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 |---|---|---|
 | `releve/` | L'existant : état des lieux, `amenagement.yaml` (zones du bateau), `equipements.yaml`, `netlist.yaml`, `wirelist.yaml`, `anomalies.md`, `questions.md`, `photos/`, `documentation/` (notices, fiches) | **Uniquement des faits constatés à bord.** Une valeur supposée porte `statut: estime`. Ne modifier ce dossier que sur une information donnée par l'utilisateur, et le signaler. |
 | `schemas/` | Folios SVG de l'existant | Doivent refléter `releve/` exactement. |
-| `etudes/<X-axe>/H<n>-<nom>/` | Une hypothèse : `proposition.md`, `cablage.yaml` (delta), folios SVG | Le `cablage.yaml` décrit uniquement les différences avec sa `base` (le relevé ou une autre hypothèse). |
+| `etudes/<X-axe>/H<n>-<nom>/` | Une hypothèse : `proposition.md` (avec en-tête YAML), `nomenclature.yaml`, `cablage.yaml` (delta), folios SVG | Le `cablage.yaml` décrit uniquement les différences avec sa `base` (le relevé ou une autre hypothèse). Une hypothèse écartée sans câblage peut n'avoir que `proposition.md` et `nomenclature.yaml`. |
 | `commun/` | `bilan-energetique.yaml`, partagé par les études | |
 | `outils/` | `verifier.py`, `page.py`, schémas JSON | |
 
@@ -21,6 +21,8 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 - **Calcul des sections** : S = 2 × L × I × 0,0175 / ΔU. ΔU = 3 % pour les feux, l'électronique, le pilote, la pompe de cale et le frigo ; 10 % pour le confort. Sections normalisées uniquement. Le fusible protège le câble et se place à sa source.
 - **Couleurs** : + rouge, − noir ; en 230 V, phase marron, neutre bleu, terre vert-jaune.
 - **Section ou couleur inconnue** : ne pas l'inventer, omettre le champ et poser une question. Une section relevée approximativement (AWG, câble non normalisé) porte `section_indicative: true`.
+- **Propositions** : `proposition.md` commence par un en-tête YAML entre deux lignes `---` (`hypothese`, `titre`, `etat`, `resume`, `points_forts`, `points_faibles`, `decision` ; schéma `outils/schema/proposition.schema.json`). `page.py` en tire la comparaison des hypothèses de chaque étude, avec le total de la nomenclature. Mettre `etat` à jour à chaque décision.
+- **Liens produits** : dans `nomenclature.yaml`, sur l'article concerné : `source` (URL), `date_prix`, `statut: catalogue`. Un lien doit avoir été vérifié (page ouverte) ou, à défaut, être signalé comme relevé par recherche. Préférer la page du fabricant ou d'un revendeur français à un lien de place de marché, qui expire.
 - **Anomalies** : une anomalie infondée passe dans « Levées » d'`anomalies.md`, avec sa justification, et garde son numéro.
 
 ## Conventions des SVG

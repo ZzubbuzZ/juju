@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "En-tête d'une proposition d'hypothèse",
+  "description": "Bloc YAML entre deux lignes « --- » en tête de etudes/<axe>/H<n>-<nom>/proposition.md. outils/page.py s'en sert pour la comparaison des hypothèses (avec les totaux et les liens de nomenclature.yaml) ; outils/verifier.py le contrôle.",
+  "type": "object",
+  "required": ["hypothese", "titre", "etat", "resume"],
+  "additionalProperties": false,
+  "properties": {
+    "hypothese": { "type": "string", "pattern": "^[A-Z]-H[0-9]+$" },
+    "titre": { "type": "string", "minLength": 1 },
+    "etat": {
+      "description": "a_etudier = à développer ; proposee = rédigée, en attente de décision ; recommandee = proposition de Claude, à confirmer ; retenue, differee, ecartee = décision de l'utilisateur ; ecartee_proposee = écartement proposé, à confirmer.",
+      "enum": ["a_etudier", "proposee", "recommandee", "retenue", "differee", "ecartee_proposee", "ecartee"]
+    },
+    "resume": { "description": "Une ou deux phrases : le principe.", "type": "string", "minLength": 1 },
+    "points_forts": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "points_faibles": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "decision": { "description": "Date et motif de la décision, une fois prise.", "type": "string" }
+  }
+}

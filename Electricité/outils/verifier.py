@@ -12,7 +12,8 @@ Contrôles :
   5. chaque fil des données figure sur les schémas SVG, et inversement ;
      chaque équipement placé dans une zone figure sur le plan d'implantation ;
   6. hypothèses des études : application du delta sur leur base, puis mêmes contrôles ;
-  7. bilan énergétique : Ah consommés par jour pour chaque profil.
+  7. en-tête YAML de chaque proposition.md (outils/schema/proposition.schema.json) ;
+  8. bilan énergétique : Ah consommés par jour pour chaque profil.
 Les questions traitées (section « Réponses » de questions.md) ne doivent plus
 être citées par les données ni par les schémas.
 
@@ -400,6 +401,33 @@ def nomenclature(chemin: Path, schema: dict, attendu: str, m: Modele | None, ano
            f"({estimes} prix estimé(s), {manquants} article(s) à chiffrer)")
 
 
+def lire_entete(chemin: Path) -> tuple[dict | None, str]:
+    """En-tête YAML d'un fichier Markdown (bloc entre deux lignes « --- » en tête), et le reste du texte."""
+    texte = chemin.read_text(encoding="utf-8")
+    m = re.match(r"---\n(.*?)\n---\n", texte, re.S)
+    if not m:
+        return None, texte
+    return yaml.load(m.group(1), Loader=ChargeurStrict) or {}, texte[m.end():]
+
+
+def proposition(chemin: Path, schema: dict, r: Rapport) -> None:
+    ou = rel(chemin)
+    try:
+        entete, _ = lire_entete(chemin)
+    except yaml.YAMLError as e:
+        r.erreur(ou, f"en-tête YAML invalide : {e}")
+        return
+    if entete is None:
+        r.info(f"{ou} : pas d'en-tête YAML (l'hypothèse n'apparaîtra pas dans la comparaison de la page)")
+        return
+    if not valider(entete, schema, chemin, r):
+        return
+    attendu = f"{chemin.parent.parent.name[0]}-{chemin.parent.name.split('-')[0]}"
+    if entete["hypothese"] != attendu:
+        r.erreur(ou, f"hypothese = {entete['hypothese']}, le dossier indique {attendu}")
+    r.ok(f"{entete['hypothese']} · {entete['etat']} · {entete['titre']}")
+
+
 def bilan(chemin: Path, schema: dict, equipements: dict, r: Rapport) -> None:
     data = lire_yaml(chemin, r)
     if data is None or not valider(data, schema, chemin, r):
@@ -512,6 +540,14 @@ def main() -> int:
         r.section(f"Nomenclature {attendu} ({rel(chemin)})")
         delta = hyps.get(attendu, (None, {}))[1]
         nomenclature(chemin, schema_nomenc, attendu, modeles.get(attendu), anomalies, delta, r)
+
+    # ---- Propositions
+    schema_prop = json.loads((RACINE / "outils/schema/proposition.schema.json").read_text(encoding="utf-8"))
+    chemins = sorted((RACINE / "etudes").glob("*/H*/proposition.md"))
+    if chemins:
+        r.section("Propositions (en-têtes de proposition.md)")
+        for chemin in chemins:
+            proposition(chemin, schema_prop, r)
 
     # ---- Bilan
     r.section("Bilan énergétique (commun/bilan-energetique.yaml)")

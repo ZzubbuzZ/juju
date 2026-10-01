@@ -43,6 +43,6 @@ Dans VS Code, l'extension YAML de Red Hat valide les fichiers en direct grâce �
 ## Déroulé d'une hypothèse
 
 1. Sur la branche de l'axe, créer `etudes/<axe>/H<n>-<nom>/`.
-2. Y écrire `proposition.md` (quoi, pourquoi, conséquences), `cablage.yaml` (ajouts et suppressions par rapport à la base) et les folios SVG.
+2. Y écrire `proposition.md` (en-tête YAML, puis quoi, pourquoi, conséquences), `nomenclature.yaml` (matériel chiffré, liens produits), `cablage.yaml` (ajouts et suppressions par rapport à la base) et les folios SVG. La page de consultation compare les hypothèses de chaque étude à partir de ces en-têtes et nomenclatures.
 3. Vérifier, commiter. Comparer les hypothèses dans le README de l'axe.
 4. Une fois l'hypothèse retenue : `decision.md` dans le dossier de l'axe, puis fusion dans `main`.
