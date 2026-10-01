@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# E-H3 : nomenclature chiffrée. Estimations du 01/10/2026, pour une distance supposée de 4 m
+# entre le nouvel emplacement et la platine des coupe-circuits (à relever, Q46).
+
+hypothese: E-H3
+devise: EUR
+
+lots:
+  deplacement:
+    titre: Batterie de servitude déplacée dans un coffre ventilé hors des cabines
+    note: Distance supposée de 4 m (Q46).
+
+articles:
+  - { lot: deplacement, designation: "Câble étamé 35 mm² rouge (+ batterie de servitude vers les coupe-circuits)", quantite: 4, unite: m, prix_unitaire: 14, statut: estimation, note: "Remplace wire006 ; 50 mm² au-delà de 4 m environ" }
+  - { lot: deplacement, designation: "Câble étamé 35 mm² noir (− batterie de servitude vers le coupe-circuit des négatifs)", quantite: 4, unite: m, prix_unitaire: 14, statut: estimation, note: "Remplace wire009" }
+  - { lot: deplacement, designation: "Cosses tubulaires étamées 35 mm²", quantite: 4, unite: pièce, prix_unitaire: 3, statut: estimation }
+  - { lot: deplacement, designation: "Bac à batterie fermé avec évent, sangle de fixation", quantite: 1, unite: lot, prix_unitaire: 50, statut: estimation }
+  - { lot: deplacement, designation: "Passe-fils et gaines pour le nouveau trajet", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation }

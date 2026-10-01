@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# E-H1 : nomenclature chiffrée. Prix TTC en euros du 01/10/2026 : relevés par recherche web
+# (pages non ouvertes depuis la session) pour la batterie et le chargeur DC/DC, estimations
+# pour le reste. Câbles et fusibles du DC/DC à préciser avec le câblage.
+
+hypothese: E-H1
+devise: EUR
+
+lots:
+  batterie:
+    titre: Batterie LiFePO4 de 100 Ah à la place du plomb, dans le même coffre
+    note: Dimensions à vérifier (Q45). Coupe-circuit de couplage et coupleur Scheiber déposés, sans coût.
+  charge:
+    titre: Chargeur DC/DC depuis la batterie moteur, à la place du coupleur Scheiber
+    note: Chargeur de quai Dolphin conservé sur la batterie moteur seule (solution a).
+
+articles:
+  # --- Lot batterie -----------------------------------------------------------------
+  - { lot: batterie, designation: "Batterie LiFePO4 12,8 V 100 Ah, BMS intégré 100 A, coupure de charge à basse température, Bluetooth", quantite: 1, unite: pièce, prix_unitaire: 300, statut: estimation, note: "Modèle à choisir. Prix relevés par recherche web entre 255 et 370 € (LiTime 100 Ah marine Bluetooth : environ 280 € ; 330 × 172 × 216 mm, 10,2 kg). Vérifier le pic de courant du BMS pour le guindeau" }
+  - { lot: batterie, designation: "Sangle de fixation et capot de bornes", quantite: 1, unite: lot, prix_unitaire: 20, statut: estimation }
+  - { lot: batterie, designation: "Cosses tubulaires étamées 35 mm² (reprise de wire161 et wire009 si les bornes diffèrent)", quantite: 2, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire161, wire009] }
+
+  # --- Lot charge -------------------------------------------------------------------
+  - { lot: charge, designation: "Victron Orion XS 12/12-50A, chargeur DC/DC non isolé, Bluetooth", reference: ORI121217040, quantite: 1, unite: pièce, prix_unitaire: 276.55, statut: catalogue, source: "https://www.voelkner.de/products/12907028/Victron-Orion-XS-12-12-50A-700W-DC-DC-Batterieladegeraet.html", date_prix: "2026-10-01", note: "Prix relevé par recherche web (revendeur allemand), page non ouverte depuis la session ; environ 310 € en France. Courant à régler vers 15 A (alternateur de 20 A)" }
+  - { lot: charge, designation: "Porte-fusibles et fusibles aux deux extrémités du DC/DC", quantite: 2, unite: lot, prix_unitaire: 15, statut: estimation, note: "Calibre selon la notice" }
+  - { lot: charge, designation: "Câble étamé rouge et noir pour l'entrée et la sortie du DC/DC, cosses et gaine", quantite: 1, unite: lot, prix_unitaire: 30, statut: estimation, note: "Section selon la notice, la longueur et le courant réglé" }
