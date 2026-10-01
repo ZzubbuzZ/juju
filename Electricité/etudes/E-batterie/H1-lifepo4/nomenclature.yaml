@@ -13,7 +13,7 @@ lots:
     note: Dimensions à vérifier (Q45). Coupe-circuit de couplage et coupleur Scheiber déposés, sans coût.
   charge:
     titre: Chargeur DC/DC depuis la batterie moteur, à la place du coupleur Scheiber
-    note: Chargeur de quai Dolphin conservé sur la batterie moteur seule (solution a).
+    note: Chargeur de quai Dolphin conservé sur la batterie moteur seule, sortie 2 débranchée ; seuils de démarrage du DC/DC abaissés pour suivre le floating du Dolphin.
 
 articles:
   # --- Lot batterie -----------------------------------------------------------------
