@@ -1,8 +1,13 @@
-"""Assemble les folios SVG en une page HTML consultable (build/schemas.html).
+"""Assemble les folios SVG en une page HTML consultable (build/<page>.html).
 
 Usage : python Electricité/outils/page.py
 
-La page reprend, dans l'ordre : les folios du relevé (schemas/), puis ceux des
+Une page par branche : build/releve.html sur main, build/<étude>.html sur une
+branche d'étude (par exemple build/D-shunt.html sur etude/shunt). Chaque page
+est publiée sur sa propre adresse (liste dans CLAUDE.md).
+
+La page reprend, dans l'ordre : sur une branche d'étude, le README de l'étude
+(« cadrage »), puis les folios du relevé (schemas/), puis ceux des
 hypothèses présentes sur la branche courante (etudes/*/H*/), puis, pour chaque
 étude, la comparaison de ses hypothèses (en-tête YAML de proposition.md, total
 et liens de nomenclature.yaml), puis les listes d'anomalies et de questions.
@@ -11,16 +16,18 @@ Les fichiers du dépôt restent la source : la page se régénère.
 from __future__ import annotations
 
 import html
+import posixpath
 import re
 import subprocess
 import sys
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
 import yaml
 
 RACINE = Path(__file__).resolve().parent.parent
-SORTIE = RACINE / "build" / "schemas.html"
+BUILD = RACINE / "build"
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -159,26 +166,137 @@ def comparaisons() -> list[str]:
     return sections
 
 
+DEPOT = "https://github.com/ZzubbuzZ/juju/blob"
+
+
+def lien(texte: str, cible: str, base: str) -> str:
+    """Lien Markdown : une adresse web est gardée ; un chemin relatif pointe vers le dépôt GitHub."""
+    if not cible.startswith(("http://", "https://")):
+        if not base:
+            return texte
+        cible = posixpath.normpath(posixpath.join(base, cible.split("#")[0]))
+        cible = f"{DEPOT}/{quote(cible, safe='/')}"
+    return f'<a href="{cible}" target="_blank" rel="noopener">{texte}</a>'
+
+
+def en_ligne(texte: str, base: str = "") -> str:
+    """Mise en forme d'une ligne : échappement, gras, code, liens."""
+    morceaux = re.split(r"(`[^`]+`)", texte)
+    sortie = []
+    for m in morceaux:
+        if m.startswith("`") and m.endswith("`") and len(m) > 1:
+            sortie.append(f"<code>{html.escape(m[1:-1])}</code>")
+            continue
+        m = html.escape(m, quote=False)
+        m = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", m)
+        m = re.sub(r"~~([^~]+)~~", r"<del>\1</del>", m)
+        m = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", lambda x: lien(x.group(1), x.group(2), base), m)
+        sortie.append(m)
+    return "".join(sortie)
+
+
+def markdown(texte: str, base: str = "") -> str:
+    """Convertisseur Markdown réduit, suffisant pour les README d'étude :
+    titres, paragraphes, listes, tableaux, blocs de code, gras, barré, code et liens."""
+    blocs, lignes, i = [], texte.splitlines(), 0
+    while i < len(lignes):
+        ligne = lignes[i]
+        if not ligne.strip():
+            i += 1
+        elif ligne.startswith("```"):
+            j = i + 1
+            while j < len(lignes) and not lignes[j].startswith("```"):
+                j += 1
+            blocs.append(f"<pre>{html.escape(chr(10).join(lignes[i + 1:j]))}</pre>")
+            i = j + 1
+        elif m := re.match(r"(#{1,4}) (.*)", ligne):
+            niveau = min(len(m.group(1)) + 1, 4)
+            blocs.append(f"<h{niveau}>{en_ligne(m.group(2), base)}</h{niveau}>")
+            i += 1
+        elif ligne.startswith("|"):
+            rangs = []
+            while i < len(lignes) and lignes[i].startswith("|"):
+                cellules = [c.strip() for c in lignes[i].strip().strip("|").split("|")]
+                if not all(re.fullmatch(r":?-+:?", c) for c in cellules):
+                    rangs.append(cellules)
+                i += 1
+            tete, *corps = rangs
+            th = "".join(f"<th>{en_ligne(c, base)}</th>" for c in tete)
+            tr = "".join("<tr>" + "".join(f"<td>{en_ligne(c, base)}</td>" for c in r) + "</tr>" for r in corps)
+            blocs.append(f'<div class="table"><table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>')
+        elif re.match(r"(- |\d+\. )", ligne):
+            balise = "ol" if ligne[0].isdigit() else "ul"
+            items = []
+            while i < len(lignes) and (re.match(r"(- |\d+\. )", lignes[i]) or (lignes[i].startswith("  ") and items)):
+                if lignes[i].startswith("  "):
+                    items[-1] += " " + lignes[i].strip()
+                else:
+                    items.append(re.sub(r"^(- |\d+\. )", "", lignes[i]))
+                i += 1
+            blocs.append(f"<{balise}>" + "".join(f"<li>{en_ligne(x, base)}</li>" for x in items) + f"</{balise}>")
+        else:
+            para = []
+            while i < len(lignes) and lignes[i].strip() and not re.match(r"(#|\||```|- |\d+\. )", lignes[i]):
+                para.append(lignes[i].strip())
+                i += 1
+            blocs.append(f"<p>{en_ligne(' '.join(para), base)}</p>")
+    return "\n".join(blocs)
+
+
+def cadrage(branche: str, nom: str) -> str:
+    """Section « cadrage » d'une page d'étude : le README de l'étude, mis en forme."""
+    readme = RACINE / "etudes" / nom / "README.md"
+    if not branche.startswith("etude/") or not readme.exists():
+        return ""
+    base = f"{branche}/{readme.parent.relative_to(RACINE.parent).as_posix()}"
+    corps = markdown(readme.read_text(encoding="utf-8"), base)
+    titre = re.match(r"# (.*)", readme.read_text(encoding="utf-8"))
+    corps = re.sub(r"^<h2>.*?</h2>\n?", "", corps)
+    return f"""
+<section class="folio">
+  <div class="folio-head">
+    <span class="folio-no">CADRAGE</span>
+    <h2>{html.escape(titre.group(1)) if titre else html.escape(nom)}</h2>
+    <p>README de l'étude · <code>{html.escape(readme.relative_to(RACINE).as_posix())}</code></p>
+  </div>
+  <div class="readme">
+{corps}
+  </div>
+</section>"""
+
+
+def page_de(branche: str) -> tuple[str, str]:
+    """Nom du fichier et libellé de la page : « releve » sur main, le dossier de l'étude sur etude/<axe>."""
+    if branche.startswith("etude/"):
+        axe = branche.removeprefix("etude/")
+        for dossier in sorted((RACINE / "etudes").glob(f"?-{axe}")):
+            return dossier.name, f"Étude {dossier.name[0]}"
+        return axe, f"Étude {axe}"
+    return "releve", "Relevé"
+
+
 def main() -> None:
     folios = [folio(c, "Relevé") for c in sorted((RACINE / "schemas").glob("*.svg"))]
     for c in sorted((RACINE / "etudes").glob("*/H*/*.svg")):
         folios.append(folio(c, f"Étude {c.parent.parent.name} · hypothèse {c.parent.name}"))
 
     branche, commit = git("rev-parse", "--abbrev-ref", "HEAD"), git("rev-parse", "--short", "HEAD")
+    nom, libelle = page_de(branche)
+    sortie = BUILD / f"{nom}.html"
     actives, levees = scinder(RACINE / "releve/anomalies.md", "Levées")
     ouvertes, traitees = scinder(RACINE / "releve/questions.md", "Réponses")
 
     page = GABARIT.format(
-        branche=html.escape(branche), commit=html.escape(commit), date=date.today().strftime("%d/%m/%Y"),
+        libelle=html.escape(libelle), cadrage=cadrage(branche, nom), branche=html.escape(branche), commit=html.escape(commit), date=date.today().strftime("%d/%m/%Y"),
         folios="\n".join(folios), comparaisons="\n".join(comparaisons()),
         anomalies=liste_md(actives, "A", "tag-a"), levees=liste_md(levees, "A", "tag-a"),
         questions=liste_md(ouvertes, "Q", "tag-q"), reponses=liste_md(traitees, "Q", "tag-q"))
-    SORTIE.parent.mkdir(exist_ok=True)
-    SORTIE.write_text(page, encoding="utf-8", newline="\n")
-    print(f"{len(folios)} folio(s) -> {SORTIE.relative_to(RACINE.parent).as_posix()}")
+    sortie.parent.mkdir(exist_ok=True)
+    sortie.write_text(page, encoding="utf-8", newline="\n")
+    print(f"{len(folios)} folio(s) -> {sortie.relative_to(RACINE.parent).as_posix()}")
 
 
-GABARIT = """<title>Schémas 12 V de Juju</title>
+GABARIT = """<title>Juju · {libelle}</title>
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -266,6 +384,18 @@ code{{font-family:var(--mono);font-size:.88em}}
 .produits a:focus-visible{{outline:2px solid var(--unk);outline-offset:2px}}
 .produits span{{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}}
 .hyp-decision{{font-size:13px;border-left:2px solid var(--line);padding-left:8px;color:var(--muted)}}
+.readme{{max-width:85ch;display:grid;gap:12px}}
+.readme h2,.readme h3,.readme h4{{margin:14px 0 0;font-weight:600;text-wrap:balance}}
+.readme h2{{font-size:19px}}.readme h3{{font-size:16px}}.readme h4{{font-size:15px}}
+.readme p,.readme ul,.readme ol{{margin:0}}
+.readme ul,.readme ol{{padding-left:22px;display:grid;gap:4px}}
+.readme a{{color:var(--ink);text-underline-offset:2px;overflow-wrap:anywhere}}
+.readme a:focus-visible{{outline:2px solid var(--unk);outline-offset:2px}}
+.readme pre{{margin:0;padding:10px 12px;background:var(--sheet);border:1px solid var(--line);overflow-x:auto;font-family:var(--mono);font-size:12.5px}}
+.readme .table{{overflow-x:auto;max-width:100%}}
+.readme table{{border-collapse:collapse;font-size:14px;background:var(--sheet)}}
+.readme th,.readme td{{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}}
+.readme th{{font-weight:600}}
 /* dessin */
 .bg{{fill:transparent}}
 svg text{{font-family:var(--font);fill:var(--ink)}}
@@ -300,7 +430,7 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Juju · Gib'Sea 31 · 1984 · électricité</div>
+  <div class="eyebrow">Juju · Gib'Sea 31 · 1984 · électricité · {libelle}</div>
   <h1>Schémas électriques de Juju</h1>
   <p class="lede">Page générée à partir des folios SVG du dépôt. Les données de câblage (YAML) et les schémas sont contrôlés par <code>outils/verifier.py</code>.</p>
   <dl class="cartouche">
@@ -325,6 +455,7 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
     <span><svg width="22" height="12"><circle cx="11" cy="6" r="4" style="fill:var(--ink)"/></svg>point = connexion ; croisement sans point = pas de connexion</span>
   </div>
 </header>
+{cadrage}
 {folios}
 {comparaisons}
 <section class="folio">
