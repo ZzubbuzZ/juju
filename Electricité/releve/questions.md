@@ -51,6 +51,8 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q45** Batterie de servitude : marque et référence exactes. Est-ce une batterie « ouverte » (bouchons sur le dessus, même scellés) ou une batterie étanche AGM ou gel (mention VRLA, AGM ou Gel sur l'étiquette) ? Dimensions de la batterie (longueur × largeur × hauteur) et dimensions intérieures du coffre.
 - **Q46** Coffre de la batterie de servitude : a-t-il une aération (trou, grille, tuyau) ? Pourrait-on faire sortir un évent vers l'extérieur (cockpit, tableau arrière) ou vers le compartiment moteur, et sur quelle longueur ? Existe-t-il un autre emplacement possible, ventilé et hors des cabines (coffre de cockpit tribord près de la batterie moteur, coffre bâbord), et à quelle distance de la platine des coupe-circuits ?
 - **Q47** Hivernage : Juju reste-t-il à flot l'hiver, et le bateau est-il utilisé ou chargé au quai par temps de gel ? Une batterie LiFePO4 ne doit pas être chargée en dessous de 0 °C.
+- **Q48** Tableau moteur : existe-t-il un + 12 V présent seulement quand la clé de contact est tournée (borne du contacteur à clé, voyant de charge, fil « D+ » de l'alternateur) ? Quel trajet jusqu'à la platine des coupe-circuits ? Un fil fin y commanderait le chargeur DC/DC (E-H1). Voir aussi Q1.
+- **Q49** Coffre de cockpit tribord : reste-t-il la place, près du chargeur Dolphin, pour un second chargeur de quai d'environ 20 × 10 × 6 cm ? Sinon, y a-t-il une place sèche près de la batterie de servitude, et par où passerait un câble 230 V ? Distance entre le coffre de cockpit tribord et le coffre de la batterie de servitude.
 
 ### Pour l'étude D (shunt)
 
