@@ -9,7 +9,7 @@ points_forts:
   - Environ 10 kg au lieu de 25 à 30 kg ; plusieurs milliers de cycles.
   - Chaque batterie a son chargeur et son profil (DC/DC au moteur, chargeur dédié au quai pour la LiFePO4, Dolphin pour la batterie moteur seule). L'alternateur est protégé et la batterie moteur reste indépendante pour le démarrage.
 points_faibles:
-  - Environ 860 €, dont 185 € pour le chargeur de quai dédié.
+  - Environ 900 €, dont 185 € pour le chargeur de quai dédié.
   - Pas de charge en dessous de 0 °C ; le BMS coupe la charge, ce qui est sans danger mais à savoir l'hiver (Q47).
   - Le BMS peut couper toute la servitude en cas de surintensité ou de batterie vide, sans prévenir ; une alarme de charge basse (étude D) devient indispensable.
   - Le guindeau, environ 50 à 60 A, ne peut plus être secouru par la batterie moteur ; son pic de courant doit rester sous la limite du BMS.
@@ -21,7 +21,7 @@ decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). Reste
 
 Hypothèse de l'étude E. Base : **A-H4** (programme retenu de l'étude A, avec les fusibles de A-H2).
 
-Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **860 €**. Le câblage (`cablage.yaml`, folio) sera écrit si l'hypothèse est retenue, après les réponses à Q45 à Q49.
+Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **900 €**. Le câblage (`cablage.yaml`, folio) sera écrit si l'hypothèse est retenue, après les réponses à Q45 à Q49.
 
 ## Principe
 
@@ -149,7 +149,11 @@ Le niveau 1 couvre le cas le plus fréquent, la batterie moteur déchargée, san
 
 ## Conséquences
 
-- **Fusible de batterie (A-H2)** : une LiFePO4 peut débiter plusieurs milliers d'ampères en court-circuit. Le fusible MEGA de 400 A prévu par A-H2 doit avoir un pouvoir de coupure suffisant ; sinon, prendre un fusible de classe T ou un MRBF de pouvoir de coupure adapté. À vérifier sur la fiche du fusible et de la batterie.
+- **Fusible de batterie : il reste indispensable, BMS ou non** (question de l'utilisateur, 03/10).
+  - **Le BMS n'est pas une protection de câble fiable.** Il coupe par des transistors (MOSFET), dont la panne la plus courante est le court-circuit : le BMS reste alors fermé et ne protège plus rien. C'est précisément dans ce cas, et sur un court-circuit franc, qu'il faut une coupure qui ne dépende pas d'une électronique. Les règles nautiques (ABYC E-11, et E-13 pour le lithium) demandent un fusible près de la batterie quel que soit le BMS.
+  - **Pouvoir de coupure.** Si le BMS est en panne, une LiFePO4 de 100 Ah peut débiter plusieurs milliers d'ampères en court-circuit (environ 13 V sur quelques milliohms de résistance interne). Le fusible doit couper ce courant sans arc soutenu. Ordres de grandeur, à confirmer sur les fiches : MEGA environ 2 000 A sous 32 V, MRBF (fusible sur borne de batterie) 10 000 A sous 14 V, classe T 20 000 A. **Le MEGA prévu par A-H2 pour le plomb ne suffit pas** ; le MRBF ou la classe T conviennent. Le courant de court-circuit de la batterie choisie, s'il est donné sur sa fiche, tranche.
+  - **Choix proposé : un fusible MRBF vissé sur la borne + de la batterie.** Il remplace le fusible MEGA de A-H2 côté servitude (et son tronçon non protégé wire161), coûte bien moins cher qu'une classe T avec son support, et se place au plus près de la batterie, dans le coffre. La classe T reste la solution si la fiche de la batterie l'exige, ou pour une batterie de plus de 200 Ah.
+  - **Calibre** : il protège le câble de 35 mm² (wire006) tout en laissant passer le guindeau et les pointes de consommation. Environ 200 A sans le démarrage direct ; environ 300 A avec le niveau 2 du démarrage de secours, ce qui demandera de vérifier le câble (wire006 en 50 mm², déjà envisagé à long terme par A-H2). À fixer avec le câblage.
 - **Étude D** : le SmartShunt se règle sur la chimie LiFePO4 ; l'alarme de charge basse prévient avant la coupure du BMS. Sans couplage, le démarreur ne traverse plus le shunt.
 - **Bilan énergétique** : la capacité utile passe d'environ 55 Ah à 80-90 Ah. Le DC/DC consomme quelques milliampères en veille. Avec la masse de ses chargeurs côté charges du shunt, toute la charge de la LiFePO4 est comptée.
 - **Coffre** : la LiFePO4 doit être solidement fixée (sangle, cales) et ses bornes protégées par un capot. Le coffre n'a plus besoin d'être ventilé pour le gaz, mais une LiFePO4 n'aime pas la chaleur : le coffre est contre le coffre moteur, température à surveiller.

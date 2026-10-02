@@ -16,4 +16,4 @@
 
 ## Avant le câblage et la fusion dans `main`
 
-Réponses à Q45 (batterie et coffre), Q47 (hivernage), Q48 (+ après contact), Q49 (place du second chargeur). Puis `cablage.yaml` et folio de H1, et vérification du pouvoir de coupure du fusible de 400 A de A-H2 face à une LiFePO4.
+Réponses à Q45 (batterie et coffre), Q47 (hivernage), Q48 (+ après contact), Q49 (place du second chargeur). Puis `cablage.yaml` et folio de H1, avec un fusible MRBF sur la borne de la batterie à la place du fusible MEGA de A-H2, dont le pouvoir de coupure ne suffit pas pour une LiFePO4 (calibre à fixer).

@@ -19,7 +19,7 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 
 | | Principe | Hydrogène | Coût estimé | État |
 |---|---|---|---|---|
-| [H1](H1-lifepo4/proposition.md) | Batterie LiFePO4 de 100 Ah à la place du plomb, chargeur DC/DC à la place du coupleur Scheiber, coupe-circuit de couplage déposé, chargeur de quai dédié à la LiFePO4 | Supprimé à la source | environ 860 € | **Retenue** le 02/10 |
+| [H1](H1-lifepo4/proposition.md) | Batterie LiFePO4 de 100 Ah à la place du plomb, chargeur DC/DC à la place du coupleur Scheiber, coupe-circuit de couplage déposé, chargeur de quai dédié à la LiFePO4 | Supprimé à la source | environ 900 € | **Retenue** le 02/10 |
 | [H2](H2-plomb-ventile/proposition.md) | Plomb conservé en place, coffre ventilé vers l'extérieur | Évacué | environ 90 € | Écartée le 02/10 |
 | [H3](H3-plomb-deplace/proposition.md) | Plomb déplacé dans un coffre ventilé hors des cabines | Évacué hors des cabines | environ 190 € | Écartée le 02/10 |
 

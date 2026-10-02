@@ -21,6 +21,7 @@ lots:
 articles:
   # --- Lot batterie -----------------------------------------------------------------
   - { lot: batterie, designation: "Batterie LiFePO4 12,8 V 100 Ah, BMS intégré 100 A, coupure de charge à basse température, Bluetooth", quantite: 1, unite: pièce, prix_unitaire: 300, statut: estimation, note: "Modèle à choisir. Prix relevés par recherche web entre 255 et 370 € (LiTime 100 Ah marine Bluetooth : environ 280 € ; 330 × 172 × 216 mm, 10,2 kg). Vérifier le pic de courant du BMS pour le guindeau" }
+  - { lot: batterie, designation: "Fusible MRBF sur borne de batterie (pouvoir de coupure 10 kA sous 14 V), avec son support", quantite: 1, unite: lot, prix_unitaire: 40, statut: estimation, note: "Remplace le fusible MEGA de A-H2 côté servitude, insuffisant pour une LiFePO4. Calibre à fixer avec le câblage (environ 200 A, 300 A avec le démarrage direct)" }
   - { lot: batterie, designation: "Sangle de fixation et capot de bornes", quantite: 1, unite: lot, prix_unitaire: 20, statut: estimation }
   - { lot: batterie, designation: "Cosses tubulaires étamées 35 mm² (reprise de wire161 et wire009 si les bornes diffèrent)", quantite: 2, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire161, wire009] }
 
