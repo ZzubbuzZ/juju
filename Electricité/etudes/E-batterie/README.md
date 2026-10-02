@@ -19,9 +19,9 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 
 | | Principe | Hydrogène | Coût estimé | État |
 |---|---|---|---|---|
-| [H1](H1-lifepo4/proposition.md) | Batterie LiFePO4 de 100 Ah à la place du plomb, chargeur DC/DC à la place du coupleur Scheiber, coupe-circuit de couplage déposé, chargeur de quai dédié à la LiFePO4 | Supprimé à la source | environ 860 € | Recommandée, à confirmer après Q45 à Q49 |
-| [H2](H2-plomb-ventile/proposition.md) | Plomb conservé en place, coffre ventilé vers l'extérieur | Évacué | environ 90 € | Proposée, selon Q46 |
-| [H3](H3-plomb-deplace/proposition.md) | Plomb déplacé dans un coffre ventilé hors des cabines | Évacué hors des cabines | environ 190 € | À étudier, selon Q46 |
+| [H1](H1-lifepo4/proposition.md) | Batterie LiFePO4 de 100 Ah à la place du plomb, chargeur DC/DC à la place du coupleur Scheiber, coupe-circuit de couplage déposé, chargeur de quai dédié à la LiFePO4 | Supprimé à la source | environ 860 € | **Retenue** le 02/10 |
+| [H2](H2-plomb-ventile/proposition.md) | Plomb conservé en place, coffre ventilé vers l'extérieur | Évacué | environ 90 € | Écartée le 02/10 |
+| [H3](H3-plomb-deplace/proposition.md) | Plomb déplacé dans un coffre ventilé hors des cabines | Évacué hors des cabines | environ 190 € | Écartée le 02/10 |
 
 Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Le câblage de H1 (`cablage.yaml`, folio) sera écrit une fois l'hypothèse choisie et les questions Q45 à Q49 répondues ; les nœuds 360 à 379 lui sont réservés.
 
@@ -44,6 +44,8 @@ Les coûts sont les totaux des nomenclatures : prix relevés par recherche web l
 
 ## Décision
 
-En attente. Proposition de Claude (01/10) : **H1**. C'est la seule hypothèse qui supprime le gaz au lieu de l'évacuer, et elle répond aussi au manque d'énergie au mouillage (55 Ah utiles avec le plomb, pour environ 60 Ah consommés par jour). Chaque batterie a son propre chargeur : le DC/DC au moteur et un chargeur dédié au quai pour la LiFePO4, le Dolphin pour la seule batterie moteur. Faire passer la charge de quai de la LiFePO4 par le Dolphin et le DC/DC fatiguerait la batterie moteur, maintenue en absorption tant que la LiFePO4 n'est pas pleine (voir H1). Conditions : place dans le coffre (Q45) et pour le second chargeur (Q49), pas de charge par temps de gel (Q47).
+**02/10/2026 : H1 retenue par Julie**, batterie de servitude LiFePO4. Voir [decision.md](decision.md). H2 et H3 sont écartées.
 
-En attendant, et quelle que soit l'hypothèse retenue, une mesure immédiate et gratuite : soulever le matelas et ouvrir le coffre pour l'aérer quand le chargeur de quai tourne.
+Proposition initiale de Claude (01/10), qui a conduit à ce choix : H1 est la seule hypothèse qui supprime le gaz au lieu de l'évacuer, et elle répond aussi au manque d'énergie au mouillage (55 Ah utiles avec le plomb, pour environ 60 Ah consommés par jour). Chaque batterie a son propre chargeur : le DC/DC au moteur et un chargeur dédié au quai pour la LiFePO4, le Dolphin pour la seule batterie moteur.
+
+En attendant la pose, une mesure immédiate et gratuite : soulever le matelas et ouvrir le coffre pour l'aérer quand le chargeur de quai tourne.

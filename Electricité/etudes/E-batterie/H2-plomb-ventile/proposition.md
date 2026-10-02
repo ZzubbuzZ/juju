@@ -1,7 +1,7 @@
 ---
 hypothese: E-H2
 titre: Plomb conservé, coffre ventilé vers l'extérieur
-etat: proposee
+etat: ecartee
 resume: La batterie au plomb reste dans son coffre, qui est rendu étanche côté cabine et ventilé vers l'extérieur par un évent en partie haute et une entrée d'air en partie basse.
 points_forts:
   - Peu coûteux, aucun changement électrique.
@@ -10,6 +10,7 @@ points_faibles:
   - Le gaz est évacué, pas supprimé ; l'efficacité dépend de l'étanchéité du coffre côté cabine et du tracé de l'évent (Q46).
   - Capacité utile inchangée, environ 55 Ah, moins qu'une journée au mouillage.
   - Batterie lourde, 25 à 30 kg, et durée de vie limitée.
+decision: "02/10/2026 : écartée, Julie retient la batterie LiFePO4 (H1)."
 ---
 
 # E-H2 · Plomb conservé, coffre ventilé vers l'extérieur

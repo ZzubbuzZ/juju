@@ -1,7 +1,7 @@
 ---
 hypothese: E-H3
 titre: Plomb déplacé hors des cabines
-etat: a_etudier
+etat: ecartee
 resume: La batterie au plomb quitte la cabine de poupe pour un coffre ventilé hors des cabines, par exemple le coffre de cockpit tribord, près de la batterie moteur. Ses câbles de 35 mm² jusqu'aux coupe-circuits sont rallongés.
 points_forts:
   - L'hydrogène n'est plus dégagé dans une cabine.
@@ -10,6 +10,7 @@ points_faibles:
   - Emplacement à trouver (Q46) ; le coffre de cockpit tribord est déjà occupé par la batterie moteur et le chargeur.
   - Câbles plus longs, donc plus de chute de tension, notamment pour le guindeau, alimenté par cette batterie.
   - Capacité utile inchangée, environ 55 Ah.
+decision: "02/10/2026 : écartée, Julie retient la batterie LiFePO4 (H1)."
 ---
 
 # E-H3 · Plomb déplacé hors des cabines

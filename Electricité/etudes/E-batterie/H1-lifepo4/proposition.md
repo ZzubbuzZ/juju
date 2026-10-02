@@ -1,7 +1,7 @@
 ---
 hypothese: E-H1
 titre: Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
-etat: recommandee
+etat: retenue
 resume: Une batterie LiFePO4 de 100 Ah, avec BMS intégré, remplace le plomb dans le même coffre. Un chargeur DC/DC la charge depuis la batterie moteur, à la place du coupleur Scheiber, et le coupe-circuit de couplage est déposé. Au quai, un chargeur dédié la charge ; le Dolphin ne charge plus que la batterie moteur.
 points_forts:
   - Plus d'hydrogène dans la cabine de poupe (A11 traitée à la source).
@@ -14,6 +14,7 @@ points_faibles:
   - Le BMS peut couper toute la servitude en cas de surintensité ou de batterie vide, sans prévenir ; une alarme de charge basse (étude D) devient indispensable.
   - Le guindeau, environ 50 à 60 A, ne peut plus être secouru par la batterie moteur ; son pic de courant doit rester sous la limite du BMS.
   - Dimensions de la batterie et du coffre à vérifier (Q45) ; place du second chargeur de quai (Q49) et + après contact pour commander le DC/DC (Q48).
+decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). Reste à choisir le niveau de secours au démarrage (recharge de secours par le DC/DC seule, ou démarrage direct sur la LiFePO4), puis à écrire le câblage après Q45 à Q49."
 ---
 
 # E-H1 · Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
@@ -32,7 +33,7 @@ Elle impose en revanche une charge adaptée : tension d'absorption d'environ 14,
 
 Le coupe-circuit de couplage (node011, node012) met la batterie de servitude en parallèle avec la batterie moteur. Avec une LiFePO4, ce parallèle ferait passer un fort courant de l'une à l'autre (les tensions de repos diffèrent : environ 13,3 V pour la LiFePO4 et 12,7 V pour le plomb), et la LiFePO4 serait chargée par l'alternateur sans contrôle.
 
-Il est donc déposé avec ses deux câbles de 35 mm² (wire010, wire011). Conséquence : on ne peut plus démarrer sur la batterie de servitude, ni faire tourner le guindeau sur la batterie moteur. La batterie moteur, au plomb, reste dédiée au démarrage.
+Il est donc déposé avec ses deux câbles de 35 mm² (wire010, wire011), **sauf si le démarrage direct sur la LiFePO4 est retenu** (voir « Démarrage de secours », niveau 2) : il devient alors un interrupteur de secours, à n'utiliser que coupe-circuit moteur ouvert. Sans lui, on ne peut plus démarrer sur la batterie de servitude, ni faire tourner le guindeau sur la batterie moteur. La batterie moteur, au plomb, reste dédiée au démarrage.
 
 ### 2. Remplacer le coupleur Scheiber par un chargeur DC/DC
 
@@ -78,10 +79,60 @@ Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de 
 
 **Le DC/DC ne doit alors tourner qu'au moteur.** Sinon, l'absorption du Dolphin à 14,4 V le ferait démarrer (seuil d'usine 14,0 V) et l'on retrouverait le problème ci-dessus. La tension seule ne permet pas de distinguer l'alternateur (environ 14,2 à 14,4 V) du Dolphin (14,4 V). On commande donc le DC/DC par son **entrée « remote »**, reliée par un fil fin, protégé à sa source, à un + 12 V présent seulement clé de contact tournée (Q48). Sa détection de tension reste active avec les réglages d'usine : clé tournée mais moteur arrêté, il ne tire rien sur la batterie moteur.
 
+## Démarrage de secours sur la LiFePO4
+
+Question de l'utilisateur (02/10) : peut-on démarrer le moteur sur la LiFePO4 si la batterie moteur est en panne ? Oui, à deux niveaux.
+
+### Niveau 1 : recharge de secours de la batterie moteur par le DC/DC (sans matériel)
+
+L'Orion XS a une fonction **« emergency reverse charge »** : lancée depuis l'application VictronConnect, elle fait passer le courant **dans l'autre sens**, de la LiFePO4 vers la batterie moteur, pendant 15 minutes, puis annonce « Battery ready » après 5 minutes de repos (notice Victron). Le courant est la moitié du courant nominal, soit **25 A pour le modèle de 50 A**, environ 6 Ah transférés. La batterie de servitude n'est pas descendue sous 12 V.
+
+- Un démarrage de diesel consomme peu d'énergie (quelques secondes à 200-300 A, moins de 1 Ah) : 6 Ah suffisent à une batterie moteur **déchargée** (feux oubliés, longue immobilisation).
+- La LiFePO4 ne fournit que 25 A : **aucune exigence de courant de pointe** sur son BMS.
+- Limite, écrite dans la notice : « Battery ready » ne garantit pas que la batterie lance le moteur. Une batterie moteur **défectueuse** (élément en court-circuit, sulfatée) ne reprendra pas.
+
+Ce niveau est acquis avec H1 telle qu'elle est chiffrée : il suffit de connaître la manœuvre.
+
+### Niveau 2 : démarrage direct sur la LiFePO4 (option)
+
+Pour couvrir aussi une batterie moteur défectueuse, le démarreur doit pouvoir être alimenté par la LiFePO4 seule.
+
+**Le chemin existe déjà.** Le coupe-circuit de couplage ne relie pas la batterie de servitude à la batterie moteur, mais au côté démarreur du coupe-circuit moteur : node009 → wire011 → couplage → wire010 → node004, d'où partent le câble du démarreur (wire012) et celui de l'alternateur (même borne, node031). Coupe-circuit moteur **ouvert**, fermer le couplage alimente le démarreur par la LiFePO4 **sans** la mettre en parallèle avec le plomb. Il suffit donc de le **conserver** au lieu de le déposer.
+
+**Exigences sur la batterie.** D'après le manuel d'atelier Yanmar (relevé, fiche du moteur), le démarreur consomme 60 A à vide, **200 à 275 A** à sa puissance maximale et **460 A rotor bloqué**, c'est-à-dire à l'instant du démarrage, pendant quelques centièmes de seconde. Il faut donc une batterie dont la fiche technique indique :
+
+| Grandeur | Valeur minimale | Pourquoi |
+|---|---|---|
+| Courant de décharge de pointe du BMS | 300 A pendant au moins 5 s | lancement du moteur, quelques secondes à 200-275 A, avec une marge |
+| Courant d'appel toléré | environ 500 A pendant moins de 0,5 s, sans déclencher la protection court-circuit | appel du démarreur à rotor bloqué |
+| Courant continu du BMS | 150 à 200 A | le guindeau (50 à 60 A, davantage en tirant fort) et une marge |
+
+Les batteries « de servitude » courantes à BMS de 100 A ne conviennent pas : leur protection coupe au-delà de 150 à 200 A en quelques secondes. Il faut un modèle annoncé pour le démarrage (courant de démarrage ou « CCA » donné par le fabricant) ou un BMS de 200 A, environ 100 à 150 € de plus que la batterie chiffrée (estimation, à vérifier sur les fiches). Le fusible de 400 A de A-H2 sur la batterie de servitude tient ces courants brefs ; son pouvoir de coupure reste à vérifier pour une LiFePO4 (voir « Conséquences »).
+
+**Procédure** (à afficher près de la platine des coupe-circuits) :
+
+1. Ouvrir le coupe-circuit **moteur** : la batterie moteur défaillante est isolée.
+2. Fermer le coupe-circuit de **couplage** : la LiFePO4 alimente le démarreur.
+3. Démarrer.
+4. **Moteur tournant, ouvrir le couplage sans attendre.** Sinon l'alternateur charge la LiFePO4 sans contrôle, et si le BMS coupe pendant la charge, la surtension (« load dump ») peut détruire les diodes de l'alternateur.
+5. Laisser le coupe-circuit moteur ouvert seulement si la batterie moteur est hors service ; sinon le refermer pour que l'alternateur la recharge.
+
+**Risques et parades.**
+
+- **Alternateur sans batterie** : entre les étapes 4 et 5, ou si la batterie moteur est hors service, l'alternateur tourne sans batterie, ce qu'il supporte mal. Parade : un **protecteur d'alternateur** (« alternator protection device », diode de suppression branchée sur sa sortie), environ 30 à 50 €.
+- **Erreur de manœuvre** : couplage et coupe-circuit moteur fermés ensemble remettent les deux batteries en parallèle, ce que H1 voulait éviter. Parade : étiquette sur le couplage (« secours démarrage : coupe-circuit moteur ouvert »), et un coupe-circuit de couplage qui reste normalement ouvert.
+- **Batterie de servitude vidée** : un lancement prolongé consomme peu, mais la servitude reste le seul secours ; ne pas insister au-delà de quelques essais.
+
+**Coût du niveau 2** : environ 150 à 200 € de plus (batterie capable de démarrer, protecteur d'alternateur, étiquette), et le coupe-circuit de couplage conservé. Non compté dans la nomenclature tant que ce niveau n'est pas retenu.
+
+### Recommandation
+
+Le niveau 1 couvre le cas le plus fréquent, la batterie moteur déchargée, sans rien ajouter. Le niveau 2 ne se justifie que si l'on veut aussi parer à une batterie moteur défectueuse loin d'un port ; il impose une batterie plus chère, une procédure et une protection de l'alternateur. Choix à faire par Julie et l'utilisateur.
+
 ## Choix de la batterie
 
 - **Capacité 100 Ah** : même encombrement environ que le plomb actuel (à vérifier, Q45), pour 80 à 90 Ah utiles. Une 150 ou 200 Ah se justifierait avec le solaire (étude C).
-- **BMS intégré de 100 A au moins en continu**, avec un pic plus élevé pendant quelques secondes : le guindeau consomme 50 A en régime normal d'après sa notice, davantage en tirant fort sur la chaîne. Un BMS trop juste couperait tout le bord pendant la manœuvre de mouillage. À vérifier sur la fiche du modèle choisi, ou prendre une batterie de 150 A.
+- **BMS intégré de 100 A au moins en continu** (150 à 200 A, avec un courant de pointe de démarrage, si le niveau 2 du démarrage de secours est retenu), avec un pic plus élevé pendant quelques secondes : le guindeau consomme 50 A en régime normal d'après sa notice, davantage en tirant fort sur la chaîne. Un BMS trop juste couperait tout le bord pendant la manœuvre de mouillage. À vérifier sur la fiche du modèle choisi, ou prendre une batterie de 150 A.
 - **Protection basse température** (coupure de la charge sous 0 °C) et, si possible, **application Bluetooth** pour lire l'état des cellules.
 - Les batteries Victron « NG » demandent un BMS externe (Lynx Smart BMS), ce qui double le prix : écartées pour un bord de cette taille.
 
@@ -89,7 +140,7 @@ Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de 
 
 | Action | Éléments |
 |---|---|
-| Dépose | Coupe-circuit de couplage (node011, node012) ; wire010, wire011 |
+| Dépose | Coupe-circuit de couplage (node011, node012) ; wire010, wire011. Conservés si le démarrage direct sur la LiFePO4 (niveau 2) est retenu |
 | Dépose | Coupleur Scheiber (node013 à node015) ; wire002, wire007, wire014 ; wire164, wire165 et leurs fusibles de 40 A (A-H2) |
 | Débranchement | Sortie 2 du chargeur de quai : wire008, wire163 et son fusible de 30 A (A-H2) |
 | Remplacement | Batterie de servitude : mêmes bornes (node007, node008), wire161 et wire009 repris |
