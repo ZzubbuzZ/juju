@@ -48,11 +48,10 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ### Pour l'étude E (batterie de servitude)
 
-- **Q45** Batterie de servitude : marque et référence exactes. Est-ce une batterie « ouverte » (bouchons sur le dessus, même scellés) ou une batterie étanche AGM ou gel (mention VRLA, AGM ou Gel sur l'étiquette) ? Dimensions de la batterie (longueur × largeur × hauteur) et dimensions intérieures du coffre.
 - **Q46** Coffre de la batterie de servitude : a-t-il une aération (trou, grille, tuyau) ? Pourrait-on faire sortir un évent vers l'extérieur (cockpit, tableau arrière) ou vers le compartiment moteur, et sur quelle longueur ? Existe-t-il un autre emplacement possible, ventilé et hors des cabines (coffre de cockpit tribord près de la batterie moteur, coffre bâbord), et à quelle distance de la platine des coupe-circuits ?
-- **Q47** Hivernage : Juju reste-t-il à flot l'hiver, et le bateau est-il utilisé ou chargé au quai par temps de gel ? Une batterie LiFePO4 ne doit pas être chargée en dessous de 0 °C.
 - **Q48** Tableau moteur : existe-t-il un + 12 V présent seulement quand la clé de contact est tournée (borne du contacteur à clé, voyant de charge, fil « D+ » de l'alternateur) ? Quel trajet jusqu'à la platine des coupe-circuits ? Un fil fin y commanderait le chargeur DC/DC (E-H1). Voir aussi Q1.
-- **Q49** Coffre de cockpit tribord : reste-t-il la place, près du chargeur Dolphin, pour un second chargeur de quai d'environ 20 × 10 × 6 cm ? Sinon, y a-t-il une place sèche près de la batterie de servitude, et par où passerait un câble 230 V ? Distance entre le coffre de cockpit tribord et le coffre de la batterie de servitude.
+  → 03/10 : possible, mais ce + est pris sur la batterie moteur. Une commande à la table à carte demanderait de tirer un fil + moteur supplémentaire. Trajet du tableau moteur à la platine non relevé.
+- **Q50** Longueur du trajet d'un câble 12 V entre le coffre de cockpit tribord (chargeur Dolphin) et le coffre de la batterie de servitude (cabine de poupe), par où il passerait, et cloisons à traverser. Sert à choisir la section de la sortie du second chargeur de quai (E-H1).
 
 ### Pour l'étude D (shunt)
 
@@ -62,6 +61,12 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ## Réponses
 
+- **Q45** Batterie de servitude : marque et référence exactes. Est-ce une batterie « ouverte » (bouchons sur le dessus, même scellés) ou une batterie étanche AGM ou gel (mention VRLA, AGM ou Gel sur l'étiquette) ? Dimensions de la batterie (longueur × largeur × hauteur) et dimensions intérieures du coffre.
+  → 03/10 : il y a de la place dans le coffre, on adaptera au besoin. Marque, type et dimensions non relevés : sans objet si la batterie est remplacée (E-H1).
+- **Q47** Hivernage : Juju reste-t-il à flot l'hiver, et le bateau est-il utilisé ou chargé au quai par temps de gel ? Une batterie LiFePO4 ne doit pas être chargée en dessous de 0 °C.
+  → 03/10 : navigation en Méditerranée, batterie à l'intérieur du bateau : le gel n'est pas jugé un problème.
+- **Q49** Coffre de cockpit tribord : reste-t-il la place, près du chargeur Dolphin, pour un second chargeur de quai d'environ 20 × 10 × 6 cm ? Sinon, y a-t-il une place sèche près de la batterie de servitude, et par où passerait un câble 230 V ? Distance entre le coffre de cockpit tribord et le coffre de la batterie de servitude.
+  → 03/10 : à côté du chargeur Dolphin, dans le coffre de cockpit tribord. Distance jusqu'à la batterie de servitude : Q50.
 - **Q31** Détails du réseau 230 V :
   - Le plafonnier 230 V est-il métallique (classe I, terre obligatoire) ou en plastique à double isolation (classe II, marqué d'un double carré) ?
   → 28/09 : terre 230 V et masse 12 V séparées, pas d'isolateur galvanique (anomalie A8). Boîtier tribord sur la cloison entre le cabinet de toilette et le coffre de cockpit. Raccordement des prises (étoile ou chaîne) : non relevé, jugé secondaire.
