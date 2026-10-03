@@ -4,7 +4,7 @@
 # le shunt est celui d'un moniteur à afficheur (type Victron BMV-712 Smart),
 # relié par un câble de données à un afficheur encastré au tableau de servitude,
 # à la place de l'indicateur de charge à aiguille (Q28).
-# L'indicateur est déposé ; son branchement n'est pas relevé (Q41) : ses fils
+# L'indicateur est déposé ; la place est suffisante (Q41, 03/10), son branchement sera vu à la pose : ses fils
 # seront retirés ou isolés sur place.
 
 hypothese: D-H2
@@ -16,7 +16,7 @@ supprime:
 
 equipements:
   - { id: shunt-servitude, type: shunt, designation: "Shunt 500 A du moniteur de batterie (type Victron BMV-712 Smart)", zone: descente, emplacement: "Derrière la platine des coupe-circuits, près du coupe-circuit des négatifs, accessible par l'ouverture côté cabine de poupe", statut: propose }
-  - { id: afficheur-batterie, type: recepteur, designation: "Afficheur du moniteur de batterie (rond, encastré), alimenté par le câble de données", zone: table-a-carte, emplacement: "Au tableau de servitude, à la place de l'indicateur de charge à aiguille", statut: propose, questions: [Q41] }
+  - { id: afficheur-batterie, type: recepteur, designation: "Afficheur du moniteur de batterie (rond, encastré), alimenté par le câble de données", zone: table-a-carte, emplacement: "Au tableau de servitude, à la place de l'indicateur de charge à aiguille", statut: propose }
 
 nodes:
   - { id: node094, equipement: shunt-servitude, borne: "données (RJ12)", polarite: commande }

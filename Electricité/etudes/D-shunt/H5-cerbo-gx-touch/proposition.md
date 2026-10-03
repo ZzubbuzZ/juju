@@ -48,4 +48,4 @@ Points de câblage :
 - **Écran** : rectangulaire (environ 13 × 9 cm), il ne prend pas la place de l'indicateur à aiguille comme l'afficheur de D-H2. Il se monte en saillie ou encastré, selon la place à la table à carte (Q43).
 - **Solaire (étude C)** : un régulateur MPPT Victron se raccorde au Cerbo GX par VE.Direct ; le Cerbo GX partage alors la tension et le courant mesurés par le shunt avec le régulateur, pour une charge plus juste.
 - **LiFePO4** : la chimie se règle dans le SmartShunt, et le BMS d'une batterie lithium compatible peut se raccorder au Cerbo GX.
-- **Indicateur à aiguille** : il peut rester en place, ou être déposé (Q41).
+- **Indicateur à aiguille** : il peut rester en place, ou être déposé.
