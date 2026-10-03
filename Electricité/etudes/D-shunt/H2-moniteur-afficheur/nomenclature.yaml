@@ -12,7 +12,7 @@ lots:
     note: Même pose que D-H1. L'outillage de sertissage des cosses de 35 mm² est celui de A-H3.
   afficheur:
     titre: Afficheur au tableau de servitude, à la place de l'indicateur à aiguille
-    note: Le câble de données est fourni avec le moniteur. Adaptation de la découpe selon Q41.
+    note: Le câble de données est fourni avec le moniteur. Place suffisante (Q41, 03/10) ; découpe à adapter au besoin à la pose.
 
 articles:
   # --- Lot mesure -------------------------------------------------------------------
@@ -26,4 +26,4 @@ articles:
 
   # --- Lot afficheur ------------------------------------------------------------------
   - { lot: afficheur, designation: "Colliers et passe-fil pour le câble de données (trajet de wire019)", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation, fils: [wire185] }
-  - { lot: afficheur, designation: "Adaptation de la découpe du tableau (platine ou collerette) si le trou de l'indicateur ne fait pas 52 mm", quantite: 1, unite: lot, statut: a_chiffrer, note: "Selon Q41 ; rien à acheter si le trou fait déjà 52 mm" }
+  - { lot: afficheur, designation: "Adaptation de la découpe du tableau (platine ou collerette) si le trou de l'indicateur ne fait pas 52 mm", quantite: 1, unite: lot, statut: a_chiffrer, note: "Place suffisante (Q41) ; rien à acheter si le trou fait déjà 52 mm, diamètre à voir à la pose" }

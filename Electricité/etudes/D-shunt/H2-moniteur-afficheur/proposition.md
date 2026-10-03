@@ -5,11 +5,11 @@ etat: recommandee
 resume: Même shunt et même pose que H1, avec un afficheur rond à la place de l'indicateur de charge à aiguille, relié par un câble de données.
 points_forts:
   - Lecture et alarme sans téléphone, à la table à carte.
-  - Prend la place de l'indicateur à aiguille, sans découpe nouvelle si le trou fait 52 mm (Q41).
+  - Prend la place de l'indicateur à aiguille ; la place suffit (Q41, 03/10).
   - Shunt de 500 A, câble de 10 m et Bluetooth fournis.
 points_faibles:
   - Câble de données à tirer de la descente à la table à carte.
-  - Branchement et diamètre du trou de l'indicateur à relever (Q41).
+  - Diamètre du trou et branchement de l'indicateur à voir à la pose ; découpe à adapter au besoin.
 ---
 
 # D-H2 · Moniteur avec afficheur à la table à carte
@@ -32,7 +32,7 @@ Tout ce que décrit [D-H1](../H1-shunt-connecte/proposition.md#câblage), plus :
 
 Le câble de données suit le trajet de wire019, de la descente à la table à carte, avec des colliers et un passe-fil à chaque cloison (voir A-H5). Le câble fourni fait 10 m : la longueur en trop se love derrière le tableau.
 
-L'indicateur à aiguille est déposé. Son branchement n'est pas relevé (**Q41**) : ses fils seront retirés jusqu'à leur source, ou isolés et étiquetés s'ils sont inaccessibles. Q41 demande aussi le diamètre du trou et la profondeur libre derrière le tableau : si le trou ne fait pas 52 mm, il faut une platine ou une collerette d'adaptation (article à chiffrer).
+L'indicateur à aiguille est déposé. La place suffit pour l'afficheur (**Q41**, 03/10). Son branchement et le diamètre du trou se verront à la pose : ses fils seront retirés jusqu'à leur source, ou isolés et étiquetés s'ils sont inaccessibles ; si le trou ne fait pas 52 mm, une platine ou une collerette d'adaptation suffit (article à chiffrer).
 
 ## Différences avec D-H1
 
@@ -40,7 +40,7 @@ L'indicateur à aiguille est déposé. Son branchement n'est pas relevé (**Q41*
 |---|---|---|
 | Lecture | Smartphone seulement | Afficheur fixe et smartphone |
 | Alarme de tension basse | Sur le téléphone | Sur l'afficheur (et relais d'alarme disponible) |
-| Travaux en plus | aucun | Câble de données à tirer, découpe du tableau (Q41) |
+| Travaux en plus | aucun | Câble de données à tirer, découpe à adapter au besoin |
 | Coût estimé | environ 160 € | environ 165 € |
 
 ## Conséquences
