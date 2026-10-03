@@ -16,4 +16,4 @@
 
 ## Avant le câblage et la fusion dans `main`
 
-Réponses à Q45 (batterie et coffre), Q47 (hivernage), Q48 (+ après contact), Q49 (place du second chargeur). Puis `cablage.yaml` et folio de H1, avec un fusible MRBF sur la borne de la batterie à la place du fusible MEGA de A-H2, dont le pouvoir de coupure ne suffit pas pour une LiFePO4 (calibre à fixer).
+Q45, Q47 et Q49 répondues le 03/10 (place dans le coffre, pas de gel, second chargeur à côté du Dolphin). Restent : la commande du DC/DC (Q48 : après contact, proposé, ou interrupteur à la table à carte) et la longueur du câble 12 V du second chargeur (Q50). Puis `cablage.yaml` et folio de H1, avec un fusible MRBF sur la borne de la batterie à la place du fusible MEGA de A-H2, dont le pouvoir de coupure ne suffit pas pour une LiFePO4 (calibre à fixer).

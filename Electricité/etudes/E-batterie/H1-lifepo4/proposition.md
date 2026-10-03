@@ -10,18 +10,18 @@ points_forts:
   - Chaque batterie a son chargeur et son profil (DC/DC au moteur, chargeur dédié au quai pour la LiFePO4, Dolphin pour la batterie moteur seule). L'alternateur est protégé et la batterie moteur reste indépendante pour le démarrage.
 points_faibles:
   - Environ 900 €, dont 185 € pour le chargeur de quai dédié.
-  - Pas de charge en dessous de 0 °C ; le BMS coupe la charge, ce qui est sans danger mais à savoir l'hiver (Q47).
+  - Pas de charge en dessous de 0 °C (le BMS coupe la charge) ; sans conséquence en Méditerranée (Q47).
   - Le BMS peut couper toute la servitude en cas de surintensité ou de batterie vide, sans prévenir ; une alarme de charge basse (étude D) devient indispensable.
   - Le guindeau, environ 50 à 60 A, ne peut plus être secouru par la batterie moteur ; son pic de courant doit rester sous la limite du BMS.
-  - Dimensions de la batterie et du coffre à vérifier (Q45) ; place du second chargeur de quai (Q49) et + après contact pour commander le DC/DC (Q48).
-decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). Reste à choisir le niveau de secours au démarrage (recharge de secours par le DC/DC seule, ou démarrage direct sur la LiFePO4), puis à écrire le câblage après Q45 à Q49."
+  - Commande du DC/DC à choisir, après contact ou interrupteur (Q48) ; longueur du câble 12 V du second chargeur à relever (Q50).
+decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). Reste à choisir le niveau de secours au démarrage (recharge de secours par le DC/DC seule, ou démarrage direct sur la LiFePO4), puis à écrire le câblage après le choix de la commande du DC/DC (Q48) et la longueur du câble du second chargeur (Q50) ; Q45, Q47 et Q49 répondues le 03/10."
 ---
 
 # E-H1 · Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
 
 Hypothèse de l'étude E. Base : **A-H4** (programme retenu de l'étude A, avec les fusibles de A-H2).
 
-Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **900 €**. Le câblage (`cablage.yaml`, folio) sera écrit si l'hypothèse est retenue, après les réponses à Q45 à Q49.
+Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **900 €**. Le câblage (`cablage.yaml`, folio) sera écrit si l'hypothèse est retenue, après le choix de la commande du DC/DC (Q48) et la longueur du câble du second chargeur (Q50). Réponses du 03/10 : place suffisante dans le coffre (Q45), pas de gel (Q47), second chargeur à côté du Dolphin (Q49).
 
 ## Principe
 
@@ -75,9 +75,18 @@ Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de 
 - Profil adapté : absorption vers 14,2 V, puis floating bas ou mode stockage ; coupure de la charge par temps froid si le modèle a une sonde.
 - 15 A suffisent pour recharger 100 Ah en une nuit de quai ; le Dolphin reste à 20 A pour la seule batterie moteur.
 - **230 V** : sur le disjoncteur de 10 A du chargeur, dans le boîtier d'arrivée (folio 3). Le Dolphin consomme au plus 2,5 A et le nouveau chargeur environ 1,5 A : le 10 A suffit. Avec 16 A aux bornes du port, la puissance de quai n'est pas une contrainte.
-- **Emplacement** (Q49) : près du Dolphin dans le coffre de cockpit tribord si la place le permet, avec un câble 12 V jusqu'à la batterie de servitude, fusible à la batterie ; sinon dans une place sèche près de la batterie, avec un câble 230 V jusque-là.
+- **Emplacement** (Q49, 03/10) : à côté du Dolphin, dans le coffre de cockpit tribord. Un câble 12 V rejoint la batterie de servitude dans la cabine de poupe, avec un fusible à la batterie ; sa section dépend de la longueur du trajet (Q50).
 
 **Le DC/DC ne doit alors tourner qu'au moteur.** Sinon, l'absorption du Dolphin à 14,4 V le ferait démarrer (seuil d'usine 14,0 V) et l'on retrouverait le problème ci-dessus. La tension seule ne permet pas de distinguer l'alternateur (environ 14,2 à 14,4 V) du Dolphin (14,4 V). On commande donc le DC/DC par son **entrée « remote »**, reliée par un fil fin, protégé à sa source, à un + 12 V présent seulement clé de contact tournée (Q48). Sa détection de tension reste active avec les réglages d'usine : clé tournée mais moteur arrêté, il ne tire rien sur la batterie moteur.
+
+**Commande du DC/DC (Q48, 03/10).** Le + après contact du tableau moteur est pris sur la batterie moteur. Ce n'est pas un obstacle : les deux batteries ont leur négatif en commun (coupe-circuit des négatifs, node005), et l'entrée « remote » de l'Orion XS ne demande qu'une tension positive par rapport à ce négatif commun. L'écart de tension entre les deux batteries, quelques dixièmes de volt, est sans effet. Deux câblages possibles :
+
+| | Commande | Fil à tirer | Inconvénient |
+|---|---|---|---|
+| a | Automatique : + après contact du tableau moteur | Un fil fin du tableau moteur à l'Orion XS, près de la platine des coupe-circuits, avec un fusible de 1 A à sa source | Trajet du tableau moteur à la platine à relever |
+| b | Manuelle : interrupteur à la table à carte | Un départ du tableau de servitude vers l'Orion XS, environ 3 m ; l'interrupteur peut être alimenté par le + de la servitude, sans fil + moteur | Un oubli au port laisse l'Orion XS démarrer sur la charge du Dolphin et maintenir la batterie moteur en absorption |
+
+Proposition : **a**, qui ne demande aucune manœuvre et ne dépend pas d'un oubli.
 
 ## Démarrage de secours sur la LiFePO4
 
@@ -131,7 +140,7 @@ Le niveau 1 couvre le cas le plus fréquent, la batterie moteur déchargée, san
 
 ## Choix de la batterie
 
-- **Capacité 100 Ah** : même encombrement environ que le plomb actuel (à vérifier, Q45), pour 80 à 90 Ah utiles. Une 150 ou 200 Ah se justifierait avec le solaire (étude C).
+- **Capacité 100 Ah** : même encombrement environ que le plomb actuel ; le coffre a de la place (Q45), pour 80 à 90 Ah utiles. Une 150 ou 200 Ah se justifierait avec le solaire (étude C).
 - **BMS intégré de 100 A au moins en continu** (150 à 200 A, avec un courant de pointe de démarrage, si le niveau 2 du démarrage de secours est retenu), avec un pic plus élevé pendant quelques secondes : le guindeau consomme 50 A en régime normal d'après sa notice, davantage en tirant fort sur la chaîne. Un BMS trop juste couperait tout le bord pendant la manœuvre de mouillage. À vérifier sur la fiche du modèle choisi, ou prendre une batterie de 150 A.
 - **Protection basse température** (coupure de la charge sous 0 °C) et, si possible, **application Bluetooth** pour lire l'état des cellules.
 - Les batteries Victron « NG » demandent un BMS externe (Lynx Smart BMS), ce qui double le prix : écartées pour un bord de cette taille.

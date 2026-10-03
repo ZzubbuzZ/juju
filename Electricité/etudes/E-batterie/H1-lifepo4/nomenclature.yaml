@@ -10,13 +10,13 @@ devise: EUR
 lots:
   batterie:
     titre: Batterie LiFePO4 de 100 Ah à la place du plomb, dans le même coffre
-    note: Dimensions à vérifier (Q45). Coupe-circuit de couplage et coupleur Scheiber déposés, sans coût.
+    note: Place suffisante dans le coffre (Q45). Coupe-circuit de couplage et coupleur Scheiber déposés, sans coût.
   charge:
     titre: Chargeur DC/DC depuis la batterie moteur, à la place du coupleur Scheiber
     note: DC/DC commandé par un + après contact (Q48), pour ne tourner qu'au moteur.
   quai:
     titre: Chargeur de quai dédié à la LiFePO4 ; Dolphin conservé pour la batterie moteur seule, sortie 2 débranchée
-    note: Emplacement selon Q49.
+    note: À côté du Dolphin (Q49) ; section du câble 12 V selon la longueur du trajet (Q50).
 
 articles:
   # --- Lot batterie -----------------------------------------------------------------
@@ -33,5 +33,5 @@ articles:
 
   # --- Lot quai ---------------------------------------------------------------------
   - { lot: quai, designation: "Victron Blue Smart IP65 12/15, chargeur une sortie, profil LiFePO4, Bluetooth", quantite: 1, unite: pièce, prix_unitaire: 140, statut: estimation, note: "Prix relevés par recherche web autour de 130 € (eBay Allemagne, 128 €) ; référence européenne à vérifier. Variante intérieure : Blue Smart IP22 12/20 (1), environ 155 €" }
-  - { lot: quai, designation: "Câble 230 V 3 × 1,5 mm² depuis le disjoncteur du chargeur, ou prise dédiée", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Selon l'emplacement (Q49)" }
-  - { lot: quai, designation: "Câble 12 V rouge et noir vers la batterie de servitude, porte-fusible et fusible à la batterie, cosses", quantite: 1, unite: lot, prix_unitaire: 30, statut: estimation, note: "Section et longueur selon l'emplacement (Q49)" }
+  - { lot: quai, designation: "Câble 230 V 3 × 1,5 mm² depuis le disjoncteur du chargeur, ou prise dédiée", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Depuis le disjoncteur de 10 A du boîtier d'arrivée, dans le même coffre (Q49)" }
+  - { lot: quai, designation: "Câble 12 V rouge et noir vers la batterie de servitude, porte-fusible et fusible à la batterie, cosses", quantite: 1, unite: lot, prix_unitaire: 30, statut: estimation, note: "Section et longueur selon le trajet (Q50)" }

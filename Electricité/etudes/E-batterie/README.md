@@ -8,7 +8,7 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 
 ## Ce que le relevé dit déjà
 
-- Batterie de servitude : 110 Ah, plomb « sans entretien », dans un coffre sous le matelas de la cabine de poupe, contre le coffre moteur. Type exact (ouverte ou AGM) et dimensions inconnus (Q45).
+- Batterie de servitude : 110 Ah, plomb « sans entretien », dans un coffre sous le matelas de la cabine de poupe, contre le coffre moteur. Type exact (ouverte ou AGM) et dimensions non relevés ; le coffre a de la place pour une batterie de taille voisine (Q45, 03/10).
 - Batterie moteur : Varta 110 Ah, plomb, dans le coffre de cockpit tribord. Elle n'est pas concernée par l'étude.
 - Coupleur Scheiber 38.14700 à relais, prévu pour le plomb uniquement. Le coupe-circuit de couplage (node011, node012) met les deux batteries en parallèle à la main.
 - Chargeur de quai Dolphin 12 V 20 A, trois sorties, prévu pour le plomb uniquement. Sa notice ne prévoit pas de mélanger les technologies.
@@ -23,7 +23,7 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 | [H2](H2-plomb-ventile/proposition.md) | Plomb conservé en place, coffre ventilé vers l'extérieur | Évacué | environ 90 € | Écartée le 02/10 |
 | [H3](H3-plomb-deplace/proposition.md) | Plomb déplacé dans un coffre ventilé hors des cabines | Évacué hors des cabines | environ 190 € | Écartée le 02/10 |
 
-Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Le câblage de H1 (`cablage.yaml`, folio) sera écrit une fois l'hypothèse choisie et les questions Q45 à Q49 répondues ; les nœuds 360 à 379 lui sont réservés.
+Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Le câblage de H1 (`cablage.yaml`, folio) sera écrit après le choix de la commande du DC/DC (Q48) et la longueur du câble du second chargeur (Q50) ; Q45, Q47 et Q49 sont répondues (03/10) ; les nœuds 360 à 379 lui sont réservés.
 
 ## Critères de comparaison
 
@@ -31,7 +31,7 @@ Les coûts sont les totaux des nomenclatures : prix relevés par recherche web l
 - **Énergie utile** : une batterie au plomb ne doit pas descendre sous 50 % de charge, soit environ 55 Ah utiles sur 110 Ah, moins que la consommation d'une journée au mouillage. Une LiFePO4 de 100 Ah en donne 80 à 90.
 - **Charge** : compatibilité avec l'alternateur, le chargeur de quai, le futur régulateur solaire (étude C).
 - **Poids et place** : environ 25 à 30 kg pour le plomb de 110 Ah, environ 10 kg pour une LiFePO4 de 100 Ah.
-- **Hiver** : une LiFePO4 ne se charge pas en dessous de 0 °C (Q47).
+- **Hiver** : une LiFePO4 ne se charge pas en dessous de 0 °C ; sans conséquence en Méditerranée, batterie à l'intérieur du bateau (Q47, 03/10).
 - **Coût et travaux**.
 
 ## Ce que l'étude change chez les autres
@@ -45,6 +45,8 @@ Les coûts sont les totaux des nomenclatures : prix relevés par recherche web l
 ## Décision
 
 **02/10/2026 : H1 retenue par Julie**, batterie de servitude LiFePO4. Voir [decision.md](decision.md). H2 et H3 sont écartées.
+
+**Réponses du 03/10** : place suffisante dans le coffre (Q45), second chargeur à côté du Dolphin (Q49), pas de gel en Méditerranée (Q47). Restent à préciser avant le câblage : la commande du DC/DC, après contact ou interrupteur à la table à carte (Q48, voir H1), la longueur du câble 12 V du second chargeur (Q50), et le pic de courant du BMS face au guindeau, au choix de la batterie.
 
 Proposition initiale de Claude (01/10), qui a conduit à ce choix : H1 est la seule hypothèse qui supprime le gaz au lieu de l'évacuer, et elle répond aussi au manque d'énergie au mouillage (55 Ah utiles avec le plomb, pour environ 60 Ah consommés par jour). Chaque batterie a son propre chargeur : le DC/DC au moteur et un chargeur dédié au quai pour la LiFePO4, le Dolphin pour la seule batterie moteur.
 
