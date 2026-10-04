@@ -46,14 +46,6 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
   → 28/09 : pas encore de réponse.
 
-### Pour l'étude E (batterie de servitude)
-
-- **Q48** Tableau moteur : existe-t-il un + 12 V présent seulement quand la clé de contact est tournée (borne du contacteur à clé, voyant de charge, fil « D+ » de l'alternateur) ? Quel trajet jusqu'à la platine des coupe-circuits ? Un fil fin y commanderait le chargeur DC/DC (E-H1). Voir aussi Q1.
-  → 03/10 : possible, mais ce + est pris sur la batterie moteur. Une commande à la table à carte demanderait de tirer un fil + moteur supplémentaire. Trajet du tableau moteur à la platine non relevé.
-- **Q51** Batterie LiFePO4 commandée (Humsienk 12 V 200 Ah Plus) : 521 × 238 × 221 mm, 26,4 kg, bornes M8. Tient-elle dans le coffre de la cabine de poupe (longueur, largeur et hauteur intérieures, hauteur sous le couvercle avec les câbles et le fusible sur la borne) ? Le plancher du coffre supporte-t-il 26 kg sanglés ? Sinon, quel autre emplacement ? Q45 supposait une batterie de la taille du plomb actuel.
-- **Q52** Chargeur de quai commandé (Victron Blue Smart IP67 12/17) : version à une sortie « (1) » ou avec sortie de maintien « (1+Si) » ? Conditionne son câblage (E-H1).
-- **Q53** Blue Smart IP67 12/17 placé près de la LiFePO4, dans la cabine de poupe : est-il livré avec une fiche 230 V ? Y a-t-il une prise 230 V proche (table à carte, armoire derrière la table à carte), ou faut-il tirer un câble 3 × 1,5 mm² d'environ 5 m depuis le disjoncteur de 10 A du chargeur (coffre de cockpit tribord) ? Par où passerait-il ?
-
 ### Pour l'étude D (shunt)
 
 - **Q44** Traceur Garmin GPSMAP 7407 : modèle exact (xsv ou xdv, étiquette au dos) et version du logiciel (Paramètres > Système > Informations système). Est-il raccordé à un réseau NMEA 2000 (câble à connecteur rond à 5 broches, connecteurs en T, bouchons de terminaison) ? Si oui, où passe le câble principal, et d'où vient son alimentation 12 V ? Où est placé le traceur, et d'où vient son alimentation ? Conditionne D-H6 (lecture du shunt sur le traceur).
@@ -61,6 +53,15 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ## Réponses
 
+- **Q48** Tableau moteur : existe-t-il un + 12 V présent seulement quand la clé de contact est tournée (borne du contacteur à clé, voyant de charge, fil « D+ » de l'alternateur) ? Quel trajet jusqu'à la platine des coupe-circuits ? Un fil fin y commanderait le chargeur DC/DC (E-H1). Voir aussi Q1.
+  → 03/10 : possible, mais ce + est pris sur la batterie moteur. Une commande à la table à carte demanderait de tirer un fil + moteur supplémentaire. Trajet du tableau moteur à la platine non relevé.
+  → 05/10 : commande manuelle, par un interrupteur près du tableau Scheiber 2 voies (contremarche de la descente).
+- **Q51** Batterie LiFePO4 commandée (Humsienk 12 V 200 Ah Plus) : 521 × 238 × 221 mm, 26,4 kg, bornes M8. Tient-elle dans le coffre de la cabine de poupe (longueur, largeur et hauteur intérieures, hauteur sous le couvercle avec les câbles et le fusible sur la borne) ? Le plancher du coffre supporte-t-il 26 kg sanglés ? Sinon, quel autre emplacement ? Q45 supposait une batterie de la taille du plomb actuel.
+  → 05/10 : la place n'est pas un problème (même réponse que Q45).
+- **Q52** Chargeur de quai commandé (Victron Blue Smart IP67 12/17) : version à une sortie « (1) » ou avec sortie de maintien « (1+Si) » ? Conditionne son câblage (E-H1).
+  → 05/10 : référence BPC121713006, achetée 118 €.
+- **Q53** Blue Smart IP67 12/17 placé près de la LiFePO4, dans la cabine de poupe : est-il livré avec une fiche 230 V ? Y a-t-il une prise 230 V proche (table à carte, armoire derrière la table à carte), ou faut-il tirer un câble 3 × 1,5 mm² d'environ 5 m depuis le disjoncteur de 10 A du chargeur (coffre de cockpit tribord) ? Par où passerait-il ?
+  → 05/10 : un câble depuis le disjoncteur du chargeur de quai (C10) jusqu'à une prise dédiée, ou un boîtier de raccordement avec bornes Wago. Le chargeur et le shunt iront ensemble, dans la contremarche de la descente ou dans le coffre de la batterie : à décider sur place, selon la place dans la contremarche.
 - **Q46** Coffre de la batterie de servitude : a-t-il une aération (trou, grille, tuyau) ? Pourrait-on faire sortir un évent vers l'extérieur (cockpit, tableau arrière) ou vers le compartiment moteur, et sur quelle longueur ? Existe-t-il un autre emplacement possible, ventilé et hors des cabines (coffre de cockpit tribord près de la batterie moteur, coffre bâbord), et à quelle distance de la platine des coupe-circuits ?
   → 05/10 : sans objet, la batterie au plomb est remplacée par une LiFePO4 (E-H1), qui ne dégage pas de gaz : plus besoin d'aération.
 - **Q50** Longueur du trajet d'un câble 12 V entre le coffre de cockpit tribord (chargeur Dolphin) et le coffre de la batterie de servitude (cabine de poupe), par où il passerait, et cloisons à traverser. Sert à choisir la section de la sortie du second chargeur de quai (E-H1).
