@@ -74,8 +74,8 @@ Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de 
 
 - Profil adapté : absorption vers 14,2 V, puis floating bas ou mode stockage ; coupure de la charge par temps froid si le modèle a une sonde.
 - 15 A suffisent pour recharger 100 Ah en une nuit de quai ; le Dolphin reste à 20 A pour la seule batterie moteur.
-- **230 V** : sur le disjoncteur de 10 A du chargeur, dans le boîtier d'arrivée (folio 3). Le Dolphin consomme au plus 2,5 A et le nouveau chargeur environ 1,5 A : le 10 A suffit. Avec 16 A aux bornes du port, la puissance de quai n'est pas une contrainte.
-- **Emplacement** (Q49, 03/10) : à côté du Dolphin, dans le coffre de cockpit tribord. Un câble 12 V rejoint la batterie de servitude dans la cabine de poupe, avec un fusible à la batterie ; sa section dépend de la longueur du trajet (Q50).
+- **230 V** : le chargeur consomme environ 1,5 A ; avec le Dolphin (2,5 A au plus), un départ de 10 A suffit. Avec 16 A aux bornes du port, la puissance de quai n'est pas une contrainte.
+- **Emplacement** : **près de la batterie de servitude, dans la cabine de poupe** (décision du 05/10, à la place du coffre de cockpit tribord envisagé avec Q49). C'est le 230 V qui fait le trajet d'environ 5 m (Q50), et non plus le 12 V. Voir « Chargeur de quai : Blue Smart IP67 12/17 » ci-dessous.
 
 **Le DC/DC ne doit alors tourner qu'au moteur.** Sinon, l'absorption du Dolphin à 14,4 V le ferait démarrer (seuil d'usine 14,0 V) et l'on retrouverait le problème ci-dessus. La tension seule ne permet pas de distinguer l'alternateur (environ 14,2 à 14,4 V) du Dolphin (14,4 V). On commande donc le DC/DC par son **entrée « remote »**, reliée par un fil fin, protégé à sa source, à un + 12 V présent seulement clé de contact tournée (Q48). Sa détection de tension reste active avec les réglages d'usine : clé tournée mais moteur arrêté, il ne tire rien sur la batterie moteur.
 
@@ -160,7 +160,23 @@ Ce que ce choix change par rapport à la batterie de 100 Ah étudiée :
 
 ### Chargeur de quai : Blue Smart IP67 12/17
 
-À la place du Blue Smart IP65 12/15 prévu : 17 A au lieu de 15, et un boîtier étanche (IP67) aux câbles sortants. Il se place à côté du Dolphin (Q49). Son câble 12 V rejoint la batterie de servitude sur environ **5 m** (Q50) : pour une chute de 3 % à 17 A, S = 2 × 5 × 17 × 0,0175 / 0,38 ≈ 7,7 mm², donc **10 mm²**, avec un fusible à la batterie (calibre selon la notice, environ 25 A). La version (1) ou (1+Si) se lit sur l'étiquette (Q52) : la sortie de maintien « Si » pourrait entretenir la batterie moteur, mais le Dolphin le fait déjà.
+À la place du Blue Smart IP65 12/15 prévu : 17 A au lieu de 15, et un boîtier étanche (IP67) aux câbles sortants. La version (1) ou (1+Si) se lit sur l'étiquette (Q52) : la sortie de maintien « Si » pourrait entretenir la batterie moteur, mais le Dolphin le fait déjà.
+
+**Emplacement : près de la batterie (décision du 05/10).** Placé à côté du Dolphin, il aurait fallu 5 m de câble 12 V jusqu'à la batterie (Q50) : environ 10 mm² pour rester sous 3 % de chute à 17 A, soit deux câbles épais à faire passer à travers les cloisons. Placé près de la batterie, dans la cabine de poupe :
+
+- **Côté 12 V**, le câble ne fait que quelques dizaines de centimètres : la chute de tension devient négligeable, la section est celle de la notice, et un **fusible à la batterie** (environ 25 A, selon la notice) le protège. Le + rejoint la borne + de la batterie, du côté batterie de son fusible de 300 A, pour que la charge reste possible coupe-circuit ouvert.
+- **Le négatif doit revenir du côté « bord » du shunt** de l'étude D, sinon la charge n'est pas comptée. Avec le shunt à la platine (emplacement b de l'étude D), ce négatif remonte jusqu'à la platine, environ 1 m. Avec le shunt dans le coffre de la batterie (emplacement a), tout reste dans le coffre : ce choix fait pencher l'étude D vers l'emplacement a.
+- **Côté 230 V**, c'est l'alimentation qui fait le trajet d'environ 5 m, mais elle ne transporte qu'environ 1,5 A : un câble 3 × 1,5 mm² (H07RN-F) suffit largement. Deux façons de l'alimenter (Q53) : un câble depuis le disjoncteur de 10 A du chargeur, dans le boîtier d'arrivée, à travers les cloisons jusqu'à la cabine de poupe ; ou une prise 230 V proche, si le Blue Smart est livré avec une fiche (prises de la table à carte et de l'armoire, à bâbord, sur le 16 A bâbord). Dans les deux cas, le chargeur reste derrière le différentiel de 30 mA.
+- **Chaleur** : environ 40 W perdus en pleine charge. Le boîtier IP67 supporte l'humidité du coffre, mais il lui faut un peu d'air autour ; à fixer sur une paroi, pas contre la batterie.
+
+### Dolphin : sortie moteur au plus près de la batterie moteur (décision du 05/10)
+
+Le Dolphin ne charge plus que la batterie moteur, et il est fixé juste au-dessus d'elle. Sa sortie 1 passe aujourd'hui par la platine des coupe-circuits : wire003 (2 m) jusqu'à son fusible de 30 A (A-H2, wire162 sur node003). Elle est raccordée **directement à la batterie moteur** :
+
+- **+** : un câble court de la sortie 1 jusqu'à un **fusible de 30 A à la batterie**, monté sur le même goujon d'entrée que le fusible de 400 A (ou dans un bloc qui porte les deux), pour ne pas empiler les cosses sur la borne. wire003 et wire162, avec le fusible de 30 A de la platine, sont déposés.
+- **−** : le négatif du Dolphin (wire005, 35 mm², 2 m jusqu'au coupe-circuit des négatifs) peut lui aussi aller au plus court, sur la borne − de la batterie moteur (node002). Il ne charge plus la servitude : son retour n'a pas à passer près du shunt.
+- **Gains** : câble sous les 1,5 m demandés par la notice du Dolphin, deux câbles et un passage de cloison en moins, tension de charge mesurée au plus près de la batterie.
+- **Revers** : le chargeur charge la batterie moteur même coupe-circuit moteur ouvert, ce qui est voulu au quai.
 
 ### Fusible de batterie : décision du 05/10
 
@@ -177,9 +193,10 @@ Réserve, consignée pour mémoire (voir « Conséquences » ci-dessous) : la pa
 | Dépose | Coupe-circuit de couplage (node011, node012) ; wire010, wire011. Conservés si le démarrage direct sur la LiFePO4 (niveau 2) est retenu |
 | Dépose | Coupleur Scheiber (node013 à node015) ; wire002, wire007, wire014 ; wire164, wire165 et leurs fusibles de 40 A (A-H2) |
 | Débranchement | Sortie 2 du chargeur de quai : wire008, wire163 et son fusible de 30 A (A-H2) |
+| Remplacement | Sortie 1 du Dolphin : wire003, wire162 et leur fusible de 30 A (A-H2) déposés ; câble court jusqu'à un fusible de 30 A à la batterie moteur (node001). Négatif du Dolphin (wire005) ramené sur la borne − de la batterie moteur (node002) |
 | Remplacement | Batterie de servitude : mêmes bornes (node007, node008), wire161 et wire009 repris |
 | Ajout | Chargeur DC/DC : entrée sur la batterie moteur (côté batterie du coupe-circuit moteur, node003), sortie sur la batterie de servitude (node009), masse côté charges du shunt ; un fusible à chaque extrémité. Fil de commande « remote » depuis un + après contact, fusible à sa source |
-| Ajout | Chargeur de quai LiFePO4 : 230 V sur le disjoncteur de 10 A du chargeur (folio 3), sortie 12 V sur la batterie de servitude (node009) avec fusible à la batterie, masse côté charges du shunt |
+| Ajout | Chargeur de quai LiFePO4, dans la cabine de poupe près de la batterie : 230 V depuis le disjoncteur de 10 A du chargeur ou une prise proche (Q53), sortie 12 V courte sur la borne + de la batterie de servitude (node007) avec fusible à la batterie, négatif côté « bord » du shunt |
 
 ## Conséquences
 

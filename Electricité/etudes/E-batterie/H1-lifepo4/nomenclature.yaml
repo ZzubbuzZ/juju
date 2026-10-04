@@ -15,7 +15,7 @@ lots:
     titre: Chargeur DC/DC depuis la batterie moteur, à la place du coupleur Scheiber
     note: DC/DC commandé par un + après contact (Q48), pour ne tourner qu'au moteur.
   quai:
-    titre: Chargeur de quai dédié à la LiFePO4 ; Dolphin conservé pour la batterie moteur seule, sortie 2 débranchée
+    titre: Chargeur de quai dédié à la LiFePO4, près de la batterie ; Dolphin conservé pour la batterie moteur seule, raccordé au plus près d'elle
     note: À côté du Dolphin (Q49) ; section du câble 12 V selon la longueur du trajet (Q50).
 
 articles:
@@ -33,5 +33,6 @@ articles:
 
   # --- Lot quai ---------------------------------------------------------------------
   - { lot: quai, designation: "Victron Blue Smart IP67 12/17, profil LiFePO4, Bluetooth", quantite: 1, unite: pièce, prix_unitaire: 190, statut: estimation, note: "Commandé le 05/10 ; prix à remplacer par celui de la commande. Version (1) ou (1+Si) : Q52" }
-  - { lot: quai, designation: "Câble 230 V 3 × 1,5 mm² depuis le disjoncteur du chargeur, ou prise dédiée", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Depuis le disjoncteur de 10 A du boîtier d'arrivée, dans le même coffre (Q49)" }
-  - { lot: quai, designation: "Câble étamé 10 mm² rouge et noir vers la batterie de servitude (environ 5 m chacun, Q50), porte-fusible et fusible à la batterie, cosses", quantite: 1, unite: lot, prix_unitaire: 65, statut: estimation, note: "10 mm² pour 3 % de chute à 17 A sur 5 m" }
+  - { lot: quai, designation: "Câble 230 V H07RN-F 3 × 1,5 mm², environ 6 m, du disjoncteur du chargeur à la cabine de poupe, passe-fils et colliers", quantite: 1, unite: lot, prix_unitaire: 25, statut: estimation, note: "Chargeur près de la batterie (05/10). Inutile si une prise proche convient (Q53)" }
+  - { lot: quai, designation: "Câble étamé court rouge et noir vers la batterie de servitude, porte-fusible et fusible à la batterie (environ 25 A), cosses", quantite: 1, unite: lot, prix_unitaire: 25, statut: estimation, note: "Section selon la notice ; négatif côté « bord » du shunt (étude D)" }
+  - { lot: quai, designation: "Dolphin : câble court 6 mm² de la sortie 1 au fusible de 30 A de la batterie moteur, cosses (fusible et porte-fusible repris de la platine, A-H2)", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation }

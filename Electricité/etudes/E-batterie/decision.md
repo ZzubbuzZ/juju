@@ -19,6 +19,8 @@
 
 Le SmartShunt (étude D) n'est pas encore commandé.
 
+**Emplacements des chargeurs (05/10)** : le Blue Smart se place **près de la batterie de servitude**, dans la cabine de poupe, pour éviter 5 m de câble 12 V ; c'est son alimentation 230 V qui fait le trajet (Q53). Le Dolphin, qui ne charge plus que la batterie moteur, est raccordé **au plus près d'elle** (fusible de 30 A à la batterie, négatif sur sa borne −), au lieu de passer par la platine.
+
 ## Ce qui reste à décider (mis à jour le 05/10)
 
 - **Place de la batterie** (Q51) : la batterie commandée fait 52 cm de long et 26 kg, bien plus que le plomb de 110 Ah que Q45 supposait. À vérifier dans le coffre de la cabine de poupe avant la livraison.
