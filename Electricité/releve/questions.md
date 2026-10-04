@@ -48,18 +48,24 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ### Pour l'étude E (batterie de servitude)
 
-- **Q46** Coffre de la batterie de servitude : a-t-il une aération (trou, grille, tuyau) ? Pourrait-on faire sortir un évent vers l'extérieur (cockpit, tableau arrière) ou vers le compartiment moteur, et sur quelle longueur ? Existe-t-il un autre emplacement possible, ventilé et hors des cabines (coffre de cockpit tribord près de la batterie moteur, coffre bâbord), et à quelle distance de la platine des coupe-circuits ?
 - **Q48** Tableau moteur : existe-t-il un + 12 V présent seulement quand la clé de contact est tournée (borne du contacteur à clé, voyant de charge, fil « D+ » de l'alternateur) ? Quel trajet jusqu'à la platine des coupe-circuits ? Un fil fin y commanderait le chargeur DC/DC (E-H1). Voir aussi Q1.
   → 03/10 : possible, mais ce + est pris sur la batterie moteur. Une commande à la table à carte demanderait de tirer un fil + moteur supplémentaire. Trajet du tableau moteur à la platine non relevé.
-- **Q50** Longueur du trajet d'un câble 12 V entre le coffre de cockpit tribord (chargeur Dolphin) et le coffre de la batterie de servitude (cabine de poupe), par où il passerait, et cloisons à traverser. Sert à choisir la section de la sortie du second chargeur de quai (E-H1).
+- **Q51** Batterie LiFePO4 commandée (Humsienk 12 V 200 Ah Plus) : 521 × 238 × 221 mm, 26,4 kg, bornes M8. Tient-elle dans le coffre de la cabine de poupe (longueur, largeur et hauteur intérieures, hauteur sous le couvercle avec les câbles et le fusible sur la borne) ? Le plancher du coffre supporte-t-il 26 kg sanglés ? Sinon, quel autre emplacement ? Q45 supposait une batterie de la taille du plomb actuel.
+- **Q52** Chargeur de quai commandé (Victron Blue Smart IP67 12/17) : version à une sortie « (1) » ou avec sortie de maintien « (1+Si) » ? Conditionne son câblage (E-H1).
 
 ### Pour l'étude D (shunt)
 
-- **Q43** Place pour un Cerbo GX (boîtier d'environ 15 × 8 × 3 cm) près de la platine des coupe-circuits, derrière la descente ; et pour l'écran GX Touch 50 (environ 13 × 9 cm, en saillie ou encastré, profondeur environ 2 cm) à la table à carte : où, et faut-il découper le tableau ? Conditionne D-H5.
 - **Q44** Traceur Garmin GPSMAP 7407 : modèle exact (xsv ou xdv, étiquette au dos) et version du logiciel (Paramètres > Système > Informations système). Est-il raccordé à un réseau NMEA 2000 (câble à connecteur rond à 5 broches, connecteurs en T, bouchons de terminaison) ? Si oui, où passe le câble principal, et d'où vient son alimentation 12 V ? Où est placé le traceur, et d'où vient son alimentation ? Conditionne D-H6 (lecture du shunt sur le traceur).
+  → 05/10 : à voir lors de la prochaine visite.
 
 ## Réponses
 
+- **Q46** Coffre de la batterie de servitude : a-t-il une aération (trou, grille, tuyau) ? Pourrait-on faire sortir un évent vers l'extérieur (cockpit, tableau arrière) ou vers le compartiment moteur, et sur quelle longueur ? Existe-t-il un autre emplacement possible, ventilé et hors des cabines (coffre de cockpit tribord près de la batterie moteur, coffre bâbord), et à quelle distance de la platine des coupe-circuits ?
+  → 05/10 : sans objet, la batterie au plomb est remplacée par une LiFePO4 (E-H1), qui ne dégage pas de gaz : plus besoin d'aération.
+- **Q50** Longueur du trajet d'un câble 12 V entre le coffre de cockpit tribord (chargeur Dolphin) et le coffre de la batterie de servitude (cabine de poupe), par où il passerait, et cloisons à traverser. Sert à choisir la section de la sortie du second chargeur de quai (E-H1).
+  → 05/10 : environ 5 m.
+- **Q43** Place pour un Cerbo GX (boîtier d'environ 15 × 8 × 3 cm) près de la platine des coupe-circuits, derrière la descente ; et pour l'écran GX Touch 50 (environ 13 × 9 cm, en saillie ou encastré, profondeur environ 2 cm) à la table à carte : où, et faut-il découper le tableau ? Conditionne D-H5.
+  → 05/10 : place incertaine, et la solution est trop chère de toute façon : D-H5 rejetée.
 - **Q41** Indicateur de charge à aiguille du tableau de servitude, que l'afficheur du moniteur remplacerait (Q28) : comment est-il branché (fil +, masse, disjoncteur du tableau) ? Diamètre du trou de découpe (52 mm, le format courant des cadrans ?) et profondeur libre derrière le tableau. Conditionne la pose de l'afficheur (D-H2).
   → 03/10 : pas un problème, il y a la place pour l'afficheur. Branchement et diamètre exact non relevés : à voir à la pose.
 - **Q45** Batterie de servitude : marque et référence exactes. Est-ce une batterie « ouverte » (bouchons sur le dessus, même scellés) ou une batterie étanche AGM ou gel (mention VRLA, AGM ou Gel sur l'étiquette) ? Dimensions de la batterie (longueur × largeur × hauteur) et dimensions intérieures du coffre.
