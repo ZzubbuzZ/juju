@@ -54,6 +54,8 @@ wire009 part du coffre de la batterie de servitude, traverse la cloison vers le 
 
 L'emplacement b regroupe les organes de coupure et de mesure au même endroit. wire009 ne fait que 1 m (Q30, confirmé le 29/09) : la batterie est juste derrière la paroi latérale du bloc moteur, et la contremarche des coupe-circuits juste au-dessus. Le fil d'alimentation du shunt reste donc court dans les deux cas, ce qui ôte à a son principal avantage.
 
+**À revoir avec l'étude E (05/10)** : le chargeur de quai Blue Smart se place près de la LiFePO4, dans le coffre de la cabine de poupe, et son négatif doit revenir du côté « bord » du shunt pour que la charge soit comptée. Avec le shunt à l'emplacement b, ce négatif remonte jusqu'à la platine ; avec l'emplacement a, tout reste dans le coffre. L'emplacement a redevient donc intéressant ; à trancher avec le câblage de E-H1 et la place dans le coffre (Q51).
+
 ## Batterie moteur : un second shunt n'est pas nécessaire
 
 L'objectif fixé pour la batterie moteur est de **surveiller sa tension**, pas de compter ses ampères-heures. La plupart des moniteurs de batterie ont une entrée auxiliaire de tension prévue pour ça : un seul fil fin, protégé par un fusible à la borne + de la batterie moteur. Un second shunt ne se justifierait que pour suivre l'état de charge de la batterie moteur, ce qui a peu d'intérêt pour une batterie qui ne sert qu'à démarrer.
