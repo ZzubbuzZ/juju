@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Shunt de 500 A inséré sur le négatif de la batterie de servitude, entre la batterie et le coupe-circuit des négatifs, avec deux fils de mesure protégés par des fusibles de 1 A : tension de servitude et tension de la batterie moteur.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 590" role="img" aria-label="Shunt de 500 A inséré sur le négatif de la batterie de servitude, entre la batterie et le coupe-circuit des négatifs, avec deux fils de mesure protégés par des fusibles de 1 A : tension de servitude et tension de la batterie moteur.">
   <title>Folio 2e · Shunt de la batterie de servitude</title>
   <desc>Le shunt est inséré sur wire009, côté coupe-circuit des négatifs : seul le négatif de la batterie de servitude passe de son côté batterie. Deux fils de 0,75 mm², protégés à leur source par un fusible de 1 A, alimentent le shunt et lui donnent la tension de la batterie moteur.</desc>
   <style>
@@ -114,4 +114,6 @@
   <text class="t" x="40" y="500">Tout courant qui entre dans la batterie de servitude ou qui en sort : charges, chargeur de quai, alternateur par le coupleur,</text>
   <text class="t" x="40" y="518">et démarreur quand le coupe-circuit de couplage est fermé (d'où le calibre de 500 A). Les fils de mesure partent du côté batterie</text>
   <text class="t" x="40" y="536">des coupe-circuits, après les fusibles de 400 A : la mesure continue coupe-circuits ouverts. Lecture sur smartphone (D-H1).</text>
+  <text class="ts tu" x="40" y="566">À reprendre avec le câblage de l'étude E (décidée le 05/10) : LiFePO4 de 200 Ah, Orion XS et Blue Smart à la place du coupleur et de la sortie 2 du Dolphin ;</text>
+  <text class="ts tu" x="40" y="582">le démarreur ne traverse plus le shunt, et le shunt ira avec le chargeur de quai, dans la contremarche ou dans le coffre de la batterie (à décider sur place).</text>
 </svg>

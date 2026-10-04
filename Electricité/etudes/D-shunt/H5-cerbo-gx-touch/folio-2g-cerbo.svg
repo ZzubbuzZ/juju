@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" role="img" aria-label="Cerbo GX alimenté par un fusible de 3 A après le coupe-circuit de servitude, relié au SmartShunt par un câble VE.Direct et à un écran tactile GX Touch 50 à la table à carte.">
   <title>Folio 2g · Supervision Cerbo GX et écran GX Touch 50</title>
-  <desc>Le SmartShunt du folio 2e est lu par un Cerbo GX posé près des coupe-circuits, alimenté côté charges du coupe-circuit de servitude à travers un fusible de 3 A. Le Cerbo GX pilote un écran tactile GX Touch 50 à la table à carte ; leur place reste à relever (Q43).</desc>
+  <desc>Le SmartShunt du folio 2e est lu par un Cerbo GX posé près des coupe-circuits, alimenté côté charges du coupe-circuit de servitude à travers un fusible de 3 A. Le Cerbo GX pilote un écran tactile GX Touch 50 à la table à carte. Hypothèse écartée le 05/10 : place incertaine (Q43) et prix.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
