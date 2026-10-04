@@ -52,6 +52,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 03/10 : possible, mais ce + est pris sur la batterie moteur. Une commande à la table à carte demanderait de tirer un fil + moteur supplémentaire. Trajet du tableau moteur à la platine non relevé.
 - **Q51** Batterie LiFePO4 commandée (Humsienk 12 V 200 Ah Plus) : 521 × 238 × 221 mm, 26,4 kg, bornes M8. Tient-elle dans le coffre de la cabine de poupe (longueur, largeur et hauteur intérieures, hauteur sous le couvercle avec les câbles et le fusible sur la borne) ? Le plancher du coffre supporte-t-il 26 kg sanglés ? Sinon, quel autre emplacement ? Q45 supposait une batterie de la taille du plomb actuel.
 - **Q52** Chargeur de quai commandé (Victron Blue Smart IP67 12/17) : version à une sortie « (1) » ou avec sortie de maintien « (1+Si) » ? Conditionne son câblage (E-H1).
+- **Q53** Blue Smart IP67 12/17 placé près de la LiFePO4, dans la cabine de poupe : est-il livré avec une fiche 230 V ? Y a-t-il une prise 230 V proche (table à carte, armoire derrière la table à carte), ou faut-il tirer un câble 3 × 1,5 mm² d'environ 5 m depuis le disjoncteur de 10 A du chargeur (coffre de cockpit tribord) ? Par où passerait-il ?
 
 ### Pour l'étude D (shunt)
 
