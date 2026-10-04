@@ -1,0 +1,88 @@
+# yaml-language-server: $schema=../../../outils/schema/donnees.schema.json
+#
+# E-H1 : différences avec D-H1 (shunt de servitude posé dans la contremarche, sur le
+# programme retenu de l'étude A). Décisions du 02/10 et du 05/10.
+# Chargeur de quai LiFePO4 et shunt ensemble, dans la contremarche de la descente
+# (emplacement b). La variante « dans le coffre de la batterie » est E-H4.
+# Nœuds 360 à 379 réservés à l'étude E ; fils wire200 et suivants.
+# Longueurs estimées, à mesurer à la pose. Calibres et sections de l'Orion XS selon sa notice.
+
+hypothese: E-H1
+titre: Batterie LiFePO4, Orion XS et chargeurs dédiés (chargeur de quai dans la contremarche)
+base: D-H1
+
+supprime:
+  equipements: [bat-servitude, fus-bat-servitude, fus-chargeur-moteur, cc-couplage, coupleur, fus-coupleur-moteur, fus-coupleur-servitude, fus-chargeur-servitude]
+  nodes: [node011, node012, node013, node014, node015, node074, node076, node077, node078, node079, node080, node081]
+  fils: [wire002, wire003, wire005, wire007, wire008, wire010, wire011, wire014, wire162, wire163, wire164, wire165]
+
+equipements:
+  # --- Batterie et son fusible ---------------------------------------------------
+  - { id: bat-servitude, type: batterie, designation: "Batterie de servitude LiFePO4", modele: "Humsienk 12 V 200 Ah Plus, BMS 250 A, Bluetooth", zone: cabine-poupe, emplacement: "Dans le coffre de l'ancienne batterie, sanglée, bornes sous capot", capacite_Ah: 200, statut: propose }
+  - { id: fus-bat-servitude, type: fusible, designation: "Fusible de la batterie de servitude (MEGA)", calibre_A: 300, emplacement: "Porte-fusible vissé à côté de la batterie de servitude", statut: propose, note: "300 A au lieu des 400 A de A-H2 : le BMS coupe à 250 A. Décision du 05/10 : MEGA ; un MRBF sur borne aurait un pouvoir de coupure supérieur" }
+
+  # --- Dolphin : sortie moteur au plus près de la batterie moteur ---------------
+  - { id: fus-chargeur-moteur, type: fusible, designation: "Fusible du Dolphin, sortie batterie moteur (MIDI)", calibre_A: 30, emplacement: "À la batterie moteur, sur le goujon d'entrée du fusible de 400 A", statut: propose }
+
+  # --- Chargeur DC/DC ------------------------------------------------------------
+  - { id: orion-xs, type: chargeur, designation: "Chargeur DC/DC de la LiFePO4", modele: "Victron Orion XS 12/12-50A, réglé vers 15 A", zone: descente, emplacement: "Derrière la platine des coupe-circuits", statut: propose }
+  - { id: fus-orion-entree, type: fusible, designation: "Fusible de l'entrée de l'Orion XS (côté batterie moteur)", emplacement: "Contre la borne côté batterie du coupe-circuit moteur", statut: propose, note: "Calibre selon la notice de l'Orion XS" }
+  - { id: fus-orion-sortie, type: fusible, designation: "Fusible de la sortie de l'Orion XS (côté batterie de servitude)", emplacement: "Contre la borne côté batterie du coupe-circuit de servitude", statut: propose, note: "Calibre selon la notice de l'Orion XS" }
+  - { id: fus-orion-remote, type: fusible, designation: "Fusible de la commande de l'Orion XS", calibre_A: 1, emplacement: "À la source du fil, côté charges du coupe-circuit de servitude", statut: propose }
+  - { id: inter-orion, type: interrupteur, designation: "Interrupteur à voyant de l'Orion XS (« ouvrir au port »)", zone: descente, emplacement: "Près du tableau Scheiber 2 voies (Q48)", statut: propose }
+
+  # --- Chargeur de quai LiFePO4 --------------------------------------------------
+  - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: descente, emplacement: "Dans la contremarche, avec le shunt (variante coffre : E-H4)", statut: propose }
+  - { id: fus-chargeur-lifepo4, type: fusible, designation: "Fusible de la sortie du chargeur de quai LiFePO4", calibre_A: 25, emplacement: "Contre la borne côté batterie du coupe-circuit de servitude", statut: propose, note: "Calibre à confirmer sur la notice du Blue Smart" }
+
+nodes:
+  # --- Dolphin --------------------------------------------------------------------
+  - { id: node074, equipement: fus-chargeur-moteur, borne: "1 (côté batterie)", polarite: "+", monte_sur: node070 }
+
+  # --- Orion XS -------------------------------------------------------------------
+  - { id: node360, equipement: orion-xs, borne: "entrée +", polarite: "+" }
+  - { id: node361, equipement: orion-xs, borne: "sortie +", polarite: "+" }
+  - { id: node362, equipement: orion-xs, borne: "−", polarite: "-" }
+  - { id: node363, equipement: orion-xs, borne: "remote H", polarite: commande }
+  - { id: node364, equipement: fus-orion-entree, borne: "1 (côté source)", polarite: "+" }
+  - { id: node365, equipement: fus-orion-entree, borne: "2", polarite: "+" }
+  - { id: node366, equipement: fus-orion-sortie, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node367, equipement: fus-orion-sortie, borne: "2", polarite: "+" }
+  - { id: node368, equipement: fus-orion-remote, borne: "1 (côté source)", polarite: "+" }
+  - { id: node369, equipement: fus-orion-remote, borne: "2", polarite: "+" }
+  - { id: node370, equipement: inter-orion, borne: "entrée", polarite: "+" }
+  - { id: node371, equipement: inter-orion, borne: "sortie", polarite: commande }
+
+  # --- Chargeur de quai LiFePO4 ------------------------------------------------------
+  - { id: node372, equipement: chargeur-lifepo4, borne: "sortie +", polarite: "+" }
+  - { id: node373, equipement: chargeur-lifepo4, borne: "sortie −", polarite: "-" }
+  - { id: node374, equipement: chargeur-lifepo4, borne: "230 V phase", polarite: 230V-phase }
+  - { id: node375, equipement: chargeur-lifepo4, borne: "230 V neutre", polarite: 230V-neutre }
+  - { id: node376, equipement: chargeur-lifepo4, borne: "230 V terre", polarite: 230V-terre }
+  - { id: node377, equipement: fus-chargeur-lifepo4, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node378, equipement: fus-chargeur-lifepo4, borne: "2", polarite: "+" }
+
+fils:
+  # --- Dolphin, au plus près de la batterie moteur ------------------------------------
+  - { id: wire200, de: node075, vers: node016, section_mm2: 6, couleur: rouge, longueur_m: 0.5, remplace: wire003, statut: propose, note: "Le Dolphin est juste au-dessus de la batterie moteur" }
+  - { id: wire201, de: node018, vers: node002, section_mm2: 6, couleur: noir, longueur_m: 0.5, remplace: wire005, statut: propose, note: "Négatif du Dolphin sur la borne − de la batterie moteur" }
+
+  # --- Orion XS -------------------------------------------------------------------------
+  - { id: wire202, de: node003, vers: node364, section_mm2: 10, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire203, de: node365, vers: node360, section_mm2: 10, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Section pour 50 A, courant maximal de l'appareil ; à confirmer sur la notice" }
+  - { id: wire204, de: node009, vers: node366, section_mm2: 10, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire205, de: node367, vers: node361, section_mm2: 10, couleur: rouge, longueur_m: 0.5, statut: propose }
+  - { id: wire206, de: node362, vers: node005, section_mm2: 10, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge de la LiFePO4 est comptée" }
+  - { id: wire207, de: node010, vers: node368, section_mm2: 0.75, couleur: rouge, longueur_m: 0.1, statut: propose }
+  - { id: wire208, de: node369, vers: node370, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose }
+  - { id: wire209, de: node371, vers: node363, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Commande « remote » de l'Orion XS" }
+
+  # --- Chargeur de quai LiFePO4 : 12 V ---------------------------------------------------
+  - { id: wire210, de: node009, vers: node377, section_mm2: 4, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire211, de: node378, vers: node372, section_mm2: 4, couleur: rouge, longueur_m: 0.5, statut: propose }
+  - { id: wire212, de: node373, vers: node005, section_mm2: 4, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge est comptée" }
+
+  # --- Chargeur de quai LiFePO4 : 230 V depuis le disjoncteur du chargeur (Q53) ------------
+  - { id: wire213, de: node211, vers: node374, section_mm2: 1.5, couleur: marron, longueur_m: 4, statut: propose, note: "Câble 3 × 1,5 mm² dédié, jusqu'à une prise ou un boîtier à bornes Wago près du chargeur (Q53) ; longueur estimée" }
+  - { id: wire214, de: node209, vers: node375, section_mm2: 1.5, couleur: bleu, longueur_m: 4, statut: propose }
+  - { id: wire215, de: node212, vers: node376, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 4, statut: propose }

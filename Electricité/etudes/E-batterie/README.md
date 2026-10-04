@@ -22,8 +22,9 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 | [H1](H1-lifepo4/proposition.md) | Batterie LiFePO4 (200 Ah commandée le 05/10) à la place du plomb, chargeur DC/DC à la place du coupleur Scheiber, coupe-circuit de couplage déposé, chargeur de quai dédié à la LiFePO4 | Supprimé à la source | environ 900 € | **Retenue** le 02/10 |
 | [H2](H2-plomb-ventile/proposition.md) | Plomb conservé en place, coffre ventilé vers l'extérieur | Évacué | environ 90 € | Écartée le 02/10 |
 | [H3](H3-plomb-deplace/proposition.md) | Plomb déplacé dans un coffre ventilé hors des cabines | Évacué hors des cabines | environ 190 € | Écartée le 02/10 |
+| [H4](H4-chargeur-coffre/proposition.md) | Variante de H1 : chargeur de quai et shunt dans le coffre de la batterie au lieu de la contremarche | Supprimé à la source | comme H1, à quelques mètres de câble près | À choisir sur place face à H1 |
 
-Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Toutes les questions de l'étude sont répondues (Q45 à Q53). Le câblage de H1 (`cablage.yaml`, folio) reste à écrire, avec l'emplacement du chargeur de quai et du shunt choisi sur place ; les nœuds 360 à 379 lui sont réservés.
+Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Toutes les questions de l'étude sont répondues (Q45 à Q53). **Câblage écrit le 05/10** : [H1](H1-lifepo4/cablage.yaml) (base : D-H1, chargeur de quai et shunt dans la contremarche, [folio 2h](H1-lifepo4/folio-2h-lifepo4.svg)) et sa variante [H4](H4-chargeur-coffre/cablage.yaml) (dans le coffre de la batterie, [folio 2i](H4-chargeur-coffre/folio-2i-coffre.svg)). Nouveaux numéros : node360 à node378, wire200 à wire215 ; node074 (fusible de 30 A du Dolphin) est remonté sur le goujon du fusible de 400 A.
 
 ## Critères de comparaison
 

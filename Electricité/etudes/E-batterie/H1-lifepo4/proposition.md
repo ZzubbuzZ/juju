@@ -21,7 +21,7 @@ decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10
 
 Hypothèse de l'étude E. Base : **A-H4** (programme retenu de l'étude A, avec les fusibles de A-H2).
 
-Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **900 €**. Le câblage (`cablage.yaml`, folio) reste à écrire ; toutes les questions sont répondues (Q48 à Q53, 05/10), seul l'emplacement du chargeur de quai et du shunt se décidera sur place. Réponses du 03/10 : place suffisante dans le coffre (Q45), pas de gel (Q47), second chargeur à côté du Dolphin (Q49).
+Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **900 €**. Câblage : [cablage.yaml](cablage.yaml) (base : **D-H1**, le shunt de l'étude D), [folio 2h](folio-2h-lifepo4.svg), avec le chargeur de quai et le shunt dans la contremarche. Variante dans le coffre de la batterie : [E-H4](../H4-chargeur-coffre/proposition.md), [folio 2i](../H4-chargeur-coffre/folio-2i-coffre.svg). Choix sur place (Q53). Réponses du 03/10 : place suffisante dans le coffre (Q45), pas de gel (Q47), second chargeur à côté du Dolphin (Q49).
 
 ## Principe
 
