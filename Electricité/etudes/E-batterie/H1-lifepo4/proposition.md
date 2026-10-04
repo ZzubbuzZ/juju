@@ -2,19 +2,20 @@
 hypothese: E-H1
 titre: Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
 etat: retenue
-resume: Une batterie LiFePO4 de 100 Ah, avec BMS intégré, remplace le plomb dans le même coffre. Un chargeur DC/DC la charge depuis la batterie moteur, à la place du coupleur Scheiber, et le coupe-circuit de couplage est déposé. Au quai, un chargeur dédié la charge ; le Dolphin ne charge plus que la batterie moteur.
+resume: Une batterie LiFePO4 de 200 Ah (Humsienk, BMS 250 A) remplace le plomb dans le même coffre. Un Orion XS, commandé par un interrupteur, la charge depuis la batterie moteur à la place du coupleur Scheiber, et le coupe-circuit de couplage est déposé. Au quai, un Blue Smart IP67 12/17 la charge ; le Dolphin ne charge plus que la batterie moteur, raccordé au plus près d'elle. Chargeur de quai et shunt dans la contremarche (variante dans le coffre de la batterie, E-H4).
 points_forts:
   - Plus d'hydrogène dans la cabine de poupe (A11 traitée à la source).
-  - 80 à 90 Ah utiles au lieu d'environ 55, plus qu'une journée au mouillage.
-  - Environ 10 kg au lieu de 25 à 30 kg ; plusieurs milliers de cycles.
-  - Chaque batterie a son chargeur et son profil (DC/DC au moteur, chargeur dédié au quai pour la LiFePO4, Dolphin pour la batterie moteur seule). L'alternateur est protégé et la batterie moteur reste indépendante pour le démarrage.
+  - Environ 160 à 180 Ah utiles au lieu d'environ 55, près de trois jours au mouillage.
+  - BMS de 250 A, largement au-dessus du guindeau ; plusieurs milliers de cycles.
+  - Chaque batterie a son chargeur et son profil (Orion XS au moteur, Blue Smart au quai pour la LiFePO4, Dolphin pour la batterie moteur seule). L'alternateur est protégé et la batterie moteur reste indépendante pour le démarrage.
 points_faibles:
-  - Environ 900 €, dont 185 € pour le chargeur de quai dédié.
+  - 26,4 kg, autant que le plomb ; 52 cm de long.
   - Pas de charge en dessous de 0 °C (le BMS coupe la charge) ; sans conséquence en Méditerranée (Q47).
-  - Le BMS peut couper toute la servitude en cas de surintensité ou de batterie vide, sans prévenir ; une alarme de charge basse (étude D) devient indispensable.
-  - Le guindeau, environ 50 à 60 A, ne peut plus être secouru par la batterie moteur ; son pic de courant doit rester sous la limite du BMS.
+  - Le BMS peut couper toute la servitude sans prévenir, batterie vide ; une alarme de charge basse (étude D) devient indispensable.
+  - Démarrage direct de secours sur la LiFePO4 non garanti (courant de pointe du BMS non spécifié) ; la recharge de secours par l'Orion XS reste possible.
   - Commande manuelle du DC/DC (Q48) ; un oubli au port le laisse démarrer sur la charge du Dolphin.
-decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A et Blue Smart IP67 12/17 commandés ; fusible MEGA. Place de la batterie à vérifier (Q51). Reste à choisir le niveau de secours au démarrage (recharge de secours par le DC/DC seule, ou démarrage direct sur la LiFePO4), puis à écrire le câblage après le choix de la commande du DC/DC (Q48) et la longueur du câble du second chargeur (Q50) ; Q45, Q47 et Q49 répondues le 03/10."
+  - Fusible MEGA (décision du 05/10) ; un MRBF aurait un meilleur pouvoir de coupure, pour le même prix.
+decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit (folio 2h) ; emplacement du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4)."
 ---
 
 # E-H1 · Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
