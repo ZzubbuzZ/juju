@@ -12,8 +12,8 @@ titre: SmartShunt, Cerbo GX et écran GX Touch 50
 base: D-H1
 
 equipements:
-  - { id: cerbo-gx, type: commande, designation: "Centrale de supervision Victron Cerbo GX", zone: descente, emplacement: "Près de la platine des coupe-circuits, derrière la descente (place à confirmer)", statut: propose, questions: [Q43] }
-  - { id: gx-touch-50, type: recepteur, designation: "Écran tactile Victron GX Touch 50 (5 pouces), alimenté par le Cerbo GX", zone: table-a-carte, emplacement: "À la table à carte (place à confirmer)", statut: propose, questions: [Q43] }
+  - { id: cerbo-gx, type: commande, designation: "Centrale de supervision Victron Cerbo GX", zone: descente, emplacement: "Près de la platine des coupe-circuits, derrière la descente (place à confirmer)", statut: propose }
+  - { id: gx-touch-50, type: recepteur, designation: "Écran tactile Victron GX Touch 50 (5 pouces), alimenté par le Cerbo GX", zone: table-a-carte, emplacement: "À la table à carte (place à confirmer)", statut: propose }
   - { id: fus-cerbo, type: fusible, designation: "Fusible en ligne de l'alimentation du Cerbo GX", calibre_A: 3, emplacement: "Sur le fil, contre la borne côté charges du coupe-circuit de servitude", statut: propose }
 
 nodes:

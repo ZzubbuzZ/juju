@@ -4,6 +4,23 @@
 
 **Base** : le programme retenu de l'étude A (A-H4, qui cumule A-H2), décidé le 30/09. Les fils de mesure du shunt partent ainsi en aval des fusibles de 400 A. La position du shunt vis à vis de la mise en commun des masses des batteries et l'opportunité d'un shunt sur la batterie moteur sont aussi à prendre en compte. Finalement, une "Build Of Materials" et une estimation du cout pour chaque hypothèse permettra le choix.
 
+## Ce que le shunt apporte à l'installation (mis à jour le 05/10)
+
+Avec les décisions de l'étude E (LiFePO4 Humsienk de 200 Ah à BMS de 250 A, Orion XS, Blue Smart IP67 12/17, commandés le 05/10), le SmartShunt (H1) ou son équivalent à afficheur (H2) apporte :
+
+1. **L'énergie réellement disponible.** Une LiFePO4 garde une tension presque constante, autour de 13,2 à 13,3 V, entre 90 et 20 % de charge : la tension ne dit plus rien de ce qui reste. Seul le comptage des ampères-heures entrés et sortis le dit. Le shunt affiche l'état de charge en %, les ampères-heures consommés et le temps restant au rythme actuel.
+2. **Prévenir avant la coupure du BMS.** Batterie vide, le BMS coupe toute la servitude sans prévenir : feux de navigation, VHF, pilote, et aussi la pompe de cale. Une alarme d'état de charge bas, réglée par exemple à 20 %, laisse le temps de démarrer le moteur ou de réduire la consommation. Avec le SmartShunt, l'alarme s'affiche dans l'application, téléphone à portée ; une alarme visible ou sonore sans téléphone demande le BMV-712 de H2 (afficheur et relais).
+3. **Détecter le court-circuit résistif avant qu'il ne devienne dangereux.** C'est la parade retenue par A-H2 pour les câbles de batterie en 35 mm² sous des fusibles de 400 A : une fuite qui grandit avec l'usure se voit dans l'historique comme un courant débité alors que tout est éteint, ou une consommation de veille qui dérive. Le shunt mesure ces faibles courants au centième d'ampère près.
+4. **Surveiller la batterie moteur.** Son entrée auxiliaire mesure la tension de la batterie au plomb du démarreur, que le BMS de la LiFePO4 ignore : batterie moteur qui faiblit, alternateur qui ne charge plus.
+5. **Remplacer les estimations par des mesures.** Le bilan énergétique (11 consommateurs sur 11 estimés) devient mesurable circuit par circuit. Les études B (chauffe-eau) et C (solaire) se dimensionnent alors sur des chiffres réels.
+6. **Compter toutes les charges.** Les masses de l'Orion XS et du Blue Smart reviennent côté charges du shunt : la charge au moteur, au quai et, plus tard, au soleil est comptée. Le shunt sait quand la batterie est pleine et recale son état de charge à 100 % à chaque fin de charge.
+7. **Une seule application pour tout le bord.** Le SmartShunt, l'Orion XS et le Blue Smart se lisent tous dans VictronConnect. Par le réseau VE.Smart, le shunt peut transmettre aux chargeurs compatibles la tension et le courant mesurés à la batterie : le chargeur compense la chute de tension de ses câbles (les 5 m du Blue Smart, Q50) et sait quand la batterie est pleine. Compatibilité de chaque modèle à vérifier sur sa fiche.
+8. **Évolutif.** Son port VE.Direct le relie plus tard à un régulateur solaire Victron (étude C) ou à une centrale GX, sans rien racheter.
+
+**Et l'application de la batterie ?** Le BMS de la Humsienk donne déjà un état de charge par Bluetooth. Il estime lui aussi l'énergie en comptant le courant, mais les BMS de ce prix mesurent mal les faibles courants (veille, pompe de cale), ne surveillent pas la batterie moteur, n'ont pas d'historique exploitable pour la détection du point 3, et ne dialoguent pas avec les chargeurs Victron. Comparer les deux lectures pendant les premières semaines dira ce que vaut celle du BMS.
+
+**Coût** : environ 160 € posé (H1), 165 € avec l'afficheur (H2).
+
 ## Où placer le shunt
 
 Un shunt ne compte que le courant qui le traverse. Pour mesurer la batterie de servitude, **son négatif, et lui seul, doit passer par le shunt** ; toutes les charges et toutes les sources de charge restent de l'autre côté.
@@ -60,7 +77,7 @@ Les modèles cités sont des exemples de familles de produits. Leurs caractéris
 | [H2](H2-moniteur-afficheur/proposition.md) | Moniteur avec afficheur (type Victron BMV-712 Smart) | Afficheur rond à la place de l'indicateur à aiguille, et application | Tension par l'entrée auxiliaire | environ 165 €, plus une éventuelle adaptation de la découpe | Rédigée, [folio 2f](H2-moniteur-afficheur/folio-2f-afficheur.svg) |
 | [H3](H3-simarine-pico/proposition.md) | Moniteur multi-capteurs (Simarine Pico et shunt SC503) | Afficheur couleur | Second shunt, ou mesure de tension | environ 400 € | Non développée, à écarter : voir ci-dessous |
 | [H4](H4-moniteur-generique/proposition.md) | Moniteur générique bas coût (type Junctek KH140F, 400 A) | Afficheur et application | Selon le modèle | environ 90 € | Non développée, à écarter : voir ci-dessous |
-| [H5](H5-cerbo-gx-touch/proposition.md) | SmartShunt de H1, centrale Victron Cerbo GX et écran tactile GX Touch 50 | Écran 5 pouces à la table à carte, application, portail VRM | Tension par l'entrée auxiliaire du shunt | environ 675 € | Rédigée, [folio 2g](H5-cerbo-gx-touch/folio-2g-cerbo.svg) ; place à relever (Q43) |
+| [H5](H5-cerbo-gx-touch/proposition.md) | SmartShunt de H1, centrale Victron Cerbo GX et écran tactile GX Touch 50 | Écran 5 pouces à la table à carte, application, portail VRM | Tension par l'entrée auxiliaire du shunt | environ 675 € | Écartée le 05/10 (place incertaine, Q43 ; prix) |
 | [H6](H6-cerbo-traceur-garmin/proposition.md) | SmartShunt de H1 et centrale Victron Cerbo-S GX sans écran, données transmises au traceur Garmin par NMEA 2000 | Traceur GPSMAP 7407 quand il est allumé, application, portail VRM | Tension par l'entrée auxiliaire du shunt (affichage sur le traceur à vérifier) | environ 600 €, 485 € si le traceur est déjà sur un réseau NMEA 2000 | Rédigée sans câblage, en attente de Q44 |
 
 H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire009 repris sur le shunt, wire180 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire181 à wire184). H2 ajoute le câble de données wire185 et l'afficheur. Nouveaux numéros : node086 à node095, wire180 à wire185. H5 reprend H1 et ajoute un Cerbo GX alimenté après le coupe-circuit de servitude (fusible 3 A), relié au shunt par VE.Direct et à l'écran : node340 à node346, wire186 à wire190.
@@ -72,7 +89,7 @@ H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire009 repris
 
 ## Critères de comparaison
 
-- **Mesure** : précision à faible courant (consommation de veille), calibre du shunt (500 A à cause du démarrage couplé), tension de la batterie moteur.
+- **Mesure** : précision à faible courant (consommation de veille), calibre du shunt (500 A, le plus petit SmartShunt ; avec l'étude E, le démarreur ne traverse plus le shunt, sauf démarrage de secours direct), tension de la batterie moteur.
 - **Lecture** : afficheur fixe ou application, alarme de tension basse.
 - **Évolutions** : compatibilité LiFePO4 (réglage de la chimie) ; dialogue avec un futur régulateur solaire (étude C) et un futur chargeur.
 - **Consommation propre** du moniteur, qui s'ajoute au bilan.
@@ -85,6 +102,8 @@ Une fois le shunt posé, un protocole simple permet de remplacer les estimations
 
 ## Décision
 
+**05/10/2026** : H5 écartée (place incertaine pour le Cerbo GX et l'écran, Q43 ; prix). H6 attend Q44 (traceur et réseau NMEA 2000, à voir à la prochaine visite). Le SmartShunt (H1) est envisagé, pas encore commandé : voir [ce que le shunt apporte](#ce-que-le-shunt-apporte-à-linstallation-mis-à-jour-le-0510). Le choix entre lecture sur téléphone (H1) et afficheur avec alarme visible (H2) reste ouvert.
+
 En attente. Le choix porte sur la lecture : smartphone seul (H1) ou afficheur fixe (H2).
 
 Proposition de Claude (01/10) : **H2**. L'afficheur prend la place de l'indicateur à aiguille sans découpe nouvelle, l'alarme de tension basse est visible sans téléphone, et un shunt connecté seul (H1) n'accepte pas d'afficheur dédié : une lecture fixe ne pourrait s'y ajouter que par l'écran d'un Cerbo GX (H5), bien plus cher. Aux prix relevés le 01/10, les deux coûtent le même prix, environ 165 €. À trancher, ainsi que l'écartement de H3 et H4.
@@ -93,4 +112,4 @@ H5 (ajoutée le 01/10 à la demande de l'utilisateur) est l'option « tableau de
 
 H6 (ajoutée le 01/10 à la demande de l'utilisateur) est une variante de H5 : le traceur Garmin sert d'afficheur à la place du GX Touch 50. Le GPSMAP 7407 n'accepte pas l'application Victron complète (OneHelm), mais il lit en NMEA 2000 l'état de charge, la tension et le courant publiés par le Cerbo. Elle n'économise qu'environ 75 € sur H5, car il faut créer le réseau NMEA 2000, sauf s'il existe déjà (Q44). Elle se justifie surtout si un réseau NMEA 2000 est prévu de toute façon pour d'autres instruments. H5 peut d'ailleurs passer au Cerbo-S GX, comme H6, pour environ 610 €.
 
-Avant la pose : Q41 est traitée (place suffisante pour l'afficheur de H2) ; répondre à Q43 (place du Cerbo GX et de l'écran) pour H5 et H6, à Q44 (traceur et réseau NMEA 2000) pour H6.
+Avant la pose : Q41 est traitée (place suffisante pour l'afficheur de H2) ; Q43 aussi (H5 écartée) ; reste Q44 (traceur et réseau NMEA 2000) pour H6.

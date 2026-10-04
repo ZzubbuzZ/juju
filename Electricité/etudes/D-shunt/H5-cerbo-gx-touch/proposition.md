@@ -1,7 +1,7 @@
 ---
 hypothese: D-H5
 titre: SmartShunt, Cerbo GX et écran GX Touch 50
-etat: proposee
+etat: ecartee
 resume: Le SmartShunt de D-H1, lu par une centrale Victron Cerbo GX qui affiche tout le bord sur un écran tactile de 5 pouces à la table à carte, et peut fédérer plus tard le régulateur solaire et le chargeur.
 points_forts:
   - Écran tactile lisible, alarmes visibles sans téléphone, historique détaillé.
@@ -11,6 +11,7 @@ points_faibles:
   - Environ quatre fois le prix de H2.
   - Consommation d'environ 0,3 A (3,8 W) tant que le Cerbo GX est allumé, soit environ 7 Ah par jour au mouillage, 12 % du bilan.
   - Écran rectangulaire qui n'entre pas dans le trou de l'indicateur à aiguille ; place à trouver pour l'écran et le Cerbo GX (Q43).
+decision: "05/10/2026 : écartée par l'utilisateur. Place incertaine pour le Cerbo GX et l'écran (Q43), et solution trop chère."
 ---
 
 # D-H5 · SmartShunt, Cerbo GX et écran GX Touch 50

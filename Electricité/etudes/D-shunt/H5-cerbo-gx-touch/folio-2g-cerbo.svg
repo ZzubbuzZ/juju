@@ -67,7 +67,6 @@
   <text class="idn" x="706" y="184">n343</text>
   <text class="idn end" x="874" y="184">n344</text>
   <text class="idn end" x="874" y="106">n345</text>
-  <g class="mk-q"><circle cx="880" cy="90" r="11"/><text class="mid" x="880" y="93.5">Q43</text></g>
 
   <!-- Masse du Cerbo GX vers node006 -->
   <path class="n w1" d="M740 190 V260 H540"/>
@@ -93,7 +92,6 @@
   <text class="ts mid" x="1070" y="145">écran tactile 5 pouces</text>
   <text class="ts mid" x="1070" y="161">alimenté par le Cerbo GX</text>
   <text class="idn" x="986" y="116">n346</text>
-  <g class="mk-q"><circle cx="1160" cy="100" r="11"/><text class="mid" x="1160" y="103.5">Q43</text></g>
   <text class="ts" x="940" y="206">wire190 : câble de l'écran, 2 m fourni</text>
   <text class="ts" x="940" y="222">et rallonge de 2 m, trajet de wire019</text>
 
