@@ -54,7 +54,7 @@ wire009 part du coffre de la batterie de servitude, traverse la cloison vers le 
 
 L'emplacement b regroupe les organes de coupure et de mesure au même endroit. wire009 ne fait que 1 m (Q30, confirmé le 29/09) : la batterie est juste derrière la paroi latérale du bloc moteur, et la contremarche des coupe-circuits juste au-dessus. Le fil d'alimentation du shunt reste donc court dans les deux cas, ce qui ôte à a son principal avantage.
 
-**À revoir avec l'étude E (05/10)** : le chargeur de quai Blue Smart se place près de la LiFePO4, dans le coffre de la cabine de poupe, et son négatif doit revenir du côté « bord » du shunt pour que la charge soit comptée. Avec le shunt à l'emplacement b, ce négatif remonte jusqu'à la platine ; avec l'emplacement a, tout reste dans le coffre. L'emplacement a redevient donc intéressant ; à trancher avec le câblage de E-H1 et la place dans le coffre (Q51).
+**Décision du 05/10** : le shunt et le chargeur de quai Blue Smart de l'étude E iront ensemble, soit dans la contremarche de la descente (emplacement b), soit dans le coffre de la batterie de servitude (emplacement a), selon la place disponible dans la contremarche, à voir sur place (Q53). Le négatif du chargeur doit revenir du côté « bord » du shunt pour que la charge soit comptée : les mettre ensemble garde ce fil court dans les deux cas.
 
 ## Batterie moteur : un second shunt n'est pas nécessaire
 
@@ -104,7 +104,7 @@ Une fois le shunt posé, un protocole simple permet de remplacer les estimations
 
 ## Décision
 
-**05/10/2026** : H5 écartée (place incertaine pour le Cerbo GX et l'écran, Q43 ; prix). H6 attend Q44 (traceur et réseau NMEA 2000, à voir à la prochaine visite). Le SmartShunt (H1) est envisagé, pas encore commandé : voir [ce que le shunt apporte](#ce-que-le-shunt-apporte-à-linstallation-mis-à-jour-le-0510). Le choix entre lecture sur téléphone (H1) et afficheur avec alarme visible (H2) reste ouvert.
+**05/10/2026** : emplacement du shunt, avec le chargeur de quai, à décider sur place (contremarche ou coffre de la batterie). H5 écartée (place incertaine pour le Cerbo GX et l'écran, Q43 ; prix). H6 attend Q44 (traceur et réseau NMEA 2000, à voir à la prochaine visite). Le SmartShunt (H1) est envisagé, pas encore commandé : voir [ce que le shunt apporte](#ce-que-le-shunt-apporte-à-linstallation-mis-à-jour-le-0510). Le choix entre lecture sur téléphone (H1) et afficheur avec alarme visible (H2) reste ouvert.
 
 En attente. Le choix porte sur la lecture : smartphone seul (H1) ou afficheur fixe (H2).
 
