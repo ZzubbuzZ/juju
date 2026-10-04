@@ -12,7 +12,7 @@ lots:
     note: L'outillage de sertissage des cosses de 35 mm² est celui de A-H3.
 
 articles:
-  - { lot: mesure, designation: "Victron SmartShunt 500 A/50 mV (Bluetooth, entrée auxiliaire)", reference: SHU050150050, quantite: 1, unite: pièce, prix_unitaire: 129.47, statut: catalogue, source: "https://www.wattuneed.com/fr/made-in-europe/25348-controleur-de-batterie-intelligent-victron-energy-smartshunt-500a-50mv-0768563817632.html", date_prix: "2026-10-01", note: "Prix relevé par recherche web, page non ouverte depuis la session. Fiche fabricant : https://www.victronenergy.fr/battery-monitors/smart-battery-shunt" }
+  - { lot: mesure, designation: "Victron SmartShunt IP65 500 A/50 mV (Bluetooth, entrée auxiliaire)", reference: SHU065150050, quantite: 1, unite: pièce, prix_unitaire: 86, statut: catalogue, source: "Prix trouvé par l'utilisateur", date_prix: "2026-10-05", note: "Version étanche IP65, même fonctions que le SmartShunt standard ; référence à vérifier à la commande" }
   - { lot: mesure, designation: "Porte-fusible en ligne étanche avec fusible 1 A", quantite: 2, unite: pièce, prix_unitaire: 4, statut: estimation, note: "Le moniteur est souvent livré avec ses fils fusibles : à vérifier avant l'achat" }
   - { lot: mesure, designation: "Fusibles 1 A de rechange", quantite: 2, unite: pièce, prix_unitaire: 0.5, statut: estimation }
   - { lot: mesure, designation: "Câble étamé 0,75 mm² rouge (fils de mesure)", quantite: 2, unite: m, prix_unitaire: 1, statut: estimation, fils: [wire181, wire182, wire183, wire184] }

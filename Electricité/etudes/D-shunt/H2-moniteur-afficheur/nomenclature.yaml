@@ -16,7 +16,7 @@ lots:
 
 articles:
   # --- Lot mesure -------------------------------------------------------------------
-  - { lot: mesure, designation: "Victron BMV-712 Smart (shunt 500 A, afficheur, Bluetooth, câble de données de 10 m)", reference: BAM030712000, quantite: 1, unite: pièce, prix_unitaire: 126.01, statut: catalogue, source: "https://www.svb-marine.fr/fr/victron-controleur-de-batterie-bmv-712.html", date_prix: "2026-10-01", fils: [wire185], note: "Prix relevé par recherche web, page non ouverte depuis la session ; autres revendeurs entre 125 et 182 €" }
+  - { lot: mesure, designation: "Victron BMV-712 Smart (shunt 500 A, afficheur, Bluetooth, câble de données de 10 m)", reference: BAM030712000, quantite: 1, unite: pièce, prix_unitaire: 137, statut: catalogue, source: "Prix trouvé par l'utilisateur", date_prix: "2026-10-05", fils: [wire185], note: "Prix trouvé par l'utilisateur le 05/10 (126 € relevé le 01/10 chez un autre revendeur)" }
   - { lot: mesure, designation: "Porte-fusible en ligne étanche avec fusible 1 A", quantite: 2, unite: pièce, prix_unitaire: 4, statut: estimation, note: "Le moniteur est souvent livré avec ses fils fusibles : à vérifier avant l'achat" }
   - { lot: mesure, designation: "Fusibles 1 A de rechange", quantite: 2, unite: pièce, prix_unitaire: 0.5, statut: estimation }
   - { lot: mesure, designation: "Câble étamé 0,75 mm² rouge (fils de mesure)", quantite: 2, unite: m, prix_unitaire: 1, statut: estimation, fils: [wire181, wire182, wire183, wire184] }

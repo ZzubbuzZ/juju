@@ -8,7 +8,7 @@ points_forts:
   - Centralise les futurs appareils Victron (régulateur solaire de l'étude C, chargeur, batterie LiFePO4).
   - Suivi à distance par le portail VRM, si le bord dispose d'une connexion Internet.
 points_faibles:
-  - Environ quatre fois le prix de H2.
+  - Environ 3,5 fois le prix de H2.
   - Consommation d'environ 0,3 A (3,8 W) tant que le Cerbo GX est allumé, soit environ 7 Ah par jour au mouillage, 12 % du bilan.
   - Écran rectangulaire qui n'entre pas dans le trou de l'indicateur à aiguille ; place à trouver pour l'écran et le Cerbo GX (Q43).
 decision: "05/10/2026 : écartée par l'utilisateur. Place incertaine pour le Cerbo GX et l'écran (Q43), et solution trop chère."
@@ -18,7 +18,7 @@ decision: "05/10/2026 : écartée par l'utilisateur. Place incertaine pour le Ce
 
 Hypothèse de l'étude D. Base : **D-H1** (même SmartShunt, même position, mêmes fils de mesure, sur le programme retenu de l'étude A).
 
-Câblage : [cablage.yaml](cablage.yaml), [folio 2g](folio-2g-cerbo.svg) ; les fils de mesure sont sur le [folio 2e](../H1-shunt-connecte/folio-2e-shunt.svg). Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **675 €**.
+Câblage : [cablage.yaml](cablage.yaml), [folio 2g](folio-2g-cerbo.svg) ; les fils de mesure sont sur le [folio 2e](../H1-shunt-connecte/folio-2e-shunt.svg). Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **635 €**.
 
 ## Principe
 

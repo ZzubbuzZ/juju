@@ -16,7 +16,7 @@ points_faibles:
 
 Hypothèse de l'étude D. Base : **A-H4**, c'est-à-dire le programme retenu de l'étude A (fusibles de 400 A près des batteries compris). Aucune anomalie traitée : l'étude D ajoute une mesure, elle ne corrige pas un défaut.
 
-Câblage : [cablage.yaml](cablage.yaml), [folio 2e](folio-2e-shunt.svg). Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **160 €**.
+Câblage : [cablage.yaml](cablage.yaml), [folio 2e](folio-2e-shunt.svg). Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **120 €** (SmartShunt IP65 à 86 €, 05/10).
 
 ## Principe
 
