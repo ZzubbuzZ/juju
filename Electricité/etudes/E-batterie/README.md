@@ -19,11 +19,11 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 
 | | Principe | Hydrogène | Coût estimé | État |
 |---|---|---|---|---|
-| [H1](H1-lifepo4/proposition.md) | Batterie LiFePO4 de 100 Ah à la place du plomb, chargeur DC/DC à la place du coupleur Scheiber, coupe-circuit de couplage déposé, chargeur de quai dédié à la LiFePO4 | Supprimé à la source | environ 900 € | **Retenue** le 02/10 |
+| [H1](H1-lifepo4/proposition.md) | Batterie LiFePO4 (200 Ah commandée le 05/10) à la place du plomb, chargeur DC/DC à la place du coupleur Scheiber, coupe-circuit de couplage déposé, chargeur de quai dédié à la LiFePO4 | Supprimé à la source | environ 900 € | **Retenue** le 02/10 |
 | [H2](H2-plomb-ventile/proposition.md) | Plomb conservé en place, coffre ventilé vers l'extérieur | Évacué | environ 90 € | Écartée le 02/10 |
 | [H3](H3-plomb-deplace/proposition.md) | Plomb déplacé dans un coffre ventilé hors des cabines | Évacué hors des cabines | environ 190 € | Écartée le 02/10 |
 
-Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Le câblage de H1 (`cablage.yaml`, folio) sera écrit après le choix de la commande du DC/DC (Q48) et la longueur du câble du second chargeur (Q50) ; Q45, Q47 et Q49 sont répondues (03/10) ; les nœuds 360 à 379 lui sont réservés.
+Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Le câblage de H1 (`cablage.yaml`, folio) sera écrit après le choix de la commande du DC/DC (Q48), la place de la batterie commandée (Q51) et la version du chargeur de quai (Q52) ; Q45, Q47, Q49 et Q50 sont répondues ; les nœuds 360 à 379 lui sont réservés.
 
 ## Critères de comparaison
 
@@ -45,6 +45,8 @@ Les coûts sont les totaux des nomenclatures : prix relevés par recherche web l
 ## Décision
 
 **02/10/2026 : H1 retenue par Julie**, batterie de servitude LiFePO4. Voir [decision.md](decision.md). H2 et H3 sont écartées.
+
+**05/10/2026 : matériel commandé** : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Victron Orion XS 12/12-50A, Victron Blue Smart IP67 12/17 ; fusible MEGA pour la batterie de servitude, sans classe T. Détail et conséquences dans [decision.md](decision.md) et [H1](H1-lifepo4/proposition.md#batterie-commandée-0510). Point bloquant : la batterie fait 52 cm et 26 kg, sa place dans le coffre est à vérifier (Q51).
 
 **Réponses du 03/10** : place suffisante dans le coffre (Q45), second chargeur à côté du Dolphin (Q49), pas de gel en Méditerranée (Q47). Restent à préciser avant le câblage : la commande du DC/DC, après contact ou interrupteur à la table à carte (Q48, voir H1), la longueur du câble 12 V du second chargeur (Q50), et le pic de courant du BMS face au guindeau, au choix de la batterie.
 

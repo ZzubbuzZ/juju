@@ -14,7 +14,7 @@ points_faibles:
   - Le BMS peut couper toute la servitude en cas de surintensité ou de batterie vide, sans prévenir ; une alarme de charge basse (étude D) devient indispensable.
   - Le guindeau, environ 50 à 60 A, ne peut plus être secouru par la batterie moteur ; son pic de courant doit rester sous la limite du BMS.
   - Commande du DC/DC à choisir, après contact ou interrupteur (Q48) ; longueur du câble 12 V du second chargeur à relever (Q50).
-decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). Reste à choisir le niveau de secours au démarrage (recharge de secours par le DC/DC seule, ou démarrage direct sur la LiFePO4), puis à écrire le câblage après le choix de la commande du DC/DC (Q48) et la longueur du câble du second chargeur (Q50) ; Q45, Q47 et Q49 répondues le 03/10."
+decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A et Blue Smart IP67 12/17 commandés ; fusible MEGA. Place de la batterie à vérifier (Q51). Reste à choisir le niveau de secours au démarrage (recharge de secours par le DC/DC seule, ou démarrage direct sur la LiFePO4), puis à écrire le câblage après le choix de la commande du DC/DC (Q48) et la longueur du câble du second chargeur (Q50) ; Q45, Q47 et Q49 répondues le 03/10."
 ---
 
 # E-H1 · Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
@@ -144,6 +144,31 @@ Le niveau 1 couvre le cas le plus fréquent, la batterie moteur déchargée, san
 - **BMS intégré de 100 A au moins en continu** (150 à 200 A, avec un courant de pointe de démarrage, si le niveau 2 du démarrage de secours est retenu), avec un pic plus élevé pendant quelques secondes : le guindeau consomme 50 A en régime normal d'après sa notice, davantage en tirant fort sur la chaîne. Un BMS trop juste couperait tout le bord pendant la manœuvre de mouillage. À vérifier sur la fiche du modèle choisi, ou prendre une batterie de 150 A.
 - **Protection basse température** (coupure de la charge sous 0 °C) et, si possible, **application Bluetooth** pour lire l'état des cellules.
 - Les batteries Victron « NG » demandent un BMS externe (Lynx Smart BMS), ce qui double le prix : écartées pour un bord de cette taille.
+
+## Batterie commandée (05/10)
+
+**Humsienk 12 V 200 Ah Plus** (fiche du site du fabricant, relevée le 05/10) : 12,8 V, 200 Ah (2 560 Wh), BMS de **250 A en continu**, en décharge comme en charge ; charge recommandée 40 A, tension de charge 14,4 V ± 0,2 V ; charge entre 0 et 55 °C ; **521 × 238 × 221 mm, 26,4 kg**, bornes M8, IP65 ; Bluetooth et application ; 6 000 cycles à 80 % de profondeur. La fiche ne donne **ni courant de pointe ni courant de court-circuit**.
+
+Ce que ce choix change par rapport à la batterie de 100 Ah étudiée :
+
+- **Énergie** : environ 160 à 180 Ah utiles, soit **près de trois jours au mouillage** sans recharge (environ 60 Ah par jour d'après le bilan, à remplacer par des mesures avec le shunt de l'étude D). Le solaire (étude C) n'est plus indispensable pour tenir un week-end.
+- **Encombrement et poids** : 52 cm de long et 26 kg, le poids du plomb actuel. Le gain de poids disparaît, et la place dans le coffre est **à vérifier avant la livraison** (Q51) : Q45 supposait une batterie de la taille du plomb de 110 Ah.
+- **Guindeau** : 50 à 60 A, davantage en tirant fort, très en dessous des 250 A du BMS : plus de risque de coupure en pleine manœuvre.
+- **Démarrage de secours, niveau 2** : le lancement (200 à 275 A pendant quelques secondes) est à la limite du courant continu du BMS, et l'appel de 460 A à rotor bloqué dépend d'un courant de pointe que la fiche ne donne pas. Le démarrage direct n'est donc **pas garanti** ; le niveau 1 (recharge de secours par l'Orion XS) reste la solution. Demander au fabricant le courant de pointe et sa durée avant de retenir le niveau 2.
+- **Charge** : 14,4 V ± 0,2 V convient au Blue Smart (profil lithium) et à l'Orion XS. Les courants de charge (15 A au moteur, 17 A au quai) sont bien en dessous des 40 A recommandés.
+- **Bluetooth** : le BMS donne déjà un état de charge sur son application. Ce que le SmartShunt de l'étude D apporte en plus est détaillé dans l'étude D.
+
+### Chargeur de quai : Blue Smart IP67 12/17
+
+À la place du Blue Smart IP65 12/15 prévu : 17 A au lieu de 15, et un boîtier étanche (IP67) aux câbles sortants. Il se place à côté du Dolphin (Q49). Son câble 12 V rejoint la batterie de servitude sur environ **5 m** (Q50) : pour une chute de 3 % à 17 A, S = 2 × 5 × 17 × 0,0175 / 0,38 ≈ 7,7 mm², donc **10 mm²**, avec un fusible à la batterie (calibre selon la notice, environ 25 A). La version (1) ou (1+Si) se lit sur l'étiquette (Q52) : la sortie de maintien « Si » pourrait entretenir la batterie moteur, mais le Dolphin le fait déjà.
+
+### Fusible de batterie : décision du 05/10
+
+**Décision de l'utilisateur : un fusible MEGA, pas de classe T.** Argument : le BMS limite le courant à 250 A ; sauf défaillance du BMS au même moment, un MEGA suffit.
+
+Réserve, consignée pour mémoire (voir « Conséquences » ci-dessous) : la panne la plus courante d'un BMS est un transistor en court-circuit, qui ne se voit pas tant que tout va bien. Un court-circuit franc sur une batterie dont le BMS est déjà défaillant est donc moins improbable qu'une coïncidence de deux pannes. Une LiFePO4 de 200 Ah peut alors débiter plusieurs milliers d'ampères, au-delà du pouvoir de coupure d'un MEGA (environ 2 000 A sous 32 V). Un **fusible MRBF** vissé sur la borne (environ 10 000 A sous 14 V, bornes 5/16" ou 3/8", compatibilité avec les bornes M8 à vérifier) coûte à peu près le même prix qu'un MEGA avec son support et lève cette réserve sans classe T.
+
+**Calibre proposé : 300 A au lieu de 400 A.** Le BMS coupe à 250 A : un fusible de 400 A ne servirait qu'en court-circuit. 300 A laisse passer tout ce que le BMS autorise, et respecte la règle des 150 % pour wire006 en 35 mm² (environ 210 A en continu) : l'écart accepté dans A-H2 pour wire006 disparaît, et wire006 en 50 mm² n'est plus nécessaire, même à long terme.
 
 ## Changements de câblage (à écrire dans `cablage.yaml`)
 

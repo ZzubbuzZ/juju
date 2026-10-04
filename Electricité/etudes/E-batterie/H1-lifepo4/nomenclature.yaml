@@ -9,8 +9,8 @@ devise: EUR
 
 lots:
   batterie:
-    titre: Batterie LiFePO4 de 100 Ah à la place du plomb, dans le même coffre
-    note: Place suffisante dans le coffre (Q45). Coupe-circuit de couplage et coupleur Scheiber déposés, sans coût.
+    titre: Batterie LiFePO4 de 200 Ah à la place du plomb (commandée le 05/10)
+    note: Place dans le coffre à vérifier pour 521 × 238 × 221 mm (Q51). Coupe-circuit de couplage et coupleur Scheiber déposés, sans coût.
   charge:
     titre: Chargeur DC/DC depuis la batterie moteur, à la place du coupleur Scheiber
     note: DC/DC commandé par un + après contact (Q48), pour ne tourner qu'au moteur.
@@ -20,8 +20,8 @@ lots:
 
 articles:
   # --- Lot batterie -----------------------------------------------------------------
-  - { lot: batterie, designation: "Batterie LiFePO4 12,8 V 100 Ah, BMS intégré 100 A, coupure de charge à basse température, Bluetooth", quantite: 1, unite: pièce, prix_unitaire: 300, statut: estimation, note: "Modèle à choisir. Prix relevés par recherche web entre 255 et 370 € (LiTime 100 Ah marine Bluetooth : environ 280 € ; 330 × 172 × 216 mm, 10,2 kg). Vérifier le pic de courant du BMS pour le guindeau" }
-  - { lot: batterie, designation: "Fusible MRBF sur borne de batterie (pouvoir de coupure 10 kA sous 14 V), avec son support", quantite: 1, unite: lot, prix_unitaire: 40, statut: estimation, note: "Remplace le fusible MEGA de A-H2 côté servitude, insuffisant pour une LiFePO4. Calibre à fixer avec le câblage (environ 200 A, 300 A avec le démarrage direct)" }
+  - { lot: batterie, designation: "Batterie LiFePO4 Humsienk 12 V 200 Ah Plus, BMS 250 A, Bluetooth, 521 × 238 × 221 mm, 26,4 kg", quantite: 1, unite: pièce, prix_unitaire: 259.99, statut: catalogue, source: "https://eu.humsienk.com/fr/products/12v-200ah-plus-250bms-lifepo4-battery", date_prix: "2026-10-05", note: "Commandée le 05/10 (prix remisé)" }
+  - { lot: batterie, designation: "Fusible MEGA 300 A et son support (décision du 05/10)", quantite: 1, unite: lot, prix_unitaire: 25, statut: estimation, note: "Remplace le MEGA de 400 A de A-H2 côté servitude. Réserve : un MRBF sur borne, même prix, a un pouvoir de coupure bien supérieur (voir proposition.md)" }
   - { lot: batterie, designation: "Sangle de fixation et capot de bornes", quantite: 1, unite: lot, prix_unitaire: 20, statut: estimation }
   - { lot: batterie, designation: "Cosses tubulaires étamées 35 mm² (reprise de wire161 et wire009 si les bornes diffèrent)", quantite: 2, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire161, wire009] }
 
@@ -32,6 +32,6 @@ articles:
   - { lot: charge, designation: "Fil de commande « remote » du DC/DC depuis un + après contact, porte-fusible 1 A", quantite: 1, unite: lot, prix_unitaire: 10, statut: estimation }
 
   # --- Lot quai ---------------------------------------------------------------------
-  - { lot: quai, designation: "Victron Blue Smart IP65 12/15, chargeur une sortie, profil LiFePO4, Bluetooth", quantite: 1, unite: pièce, prix_unitaire: 140, statut: estimation, note: "Prix relevés par recherche web autour de 130 € (eBay Allemagne, 128 €) ; référence européenne à vérifier. Variante intérieure : Blue Smart IP22 12/20 (1), environ 155 €" }
+  - { lot: quai, designation: "Victron Blue Smart IP67 12/17, profil LiFePO4, Bluetooth", quantite: 1, unite: pièce, prix_unitaire: 190, statut: estimation, note: "Commandé le 05/10 ; prix à remplacer par celui de la commande. Version (1) ou (1+Si) : Q52" }
   - { lot: quai, designation: "Câble 230 V 3 × 1,5 mm² depuis le disjoncteur du chargeur, ou prise dédiée", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Depuis le disjoncteur de 10 A du boîtier d'arrivée, dans le même coffre (Q49)" }
-  - { lot: quai, designation: "Câble 12 V rouge et noir vers la batterie de servitude, porte-fusible et fusible à la batterie, cosses", quantite: 1, unite: lot, prix_unitaire: 30, statut: estimation, note: "Section et longueur selon le trajet (Q50)" }
+  - { lot: quai, designation: "Câble étamé 10 mm² rouge et noir vers la batterie de servitude (environ 5 m chacun, Q50), porte-fusible et fusible à la batterie, cosses", quantite: 1, unite: lot, prix_unitaire: 65, statut: estimation, note: "10 mm² pour 3 % de chute à 17 A sur 5 m" }
