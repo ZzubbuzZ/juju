@@ -13,20 +13,21 @@
 | Élément | Modèle | Remarque |
 |---|---|---|
 | Batterie de servitude | **Humsienk 12 V 200 Ah Plus**, LiFePO4, BMS 250 A, Bluetooth | 259,99 € (prix remisé, fiche du site Humsienk). 521 × 238 × 221 mm, 26,4 kg, bornes M8, IP65 |
-| Chargeur DC/DC | **Victron Orion XS 12/12-50A** | Comme prévu ; courant à régler vers 15 A (alternateur de 20 A) |
-| Chargeur de quai LiFePO4 | **Victron Blue Smart IP67 12/17** | À la place du Blue Smart IP65 12/15 prévu ; version (1) ou (1+Si) : Q52 |
+| Chargeur DC/DC | **Victron Orion XS 12/12-50A** | Acheté 259 € ; courant à régler vers 15 A (alternateur de 20 A) ; commande manuelle (Q48) |
+| Chargeur de quai LiFePO4 | **Victron Blue Smart IP67 12/17** | À la place du Blue Smart IP65 12/15 prévu ; référence BPC121713006, 118 € (Q52) |
 | Fusible de la batterie de servitude | **MEGA** (décision de l'utilisateur), pas de classe T | Voir « Fusible de batterie » dans [H1](H1-lifepo4/proposition.md#fusible-de-batterie--décision-du-0510) |
 
 Le SmartShunt (étude D) n'est pas encore commandé.
 
-**Emplacements des chargeurs (05/10)** : le Blue Smart se place **près de la batterie de servitude**, dans la cabine de poupe, pour éviter 5 m de câble 12 V ; c'est son alimentation 230 V qui fait le trajet (Q53). Le Dolphin, qui ne charge plus que la batterie moteur, est raccordé **au plus près d'elle** (fusible de 30 A à la batterie, négatif sur sa borne −), au lieu de passer par la platine.
+**Emplacements des chargeurs (05/10)** : le Blue Smart se place **avec le shunt de l'étude D**, soit dans la contremarche de la descente, près de la platine, soit dans le coffre de la batterie de servitude : à décider sur place selon la place dans la contremarche (Q53). Son alimentation 230 V vient du disjoncteur du chargeur de quai (C10) par un câble dédié, jusqu'à une prise dédiée ou un boîtier de raccordement à bornes Wago (Q53). Dans les deux cas, son câble 12 V reste court. Le Dolphin, qui ne charge plus que la batterie moteur, est raccordé **au plus près d'elle** (fusible de 30 A à la batterie, négatif sur sa borne −), au lieu de passer par la platine.
 
 ## Ce qui reste à décider (mis à jour le 05/10)
 
-- **Place de la batterie** (Q51) : la batterie commandée fait 52 cm de long et 26 kg, bien plus que le plomb de 110 Ah que Q45 supposait. À vérifier dans le coffre de la cabine de poupe avant la livraison.
 - **Démarrage de secours** : le niveau 1 (recharge de secours par l'Orion XS) est acquis. Le niveau 2 (démarrage direct) est **incertain** avec cette batterie : son BMS tient 250 A en continu, le lancement du démarreur demande 200 à 275 A, et la fiche ne donne aucun courant de pointe pour l'appel de 460 A. Voir H1.
 - **Calibre du fusible MEGA** de la servitude : 300 A proposés (voir H1).
-- **Commande de l'Orion XS** (Q48) : après contact (proposé) ou interrupteur à la table à carte.
+- **Emplacement du chargeur de quai et du shunt** : contremarche de la descente ou coffre de la batterie, sur place.
+
+Tranchés le 05/10 : place de la batterie (Q51, pas un problème), commande manuelle de l'Orion XS (Q48), version du Blue Smart (Q52), alimentation 230 V du Blue Smart (Q53).
 
 ## Ancienne liste (02/10)
 

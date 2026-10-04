@@ -13,7 +13,7 @@ points_faibles:
   - Pas de charge en dessous de 0 °C (le BMS coupe la charge) ; sans conséquence en Méditerranée (Q47).
   - Le BMS peut couper toute la servitude en cas de surintensité ou de batterie vide, sans prévenir ; une alarme de charge basse (étude D) devient indispensable.
   - Le guindeau, environ 50 à 60 A, ne peut plus être secouru par la batterie moteur ; son pic de courant doit rester sous la limite du BMS.
-  - Commande du DC/DC à choisir, après contact ou interrupteur (Q48) ; longueur du câble 12 V du second chargeur à relever (Q50).
+  - Commande manuelle du DC/DC (Q48) ; un oubli au port le laisse démarrer sur la charge du Dolphin.
 decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A et Blue Smart IP67 12/17 commandés ; fusible MEGA. Place de la batterie à vérifier (Q51). Reste à choisir le niveau de secours au démarrage (recharge de secours par le DC/DC seule, ou démarrage direct sur la LiFePO4), puis à écrire le câblage après le choix de la commande du DC/DC (Q48) et la longueur du câble du second chargeur (Q50) ; Q45, Q47 et Q49 répondues le 03/10."
 ---
 
@@ -21,7 +21,7 @@ decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10
 
 Hypothèse de l'étude E. Base : **A-H4** (programme retenu de l'étude A, avec les fusibles de A-H2).
 
-Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **900 €**. Le câblage (`cablage.yaml`, folio) sera écrit si l'hypothèse est retenue, après le choix de la commande du DC/DC (Q48) et la longueur du câble du second chargeur (Q50). Réponses du 03/10 : place suffisante dans le coffre (Q45), pas de gel (Q47), second chargeur à côté du Dolphin (Q49).
+Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **900 €**. Le câblage (`cablage.yaml`, folio) reste à écrire ; toutes les questions sont répondues (Q48 à Q53, 05/10), seul l'emplacement du chargeur de quai et du shunt se décidera sur place. Réponses du 03/10 : place suffisante dans le coffre (Q45), pas de gel (Q47), second chargeur à côté du Dolphin (Q49).
 
 ## Principe
 
@@ -88,6 +88,8 @@ Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de 
 
 Proposition : **a**, qui ne demande aucune manœuvre et ne dépend pas d'un oubli.
 
+**Choix du 05/10 : b, commande manuelle**, par un interrupteur près du tableau Scheiber 2 voies, dans la contremarche de la descente, à côté de la platine où se trouve l'Orion XS : le fil de commande est court. L'interrupteur est alimenté par la servitude, à travers un fusible de 1 A à sa source. Le risque de l'oubli au port demeure : interrupteur fermé, l'absorption du Dolphin (14,4 V) fait démarrer l'Orion XS et maintient la batterie moteur en absorption. Parades : un interrupteur à voyant, une étiquette « Orion XS : ouvrir au port », et l'arrêt de l'Orion XS dans la check-list d'amarrage.
+
 ## Démarrage de secours sur la LiFePO4
 
 Question de l'utilisateur (02/10) : peut-on démarrer le moteur sur la LiFePO4 si la batterie moteur est en panne ? Oui, à deux niveaux.
@@ -152,7 +154,7 @@ Le niveau 1 couvre le cas le plus fréquent, la batterie moteur déchargée, san
 Ce que ce choix change par rapport à la batterie de 100 Ah étudiée :
 
 - **Énergie** : environ 160 à 180 Ah utiles, soit **près de trois jours au mouillage** sans recharge (environ 60 Ah par jour d'après le bilan, à remplacer par des mesures avec le shunt de l'étude D). Le solaire (étude C) n'est plus indispensable pour tenir un week-end.
-- **Encombrement et poids** : 52 cm de long et 26 kg, le poids du plomb actuel. Le gain de poids disparaît, et la place dans le coffre est **à vérifier avant la livraison** (Q51) : Q45 supposait une batterie de la taille du plomb de 110 Ah.
+- **Encombrement et poids** : 52 cm de long et 26 kg, le poids du plomb actuel. Le gain de poids disparaît, et la place dans le coffre n'est pas un problème (Q51, 05/10).
 - **Guindeau** : 50 à 60 A, davantage en tirant fort, très en dessous des 250 A du BMS : plus de risque de coupure en pleine manœuvre.
 - **Démarrage de secours, niveau 2** : le lancement (200 à 275 A pendant quelques secondes) est à la limite du courant continu du BMS, et l'appel de 460 A à rotor bloqué dépend d'un courant de pointe que la fiche ne donne pas. Le démarrage direct n'est donc **pas garanti** ; le niveau 1 (recharge de secours par l'Orion XS) reste la solution. Demander au fabricant le courant de pointe et sa durée avant de retenir le niveau 2.
 - **Charge** : 14,4 V ± 0,2 V convient au Blue Smart (profil lithium) et à l'Orion XS. Les courants de charge (15 A au moteur, 17 A au quai) sont bien en dessous des 40 A recommandés.
@@ -160,13 +162,14 @@ Ce que ce choix change par rapport à la batterie de 100 Ah étudiée :
 
 ### Chargeur de quai : Blue Smart IP67 12/17
 
-À la place du Blue Smart IP65 12/15 prévu : 17 A au lieu de 15, et un boîtier étanche (IP67) aux câbles sortants. La version (1) ou (1+Si) se lit sur l'étiquette (Q52) : la sortie de maintien « Si » pourrait entretenir la batterie moteur, mais le Dolphin le fait déjà.
+À la place du Blue Smart IP65 12/15 prévu : 17 A au lieu de 15, et un boîtier étanche (IP67) aux câbles sortants. Référence BPC121713006, achetée 118 € (Q52, 05/10).
 
 **Emplacement : près de la batterie (décision du 05/10).** Placé à côté du Dolphin, il aurait fallu 5 m de câble 12 V jusqu'à la batterie (Q50) : environ 10 mm² pour rester sous 3 % de chute à 17 A, soit deux câbles épais à faire passer à travers les cloisons. Placé près de la batterie, dans la cabine de poupe :
 
 - **Côté 12 V**, le câble ne fait que quelques dizaines de centimètres : la chute de tension devient négligeable, la section est celle de la notice, et un **fusible à la batterie** (environ 25 A, selon la notice) le protège. Le + rejoint la borne + de la batterie, du côté batterie de son fusible de 300 A, pour que la charge reste possible coupe-circuit ouvert.
 - **Le négatif doit revenir du côté « bord » du shunt** de l'étude D, sinon la charge n'est pas comptée. Avec le shunt à la platine (emplacement b de l'étude D), ce négatif remonte jusqu'à la platine, environ 1 m. Avec le shunt dans le coffre de la batterie (emplacement a), tout reste dans le coffre : ce choix fait pencher l'étude D vers l'emplacement a.
-- **Côté 230 V**, c'est l'alimentation qui fait le trajet d'environ 5 m, mais elle ne transporte qu'environ 1,5 A : un câble 3 × 1,5 mm² (H07RN-F) suffit largement. Deux façons de l'alimenter (Q53) : un câble depuis le disjoncteur de 10 A du chargeur, dans le boîtier d'arrivée, à travers les cloisons jusqu'à la cabine de poupe ; ou une prise 230 V proche, si le Blue Smart est livré avec une fiche (prises de la table à carte et de l'armoire, à bâbord, sur le 16 A bâbord). Dans les deux cas, le chargeur reste derrière le différentiel de 30 mA.
+- **Côté 230 V**, c'est l'alimentation qui fait le trajet d'environ 5 m, mais elle ne transporte qu'environ 1,5 A : un câble 3 × 1,5 mm² (H07RN-F) suffit largement. **Choix du 05/10 (Q53)** : un câble dédié depuis le disjoncteur du chargeur de quai (C10), dans le boîtier d'arrivée, jusqu'à une prise dédiée ou un boîtier de raccordement à bornes Wago près du chargeur. Le chargeur reste derrière le différentiel de 30 mA.
+- **Emplacement définitif** (05/10) : le chargeur et le shunt de l'étude D vont ensemble, soit dans la contremarche de la descente, près de la platine, soit dans le coffre de la batterie ; à décider sur place selon la place dans la contremarche. Dans la contremarche, le + du chargeur rejoint le côté batterie du coupe-circuit de servitude (node009) avec son fusible à la source, et le câble 230 V est un peu plus court.
 - **Chaleur** : environ 40 W perdus en pleine charge. Le boîtier IP67 supporte l'humidité du coffre, mais il lui faut un peu d'air autour ; à fixer sur une paroi, pas contre la batterie.
 
 ### Dolphin : sortie moteur au plus près de la batterie moteur (décision du 05/10)
@@ -196,7 +199,7 @@ Réserve, consignée pour mémoire (voir « Conséquences » ci-dessous) : la pa
 | Remplacement | Sortie 1 du Dolphin : wire003, wire162 et leur fusible de 30 A (A-H2) déposés ; câble court jusqu'à un fusible de 30 A à la batterie moteur (node001). Négatif du Dolphin (wire005) ramené sur la borne − de la batterie moteur (node002) |
 | Remplacement | Batterie de servitude : mêmes bornes (node007, node008), wire161 et wire009 repris |
 | Ajout | Chargeur DC/DC : entrée sur la batterie moteur (côté batterie du coupe-circuit moteur, node003), sortie sur la batterie de servitude (node009), masse côté charges du shunt ; un fusible à chaque extrémité. Fil de commande « remote » depuis un + après contact, fusible à sa source |
-| Ajout | Chargeur de quai LiFePO4, dans la cabine de poupe près de la batterie : 230 V depuis le disjoncteur de 10 A du chargeur ou une prise proche (Q53), sortie 12 V courte sur la borne + de la batterie de servitude (node007) avec fusible à la batterie, négatif côté « bord » du shunt |
+| Ajout | Chargeur de quai LiFePO4, avec le shunt (contremarche ou coffre de la batterie, sur place) : 230 V par un câble dédié depuis le disjoncteur du chargeur (C10) jusqu'à une prise ou un boîtier à bornes Wago (Q53), sortie 12 V courte avec fusible à sa source (node007 dans le coffre, node009 dans la contremarche), négatif côté « bord » du shunt |
 
 ## Conséquences
 

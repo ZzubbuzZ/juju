@@ -23,7 +23,7 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 | [H2](H2-plomb-ventile/proposition.md) | Plomb conservé en place, coffre ventilé vers l'extérieur | Évacué | environ 90 € | Écartée le 02/10 |
 | [H3](H3-plomb-deplace/proposition.md) | Plomb déplacé dans un coffre ventilé hors des cabines | Évacué hors des cabines | environ 190 € | Écartée le 02/10 |
 
-Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Le câblage de H1 (`cablage.yaml`, folio) sera écrit après le choix de la commande du DC/DC (Q48), la place de la batterie commandée (Q51) et la version du chargeur de quai (Q52) ; Q45, Q47, Q49 et Q50 sont répondues ; les nœuds 360 à 379 lui sont réservés.
+Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Toutes les questions de l'étude sont répondues (Q45 à Q53). Le câblage de H1 (`cablage.yaml`, folio) reste à écrire, avec l'emplacement du chargeur de quai et du shunt choisi sur place ; les nœuds 360 à 379 lui sont réservés.
 
 ## Critères de comparaison
 
@@ -47,6 +47,8 @@ Les coûts sont les totaux des nomenclatures : prix relevés par recherche web l
 **02/10/2026 : H1 retenue par Julie**, batterie de servitude LiFePO4. Voir [decision.md](decision.md). H2 et H3 sont écartées.
 
 **05/10/2026 : matériel commandé** : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Victron Orion XS 12/12-50A, Victron Blue Smart IP67 12/17 ; fusible MEGA pour la batterie de servitude, sans classe T. Détail et conséquences dans [decision.md](decision.md) et [H1](H1-lifepo4/proposition.md#batterie-commandée-0510). Point bloquant : la batterie fait 52 cm et 26 kg, sa place dans le coffre est à vérifier (Q51).
+
+**Réponses du 05/10** : commande manuelle de l'Orion XS par un interrupteur près du tableau Scheiber (Q48) ; place de la batterie sans problème (Q51) ; Blue Smart BPC121713006 à 118 € (Q52) ; 230 V du Blue Smart par un câble dédié depuis le disjoncteur du chargeur (Q53). Orion XS acheté 259 €.
 
 **Réponses du 03/10** : place suffisante dans le coffre (Q45), second chargeur à côté du Dolphin (Q49), pas de gel en Méditerranée (Q47). Restent à préciser avant le câblage : la commande du DC/DC, après contact ou interrupteur à la table à carte (Q48, voir H1), la longueur du câble 12 V du second chargeur (Q50), et le pic de courant du BMS face au guindeau, au choix de la batterie.
 
