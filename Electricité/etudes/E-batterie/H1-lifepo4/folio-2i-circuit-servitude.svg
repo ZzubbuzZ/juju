@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 710" role="img" aria-label="Circuit servitude cible : LiFePO4, Orion XS, Blue Smart, départs et shunt dans la contremarche.">
+  <title>Folio 2i · Circuit servitude cible (Orion XS, chargeur de quai et shunt dans la contremarche)</title>
+  <desc>Batterie de servitude LiFePO4 et ses chargeurs : sortie de l'Orion XS et Blue Smart, chacun avec son fusible à la source ; départs vers les tableaux, commande de l'Orion XS, shunt et coupe-circuit des négatifs.</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+  <rect class="bound" x="20" y="40" width="300" height="640"/>
+  <text class="ts" x="30" y="58">Coffre de la cabine de poupe</text>
+  <rect class="bound" x="340" y="40" width="840" height="640"/>
+  <text class="ts" x="350" y="58">Contremarche de la descente</text>
+  <rect class="box-new" x="40" y="250" width="200" height="70" rx="2"/>
+  <text class="tb tn mid" x="140" y="273">LiFePO4 200 Ah</text>
+  <text class="ts mid" x="140" y="289">Humsienk · BMS 250 A</text>
+  <text class="id mid" x="140" y="308">node007 (+) · node008 (−)</text>
+  <g class="mk-a"><circle cx="40" cy="250" r="11"/><text class="mid" x="40" y="253.5">A11</text></g>
+  <path class="p w4" d="M240 270 H270"/>
+  <circle class="dp" cx="255" cy="270" r="3.5"/>
+  <rect class="fuse-new" x="270" y="261" width="46" height="18"/>
+  <text class="idn mid" x="293" y="274">300 A</text>
+  <text class="ts tn mid" x="293" y="256">MEGA · n72 · n73</text>
+  <path class="p w4" d="M316 270 H440"/>
+  <text class="id mid" x="410.0" y="262">wire006 · 35</text>
+  <circle class="term" cx="444" cy="270" r="4"/><circle class="term" cx="504" cy="270" r="4"/>
+  <path class="lever" d="M444 270 L501 257"/>
+  <text class="ts mid" x="474" y="248">CC servitude</text>
+  <text class="id end" x="438" y="288">node009</text>
+  <text class="id" x="508" y="288">node010</text>
+  <path class="p w2" d="M508 274 V340 H578"/>
+  <text class="idn" x="516" y="332">wire166</text>
+  <rect class="fuse-new" x="578" y="331" width="46" height="18"/>
+  <text class="idn mid" x="601" y="344">50 A</text>
+  <path class="p w2" d="M624 340 H678"/>
+  <text class="id mid" x="651" y="332">wire019</text>
+  <rect class="flag" x="678" y="331" width="230" height="18"/>
+  <text class="ts mid" x="793.0" y="344">tableau de la table à carte : folio 2b</text>
+  <path class="p w2" d="M516 274 V400 H578"/>
+  <text class="idn" x="524" y="392">wire167</text>
+  <rect class="fuse-new" x="578" y="391" width="46" height="18"/>
+  <text class="idn mid" x="601" y="404">30 A</text>
+  <path class="p w2" d="M624 400 H678"/>
+  <text class="id mid" x="651" y="392">wire022</text>
+  <rect class="box" x="678" y="380" width="230" height="56" rx="2"/>
+  <text class="tb mid" x="793" y="401">Tableau Scheiber 2 voies</text>
+  <text class="ts mid" x="793" y="418">frigo, pompe de cale : folio 1</text>
+  <text class="id" x="684" y="431">node050</text>
+  <text class="id end" x="902" y="431">node051</text>
+  <path class="p w1" d="M524 274 V480 H578"/>
+  <text class="idn" x="532" y="472">wire207</text>
+  <rect class="fuse-new" x="578" y="471" width="46" height="18"/>
+  <text class="idn mid" x="601" y="484">1 A</text>
+  <path class="p w1" d="M624 480 H658"/>
+  <text class="idn mid" x="641" y="472">wire208</text>
+  <circle class="term" cx="662" cy="480" r="3.5"/><circle class="term" cx="702" cy="480" r="3.5"/>
+  <path class="lever" d="M662 480 L700 469"/>
+  <text class="ts tn mid" x="608" y="502">interrupteur à voyant</text>
+  <path class="n w1" d="M682 486 V510 H928 V420 H908"/>
+  <text class="idn mid" x="808" y="504">wire216 · masse du voyant → node051</text>
+  <path class="p w1" d="M706 480 H748"/>
+  <text class="idn mid" x="727" y="472">wire209</text>
+  <rect class="flag" x="748" y="471" width="160" height="18"/>
+  <text class="ts mid" x="828.0" y="484">→ Orion XS remote · 2h</text>
+  <path class="n w4" d="M240 305 H260 V620 H440"/>
+  <text class="id" x="270" y="612">wire009 · 35 (D-H1)</text>
+  <rect class="box" x="440" y="600" width="120" height="40" rx="2"/>
+  <text class="tb mid" x="500" y="618">Shunt 500 A</text>
+  <text class="ts mid" x="500" y="633">D-H1 · n86 / n87</text>
+  <path class="n w4" d="M560 620 H996"/>
+  <text class="id mid" x="700" y="612">wire180 · 35</text>
+  <circle class="term" cx="1000" cy="620" r="4"/><circle class="term" cx="1060" cy="620" r="4"/>
+  <path class="lever" d="M1000 620 L1057 607"/>
+  <text class="ts mid" x="1030" y="598"></text>
+  <text class="id end" x="994" y="638">node005</text>
+  <text class="id" x="1064" y="638">node006</text>
+  <text class="ts mid" x="1090" y="596">CC masse</text>
+  <path class="n w4" d="M1064 620 H1100 V650"/>
+  <rect class="flag" x="1020" y="650" width="150" height="18"/>
+  <text class="ts mid" x="1095.0" y="663">masse des charges : folio 1</text>
+  <path class="p w3" d="M440 266 V200 H600"/>
+  <text class="idn" x="448" y="214">wire204 · 16</text>
+  <rect class="fuse-new" x="600" y="191" width="46" height="18"/>
+  <text class="idn mid" x="623" y="204">70 A</text>
+  <path class="p w3" d="M646 200 H720"/>
+  <text class="idn mid" x="683" y="192">wire205</text>
+  <rect class="flag" x="720" y="191" width="170" height="18"/>
+  <text class="ts mid" x="805.0" y="204">Orion XS sortie · folio 2h</text>
+  <rect class="flag" x="800" y="545" width="170" height="18"/>
+  <text class="ts mid" x="885.0" y="558">Orion XS − (wire206) · 2h</text>
+  <path class="n w3" d="M970 554 H992 V616"/>
+  <path class="p w2" d="M448 266 V140 H600"/>
+  <text class="idn" x="456" y="160">wire210 · 4</text>
+  <rect class="fuse-new" x="600" y="131" width="46" height="18"/>
+  <text class="idn mid" x="623" y="144">25 A</text>
+  <text class="idn mid" x="623" y="162">n377 · n378</text>
+  <path class="p w2" d="M646 140 H720"/>
+  <text class="idn mid" x="683" y="132">wire211 · 4</text>
+  <rect class="box-new" x="720" y="100" width="200" height="80" rx="2"/>
+  <text class="tb tn mid" x="820" y="123">Blue Smart IP67 12/17</text>
+  <text class="ts mid" x="820" y="139">chargeur de quai LiFePO4</text>
+  <text class="id mid" x="820" y="157">n372 + · n373 − · n374–376</text>
+  <path class="n w2" d="M920 160 H1008 V616"/>
+  <text class="idn" x="1016" y="300">wire212 · 4</text>
+  <path class="n w2" d="M820 100 V70 H940"/>
+  <path class="n w1" d="M872 77 L880 63 M877 77 L885 63 M882 77 L890 63"/>
+  <text class="idn mid" x="880" y="92">wire213 · wire214 · wire215 · 3 × 1,5</text>
+  <rect class="flag" x="940" y="61" width="220" height="18"/>
+  <text class="ts mid" x="1050.0" y="74">disjoncteur du chargeur C10 · folio 3</text>
+  <text class="ts" x="440" y="668">Fils de mesure du shunt (wire181 à wire184) : folio 2e.</text>
+  <text class="ts" x="20" y="698">En vert : nouveau (étude E). Déposés : coupleur Scheiber, coupe-circuit de couplage et leurs câbles ; le guindeau est passé sur le circuit moteur (folio 2h).</text>
+</svg>

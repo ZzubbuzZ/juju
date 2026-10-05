@@ -5,7 +5,9 @@
 ## Ce qui est décidé
 
 - Batterie LiFePO4 à BMS intégré, dans le coffre actuel de la cabine de poupe : plus d'hydrogène dans la cabine (anomalie A11).
-- Coupleur Scheiber déposé, remplacé par un chargeur DC/DC (type Victron Orion XS), commandé par un + après contact pour ne tourner qu'au moteur.
+- Coupleur Scheiber déposé, remplacé par un chargeur DC/DC (Victron Orion XS), commandé manuellement par un interrupteur à voyant (Q48, 05/10).
+- Coupe-circuit de couplage déposé avec wire010 et wire011, sans exception : les deux batteries n'ont pas la même tension (05/10).
+- **Guindeau sur le circuit moteur** (05/10) : wire217, depuis node004, remplace wire017.
 - Chargeur de quai dédié à la LiFePO4 ; le Dolphin ne charge plus que la batterie moteur (sa sortie 2 est débranchée).
 
 ## Matériel commandé (05/10/2026)
@@ -23,11 +25,10 @@ Le SmartShunt (étude D) n'est pas encore commandé.
 
 ## Ce qui reste à décider (mis à jour le 05/10)
 
-- **Démarrage de secours** : le niveau 1 (recharge de secours par l'Orion XS) est acquis. Le niveau 2 (démarrage direct) est **incertain** avec cette batterie : son BMS tient 250 A en continu, le lancement du démarreur demande 200 à 275 A, et la fiche ne donne aucun courant de pointe pour l'appel de 460 A. Voir H1.
 - **Calibre du fusible MEGA** de la servitude : 300 A proposés (voir H1).
-- **Emplacement du chargeur de quai et du shunt** : contremarche de la descente ou coffre de la batterie, sur place.
+- **Emplacement de l'Orion XS, du chargeur de quai et du shunt** : contremarche de la descente (H1, folios 2h et 2i) ou coffre de la batterie (H4, folios 2j et 2k), sur place.
 
-Tranchés le 05/10 : place de la batterie (Q51, pas un problème), commande manuelle de l'Orion XS (Q48), version du Blue Smart (Q52), alimentation 230 V du Blue Smart (Q53).
+Tranchés le 05/10 : place de la batterie (Q51, pas un problème), commande manuelle de l'Orion XS (Q48), version du Blue Smart (Q52), alimentation 230 V du Blue Smart (Q53), démarrage de secours (niveau 1 seul, recharge inversée de 25 A par l'Orion XS ; démarrage direct abandonné), fusibles de l'Orion XS (70 A aux deux extrémités, 16 mm², d'après la notice), guindeau sur le circuit moteur.
 
 ## Ancienne liste (02/10)
 

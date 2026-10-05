@@ -1,21 +1,23 @@
 # yaml-language-server: $schema=../../../outils/schema/donnees.schema.json
 #
-# E-H4 : variante de E-H1. Le chargeur de quai LiFePO4 et le shunt de l'étude D vont
-# dans le coffre de la batterie de servitude (emplacement a de l'étude D) au lieu de la
+# E-H4 : variante de E-H1. L'Orion XS, le chargeur de quai LiFePO4 et le shunt de l'étude D
+# vont dans le coffre de la batterie de servitude (emplacement a de l'étude D) au lieu de la
 # contremarche. Seuls changent les longueurs et les points de raccordement ; les numéros
 # des fils et des nœuds sont ceux de E-H1 et de D-H1. Choix sur place (Q53, 05/10).
 
 hypothese: E-H4
-titre: Variante de E-H1, chargeur de quai et shunt dans le coffre de la batterie
+titre: Variante de E-H1, Orion XS, chargeur de quai et shunt dans le coffre de la batterie
 base: E-H1
 
 supprime:
-  equipements: [shunt-servitude, chargeur-lifepo4, fus-chargeur-lifepo4]
-  fils: [wire009, wire180, wire182, wire184, wire210, wire212, wire213, wire214, wire215]
+  equipements: [shunt-servitude, chargeur-lifepo4, fus-chargeur-lifepo4, orion-xs, fus-orion-sortie]
+  fils: [wire009, wire180, wire182, wire184, wire203, wire204, wire206, wire209, wire210, wire212, wire213, wire214, wire215]
 
 equipements:
   - { id: shunt-servitude, type: shunt, designation: "Shunt connecté 500 A de la batterie de servitude (type Victron SmartShunt)", zone: cabine-poupe, emplacement: "Dans le coffre de la batterie de servitude, contre la paroi", statut: propose }
   - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: cabine-poupe, emplacement: "Dans le coffre de la batterie, sur une paroi, avec un peu d'air autour", statut: propose }
+  - { id: orion-xs, type: chargeur, designation: "Chargeur DC/DC de la LiFePO4", modele: "Victron Orion XS 12/12-50A, réglé vers 15 A", zone: cabine-poupe, emplacement: "Dans le coffre de la batterie de servitude", statut: propose }
+  - { id: fus-orion-sortie, type: fusible, designation: "Fusible de la sortie de l'Orion XS (côté batterie de servitude, MIDI)", calibre_A: 70, emplacement: "À la borne + de la batterie de servitude, du côté batterie du fusible de 300 A", statut: propose }
   - { id: fus-chargeur-lifepo4, type: fusible, designation: "Fusible de la sortie du chargeur de quai LiFePO4", calibre_A: 25, emplacement: "À la borne + de la batterie de servitude, du côté batterie du fusible de 300 A", statut: propose, note: "Calibre à confirmer sur la notice du Blue Smart" }
 
 fils:
@@ -31,3 +33,9 @@ fils:
   - { id: wire213, de: node211, vers: node374, section_mm2: 1.5, couleur: marron, longueur_m: 6, statut: propose, note: "Câble 3 × 1,5 mm² dédié jusqu'au coffre de la batterie (environ 5 m, Q50), prise ou boîtier à bornes Wago (Q53)" }
   - { id: wire214, de: node209, vers: node375, section_mm2: 1.5, couleur: bleu, longueur_m: 6, statut: propose }
   - { id: wire215, de: node212, vers: node376, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 6, statut: propose }
+
+  # --- Orion XS dans le coffre -----------------------------------------------------------------
+  - { id: wire203, de: node365, vers: node360, section_mm2: 16, couleur: rouge, longueur_m: 1.5, statut: propose, note: "Du fusible de 70 A de la platine (côté moteur) jusqu'au coffre" }
+  - { id: wire204, de: node007, vers: node366, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Sur la borne + de la batterie de servitude" }
+  - { id: wire206, de: node362, vers: node087, section_mm2: 16, couleur: noir, longueur_m: 0.3, statut: propose, note: "Côté « bord » du shunt, dans le coffre" }
+  - { id: wire209, de: node371, vers: node363, section_mm2: 0.75, couleur: rouge, longueur_m: 2, statut: propose, note: "Commande « remote » : de l'interrupteur, près du tableau Scheiber, jusqu'au coffre" }

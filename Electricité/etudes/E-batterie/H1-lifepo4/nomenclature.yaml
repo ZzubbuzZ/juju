@@ -14,6 +14,9 @@ lots:
   charge:
     titre: Chargeur DC/DC depuis la batterie moteur, à la place du coupleur Scheiber
     note: DC/DC commandé à la main, par un interrupteur près du tableau Scheiber (Q48).
+  guindeau:
+    titre: Guindeau sur le circuit moteur (décision du 05/10)
+    note: Alimenté par la batterie moteur, côté charges du coupe-circuit moteur, au lieu de la servitude.
   quai:
     titre: Chargeur de quai dédié à la LiFePO4, près de la batterie ; Dolphin conservé pour la batterie moteur seule, raccordé au plus près d'elle
     note: À côté du Dolphin (Q49) ; section du câble 12 V selon la longueur du trajet (Q50).
@@ -27,12 +30,13 @@ articles:
 
   # --- Lot charge -------------------------------------------------------------------
   - { lot: charge, designation: "Victron Orion XS 12/12-50A, chargeur DC/DC non isolé, Bluetooth", reference: ORI121217040, quantite: 1, unite: pièce, prix_unitaire: 259, statut: devis, source: "Achat de l'utilisateur", date_prix: "2026-10-05", note: "Acheté le 05/10. Courant à régler vers 15 A (alternateur de 20 A)" }
-  - { lot: charge, designation: "Porte-fusibles et fusibles aux deux extrémités du DC/DC", quantite: 2, unite: lot, prix_unitaire: 15, statut: estimation, note: "Calibre selon la notice" }
-  - { lot: charge, designation: "Câble étamé rouge et noir pour l'entrée et la sortie du DC/DC, cosses et gaine", quantite: 1, unite: lot, prix_unitaire: 30, statut: estimation, note: "Section selon la notice, la longueur et le courant réglé", fils: [wire202, wire203, wire204, wire205, wire206] }
-  - { lot: charge, designation: "Commande « remote » du DC/DC : interrupteur à voyant près du tableau Scheiber, fil fin, porte-fusible 1 A", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, fils: [wire207, wire208, wire209] }
+  - { lot: charge, designation: "Porte-fusible MIDI et fusible 70 A, aux deux extrémités du DC/DC", quantite: 2, unite: lot, prix_unitaire: 15, statut: estimation, note: "60 à 70 A d'après la notice (§ 3.3)" }
+  - { lot: charge, designation: "Câble étamé 16 mm² rouge et noir pour l'entrée et la sortie du DC/DC, cosses et gaine", quantite: 1, unite: lot, prix_unitaire: 45, statut: estimation, note: "16 mm² jusqu'à 5 m d'après la notice (§ 3.3)", fils: [wire202, wire203, wire204, wire205, wire206] }
+  - { lot: charge, designation: "Commande « remote » du DC/DC : interrupteur à voyant près du tableau Scheiber, fil fin, porte-fusible 1 A", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, fils: [wire207, wire208, wire209, wire216] }
 
   # --- Lot quai ---------------------------------------------------------------------
   - { lot: quai, designation: "Victron Blue Smart IP67 12/17, profil LiFePO4, Bluetooth", reference: BPC121713006, quantite: 1, unite: pièce, prix_unitaire: 118, statut: devis, source: "Achat de l'utilisateur", date_prix: "2026-10-05" }
   - { lot: quai, designation: "Câble 230 V H07RN-F 3 × 1,5 mm² depuis le disjoncteur du chargeur (C10), prise dédiée ou boîtier de raccordement à bornes Wago, passe-fils et colliers", quantite: 1, unite: lot, prix_unitaire: 40, statut: estimation, note: "Q53 ; longueur selon l'emplacement retenu sur place (contremarche ou coffre de la batterie)", fils: [wire213, wire214, wire215] }
   - { lot: quai, designation: "Câble étamé court rouge et noir vers la batterie de servitude, porte-fusible et fusible à la batterie (environ 25 A), cosses", quantite: 1, unite: lot, prix_unitaire: 25, statut: estimation, note: "Section selon la notice ; négatif côté « bord » du shunt (étude D)", fils: [wire210, wire211, wire212] }
   - { lot: quai, designation: "Dolphin : câble court 6 mm² de la sortie 1 au fusible de 30 A de la batterie moteur, cosses (fusible et porte-fusible repris de la platine, A-H2)", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation, fils: [wire200, wire201] }
+  - { lot: guindeau, designation: "Câble étamé 35 mm² rouge (coupe-circuit moteur → disjoncteur du guindeau) et cosses", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, fils: [wire217] }

@@ -5,7 +5,8 @@
 # Chargeur de quai LiFePO4 et shunt ensemble, dans la contremarche de la descente
 # (emplacement b). La variante « dans le coffre de la batterie » est E-H4.
 # Nœuds 360 à 379 réservés à l'étude E ; fils wire200 et suivants.
-# Longueurs estimées, à mesurer à la pose. Calibres et sections de l'Orion XS selon sa notice.
+# Longueurs estimées, à mesurer à la pose. Orion XS : fusibles de 70 A aux deux extrémités et 16 mm²
+# jusqu'à 5 m (notice Victron, § 3.3). Guindeau déplacé sur le circuit moteur (décision du 05/10).
 
 hypothese: E-H1
 titre: Batterie LiFePO4, Orion XS et chargeurs dédiés (chargeur de quai dans la contremarche)
@@ -14,7 +15,7 @@ base: D-H1
 supprime:
   equipements: [bat-servitude, fus-bat-servitude, fus-chargeur-moteur, cc-couplage, coupleur, fus-coupleur-moteur, fus-coupleur-servitude, fus-chargeur-servitude]
   nodes: [node011, node012, node013, node014, node015, node074, node076, node077, node078, node079, node080, node081]
-  fils: [wire002, wire003, wire005, wire007, wire008, wire010, wire011, wire014, wire162, wire163, wire164, wire165]
+  fils: [wire002, wire003, wire005, wire007, wire008, wire010, wire011, wire014, wire017, wire162, wire163, wire164, wire165]
 
 equipements:
   # --- Batterie et son fusible ---------------------------------------------------
@@ -26,10 +27,10 @@ equipements:
 
   # --- Chargeur DC/DC ------------------------------------------------------------
   - { id: orion-xs, type: chargeur, designation: "Chargeur DC/DC de la LiFePO4", modele: "Victron Orion XS 12/12-50A, réglé vers 15 A", zone: descente, emplacement: "Derrière la platine des coupe-circuits", statut: propose }
-  - { id: fus-orion-entree, type: fusible, designation: "Fusible de l'entrée de l'Orion XS (côté batterie moteur)", emplacement: "Contre la borne côté batterie du coupe-circuit moteur", statut: propose, note: "Calibre selon la notice de l'Orion XS" }
-  - { id: fus-orion-sortie, type: fusible, designation: "Fusible de la sortie de l'Orion XS (côté batterie de servitude)", emplacement: "Contre la borne côté batterie du coupe-circuit de servitude", statut: propose, note: "Calibre selon la notice de l'Orion XS" }
+  - { id: fus-orion-entree, type: fusible, designation: "Fusible de l'entrée de l'Orion XS (côté batterie moteur, MIDI)", calibre_A: 70, emplacement: "Contre la borne côté batterie du coupe-circuit moteur", statut: propose, note: "60 à 70 A d'après la notice Victron (§ 3.3)" }
+  - { id: fus-orion-sortie, type: fusible, designation: "Fusible de la sortie de l'Orion XS (côté batterie de servitude, MIDI)", calibre_A: 70, emplacement: "Contre la borne côté batterie du coupe-circuit de servitude", statut: propose, note: "60 à 70 A d'après la notice Victron (§ 3.3) ; la recharge de secours inversée ne dépasse pas 25 A" }
   - { id: fus-orion-remote, type: fusible, designation: "Fusible de la commande de l'Orion XS", calibre_A: 1, emplacement: "À la source du fil, côté charges du coupe-circuit de servitude", statut: propose }
-  - { id: inter-orion, type: interrupteur, designation: "Interrupteur à voyant de l'Orion XS (« ouvrir au port »)", zone: descente, emplacement: "Près du tableau Scheiber 2 voies (Q48)", statut: propose }
+  - { id: inter-orion, type: interrupteur, designation: "Interrupteur à voyant de l'Orion XS (« ouvrir au port »), entre le + et la broche H (option b de la notice)", zone: descente, emplacement: "Près du tableau Scheiber 2 voies (Q48)", statut: propose }
 
   # --- Chargeur de quai LiFePO4 --------------------------------------------------
   - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: descente, emplacement: "Dans la contremarche, avec le shunt (variante coffre : E-H4)", statut: propose }
@@ -52,6 +53,7 @@ nodes:
   - { id: node369, equipement: fus-orion-remote, borne: "2", polarite: "+" }
   - { id: node370, equipement: inter-orion, borne: "entrée", polarite: "+" }
   - { id: node371, equipement: inter-orion, borne: "sortie", polarite: commande }
+  - { id: node379, equipement: inter-orion, borne: "masse du voyant", polarite: "-" }
 
   # --- Chargeur de quai LiFePO4 ------------------------------------------------------
   - { id: node372, equipement: chargeur-lifepo4, borne: "sortie +", polarite: "+" }
@@ -68,14 +70,18 @@ fils:
   - { id: wire201, de: node018, vers: node002, section_mm2: 6, couleur: noir, longueur_m: 0.5, remplace: wire005, statut: propose, note: "Négatif du Dolphin sur la borne − de la batterie moteur" }
 
   # --- Orion XS -------------------------------------------------------------------------
-  - { id: wire202, de: node003, vers: node364, section_mm2: 10, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
-  - { id: wire203, de: node365, vers: node360, section_mm2: 10, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Section pour 50 A, courant maximal de l'appareil ; à confirmer sur la notice" }
-  - { id: wire204, de: node009, vers: node366, section_mm2: 10, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
-  - { id: wire205, de: node367, vers: node361, section_mm2: 10, couleur: rouge, longueur_m: 0.5, statut: propose }
-  - { id: wire206, de: node362, vers: node005, section_mm2: 10, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge de la LiFePO4 est comptée" }
+  - { id: wire202, de: node003, vers: node364, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire203, de: node365, vers: node360, section_mm2: 16, couleur: rouge, longueur_m: 0.5, statut: propose, note: "16 mm² jusqu'à 5 m, d'après la notice (fusible de 60 à 70 A)" }
+  - { id: wire204, de: node009, vers: node366, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire205, de: node367, vers: node361, section_mm2: 16, couleur: rouge, longueur_m: 0.5, statut: propose }
+  - { id: wire206, de: node362, vers: node005, section_mm2: 16, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge de la LiFePO4 est comptée" }
   - { id: wire207, de: node010, vers: node368, section_mm2: 0.75, couleur: rouge, longueur_m: 0.1, statut: propose }
   - { id: wire208, de: node369, vers: node370, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose }
-  - { id: wire209, de: node371, vers: node363, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Commande « remote » de l'Orion XS" }
+  - { id: wire209, de: node371, vers: node363, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Commande « remote » de l'Orion XS : + commuté sur la broche H, actif au-dessus de 4 V ; cavalier H-L d'origine retiré" }
+  - { id: wire216, de: node379, vers: node051, section_mm2: 0.75, couleur: noir, longueur_m: 0.5, statut: propose, note: "Masse du voyant, sur la barrette de masse du tableau Scheiber" }
+
+  # --- Guindeau sur le circuit moteur (05/10) ----------------------------------------------
+  - { id: wire217, de: node004, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 0.5, remplace: wire017, statut: propose, note: "Le guindeau est alimenté par la batterie moteur, côté charges du coupe-circuit moteur, au lieu de la servitude" }
 
   # --- Chargeur de quai LiFePO4 : 12 V ---------------------------------------------------
   - { id: wire210, de: node009, vers: node377, section_mm2: 4, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
