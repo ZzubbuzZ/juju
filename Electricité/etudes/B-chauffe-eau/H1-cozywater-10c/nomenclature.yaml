@@ -3,7 +3,7 @@
 # B-H1 : nomenclature chiffrée. Prix TTC en euros du 07/10/2026. Ballon et réducteur : pages
 # revendeur ouvertes ; vase : prix relevé par recherche (revendeur britannique en rupture, pas de
 # revendeur français trouvé) ; le reste en estimation. Raccords à confirmer à réception (Q55)
-# et selon le tuyau du bord (Q54).
+# et selon le tuyau du bord (Q54). Prise dédiée décidée le 07/10 (Q56).
 
 hypothese: B-H1
 devise: EUR
@@ -19,19 +19,19 @@ lots:
     titre: Robinetterie (option, selon les robinets existants)
     note: Q54.
   electricite:
-    titre: Raccordement 230 V
-    note: Aucun achat si une prise existante accepte la fiche Schuko (Q56).
+    titre: "Raccordement 230 V : prise dédiée sur le second C10"
+    note: Décision du 07/10 (Q56). Second C10 à confirmer libre (Q42).
 
 articles:
   # --- Lot ballon -------------------------------------------------------------------
-  - { lot: ballon, designation: "Chauffe-eau Carbest CozyWater 10C, 10 L, 12 V 200 W / 230 V 800 W, panneau de commande, soupape de 3 bar", reference: "670604", quantite: 1, unite: pièce, prix_unitaire: 279, statut: catalogue, source: "https://www.camping-car-plus.com/chaud-froid-gaz/chauffages-chauffe-eau/chauffe-eau-electrique-carbest-cozywater-10l-12-230v-12938.html", date_prix: "2026-10-07", note: "Commandé par l'utilisateur ; prix payé à reporter (prix public relevé, page ouverte)" }
+  - { lot: ballon, designation: "Chauffe-eau Carbest CozyWater 10C, 10 L, 12 V 200 W / 230 V 800 W, panneau de commande, soupape de 3 bar", reference: "670604", quantite: 1, unite: pièce, prix_unitaire: 279, statut: catalogue, source: "https://www.camping-car-plus.com/chaud-froid-gaz/chauffages-chauffe-eau/chauffe-eau-electrique-carbest-cozywater-10l-12-230v-12938.html", date_prix: "2026-10-07", note: "Commandé par l'utilisateur ; prix payé à reporter (prix public relevé, page ouverte). Cordon 230 V fourni, fiche à ne pas couper", fils: [wire303, wire304, wire305] }
   - { lot: ballon, designation: "Fixations du ballon : tasseaux ou équerres et visserie inox, pour 60 kg (notice)", quantite: 1, unite: lot, prix_unitaire: 20, statut: estimation, note: "Selon l'emplacement (Q19)" }
 
   # --- Lot eau ----------------------------------------------------------------------
-  - { lot: eau, designation: "Réducteur de pression 1/2\" Pundmann, réglable de 1 à 4 bar, manomètre 0-6 bar, laiton, 80 °C maxi, femelle-femelle", quantite: 1, unite: pièce, prix_unitaire: 33.9, statut: catalogue, source: "https://www.mon-camping-car.com/reducteur-de-pression-1-2-pundmann.html", date_prix: "2026-10-07", note: "Page ouverte. Réglé à 1,5 bar, sous la pression de redémarrage de la pompe (Q54)" }
+  - { lot: eau, designation: "Réducteur de pression 1/2\" Pundmann, réglable de 1 à 4 bar, manomètre 0-6 bar, laiton, 80 °C maxi, femelle-femelle", quantite: 1, unite: pièce, prix_unitaire: 33.9, statut: catalogue, source: "https://www.mon-camping-car.com/reducteur-de-pression-1-2-pundmann.html", date_prix: "2026-10-07", note: "Page ouverte. À la sortie de la pompe, pour tout le circuit. Réglé à 1,5 bar après mesure de la coupure de la pompe (Q54)" }
   - { lot: eau, designation: "Vase d'expansion Seaflo 1 L à vessie, 8,6 bar maxi, pré-gonflé à 0,7 bar, 1/2\" mâle NPT", reference: "SFAT-100-125-01", quantite: 1, unite: pièce, prix_unitaire: 50, statut: estimation, note: "À regonfler à 1,4 bar. Relevé par recherche : environ 40 à 70 £ au Royaume-Uni, 49 $ aux États-Unis ; revendeur français à trouver. Filetage NPT : adaptateur fourni (S1F001) à vérifier" }
   - { lot: eau, designation: "Vannes d'arrêt 1/4 de tour 1/2\" laiton, eau chaude, avant le réducteur et après la sortie chaude", quantite: 2, unite: pièce, prix_unitaire: 8, statut: estimation, note: "Demandées par la notice (protection antigel)" }
-  - { lot: eau, designation: "Tés 1/2\" (eau froide vers le ballon, vase), raccords tuyau, ruban téflon", quantite: 1, unite: lot, prix_unitaire: 25, statut: estimation, note: "Type selon le tuyau du bord (Q54)" }
+  - { lot: eau, designation: "Tés 1/2\" (eau froide vers le ballon, vase), raccords tuyau, flexible court entre la pompe et le réducteur, ruban téflon", quantite: 1, unite: lot, prix_unitaire: 25, statut: estimation, note: "Type selon le tuyau du bord (Q54)" }
   - { lot: eau, designation: "Tuyau alimentaire pour eau chaude (PEX ou tuyau armé 90 °C), colliers inox", quantite: 4, unite: m, prix_unitaire: 5, statut: estimation, note: "Longueur selon l'emplacement (Q19)" }
   - { lot: eau, designation: "Tuyau de vidange de la soupape, vers un évier ou un nable hors des fonds", quantite: 2, unite: m, prix_unitaire: 3, statut: estimation, note: "Un tuyau court est fourni avec la soupape" }
   - { lot: eau, designation: "Pompe à pied ou à vélo avec manomètre, pour gonfler le vase", quantite: 1, unite: pièce, prix_unitaire: 0, statut: estimation, note: "Sans doute déjà à bord ou à la maison" }
@@ -41,4 +41,5 @@ articles:
   - { lot: confort, designation: "Mitigeur thermostatique anti-brûlure 1/2\" à la sortie du ballon (option)", quantite: 1, unite: pièce, prix_unitaire: 40, statut: estimation, note: "Option : eau à 45 °C au robinet avec un ballon à 70 °C" }
 
   # --- Lot électricité --------------------------------------------------------------
-  - { lot: electricite, designation: "Prise 230 V 16 A avec terre, compatible fiche Schuko (si la prise choisie ne l'est pas)", quantite: 1, unite: pièce, prix_unitaire: 10, statut: estimation, note: "Q56 ; sur le C16 des prises tribord ou le second C10 (Q42)" }
+  - { lot: electricite, designation: "Prise 230 V 16 A 2P+T en saillie, compatible fiche Schuko (hybride), avec boîte", quantite: 1, unite: pièce, prix_unitaire: 15, statut: estimation, note: "Près du boîtier tribord, à portée du câble du ballon (Q55)" }
+  - { lot: electricite, designation: "Câble H07RN-F 3G1,5 du second C10 à la prise, embouts de câblage, presse-étoupe, colliers", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Environ 1,5 m ; si le C10 n'est pas libre, ajouter un disjoncteur DNX3 1P+N 10 A (environ 15 €)", fils: [wire300, wire301, wire302] }

@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../outils/schema/donnees.schema.json
+#
+# B-H1 : différences avec le relevé. Décision du 07/10 (Q56) : le ballon se branche sur une prise
+# dédiée, posée près du boîtier de distribution tribord et alimentée seule par le second C10 du
+# boîtier, s'il est libre (Q42). La notice du ballon interdit de couper sa fiche Schuko.
+# Si le second C10 n'est pas libre : un disjoncteur ajouté dans le boîtier (place à vérifier),
+# ou à défaut le C16 des prises tribord (node226) ; seul le départ de wire300 change.
+# Nœuds 300 à 319 réservés à l'étude B ; fils wire300 et suivants.
+# Longueurs estimées (ballon a priori dans le cabinet de toilette, comme le boîtier, Q19).
+
+hypothese: B-H1
+titre: Ballon Carbest CozyWater 10C sur le 230 V, prise dédiée
+base: releve
+
+equipements:
+  - { id: prise-230-ballon, type: prise, designation: "Prise 230 V dédiée au ballon, 16 A avec terre, compatible Schuko (fiche hybride)", emplacement: "Près du boîtier de distribution tribord, à portée du câble du ballon (Q55)", statut: propose }
+  - { id: chauffe-eau, type: recepteur, designation: "Chauffe-eau Carbest CozyWater 10C (entrée 230 V)", modele: "670604, 10 L, 230 V 800 W et 12 V 200 W", emplacement: "Cabinet de toilette a priori (Q19)", puissance_W: 800, courant_A: 3.5, statut: propose, questions: [Q19, Q55], note: "Entrée 12 V non raccordée ici : B-H3" }
+
+nodes:
+  # --- Second C10 du boîtier tribord (circuit actuel inconnu, Q42) -----------------
+  - { id: node306, equipement: disj-trib-10a-2, borne: "entrée", polarite: 230V-phase, monte_sur: node220, questions: [Q42] }
+  - { id: node307, equipement: disj-trib-10a-2, borne: "sortie", polarite: 230V-phase, questions: [Q42] }
+
+  # --- Prise dédiée -----------------------------------------------------------------
+  - { id: node300, equipement: prise-230-ballon, borne: "phase", polarite: 230V-phase }
+  - { id: node301, equipement: prise-230-ballon, borne: "neutre", polarite: 230V-neutre }
+  - { id: node302, equipement: prise-230-ballon, borne: "terre", polarite: 230V-terre }
+
+  # --- Ballon -----------------------------------------------------------------------
+  - { id: node303, equipement: chauffe-eau, borne: "230 V phase", polarite: 230V-phase }
+  - { id: node304, equipement: chauffe-eau, borne: "230 V neutre", polarite: 230V-neutre }
+  - { id: node305, equipement: chauffe-eau, borne: "230 V terre", polarite: 230V-terre }
+
+fils:
+  # --- Câble 3 × 1,5 mm² du second C10 à la prise dédiée -----------------------------
+  - { id: wire300, de: node307, vers: node300, section_mm2: 1.5, couleur: marron, longueur_m: 1.5, statut: propose, note: "Câble H07RN-F 3G1,5 ; protégé par le C10. Longueur estimée", questions: [Q42] }
+  - { id: wire301, de: node221, vers: node301, section_mm2: 1.5, couleur: bleu, longueur_m: 1.5, statut: propose }
+  - { id: wire302, de: node222, vers: node302, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 1.5, statut: propose }
+
+  # --- Cordon du ballon, fourni, fiche Schuko (à ne pas modifier) -----------------------
+  - { id: wire303, de: node300, vers: node303, statut: propose, note: "Cordon du ballon ; section et longueur à relever à réception (Q55)", questions: [Q55] }
+  - { id: wire304, de: node301, vers: node304, statut: propose }
+  - { id: wire305, de: node302, vers: node305, statut: propose }
