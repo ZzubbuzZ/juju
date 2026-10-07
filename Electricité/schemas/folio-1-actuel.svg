@@ -70,6 +70,7 @@
   <text class="id mid" x="300" y="91">wire001 · 35</text>
   <g class="mk-a"><circle cx="212" cy="76" r="10"/><text class="mid" x="212" y="79.5">A2</text></g>
   <g class="mk-a"><circle cx="236" cy="76" r="10"/><text class="mid" x="236" y="79.5">A3</text></g>
+  <g class="mk-q"><circle cx="270" cy="68" r="11"/><text class="mid" x="270" y="71.5">Q58</text></g>
   <!-- CC moteur -->
   <circle class="term" cx="390" cy="100" r="4"/><circle class="term" cx="450" cy="100" r="4"/>
   <path class="lever" d="M390 100 L447 87"/>
@@ -145,6 +146,7 @@
   <text class="id mid" x="312" y="490">wire006 · 35</text>
   <g class="mk-a"><circle cx="212" cy="446" r="10"/><text class="mid" x="212" y="449.5">A2</text></g>
   <g class="mk-a"><circle cx="236" cy="446" r="10"/><text class="mid" x="236" y="449.5">A11</text></g>
+  <g class="mk-q"><circle cx="320" cy="440" r="11"/><text class="mid" x="320" y="443.5">Q58</text></g>
   <!-- CC servitude -->
   <circle class="term" cx="390" cy="470" r="4"/><circle class="term" cx="450" cy="470" r="4"/>
   <path class="lever" d="M390 470 L447 457"/>
@@ -190,6 +192,7 @@
   <path class="p w2" d="M500 474 V632 H640"/>
   <text class="id mid" x="513" y="532" transform="rotate(-90 513 532)">wire019 · 6</text>
   <g class="mk-a"><circle cx="500" cy="585" r="11"/><text class="mid" x="500" y="588.5">A1</text></g>
+  <g class="mk-q"><circle cx="478" cy="560" r="11"/><text class="mid" x="478" y="563.5">Q58</text></g>
   <rect class="box" x="640" y="595" width="150" height="75" rx="2"/>
   <text class="tb mid" x="715" y="620">Tableau</text>
   <text class="ts mid" x="715" y="637">table à carte</text>

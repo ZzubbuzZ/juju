@@ -24,6 +24,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 01/10 : à vérifier lors d'une visite.
 - **Q12** Longueurs réelles des fils du tableau de servitude, circuit par circuit.
   → 27/09 : pas d'information pour l'instant. À mesurer lors d'un démontage du tableau.
+- **Q58** Isolant des câbles existants : température inscrite sur la gaine (60, 70, 90 ou 105 °C, ou référence du câble) de wire019 et wire022 (6 mm², alimentation des deux tableaux) et de wire001 et wire006 (35 mm², câbles des batteries). Le courant admissible en dépend : environ 40 A en 6 mm² pour un isolant à 60 °C, 70 A à 105 °C ; environ 140 A en 35 mm² à 60 °C, 210 A à 105 °C. Conditionne les calibres retenus : fusible de 50 A sur wire019 (A-H2), 300 A sur wire006 (E-H1), 400 A sur wire001 (A-H2).
 
 ### Équipements
 
@@ -49,6 +50,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 07/10 : a priori dans le cabinet de toilette, comme le boîtier de distribution 230 V tribord. Emplacement exact à confirmer.
 - **Q54** Circuit d'eau douce existant : volume et position du réservoir ; type et diamètre du tuyau ; trajet de la pompe Seaflo jusqu'aux robinets (cuisine, cabinet de toilette) ; modèle des robinets (eau froide seule ou mitigeur) ; présence d'un vase ou d'un accumulateur. Avec un manomètre sur un robinet : pression à laquelle la pompe redémarre (la coupure est annoncée à 2,8 bar). Conditionne le réglage du réducteur et du vase (B-H1).
   → 07/10 : notice de la pompe ajoutée (documentation/SEAFLO-Notice-pompe-41-series-SFDP1-045-040.pdf) ; elle ne donne pas les pressions. La pression d'arrêt semble variable. B-H1 prévoit de mesurer la coupure et le redémarrage avec le manomètre du réducteur avant de le régler (voir la procédure dans B-H1).
+  → 08/10 : précision sur la question : c'est la coupure la plus basse de la pompe qui conditionne le réglage du réducteur (2 bar au moins pour 1,5 bar), pas le redémarrage (B-H1, « Les réglages, dans l'ordre »). Reste à relever : réservoir, tuyaux, robinets et mitigeurs.
 - **Q55** À la réception du ballon : filetage et diamètre de l'entrée d'eau froide, de la sortie d'eau chaude et de la soupape ; longueur du câble du panneau de commande, du câble 230 V et des fils 12 V. Où poser le panneau de commande ?
   → 07/10 : question pas claire pour l'utilisateur. Reformulée : quand le ballon sera livré, relever (1) le diamètre et le type de filetage de ses deux raccords d'eau et de la soupape, pour acheter les bons raccords (le revendeur annonce 1/2" mâle, la notice ne dit rien) ; (2) la longueur des trois câbles qui sortent du ballon (230 V à fiche Schuko, fils 12 V, câble du panneau de commande), pour savoir jusqu'où on peut éloigner le ballon de sa prise et le panneau du ballon ; (3) la puissance inscrite sur la plaque (800 W selon la notice, 660 W selon le revendeur).
 - **Q57** Entrée 12 V du ballon (B-H3, retenue le 08/10) : trajet et longueur du câble 6 mm² entre la platine des coupe-circuits (contremarche de la descente) et le ballon, dans le cabinet de toilette ; cloisons à traverser. Place pour le relais de 30 A près du ballon, et pour l'interrupteur à voyant près du panneau de commande.
@@ -85,6 +87,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 03/10 : navigation en Méditerranée, batterie à l'intérieur du bateau : le gel n'est pas jugé un problème.
 - **Q49** Coffre de cockpit tribord : reste-t-il la place, près du chargeur Dolphin, pour un second chargeur de quai d'environ 20 × 10 × 6 cm ? Sinon, y a-t-il une place sèche près de la batterie de servitude, et par où passerait un câble 230 V ? Distance entre le coffre de cockpit tribord et le coffre de la batterie de servitude.
   → 03/10 : à côté du chargeur Dolphin, dans le coffre de cockpit tribord. Distance jusqu'à la batterie de servitude : Q50.
+  → 05/10 : dépassé : le chargeur LiFePO4 va avec le shunt, dans la contremarche ou dans le coffre de la batterie (Q53, E-H1 et E-H4).
 - **Q31** Détails du réseau 230 V :
   - Le plafonnier 230 V est-il métallique (classe I, terre obligatoire) ou en plastique à double isolation (classe II, marqué d'un double carré) ?
   → 28/09 : terre 230 V et masse 12 V séparées, pas d'isolateur galvanique (anomalie A8). Boîtier tribord sur la cloison entre le cabinet de toilette et le coffre de cockpit. Raccordement des prises (étoile ou chaîne) : non relevé, jugé secondaire.
