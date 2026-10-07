@@ -108,7 +108,7 @@
   <path class="p w2" d="M150 320 H190"/><rect class="fuse" x="190" y="312" width="44" height="16"/><text class="id mid" x="212" y="324">15 A</text>
   <path class="p w2" d="M234 320 H258"/><circle class="term" cx="262" cy="320" r="3.5"/><circle class="term" cx="302" cy="320" r="3.5"/><path class="lever" d="M262 320 L300 310"/>
   <path class="p w2" d="M306 320 H560"/><text class="id mid" x="430" y="314">wire136 · 2,5</text>
-  <rect class="box" x="560" y="305" width="200" height="30" rx="2"/><text class="t mid" x="660" y="324">Pompe à eau Seaflow</text>
+  <rect class="box" x="560" y="305" width="200" height="30" rx="2"/><text class="t mid" x="660" y="324">Pompe à eau Seaflo</text>
   <path class="n w2" d="M760 320 H1120"/><circle class="dn" cx="1120" cy="320" r="4"/><text class="id mid" x="940" y="314">wire137 · 2,5</text>
 
   <!-- 6 radio -->
