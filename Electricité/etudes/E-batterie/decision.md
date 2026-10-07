@@ -17,16 +17,17 @@
 | Batterie de servitude | **Humsienk 12 V 200 Ah Plus**, LiFePO4, BMS 250 A, Bluetooth | 259,99 € (prix remisé, fiche du site Humsienk). 521 × 238 × 221 mm, 26,4 kg, bornes M8, IP65 |
 | Chargeur DC/DC | **Victron Orion XS 12/12-50A** | Acheté 259 € ; courant à régler vers 15 A (alternateur de 20 A) ; commande manuelle (Q48) |
 | Chargeur de quai LiFePO4 | **Victron Blue Smart IP67 12/17** | À la place du Blue Smart IP65 12/15 prévu ; référence BPC121713006, 118 € (Q52) |
-| Fusible de la batterie de servitude | **MEGA** (décision de l'utilisateur), pas de classe T | Voir « Fusible de batterie » dans [H1](H1-lifepo4/proposition.md#fusible-de-batterie--décision-du-0510) |
+| Fusible de la batterie de servitude | **MEGA 300 A** (décision de l'utilisateur ; calibre confirmé le 08/10), pas de classe T | Voir « Fusible de batterie » dans [H1](H1-lifepo4/proposition.md#fusible-de-batterie--décision-du-0510) |
 
 Le SmartShunt (étude D) n'est pas encore commandé.
 
 **Emplacements des chargeurs (05/10)** : le Blue Smart se place **avec le shunt de l'étude D**, soit dans la contremarche de la descente, près de la platine, soit dans le coffre de la batterie de servitude : à décider sur place selon la place dans la contremarche (Q53). Son alimentation 230 V vient du disjoncteur du chargeur de quai (C10) par un câble dédié, jusqu'à une prise dédiée ou un boîtier de raccordement à bornes Wago (Q53). Dans les deux cas, son câble 12 V reste court. Le Dolphin, qui ne charge plus que la batterie moteur, est raccordé **au plus près d'elle** (fusible de 30 A à la batterie, négatif sur sa borne −), au lieu de passer par la platine.
 
-## Ce qui reste à décider (mis à jour le 05/10)
+## Ce qui reste à décider (mis à jour le 08/10)
 
-- **Calibre du fusible MEGA** de la servitude : 300 A proposés (voir H1).
-- **Emplacement de l'Orion XS, du chargeur de quai et du shunt** : contremarche de la descente (H1, folios 2h et 2i) ou coffre de la batterie (H4, folios 2j et 2k), sur place.
+- **Emplacement de l'Orion XS, du chargeur de quai et du shunt** : contremarche de la descente (H1, folios 2h et 2i) ou coffre de la batterie (H4, folios 2j et 2k), sur place. Les deux variantes sont fusionnées dans `main` ; celle qui n'est pas retenue sera marquée écartée.
+
+Tranché le 08/10 : calibre du fusible MEGA de la servitude, **300 A**.
 
 Tranchés le 05/10 : place de la batterie (Q51, pas un problème), commande manuelle de l'Orion XS (Q48), version du Blue Smart (Q52), alimentation 230 V du Blue Smart (Q53), démarrage de secours (niveau 1 seul, recharge inversée de 25 A par l'Orion XS ; démarrage direct abandonné), fusibles de l'Orion XS (70 A aux deux extrémités, 16 mm², d'après la notice), guindeau sur le circuit moteur.
 
@@ -36,6 +37,6 @@ Tranchés le 05/10 : place de la batterie (Q51, pas un problème), commande manu
 - **Capacité** : 100 Ah, ou davantage selon l'objectif d'autonomie, à fixer avec l'étude C (solaire). → 05/10 : 200 Ah.
 - **Modèle** de batterie et de chargeur de quai, d'après les fiches techniques. → 05/10 : commandés (ci-dessus).
 
-## Avant le câblage et la fusion dans `main`
+## Fusion dans `main` (08/10)
 
-Q45, Q47 et Q49 répondues le 03/10 (place dans le coffre, pas de gel, second chargeur à côté du Dolphin). Restent : la commande du DC/DC (Q48 : après contact, proposé, ou interrupteur à la table à carte) et la longueur du câble 12 V du second chargeur (Q50). Puis `cablage.yaml` et folio de H1, avec un fusible MRBF sur la borne de la batterie à la place du fusible MEGA de A-H2, dont le pouvoir de coupure ne suffit pas pour une LiFePO4 (calibre à fixer).
+Toutes les questions de l'étude sont répondues (Q45 à Q53). Le câblage de H1 et de sa variante H4 est écrit, avec leurs folios cibles (2h et 2i, 2j et 2k). Le fusible de la batterie de servitude est un MEGA de 300 A, par décision de l'utilisateur (la réserve sur son pouvoir de coupure est consignée dans H1). L'étude est fusionnée avec ses deux variantes d'emplacement, à départager à bord.

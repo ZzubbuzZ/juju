@@ -49,6 +49,8 @@ Les coûts sont les totaux des nomenclatures : prix relevés par recherche web l
 
 **05/10/2026 : matériel commandé** : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Victron Orion XS 12/12-50A, Victron Blue Smart IP67 12/17 ; fusible MEGA pour la batterie de servitude, sans classe T. Détail et conséquences dans [decision.md](decision.md) et [H1](H1-lifepo4/proposition.md#batterie-commandée-0510). La batterie fait 52 cm et 26 kg ; sa place dans le coffre n'est pas un problème (Q51).
 
+**08/10/2026** : calibre du fusible MEGA confirmé à 300 A ; étude fusionnée dans `main`, avec les deux variantes d'emplacement (H1 contremarche, H4 coffre) à départager à bord.
+
 **Réponses du 05/10** : commande manuelle de l'Orion XS par un interrupteur près du tableau Scheiber (Q48) ; place de la batterie sans problème (Q51) ; Blue Smart BPC121713006 à 118 € (Q52) ; 230 V du Blue Smart par un câble dédié depuis le disjoncteur du chargeur (Q53). Orion XS acheté 259 €.
 
 **Remarques du 05/10 (suite)** : coupe-circuit de couplage déposé sans exception (les deux batteries n'ont pas la même tension) et démarrage direct sur la LiFePO4 abandonné ; commande de l'Orion XS par un + commuté sur la broche H (option b de la notice, cavalier H-L retiré), avec un interrupteur à voyant dont le voyant va à la masse ; fusibles de 70 A et câbles de 16 mm² pour l'Orion XS (notice) ; recharge de secours inversée de 25 A au plus ; **guindeau sur le circuit moteur**.
