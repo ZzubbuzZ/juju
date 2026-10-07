@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../../../outils/schema/donnees.schema.json
+#
+# B-H3 : différences avec B-H1 (ballon CozyWater 10C sur le 230 V). Retenue le 08/10/2026.
+# Les deux entrées restent câblées en permanence ; le ballon choisit seul le 230 V quand il est là.
+# Notice, page 67 : interrupteur et relais de 30 A sur le +, fusible de 30 A au plus près de la
+# source, 6 mm² au moins.
+# Départ du + côté charges du coupe-circuit de servitude (node010) : le coupe-circuit coupe aussi
+# le ballon. Retour du − sur node006, côté « bord » du shunt (D-H1, E-H1) : la consommation est
+# comptée. node010 et node006 sont inchangés par les études A, D et E.
+# Relais et interrupteur près du ballon, dans le cabinet de toilette (Q19, Q57).
+# Nœuds 308 à 319 (fin de la plage de l'étude B) et node380 (plage de réserve, la plage B est pleine).
+# Longueurs estimées (Q57).
+
+hypothese: B-H3
+titre: Entrée 12 V du ballon, câblée en permanence par un relais
+base: B-H1
+
+equipements:
+  - { id: fus-ballon-12v, type: fusible, designation: "Fusible de l'entrée 12 V du ballon", calibre_A: 30, emplacement: "Platine des coupe-circuits, sur le goujon côté charges du coupe-circuit de servitude", statut: propose, note: "Calibre imposé par la notice ; protège le câble de 6 mm²" }
+  - { id: relais-ballon, type: relais, designation: "Relais de l'entrée 12 V du ballon (contact à fermeture 30-87, 30 A)", emplacement: "Près du ballon, cabinet de toilette (Q57)", statut: propose }
+  - { id: fus-cde-ballon, type: fusible, designation: "Fusible de la commande du relais du ballon", calibre_A: 1, emplacement: "Porte-fusible en ligne, sur la borne 30 du relais", statut: propose }
+  - { id: inter-ballon, type: interrupteur, designation: "Interrupteur à voyant « ballon sur batterie »", emplacement: "Près du panneau de commande du ballon (Q55, Q57)", statut: propose }
+
+nodes:
+  # --- Fusible de 30 A à la platine ---------------------------------------------------
+  - { id: node308, equipement: fus-ballon-12v, borne: "1 (côté source)", polarite: "+", monte_sur: node010 }
+  - { id: node309, equipement: fus-ballon-12v, borne: "2", polarite: "+" }
+
+  # --- Relais -------------------------------------------------------------------------
+  - { id: node310, equipement: relais-ballon, borne: "30 (entrée)", polarite: "+" }
+  - { id: node311, equipement: relais-ballon, borne: "87 (sortie)", polarite: commute }
+  - { id: node312, equipement: relais-ballon, borne: "86 (bobine +)", polarite: commande }
+  - { id: node313, equipement: relais-ballon, borne: "85 (bobine −)", polarite: "-" }
+
+  # --- Commande -----------------------------------------------------------------------
+  - { id: node314, equipement: fus-cde-ballon, borne: "1 (côté source)", polarite: "+", monte_sur: node310 }
+  - { id: node315, equipement: fus-cde-ballon, borne: "2", polarite: "+" }
+  - { id: node316, equipement: inter-ballon, borne: "entrée", polarite: "+" }
+  - { id: node317, equipement: inter-ballon, borne: "sortie", polarite: commande }
+  - { id: node380, equipement: inter-ballon, borne: "masse du voyant", polarite: "-" }
+
+  # --- Ballon, entrée 12 V ------------------------------------------------------------
+  - { id: node318, equipement: chauffe-eau, borne: "12 V +", polarite: commute }
+  - { id: node319, equipement: chauffe-eau, borne: "12 V −", polarite: "-" }
+
+fils:
+  # --- Puissance : 6 mm², environ 17 A --------------------------------------------------
+  - { id: wire306, de: node309, vers: node310, section_mm2: 6, couleur: rouge, longueur_m: 3, statut: propose, questions: [Q57], note: "Platine → relais près du ballon ; longueur estimée. Chute de tension environ 2,5 % à 17 A sur 3 m" }
+  - { id: wire307, de: node311, vers: node318, section_mm2: 6, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Selon la longueur des fils 12 V du ballon (Q55)" }
+  - { id: wire308, de: node319, vers: node006, section_mm2: 6, couleur: noir, longueur_m: 3, statut: propose, questions: [Q57], note: "Côté « bord » du shunt : la consommation du ballon est comptée" }
+
+  # --- Commande : 0,75 mm² ------------------------------------------------------------
+  - { id: wire309, de: node315, vers: node316, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose }
+  - { id: wire310, de: node317, vers: node312, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose }
+  - { id: wire311, de: node313, vers: node319, section_mm2: 0.75, couleur: noir, longueur_m: 0.5, statut: propose, note: "Bobine du relais sur le − du ballon" }
+  - { id: wire312, de: node380, vers: node319, section_mm2: 0.75, couleur: noir, longueur_m: 0.5, statut: propose }

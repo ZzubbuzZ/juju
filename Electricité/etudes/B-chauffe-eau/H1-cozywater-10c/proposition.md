@@ -2,7 +2,7 @@
 hypothese: B-H1
 titre: Ballon Carbest CozyWater 10C sur le 230 V, circuit d'eau à pression réduite
 etat: retenue
-resume: Un ballon CozyWater 10C de 10 L (800 W en 230 V, 200 W en 12 V) chauffe l'eau au quai, branché sur une prise dédiée alimentée par le second C10 du boîtier tribord. Un réducteur de pression réglé à 1,5 bar à la sortie de la pompe met l'eau froide et l'eau chaude à la même pression, quelle que soit la coupure de la pompe ; un vase d'expansion de 1 L absorbe la dilatation de l'eau chaude pour que la soupape de 3 bar reste fermée. L'entrée 12 V n'est pas raccordée ici (B-H3).
+resume: Un ballon CozyWater 10C de 10 L (800 W en 230 V, 200 W en 12 V) chauffe l'eau au quai, branché sur une prise dédiée alimentée par le second C10 du boîtier tribord. Un réducteur de pression réglé à 1,5 bar à la sortie de la pompe met l'eau froide et l'eau chaude à la même pression, quelle que soit la coupure de la pompe ; un vase d'expansion de 1 L absorbe la dilatation de l'eau chaude pour que la soupape de 3 bar reste fermée. L'entrée 12 V est câblée par B-H3, retenue le 08/10.
 points_forts:
   - Ballon commandé, panneau de commande à minuterie et soupape de 3 bar fournis.
   - 800 W en 230 V, environ 45 min pour chauffer 10 L de 15 à 60 °C ; 3,5 A seulement sur un C10.
@@ -11,7 +11,7 @@ points_forts:
   - La soupape ne goutte pas à chaque chauffe ; essai prévu jusqu'à 75 °C (environ 2,4 bar attendus).
   - Résistance 12 V de 200 W déjà dans le ballon, prête pour B-H3 (surplus solaire, LiFePO4 de l'étude E).
 points_faibles:
-  - Eau chaude au quai seulement, tant que B-H3 n'est pas câblée.
+  - Sur le 230 V, eau chaude au quai seulement ; hors du quai, c'est l'entrée 12 V de B-H3.
   - Sur une borne de 6 A, le ballon et les deux chargeurs dépassent la borne ; couper un chargeur pendant la chauffe.
   - Pression ramenée de 2,8 à 1,5 bar à tous les robinets, eau froide comprise.
   - Encombrement (270 × 400 × 290 mm) et fixations prévues pour 60 kg (Q19).

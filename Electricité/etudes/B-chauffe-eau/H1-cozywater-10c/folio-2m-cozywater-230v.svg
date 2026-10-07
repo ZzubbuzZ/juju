@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-label="Alimentation 230 volts du chauffe-eau : second disjoncteur de 10 ampères du boîtier tribord, câble de 3 fois 1,5 millimètres carrés vers une prise dédiée, cordon du ballon à fiche Schuko ; entrée 12 volts non raccordée.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-label="Alimentation 230 volts du chauffe-eau : second disjoncteur de 10 ampères du boîtier tribord, câble de 3 fois 1,5 millimètres carrés vers une prise dédiée, cordon du ballon à fiche Schuko ; entrée 12 volts au folio 2n.">
   <title>Folio 2m · Chauffe-eau CozyWater 10C, alimentation</title>
-  <desc>Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par le second C10 du boîtier tribord (Q42), en aval du différentiel 30 mA. Unifilaire, comme le folio 3 ; l'entrée 12 V attend B-H3.</desc>
+  <desc>Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par le second C10 du boîtier tribord (Q42), en aval du différentiel 30 mA. Unifilaire, comme le folio 3 ; l'entrée 12 V, câblée elle aussi, est au folio 2n ; le 230 V est prioritaire.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -112,9 +112,9 @@
   <text class="ts mid" x="810" y="190">emplacement et câble : Q55</text>
 
   <!-- Entrée 12 V -->
-  <path class="u" d="M920 400 H990"/>
-  <rect class="box-unk" x="990" y="370" width="170" height="64" rx="2"/>
-  <text class="tb mid tu" x="1075" y="392">Entrée 12 V · 200 W</text>
-  <text class="ts mid" x="1075" y="408">non raccordée</text>
-  <text class="ts mid" x="1075" y="424">relais et fusible 30 A : B-H3</text>
+  <path class="p w3" d="M920 400 H990"/>
+  <rect class="flag-new" x="990" y="370" width="170" height="64"/>
+  <text class="tb mid tn" x="1075" y="392">Entrée 12 V · 200 W</text>
+  <text class="ts mid" x="1075" y="408">câblée en permanence</text>
+  <text class="ts mid" x="1075" y="424">relais 30 A : folio 2n (B-H3)</text>
 </svg>

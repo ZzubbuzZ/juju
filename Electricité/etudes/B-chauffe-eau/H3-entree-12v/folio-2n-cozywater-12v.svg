@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-label="Entrée 12 volts du chauffe-eau : fusible de 30 ampères côté charges du coupe-circuit de servitude, câble de 6 millimètres carrés jusqu'à un relais de 30 ampères près du ballon, commandé par un interrupteur à voyant protégé par un fusible de 1 ampère ; retour du négatif côté bord du shunt.">
+  <title>Folio 2n · Chauffe-eau CozyWater 10C, entrée 12 V</title>
+  <desc>L'entrée 12 V du ballon reste câblée en permanence à côté du 230 V, qui est prioritaire. Un fusible de 30 A à la platine, du 6 mm² et un relais de 30 A commandé par un interrupteur à voyant près du ballon, comme le demande la notice.</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+
+  <!-- ============ Zones ============ -->
+  <rect class="bound" x="20" y="40" width="300" height="440"/>
+  <text class="ts" x="30" y="58">Contremarche de la descente : platine</text>
+  <rect class="bound" x="600" y="40" width="580" height="440"/>
+  <text class="ts" x="610" y="58">Cabinet de toilette, près du ballon (Q19)</text>
+  <g class="mk-q"><circle cx="1180" cy="40" r="11"/><text class="mid" x="1180" y="43.5">Q57</text></g>
+
+  <!-- ============ Coupe-circuit de servitude et fusible de 30 A ============ -->
+  <path class="p w4" d="M120 140 V90"/>
+  <rect class="flag" x="40" y="72" width="200" height="18"/>
+  <text class="ts mid" x="140" y="85">← LiFePO4, fusible 300 A : folio 2h</text>
+  <circle class="term" cx="120" cy="140" r="4"/><circle class="term" cx="180" cy="140" r="4"/>
+  <path class="lever" d="M120 140 L177 127"/>
+  <text class="ts mid" x="150" y="168">CC servitude</text>
+  <text class="id end" x="114" y="160">node009</text>
+  <text class="id" x="186" y="160">node010</text>
+  <path class="p w3" d="M184 140 H230"/>
+  <rect class="fuse-new" x="230" y="131" width="46" height="18"/>
+  <text class="idn mid" x="253" y="144">30 A</text>
+  <text class="idn mid" x="253" y="122">node308 / node309</text>
+  <text class="ts mid tn" x="253" y="166">sur le goujon</text>
+
+  <!-- ============ + vers le relais ============ -->
+  <path class="p w3" d="M276 140 H700"/>
+  <text class="idn mid" x="470" y="132">wire306 · 6 mm² · ≈ 3 m</text>
+  <g class="mk-q"><circle cx="560" cy="140" r="11"/><text class="mid" x="560" y="143.5">Q57</text></g>
+  <circle class="dp" cx="670" cy="140" r="4"/>
+
+  <!-- ============ Relais ============ -->
+  <rect class="box-new" x="700" y="100" width="140" height="100" rx="2"/>
+  <text class="tb mid tn" x="770" y="132">Relais 30 A</text>
+  <text class="ts mid" x="770" y="148">contact 30-87</text>
+  <text class="pin" x="706" y="128">30</text>
+  <text class="pin end" x="834" y="128">87</text>
+  <text class="pin mid" x="780" y="194">86</text>
+  <text class="pin mid" x="820" y="194">85</text>
+  <text class="idn mid" x="770" y="168">node310–313</text>
+
+  <!-- ============ Ballon ============ -->
+  <path class="p w3" d="M840 140 H960"/>
+  <text class="idn mid" x="900" y="132">wire307 · 6</text>
+  <rect class="box-new" x="960" y="100" width="200" height="150" rx="10"/>
+  <text class="tb mid tn" x="1060" y="128">CozyWater 10C</text>
+  <text class="ts mid" x="1060" y="146">entrée 12 V · 200 W · ≈ 17 A</text>
+  <text class="ts mid" x="1060" y="162">230 V prioritaire : folio 2m</text>
+  <text class="ts mid" x="1060" y="178">panneau : marche, minuterie</text>
+  <text class="idn end" x="954" y="156">node318</text>
+  <text class="idn end" x="954" y="202">node319</text>
+  <text class="pin" x="966" y="146">+</text>
+  <text class="pin" x="966" y="214">−</text>
+  <g class="mk-q"><circle cx="1160" cy="100" r="11"/><text class="mid" x="1160" y="103.5">Q55</text></g>
+
+  <!-- ============ Commande ============ -->
+  <path class="p w1" d="M670 140 V230"/>
+  <rect class="fuse-new" x="662" y="230" width="16" height="36"/>
+  <text class="idn end" x="656" y="246">1 A</text>
+  <text class="idn end" x="656" y="260">node314 / node315</text>
+  <path class="p w1" d="M670 266 V300 H700"/>
+  <text class="idn end" x="664" y="296">wire309</text>
+  <circle class="term" cx="704" cy="300" r="3.5"/><circle class="term" cx="764" cy="300" r="3.5"/>
+  <path class="lever" d="M704 300 L761 288"/>
+  <text class="tb mid tn" x="734" y="338">Interrupteur à voyant</text>
+  <text class="ts mid" x="734" y="354">« ballon sur batterie »</text>
+  <text class="idn mid" x="734" y="370">node316 / node317 / node380</text>
+  <path class="p w1" d="M768 300 H780 V200"/>
+  <text class="idn" x="786" y="250">wire310</text>
+  <path class="n w1" d="M820 200 V230 H930"/>
+  <text class="idn mid" x="875" y="224">wire311</text>
+  <path class="n w1" d="M734 306 V316 H620 V390 H930"/>
+  <text class="idn mid" x="830" y="384">wire312 · voyant</text>
+  <circle class="dn" cx="930" cy="230" r="3.5"/>
+  <circle class="dn" cx="930" cy="390" r="3.5"/>
+
+  <!-- ============ − du ballon vers node006 ============ -->
+  <path class="n w3" d="M960 210 H930 V430 H184"/>
+  <text class="idn mid" x="560" y="422">wire308 · 6 mm² · ≈ 3 m</text>
+  <circle class="term" cx="120" cy="430" r="4"/><circle class="term" cx="180" cy="430" r="4"/>
+  <path class="lever" d="M120 430 L177 417"/>
+  <text class="ts mid" x="150" y="406">CC masse</text>
+  <text class="id end" x="114" y="452">node005</text>
+  <text class="id" x="186" y="452">node006</text>
+  <path class="n w3" d="M116 430 H60 V455"/>
+  <rect class="flag" x="30" y="455" width="170" height="18"/>
+  <text class="ts mid" x="115" y="468">← shunt, côté « bord » : folio 2e</text>
+
+  <!-- ============ Légende ============ -->
+  <text class="ts" x="20" y="506">En vert : nouveau. Le ballon choisit seul le 230 V quand il est présent ; l'interrupteur autorise ou non la chauffe sur la batterie (environ 45 Ah par chauffe).</text>
+  <text class="ts" x="20" y="524">Commande prise sur la borne 30 du relais, à travers un fusible de 1 A. Le − revient côté « bord » du shunt : la consommation du ballon est comptée.</text>
+</svg>

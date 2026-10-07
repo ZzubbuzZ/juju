@@ -12,6 +12,7 @@ Pour l'instant, une liste des sections à écrire.
   - Réglage du réducteur (1,5 bar) et gonflage du vase (1,4 bar, circuit sans pression).
   - Remplissage, purge et premier essai : pas de goutte à la soupape après une chauffe à 75 °C.
   - Raccordement 230 V : prise dédiée, disjoncteur du boîtier tribord.
-  - Utilisation : panneau de commande, minuterie, chauffe à 70 °C de temps en temps.
+  - Raccordement 12 V (B-H3, folio 2n) : fusible de 30 A à la platine, relais et interrupteur à voyant près du ballon ; le 230 V est prioritaire.
+  - Utilisation : panneau de commande, minuterie, chauffe à 70 °C de temps en temps ; interrupteur « ballon sur batterie » ouvert sauf surplus solaire ou batterie pleine (environ 45 Ah par chauffe).
   - Hivernage : vidange par la soupape, soupape laissée ouverte, vannes fermées.
   - Contrôles périodiques : gonflage du vase, tuyau de vidange de la soupape, filtre de la pompe.
