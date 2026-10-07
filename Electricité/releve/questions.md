@@ -46,9 +46,11 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
   → 28/09 : pas encore de réponse.
   → 07/10 : le ballon commandé (Carbest CozyWater 10C) mesure 270 × 400 × 290 mm (Ø × L × H) et pèse 6,9 kg à vide, environ 17 kg plein. Il se pose à plat, ou debout raccords vers le bas, dans un endroit sec et ventilé (il ne doit pas être recouvert ni isolé). Les fixations doivent tenir 60 kg. Il faut aussi de la place pour le réducteur de pression, le vase d'expansion et les deux vannes d'arrêt, la soupape doit rester accessible et son tuyau de vidange doit pouvoir sortir à l'extérieur ou dans un évier. Quels emplacements possibles, et à quelle distance du circuit d'eau, d'une prise 230 V et du tableau de servitude ?
+  → 07/10 : a priori dans le cabinet de toilette, comme le boîtier de distribution 230 V tribord. Emplacement exact à confirmer.
 - **Q54** Circuit d'eau douce existant : volume et position du réservoir ; type et diamètre du tuyau ; trajet de la pompe Seaflo jusqu'aux robinets (cuisine, cabinet de toilette) ; modèle des robinets (eau froide seule ou mitigeur) ; présence d'un vase ou d'un accumulateur. Avec un manomètre sur un robinet : pression à laquelle la pompe redémarre (la coupure est annoncée à 2,8 bar). Conditionne le réglage du réducteur et du vase (B-H1).
+  → 07/10 : notice de la pompe ajoutée (documentation/SEAFLO-Notice-pompe-41-series-SFDP1-045-040.pdf) ; elle ne donne pas les pressions. La pression d'arrêt semble variable. B-H1 prévoit de mesurer la coupure et le redémarrage avec le manomètre du réducteur avant de le régler (voir la procédure dans B-H1).
 - **Q55** À la réception du ballon : filetage et diamètre de l'entrée d'eau froide, de la sortie d'eau chaude et de la soupape ; longueur du câble du panneau de commande, du câble 230 V et des fils 12 V. Où poser le panneau de commande ?
-- **Q56** Prise 230 V qui alimentera le ballon : le câble du ballon se termine par une fiche Schuko. Les prises du bord ont-elles une terre à broche (norme française) ? La fiche Schuko y entre si la prise accepte les fiches hybrides. Laquelle utiliser, sur quel disjoncteur (voir Q42) ?
+  → 07/10 : question pas claire pour l'utilisateur. Reformulée : quand le ballon sera livré, relever (1) le diamètre et le type de filetage de ses deux raccords d'eau et de la soupape, pour acheter les bons raccords (le revendeur annonce 1/2" mâle, la notice ne dit rien) ; (2) la longueur des trois câbles qui sortent du ballon (230 V à fiche Schuko, fils 12 V, câble du panneau de commande), pour savoir jusqu'où on peut éloigner le ballon de sa prise et le panneau du ballon ; (3) la puissance inscrite sur la plaque (800 W selon la notice, 660 W selon le revendeur).
 
 ### Pour l'étude D (shunt)
 
@@ -57,6 +59,8 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ## Réponses
 
+- **Q56** Prise 230 V qui alimentera le ballon : le câble du ballon se termine par une fiche Schuko. Les prises du bord ont-elles une terre à broche (norme française) ? La fiche Schuko y entre si la prise accepte les fiches hybrides. Laquelle utiliser, sur quel disjoncteur (voir Q42) ?
+  → 07/10 : l'utilisateur proposait de raccorder le câble directement au disjoncteur. La notice l'interdit (« prise avec contact de protection », aucune modification du câblage). Décision : **prise dédiée** avec terre, compatible Schuko, posée près du boîtier tribord et alimentée seule par un disjoncteur (le second C10 si Q42 le confirme libre).
 - **Q48** Tableau moteur : existe-t-il un + 12 V présent seulement quand la clé de contact est tournée (borne du contacteur à clé, voyant de charge, fil « D+ » de l'alternateur) ? Quel trajet jusqu'à la platine des coupe-circuits ? Un fil fin y commanderait le chargeur DC/DC (E-H1). Voir aussi Q1.
   → 03/10 : possible, mais ce + est pris sur la batterie moteur. Une commande à la table à carte demanderait de tirer un fil + moteur supplémentaire. Trajet du tableau moteur à la platine non relevé.
   → 05/10 : commande manuelle, par un interrupteur près du tableau Scheiber 2 voies (contremarche de la descente).

@@ -156,10 +156,11 @@ equipements:
   - id: pompe-eau
     type: recepteur
     designation: Pompe à eau douce
-    modele: Seaflow SFDP1-045-040
+    modele: Seaflo SFDP1-045-040
     courant_A: 8
     courant_max_A: 15
     statut: estime
+    note: "Seaflo série 41, pompe à membrane à 4 chambres, 4,5 gal/min (17 L/min), pressostat et bypass. La coupure à 40 psi (2,8 bar) vient de la référence (-040), la notice ne donne ni la coupure ni le redémarrage ; coupure jugée variable par l'utilisateur (07/10). Notice (documentation/SEAFLO-Notice-pompe-41-series-SFDP1-045-040.pdf) : circuit dédié, fusible de 30 A, tuyaux de 19 mm à l'aspiration et au refoulement, 10 mm au moins vers les robinets, filtre à l'aspiration, clapet éventuel ouvrant à 2 psi au plus, vis du bypass à ne pas régler soi-même."
 
   - id: feu-bicolore
     type: recepteur

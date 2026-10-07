@@ -35,7 +35,7 @@ Section minimale : `S (mm²) = 2 × L × I × 0,0175 / ΔU`
 | Feu de tête de mât (moteur) | 25 W → 2,1 A | 3 m + 7 m dans le mât | |
 | Feu de mouillage | 2 W → 0,2 A | 3 m + 12 m dans le mât | LED (Q7) |
 | Projecteur | 35 W → 2,9 A | 3 m + 6 m dans le mât | |
-| Pompe à eau Seaflow | 15 A max | 3 m | |
+| Pompe à eau Seaflo SFDP1-045-040 | 15 A max | 3 m | |
 | Autoradio | 5 A | 1,5 m | |
 | Prises 12v (x2) | 10 A au total | 3 m + 1 m | |
 | Éclairage (5-6 lampes) | 5 A (incandescent) | 8 m (départ vers l'avant) | |

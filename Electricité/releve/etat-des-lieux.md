@@ -89,7 +89,9 @@ Liaison EPS 100 → groupe froid : 3,5 mm², environ 3 m.
 
 ### Pompe à eau
 
-Seaflow SFDP1-045-040-... 12v, 6-15A
+Seaflo SFDP1-045-040-... 12v, 6-15A
+
+Notice : [documentation/SEAFLO-Notice-pompe-41-series-SFDP1-045-040.pdf](documentation/SEAFLO-Notice-pompe-41-series-SFDP1-045-040.pdf) (notice générique de la série 41, sans les pressions de coupure ni de redémarrage). La pression d'arrêt semble variable (07/10).
 
 ### Coupleur
 
