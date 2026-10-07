@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="Ballon CozyWater 10C alimenté en eau par la pompe du bord à travers un réducteur de pression à 1,5 bar et un vase d'expansion de 1 litre, branché en 230 volts sur une prise du boîtier tribord ; entrée 12 volts non raccordée.">
+  <title>Folio 2l · Chauffe-eau CozyWater 10C, eau et 230 V</title>
+  <desc>Le réducteur à 1,5 bar et le vase de 1 L, entre la pompe (coupure à 2,8 bar) et le ballon, absorbent la dilatation de l'eau chaude sous la soupape de 3 bar. Le ballon se branche sur une prise du boîtier tribord ; son entrée 12 V attend B-H3.</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+
+  <!-- ============ Zones ============ -->
+  <rect class="bound" x="20" y="20" width="1160" height="320"/>
+  <text class="ts" x="30" y="38">Circuit d'eau douce · trait plein : eau froide · tirets : eau chaude</text>
+  <rect class="bound" x="20" y="360" width="1160" height="260"/>
+  <text class="ts" x="30" y="378">Alimentation électrique</text>
+
+  <!-- ============ Eau froide : réservoir, pompe ============ -->
+  <rect class="box-unk" x="40" y="150" width="110" height="50" rx="2"/>
+  <text class="tb mid tu" x="95" y="172">Réservoir</text>
+  <text class="ts mid" x="95" y="188">eau douce</text>
+  <g class="mk-q"><circle cx="150" cy="150" r="11"/><text class="mid" x="150" y="153.5">Q54</text></g>
+  <path class="n w3" d="M150 175 H190"/>
+  <rect class="box" x="190" y="150" width="120" height="50" rx="2"/>
+  <text class="tb mid" x="250" y="170">Pompe Seaflo</text>
+  <text class="ts mid" x="250" y="186">coupe à 2,8 bar</text>
+  <text class="id mid" x="250" y="216">SFDP1-045-040</text>
+  <path class="n w3" d="M310 175 H385"/>
+  <circle class="dn" cx="340" cy="175" r="3.5"/>
+
+  <!-- Eau froide vers les robinets et le mitigeur -->
+  <path class="n w3" d="M340 175 V70 H1110 V255"/>
+  <text class="ts" x="350" y="64">2,8 bar · vers les robinets d'eau froide et l'entrée froide du mitigeur</text>
+  <path class="n w2" d="M560 70 V95"/>
+  <rect class="box-unk" x="520" y="95" width="80" height="26" rx="2"/>
+  <text class="ts mid tu" x="560" y="112">robinets</text>
+  <g class="mk-q"><circle cx="600" cy="95" r="11"/><text class="mid" x="600" y="98.5">Q54</text></g>
+
+  <!-- ============ Vanne, réducteur, vase, soupape ============ -->
+  <rect class="box-new" x="385" y="163" width="30" height="24" rx="2"/>
+  <path class="n w1" d="M390 182 L410 168"/>
+  <text class="ts mid tn" x="400" y="210">vanne</text>
+  <text class="ts mid tn" x="400" y="223">d'arrêt</text>
+  <path class="n w3" d="M415 175 H440"/>
+  <rect class="box-new" x="440" y="145" width="120" height="60" rx="2"/>
+  <text class="tb mid tn" x="500" y="168">Réducteur</text>
+  <text class="ts mid" x="500" y="184">réglé à 1,5 bar</text>
+  <text class="ts mid" x="500" y="198">manomètre 0-6 bar</text>
+  <path class="n w3" d="M560 175 H660"/>
+  <circle class="dn" cx="600" cy="175" r="3.5"/>
+  <path class="n w2" d="M600 175 V235"/>
+  <rect class="box-new" x="555" y="235" width="90" height="60" rx="14"/>
+  <text class="tb mid tn" x="600" y="258">Vase 1 L</text>
+  <text class="ts mid" x="600" y="274">gonflé à 1,4 bar</text>
+  <text class="id mid" x="600" y="310">SFAT-100-125-01</text>
+  <rect class="box-new" x="660" y="160" width="60" height="30" rx="2"/>
+  <text class="ts mid tn" x="690" y="179">3 bar</text>
+  <text class="ts mid" x="690" y="150">soupape fournie</text>
+  <path class="n w2" d="M690 190 V300" stroke-dasharray="3 4"/>
+  <text class="ts" x="698" y="300">vidange → évier ou extérieur, jamais les fonds</text>
+  <path class="n w3" d="M720 175 H745"/>
+
+  <!-- ============ Ballon ============ -->
+  <rect class="box-new" x="745" y="125" width="230" height="110" rx="10"/>
+  <text class="tb mid tn" x="860" y="155">CozyWater 10C</text>
+  <text class="ts mid" x="860" y="172">10 L · 25 à 75 °C</text>
+  <text class="ts mid" x="860" y="187">230 V 800 W · 12 V 200 W</text>
+  <text class="ts mid" x="860" y="202">270 × 400 × 290 mm · 60 kg aux fixations</text>
+  <text class="id mid" x="860" y="224">raccords 1/2" mâle</text>
+  <g class="mk-q"><circle cx="745" cy="125" r="11"/><text class="mid" x="745" y="128.5">Q19</text></g>
+  <g class="mk-q"><circle cx="975" cy="125" r="11"/><text class="mid" x="975" y="128.5">Q55</text></g>
+
+  <!-- ============ Eau chaude ============ -->
+  <path class="n w3" d="M975 150 H1000" stroke-dasharray="10 5"/>
+  <rect class="box-new" x="1000" y="138" width="30" height="24" rx="2"/>
+  <path class="n w1" d="M1005 157 L1025 143"/>
+  <text class="ts mid tn" x="1015" y="185">vanne</text>
+  <text class="ts mid tn" x="1015" y="198">d'arrêt</text>
+  <path class="n w3" d="M1030 150 H1070 V255" stroke-dasharray="10 5"/>
+  <text class="ts" x="1036" y="140">1,5 bar</text>
+  <rect class="box-unk" x="1040" y="255" width="110" height="40" rx="2"/>
+  <text class="tb mid tu" x="1095" y="274">Mitigeur</text>
+  <text class="ts mid" x="1095" y="288">existant ou neuf</text>
+  <g class="mk-q"><circle cx="1150" cy="255" r="11"/><text class="mid" x="1150" y="258.5">Q54</text></g>
+
+  <!-- ============ Boîtier tribord ============ -->
+  <rect class="bound" x="40" y="395" width="400" height="110"/>
+  <text class="ts" x="50" y="412">Boîtier de distribution tribord · cabinet de toilette (folio 3)</text>
+  <text class="ts" x="50" y="428">en amont : différentiel 30 mA et 16 A d'arrivée</text>
+  <path class="n w4" d="M80 445 H400"/>
+  <path class="n w2" d="M140 445 V465 M320 445 V465"/>
+  <rect class="box" x="120" y="465" width="40" height="20"/>
+  <text class="ts mid" x="140" y="479">16 A</text>
+  <text class="ts" x="168" y="479">prises tribord</text>
+  <rect class="box-unk" x="300" y="465" width="40" height="20"/>
+  <text class="ts mid tu" x="320" y="479">10 A</text>
+  <text class="ts" x="348" y="479">second C10</text>
+  <g class="mk-q"><circle cx="340" cy="465" r="11"/><text class="mid" x="340" y="468.5">Q42</text></g>
+
+  <!-- Vers la prise du ballon -->
+  <path class="n w2" d="M140 485 V560 H520"/>
+  <path class="n w1" d="M300 567 L308 553 M305 567 L313 553 M310 567 L318 553"/>
+  <text class="ts mid" x="310" y="582">prises existantes</text>
+  <path class="u" d="M320 485 V530 H520"/>
+  <text class="ts tu" x="350" y="524">ou départ dédié si le C10 est libre</text>
+  <rect class="box-unk" x="520" y="520" width="60" height="50" rx="2"/>
+  <text class="pin mid" x="550" y="542">PC 16 A</text>
+  <text class="pin mid" x="550" y="556">Schuko ?</text>
+  <g class="mk-q"><circle cx="580" cy="520" r="11"/><text class="mid" x="580" y="523.5">Q56</text></g>
+
+  <!-- Câble 230 V du ballon -->
+  <path class="n w2" d="M580 545 H800 V235"/>
+  <path class="n w1" d="M793 462 L807 454 M793 468 L807 460 M793 474 L807 466"/>
+  <text class="ts end" x="790" y="420">câble du ballon, fiche Schuko</text>
+  <text class="ts end" x="790" y="434">3,5 A · 800 W</text>
+
+  <!-- Panneau de commande -->
+  <path class="n w1" d="M900 235 V400"/>
+  <rect class="box-new" x="850" y="400" width="140" height="44" rx="2"/>
+  <text class="tb mid tn" x="920" y="419">Panneau de commande</text>
+  <text class="ts mid" x="920" y="434">fourni · minuterie</text>
+  <text class="ts" x="908" y="470">emplacement et longueur du câble : Q55</text>
+
+  <!-- Entrée 12 V -->
+  <path class="u" d="M940 235 V330 H1100 V490"/>
+  <rect class="box-unk" x="1020" y="490" width="150" height="60" rx="2"/>
+  <text class="tb mid tu" x="1095" y="512">Entrée 12 V · 200 W</text>
+  <text class="ts mid" x="1095" y="528">non raccordée</text>
+  <text class="ts mid" x="1095" y="542">relais et fusible 30 A : B-H3</text>
+</svg>
