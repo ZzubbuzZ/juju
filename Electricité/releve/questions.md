@@ -51,6 +51,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 07/10 : notice de la pompe ajoutée (documentation/SEAFLO-Notice-pompe-41-series-SFDP1-045-040.pdf) ; elle ne donne pas les pressions. La pression d'arrêt semble variable. B-H1 prévoit de mesurer la coupure et le redémarrage avec le manomètre du réducteur avant de le régler (voir la procédure dans B-H1).
 - **Q55** À la réception du ballon : filetage et diamètre de l'entrée d'eau froide, de la sortie d'eau chaude et de la soupape ; longueur du câble du panneau de commande, du câble 230 V et des fils 12 V. Où poser le panneau de commande ?
   → 07/10 : question pas claire pour l'utilisateur. Reformulée : quand le ballon sera livré, relever (1) le diamètre et le type de filetage de ses deux raccords d'eau et de la soupape, pour acheter les bons raccords (le revendeur annonce 1/2" mâle, la notice ne dit rien) ; (2) la longueur des trois câbles qui sortent du ballon (230 V à fiche Schuko, fils 12 V, câble du panneau de commande), pour savoir jusqu'où on peut éloigner le ballon de sa prise et le panneau du ballon ; (3) la puissance inscrite sur la plaque (800 W selon la notice, 660 W selon le revendeur).
+- **Q57** Entrée 12 V du ballon (B-H3, retenue le 08/10) : trajet et longueur du câble 6 mm² entre la platine des coupe-circuits (contremarche de la descente) et le ballon, dans le cabinet de toilette ; cloisons à traverser. Place pour le relais de 30 A près du ballon, et pour l'interrupteur à voyant près du panneau de commande.
 
 ### Pour l'étude D (shunt)
 
