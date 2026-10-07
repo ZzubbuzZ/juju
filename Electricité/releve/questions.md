@@ -45,6 +45,10 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 - **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
   → 28/09 : pas encore de réponse.
+  → 07/10 : le ballon commandé (Carbest CozyWater 10C) mesure 270 × 400 × 290 mm (Ø × L × H) et pèse 6,9 kg à vide, environ 17 kg plein. Il se pose à plat, ou debout raccords vers le bas, dans un endroit sec et ventilé (il ne doit pas être recouvert ni isolé). Les fixations doivent tenir 60 kg. Il faut aussi de la place pour le réducteur de pression, le vase d'expansion et les deux vannes d'arrêt, la soupape doit rester accessible et son tuyau de vidange doit pouvoir sortir à l'extérieur ou dans un évier. Quels emplacements possibles, et à quelle distance du circuit d'eau, d'une prise 230 V et du tableau de servitude ?
+- **Q54** Circuit d'eau douce existant : volume et position du réservoir ; type et diamètre du tuyau ; trajet de la pompe Seaflo jusqu'aux robinets (cuisine, cabinet de toilette) ; modèle des robinets (eau froide seule ou mitigeur) ; présence d'un vase ou d'un accumulateur. Avec un manomètre sur un robinet : pression à laquelle la pompe redémarre (la coupure est annoncée à 2,8 bar). Conditionne le réglage du réducteur et du vase (B-H1).
+- **Q55** À la réception du ballon : filetage et diamètre de l'entrée d'eau froide, de la sortie d'eau chaude et de la soupape ; longueur du câble du panneau de commande, du câble 230 V et des fils 12 V. Où poser le panneau de commande ?
+- **Q56** Prise 230 V qui alimentera le ballon : le câble du ballon se termine par une fiche Schuko. Les prises du bord ont-elles une terre à broche (norme française) ? La fiche Schuko y entre si la prise accepte les fiches hybrides. Laquelle utiliser, sur quel disjoncteur (voir Q42) ?
 
 ### Pour l'étude D (shunt)
 
