@@ -1,0 +1,8 @@
+# Installation cible : les hypothèses retenues, appliquées dans l'ordre sur le relevé.
+# La première est résolue avec toute sa chaîne de bases (E-H1 ← D-H1 ← A-H4 ← A-H2 ← relevé) ;
+# les suivantes ajoutent leur delta. outils/verifier.py contrôle le résultat et vérifie que
+# chaque fil 12 V figure sur le folio de ce dossier.
+# Variantes encore ouvertes, non incluses : E-H4 (coffre de la batterie), D-H2 (afficheur).
+# A-H1 (recâblage du tableau de la table à carte) est différée.
+
+hypotheses: [E-H1, B-H1, B-H3]

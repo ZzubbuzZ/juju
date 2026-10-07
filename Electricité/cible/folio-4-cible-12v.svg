@@ -1,0 +1,277 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 990" role="img" aria-label="Installation 12 volts cible : batterie moteur et guindeau, batterie LiFePO4 avec son shunt, chargeur DC/DC Orion XS, chargeur de quai Blue Smart, départs protégés vers les tableaux et l'entrée 12 volts du chauffe-eau.">
+  <title>Folio 4 · Installation 12 V cible</title>
+  <desc>Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Variantes encore ouvertes : E-H4 (coffre de la batterie, folios 2j et 2k) et D-H2 (afficheur, folio 2f).</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+  <!-- ============ Batterie moteur, Dolphin ============ -->
+  <rect class="box" x="40" y="40" width="150" height="40" rx="2"/>
+  <text class="tb mid" x="115.0" y="58">Chargeur Dolphin 20 A</text>
+  <text class="ts mid" x="115.0" y="73">batterie moteur seule</text>
+  <rect class="box" x="40" y="130" width="150" height="60" rx="2"/>
+  <text class="tb mid" x="115.0" y="148">Batterie moteur</text>
+  <text class="ts mid" x="115.0" y="163">Pb 110 Ah · coffre tribord</text>
+  <text class="id" x="46" y="184">node002</text>
+  <text class="id end" x="184" y="184">node001</text>
+  <path class="p w4" d="M190 160 H230"/>
+  <text class="idn" x="222" y="144">wire160</text>
+  <circle class="dp" cx="212" cy="160" r="3.5"/>
+  <rect class="fuse-new" x="230" y="151" width="46" height="18"/>
+  <text class="idn mid" x="253.0" y="164">400 A</text>
+  <text class="ts mid" x="253" y="182">A-H2</text>
+  <path class="p w2" d="M212 156 V126"/>
+  <rect class="fuse-new" x="204" y="90" width="16" height="36"/>
+  <text class="idn end" x="198" y="112.0">30 A</text>
+  <path class="p w2" d="M212 90 V60 H190"/>
+  <text class="idn" x="222" y="72">wire200 · 6</text>
+  <path class="n w2" d="M60 80 V130"/>
+  <text class="idn" x="66" y="110">wire201 · 6</text>
+  <path class="p w4" d="M276 160 H420"/>
+  <text class="id mid" x="348" y="152">wire001 · 35</text>
+  <g class="mk-q"><circle cx="390" cy="128" r="11"/><text class="mid" x="390" y="131.5">Q58</text></g>
+  <circle class="term" cx="424" cy="160" r="4"/>
+  <circle class="term" cx="484" cy="160" r="4"/>
+  <path class="lever" d="M424 160 L481 147"/>
+  <text class="ts mid" x="454" y="138">CC moteur</text>
+  <text class="id end" x="418" y="178">node003</text>
+  <text class="id" x="490" y="178">node004</text>
+  <path class="p w4" d="M488 160 H640"/>
+  <text class="id mid" x="600" y="152">wire012 · 35</text>
+  <rect class="box" x="640" y="135" width="160" height="55" rx="2"/>
+  <text class="tb mid" x="720.0" y="153">Yanmar 3GMD</text>
+  <text class="ts mid" x="720.0" y="168">démarreur + alternateur</text>
+  <g class="mk-q"><circle cx="800" cy="135" r="11"/><text class="mid" x="800" y="138.5">Q14</text></g>
+  <path class="n w4" d="M800 175 H1170 V896"/>
+  <circle class="dp" cx="540" cy="160" r="3.5"/>
+  <path class="p w4" d="M540 160 V80 H600"/>
+  <text class="idn end" x="532" y="122">wire217 · 35</text>
+  <rect class="box" x="600" y="70" width="56" height="20"/>
+  <text class="ts mid" x="628" y="84">70 A</text>
+  <text class="ts mid" x="628" y="62">disj. guindeau</text>
+  <path class="p w5" d="M656 80 H860"/>
+  <text class="id mid" x="758" y="72">wire018 · 50</text>
+  <rect class="box" x="860" y="55" width="90" height="55" rx="2"/>
+  <text class="tb mid" x="905.0" y="73">Relais</text>
+  <text class="ts mid" x="905.0" y="88">guindeau</text>
+  <path class="p w3" d="M950 70 H1063"/>
+  <path class="n w3" d="M950 95 H1063"/>
+  <text class="id mid" x="1005" y="46">wire020 / wire021 · 10</text>
+  <circle class="box" cx="1085" cy="82" r="22"/>
+  <text class="tb mid" x="1085" y="87">M</text>
+  <text class="ts mid" x="1085" y="122">Guindeau 700 W</text>
+  <path class="n w5" d="M940 110 V130 H1150 V896"/>
+  <path class="p w1" d="M900 110 V208 H950"/>
+  <rect class="box" x="950" y="190" width="160" height="36" rx="2"/>
+  <text class="ts mid" x="1030.0" y="208">Télécommande · fusible 5 A</text>
+  <text class="id mid" x="1030" y="242">wire061 · wire062</text>
+  <text class="id mid" x="1030" y="256">wire063 · wire064</text>
+  <path class="n w4" d="M60 190 V200 H28 V900"/>
+  <text class="id mid" x="22" y="400" transform="rotate(-90 22 400)">wire004 · 35</text>
+  <text class="id mid" x="1144" y="330" transform="rotate(-90 1144 330)">wire015 · 50</text>
+  <text class="id mid" x="1164" y="330" transform="rotate(-90 1164 330)">wire013 · 35</text>
+  <!-- ============ Orion XS ============ -->
+  <path class="p w3" d="M424 164 V240"/>
+  <text class="idn" x="436" y="206">wire202 · 16</text>
+  <rect class="fuse-new" x="416" y="240" width="16" height="36"/>
+  <text class="idn" x="438" y="262.0">70 A</text>
+  <path class="p w3" d="M424 276 V330"/>
+  <text class="idn" x="436" y="308">wire203</text>
+  <rect class="box-new" x="380" y="330" width="180" height="80" rx="2"/>
+  <text class="tb mid tn" x="470.0" y="348">Orion XS 12/12-50A</text>
+  <text class="ts mid" x="470.0" y="363">DC/DC · réglé vers 15 A</text>
+  <text class="ts mid" x="470.0" y="378">contremarche (ou coffre : E-H4)</text>
+  <path class="p w3" d="M424 410 V460"/>
+  <text class="idn" x="436" y="440">wire205</text>
+  <rect class="fuse-new" x="416" y="460" width="16" height="36"/>
+  <text class="idn" x="438" y="482.0">70 A</text>
+  <path class="p w3" d="M424 496 V586"/>
+  <text class="idn" x="436" y="546">wire204 · 16</text>
+  <path class="n w3" d="M380 395 H360 V896"/>
+  <text class="idn mid" x="354" y="820" transform="rotate(-90 354 820)">wire206 · 16</text>
+  <!-- ============ LiFePO4, Blue Smart, shunt ============ -->
+  <rect class="box-new" x="40" y="560" width="150" height="60" rx="2"/>
+  <text class="tb mid tn" x="115.0" y="578">LiFePO4 200 Ah</text>
+  <text class="ts mid" x="115.0" y="593">BMS 250 A</text>
+  <text class="id" x="46" y="614">node008</text>
+  <text class="id end" x="184" y="614">node007</text>
+  <path class="p w4" d="M190 590 H230"/>
+  <text class="idn mid" x="210" y="582">wire161</text>
+  <rect class="fuse-new" x="230" y="581" width="46" height="18"/>
+  <text class="idn mid" x="253.0" y="594">300 A</text>
+  <text class="ts mid" x="253" y="612">MEGA</text>
+  <path class="p w4" d="M276 590 H420"/>
+  <text class="id mid" x="320" y="582">wire006 · 35</text>
+  <g class="mk-q"><circle cx="300" cy="630" r="11"/><text class="mid" x="300" y="633.5">Q58</text></g>
+  <circle class="term" cx="424" cy="590" r="4"/>
+  <circle class="term" cx="484" cy="590" r="4"/>
+  <path class="lever" d="M424 590 L481 577"/>
+  <text class="id end" x="418" y="608">node009</text>
+  <text class="id" x="458" y="644">node010</text>
+  <text class="ts" x="440" y="626">CC servitude</text>
+  <circle class="dp" cx="400" cy="590" r="3.5"/>
+  <path class="p w2" d="M400 590 V520"/>
+  <rect class="fuse-new" x="392" y="484" width="16" height="36"/>
+  <text class="idn end" x="386" y="506.0">25 A</text>
+  <path class="p w2" d="M400 484 V445 H240"/>
+  <text class="idn end" x="392" y="560">wire210</text>
+  <text class="idn mid" x="320" y="437">wire211 · 4</text>
+  <rect class="box-new" x="60" y="420" width="180" height="50" rx="2"/>
+  <text class="tb mid tn" x="150.0" y="438">Blue Smart IP67 12/17</text>
+  <text class="ts mid" x="150.0" y="453">chargeur de quai · 230 V : folio 3</text>
+  <path class="n w2" d="M60 455 H14 V900"/>
+  <text class="idn mid" x="10" y="520" transform="rotate(-90 10 520)">wire212 · 4</text>
+  <path class="n w4" d="M60 620 V700"/>
+  <text class="id" x="66" y="664">wire009 · 35</text>
+  <rect class="box-new" x="40" y="700" width="140" height="44" rx="2"/>
+  <text class="tb mid tn" x="110.0" y="718">Shunt 500 A</text>
+  <text class="ts mid" x="110.0" y="733">D-H1 · Bluetooth</text>
+  <path class="n w4" d="M110 744 V896"/>
+  <text class="idn" x="116" y="840">wire180 · 35</text>
+  <path class="p w1" d="M432 594 V650"/>
+  <rect class="fuse-new" x="424" y="650" width="16" height="36"/>
+  <text class="idn" x="446" y="672.0">1 A</text>
+  <path class="p w1" d="M432 686 V722 H180"/>
+  <text class="idn mid" x="300" y="716">wire181 / wire182 · 0,75</text>
+  <path class="p w1" d="M170 744 V770 H190"/>
+  <rect class="flag-new" x="190" y="761" width="250" height="18"/>
+  <text class="ts mid" x="315.0" y="774">← wire184, fusible 1 A, wire183 ← node003</text>
+  <!-- ============ Départs de node010 ============ -->
+  <path class="p w3" d="M488 590 H520"/>
+  <path class="p w3" d="M520 450 V680"/>
+  <circle class="dp" cx="520" cy="460" r="3.5"/>
+  <circle class="dp" cx="520" cy="540" r="3.5"/>
+  <circle class="dp" cx="520" cy="590" r="3.5"/>
+  <circle class="dp" cx="520" cy="610" r="3.5"/>
+  <circle class="dp" cx="520" cy="680" r="3.5"/>
+  <path class="p w1" d="M520 460 H550"/>
+  <rect class="fuse-new" x="550" y="451" width="36" height="18"/>
+  <text class="idn mid" x="568.0" y="464">1 A</text>
+  <path class="p w1" d="M586 460 H630"/>
+  <text class="idn mid" x="568" y="482">wire207</text>
+  <text class="idn mid" x="608" y="452">wire208</text>
+  <circle class="term" cx="630" cy="460" r="4"/>
+  <circle class="term" cx="690" cy="460" r="4"/>
+  <path class="lever" d="M630 460 L687 447"/>
+  <text class="ts" x="692" y="482">interrupteur Orion XS</text>
+  <path class="p w1" d="M694 460 H720 V350 H560"/>
+  <text class="idn" x="726" y="410">wire209</text>
+  <path class="n w1" d="M660 466 V496"/>
+  <rect class="flag-new" x="590" y="496" width="150" height="18"/>
+  <text class="ts mid" x="665.0" y="509">wire216 → node051 (voyant)</text>
+  <path class="p w2" d="M520 540 H560"/>
+  <rect class="fuse-new" x="560" y="531" width="46" height="18"/>
+  <text class="idn mid" x="583.0" y="544">50 A</text>
+  <text class="idn mid" x="583" y="562">wire166</text>
+  <path class="p w2" d="M606 540 H880"/>
+  <text class="id mid" x="760" y="532">wire019 · 6</text>
+  <g class="mk-q"><circle cx="840" cy="522" r="11"/><text class="mid" x="840" y="525.5">Q58</text></g>
+  <rect class="box" x="880" y="515" width="200" height="50" rx="2"/>
+  <text class="tb mid" x="980.0" y="533">Tableau de la table à carte</text>
+  <text class="ts mid" x="980.0" y="548">12 départs · A-H1 différé : folio 2b</text>
+  <path class="n w2" d="M1080 540 H1110 V896"/>
+  <text class="id mid" x="1104" y="830" transform="rotate(-90 1104 830)">wire016 · 6</text>
+  <path class="p w2" d="M520 610 H560"/>
+  <rect class="fuse-new" x="560" y="601" width="46" height="18"/>
+  <text class="idn mid" x="583.0" y="614">30 A</text>
+  <path class="p w2" d="M606 610 H850"/>
+  <text class="idn mid" x="700" y="602">wire306 · 6</text>
+  <g class="mk-q"><circle cx="780" cy="610" r="11"/><text class="mid" x="780" y="613.5">Q57</text></g>
+  <rect class="box-new" x="850" y="590" width="90" height="40" rx="2"/>
+  <text class="ts mid tn" x="895.0" y="608">Relais 30 A</text>
+  <text class="ts mid" x="895.0" y="623">près du ballon</text>
+  <path class="p w2" d="M940 610 H960"/>
+  <text class="idn mid" x="950" y="646">wire307</text>
+  <rect class="box-new" x="960" y="588" width="140" height="44" rx="2"/>
+  <text class="tb mid tn" x="1030.0" y="606">CozyWater 10C</text>
+  <text class="ts mid" x="1030.0" y="621">entrée 12 V · 200 W</text>
+  <path class="n w2" d="M1100 618 H1130 V896"/>
+  <text class="idn mid" x="1124" y="830" transform="rotate(-90 1124 830)">wire308</text>
+  <text class="ts mid" x="960" y="660">commande : fusible 1 A, interrupteur à voyant (folio 2n)</text>
+  <text class="idn mid" x="960" y="674">wire309 / wire310 / wire311 / wire312</text>
+  <path class="p w2" d="M520 680 H560"/>
+  <rect class="fuse-new" x="560" y="671" width="46" height="18"/>
+  <text class="idn mid" x="583.0" y="684">30 A</text>
+  <text class="idn mid" x="583" y="702">wire167</text>
+  <path class="p w2" d="M606 680 H640 V720 H660"/>
+  <text class="id mid" x="633" y="672">wire022</text>
+  <rect class="box" x="660" y="700" width="170" height="60" rx="2"/>
+  <text class="tb mid" x="745.0" y="718">Tableau Scheiber 2 voies</text>
+  <text class="ts mid" x="745.0" y="733">frigo 15 A · cale 10 A</text>
+  <text class="id mid" x="745.0" y="748">node050 · node051</text>
+  <path class="n w2" d="M690 760 V896"/>
+  <text class="id mid" x="684" y="840" transform="rotate(-90 684 840)">wire023 · 6</text>
+  <path class="p w2" d="M830 715 H880"/>
+  <text class="id mid" x="855" y="708">wire024</text>
+  <rect class="box" x="880" y="700" width="70" height="30" rx="2"/>
+  <text class="ts mid" x="915.0" y="718">EPS 100</text>
+  <path class="n w2" d="M915 730 V746 H830"/>
+  <text class="id mid" x="870" y="760">wire025</text>
+  <path class="p w2" d="M950 708 H990 M950 722 H990"/>
+  <rect class="box" x="990" y="700" width="105" height="30" rx="2"/>
+  <text class="ts mid" x="1042.5" y="718">Groupe froid CU-55</text>
+  <text class="id mid" x="1030" y="746">wire027 / wire028</text>
+  <path class="p w2" d="M780 760 V792"/>
+  <text class="id" x="786" y="782">wire026</text>
+  <circle class="box" cx="780" cy="810" r="18"/>
+  <text class="tb mid" x="780" y="815">P</text>
+  <text class="ts mid" x="780" y="844">Pompe de cale</text>
+  <rect class="flag" x="806" y="801" width="116" height="18"/>
+  <text class="ts mid" x="864.0" y="814">wire036 → node051</text>
+  <!-- ============ Masses ============ -->
+  <path class="n w4" d="M14 900 H376"/>
+  <text class="ts mid" x="200" y="920">côté batteries (avant le shunt)</text>
+  <circle class="dn" cx="28" cy="900" r="3.5"/>
+  <circle class="dn" cx="110" cy="900" r="3.5"/>
+  <circle class="dn" cx="360" cy="900" r="3.5"/>
+  <circle class="term" cx="380" cy="900" r="4"/>
+  <circle class="term" cx="440" cy="900" r="4"/>
+  <path class="lever" d="M380 900 L437 887"/>
+  <text class="ts mid" x="410" y="880">CC masse</text>
+  <text class="id end" x="374" y="918">node005</text>
+  <text class="id" x="446" y="918">node006</text>
+  <path class="n w4" d="M444 900 H1170"/>
+  <text class="ts mid" x="560" y="920">masse des charges</text>
+  <circle class="dn" cx="690" cy="900" r="3.5"/>
+  <circle class="dn" cx="1110" cy="900" r="3.5"/>
+  <circle class="dn" cx="1130" cy="900" r="3.5"/>
+  <circle class="dn" cx="1150" cy="900" r="3.5"/>
+  <circle class="dn" cx="1170" cy="900" r="3.5"/>
+
+  <!-- ============ Légende ============ -->
+  <text class="ts" x="20" y="954">En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. Croisement sans point : pas de connexion.</text>
+  <text class="ts" x="20" y="972">Détail : folios 2c (fusibles), 2e (shunt), 2h et 2i (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md.</text>
+</svg>

@@ -3,7 +3,7 @@
 Usage : python Electricité/outils/page.py
 
 Un menu en tête de page choisit la vue :
-- « Relevé » (branche main) : folios de l'existant et des études fusionnées,
+- « Relevé » (branche main) : folios de l'existant, de l'installation cible et des études fusionnées,
   comparaisons des hypothèses présentes sur main, anomalies et questions ;
 - une vue par branche d'étude (etude/<axe>) : le README de l'étude (cadrage),
   les folios de ses hypothèses et leur comparaison.
@@ -295,6 +295,7 @@ def entete_vue(branche: str, commit: str) -> str:
 
 def vue_releve(racine: Path, branche: str, commit: str) -> str:
     folios = [folio(c, "Relevé", racine) for c in sorted((racine / "schemas").glob("*.svg"))]
+    folios += [folio(c, "Installation cible", racine) for c in sorted((racine / "cible").glob("*.svg"))]
     for c in sorted((racine / "etudes").glob("*/H*/*.svg")):
         folios.append(folio(c, f"Étude {c.parent.parent.name} · hypothèse {c.parent.name}", racine))
     return "\n".join([entete_vue(branche, commit), *folios, *comparaisons(racine), notes(racine)])

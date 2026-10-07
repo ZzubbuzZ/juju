@@ -9,6 +9,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 | `releve/` | L'existant : état des lieux, `amenagement.yaml` (zones du bateau), `equipements.yaml`, `netlist.yaml`, `wirelist.yaml`, `anomalies.md`, `questions.md`, `photos/`, `documentation/` (notices, fiches) | **Uniquement des faits constatés à bord.** Une valeur supposée porte `statut: estime`. Ne modifier ce dossier que sur une information donnée par l'utilisateur, et le signaler. |
 | `schemas/` | Folios SVG de l'existant | Doivent refléter `releve/` exactement. |
 | `etudes/<X-axe>/H<n>-<nom>/` | Une hypothèse : `proposition.md` (avec en-tête YAML), `nomenclature.yaml`, `cablage.yaml` (delta), folios SVG | Le `cablage.yaml` décrit uniquement les différences avec sa `base` (le relevé ou une autre hypothèse). Une hypothèse écartée sans câblage peut n'avoir que `proposition.md` et `nomenclature.yaml`. |
+| `cible/` | `cible.yaml` (hypothèses retenues, appliquées dans l'ordre sur le relevé) et le folio 4 de l'installation 12 V cible | Se modifie sur `main`. Le vérificateur exige que chaque fil 12 V du modèle cible figure sur le folio. Ajouter une hypothèse à `cible.yaml` quand elle est retenue et fusionnée, et redessiner le folio. |
 | `commun/` | `bilan-energetique.yaml` et `dimensionnement.md` (sections, protections et chutes de tension de l'installation cible), partagés par les études | `dimensionnement.md` se met à jour sur `main` à chaque étude fusionnée. |
 | `documentation-technique/` | Manuel du bord : installation, réglages et entretien de ce qui est installé ou décidé. Pour l'instant une liste de sections à écrire (`README.md`) | Se modifie sur `main`. Ne décrit pas les hypothèses à l'étude. |
 | `outils/` | `verifier.py`, `page.py`, schémas JSON | |
@@ -34,7 +35,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 - Écrire les identifiants en entier dans les étiquettes (`wire020 / wire021`, jamais `wire020/021`) : le vérificateur les recherche dans le texte.
 - Dans une hypothèse, ce qui est nouveau est en vert (`box-new`, `fuse-new`, `idn`, `tn`).
 - 230 V : le folio 3 est unifilaire (un trait par câble, barres obliques = nombre de conducteurs) ; les trois fils du câble sont cités dans l'étiquette. Classes `ph`, `ne`, `pe` + `pey` réservées au multifilaire.
-- Folios : 0 implantation, 1 câblage 12 V actuel, 3 réseau 230 V ; les hypothèses ont leurs propres folios (2a, 2b…).
+- Folios : 0 implantation, 1 câblage 12 V actuel, 3 réseau 230 V, 4 installation 12 V cible (`cible/`) ; les hypothèses ont leurs propres folios (2a, 2b…).
 - Plan d'implantation (`folio-0-implantation.svg`) : chaque zone porte `data-zone="id"`, chaque équipement placé `data-equipement="id"` (un `<tspan>` vide suffit pour un équipement regroupé avec un autre). Classes `hull`, `zone`, `zone-pont`, `callout`, `leader`. Le vérificateur exige que tout équipement ayant une `zone` y figure.
 - Le bloc `<style>` évolue : quand une classe est ajoutée, la reporter dans tous les folios et dans le gabarit de `outils/page.py`.
 

@@ -12,6 +12,8 @@ Contrôles :
   5. chaque fil des données figure sur les schémas SVG, et inversement ;
      chaque équipement placé dans une zone figure sur le plan d'implantation ;
   6. hypothèses des études : application du delta sur leur base, puis mêmes contrôles ;
+     installation cible (cible/cible.yaml) : hypothèses retenues appliquées dans l'ordre,
+     et chaque fil 12 V du résultat présent sur le folio de cible/ ;
   7. en-tête YAML de chaque proposition.md (outils/schema/proposition.schema.json) ;
   8. bilan énergétique : Ah consommés par jour pour chaque profil.
 Les questions traitées (section « Réponses » de questions.md) ne doivent plus
@@ -44,6 +46,7 @@ SECTIONS_NORMALISEES = {0.75, 1, 1.5, 2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95, 120
 COULEURS_230V = {"230V-phase": {"marron", "noir", "gris", "rouge"}, "230V-neutre": {"bleu"},
                  "230V-terre": {"vert-jaune"}}
 IMPLANTATION = RACINE / "schemas" / "folio-0-implantation.svg"
+CIBLE = RACINE / "cible"
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -532,6 +535,35 @@ def main() -> int:
         ajoutes = {f["id"] for f in data.get("fils", [])}
         controler_svg(sorted(chemin.parent.glob("*.svg")), ajoutes, set(m.fils),
                       questions, traitees, anomalies, levees, rel(chemin.parent), r)
+
+    # ---- Installation cible : hypothèses retenues appliquées dans l'ordre (cible/cible.yaml)
+    fichier_cible = CIBLE / "cible.yaml"
+    if fichier_cible.exists():
+        r.section("Installation cible (cible/)")
+        data = lire_yaml(fichier_cible, r) or {}
+        ids = data.get("hypotheses", [])
+        if not ids:
+            r.erreur(rel(fichier_cible), "la liste « hypotheses » est vide ou absente")
+        m = None
+        for i, ident in enumerate(ids):
+            if ident not in hyps:
+                r.erreur(rel(fichier_cible), f"hypothèse {ident} introuvable")
+                m = None
+                break
+            chemin, delta = hyps[ident]
+            m = resoudre(ident) if i == 0 else appliquer_delta(m, delta, "cible", rel(chemin), r)
+            if m is None:
+                break
+            prop = chemin.parent / "proposition.md"
+            etat = (lire_entete(prop)[0] or {}).get("etat") if prop.exists() else None
+            if etat != "retenue":
+                r.avert(rel(fichier_cible), f"{ident} est « {etat} », pas « retenue »")
+        if m is not None:
+            controler(m, questions, traitees, r)
+            douze = {w for w, f in m.fils.items()
+                     if not ({m.nodes[f["de"]]["polarite"], m.nodes[f["vers"]]["polarite"]} & POLARITES_230V)}
+            controler_svg(sorted(CIBLE.glob("*.svg")), douze, set(m.fils),
+                          questions, traitees, anomalies, levees, rel(CIBLE), r)
 
     # ---- Nomenclatures chiffrées
     schema_nomenc = json.loads((RACINE / "outils/schema/nomenclature.schema.json").read_text(encoding="utf-8"))

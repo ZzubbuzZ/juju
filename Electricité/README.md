@@ -11,7 +11,7 @@
 | D · Shunt et suivi des batteries | `main` | Shunt avec le chargeur de quai ; lecture sur téléphone (H1) ou afficheur (H2) à choisir ; [README de l'étude](etudes/D-shunt/README.md) |
 | E · Batterie de servitude | `main` (fusionnée le 08/10) | LiFePO4 200 Ah, Orion XS, Blue Smart ; emplacement à choisir à bord (H1 ou H4) ; [décision](etudes/E-batterie/decision.md) |
 
-Schémas de l'existant : [folio 0 · implantation](schemas/folio-0-implantation.svg), [folio 1 · 12 V](schemas/folio-1-actuel.svg), [folio 3 · 230 V](schemas/folio-3-230v.svg). L'état de chaque étude est tenu dans son propre README (sur sa branche tant qu'elle n'est pas fusionnée) : ce fichier-ci n'est modifié que sur `main`, pour éviter les conflits de rebase. Manuel du bord en préparation : [documentation-technique/](documentation-technique/README.md).
+Schémas de l'existant : [folio 0 · implantation](schemas/folio-0-implantation.svg), [folio 1 · 12 V](schemas/folio-1-actuel.svg), [folio 3 · 230 V](schemas/folio-3-230v.svg). Installation 12 V cible, après les études décidées : [folio 4](cible/folio-4-cible-12v.svg). L'état de chaque étude est tenu dans son propre README (sur sa branche tant qu'elle n'est pas fusionnée) : ce fichier-ci n'est modifié que sur `main`, pour éviter les conflits de rebase. Manuel du bord en préparation : [documentation-technique/](documentation-technique/README.md).
 
 ## Organisation
 
@@ -19,6 +19,7 @@ Schémas de l'existant : [folio 0 · implantation](schemas/folio-0-implantation.
 releve/      ce qui a été constaté à bord, et rien d'autre
 schemas/     folios SVG de l'existant
 etudes/      une hypothèse = un dossier H<n>-<nom> (sur la branche de son axe)
+cible/       installation 12 V cible : hypothèses retenues (cible.yaml) et folio 4
 commun/      bilan énergétique et note de dimensionnement, partagés par les études
 documentation-technique/  manuel du bord (installation, réglages, entretien)
 outils/      vérificateur, générateur de page, schémas JSON

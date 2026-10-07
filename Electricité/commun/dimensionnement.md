@@ -2,7 +2,7 @@
 
 Vérification des sections, des protections et des chutes de tension de l'installation telle qu'elle sera après les études décidées. Note commune à toutes les études, comme le [bilan énergétique](bilan-energetique.yaml) : elle se met à jour sur `main` à chaque étude fusionnée.
 
-**Revue du 08/10/2026.** Installation cible : le relevé, plus le programme retenu de l'étude A (A-H2 et A-H4), le shunt (D-H1), la batterie LiFePO4 (E-H1) et le chauffe-eau (B-H1, B-H3). Le recâblage du tableau de la table à carte (A-H1, différé) est vérifié à part, en fin de note.
+**Revue du 08/10/2026.** Installation cible : le relevé, plus le programme retenu de l'étude A (A-H2 et A-H4), le shunt (D-H1), la batterie LiFePO4 (E-H1) et le chauffe-eau (B-H1, B-H3). Le recâblage du tableau de la table à carte (A-H1, différé) est vérifié à part, en fin de note. Schéma de l'installation cible : [folio 4](../cible/folio-4-cible-12v.svg).
 
 ## Méthode
 
