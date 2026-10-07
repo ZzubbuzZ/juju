@@ -49,7 +49,7 @@
   <!-- ============ Coupe-circuit de servitude et fusible de 30 A ============ -->
   <path class="p w4" d="M120 140 V90"/>
   <rect class="flag" x="40" y="72" width="200" height="18"/>
-  <text class="ts mid" x="140" y="85">← LiFePO4, fusible 300 A : folio 2h</text>
+  <text class="ts mid" x="140" y="85">← LiFePO4, 300 A : folio 2i (2k)</text>
   <circle class="term" cx="120" cy="140" r="4"/><circle class="term" cx="180" cy="140" r="4"/>
   <path class="lever" d="M120 140 L177 127"/>
   <text class="ts mid" x="150" y="168">CC servitude</text>
