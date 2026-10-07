@@ -75,4 +75,4 @@ Relevé du 28/09 : la terre et la masse 12 V ne sont reliées nulle part, et il 
 
 **Câblage (01/10)** : [H2](H2-fusibles-batteries/cablage.yaml) (base : le relevé, [folio 2c](H2-fusibles-batteries/folio-2c-fusibles.svg)) puis [H4](H4-terre-230v/cablage.yaml) (base : A-H2, [folio 2d](H4-terre-230v/folio-2d-terre.svg)) : le modèle de A-H4 cumule tout le programme retenu. H3 et H5 n'ajoutent ni ne suppriment aucun fil. Nouveaux numéros : node070 à node085, node256 et node257, wire160 à wire167, wire170 et wire171.
 
-Reste à faire : fusionner dans `main`, poser le tag de révision, puis rebaser les autres études.
+**Fusionnée dans `main`.** L'étude E (fusionnée le 08/10) modifie ce programme côté servitude : fusible de batterie de 300 A au lieu de 400 A, coupleur et sortie 2 du Dolphin déposés avec leurs fusibles (wire163 à wire165), sortie 1 du Dolphin protégée à la batterie moteur. Les calibres de 50 A (wire019) et de 400 A (wire001) dépendent de l'isolant des câbles existants (Q58). Reste à faire : poser le tag de révision.
