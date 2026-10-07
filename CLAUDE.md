@@ -9,7 +9,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 | `releve/` | L'existant : état des lieux, `amenagement.yaml` (zones du bateau), `equipements.yaml`, `netlist.yaml`, `wirelist.yaml`, `anomalies.md`, `questions.md`, `photos/`, `documentation/` (notices, fiches) | **Uniquement des faits constatés à bord.** Une valeur supposée porte `statut: estime`. Ne modifier ce dossier que sur une information donnée par l'utilisateur, et le signaler. |
 | `schemas/` | Folios SVG de l'existant | Doivent refléter `releve/` exactement. |
 | `etudes/<X-axe>/H<n>-<nom>/` | Une hypothèse : `proposition.md` (avec en-tête YAML), `nomenclature.yaml`, `cablage.yaml` (delta), folios SVG | Le `cablage.yaml` décrit uniquement les différences avec sa `base` (le relevé ou une autre hypothèse). Une hypothèse écartée sans câblage peut n'avoir que `proposition.md` et `nomenclature.yaml`. |
-| `commun/` | `bilan-energetique.yaml`, partagé par les études | |
+| `commun/` | `bilan-energetique.yaml` et `dimensionnement.md` (sections, protections et chutes de tension de l'installation cible), partagés par les études | `dimensionnement.md` se met à jour sur `main` à chaque étude fusionnée. |
 | `documentation-technique/` | Manuel du bord : installation, réglages et entretien de ce qui est installé ou décidé. Pour l'instant une liste de sections à écrire (`README.md`) | Se modifie sur `main`. Ne décrit pas les hypothèses à l'étude. |
 | `outils/` | `verifier.py`, `page.py`, schémas JSON | |
 

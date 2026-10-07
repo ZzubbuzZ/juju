@@ -19,7 +19,7 @@ Schémas de l'existant : [folio 0 · implantation](schemas/folio-0-implantation.
 releve/      ce qui a été constaté à bord, et rien d'autre
 schemas/     folios SVG de l'existant
 etudes/      une hypothèse = un dossier H<n>-<nom> (sur la branche de son axe)
-commun/      bilan énergétique partagé par les études
+commun/      bilan énergétique et note de dimensionnement, partagés par les études
 documentation-technique/  manuel du bord (installation, réglages, entretien)
 outils/      vérificateur, générateur de page, schémas JSON
 build/       page HTML générée (non versionnée)
