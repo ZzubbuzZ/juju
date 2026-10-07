@@ -10,6 +10,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 | `schemas/` | Folios SVG de l'existant | Doivent refléter `releve/` exactement. |
 | `etudes/<X-axe>/H<n>-<nom>/` | Une hypothèse : `proposition.md` (avec en-tête YAML), `nomenclature.yaml`, `cablage.yaml` (delta), folios SVG | Le `cablage.yaml` décrit uniquement les différences avec sa `base` (le relevé ou une autre hypothèse). Une hypothèse écartée sans câblage peut n'avoir que `proposition.md` et `nomenclature.yaml`. |
 | `commun/` | `bilan-energetique.yaml`, partagé par les études | |
+| `documentation-technique/` | Manuel du bord : installation, réglages et entretien de ce qui est installé ou décidé. Pour l'instant une liste de sections à écrire (`README.md`) | Se modifie sur `main`. Ne décrit pas les hypothèses à l'étude. |
 | `outils/` | `verifier.py`, `page.py`, schémas JSON | |
 
 ## Règles de travail
@@ -42,7 +43,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 - `main` : le relevé et les décisions validées.
 - `etude/securisation`, `etude/chauffe-eau`, `etude/solaire`, `etude/shunt`, `etude/batterie` : une branche par axe. Les hypothèses sont des dossiers dans la branche, pas des branches, pour pouvoir les comparer côte à côte.
 - Ordre de fusion prévu : la sécurisation d'abord (prérequis), puis rebase des autres branches.
-- **Une branche d'étude ne modifie que son dossier `etudes/<X-axe>/`.** Le relevé, `commun/`, `outils/`, les README généraux et CLAUDE.md se modifient sur `main`, puis les branches sont rebasées. Sinon, chaque rebase produit des conflits.
+- **Une branche d'étude ne modifie que son dossier `etudes/<X-axe>/`.** Le relevé, `commun/`, `documentation-technique/`, `outils/`, les README généraux et CLAUDE.md se modifient sur `main`, puis les branches sont rebasées. Sinon, chaque rebase produit des conflits.
 - Un commit = un sujet. Tag `rev-X` quand une révision des schémas est publiée.
 - Push : remote SSH `origin`, poussé par l'utilisateur (pas de clé GitHub configurée pour Claude).
 
