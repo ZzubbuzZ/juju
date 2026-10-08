@@ -78,7 +78,7 @@
   <rect class="box" x="80" y="310" width="190" height="60" rx="2"/>
   <text class="tb mid" x="175" y="334">SmartShunt 500 A</text>
   <text class="ts mid" x="175" y="351">pose et fils de mesure : folio 2e</text>
-  <text class="idn" x="276" y="333">n94</text>
+  <text class="idn" x="276" y="333">n094</text>
   <path class="n w2" d="M270 340 H840 V190"/>
   <text class="idn mid" x="560" y="332">wire189 · câble VE.Direct 1,8 m</text>
 
@@ -94,6 +94,7 @@
   <text class="idn" x="986" y="116">n346</text>
   <text class="ts" x="940" y="206">wire190 : câble de l'écran, 2 m fourni</text>
   <text class="ts" x="940" y="222">et rallonge de 2 m, trajet de wire019</text>
+  <text class="ts" x="940" y="238">(n083 → n100)</text>
 
   <!-- ============ Notes ============ -->
   <text class="tb" x="40" y="410">Différence avec D-H1</text>

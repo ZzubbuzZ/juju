@@ -315,6 +315,8 @@ def controler_nodes_svg(svgs: list[Path], m: "Modele", r: Rapport) -> None:
     for c in svgs:
         txt = c.read_text(encoding="utf-8")
         cites = nodes_svg(txt)
+        for n in sorted(set(re.findall(r"\bn\d{1,2}\b", txt))):
+            r.avert(rel(c), f"{n} : abréger les nœuds sur trois chiffres (n006, pas n6)")
         for n in sorted(cites - set(m.nodes)):
             r.erreur(rel(c), f"{n} figure sur le folio mais n'existe pas dans les données")
         manquants: dict[str, list[str]] = {}

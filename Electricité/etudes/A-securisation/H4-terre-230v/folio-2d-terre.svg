@@ -58,11 +58,14 @@
   <text class="tb mid tn" x="525" y="184">Interrupteur différentiel</text>
   <text class="ts mid tn" x="525" y="201">30 mA · type A · 40 A</text>
   <text class="ts mid" x="525" y="218">remplace le Power Safe (Q36)</text>
+  <text class="id end" x="436" y="176">n206</text>
+  <text class="id end" x="436" y="206">n207</text>
+  <text class="id" x="614" y="194">n208</text>
   <path class="ph w2" d="M610 180 H720"/>
   <path class="ne w2" d="M610 210 H720"/>
   <text class="id mid" x="665" y="173">wire031 · wire037</text>
-  <rect class="flag" x="720" y="170" width="200" height="50"/>
-  <text class="ts mid" x="820" y="199">disjoncteurs 10 A et 16 A : folio 3</text>
+  <rect class="flag" x="720" y="170" width="270" height="50"/>
+  <text class="ts mid" x="855" y="199">disjoncteurs 10 A (n210) et 16 A (n213) : folio 3</text>
 
   <!-- Terre du ponton, à travers l'isolateur -->
   <path class="pe w2" d="M180 250 H300"/><path class="pey w2" d="M180 250 H300"/>

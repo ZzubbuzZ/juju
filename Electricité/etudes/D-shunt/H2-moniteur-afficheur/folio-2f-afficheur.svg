@@ -44,13 +44,13 @@
   <text class="tb mid" x="125" y="146">Shunt 500 A</text>
   <text class="ts mid" x="125" y="163">du moniteur · descente</text>
   <text class="ts mid" x="125" y="180">fils de mesure : folio 2e</text>
-  <text class="idn" x="216" y="146">n94</text>
+  <text class="idn" x="216" y="146">n094</text>
 
   <!-- Câble de données -->
   <path class="n w2" d="M210 155 H700"/>
   <text class="idn mid" x="455" y="145">wire185 · câble de données RJ12, environ 4 m</text>
-  <text class="ts mid" x="455" y="176">même trajet que wire019, de la descente à la table à carte</text>
-  <text class="idn end" x="694" y="146">n95</text>
+  <text class="ts mid" x="455" y="176">même trajet que wire019 (n083 → n100), de la descente à la table à carte</text>
+  <text class="idn end" x="694" y="146">n095</text>
 
   <!-- ============ Tableau de servitude ============ -->
   <rect class="box" x="700" y="70" width="450" height="190" rx="2"/>

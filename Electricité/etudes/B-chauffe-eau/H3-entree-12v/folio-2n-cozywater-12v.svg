@@ -75,7 +75,7 @@
   <text class="pin end" x="834" y="128">87</text>
   <text class="pin mid" x="780" y="194">86</text>
   <text class="pin mid" x="820" y="194">85</text>
-  <text class="idn mid" x="770" y="168">node310–313</text>
+  <text class="idn mid" x="770" y="168">n310 · n311 · n312 · n313</text>
 
   <!-- ============ Ballon ============ -->
   <path class="p w3" d="M840 140 H960"/>

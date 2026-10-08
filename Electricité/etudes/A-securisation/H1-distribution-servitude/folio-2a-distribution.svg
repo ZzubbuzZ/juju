@@ -53,6 +53,7 @@
   <circle class="term" cx="300" cy="110" r="4"/><circle class="term" cx="360" cy="110" r="4"/>
   <path class="lever" d="M300 110 L357 97"/>
   <text class="ts mid" x="330" y="84">CC servitude +</text>
+  <text class="id end" x="356" y="128">n010</text>
   <path class="p w4" d="M364 110 H440"/>
   <text class="idn mid" x="402" y="128">wire100 · 35</text>
   <!-- Barrette -->
@@ -65,6 +66,7 @@
   <rect class="box" x="520" y="129" width="50" height="22"/>
   <text class="ts mid" x="545" y="144">disj.</text>
   <text class="ts mid" x="560" y="120">Disjoncteur guindeau (existant)</text>
+  <text class="id mid" x="545" y="164">n020</text>
   <text class="idn mid" x="486" y="134">wire101</text>
   <path class="p w5" d="M570 140 H700"/>
   <text class="ts" x="710" y="145">vers relais guindeau · inchangé (folio 1)</text>
@@ -73,11 +75,14 @@
   <path class="p w3" d="M452 260 H480"/>
   <rect class="fuse-new" x="480" y="251" width="46" height="18"/>
   <text class="idn mid" x="503" y="264">50 A</text>
+  <text class="idn mid" x="503" y="282">n061 · n062</text>
   <path class="p w3" d="M526 260 H760"/>
   <text class="idn mid" x="643" y="252">wire102 · 10</text>
   <rect class="box" x="760" y="230" width="170" height="60" rx="2"/>
   <text class="tb mid" x="845" y="255">Tableau table à carte</text>
   <text class="ts mid" x="845" y="273">détail : folio 2b</text>
+  <text class="id end" x="756" y="252">n100</text>
+  <text class="id" x="849" y="304">n101</text>
   <path class="n w3" d="M845 290 V312"/>
   <rect class="flag" x="805" y="312" width="80" height="18"/>
   <text class="id mid" x="845" y="325">→ node006</text>
@@ -87,10 +92,14 @@
   <path class="p w2" d="M452 380 H480"/>
   <rect class="fuse-new" x="480" y="371" width="46" height="18"/>
   <text class="idn mid" x="503" y="384">30 A</text>
+  <text class="idn mid" x="503" y="402">n063 · n064</text>
   <path class="p w2" d="M526 380 H640"/>
   <text class="idn mid" x="583" y="372">wire104 · 6</text>
   <rect class="box" x="640" y="340" width="220" height="150" rx="2"/>
   <text class="tb mid" x="750" y="358">Tableau Scheiber 2 voies</text>
+  <text class="id" x="644" y="374">n050</text>
+  <text class="id" x="864" y="394">n052</text>
+  <text class="id" x="864" y="444">n053</text>
   <!-- voie 1 -->
   <path class="p w2" d="M640 380 H680"/>
   <circle class="dp" cx="660" cy="380" r="4"/>
@@ -121,12 +130,16 @@
   <rect class="box" x="930" y="355" width="100" height="50" rx="2"/>
   <text class="tb mid" x="980" y="377">EPS 100</text>
   <text class="ts mid" x="980" y="394">12 V / 230 V</text>
+  <text class="id end" x="926" y="394">n042</text>
+  <text class="id" x="984" y="418">n043</text>
   <text class="ts mid" x="980" y="344">liaison existante · entrée 230 V : folio 3</text>
   <path class="p w2" d="M1030 380 H1070"/>
-  <text class="id mid" x="1050" y="397">wire027</text>
+  <text class="id mid" x="1050" y="372">wire027</text>
+  <text class="id mid" x="1050" y="414">n044 · n040</text>
   <rect class="box" x="1070" y="355" width="110" height="50" rx="2"/>
   <text class="tb mid" x="1125" y="377">Groupe froid</text>
   <text class="ts mid" x="1125" y="394">CU-55 · 40 W</text>
+  <text class="id" x="1129" y="418">n041</text>
   <path class="n w2" d="M980 405 V423"/>
   <rect class="flag" x="925" y="423" width="110" height="18"/>
   <text class="id mid" x="980" y="436">wire025 → node051</text>
@@ -140,11 +153,14 @@
   <rect class="fuse-new" x="241" y="170" width="18" height="44"/>
   <text class="ts tn" x="268" y="190">3 A · pris sur node009</text>
   <text class="ts tn" x="268" y="206">au plus près de la borne</text>
+  <text class="idn" x="268" y="222">n065 · n066</text>
   <path class="p w2" d="M250 214 V566 H776"/>
   <text class="idn mid" x="515" y="558">wire107 · 2,5</text>
   <circle class="term" cx="780" cy="566" r="4"/><circle class="term" cx="840" cy="566" r="4"/>
   <path class="lever" d="M780 566 L837 553"/>
   <text class="tb mid tn" x="810" y="542">Flotteur</text>
+  <text class="idn end" x="776" y="584">n054</text>
+  <text class="idn" x="844" y="584">n055</text>
   <path class="p w2" d="M844 566 H1086"/>
   <text class="idn mid" x="945" y="558">wire108 · 2,5</text>
   <path class="p w2" d="M860 450 H1050 V566"/>
@@ -154,6 +170,8 @@
   <text class="tb mid" x="1110" y="571">P</text>
   <text class="tb mid" x="1110" y="512">Pompe de cale</text>
   <text class="ts mid" x="1110" y="528">Tsunami T500</text>
+  <text class="id end" x="1084" y="582">n056</text>
+  <text class="id" x="1116" y="602">n057</text>
   <path class="n w2" d="M1110 590 V606 H900"/>
   <rect class="flag-new" x="786" y="597" width="114" height="18"/>
   <text class="idn mid" x="843" y="610">wire110 → node005</text>

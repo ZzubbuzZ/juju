@@ -101,7 +101,7 @@
   <circle class="term" cx="540" cy="195" r="4"/><circle class="term" cx="540" cy="255" r="4"/>
   <path class="lever" d="M540 255 L527 198"/>
   <text class="ts" x="556" y="222">CC couplage</text>
-  <text class="id" x="556" y="238">node011–012</text>
+  <text class="id" x="556" y="238">node011 · node012</text>
   <text class="id mid" x="553" y="150" transform="rotate(-90 553 150)">wire010</text>
   <path class="p w4" d="M540 259 V400 H370 V466"/>
   <circle class="dp" cx="370" cy="470" r="4.5"/>
@@ -115,9 +115,12 @@
   <text class="ts mid" x="260" y="278">Dolphin 12 V · 20 A</text>
   <text class="ts mid" x="260" y="295">3 sorties · Pb</text>
   <text class="id mid" x="260" y="316">sortie 3 libre</text>
+  <text class="id" x="254" y="236">n016</text>
+  <text class="id" x="284" y="344">n017</text>
+  <text class="id end" x="221" y="344">n018</text>
   <path class="n w1" d="M205 285 H94"/>
-  <text class="ts mid" x="150" y="277">entrée 230 V</text>
-  <text class="id mid" x="150" y="300">node200–202 · folio 3</text>
+  <text class="ts end" x="198" y="277">entrée 230 V (folio 3)</text>
+  <text class="id mid" x="140" y="300">n200 · n201 · n202</text>
   <path class="p w2" d="M280 330 V470"/>
   <circle class="dp" cx="280" cy="470" r="4.5"/>
   <text class="id mid" x="293" y="400" transform="rotate(-90 293 400)">wire008 · 6</text>
@@ -129,6 +132,9 @@
   <text class="tb mid" x="395" y="271">Coupleur</text>
   <text class="ts mid" x="395" y="288">Scheiber 38.14700</text>
   <text class="ts mid" x="395" y="305">relais · Pb</text>
+  <text class="id" x="354" y="246">n013</text>
+  <text class="id" x="354" y="344">n014</text>
+  <text class="id" x="459" y="284">n015</text>
   <path class="p w2" d="M350 330 V470"/>
   <circle class="dp" cx="350" cy="470" r="4.5"/>
   <text class="id mid" x="346" y="400" transform="rotate(-90 346 400)">wire007 · 6</text>
@@ -160,14 +166,18 @@
   <rect class="box" x="615" y="459" width="50" height="22"/>
   <text class="ts mid" x="640" y="474">70 A</text>
   <text class="ts mid" x="640" y="448">Disjoncteur guindeau</text>
-  <text class="id mid" x="650" y="497">node020 / 021</text>
+  <text class="id mid" x="650" y="497">node020 / node021</text>
   <path class="p w5" d="M665 470 H860"/>
   <text class="id mid" x="742" y="460">wire018 · 50</text>
   <!-- Relais guindeau -->
   <rect class="box" x="860" y="440" width="120" height="80" rx="2"/>
   <text class="tb mid" x="920" y="466">Relais</text>
   <text class="ts mid" x="920" y="483">guindeau</text>
-  <text class="id mid" x="920" y="505">node022–028</text>
+  <text class="id end" x="856" y="464">n022</text>
+  <text class="id end" x="857" y="530">n023</text>
+  <text class="id" x="984" y="474">n024</text>
+  <text class="id" x="984" y="514">n025</text>
+  <text class="id end" x="936" y="532">n026 · n027</text>
   <path class="p w3" d="M980 460 H1087"/>
   <path class="n w3" d="M980 500 H1087"/>
   <text class="id mid" x="1032" y="451">wire020 / wire021 · 10</text>
@@ -175,16 +185,21 @@
   <text class="tb mid" x="1112" y="485">M</text>
   <text class="tb mid" x="1112" y="527">Guindeau Lewmar</text>
   <text class="ts mid" x="1112" y="543">Pro-Series 1000 · 700 W</text>
+  <text class="id" x="1144" y="468">n029</text>
+  <text class="id" x="1144" y="508">n030</text>
   <path class="n w5" d="M860 505 H830 V720"/>
   <text class="id mid" x="843" y="580" transform="rotate(-90 843 580)">wire015 · 50</text>
   <!-- Télécommande -->
   <path class="p w1" d="M965 520 V535 H1040 V555 M1040 579 V600 H1060"/>
   <rect class="fuse" x="1033" y="555" width="14" height="24"/>
   <text class="pin" x="1052" y="571">5 A</text>
+  <text class="id" x="1052" y="561">n033</text>
+  <text class="id" x="1052" y="583">n034</text>
   <path class="p w1" d="M940 520 V548 H1028 V635 H1060"/>
   <rect class="box" x="1060" y="588" width="130" height="60" rx="2"/>
   <text class="tb mid" x="1125" y="612">Télécommande</text>
   <text class="ts mid" x="1125" y="630">+ pris au relais</text>
+  <text class="id mid" x="1125" y="643">n035 · n036 · n037</text>
   <text class="id mid" x="1125" y="664">wire061 · wire062 (+)</text>
   <text class="id mid" x="1125" y="677">wire063 · wire064 (cde)</text>
 
@@ -197,6 +212,8 @@
   <text class="tb mid" x="715" y="620">Tableau</text>
   <text class="ts mid" x="715" y="637">table à carte</text>
   <text class="id mid" x="715" y="657">12 circuits · folio 2b</text>
+  <text class="id end" x="636" y="626">n100</text>
+  <text class="id end" x="711" y="684">n101</text>
   <path class="n w2" d="M715 670 V716"/>
   <text class="id" x="722" y="700">wire016 · 6</text>
   <!-- Tableau Scheiber 2 voies -->
@@ -208,6 +225,10 @@
   <text class="tb mid" x="945" y="624">Tableau Scheiber</text>
   <text class="ts mid" x="945" y="641">2 voies · contremarche</text>
   <text class="ts mid" x="945" y="659">cale 10 A · frigo 15 A</text>
+  <text class="id" x="936" y="598">n050</text>
+  <text class="id end" x="876" y="684">n051</text>
+  <text class="id end" x="926" y="684">n053</text>
+  <text class="id end" x="976" y="684">n052</text>
   <path class="n w2" d="M880 670 V716"/>
   <text class="id" x="886" y="702">wire023</text>
   <!-- Pompe de cale -->
@@ -218,19 +239,24 @@
   <text class="tb mid" x="870" y="842">Pompe de cale</text>
   <text class="ts mid" x="870" y="858">Attwood Tsunami T500</text>
   <text class="ts mid" x="870" y="874">sans flotteur, mise en route manuelle</text>
-  <g class="mk-a"><circle cx="843" cy="776" r="11"/><text class="mid" x="843" y="779.5">A10</text></g>
+  <text class="id" x="896" y="794">n056</text>
+  <text class="id end" x="846" y="794">n057</text>
+  <g class="mk-a"><circle cx="897" cy="768" r="11"/><text class="mid" x="897" y="771.5">A10</text></g>
   <path class="n w2" d="M848 800 H820"/>
   <rect class="flag" x="708" y="791" width="112" height="18"/>
   <text class="id mid" x="764" y="804">wire036 → node051</text>
   <!-- Frigo -->
   <path class="p w2" d="M980 670 V780 H1000"/>
-  <text class="id mid" x="993" y="725" transform="rotate(-90 993 725)">wire024 · 3,5</text>
+  <text class="id mid" x="993" y="718" transform="rotate(-90 993 718)">wire024 · 3,5</text>
   <rect class="box" x="1000" y="758" width="80" height="44" rx="2"/>
   <text class="tb mid" x="1040" y="777">EPS 100</text>
   <text class="ts mid" x="1040" y="793">12 V / 230 V</text>
+  <text class="id end" x="996" y="774">n042</text>
+  <text class="id" x="1044" y="814">n043</text>
   <path class="p w2" d="M1080 770 H1110"/>
   <path class="n w2" d="M1080 790 H1110"/>
-  <text class="id mid" x="1095" y="750">wire027 / wire028 · 3,5</text>
+  <text class="id mid" x="1095" y="738">wire027 / wire028 · 3,5</text>
+  <text class="id mid" x="1095" y="752">n044 · n045 → n040 · n041</text>
   <rect class="box" x="1110" y="758" width="80" height="44" rx="2"/>
   <text class="tb mid" x="1150" y="777">Groupe froid</text>
   <text class="ts mid" x="1150" y="793">CU-55</text>
