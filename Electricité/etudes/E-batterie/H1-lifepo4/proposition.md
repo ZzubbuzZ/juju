@@ -17,7 +17,7 @@ points_faibles:
   - Guindeau utilisé moteur arrêté ; il entame la batterie de démarrage (environ 2 à 3 Ah par mouillage).
   - Commande manuelle du DC/DC (Q48) ; un oubli au port le laisse démarrer sur la charge du Dolphin.
   - Fusible MEGA (décision du 05/10) ; un MRBF aurait un meilleur pouvoir de coupure, pour le même prix.
-decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main."
+decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node004), masse du voyant sur node005."
 ---
 
 # E-H1 · Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
@@ -58,7 +58,10 @@ Un **chargeur DC/DC** (type Victron Orion XS 12/12-50A) le remplace. Il prend le
 - **Courant réglable** : l'alternateur de Juju ne donne qu'environ 20 A (Q14). Le courant du DC/DC doit être réglé en dessous, vers 15 A, pour ne pas vider la batterie moteur. Le modèle de 50 A est choisi pour son prix et sa disponibilité, pas pour sa puissance ; un modèle de 18 ou 30 A conviendrait aussi.
 - **Démarrage au moteur seulement** : le DC/DC est autorisé par son entrée « remote », commandée par un interrupteur (Q48, voir « Commande du DC/DC »), puis se met en route quand la tension de la batterie moteur indique que l'alternateur charge. Sans cette entrée, la charge de quai du Dolphin le ferait démarrer (voir 3).
 - **Fusibles et câbles (notice Victron, § 3.3)** : un fusible à chaque extrémité, puisque chacune aboutit à une batterie, de **60 à 70 A** pour le modèle de 50 A, avec du **16 mm²** jusqu'à 5 m (21 mm² de 5 à 10 m). Choix : **fusibles MIDI de 70 A** et câble de 16 mm². Le calibre est celui de l'appareil, pas du courant réglé : l'Orion XS peut débiter 50 A si son réglage change, et le fusible doit tenir ce courant avec une marge. Le 16 mm² tient bien plus de 70 A ; c'est la chute de tension qui fixe sa section.
-- **Recharge de secours inversée** : 25 A au plus, la moitié du courant nominal (notice), donc sous les 50 A de l'appareil et les 70 A des fusibles. Elle reste possible interrupteur ouvert (voir « Démarrage de secours »).
+- **Recharge de secours inversée** : 25 A au plus, la moitié du courant nominal (notice), donc sous les 50 A de l'appareil et les 70 A des fusibles. Elle reste possible interrupteur ouvert, coupe-circuit moteur fermé (voir « Démarrage de secours »).
+- **Raccordement des deux côtés (08/10)** : l'entrée est prise **côté charges du coupe-circuit moteur** (node004), la sortie **côté batterie du coupe-circuit de servitude** (node009).
+  - **Entrée côté charges.** L'Orion XS ne charge que moteur tournant, donc coupe-circuit moteur fermé : ce raccordement ne retire rien à la charge. Coupe-circuit moteur ouvert, l'Orion XS est isolé de la batterie de démarrage : plus de consommation de veille sur elle (moins de 1,5 mA d'après les fiches, relevé par recherche, environ 1 Ah par mois), ni de consommation à vide si l'interrupteur est oublié fermé (moins de 100 mA, jusqu'à 2,4 Ah par jour). La recharge de secours inversée demande seulement de fermer le coupe-circuit moteur, ce qu'on fait de toute façon pour démarrer.
+  - **Sortie côté batterie.** Côté charges (node010), coupe-circuit de servitude ouvert moteur tournant, l'Orion XS alimenterait le réseau de bord sans batterie derrière lui, et la LiFePO4 ne serait pas chargée.
 
 ### 3. Chargeur de quai
 
@@ -102,7 +105,7 @@ Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de 
 
 Proposition : **a**, qui ne demande aucune manœuvre et ne dépend pas d'un oubli.
 
-**Choix du 05/10 : b, commande manuelle**, par un interrupteur près du tableau Scheiber 2 voies, dans la contremarche de la descente, à côté de la platine où se trouve l'Orion XS : le fil de commande est court. L'interrupteur est alimenté par la servitude, à travers un fusible de 1 A à sa source. Le risque de l'oubli au port demeure : interrupteur fermé, l'absorption du Dolphin (14,4 V) fait démarrer l'Orion XS et maintient la batterie moteur en absorption. Parades : un interrupteur à voyant, une étiquette « Orion XS : ouvrir au port », et l'arrêt de l'Orion XS dans la check-list d'amarrage.
+**Choix du 05/10 : b, commande manuelle**, par un interrupteur près du tableau Scheiber 2 voies, dans la contremarche de la descente, à côté de la platine où se trouve l'Orion XS : le fil de commande est court. L'interrupteur est alimenté par le + de l'entrée de l'Orion XS, côté charges du coupe-circuit moteur (node004), à travers un fusible de 1 A à sa source : c'est ce que demande la notice (remarque de l'utilisateur, 08/10 ; il était d'abord pris sur la servitude, node010). Coupe-circuit moteur ouvert, la commande est coupée en même temps que l'entrée. Le risque de l'oubli au port demeure : interrupteur fermé, l'absorption du Dolphin (14,4 V) fait démarrer l'Orion XS et maintient la batterie moteur en absorption. Parades : un interrupteur à voyant, une étiquette « Orion XS : ouvrir au port », et l'arrêt de l'Orion XS dans la check-list d'amarrage.
 
 **Câblage de l'entrée « remote » (notice Victron).** Ce n'est pas une sortie à drain ou à source ouverts, mais une **entrée à deux broches, H et L**, livrée avec un cavalier entre elles (l'Orion XS démarre alors dès qu'il est alimenté). La notice donne quatre façons de la commander :
 
@@ -113,7 +116,7 @@ Proposition : **a**, qui ne demande aucune manœuvre et ne dépend pas d'un oubl
 | c | L mis à la masse | Actif sous environ 6 V |
 | d | Sortie d'un BMS sur H | Variante de b |
 
-**Option b retenue** : le **cavalier H-L est retiré**, L reste libre, et l'interrupteur relie le + de la servitude (node010, fusible de 1 A à la source, wire207 et wire208) à la broche H (wire209). **Un interrupteur à voyant convient** : son voyant est branché entre sa borne de sortie et la masse (wire216, sur la barrette de masse du tableau Scheiber, node051), et l'entrée H ne demande qu'une tension, pas un courant. En option a, au contraire, le voyant n'aurait pas de masse et laisserait passer un courant de fuite entre H et L : un interrupteur à voyant serait à proscrire.
+**Option b retenue** : le **cavalier H-L est retiré**, L reste libre, et l'interrupteur relie le + de l'entrée (node004, fusible de 1 A à la source, wire207 et wire208) à la broche H (wire209). **Un interrupteur à voyant convient** : son voyant est branché entre sa borne de sortie et la masse (wire216, sur le coupe-circuit des négatifs côté batteries, node005, 08/10 ; d'abord prévu sur la barrette de masse du tableau Scheiber, node051), et l'entrée H ne demande qu'une tension, pas un courant. En option a, au contraire, le voyant n'aurait pas de masse et laisserait passer un courant de fuite entre H et L : un interrupteur à voyant serait à proscrire.
 
 ## Démarrage de secours sur la LiFePO4
 
@@ -127,7 +130,7 @@ L'Orion XS a une fonction **« emergency reverse charge »** : lancée depuis l'
 - La LiFePO4 ne fournit que 25 A : **aucune exigence de courant de pointe** sur son BMS.
 - Limite, écrite dans la notice : « Battery ready » ne garantit pas que la batterie lance le moteur. Une batterie moteur **défectueuse** (élément en court-circuit, sulfatée) ne reprendra pas.
 
-Ce niveau est acquis avec H1 telle qu'elle est chiffrée : il suffit de connaître la manœuvre.
+Ce niveau est acquis avec H1 telle qu'elle est chiffrée : il suffit de connaître la manœuvre, coupe-circuit moteur fermé (l'entrée de l'Orion XS est de son côté charges).
 
 ### Niveau 2 : démarrage direct sur la LiFePO4 (abandonné le 05/10)
 
@@ -140,7 +143,7 @@ Il consistait à conserver le coupe-circuit de couplage (node009 → wire011 →
 
 ### Recommandation
 
-**Niveau 1 seul.** Il couvre le cas le plus fréquent, la batterie moteur déchargée, sans matériel ni manœuvre de coupe-circuit. Une batterie moteur défectueuse loin d'un port reste un cas non couvert : la parade est son remplacement préventif.
+**Niveau 1 seul.** Il couvre le cas le plus fréquent, la batterie moteur déchargée, sans matériel ni autre manœuvre que la fermeture habituelle du coupe-circuit moteur. Une batterie moteur défectueuse loin d'un port reste un cas non couvert : la parade est son remplacement préventif.
 
 ## Choix de la batterie
 
@@ -201,7 +204,7 @@ Réserve, consignée pour mémoire (voir « Conséquences » ci-dessous) : la pa
 | Débranchement | Sortie 2 du chargeur de quai : wire008, wire163 et son fusible de 30 A (A-H2) |
 | Remplacement | Sortie 1 du Dolphin : wire003, wire162 et leur fusible de 30 A (A-H2) déposés ; câble court jusqu'à un fusible de 30 A à la batterie moteur (node001). Négatif du Dolphin (wire005) ramené sur la borne − de la batterie moteur (node002) |
 | Remplacement | Batterie de servitude : mêmes bornes (node007, node008), wire161 et wire009 repris |
-| Ajout | Orion XS : entrée sur la batterie moteur (node003), sortie sur la batterie de servitude (node009, ou node007 dans le coffre), masse côté « bord » du shunt ; fusibles MIDI de 70 A aux deux extrémités, câbles de 16 mm² (wire202 à wire206). Commande : interrupteur à voyant entre le + de la servitude (fusible de 1 A sur node010) et la broche H, voyant à la masse du tableau Scheiber (wire207 à wire209, wire216) ; cavalier H-L retiré |
+| Ajout | Orion XS : entrée côté charges du coupe-circuit moteur (node004, 08/10), sortie sur la batterie de servitude (node009, ou node007 dans le coffre), masse côté « bord » du shunt ; fusibles MIDI de 70 A aux deux extrémités, câbles de 16 mm² (wire202 à wire206). Commande : interrupteur à voyant entre le + de l'entrée (fusible de 1 A sur node004) et la broche H, voyant au coupe-circuit des négatifs (node005) (wire207 à wire209, wire216) ; cavalier H-L retiré |
 | Ajout | Chargeur de quai LiFePO4, avec le shunt (contremarche ou coffre de la batterie, sur place) : 230 V par un câble dédié depuis le disjoncteur du chargeur (C10) jusqu'à une prise ou un boîtier à bornes Wago (Q53), sortie 12 V courte avec fusible à sa source (node007 dans le coffre, node009 dans la contremarche), négatif côté « bord » du shunt |
 
 ## Conséquences
@@ -212,6 +215,6 @@ Réserve, consignée pour mémoire (voir « Conséquences » ci-dessous) : la pa
   - **Proposition du 03/10, non retenue (MEGA décidé le 05/10, voir ci-dessus) : un fusible MRBF vissé sur la borne + de la batterie.** Il remplace le fusible MEGA de A-H2 côté servitude (et son tronçon non protégé wire161), coûte bien moins cher qu'une classe T avec son support, et se place au plus près de la batterie, dans le coffre. La classe T reste la solution si la fiche de la batterie l'exige, ou pour une batterie de plus de 200 Ah.
   - **Calibre** : il protège le câble de 35 mm² (wire006) tout en laissant passer le guindeau et les pointes de consommation. Retenu : 300 A (voir « Fusible de batterie : décision du 05/10 »).
 - **Étude D** : le SmartShunt se règle sur la chimie LiFePO4 ; l'alarme de charge basse prévient avant la coupure du BMS. Sans couplage et avec le guindeau sur la batterie moteur, ni le démarreur ni le guindeau ne traversent plus le shunt.
-- **Bilan énergétique** : la capacité utile passe d'environ 55 Ah à 160-180 Ah. Le DC/DC consomme quelques milliampères en veille. Avec la masse de ses chargeurs côté charges du shunt, toute la charge de la LiFePO4 est comptée.
+- **Bilan énergétique** : la capacité utile passe d'environ 55 Ah à 160-180 Ah. Le DC/DC consomme quelques milliampères en veille, sur la batterie moteur, et rien coupe-circuit moteur ouvert. Avec la masse de ses chargeurs côté charges du shunt, toute la charge de la LiFePO4 est comptée.
 - **Coffre** : la LiFePO4 doit être solidement fixée (sangle, cales) et ses bornes protégées par un capot. Le coffre n'a plus besoin d'être ventilé pour le gaz, mais une LiFePO4 n'aime pas la chaleur : le coffre est contre le coffre moteur, température à surveiller.
 - **Ancienne batterie** : à déposer en déchetterie ou chez un revendeur (reprise obligatoire).

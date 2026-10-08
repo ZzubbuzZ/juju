@@ -24,7 +24,7 @@ Variante de [E-H1](../H1-lifepo4/proposition.md). Base : **E-H1**. Câblage : [c
 | Élément | E-H1 (contremarche) | E-H4 (coffre de la batterie) |
 |---|---|---|
 | Orion XS | Contremarche, près de la platine | Coffre de la batterie |
-| Entrée de l'Orion XS (wire203, 16 mm²) | 0,5 m | Environ 1,5 m, du fusible de 70 A de la platine (node003) jusqu'au coffre |
+| Entrée de l'Orion XS (wire203, 16 mm²) | 0,5 m | Environ 1,5 m, du fusible de 70 A de la platine (node004) jusqu'au coffre |
 | Sortie de l'Orion XS (wire204, wire205) | Sur node009, fusible de 70 A à la platine | Sur la borne + de la batterie (node007), fusible de 70 A dans le coffre, avant le fusible de 300 A |
 | Négatif de l'Orion XS (wire206) | Sur node005 | Côté « bord » du shunt (node087), dans le coffre |
 | Commande de l'Orion XS (wire209) | 0,5 m | Environ 2 m, de l'interrupteur (contremarche) jusqu'au coffre |
