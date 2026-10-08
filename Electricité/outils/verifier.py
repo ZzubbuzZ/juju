@@ -305,6 +305,28 @@ def controler_contournements(m: Modele, r: Rapport) -> None:
                             f"il ne coupe plus rien")
 
 
+def nodes_svg(txt: str) -> set[str]:
+    """Nœuds cités dans un folio, en entier (node006) ou en abrégé (n006)."""
+    return {f"node{n}" for n in re.findall(r"\b(?:node|n)(\d{3})\b", txt)}
+
+
+def controler_nodes_svg(svgs: list[Path], m: "Modele", r: Rapport) -> None:
+    """Les deux extrémités de chaque fil dessiné sur un folio doivent être citées sur ce même folio."""
+    for c in svgs:
+        txt = c.read_text(encoding="utf-8")
+        cites = nodes_svg(txt)
+        for n in sorted(cites - set(m.nodes)):
+            r.erreur(rel(c), f"{n} figure sur le folio mais n'existe pas dans les données")
+        manquants: dict[str, list[str]] = {}
+        for w in sorted(set(re.findall(r"wire\d{3}", txt)) & set(m.fils)):
+            for bout in ("de", "vers"):
+                n = m.fils[w][bout]
+                if n not in cites:
+                    manquants.setdefault(n, []).append(w)
+        for n, ws in sorted(manquants.items()):
+            r.avert(rel(c), f"{n} (extrémité de {', '.join(ws)}) n'est pas cité sur le folio")
+
+
 def controler_svg(svgs: list[Path], fils_attendus: set[str], fils_existants: set[str],
                   questions: set[str], traitees: set[str], anomalies: set[str], levees: set[str],
                   ou: str, r: Rapport) -> None:
@@ -493,6 +515,7 @@ def main() -> int:
     r.section("Schémas du relevé (schemas/)")
     controler_svg(sorted((RACINE / "schemas").glob("*.svg")), set(releve.fils), set(releve.fils),
                   questions, traitees, anomalies, levees, "schemas", r)
+    controler_nodes_svg(sorted((RACINE / "schemas").glob("folio-[1-9]*.svg")), releve, r)
     controler_implantation(releve, r)
 
     # ---- Hypothèses
@@ -535,6 +558,7 @@ def main() -> int:
         ajoutes = {f["id"] for f in data.get("fils", [])}
         controler_svg(sorted(chemin.parent.glob("*.svg")), ajoutes, set(m.fils),
                       questions, traitees, anomalies, levees, rel(chemin.parent), r)
+        controler_nodes_svg(sorted(chemin.parent.glob("*.svg")), m, r)
 
     # ---- Installation cible : hypothèses retenues appliquées dans l'ordre (cible/cible.yaml)
     fichier_cible = CIBLE / "cible.yaml"
@@ -564,6 +588,7 @@ def main() -> int:
                      if not ({m.nodes[f["de"]]["polarite"], m.nodes[f["vers"]]["polarite"]} & POLARITES_230V)}
             controler_svg(sorted(CIBLE.glob("*.svg")), douze, set(m.fils),
                           questions, traitees, anomalies, levees, rel(CIBLE), r)
+            controler_nodes_svg(sorted(CIBLE.glob("*.svg")), m, r)
 
     # ---- Nomenclatures chiffrées
     schema_nomenc = json.loads((RACINE / "outils/schema/nomenclature.schema.json").read_text(encoding="utf-8"))
