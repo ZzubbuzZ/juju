@@ -667,9 +667,11 @@ def main() -> int:
         r.section("Folios générés (folio-*.yaml → outils/folio.py)")
         mods = generateur.modeles()
         for chemin in dispositions:
-            texte, err = generateur.generer(chemin, mods, ecrire=False)
+            texte, err, crois = generateur.generer(chemin, mods, ecrire=False)
             for e in err:
                 r.erreur(rel(chemin), e)
+            for e in crois:   # croisements permis mais à réduire : admis explicitement dans la mise en page sinon
+                r.avert(rel(chemin), e)
             svg = chemin.with_suffix(".svg")
             if not svg.exists() or svg.read_text(encoding="utf-8") != texte:
                 r.erreur(rel(svg), "SVG pas à jour : lancer python Electricité/outils/folio.py")

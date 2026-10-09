@@ -15,7 +15,9 @@ Règles de dessin contrôlées par controler() (appelée aussi par verifier.py) 
 - un fil part exactement d'un nœud et arrive exactement sur un nœud (ou sur une barre, ou un renvoi) ;
 - ses segments font 0, 45, 90, 135… degrés ;
 - deux fils ne se superposent que sur un segment qui aboutit à un nœud qu'ils partagent (ils peuvent se croiser) ;
-- un fil ne traverse aucun appareil ni renvoi et n'en longe pas le contour.
+- un fil ne traverse aucun appareil ni renvoi et n'en longe pas le contour ;
+- les croisements sont permis mais à réduire au minimum : chacun est signalé, sauf s'il est admis
+  dans la mise en page (croisements_admis: [[wire216, wire206]], après avoir cherché un tracé sans).
 """
 from __future__ import annotations
 
@@ -154,6 +156,20 @@ def recouvrement(s1, s2):
         return None
     pt = lambda k: (round(a[0] + ux * k / long, 1), round(a[1] + uy * k / long, 1))
     return pt(lo), pt(hi)
+
+
+def croisement(s1, s2, eps=1e-6):
+    """Point où deux segments se coupent à l'intérieur de chacun (croisement franc), ou None."""
+    (a, b), (c, d) = s1, s2
+    rx, ry, sx, sy = b[0] - a[0], b[1] - a[1], d[0] - c[0], d[1] - c[1]
+    den = rx * sy - ry * sx
+    if abs(den) < eps:   # parallèles ou colinéaires : affaire de recouvrement()
+        return None
+    t = ((c[0] - a[0]) * sy - (c[1] - a[1]) * sx) / den
+    u = ((c[0] - a[0]) * ry - (c[1] - a[1]) * rx) / den
+    if eps < t < 1 - eps and eps < u < 1 - eps:
+        return (round(a[0] + t * rx, 1), round(a[1] + t * ry, 1))
+    return None
 
 
 def traverse(a, b, typ, g, eps=0.75):
@@ -404,6 +420,20 @@ class Folio:
                     err.append(f"{w1} et {w2} se superposent entre {r[0]} et {r[1]} hors d'un segment de convergence")
         return err
 
+    def croisements(self):
+        """Croisements entre fils (et barres) non admis par la mise en page (croisements_admis)."""
+        segs = [(court(w), a, b) for w, pts in self.traces.items() for a, b in zip(pts, pts[1:])]
+        segs += [(court(n), a, b) for n, bs in self.barres.items() for a, b in bs]
+        admis = {frozenset(court(x) for x in paire) for paire in self.L.get("croisements_admis", []) or []}
+        vus = []
+        for i, (n1, a1, b1) in enumerate(segs):
+            for n2, a2, b2 in segs[i + 1:]:
+                if n1 != n2 and frozenset((n1, n2)) not in admis:
+                    p = croisement((a1, b1), (a2, b2))
+                    if p:
+                        vus.append(f"{n1} croise {n2} en {p}")
+        return vus
+
     # -- assemblage
     def svg(self) -> str:
         L = self.L
@@ -452,13 +482,14 @@ class Folio:
         return tete + "".join(f"  {l}\n" for l in o) + "</svg>\n"
 
 
-def generer(chemin: Path, mods: dict | None = None, ecrire: bool = True) -> tuple[str, list[str]]:
+def generer(chemin: Path, mods: dict | None = None, ecrire: bool = True) -> tuple[str, list[str], list[str]]:
+    """Texte du SVG, erreurs de dessin, croisements non admis (à réduire au minimum)."""
     f = Folio(chemin, mods or modeles())
     texte = f.svg()
     err = f.controler()
     if ecrire:
         chemin.with_suffix(".svg").write_text(texte, encoding="utf-8")
-    return texte, err
+    return texte, err, f.croisements()
 
 
 def main(args: list[str]) -> int:
@@ -466,10 +497,12 @@ def main(args: list[str]) -> int:
     mods = modeles()
     total = 0
     for c in chemins:
-        _, err = generer(c, mods)
-        print(f"{c.relative_to(V.RACINE) if c.is_absolute() else c} : {len(err)} erreur(s)")
+        _, err, crois = generer(c, mods)
+        print(f"{c.relative_to(V.RACINE) if c.is_absolute() else c} : {len(err)} erreur(s), {len(crois)} croisement(s) non admis")
         for e in err:
             print("   ", e)
+        for e in crois:
+            print("    (croisement)", e)
         total += len(err)
     return 1 if total else 0
 

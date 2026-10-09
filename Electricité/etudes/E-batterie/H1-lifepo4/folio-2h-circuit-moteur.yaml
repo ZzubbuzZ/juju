@@ -6,11 +6,11 @@ titre: Circuit moteur cible (Orion XS dans la contremarche)
 aria: "Circuit moteur cible : batterie moteur, démarreur, guindeau, Dolphin et Orion XS dans la contremarche."
 desc: "Batterie moteur et ses consommateurs : démarreur et alternateur, guindeau alimenté par le coupe-circuit moteur, Dolphin raccordé au plus près de la batterie, et entrée de l'Orion XS, côté charges du coupe-circuit moteur, avec son fusible de 70 A et sa commande. Orion XS, chargeur de quai et shunt dans la contremarche."
 modele: E-H1
-taille: [1200, 700]
+taille: [1200, 720]
 
 zones:
   - {x: 20, y: 40, w: 320, h: 300, texte: Coffre de cockpit tribord}
-  - {x: 360, y: 40, w: 820, h: 620, texte: "Contremarche de la descente : platine des coupe-circuits"}
+  - {x: 360, y: 40, w: 820, h: 640, texte: "Contremarche de la descente : platine des coupe-circuits"}
 
 appareils:
   - id: chargeur-quai
@@ -64,7 +64,7 @@ appareils:
     lignes: [démarreur + alternateur]
     nodes:
       node031: [gauche, 220]
-      node032: [bas, 880]
+      node032: [bas, 900]
   - id: disj-guindeau
     forme: fusible
     calibre: 70 A
@@ -99,8 +99,8 @@ appareils:
     titre: CC masse
     titre_xy: [530, 618]
     nodes:
-      node005: {cote: point, xy: [440, 640], etiquette: [-8, 18, end]}
-      node006: {cote: point, xy: [500, 640], etiquette: [4, 18]}
+      node005: {cote: point, xy: [440, 640], etiquette: [-2, 32, end]}
+      node006: {cote: point, xy: [500, 640], etiquette: [4, 32]}
   - id: fus-orion-entree
     forme: fusible
     calibre: 70 A
@@ -119,14 +119,14 @@ appareils:
     nodes:
       node360: [haut, 496]
       node361: [droite, 450]
-      node362: [bas, 420]
+      node362: [bas, 400]
       node363: [bas, 540]
   - id: fus-orion-sortie
     forme: fusible
     calibre: 70 A
     nodes:
       node367: {cote: point, xy: [640, 450], etiquette: [-4, 20, end]}
-      node366: {cote: point, xy: [686, 450], etiquette: [4, 20]}
+      node366: {cote: point, xy: [680, 450], etiquette: [4, 20]}
   - id: inter-orion
     forme: interrupteur
     titre: interrupteur à voyant (Q48)
@@ -159,24 +159,24 @@ fils:
   wire018: {etiquette: [906, 112, mid]}
   wire020: {etiquette: [1100, 104, mid], texte: w020}
   wire021: {etiquette: [1100, 156, mid], texte: w021}
-  wire013: {trace: [[880, 640]], etiquette: [888, 300]}
+  wire013: {trace: [[900, 640]], etiquette: [908, 300]}
   wire015: {trace: [[1000, 640]], etiquette: [1008, 400]}
-  wire004: {trace: [[30, 250], [30, 640]], etiquette: [36, 300]}
+  wire004: {trace: [[30, 250], [30, 656], [424, 656]], etiquette: [36, 300]}
   wire202: {trace: [[496, 232]], etiquette: [488, 250, end]}
   wire203: {etiquette: [488, 344, end]}
   wire205: {etiquette: [610, 442, mid]}
-  wire204: {trace: [[730, 450]], etiquette: [708, 442, mid]}
-  wire206: {trace: [[420, 620]], etiquette: [426, 600]}
+  wire204: {trace: [[730, 450]], etiquette: [705, 438, mid]}
+  wire206: {trace: [[400, 640]], etiquette: [394, 575, end]}
   wire209: {etiquette: [532, 506, end]}
-  wire216: {trace: [[400, 542], [400, 600]], etiquette: [396, 575, end], texte: "w216 · voyant"}
+  wire216: {trace: [[424, 542], [424, 624]], etiquette: [430, 600], texte: "w216 · voyant"}
   wire208: {trace: [[540, 580]], etiquette: [580, 574, mid]}
-  wire207: {trace: [[520, 256], [520, 350], [910, 350], [910, 580]], etiquette: [680, 344, mid], texte: "w207 · + de l'entrée (notice)"}
+  wire207: {trace: [[520, 256], [520, 350], [870, 350], [870, 580]], etiquette: [680, 344, mid], texte: "w207 · + de l'entrée (notice)"}
 
 renvois:
-  - {x: 730, y: 441, w: 135, texte: "→ node009 · folio 2i"}
+  - {x: 730, y: 441, w: 125, texte: "→ node009 · folio 2i"}
 
 textes:
   - {x: 1150, y: 656, classe: "ts end", texte: "node006 · masse des charges : folio 1"}
   - {x: 1135, y: 70, classe: "ts mid", texte: "Guindeau 700 W"}
   - {x: 1100, y: 214, classe: "ts mid", texte: "télécommande : folio 1"}
-  - {x: 20, y: 690, texte: "En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice)."}
+  - {x: 20, y: 710, texte: "En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice)."}
