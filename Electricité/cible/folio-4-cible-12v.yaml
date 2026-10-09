@@ -1,0 +1,418 @@
+# Mise en page du folio 4, lue par outils/folio.py qui produit le SVG voisin.
+# Modèle « cible » : hypothèses de cible/cible.yaml appliquées dans l'ordre. Chaque fil 12 V du modèle
+# doit figurer sur ce folio (contrôlé par outils/verifier.py).
+# Nœuds : [côté, coordonnée le long du côté] ; un fil va d'un nœud à l'autre par « trace »
+# (points intermédiaires), en segments à 0, 45 ou 90°.
+folio: 4
+titre: Installation 12 V cible
+aria: "Installation 12 volts cible : batterie moteur et guindeau, batterie LiFePO4 avec son shunt, chargeur DC/DC Orion XS, chargeur de quai Blue Smart, départs protégés vers les tableaux et l'entrée 12 volts du chauffe-eau."
+desc: "Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Variantes encore ouvertes : E-H4 (coffre de la batterie, folios 2j et 2k) et D-H2 (afficheur, folio 2f)."
+modele: cible
+taille: [1200, 1080]
+
+incertains:
+  - {x: 804, y: 168, w: 214, h: 154, texte: "télécommande : sections à relever", texte_xy: [812, 318]}
+
+appareils:
+  # ---------------------------------------------------------------- batterie moteur et Dolphin
+  - id: chargeur-quai
+    x: 40
+    y: 40
+    w: 200
+    h: 70
+    titre: Chargeur Dolphin 20 A
+    lignes: [batterie moteur seule]
+    nodes:
+      node018: {cote: gauche, a: 95, fonction: "−"}
+      node016: [bas, 216]
+  - id: bat-moteur
+    x: 40
+    y: 150
+    w: 150
+    h: 90
+    titre: Batterie moteur
+    lignes: ["Pb 110 Ah · coffre tribord"]
+    nodes:
+      node001: [droite, 220]
+      node002: [gauche, 220]
+  - id: fus-bat-moteur
+    forme: fusible
+    calibre: 400 A
+    titre: A-H2
+    titre_xy: [256, 258]
+    nodes:
+      node070: {cote: point, xy: [232, 220], etiquette: [-2, 30, end]}
+      node071: {cote: point, xy: [280, 220], etiquette: [4, 18]}
+  - id: fus-chargeur-moteur
+    forme: fusible
+    calibre: 30 A
+    nodes:
+      node075: {cote: point, xy: [216, 168], etiquette: [12, 4]}
+      node074: {cote: point, xy: [216, 204], etiquette: [12, 2]}
+  - id: cc-moteur
+    forme: interrupteur
+    titre: CC moteur
+    titre_xy: [454, 196]
+    nodes:
+      node003: {cote: point, xy: [424, 220], etiquette: [-6, 18, end]}
+      node004: {cote: point, xy: [484, 220], etiquette: [22, -6]}
+  - id: moteur
+    x: 620
+    y: 160
+    w: 160
+    h: 80
+    titre: Yanmar 3GMD
+    lignes: [démarreur + alternateur]
+    nodes:
+      node031: [gauche, 220]
+      node032: [bas, 760]
+  # ---------------------------------------------------------------- guindeau
+  - id: disj-guindeau
+    forme: fusible
+    calibre: 70 A
+    titre: disj. guindeau
+    nodes:
+      node020: {cote: point, xy: [600, 80], etiquette: [-2, 20, end]}
+      node021: {cote: point, xy: [656, 80], etiquette: [2, 20]}
+  - id: relais-guindeau
+    x: 840
+    y: 50
+    w: 140
+    h: 110
+    titre: Relais
+    lignes: [guindeau]
+    nodes:
+      node022: [gauche, 80]
+      node024: [droite, 65]
+      node025: [droite, 90]
+      node023: [droite, 125]
+      node026: [bas, 870]
+      node027: [bas, 950]
+  - id: guindeau
+    forme: cercle
+    cx: 1110
+    cy: 78
+    r: 22
+    symbole: M
+    nodes:
+      node029: {angle: 143.78, cote: point, etiquette: [-4, -6, end]}
+      node030: {angle: 213.06, cote: point, etiquette: [-4, 14, end]}
+  - id: fus-telecommande-guindeau
+    forme: fusible
+    calibre: 5 A
+    calibre_cote: gauche
+    nodes:
+      node033: {cote: point, xy: [824, 190], etiquette: [10, 4]}
+      node034: {cote: point, xy: [824, 226], etiquette: [10, 4]}
+  - id: telecommande-guindeau
+    x: 850
+    y: 236
+    w: 160
+    h: 70
+    inconnu: true
+    titre: Télécommande
+    titre_y: 60
+    nodes:
+      node035: [gauche, 270]
+      node036: [haut, 870]
+      node037: [haut, 950]
+  # ---------------------------------------------------------------- Orion XS
+  - id: fus-orion-entree
+    forme: fusible
+    calibre: 70 A
+    calibre_cote: gauche
+    nodes:
+      node364: {cote: point, xy: [496, 262], etiquette: [-12, 4, end]}
+      node365: {cote: point, xy: [496, 298], etiquette: [-12, 8, end]}
+  - id: fus-orion-remote
+    forme: fusible
+    calibre: 1 A
+    nodes:
+      node368: {cote: point, xy: [546, 300], etiquette: [-2, 20, end]}
+      node369: {cote: point, xy: [582, 300], etiquette: [2, 20]}
+  - id: inter-orion
+    forme: interrupteur
+    titre: interrupteur Orion XS
+    titre_xy: [670, 276]
+    nodes:
+      node370: {cote: point, xy: [640, 300], etiquette: [-4, 22, end]}
+      node371: {cote: point, xy: [700, 300], etiquette: [4, 22]}
+      node379: {cote: point, xy: [670, 316], etiquette: [6, 14]}
+  - id: orion-xs
+    x: 360
+    y: 370
+    w: 240
+    h: 100
+    titre: Orion XS 12/12-50A
+    titre_y: 38
+    lignes: ["DC/DC · réglé vers 15 A", "contremarche (ou coffre : E-H4)"]
+    nodes:
+      node360: [haut, 496]
+      node361: [bas, 400]
+      node362: {cote: gauche, a: 450, fonction: "−"}
+      node363: [droite, 450]
+  - id: fus-orion-sortie
+    forme: fusible
+    calibre: 70 A
+    nodes:
+      node367: {cote: point, xy: [400, 500], etiquette: [-12, 4, end]}
+      node366: {cote: point, xy: [400, 536], etiquette: [-12, 4, end]}
+  # ---------------------------------------------------------------- Blue Smart, LiFePO4, shunt
+  - id: chargeur-lifepo4
+    x: 40
+    y: 470
+    w: 200
+    h: 70
+    titre: Blue Smart IP67 12/17
+    lignes: ["chargeur de quai · 230 V : folio 3"]
+    nodes:
+      node372: [droite, 525]
+      node373: [gauche, 525]
+  - id: fus-chargeur-lifepo4
+    forme: fusible
+    calibre: 25 A
+    nodes:
+      node378: {cote: point, xy: [314, 626], etiquette: [0, -12, mid]}
+      node377: {cote: point, xy: [360, 626], etiquette: [0, -12, mid]}
+  - id: bat-servitude
+    x: 40
+    y: 620
+    w: 150
+    h: 80
+    titre: LiFePO4 200 Ah
+    lignes: [BMS 250 A]
+    nodes:
+      node007: [droite, 670]
+      node008: {cote: bas, a: 50, fonction: "−"}
+  - id: fus-bat-servitude
+    forme: fusible
+    calibre: 300 A
+    titre: MEGA
+    titre_xy: [256, 704]
+    nodes:
+      node072: {cote: point, xy: [232, 670], etiquette: [-2, 18, end]}
+      node073: {cote: point, xy: [280, 670], etiquette: [2, -12]}
+  - id: cc-servitude
+    forme: interrupteur
+    titre: CC servitude
+    titre_xy: [454, 646]
+    nodes:
+      node009: {cote: point, xy: [424, 670], etiquette: [4, 30]}
+      node010: {cote: point, xy: [484, 670], etiquette: [-2, 44, end]}
+  - id: shunt-servitude
+    x: 40
+    y: 750
+    w: 180
+    h: 70
+    titre: Shunt 500 A
+    lignes: ["D-H1 · Bluetooth"]
+    nodes:
+      node086: [haut, 50]
+      node087: [bas, 110]
+      node088: [droite, 770]
+      node089: [droite, 802]
+  - id: fus-shunt-alim
+    forme: fusible
+    calibre: 1 A
+    nodes:
+      node090: {cote: point, xy: [408, 700], etiquette: [-12, 4, end]}
+      node091: {cote: point, xy: [408, 736], etiquette: [-12, 4, end]}
+  - id: fus-shunt-aux
+    forme: fusible
+    calibre: 1 A
+    nodes:
+      node093: {cote: point, xy: [256, 802], etiquette: [-2, 20, end]}
+      node092: {cote: point, xy: [296, 802], etiquette: [2, 20]}
+  # ---------------------------------------------------------------- départs de node010
+  - id: fus-source-tableau-servitude
+    forme: fusible
+    calibre: 50 A
+    nodes:
+      node082: {cote: point, xy: [560, 610], etiquette: [-2, 20, end]}
+      node083: {cote: point, xy: [606, 610], etiquette: [2, 20]}
+  - id: tableau-servitude
+    x: 880
+    y: 563
+    w: 220
+    h: 60
+    titre: Tableau de la table à carte
+    titre_y: 18
+    lignes: ["12 départs · A-H1 différé : folio 2b"]
+    nodes:
+      node100: {cote: gauche, a: 610, fonction: "+"}
+      node101: {cote: droite, a: 610, fonction: "−"}
+  - id: fus-ballon-12v
+    forme: fusible
+    calibre: 30 A
+    nodes:
+      node308: {cote: point, xy: [520, 670], etiquette: [0, -12, mid]}
+      node309: {cote: point, xy: [566, 670], etiquette: [2, 20]}
+  - id: relais-ballon
+    x: 760
+    y: 643
+    w: 100
+    h: 60
+    titre: Relais 30 A
+    titre_y: 18
+    lignes: [près du ballon]
+    nodes:
+      node310: [gauche, 690]
+      node311: [droite, 690]
+  - id: chauffe-eau
+    x: 920
+    y: 643
+    w: 180
+    h: 60
+    titre: CozyWater 10C
+    titre_y: 18
+    lignes: ["entrée 12 V · 200 W"]
+    nodes:
+      node318: {cote: gauche, a: 690, fonction: "+"}
+      node319: {cote: droite, a: 690, fonction: "−"}
+  - id: fus-source-tableau-scheiber
+    forme: fusible
+    calibre: 30 A
+    nodes:
+      node084: {cote: point, xy: [540, 830], etiquette: [-2, 20, end]}
+      node085: {cote: point, xy: [586, 830], etiquette: [2, 20]}
+  - id: tableau-scheiber
+    x: 650
+    y: 783
+    w: 170
+    h: 60
+    titre: Tableau Scheiber 2 voies
+    titre_y: 18
+    lignes: ["frigo 15 A · cale 10 A"]
+    nodes:
+      node050: {cote: gauche, a: 830, fonction: "+"}
+      node052: {cote: droite, a: 830, fonction: frigo}
+      node053: {cote: bas, a: 690, fonction: cale}
+      node051: {cote: bas, a: 770, fonction: "−"}
+  - id: eps100
+    x: 880
+    y: 783
+    w: 100
+    h: 90
+    titre: EPS 100
+    nodes:
+      node042: {cote: gauche, a: 830, fonction: "bat +"}
+      node043: {cote: gauche, a: 855, fonction: "bat −"}
+      node044: {cote: droite, a: 830, fonction: "gf +"}
+      node045: {cote: droite, a: 855, fonction: "gf −"}
+  - id: groupe-froid
+    x: 1010
+    y: 783
+    w: 90
+    h: 90
+    titre: Groupe froid
+    lignes: [CU-55]
+    nodes:
+      node040: {cote: gauche, a: 830, fonction: "+"}
+      node041: {cote: gauche, a: 855, fonction: "−"}
+  - id: pompe-cale
+    forme: cercle
+    cx: 690
+    cy: 920
+    r: 18
+    symbole: P
+    lignes: [Pompe de cale]
+    nodes:
+      node056: {angle: 90, cote: point, etiquette: [-6, -4, end]}
+      node057: {angle: 0, cote: point, etiquette: [4, 18]}
+  # ---------------------------------------------------------------- masses
+  - id: cc-masse
+    forme: interrupteur
+    titre: CC masse
+    titre_xy: [410, 964]
+    nodes:
+      node005: {cote: point, xy: [380, 990], etiquette: [-6, -8, end]}
+      node006: {cote: point, xy: [440, 990], etiquette: [6, 20]}
+
+barres:
+  - {node: node005, de: [380, 990], a: [8, 990]}
+  - {node: node006, de: [440, 990], a: [1175, 990]}
+
+liaisons:
+  - [node074, node070]
+  - [node010, node308]
+
+fils:
+  # batterie moteur et Dolphin
+  wire201: {trace: [[24, 95], [24, 204]], etiquette: [30, 135]}
+  wire004: {trace: [[8, 220], [8, 990]], etiquette: [18, 335, mid, v]}
+  wire160: {etiquette: [211, 236, mid], texte: w160}
+  wire200: {etiquette: [222, 140]}
+  wire001: {etiquette: [330, 212, mid]}
+  wire012: {etiquette: [578, 212, mid]}
+  # guindeau
+  wire217: {trace: [[500, 204], [500, 80]], etiquette: [506, 140]}
+  wire018: {etiquette: [748, 72, mid]}
+  wire020: {etiquette: [1034, 81, mid], texte: "w020 / w021 · 10"}
+  wire021: {}
+  wire015: {trace: [[1175, 990], [1175, 125]], etiquette: [1169, 420, mid, v]}
+  wire013: {trace: [[1155, 990], [1155, 330], [760, 330]], etiquette: [1149, 420, mid, v]}
+  wire061: {trace: [[824, 96]], etiquette: [818, 150, end]}
+  wire062: {trace: [[824, 270]], etiquette: [818, 256, end]}
+  wire063: {etiquette: [866, 198, mid, v]}
+  wire064: {etiquette: [946, 198, mid, v]}
+  # Orion XS
+  wire202: {trace: [[496, 232]], etiquette: [488, 254, end], texte: "w202 · 16"}
+  wire203: {etiquette: [488, 340, end]}
+  wire207: {trace: [[530, 266], [530, 300]], etiquette: [540, 258]}
+  wire208: {etiquette: [608, 292, mid]}
+  wire209: {trace: [[740, 300], [740, 450]], etiquette: [746, 400]}
+  wire216: {renvoi: vers, trace: [[670, 340]], etiquette: [664, 334, end], texte: w216}
+  wire205: {etiquette: [406, 488]}
+  wire204: {trace: [[400, 646]], etiquette: [406, 590], texte: "w204 · 16"}
+  wire206: {trace: [[18, 450], [18, 990]], etiquette: [190, 444, mid], texte: "w206 · 16"}
+  # Blue Smart, LiFePO4, shunt
+  wire211: {trace: [[290, 626], [290, 525]], etiquette: [265, 517, mid], texte: "w211 · 4"}
+  wire210: {trace: [[400, 646], [380, 626]], etiquette: [392, 660, end], texte: "w210 · 4"}
+  wire212: {trace: [[28, 525], [28, 990]], etiquette: [37, 580, mid, v], texte: "w212 · 4"}
+  wire161: {etiquette: [211, 662, mid], texte: w161}
+  wire006: {etiquette: [300, 686, mid]}
+  wire009: {etiquette: [56, 728]}
+  wire180: {trace: [[110, 990]], etiquette: [116, 900], texte: "w180 · 35"}
+  wire181: {trace: [[408, 686]]}
+  wire182: {trace: [[408, 770]], etiquette: [300, 762, mid], texte: "w181 / w182 · 0,75"}
+  wire184: {etiquette: [238, 794, mid], texte: w184}
+  wire183: {renvoi: de, trace: [[316, 802]], etiquette: [306, 794, mid], texte: w183}
+  # départs
+  wire166: {trace: [[544, 610]], etiquette: [536, 598, end]}
+  wire019: {etiquette: [760, 602, mid]}
+  wire306: {trace: [[720, 670], [740, 690]], etiquette: [640, 662, mid]}
+  wire307: {etiquette: [890, 682, mid], texte: w307}
+  wire308: {trace: [[1115, 690], [1115, 990]], etiquette: [1111, 930, mid, v], texte: w308}
+  wire016: {trace: [[1135, 990], [1135, 610]], etiquette: [1131, 930, mid, v]}
+  wire167: {trace: [[514, 700], [514, 830]], etiquette: [520, 780]}
+  wire022: {etiquette: [618, 822, mid]}
+  wire023: {trace: [[770, 990]], etiquette: [776, 960]}
+  wire024: {etiquette: [850, 822, mid]}
+  wire025: {trace: [[802, 875], [830, 875], [850, 855]], etiquette: [826, 890, mid]}
+  wire026: {etiquette: [684, 875, end]}
+  wire036: {trace: [[750, 920], [750, 863]], etiquette: [746, 892, mid, v]}
+  wire027: {etiquette: [995, 890, mid], texte: "w027 / w028 · 3,5"}
+  wire028: {}
+
+renvois:
+  - {x: 605, y: 340, w: 130, nouveau: true, texte: "→ node005 · CC masse"}
+  - {x: 316, y: 793, w: 150, nouveau: true, texte: "→ node003 · CC moteur"}
+
+pastilles:
+  - {id: Q58, x: 370, y: 196}
+  - {id: Q14, x: 780, y: 160}
+  - {id: Q59, x: 1004, y: 182}
+  - {id: Q58, x: 346, y: 696}
+  - {id: Q58, x: 840, y: 610}
+  - {id: Q57, x: 700, y: 670}
+
+textes:
+  - {x: 1110, y: 44, classe: "ts mid", texte: "Guindeau 700 W"}
+  - {x: 870, y: 720, classe: "ts mid", texte: "commande du ballon (folio 2n) : fusible 1 A n314 / n315 monté sur n310,"}
+  - {x: 870, y: 734, classe: "ts mid", texte: "interrupteur à voyant n316 / n317 / n380"}
+  - {x: 870, y: 750, classe: "idn mid", texte: "w309 n315 → n316 · w310 n317 → n312"}
+  - {x: 870, y: 764, classe: "idn mid", texte: "w311 n313 → n319 · w312 n380 → n319"}
+  - {x: 200, y: 1010, classe: "ts mid", texte: "côté batteries (avant le shunt)"}
+  - {x: 620, y: 1010, classe: "ts mid", texte: "masse des charges"}
+  - {x: 20, y: 1044, texte: "En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue."}
+  - {x: 20, y: 1062, texte: "Détail : folios 2c (fusibles), 2e (shunt), 2h et 2i (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md."}
