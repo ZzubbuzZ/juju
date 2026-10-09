@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-label="Afficheur du moniteur de batterie encastré au tableau de servitude à la place de l'indicateur à aiguille, relié au shunt par un câble de données.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-label="Afficheur du moniteur de batterie encastré au tableau de servitude à la place de l&#x27;indicateur à aiguille, relié au shunt par un câble de données.">
   <title>Folio 2f · Afficheur du moniteur de batterie</title>
-  <desc>Le shunt du folio 2e est celui d'un moniteur à afficheur. Le câble de données w185 relie le shunt à l'afficheur, encastré au tableau de servitude à la place de l'indicateur à aiguille, dont le branchement sera vu à la pose ; la place suffit (Q41).</desc>
+  <desc>Le shunt du folio 2e est celui d&#x27;un moniteur à afficheur. Le câble de données w185 relie le shunt à l&#x27;afficheur, encastré au tableau de servitude à la place de l&#x27;indicateur à aiguille, dont le branchement sera vu à la pose ; la place suffit (Q41).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -39,36 +39,33 @@
     .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
   </style>
   <rect class="bg" x="0" y="0" width="100%" height="100%"/>
-
-  <!-- ============ Shunt (folio 2e) ============ -->
-  <rect class="box" x="40" y="120" width="170" height="70" rx="2"/>
-  <text class="tb mid" x="125" y="146">Shunt 500 A</text>
-  <text class="ts mid" x="125" y="163">du moniteur · descente</text>
-  <text class="ts mid" x="125" y="180">fils de mesure : folio 2e</text>
-  <text class="idn" x="216" y="146">n094</text>
-
-  <!-- Câble de données -->
-  <path class="n w2" d="M210 155 H700"/>
-  <text class="idn mid" x="455" y="145">w185 · câble de données RJ12, environ 4 m</text>
-  <text class="ts mid" x="455" y="176">même trajet que w019 (n083 → n100), de la descente à la table à carte</text>
-  <text class="idn end" x="694" y="146">n095</text>
-
-  <!-- ============ Tableau de servitude ============ -->
-  <rect class="box" x="700" y="70" width="450" height="190" rx="2"/>
-  <text class="tb" x="716" y="94">Tableau de servitude · table à carte</text>
-  <rect class="box-new" x="730" y="120" width="170" height="70" rx="2"/>
-  <text class="tb mid tn" x="815" y="146">Afficheur</text>
-  <text class="ts mid" x="815" y="163">rond, 52 mm, encastré</text>
-  <text class="ts mid" x="815" y="180">alimenté par le câble</text>
-  <rect class="box-unk" x="940" y="120" width="190" height="70" rx="2"/>
-  <text class="t mid tu" x="1035" y="146">Indicateur à aiguille</text>
-  <text class="ts mid" x="1035" y="163">déposé, ses fils retirés</text>
-  <text class="ts mid" x="1035" y="180">branchement vu à la pose</text>
-  <text class="ts" x="716" y="222">L'afficheur prend la place de l'indicateur (Q28) : découpe à adapter</text>
-  <text class="ts" x="716" y="240">au besoin selon le diamètre du trou ; la place suffit (Q41, 03/10).</text>
-
-  <!-- ============ Notes ============ -->
+  <!-- Généré par outils/folio.py depuis folio-2f-afficheur.yaml : ne pas modifier à la main. -->
+  <rect class="bound" x="700" y="70" width="450" height="200"/>
+  <text class="ts" x="710" y="88">Tableau de servitude · table à carte</text>
+  <rect class="box-new" x="40" y="120" width="220" height="90" rx="2"/>
+  <text class="tb mid tn" x="150" y="140">Shunt 500 A</text>
+  <text class="ts mid" x="150" y="155">du moniteur · descente</text>
+  <text class="ts mid" x="150" y="170">fils de mesure : folio 2e</text>
+  <rect class="box-new" x="730" y="120" width="190" height="90" rx="2"/>
+  <text class="tb mid tn" x="825" y="140">Afficheur</text>
+  <text class="ts mid" x="825" y="155">rond, 52 mm, encastré</text>
+  <text class="ts mid" x="825" y="170">alimenté par le câble</text>
+  <rect class="box-unk" x="950" y="120" width="180" height="90" rx="2"/>
+  <text class="tb mid" x="1040" y="140">Indicateur à aiguille</text>
+  <text class="ts mid" x="1040" y="155">déposé, ses fils retirés</text>
+  <text class="ts mid" x="1040" y="170">branchement vu à la pose</text>
+  <path class="n w2" d="M260 185 L730 185"/>
+  <text class="idn mid" x="495" y="177">w185 · câble de données RJ12, environ 4 m</text>
+  <circle class="term" cx="260" cy="185" r="3.5"/>
+  <circle class="term" cx="730" cy="185" r="3.5"/>
+  <text class="idn end" x="253" y="184">n094</text>
+  <text class="pin end" x="253" y="194">données</text>
+  <text class="idn" x="737" y="184">n095</text>
+  <text class="pin" x="737" y="194">données</text>
+  <text class="ts mid" x="495" y="203">même trajet que w019 (n083 → n100), de la descente à la table à carte</text>
+  <text class="ts" x="716" y="236">L&#x27;afficheur prend la place de l&#x27;indicateur (Q28) : découpe à adapter</text>
+  <text class="ts" x="716" y="254">au besoin selon le diamètre du trou ; la place suffit (Q41, 03/10).</text>
   <text class="tb" x="40" y="300">Différence avec D-H1</text>
   <text class="t" x="40" y="320">Même shunt, même position, mêmes fils de mesure (folio 2e). Le moniteur ajoute un afficheur fixe, relié au shunt par le câble</text>
-  <text class="t" x="40" y="338">de données qui l'alimente aussi : pas de fil + ni de fusible à ajouter au tableau. L'application sur smartphone reste disponible.</text>
+  <text class="t" x="40" y="338">de données qui l&#x27;alimente aussi : pas de fil + ni de fusible à ajouter au tableau. L&#x27;application sur smartphone reste disponible.</text>
 </svg>

@@ -1,0 +1,51 @@
+# Mise en page du folio 2f, lue par outils/folio.py qui produit le SVG voisin.
+folio: 2f
+titre: Afficheur du moniteur de batterie
+aria: "Afficheur du moniteur de batterie encastré au tableau de servitude à la place de l'indicateur à aiguille, relié au shunt par un câble de données."
+desc: "Le shunt du folio 2e est celui d'un moniteur à afficheur. Le câble de données w185 relie le shunt à l'afficheur, encastré au tableau de servitude à la place de l'indicateur à aiguille, dont le branchement sera vu à la pose ; la place suffit (Q41)."
+modele: D-H2
+taille: [1200, 370]
+
+zones:
+  - {x: 700, y: 70, w: 450, h: 200, texte: "Tableau de servitude · table à carte"}
+
+appareils:
+  - id: shunt-servitude
+    x: 40
+    y: 120
+    w: 220
+    h: 90
+    titre: Shunt 500 A
+    lignes: ["du moniteur · descente", "fils de mesure : folio 2e"]
+    nodes:
+      node094: [droite, 185]
+  - id: afficheur-batterie
+    x: 730
+    y: 120
+    w: 190
+    h: 90
+    titre: Afficheur
+    lignes: ["rond, 52 mm, encastré", "alimenté par le câble"]
+    nodes:
+      node095: [gauche, 185]
+  - id: indicateur-charge   # déposé : absent du modèle D-H2, dessiné pour mémoire
+    x: 950
+    y: 120
+    w: 180
+    h: 90
+    inconnu: true
+    nouveau: false
+    titre: Indicateur à aiguille
+    lignes: ["déposé, ses fils retirés", "branchement vu à la pose"]
+
+fils:
+  # câble de données de type connu (fourni avec le moniteur) : trait plein, sans section
+  wire185: {classe: "n w2", etiquette: [495, 177, mid], texte: "w185 · câble de données RJ12, environ 4 m"}
+
+textes:
+  - {x: 495, y: 203, classe: "ts mid", texte: "même trajet que w019 (n083 → n100), de la descente à la table à carte"}
+  - {x: 716, y: 236, texte: "L'afficheur prend la place de l'indicateur (Q28) : découpe à adapter"}
+  - {x: 716, y: 254, texte: "au besoin selon le diamètre du trou ; la place suffit (Q41, 03/10)."}
+  - {x: 40, y: 300, classe: tb, texte: "Différence avec D-H1"}
+  - {x: 40, y: 320, classe: t, texte: "Même shunt, même position, mêmes fils de mesure (folio 2e). Le moniteur ajoute un afficheur fixe, relié au shunt par le câble"}
+  - {x: 40, y: 338, classe: t, texte: "de données qui l'alimente aussi : pas de fil + ni de fusible à ajouter au tableau. L'application sur smartphone reste disponible."}

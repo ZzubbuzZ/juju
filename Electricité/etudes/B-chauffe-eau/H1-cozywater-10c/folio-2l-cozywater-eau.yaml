@@ -1,0 +1,120 @@
+# Mise en page du folio 2l, lue par outils/folio.py qui produit le SVG voisin.
+# Circuit d'eau, sans fil électrique : appareils sans nœuds, tuyauteries en traits libres
+# (plein : eau froide ; tirets : eau chaude, vidange ; pointillés : flexible).
+folio: 2l
+titre: Chauffe-eau CozyWater 10C, circuit d'eau
+aria: "Circuit d'eau douce du chauffe-eau : pompe, réducteur à 1,5 bar pour tout le circuit, robinets d'eau froide, vanne d'arrêt, vase d'expansion de 1 litre, soupape de 3 bars, ballon CozyWater 10C, vanne d'arrêt et mitigeurs."
+desc: "Le réducteur, à la sortie de la pompe, met l'eau froide et l'eau chaude à 1,5 bar quelle que soit la coupure de la pompe. Le vase de 1 L, gonflé à 1,4 bar, absorbe la dilatation de l'eau chaude sous la soupape de 3 bar."
+modele: B-H1
+taille: [1200, 600]
+
+zones:
+  - {x: 20, y: 20, w: 1160, h: 340, texte: "Circuit d'eau douce · trait plein : eau froide · tirets : eau chaude · en vert : nouveau"}
+  - {x: 20, y: 380, w: 1160, h: 200, texte: "Réglages, dans l'ordre (B-H1)"}
+
+appareils:
+  - {id: reservoir, x: 40, y: 160, w: 100, h: 50, inconnu: true, nouveau: false}
+  - id: pompe
+    x: 170
+    y: 160
+    w: 120
+    h: 50
+    nouveau: false
+    titre: Pompe Seaflo
+    lignes: ["coupure ≈ 2,8 bar"]
+  - id: reducteur
+    x: 330
+    y: 150
+    w: 120
+    h: 70
+    nouveau: true
+    titre: Réducteur
+    titre_y: 23
+    lignes: ["réglé à 1,5 bar", "manomètre 0-6 bar"]
+  - {id: robinets-froids, x: 655, y: 100, w: 90, h: 26, inconnu: true, nouveau: false}
+  - {id: vanne-froid, x: 560, y: 173, w: 30, h: 24, nouveau: true}
+  - id: vase
+    x: 585
+    y: 245
+    w: 90
+    h: 60
+    rx: 14
+    nouveau: true
+    titre: Vase 1 L
+    titre_y: 23
+    lignes: ["gonflé à 1,4 bar"]
+  - {id: soupape, x: 690, y: 170, w: 60, h: 30, nouveau: true}
+  - id: chauffe-eau
+    x: 775
+    y: 135
+    w: 215
+    h: 110
+    rx: 10
+    nouveau: true
+    titre: CozyWater 10C
+    titre_y: 28
+    lignes: ["10 L · 25 à 75 °C", "2,5 bar en service, 3 bar au plus", "alimentation : folio 2m"]
+  - {id: vanne-chaud, x: 1010, y: 148, w: 30, h: 24, nouveau: true}
+  - {id: mitigeurs, x: 1035, y: 270, w: 110, h: 40, inconnu: true, nouveau: false}
+
+traits:   # tuyauteries et symboles des vannes
+  - {classe: "n w3", points: [[140, 185], [170, 185]]}
+  - {classe: "n w3", points: [[290, 185], [330, 185]], tirets: "2 3"}
+  - {classe: "n w3", points: [[450, 185], [560, 185]]}
+  - {classe: "n w3", points: [[490, 185], [490, 75], [1110, 75], [1110, 270]]}
+  - {classe: "n w2", points: [[700, 75], [700, 100]]}
+  - {classe: "n w1", points: [[565, 192], [585, 178]]}
+  - {classe: "n w3", points: [[590, 185], [690, 185]]}
+  - {classe: "n w2", points: [[630, 185], [630, 245]]}
+  - {classe: "n w2", points: [[720, 200], [720, 330]], tirets: "3 4"}
+  - {classe: "n w3", points: [[750, 185], [775, 185]]}
+  - {classe: "n w3", points: [[990, 160], [1010, 160]], tirets: "10 5"}
+  - {classe: "n w1", points: [[1015, 167], [1035, 153]]}
+  - {classe: "n w3", points: [[1040, 160], [1070, 160], [1070, 270]], tirets: "10 5"}
+
+jonctions: [[490, 185], [630, 185]]
+
+pastilles:
+  - {id: Q54, x: 140, y: 160}
+  - {id: Q54, x: 290, y: 160}
+  - {id: Q54, x: 745, y: 100}
+  - {id: Q19, x: 775, y: 135}
+  - {id: Q55, x: 990, y: 135}
+  - {id: Q54, x: 1145, y: 270}
+
+textes:
+  # réservoir et pompe
+  - {x: 90, y: 182, classe: "tb mid tu", texte: "Réservoir"}
+  - {x: 90, y: 198, classe: "ts mid", texte: "eau douce"}
+  - {x: 155, y: 230, classe: "ts mid", texte: "filtre"}
+  - {x: 230, y: 226, classe: "id mid", texte: "SFDP1-045-040"}
+  - {x: 230, y: 243, classe: "ts mid", texte: "coupure variable"}
+  - {x: 310, y: 230, classe: "ts mid", texte: "flexible"}
+  - {x: 310, y: 243, classe: "ts mid", texte: "court"}
+  # réducteur et eau froide
+  - {x: 390, y: 236, classe: "id mid", texte: "Pundmann 1/2\""}
+  - {x: 500, y: 66, classe: "tb tn", texte: "1,5 bar à tous les robinets, eau froide et eau chaude"}
+  - {x: 700, y: 117, classe: "ts mid tu", texte: "robinets froids"}
+  # vanne, vase, soupape
+  - {x: 575, y: 150, classe: "ts mid tn", texte: "vanne"}
+  - {x: 575, y: 163, classe: "ts mid tn", texte: "d'arrêt"}
+  - {x: 630, y: 320, classe: "id mid", texte: "SFAT-100-125-01"}
+  - {x: 720, y: 189, classe: "ts mid tn", texte: "3 bar"}
+  - {x: 720, y: 160, classe: "ts mid", texte: "soupape fournie"}
+  - {x: 728, y: 335, texte: "vidange → évier ou extérieur, jamais les fonds"}
+  - {x: 620, y: 222, classe: "ts end", texte: "aucun clapet"}
+  - {x: 620, y: 235, classe: "ts end", texte: "entre vase et ballon"}
+  # ballon et eau chaude
+  - {x: 882, y: 232, classe: "id mid", texte: "raccords 1/2\" mâle (revendeur)"}
+  - {x: 1025, y: 195, classe: "ts mid tn", texte: "vanne"}
+  - {x: 1025, y: 208, classe: "ts mid tn", texte: "d'arrêt"}
+  - {x: 1090, y: 289, classe: "tb mid tu", texte: "Mitigeurs"}
+  - {x: 1090, y: 303, classe: "ts mid", texte: "cuisine, toilette"}
+  # réglages
+  - {x: 40, y: 425, classe: t, texte: "1. Réducteur réglé au maximum : son manomètre suit la pompe. Noter coupure et redémarrage sur une dizaine de cycles."}
+  - {x: 60, y: 442, texte: "Coupure la plus basse ≥ 2 bar : consigne 1,5 bar · entre 1,7 et 2 bar : consigne 1,2 bar, vase à 1,1 bar · plus bas : réparer la pompe d'abord."}
+  - {x: 40, y: 468, classe: t, texte: "2. Vase gonflé à la consigne moins 0,1 bar (1,4 bar), circuit sans pression : pompe coupée, un robinet ouvert."}
+  - {x: 40, y: 492, classe: t, texte: "3. Réducteur réglé à 1,5 bar, lu au repos après un puisage."}
+  - {x: 40, y: 516, classe: t, texte: "4. Remplir et purger le ballon : soupape fermée (levier horizontal), robinet sur chaud ouvert jusqu'à l'eau sans air."}
+  - {x: 40, y: 540, classe: t, texte: "5. Essai : chauffer à 75 °C robinets fermés. Attendu ≈ 2,0 bar à 60 °C, ≈ 2,4 bar à 75 °C ; la soupape ne goutte pas."}
+  - {x: 60, y: 562, texte: "Au-delà de 2,7 bar : regonfler le vase, vérifier qu'aucun clapet ne l'isole du ballon. Ne pas toucher à la vis du bypass de la pompe (notice)."}

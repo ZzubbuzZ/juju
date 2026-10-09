@@ -266,7 +266,7 @@ class Folio:
         o = self.out
         if forme == "boite":
             cls = "box-new" if neuf else ("box-unk" if ap.get("inconnu") else "box")
-            o.append(f'<rect class="{cls}" x="{ap["x"]}" y="{ap["y"]}" width="{ap["w"]}" height="{ap["h"]}" rx="2"/>')
+            o.append(f'<rect class="{cls}" x="{ap["x"]}" y="{ap["y"]}" width="{ap["w"]}" height="{ap["h"]}" rx="{ap.get("rx", 2)}"/>')
             cx = ap["x"] + ap["w"] / 2
             y = ap["y"] + ap.get("titre_y", 20)
             if ap.get("titre"):
@@ -376,7 +376,10 @@ class Folio:
         if not dessin:
             return
         d = "M" + " L".join(f"{x:g} {y:g}" for x, y in pts)
-        self.out.append(f'<path class="{spec.get("classe") or self.classe_fil(w)}" d="{d}"/>')
+        cls = spec.get("classe") or self.classe_fil(w)
+        self.out.append(f'<path class="{cls}" d="{d}"/>')
+        if cls.split()[0] == "pe":   # terre 230 V : vert, doublé de tirets jaunes (vert-jaune)
+            self.out.append(f'<path class="{cls.replace("pe", "pey", 1)}" d="{d}"/>')
         et = spec.get("etiquette")
         if et:
             texte = spec.get("texte") or (court(w) + (f" · {f['section_mm2']:g}".replace(".", ",") if "section_mm2" in f else ""))
@@ -395,7 +398,9 @@ class Folio:
             return
         pts = self.traces[fils[0]]
         d = "M" + " L".join(f"{x:g} {y:g}" for x, y in pts)
-        self.out.append(f'<path class="{spec.get("classe", "n w2")}" d="{d}"/>')
+        # section inconnue d'un des conducteurs : partie incertaine, en pointillés bleus (comme un fil)
+        defaut = "u" if any("section_mm2" not in self.M.fils[w] for w in fils) else "n w2"
+        self.out.append(f'<path class="{spec.get("classe", defaut)}" d="{d}"/>')
         a, b = max(zip(pts, pts[1:]), key=lambda s: math.dist(*s))
         x, y = spec.get("obliques_xy") or ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
         k = len(spec["fils"])
@@ -450,12 +455,26 @@ class Folio:
                 r = recouvrement((a1, b1), (a2, b2))
                 if not r:
                     continue
+                if w1 in self.cable and w2 in self.cable and self.tronc_commun(w1, w2, a1, b1):
+                    continue
                 f1, f2 = self.M.fils[w1], self.M.fils[w2]
                 communs = {f1["de"], f1["vers"]} & {f2["de"], f2["vers"]}
                 if not any(n in self.pos and (self.pos[n] in r or sur_segment(self.pos[n], *r)) and
                            (self.pos[n] in (a1, b1)) and (self.pos[n] in (a2, b2)) for n in communs):
                     err.append(f"{w1} et {w2} se superposent entre {r[0]} et {r[1]} hors d'un segment de convergence")
         return err
+
+    def tronc_commun(self, w1, w2, a, b):
+        """Deux câbles unifilaires partis du même point (ou arrivés au même point) peuvent suivre le même
+        tracé jusqu'à leur séparation : (a, b) est-il un segment de ce tronc commun ?"""
+        t1, t2 = self.traces[w1], self.traces[w2]
+        for p1, p2 in ((t1, t2), (t1[::-1], t2[::-1])):
+            k = 0
+            while k < min(len(p1), len(p2)) and p1[k] == p2[k]:
+                k += 1
+            if any({a, b} == {p1[i], p1[i + 1]} for i in range(k - 1)):
+                return True
+        return False
 
     def croisements(self):
         """Croisements entre fils (et barres) non admis par la mise en page (croisements_admis)."""
@@ -493,11 +512,15 @@ class Folio:
             self.dessiner_appareil(ap)
         for b in L.get("barres", []) or []:
             pol = self.M.nodes[b["node"]]["polarite"]
-            o.append(f'<path class="{"n" if pol == "-" else "p"} {b.get("epaisseur", "w4")}" d="M{b["de"][0]} {b["de"][1]} H{b["a"][0]}"/>'
+            cls = b.get("classe") or ("n" if pol == "-" else "p")   # classe imposée : barre 230 V unifilaire (n)
+            o.append(f'<path class="{cls} {b.get("epaisseur", "w4")}" d="M{b["de"][0]} {b["de"][1]} H{b["a"][0]}"/>'
                      if b["de"][1] == b["a"][1] else
-                     f'<path class="{"n" if pol == "-" else "p"} {b.get("epaisseur", "w4")}" d="M{b["de"][0]} {b["de"][1]} V{b["a"][1]}"/>')
+                     f'<path class="{cls} {b.get("epaisseur", "w4")}" d="M{b["de"][0]} {b["de"][1]} V{b["a"][1]}"/>')
         for t in L.get("traits", []) or []:   # traits libres (repères, tuyauteries), hors règles des fils
-            o.append(f'<path class="{t.get("classe", "leader")}" d="M' + " L".join(f"{x:g} {y:g}" for x, y in t["points"]) + '"/>')
+            tirets = f' stroke-dasharray="{t["tirets"]}"' if t.get("tirets") else ""   # ex. eau chaude, vidange
+            o.append(f'<path class="{t.get("classe", "leader")}" d="M' + " L".join(f"{x:g} {y:g}" for x, y in t["points"]) + f'"{tirets}/>')
+        for x, y in L.get("jonctions", []) or []:   # points de jonction des traits libres (tuyauteries)
+            o.append(f'<circle class="dn" cx="{x:g}" cy="{y:g}" r="3.5"/>')
         for w, spec in (L.get("fils") or {}).items():
             self.dessiner_fil(w, spec or {})
         for nom, spec in (L.get("cables") or {}).items():

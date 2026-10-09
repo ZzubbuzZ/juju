@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Circuit d'eau douce du chauffe-eau : pompe, réducteur à 1,5 bar pour tout le circuit, robinets d'eau froide, vanne d'arrêt, vase d'expansion de 1 litre, soupape de 3 bars, ballon CozyWater 10C, vanne d'arrêt et mitigeurs.">
-  <title>Folio 2l · Chauffe-eau CozyWater 10C, circuit d'eau</title>
-  <desc>Le réducteur, à la sortie de la pompe, met l'eau froide et l'eau chaude à 1,5 bar quelle que soit la coupure de la pompe. Le vase de 1 L, gonflé à 1,4 bar, absorbe la dilatation de l'eau chaude sous la soupape de 3 bar.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Circuit d&#x27;eau douce du chauffe-eau : pompe, réducteur à 1,5 bar pour tout le circuit, robinets d&#x27;eau froide, vanne d&#x27;arrêt, vase d&#x27;expansion de 1 litre, soupape de 3 bars, ballon CozyWater 10C, vanne d&#x27;arrêt et mitigeurs.">
+  <title>Folio 2l · Chauffe-eau CozyWater 10C, circuit d&#x27;eau</title>
+  <desc>Le réducteur, à la sortie de la pompe, met l&#x27;eau froide et l&#x27;eau chaude à 1,5 bar quelle que soit la coupure de la pompe. Le vase de 1 L, gonflé à 1,4 bar, absorbe la dilatation de l&#x27;eau chaude sous la soupape de 3 bar.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -39,94 +39,81 @@
     .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
   </style>
   <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+  <!-- Généré par outils/folio.py depuis folio-2l-cozywater-eau.yaml : ne pas modifier à la main. -->
   <rect class="bound" x="20" y="20" width="1160" height="340"/>
-  <text class="ts" x="30" y="38">Circuit d'eau douce · trait plein : eau froide · tirets : eau chaude · en vert : nouveau</text>
-
-  <!-- ============ Réservoir et pompe ============ -->
+  <text class="ts" x="30" y="38">Circuit d&#x27;eau douce · trait plein : eau froide · tirets : eau chaude · en vert : nouveau</text>
+  <rect class="bound" x="20" y="380" width="1160" height="200"/>
+  <text class="ts" x="30" y="398">Réglages, dans l&#x27;ordre (B-H1)</text>
   <rect class="box-unk" x="40" y="160" width="100" height="50" rx="2"/>
-  <text class="tb mid tu" x="90" y="182">Réservoir</text>
-  <text class="ts mid" x="90" y="198">eau douce</text>
-  <g class="mk-q"><circle cx="140" cy="160" r="11"/><text class="mid" x="140" y="163.5">Q54</text></g>
-  <path class="n w3" d="M140 185 H170"/>
-  <text class="ts mid" x="155" y="230">filtre</text>
   <rect class="box" x="170" y="160" width="120" height="50" rx="2"/>
   <text class="tb mid" x="230" y="180">Pompe Seaflo</text>
-  <text class="ts mid" x="230" y="196">coupure ≈ 2,8 bar</text>
-  <text class="ts mid" x="230" y="243">coupure variable</text>
-  <text class="id mid" x="230" y="226">SFDP1-045-040</text>
-  <g class="mk-q"><circle cx="290" cy="160" r="11"/><text class="mid" x="290" y="163.5">Q54</text></g>
-  <path class="n w3" d="M290 185 H330" stroke-dasharray="2 3"/>
-  <text class="ts mid" x="310" y="230">flexible</text>
-  <text class="ts mid" x="310" y="243">court</text>
-
-  <!-- ============ Réducteur ============ -->
+  <text class="ts mid" x="230" y="195">coupure ≈ 2,8 bar</text>
   <rect class="box-new" x="330" y="150" width="120" height="70" rx="2"/>
   <text class="tb mid tn" x="390" y="173">Réducteur</text>
-  <text class="ts mid" x="390" y="189">réglé à 1,5 bar</text>
-  <text class="ts mid" x="390" y="204">manomètre 0-6 bar</text>
-  <text class="id mid" x="390" y="236">Pundmann 1/2"</text>
-  <path class="n w3" d="M450 185 H560"/>
-  <circle class="dn" cx="490" cy="185" r="3.5"/>
-
-  <!-- Eau froide vers les robinets et les mitigeurs -->
-  <path class="n w3" d="M490 185 V75 H1110 V270"/>
-  <text class="tb tn" x="500" y="66">1,5 bar à tous les robinets, eau froide et eau chaude</text>
-  <path class="n w2" d="M700 75 V100"/>
+  <text class="ts mid" x="390" y="188">réglé à 1,5 bar</text>
+  <text class="ts mid" x="390" y="203">manomètre 0-6 bar</text>
   <rect class="box-unk" x="655" y="100" width="90" height="26" rx="2"/>
-  <text class="ts mid tu" x="700" y="117">robinets froids</text>
-  <g class="mk-q"><circle cx="745" cy="100" r="11"/><text class="mid" x="745" y="103.5">Q54</text></g>
-
-  <!-- ============ Vanne, vase, soupape ============ -->
   <rect class="box-new" x="560" y="173" width="30" height="24" rx="2"/>
-  <path class="n w1" d="M565 192 L585 178"/>
-  <text class="ts mid tn" x="575" y="150">vanne</text>
-  <text class="ts mid tn" x="575" y="163">d'arrêt</text>
-  <path class="n w3" d="M590 185 H690"/>
-  <circle class="dn" cx="630" cy="185" r="3.5"/>
-  <path class="n w2" d="M630 185 V245"/>
   <rect class="box-new" x="585" y="245" width="90" height="60" rx="14"/>
   <text class="tb mid tn" x="630" y="268">Vase 1 L</text>
-  <text class="ts mid" x="630" y="284">gonflé à 1,4 bar</text>
-  <text class="id mid" x="630" y="320">SFAT-100-125-01</text>
+  <text class="ts mid" x="630" y="283">gonflé à 1,4 bar</text>
   <rect class="box-new" x="690" y="170" width="60" height="30" rx="2"/>
+  <rect class="box-new" x="775" y="135" width="215" height="110" rx="10"/>
+  <text class="tb mid tn" x="882.5" y="163">CozyWater 10C</text>
+  <text class="ts mid" x="882.5" y="178">10 L · 25 à 75 °C</text>
+  <text class="ts mid" x="882.5" y="193">2,5 bar en service, 3 bar au plus</text>
+  <text class="ts mid" x="882.5" y="208">alimentation : folio 2m</text>
+  <rect class="box-new" x="1010" y="148" width="30" height="24" rx="2"/>
+  <rect class="box-unk" x="1035" y="270" width="110" height="40" rx="2"/>
+  <path class="n w3" d="M140 185 L170 185"/>
+  <path class="n w3" d="M290 185 L330 185" stroke-dasharray="2 3"/>
+  <path class="n w3" d="M450 185 L560 185"/>
+  <path class="n w3" d="M490 185 L490 75 L1110 75 L1110 270"/>
+  <path class="n w2" d="M700 75 L700 100"/>
+  <path class="n w1" d="M565 192 L585 178"/>
+  <path class="n w3" d="M590 185 L690 185"/>
+  <path class="n w2" d="M630 185 L630 245"/>
+  <path class="n w2" d="M720 200 L720 330" stroke-dasharray="3 4"/>
+  <path class="n w3" d="M750 185 L775 185"/>
+  <path class="n w3" d="M990 160 L1010 160" stroke-dasharray="10 5"/>
+  <path class="n w1" d="M1015 167 L1035 153"/>
+  <path class="n w3" d="M1040 160 L1070 160 L1070 270" stroke-dasharray="10 5"/>
+  <circle class="dn" cx="490" cy="185" r="3.5"/>
+  <circle class="dn" cx="630" cy="185" r="3.5"/>
+  <text class="tb mid tu" x="90" y="182">Réservoir</text>
+  <text class="ts mid" x="90" y="198">eau douce</text>
+  <text class="ts mid" x="155" y="230">filtre</text>
+  <text class="id mid" x="230" y="226">SFDP1-045-040</text>
+  <text class="ts mid" x="230" y="243">coupure variable</text>
+  <text class="ts mid" x="310" y="230">flexible</text>
+  <text class="ts mid" x="310" y="243">court</text>
+  <text class="id mid" x="390" y="236">Pundmann 1/2&quot;</text>
+  <text class="tb tn" x="500" y="66">1,5 bar à tous les robinets, eau froide et eau chaude</text>
+  <text class="ts mid tu" x="700" y="117">robinets froids</text>
+  <text class="ts mid tn" x="575" y="150">vanne</text>
+  <text class="ts mid tn" x="575" y="163">d&#x27;arrêt</text>
+  <text class="id mid" x="630" y="320">SFAT-100-125-01</text>
   <text class="ts mid tn" x="720" y="189">3 bar</text>
   <text class="ts mid" x="720" y="160">soupape fournie</text>
-  <path class="n w2" d="M720 200 V330" stroke-dasharray="3 4"/>
   <text class="ts" x="728" y="335">vidange → évier ou extérieur, jamais les fonds</text>
-  <path class="n w3" d="M750 185 H775"/>
   <text class="ts end" x="620" y="222">aucun clapet</text>
   <text class="ts end" x="620" y="235">entre vase et ballon</text>
-
-  <!-- ============ Ballon ============ -->
-  <rect class="box-new" x="775" y="135" width="215" height="110" rx="10"/>
-  <text class="tb mid tn" x="882" y="163">CozyWater 10C</text>
-  <text class="ts mid" x="882" y="180">10 L · 25 à 75 °C</text>
-  <text class="ts mid" x="882" y="195">2,5 bar en service, 3 bar au plus</text>
-  <text class="ts mid" x="882" y="210">alimentation : folio 2m</text>
-  <text class="id mid" x="882" y="232">raccords 1/2" mâle (revendeur)</text>
-  <g class="mk-q"><circle cx="775" cy="135" r="11"/><text class="mid" x="775" y="138.5">Q19</text></g>
-  <g class="mk-q"><circle cx="990" cy="135" r="11"/><text class="mid" x="990" y="138.5">Q55</text></g>
-
-  <!-- ============ Eau chaude ============ -->
-  <path class="n w3" d="M990 160 H1010" stroke-dasharray="10 5"/>
-  <rect class="box-new" x="1010" y="148" width="30" height="24" rx="2"/>
-  <path class="n w1" d="M1015 167 L1035 153"/>
+  <text class="id mid" x="882" y="232">raccords 1/2&quot; mâle (revendeur)</text>
   <text class="ts mid tn" x="1025" y="195">vanne</text>
-  <text class="ts mid tn" x="1025" y="208">d'arrêt</text>
-  <path class="n w3" d="M1040 160 H1070 V270" stroke-dasharray="10 5"/>
-  <rect class="box-unk" x="1035" y="270" width="110" height="40" rx="2"/>
+  <text class="ts mid tn" x="1025" y="208">d&#x27;arrêt</text>
   <text class="tb mid tu" x="1090" y="289">Mitigeurs</text>
   <text class="ts mid" x="1090" y="303">cuisine, toilette</text>
-  <g class="mk-q"><circle cx="1145" cy="270" r="11"/><text class="mid" x="1145" y="273.5">Q54</text></g>
-
-  <!-- ============ Réglages ============ -->
-  <rect class="bound" x="20" y="380" width="1160" height="200"/>
-  <text class="ts" x="30" y="398">Réglages, dans l'ordre (B-H1)</text>
   <text class="t" x="40" y="425">1. Réducteur réglé au maximum : son manomètre suit la pompe. Noter coupure et redémarrage sur une dizaine de cycles.</text>
-  <text class="ts" x="60" y="442">Coupure la plus basse ≥ 2 bar : consigne 1,5 bar · entre 1,7 et 2 bar : consigne 1,2 bar, vase à 1,1 bar · plus bas : réparer la pompe d'abord.</text>
+  <text class="ts" x="60" y="442">Coupure la plus basse ≥ 2 bar : consigne 1,5 bar · entre 1,7 et 2 bar : consigne 1,2 bar, vase à 1,1 bar · plus bas : réparer la pompe d&#x27;abord.</text>
   <text class="t" x="40" y="468">2. Vase gonflé à la consigne moins 0,1 bar (1,4 bar), circuit sans pression : pompe coupée, un robinet ouvert.</text>
   <text class="t" x="40" y="492">3. Réducteur réglé à 1,5 bar, lu au repos après un puisage.</text>
-  <text class="t" x="40" y="516">4. Remplir et purger le ballon : soupape fermée (levier horizontal), robinet sur chaud ouvert jusqu'à l'eau sans air.</text>
+  <text class="t" x="40" y="516">4. Remplir et purger le ballon : soupape fermée (levier horizontal), robinet sur chaud ouvert jusqu&#x27;à l&#x27;eau sans air.</text>
   <text class="t" x="40" y="540">5. Essai : chauffer à 75 °C robinets fermés. Attendu ≈ 2,0 bar à 60 °C, ≈ 2,4 bar à 75 °C ; la soupape ne goutte pas.</text>
-  <text class="ts" x="60" y="562">Au-delà de 2,7 bar : regonfler le vase, vérifier qu'aucun clapet ne l'isole du ballon. Ne pas toucher à la vis du bypass de la pompe (notice).</text>
+  <text class="ts" x="60" y="562">Au-delà de 2,7 bar : regonfler le vase, vérifier qu&#x27;aucun clapet ne l&#x27;isole du ballon. Ne pas toucher à la vis du bypass de la pompe (notice).</text>
+  <g class="mk-q"><circle cx="140" cy="160" r="11"/><text class="mid" x="140" y="163.5">Q54</text></g>
+  <g class="mk-q"><circle cx="290" cy="160" r="11"/><text class="mid" x="290" y="163.5">Q54</text></g>
+  <g class="mk-q"><circle cx="745" cy="100" r="11"/><text class="mid" x="745" y="103.5">Q54</text></g>
+  <g class="mk-q"><circle cx="775" cy="135" r="11"/><text class="mid" x="775" y="138.5">Q19</text></g>
+  <g class="mk-q"><circle cx="990" cy="135" r="11"/><text class="mid" x="990" y="138.5">Q55</text></g>
+  <g class="mk-q"><circle cx="1145" cy="270" r="11"/><text class="mid" x="1145" y="273.5">Q54</text></g>
 </svg>

@@ -1,0 +1,81 @@
+# Mise en page du folio 2g, lue par outils/folio.py qui produit le SVG voisin.
+folio: 2g
+titre: Supervision Cerbo GX et écran GX Touch 50
+aria: "Cerbo GX alimenté par un fusible de 3 A après le coupe-circuit de servitude, relié au SmartShunt par un câble VE.Direct et à un écran tactile GX Touch 50 à la table à carte."
+desc: "Le SmartShunt du folio 2e est lu par un Cerbo GX posé près des coupe-circuits, alimenté côté charges du coupe-circuit de servitude à travers un fusible de 3 A. Le Cerbo GX pilote un écran tactile GX Touch 50 à la table à carte. Hypothèse écartée le 05/10 : place incertaine (Q43) et prix."
+modele: D-H5
+taille: [1200, 525]
+
+zones:
+  - {x: 930, y: 60, w: 250, h: 240, texte: Table à carte}
+
+appareils:
+  - id: cc-servitude
+    forme: interrupteur
+    titre: CC servitude
+    titre_xy: [454, 94]
+    nodes:
+      node009: {cote: point, xy: [424, 120], etiquette: [-8, 30, end]}
+      node010: {cote: point, xy: [484, 120], etiquette: [-6, 30]}
+  - id: fus-cerbo
+    forme: fusible
+    calibre: 3 A
+    nodes:
+      node340: {cote: point, xy: [560, 120], etiquette: [-3, 22, end]}
+      node341: {cote: point, xy: [606, 120], etiquette: [3, 22]}
+  - id: cerbo-gx
+    x: 700
+    y: 90
+    w: 200
+    h: 120
+    titre: Cerbo GX
+    titre_y: 28
+    lignes: ["centrale Victron · descente", "≈ 0,3 A allumé"]
+    nodes:
+      node342: {cote: gauche, a: 120, fonction: "+"}
+      node343: {cote: bas, a: 740, fonction: "−"}
+      node344: [bas, 840]
+      node345: {cote: droite, a: 195, fonction: écran}
+  - id: gx-touch-50
+    x: 980
+    y: 120
+    w: 180
+    h: 90
+    titre: GX Touch 50
+    titre_y: 22
+    lignes: ["écran tactile 5 pouces", "alimenté par le Cerbo GX"]
+    nodes:
+      node346: {cote: gauche, a: 195, fonction: "HDMI/USB"}
+  - id: shunt-servitude
+    x: 80
+    y: 330
+    w: 230
+    h: 80
+    titre: SmartShunt 500 A
+    lignes: ["pose et fils de mesure : folio 2e"]
+    nodes:
+      node094: [droite, 385]
+
+traits:   # w006, de node073 (folio 2c) à node009
+  - {classe: "p w4", points: [[300, 120], [424, 120]]}
+
+fils:
+  wire186: {etiquette: [526, 110, mid]}
+  wire187: {etiquette: [653, 112, mid]}
+  wire188: {trace: [[740, 280], [540, 280]], etiquette: [748, 252]}
+  # câbles de données de type connu (VE.Direct, câble de l'écran) : trait plein, sans section
+  wire189: {classe: "n w2", trace: [[840, 385]], etiquette: [575, 377, mid], texte: "w189 · câble VE.Direct 1,8 m"}
+  wire190: {classe: "n w2", etiquette: [955, 187, mid], texte: w190}
+
+renvois:
+  - {x: 100, y: 111, w: 200, texte: "← n073, fusible 400 A : folio 2c"}
+  - {x: 290, y: 271, w: 250, texte: "CC masse, côté charges · node006 · folio 1"}
+
+textes:
+  - {x: 940, y: 238, texte: "w190 : câble de l'écran, 2 m fourni"}
+  - {x: 940, y: 254, texte: "et rallonge de 2 m, trajet de w019"}
+  - {x: 940, y: 270, texte: "(n083 → n100)"}
+  - {x: 40, y: 446, classe: tb, texte: "Différence avec D-H1"}
+  - {x: 40, y: 466, classe: t, texte: "Même SmartShunt, même position, mêmes fils de mesure (folio 2e). Le Cerbo GX lit le shunt par VE.Direct et affiche le bord sur l'écran."}
+  - {x: 40, y: 484, classe: t, texte: "Il est alimenté après le coupe-circuit de servitude : il s'éteint bateau coupé, alors que le shunt, alimenté avant, continue de compter."}
+  - {x: 40, y: 502, classe: t, texte: "Le régulateur solaire (étude C) et un futur chargeur Victron se brancheront sur le même Cerbo GX. nXXX = nodeXXX."}

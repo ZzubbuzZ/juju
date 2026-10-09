@@ -1,0 +1,102 @@
+# Mise en page du folio 2e, lue par outils/folio.py qui produit le SVG voisin.
+# Nœuds : [côté, coordonnée le long du côté] ; un fil va d'un nœud à l'autre par « trace »
+# (points intermédiaires), en segments à 0, 45 ou 90°.
+folio: 2e
+titre: Shunt de la batterie de servitude
+aria: "Shunt de 500 A inséré sur le négatif de la batterie de servitude, entre la batterie et le coupe-circuit des négatifs, avec deux fils de mesure protégés par des fusibles de 1 A : tension de servitude et tension de la batterie moteur."
+desc: "Le shunt est inséré sur w009, côté coupe-circuit des négatifs : seul le négatif de la batterie de servitude passe de son côté batterie. Deux fils de 0,75 mm², protégés à leur source par un fusible de 1 A, alimentent le shunt et lui donnent la tension de la batterie moteur."
+modele: D-H1
+taille: [1200, 650]
+
+appareils:
+  - id: bat-servitude
+    x: 40
+    y: 270
+    w: 150
+    h: 110
+    titre: Batterie servitude
+    titre_y: 48
+    lignes: ["110 Ah · cabine de poupe"]
+    nodes:
+      node007: [droite, 296]
+      node008: [droite, 355]
+  - id: fus-bat-servitude
+    forme: fusible
+    calibre: 400 A
+    titre: A-H2
+    titre_xy: [288, 186]
+    nodes:
+      node072: {cote: point, xy: [260, 160], etiquette: [-3, 13, end]}
+      node073: {cote: point, xy: [316, 160], etiquette: [3, 13]}
+  - id: cc-servitude
+    forme: interrupteur
+    titre: CC servitude
+    titre_xy: [454, 134]
+    nodes:
+      node009: {cote: point, xy: [424, 160], etiquette: [6, 30]}
+      node010: {cote: point, xy: [484, 160], etiquette: [4, 30]}
+  - id: fus-shunt-alim
+    forme: fusible
+    calibre: 1 A
+    nodes:
+      node090: {cote: point, xy: [460, 230], etiquette: [-3, 22, end]}
+      node091: {cote: point, xy: [506, 230], etiquette: [-3, 22, end]}
+  - id: fus-shunt-aux
+    forme: fusible
+    calibre: 1 A
+    nodes:
+      node093: {cote: point, xy: [700, 230], etiquette: [-3, 22, end]}
+      node092: {cote: point, xy: [746, 230], etiquette: [3, 22]}
+  - id: shunt-servitude
+    x: 460
+    y: 325
+    w: 200
+    h: 80
+    titre: Shunt 500 A
+    titre_y: 44
+    lignes: ["connecté · Bluetooth"]
+    nodes:
+      node088: [haut, 530]
+      node089: [haut, 620]
+      node086: [gauche, 355]
+      node087: [droite, 355]
+  - id: cc-masse
+    forme: interrupteur
+    titre: CC masse
+    titre_xy: [794, 369]
+    nodes:
+      node005: {cote: point, xy: [764, 395], etiquette: [6, 30]}
+      node006: {cote: point, xy: [824, 395], etiquette: [4, 30]}
+
+traits:   # liaisons vers les renvois des nœuds qui ont d'autres fils, sur d'autres folios
+  - {classe: "p w4", points: [[484, 160], [540, 160]]}
+  - {classe: "n w4", points: [[824, 395], [900, 395]]}
+
+fils:
+  wire161: {trace: [[220, 296], [220, 160]], etiquette: [226, 250]}
+  wire006: {etiquette: [370, 150, mid]}
+  wire181: {trace: [[408, 176], [408, 230]], etiquette: [402, 214, end]}
+  wire182: {trace: [[530, 230]], etiquette: [524, 290, end]}
+  wire183: {trace: [[800, 78], [800, 230]], etiquette: [808, 160]}
+  wire184: {trace: [[620, 230]], etiquette: [660, 222, mid]}
+  wire009: {etiquette: [325, 347, mid], texte: "w009 · 35 (repris)"}
+  wire180: {trace: [[724, 355]], etiquette: [694, 345, mid]}
+  wire004: {trace: [[860, 490], [730, 490], [730, 395]], etiquette: [795, 482, mid]}
+  wire005: {trace: [[860, 455], [750, 455], [750, 409]], etiquette: [805, 447, mid]}
+
+renvois:
+  - {x: 540, y: 151, w: 210, texte: "node010 · charges : folios 1 et 2c"}
+  - {x: 680, y: 60, w: 270, texte: "CC moteur, côté batterie · node003 · folio 1"}
+  - {x: 900, y: 386, w: 230, texte: "node006 · masse des charges : folio 1"}
+  - {x: 860, y: 446, w: 130, texte: "→ node018 · folio 1"}
+  - {x: 860, y: 481, w: 130, texte: "→ node002 · folio 1"}
+
+textes:
+  - {x: 1000, y: 476, texte: "batterie moteur et chargeur,"}
+  - {x: 1000, y: 492, texte: "inchangés : hors du shunt"}
+  - {x: 40, y: 540, classe: tb, texte: "Ce que mesure le shunt"}
+  - {x: 40, y: 560, classe: t, texte: "Tout courant qui entre dans la batterie de servitude ou qui en sort : charges, chargeur de quai, alternateur par le coupleur,"}
+  - {x: 40, y: 578, classe: t, texte: "et démarreur quand le coupe-circuit de couplage est fermé (d'où le calibre de 500 A). Les fils de mesure partent du côté batterie"}
+  - {x: 40, y: 596, classe: t, texte: "des coupe-circuits, après les fusibles de 400 A : la mesure continue coupe-circuits ouverts. Lecture sur smartphone (D-H1)."}
+  - {x: 40, y: 626, classe: ts tu, texte: "Avec l'étude E (décidée le 05/10) : LiFePO4 de 200 Ah, Orion XS et Blue Smart à la place du coupleur et de la sortie 2 du Dolphin ; le démarreur ne traverse plus le shunt."}
+  - {x: 40, y: 642, classe: ts tu, texte: "Le shunt va avec le chargeur de quai : dans la contremarche (folio 2i, E-H1) ou dans le coffre de la batterie (folio 2k, E-H4), au choix sur place."}
