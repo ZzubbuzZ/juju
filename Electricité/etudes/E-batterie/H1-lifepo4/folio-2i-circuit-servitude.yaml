@@ -1,0 +1,146 @@
+# Mise en page du folio 2i, lue par outils/folio.py qui produit le SVG voisin.
+# Nœuds : [côté, coordonnée le long du côté] ; un fil va d'un nœud à l'autre par « trace »
+# (points intermédiaires), en segments à 0, 45 ou 90°.
+folio: 2i
+titre: Circuit servitude cible (Orion XS, chargeur de quai et shunt dans la contremarche)
+aria: "Circuit servitude cible : LiFePO4, Orion XS, Blue Smart, départs et shunt dans la contremarche."
+desc: "Batterie de servitude LiFePO4 et ses chargeurs : sortie de l'Orion XS et Blue Smart, chacun avec son fusible à la source ; départs vers les tableaux, shunt et coupe-circuit des négatifs. La commande de l'Orion XS est prise côté moteur (folio 2h)."
+modele: E-H1
+taille: [1200, 710]
+
+zones:
+  - {x: 20, y: 40, w: 300, h: 640, texte: Coffre de la cabine de poupe}
+  - {x: 340, y: 40, w: 840, h: 640, texte: Contremarche de la descente}
+
+appareils:
+  - id: bat-servitude
+    x: 40
+    y: 230
+    w: 150
+    h: 90
+    titre: LiFePO4 200 Ah
+    lignes: ["Humsienk · BMS 250 A"]
+    nodes:
+      node007: [droite, 286]
+      node008: [bas, 170]
+  - id: fus-bat-servitude
+    forme: fusible
+    calibre: 300 A
+    titre: MEGA
+    titre_xy: [277, 268]
+    nodes:
+      node072: {cote: point, xy: [254, 286], etiquette: [-2, -12, end]}
+      node073: {cote: point, xy: [300, 286], etiquette: [2, 20]}
+  - id: cc-servitude
+    forme: interrupteur
+    titre: CC servitude
+    titre_xy: [474, 246]
+    nodes:
+      node009: {cote: point, xy: [444, 270], etiquette: [6, 32]}
+      node010: {cote: point, xy: [504, 270], etiquette: [6, -8]}
+  - id: fus-chargeur-lifepo4
+    forme: fusible
+    calibre: 25 A
+    nodes:
+      node377: {cote: point, xy: [600, 140], etiquette: [-2, 20, end]}
+      node378: {cote: point, xy: [646, 140], etiquette: [2, 20]}
+  - id: chargeur-lifepo4
+    x: 720
+    y: 84
+    w: 230
+    h: 96
+    titre: Blue Smart IP67 12/17
+    titre_y: 40
+    lignes: [chargeur de quai LiFePO4]
+    nodes:
+      node372: [gauche, 140]
+      node373: [droite, 150]
+      node374: {cote: haut, a: 760, fonction: "230 V"}
+      node375: {cote: haut, a: 760, fonction: "230 V"}
+      node376: {cote: haut, a: 760, fonction: "230 V"}
+  - id: fus-orion-sortie
+    forme: fusible
+    calibre: 70 A
+    nodes:
+      node366: {cote: point, xy: [600, 200], etiquette: [-2, 20, end]}
+      node367: {cote: point, xy: [646, 200], etiquette: [2, 20]}
+  - id: fus-source-tableau-servitude
+    forme: fusible
+    calibre: 50 A
+    nodes:
+      node082: {cote: point, xy: [610, 340], etiquette: [-2, 20, end]}
+      node083: {cote: point, xy: [656, 340], etiquette: [2, 20]}
+  - id: fus-source-tableau-scheiber
+    forme: fusible
+    calibre: 30 A
+    nodes:
+      node084: {cote: point, xy: [610, 400], etiquette: [-2, 20, end]}
+      node085: {cote: point, xy: [656, 400], etiquette: [2, 20]}
+  - id: tableau-scheiber
+    x: 730
+    y: 380
+    w: 250
+    h: 56
+    titre: Tableau Scheiber 2 voies
+    lignes: ["frigo, pompe de cale : folio 1"]
+    nodes:
+      node050: {cote: gauche, a: 400, fonction: "+"}
+      node051: {cote: droite, a: 400, fonction: "−"}
+  - id: shunt-servitude
+    x: 440
+    y: 520
+    w: 160
+    h: 48
+    titre: Shunt 500 A
+    lignes: [D-H1]
+    nodes:
+      node086: [gauche, 544]
+      node087: [droite, 544]
+  - id: cc-masse
+    forme: interrupteur
+    titre: CC masse
+    titre_xy: [1084, 594]
+    titre_ancre: ""
+    nodes:
+      node005: {cote: point, xy: [1060, 560], etiquette: [-20, 14, end]}
+      node006: {cote: point, xy: [1060, 620], etiquette: [-20, 0, end]}
+
+barres:
+  - {node: node006, de: [1060, 620], a: [1060, 640], epaisseur: w2}
+
+pastilles:
+  - {id: A11, x: 40, y: 230}
+
+fils:
+  wire161: {etiquette: [193, 303], texte: "w161 · 35"}
+  wire006: {trace: [[428, 286]], etiquette: [384, 278, mid]}
+  wire210: {trace: [[420, 270], [420, 140]], etiquette: [436, 132]}
+  wire211: {etiquette: [683, 132, mid]}
+  wire204: {trace: [[428, 254], [428, 200]], etiquette: [436, 192]}
+  wire205: {trace: [[720, 200]], etiquette: [683, 192, mid]}
+  wire166: {trace: [[540, 270], [540, 340]], etiquette: [548, 332]}
+  wire019: {trace: [[730, 340]], etiquette: [693, 332, mid]}
+  wire167: {trace: [[520, 286], [520, 400]], etiquette: [528, 392]}
+  wire022: {etiquette: [693, 392, mid]}
+  wire009: {trace: [[170, 544]], etiquette: [214, 536], texte: "w009 · 35 (D-H1)"}
+  wire180: {trace: [[1044, 544]], etiquette: [820, 536, mid]}
+  wire212: {trace: [[1100, 150], [1100, 520]], etiquette: [1106, 330]}
+  wire206: {trace: [[1040, 480], [1060, 480]], etiquette: [1054, 525, end]}
+
+cables:
+  C10:
+    fils: [wire213, wire214, wire215]
+    trace: [[940, 64], [760, 64]]
+    etiquette: [840, 56, mid]
+    texte: "w213 · w214 · w215 · 3 × 1,5"
+
+renvois:
+  - {x: 940, y: 55, w: 235, texte: "C10 · n211 · n209 · n212 · folio 3"}
+  - {x: 720, y: 191, w: 190, texte: "n361 · Orion XS sortie · folio 2h"}
+  - {x: 730, y: 331, w: 260, texte: "→ n100 · tableau de la table à carte : folio 2b"}
+  - {x: 830, y: 471, w: 210, texte: "n362 · Orion XS − · folio 2h"}
+  - {x: 985, y: 640, w: 150, texte: "node006 · charges : folio 1"}
+
+textes:
+  - {x: 440, y: 590, texte: "Fils de mesure du shunt : folio 2e."}
+  - {x: 20, y: 698, texte: "En vert : nouveau (étude E). Déposés : coupleur Scheiber, coupe-circuit de couplage et leurs câbles ; le guindeau est passé sur le circuit moteur (folio 2h)."}

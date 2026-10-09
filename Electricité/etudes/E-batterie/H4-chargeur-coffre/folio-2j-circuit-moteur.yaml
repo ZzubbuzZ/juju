@@ -1,0 +1,215 @@
+# Mise en page du folio 2j (variante E-H4 du folio 2h, dont il reprend la disposition), lue par outils/folio.py qui produit le SVG voisin.
+# Nœuds : [côté, coordonnée le long du côté] ; un fil va d'un nœud à l'autre par « trace »
+# (points intermédiaires), en segments à 0, 45 ou 90°.
+folio: 2j
+titre: Circuit moteur cible (Orion XS dans le coffre de la batterie)
+aria: "Circuit moteur cible, variante : Orion XS dans le coffre de la batterie de servitude."
+desc: "Batterie moteur et ses consommateurs : démarreur et alternateur, guindeau désormais alimenté par le coupe-circuit moteur, Dolphin raccordé au plus près de la batterie, et entrée de l'Orion XS avec son fusible de 70 A. Variante : l'Orion XS est dans le coffre de la batterie de servitude."
+modele: E-H4
+taille: [1200, 720]
+
+zones:
+  - {x: 20, y: 40, w: 320, h: 300, texte: Coffre de cockpit tribord}
+  - {x: 360, y: 40, w: 820, h: 640, texte: "Contremarche de la descente : platine des coupe-circuits"}
+  - {x: 36, y: 348, w: 304, h: 332, texte: Coffre de la cabine de poupe}
+
+appareils:
+  - id: chargeur-quai
+    x: 40
+    y: 64
+    w: 200
+    h: 64
+    titre: Chargeur Dolphin 20 A
+    lignes: ["batterie moteur seule · 230 V : folio 3"]
+    nodes:
+      node018: [gauche, 112]
+      node016: [bas, 216]
+  - id: bat-moteur
+    x: 40
+    y: 180
+    w: 130
+    h: 80
+    titre: Batterie moteur
+    lignes: [Pb 110 Ah]
+    nodes:
+      node001: [droite, 220]
+      node002: [gauche, 240]
+  - id: fus-bat-moteur
+    forme: fusible
+    calibre: 400 A
+    titre: A-H2
+    titre_xy: [256, 258]
+    nodes:
+      node070: {cote: point, xy: [232, 220], etiquette: [-2, 30, end]}
+      node071: {cote: point, xy: [280, 220], etiquette: [4, 18]}
+  - id: fus-chargeur-moteur
+    forme: fusible
+    calibre: 30 A
+    calibre_cote: gauche
+    nodes:
+      node075: {cote: point, xy: [216, 168], etiquette: [12, 4]}
+      node074: {cote: point, xy: [216, 204], etiquette: [12, 2]}
+  - id: cc-moteur
+    forme: interrupteur
+    titre: CC moteur
+    titre_xy: [454, 196]
+    nodes:
+      node003: {cote: point, xy: [424, 220], etiquette: [-6, 18, end]}
+      node004: {cote: point, xy: [484, 220], etiquette: [20, -6]}
+  - id: moteur
+    x: 760
+    y: 160
+    w: 170
+    h: 90
+    titre: Yanmar 3GMD
+    lignes: [démarreur + alternateur]
+    nodes:
+      node031: [gauche, 220]
+      node032: [bas, 900]
+  - id: disj-guindeau
+    forme: fusible
+    calibre: 70 A
+    titre: disjoncteur du guindeau
+    titre_xy: [850, 100]
+    nodes:
+      node020: {cote: point, xy: [820, 120], etiquette: [-4, 20, end]}
+      node021: {cote: point, xy: [880, 120], etiquette: [4, 20]}
+  - id: relais-guindeau
+    x: 960
+    y: 80
+    w: 120
+    h: 130
+    titre: Relais
+    lignes: [guindeau]
+    nodes:
+      node022: [gauche, 120]
+      node023: [droite, 170]
+      node024: [droite, 110]
+      node025: [droite, 140]
+      node026: [bas, 1030]
+      node027: [bas, 1066]
+  - id: fus-telecommande-guindeau
+    forme: fusible
+    calibre: 5 A
+    nodes:
+      node033: {cote: point, xy: [945, 250], etiquette: [8, -6]}
+      node034: {cote: point, xy: [945, 290], etiquette: [8, 14]}
+  - id: telecommande-guindeau
+    x: 980
+    y: 330
+    w: 170
+    h: 70
+    inconnu: true
+    titre: Télécommande
+    titre_y: 50
+    nodes:
+      node035: [gauche, 365]
+      node036: {cote: haut, a: 1030, etiquette: [-5, 14, end]}
+      node037: {cote: haut, a: 1066, etiquette: [5, 14]}
+  - id: guindeau
+    forme: cercle
+    cx: 1140
+    cy: 125
+    r: 20
+    symbole: M
+    nodes:
+      node029: {angle: 131.41, cote: point, etiquette: [2, -20]}
+      node030: {angle: 228.59, cote: point, etiquette: [2, 16]}
+  - id: cc-masse
+    forme: interrupteur
+    titre: CC masse
+    titre_xy: [530, 618]
+    nodes:
+      node005: {cote: point, xy: [440, 640], etiquette: [-2, 32, end]}
+      node006: {cote: point, xy: [500, 640], etiquette: [4, 32]}
+  - id: fus-orion-entree
+    forme: fusible
+    calibre: 70 A
+    calibre_cote: gauche
+    nodes:
+      node364: {cote: point, xy: [496, 262], etiquette: [-12, 2, end]}
+      node365: {cote: point, xy: [496, 302], etiquette: [-12, 8, end]}
+  - id: fus-orion-sortie
+    forme: fusible
+    calibre: 70 A
+    calibre_cote: gauche
+    nodes:
+      node366: {cote: point, xy: [100, 410], etiquette: [8, 4]}
+      node367: {cote: point, xy: [100, 446], etiquette: [8, 4]}
+  - id: orion-xs
+    x: 60
+    y: 470
+    w: 200
+    h: 96
+    titre: Orion XS 12/12-50A
+    titre_y: 40
+    lignes: ["réglé vers 15 A"]
+    nodes:
+      node361: [haut, 100]
+      node360: [haut, 220]
+      node363: [droite, 500]
+      node362: [bas, 200]
+  - id: inter-orion
+    forme: interrupteur
+    titre: interrupteur à voyant (Q48)
+    titre_xy: [564, 546]
+    titre_ancre: ""
+    nodes:
+      node371: {cote: point, xy: [540, 520], etiquette: [8, -3]}
+      node370: {cote: point, xy: [540, 564], etiquette: [-8, 12, end]}
+      node379: {cote: point, xy: [524, 542], etiquette: [-8, -6, end]}
+  - id: fus-orion-remote
+    forme: fusible
+    calibre: 1 A
+    nodes:
+      node369: {cote: point, xy: [620, 580], etiquette: [-4, 20, end]}
+      node368: {cote: point, xy: [666, 580], etiquette: [4, 20]}
+
+barres:
+  - {node: node006, de: [500, 640], a: [1170, 640]}
+
+incertains:
+  - {x: 935, y: 218, w: 223, h: 192}
+
+pastilles:
+  - {id: Q59, x: 1140, y: 238}
+
+liaisons:
+  - [node074, node070]
+
+fils:
+  wire201: {trace: [[30, 112], [30, 230]], etiquette: [36, 160]}
+  wire160: {etiquette: [201, 236, mid]}
+  wire200: {etiquette: [210, 152, end]}
+  wire001: {etiquette: [388, 212, mid]}
+  wire012: {etiquette: [620, 212, mid]}
+  wire217: {trace: [[500, 204], [500, 120]], etiquette: [680, 112, mid], texte: "w217 · 35 · guindeau sur le circuit moteur"}
+  wire018: {etiquette: [906, 112, mid]}
+  wire020: {etiquette: [1100, 104, mid], texte: w020}
+  wire021: {etiquette: [1100, 156, mid], texte: w021}
+  wire013: {trace: [[900, 640]], etiquette: [894, 300, end]}
+  wire015: {trace: [[1170, 640], [1170, 170]], etiquette: [1164, 470, end]}
+  wire061: {trace: [[945, 135]], etiquette: [952, 228]}
+  wire062: {trace: [[945, 365]], etiquette: [951, 322]}
+  wire063: {etiquette: [1024, 270, mid, v]}
+  wire064: {etiquette: [1060, 270, mid, v]}
+  wire004: {trace: [[30, 250], [30, 656], [424, 656]], etiquette: [36, 300]}
+  wire202: {trace: [[496, 232]], etiquette: [488, 250, end]}
+  wire203: {trace: [[496, 446], [220, 446]], etiquette: [420, 438, mid], texte: "w203 · 16 · 1,5 m"}
+  wire205: {etiquette: [108, 464]}
+  wire204: {trace: [[100, 392]]}
+  wire206: {trace: [[200, 600]], etiquette: [206, 586]}
+  wire209: {trace: [[540, 500]], etiquette: [365, 492], texte: "w209 · 0,75 · 2 m vers le coffre"}
+  wire216: {trace: [[424, 542], [424, 624]], etiquette: [430, 600], texte: "w216 · voyant"}
+  wire208: {trace: [[540, 580]], etiquette: [580, 574, mid]}
+  wire207: {trace: [[520, 256], [520, 350], [870, 350], [870, 580]], etiquette: [680, 344, mid], texte: "w207 · + de l'entrée (notice)"}
+
+renvois:
+  - {x: 40, y: 374, w: 170, texte: "w204 · 16 → n007 · folio 2k"}
+  - {x: 135, y: 600, w: 130, texte: "→ n087 · folio 2k"}
+
+textes:
+  - {x: 1150, y: 656, classe: "ts end", texte: "node006 · masse des charges : folio 1"}
+  - {x: 1135, y: 70, classe: "ts mid", texte: "Guindeau 700 W"}
+  - {x: 1040, y: 426, classe: "ts tu mid", texte: "télécommande : sections à relever (Q59)"}
+  - {x: 20, y: 710, texte: "En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice)."}

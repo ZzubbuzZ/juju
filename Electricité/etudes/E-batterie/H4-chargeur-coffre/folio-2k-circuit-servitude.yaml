@@ -1,0 +1,165 @@
+# Mise en page du folio 2k, lue par outils/folio.py qui produit le SVG voisin.
+# Nœuds : [côté, coordonnée le long du côté] ; un fil va d'un nœud à l'autre par « trace »
+# (points intermédiaires), en segments à 0, 45 ou 90°.
+# Disposition sans croisement : le Blue Smart à gauche (son − descend par le bord du coffre),
+# l'Orion XS entre lui et la batterie, le shunt en bas ; node087 reçoit les trois négatifs
+# sur son côté gauche (w212 à l'horizontale, w206 d'en haut, w180 repart vers le bas).
+folio: 2k
+titre: Circuit servitude cible (Orion XS, chargeur de quai et shunt dans le coffre)
+aria: "Circuit servitude cible, variante : Orion XS, Blue Smart et shunt dans le coffre de la batterie."
+desc: "Batterie de servitude LiFePO4 et ses chargeurs : sortie de l'Orion XS et Blue Smart, chacun avec son fusible à la source ; départs vers les tableaux, shunt et coupe-circuit des négatifs ; la commande de l'Orion XS est prise côté moteur (folio 2j). Variante : Orion XS, Blue Smart et shunt dans le coffre de la batterie."
+modele: E-H4
+taille: [1200, 760]
+
+zones:
+  - {x: 20, y: 40, w: 460, h: 690, texte: Coffre de la cabine de poupe}
+  - {x: 500, y: 40, w: 680, h: 690, texte: Contremarche de la descente}
+
+appareils:
+  - id: chargeur-lifepo4
+    x: 60
+    y: 96
+    w: 220
+    h: 84
+    titre: Blue Smart IP67 12/17
+    titre_y: 38
+    lignes: [chargeur de quai LiFePO4]
+    nodes:
+      node372: [droite, 160]
+      node373: [gauche, 160]
+      node374: {cote: haut, a: 240, fonction: "230 V", etiquette: [-5, 14, end]}
+      node375: {cote: haut, a: 240, fonction: "230 V", etiquette: [-5, 14, end]}
+      node376: {cote: haut, a: 240, fonction: "230 V", etiquette: [-5, 14, end]}
+  - id: fus-chargeur-lifepo4
+    forme: fusible
+    calibre: 25 A
+    calibre_cote: gauche
+    nodes:
+      node377: {cote: point, xy: [340, 240], etiquette: [8, 4]}
+      node378: {cote: point, xy: [340, 200], etiquette: [8, 4]}
+  - id: bat-servitude
+    x: 240
+    y: 310
+    w: 180
+    h: 80
+    titre: LiFePO4 200 Ah
+    titre_y: 38
+    lignes: ["Humsienk · BMS 250 A"]
+    nodes:
+      node007: {cote: haut, a: 340, etiquette: [-5, 14, end]}
+      node008: [bas, 400]
+  - id: fus-bat-servitude
+    forme: fusible
+    calibre: 300 A
+    titre: MEGA
+    titre_xy: [443, 316]
+    nodes:
+      node072: {cote: point, xy: [420, 286], etiquette: [-2, 20, end]}
+      node073: {cote: point, xy: [466, 286], etiquette: [2, 20]}
+  - id: fus-orion-sortie
+    forme: fusible
+    calibre: 70 A
+    calibre_cote: gauche
+    nodes:
+      node366: {cote: point, xy: [200, 330], etiquette: [8, 4]}
+      node367: {cote: point, xy: [200, 370], etiquette: [8, 4]}
+  - id: orion-xs
+    x: 50
+    y: 420
+    w: 250
+    h: 84
+    titre: Orion XS 12/12-50A
+    titre_y: 40
+    lignes: ["entrée n360, commande n363 : folio 2j"]
+    nodes:
+      node361: [haut, 200]
+      node362: [bas, 76]
+  - id: shunt-servitude
+    x: 100
+    y: 560
+    w: 320
+    h: 70
+    titre: Shunt 500 A
+    titre_y: 22
+    nodes:
+      node086: [haut, 400]
+      node087: [gauche, 590]
+      node088: [bas, 300]
+      node089: [bas, 200]
+  - id: cc-servitude
+    forme: interrupteur
+    titre: CC servitude
+    titre_xy: [650, 262]
+    nodes:
+      node009: {cote: point, xy: [620, 286], etiquette: [-4, 32, end]}
+      node010: {cote: point, xy: [680, 286], etiquette: [6, -8]}
+  - id: fus-source-tableau-servitude
+    forme: fusible
+    calibre: 50 A
+    nodes:
+      node082: {cote: point, xy: [780, 360], etiquette: [-2, 20, end]}
+      node083: {cote: point, xy: [826, 360], etiquette: [2, 20]}
+  - id: fus-source-tableau-scheiber
+    forme: fusible
+    calibre: 30 A
+    nodes:
+      node084: {cote: point, xy: [780, 420], etiquette: [-2, 20, end]}
+      node085: {cote: point, xy: [826, 420], etiquette: [2, 20]}
+  - id: tableau-scheiber
+    x: 880
+    y: 400
+    w: 250
+    h: 56
+    titre: Tableau Scheiber 2 voies
+    lignes: ["frigo, pompe de cale : folio 1"]
+    nodes:
+      node050: {cote: gauche, a: 420, fonction: "+"}
+      node051: {cote: droite, a: 420, fonction: "−"}
+  - id: cc-masse
+    forme: interrupteur
+    titre: CC masse
+    titre_xy: [980, 676]
+    nodes:
+      node005: {cote: point, xy: [950, 700], etiquette: [-6, 18, end]}
+      node006: {cote: point, xy: [1010, 700], etiquette: [4, 18]}
+
+barres:
+  - {node: node006, de: [1010, 700], a: [1024, 700], epaisseur: w2}
+
+pastilles:
+  - {id: A11, x: 240, y: 310}
+
+fils:
+  wire161: {trace: [[364, 286]], etiquette: [366, 276], texte: "w161 · 35"}
+  wire006: {etiquette: [543, 278, mid]}
+  wire210: {etiquette: [334, 262, end], texte: "w210 · 4"}
+  wire211: {trace: [[340, 160]], etiquette: [310, 152, mid]}
+  wire204: {trace: [[316, 286], [200, 286]], etiquette: [240, 278, mid]}
+  wire205: {etiquette: [208, 402]}
+  wire206: {trace: [[76, 566]], etiquette: [82, 538]}
+  wire212: {trace: [[34, 160], [34, 590]], etiquette: [40, 320]}
+  wire009: {etiquette: [394, 536, end], texte: "w009 · 35 · 0,2 m"}
+  wire180: {trace: [[84, 606], [84, 700]], etiquette: [300, 692, mid], texte: "w180 · 35 · 1 m"}
+  wire182: {trace: [[510, 652], [300, 652]], etiquette: [405, 644, mid], texte: "w182 · 0,75 · 1,2 m"}
+  wire184: {trace: [[510, 676], [200, 676]], etiquette: [405, 668, mid], texte: "w184 · 0,75 · 1,2 m"}
+  wire166: {trace: [[716, 286], [716, 360]], etiquette: [724, 352]}
+  wire019: {trace: [[880, 360]], etiquette: [853, 352, mid]}
+  wire167: {trace: [[696, 302], [696, 420]], etiquette: [704, 412]}
+  wire022: {etiquette: [853, 412, mid]}
+
+cables:
+  C10:
+    fils: [wire213, wire214, wire215]
+    trace: [[670, 72], [240, 72]]
+    etiquette: [252, 88]
+    texte: "w213 · w214 · w215 · 3 × 1,5 · 6 m"
+
+renvois:
+  - {x: 670, y: 63, w: 220, texte: "C10 · n211 · n209 · n212 · folio 3"}
+  - {x: 880, y: 351, w: 260, texte: "→ n100 · tableau de la table à carte : folio 2b"}
+  - {x: 510, y: 643, w: 230, texte: "← n091, fusible 1 A (platine) : folio 2e"}
+  - {x: 510, y: 667, w: 270, texte: "← n093, fusible 1 A (batterie moteur) : folio 2e"}
+  - {x: 1024, y: 691, w: 150, texte: "node006 · charges : folio 1"}
+
+textes:
+  - {x: 20, y: 750, texte: "En vert : nouveau (étude E). Déposés : coupleur Scheiber, coupe-circuit de couplage et leurs câbles ; le guindeau est passé sur le circuit moteur (folio 2j)."}
