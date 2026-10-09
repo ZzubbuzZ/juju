@@ -113,8 +113,9 @@
 
   <!-- Entrée 12 V -->
   <path class="p w3" d="M920 400 H990"/>
-  <rect class="flag-new" x="990" y="370" width="170" height="64"/>
+  <rect class="flag-new" x="990" y="370" width="170" height="80"/>
   <text class="tb mid tn" x="1075" y="392">Entrée 12 V · 200 W</text>
   <text class="ts mid" x="1075" y="408">câblée en permanence</text>
-  <text class="ts mid" x="1075" y="424">relais 30 A : folio 2n (B-H3)</text>
+  <text class="ts mid" x="1075" y="424">relais 30 A (B-H3)</text>
+  <text class="id mid" x="1075" y="440">n318 · n319 : folio 2n</text>
 </svg>

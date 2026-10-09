@@ -59,8 +59,8 @@
   <text class="ts mid" x="454" y="94">CC moteur</text>
   <text class="id end" x="413" y="140">node003</text>
   <path class="p w4" d="M488 120 H560"/>
-  <rect class="flag" x="560" y="111" width="170" height="18"/>
-  <text class="ts mid" x="645" y="124">démarreur, couplage : folio 1</text>
+  <rect class="flag" x="560" y="111" width="240" height="18"/>
+  <text class="ts mid" x="680" y="124">node004 · démarreur, couplage : folio 1</text>
 
   <!-- Départs de node003 -->
   <path class="p w2" d="M420 124 V190 H500"/>
@@ -77,10 +77,10 @@
   <path class="p w2" d="M546 230 H700"/>
   <text class="id mid" x="623" y="184">wire003 · 6</text>
   <text class="id mid" x="623" y="224">wire002 · 6</text>
-  <rect class="flag" x="700" y="181" width="215" height="18"/>
-  <text class="ts mid" x="807" y="194">chargeur, sortie 1 · node016</text>
-  <rect class="flag" x="700" y="221" width="215" height="18"/>
-  <text class="ts mid" x="807" y="234">coupleur, entrée moteur · node013</text>
+  <rect class="flag" x="700" y="181" width="250" height="18"/>
+  <text class="ts mid" x="825" y="194">chargeur, sortie 1 · node016 · folio 1</text>
+  <rect class="flag" x="700" y="221" width="250" height="18"/>
+  <text class="ts mid" x="825" y="234">coupleur, entrée moteur · node013 · folio 1</text>
   <g class="mk-a"><circle cx="580" cy="210" r="10"/><text class="mid" x="580" y="213.5">A4</text></g>
 
   <!-- ============ Batterie de servitude ============ -->
@@ -119,10 +119,10 @@
   <path class="p w2" d="M546 440 H700"/>
   <text class="id mid" x="623" y="394">wire008 · 6</text>
   <text class="id mid" x="623" y="434">wire007 · 6</text>
-  <rect class="flag" x="700" y="391" width="215" height="18"/>
-  <text class="ts mid" x="807" y="404">chargeur, sortie 2 · node017</text>
-  <rect class="flag" x="700" y="431" width="215" height="18"/>
-  <text class="ts mid" x="807" y="444">coupleur, entrée servitude · node014</text>
+  <rect class="flag" x="700" y="391" width="250" height="18"/>
+  <text class="ts mid" x="825" y="404">chargeur, sortie 2 · node017 · folio 1</text>
+  <rect class="flag" x="700" y="431" width="250" height="18"/>
+  <text class="ts mid" x="825" y="444">coupleur, entrée servitude · node014 · folio 1</text>
   <g class="mk-a"><circle cx="580" cy="420" r="10"/><text class="mid" x="580" y="423.5">A4</text></g>
 
   <!-- ============ Guindeau et tableau de la table à carte ============ -->
@@ -141,10 +141,10 @@
   <rect class="fuse-new" x="640" y="246" width="46" height="18"/>
   <text class="idn mid" x="663" y="259">50 A</text>
   <text class="idn mid" x="663" y="277">n082 · n083</text>
-  <path class="p w2" d="M686 255 H1000"/>
+  <path class="p w2" d="M686 255 H950"/>
   <text class="id mid" x="850" y="249">wire019 · 6</text>
-  <rect class="flag" x="1000" y="246" width="180" height="18"/>
-  <text class="ts mid" x="1090" y="259">tableau table à carte · node100</text>
+  <rect class="flag" x="950" y="246" width="235" height="18"/>
+  <text class="ts mid" x="1067.5" y="259">tableau table à carte · node100 · folio 1</text>
 
   <!-- Tableau Scheiber, depuis node010 -->
   <circle class="dp" cx="640" cy="330" r="4.5"/>
@@ -154,10 +154,10 @@
   <rect class="fuse-new" x="760" y="281" width="46" height="18"/>
   <text class="idn mid" x="783" y="294">30 A</text>
   <text class="idn mid" x="783" y="312">n084 · n085</text>
-  <path class="p w2" d="M806 290 H1000"/>
+  <path class="p w2" d="M806 290 H950"/>
   <text class="id mid" x="903" y="284">wire022 · 6</text>
-  <rect class="flag" x="1000" y="281" width="180" height="18"/>
-  <text class="ts mid" x="1090" y="294">tableau Scheiber · node050</text>
+  <rect class="flag" x="950" y="281" width="235" height="18"/>
+  <text class="ts mid" x="1067.5" y="294">tableau Scheiber · node050 · folio 1</text>
 
   <!-- Légende -->
   <text class="ts" x="40" y="520">En vert : nouveau (porte-fusibles et tronçons courts).</text>

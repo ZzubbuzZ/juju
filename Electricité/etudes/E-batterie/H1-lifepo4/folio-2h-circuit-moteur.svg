@@ -114,7 +114,7 @@
   <text class="id end" x="434" y="658">node005</text>
   <text class="id" x="504" y="658">node006</text>
   <path class="n w4" d="M504 640 H1150"/>
-  <text class="ts end" x="1150" y="660">masse des charges : folio 1</text>
+  <text class="ts end" x="1150" y="660">node006 · masse des charges : folio 1</text>
   <circle class="dn" cx="880" cy="640" r="4"/><circle class="dn" cx="1020" cy="640" r="4"/>
   <path class="p w3" d="M484 204 V250"/>
   <text class="idn end" x="476" y="238">wire202 · 16</text>

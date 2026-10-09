@@ -66,10 +66,11 @@
   <rect class="box" x="520" y="129" width="50" height="22"/>
   <text class="ts mid" x="545" y="144">disj.</text>
   <text class="ts mid" x="560" y="120">Disjoncteur guindeau (existant)</text>
-  <text class="id mid" x="545" y="164">n020</text>
+  <text class="id mid" x="545" y="164">n020 · n021</text>
   <text class="idn mid" x="486" y="134">wire101</text>
   <path class="p w5" d="M570 140 H700"/>
-  <text class="ts" x="710" y="145">vers relais guindeau · inchangé (folio 1)</text>
+  <rect class="flag" x="700" y="131" width="290" height="18"/>
+  <text class="ts mid" x="845" y="144">wire018 → n022, relais guindeau (inchangé) : folio 1</text>
 
   <!-- Départ tableau table à carte -->
   <path class="p w3" d="M452 260 H480"/>
@@ -123,6 +124,7 @@
   <rect class="flag" x="660" y="512" width="80" height="18"/>
   <text class="id mid" x="700" y="525">→ node006</text>
   <text class="id" x="748" y="525">wire023 · existant</text>
+  <text class="id" x="704" y="504">n051</text>
 
   <!-- Frigo -->
   <path class="p w2" d="M860 380 H930"/>
@@ -131,16 +133,15 @@
   <text class="tb mid" x="980" y="377">EPS 100</text>
   <text class="ts mid" x="980" y="394">12 V / 230 V</text>
   <text class="id end" x="926" y="394">n042</text>
-  <text class="id" x="984" y="418">n043</text>
+  <text class="id end" x="976" y="418">n043</text>
   <text class="ts mid" x="980" y="344">liaison existante · entrée 230 V : folio 3</text>
   <path class="p w2" d="M1030 380 H1070"/>
   <text class="id mid" x="1050" y="372">wire027</text>
-  <text class="id mid" x="1050" y="414">n044 · n040</text>
+  <text class="id" x="990" y="414">n044 · n045 → n040 · n041</text>
   <rect class="box" x="1070" y="355" width="110" height="50" rx="2"/>
   <text class="tb mid" x="1125" y="377">Groupe froid</text>
   <text class="ts mid" x="1125" y="394">CU-55 · 40 W</text>
-  <text class="id" x="1129" y="418">n041</text>
-  <path class="n w2" d="M980 405 V423"/>
+    <path class="n w2" d="M980 405 V423"/>
   <rect class="flag" x="925" y="423" width="110" height="18"/>
   <text class="id mid" x="980" y="436">wire025 → node051</text>
   <path class="n w2" d="M1125 405 V423"/>
@@ -183,6 +184,7 @@
   <path class="lever" d="M80 520 L137 507"/>
   <text class="ts mid" x="110" y="498">CC masse (−)</text>
   <text class="id mid" x="80" y="540">node005</text>
+  <text class="id mid" x="140" y="540">node006</text>
   <path class="n w4" d="M144 520 H160"/>
   <rect class="flag" x="160" y="511" width="76" height="18"/>
   <text class="id mid" x="198" y="524">→ node006</text>

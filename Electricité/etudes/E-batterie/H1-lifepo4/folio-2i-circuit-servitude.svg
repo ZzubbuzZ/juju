@@ -96,7 +96,7 @@
   <text class="ts mid" x="1090" y="596">CC masse</text>
   <path class="n w4" d="M1064 620 H1100 V650"/>
   <rect class="flag" x="1020" y="650" width="150" height="18"/>
-  <text class="ts mid" x="1095.0" y="663">masse des charges : folio 1</text>
+  <text class="ts mid" x="1095.0" y="663">node006 · charges : folio 1</text>
   <path class="p w3" d="M440 266 V200 H600"/>
   <text class="idn" x="448" y="214">wire204 · 16</text>
   <rect class="fuse-new" x="600" y="191" width="46" height="18"/>
@@ -106,8 +106,8 @@
   <text class="idn mid" x="683" y="192">wire205</text>
   <rect class="flag" x="720" y="191" width="190" height="18"/>
   <text class="ts mid" x="815.0" y="204">n361 · Orion XS sortie · folio 2h</text>
-  <rect class="flag" x="770" y="545" width="200" height="18"/>
-  <text class="ts mid" x="870.0" y="558">n362 · Orion XS − (wire206) · 2h</text>
+  <rect class="flag" x="750" y="545" width="220" height="18"/>
+  <text class="ts mid" x="860.0" y="558">n362 · Orion XS − (wire206) · folio 2h</text>
   <path class="n w3" d="M970 554 H992 V616"/>
   <path class="p w2" d="M448 266 V140 H600"/>
   <text class="idn" x="456" y="160">wire210 · 4</text>

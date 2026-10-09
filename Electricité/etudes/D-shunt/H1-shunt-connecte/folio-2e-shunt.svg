@@ -59,9 +59,10 @@
   <path class="lever" d="M424 160 L481 147"/>
   <text class="ts mid" x="454" y="134">CC servitude</text>
   <text class="id end" x="414" y="184">node009</text>
+  <text class="id" x="488" y="184">node010</text>
   <path class="p w4" d="M488 160 H540"/>
-  <rect class="flag" x="540" y="151" width="170" height="18"/>
-  <text class="ts mid" x="625" y="164">charges : folios 1 et 2c</text>
+  <rect class="flag" x="540" y="151" width="210" height="18"/>
+  <text class="ts mid" x="645" y="164">node010 · charges : folios 1 et 2c</text>
 
   <!-- Alimentation et mesure du shunt, depuis node009 -->
   <path class="p w1" d="M420 164 V230 H500"/>
@@ -73,8 +74,8 @@
   <text class="idn end" x="554" y="292">wire182 · 0,75</text>
 
   <!-- Tension de la batterie moteur, depuis node003 -->
-  <rect class="flag" x="680" y="60" width="240" height="18"/>
-  <text class="ts mid" x="800" y="73">CC moteur, côté batterie · node003</text>
+  <rect class="flag" x="680" y="60" width="270" height="18"/>
+  <text class="ts mid" x="815" y="73">CC moteur, côté batterie · node003 · folio 1</text>
   <path class="p w1" d="M800 78 V230 H746"/>
   <text class="idn" x="808" y="160">wire183 · 0,75</text>
   <rect class="fuse-new" x="700" y="221" width="46" height="18"/>
@@ -104,11 +105,11 @@
   <text class="id" x="830" y="375">node006</text>
   <path class="n w4" d="M828 355 H900"/>
   <rect class="flag" x="900" y="346" width="230" height="18"/>
-  <text class="ts mid" x="1015" y="359">masse des charges : folio 1</text>
+  <text class="ts mid" x="1015" y="359">node006 · masse des charges : folio 1</text>
   <path class="n w4" d="M748 355 V430 H866"/>
   <rect class="flag" x="866" y="421" width="324" height="18"/>
-  <text class="ts mid" x="1028" y="434">batterie moteur wire004 → n002, chargeur wire005 → n018</text>
-  <text class="ts" x="756" y="452">inchangés : hors du shunt</text>
+  <text class="ts mid" x="1028" y="434">wire004 → n002, wire005 → n018 : folio 1</text>
+  <text class="ts" x="756" y="452">batterie moteur et chargeur, inchangés : hors du shunt</text>
 
   <!-- ============ Notes ============ -->
   <text class="tb" x="40" y="480">Ce que mesure le shunt</text>

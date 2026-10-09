@@ -40,9 +40,9 @@
   <rect class="bg" x="0" y="0" width="100%" height="100%"/>
 
   <text class="tb mid" x="150" y="36">node100 · + tableau</text>
-  <text class="ts mid" x="150" y="53">wire102 · 10 mm² · F 50 A (← n062)</text>
+  <text class="ts mid" x="150" y="53">wire102 · 10 mm² · F 50 A (← n062 · folio 2a)</text>
   <text class="tb mid" x="1120" y="36">node101 · − tableau</text>
-  <text class="ts end" x="1190" y="53">wire103 · 10 mm² (← node006)</text>
+  <text class="ts end" x="1190" y="53">wire103 · 10 mm² (← node006 · folio 2a)</text>
   <path class="p w3" d="M150 68 V672"/>
   <path class="n w3" d="M1120 68 V672"/>
   <text class="ts mid" x="460" y="164">connecteur pied de mât</text>

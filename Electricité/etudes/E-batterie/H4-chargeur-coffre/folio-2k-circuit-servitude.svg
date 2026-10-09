@@ -128,14 +128,14 @@
   <text class="ts mid" x="1070" y="572">CC masse</text>
   <path class="n w4" d="M1104 540 H1130 V600"/>
   <rect class="flag" x="1030" y="600" width="150" height="18"/>
-  <text class="ts mid" x="1105.0" y="613">masse des charges : folio 1</text>
+  <text class="ts mid" x="1105.0" y="613">node006 · charges : folio 1</text>
   <path class="p w1" d="M340 560 V620 H560"/>
   <text class="idn mid" x="470" y="612">wire182 · 1,2 m</text>
   <rect class="flag" x="560" y="611" width="220" height="18"/>
-  <text class="ts mid" x="670.0" y="624">← fusible 1 A, n091 (platine)</text>
+  <text class="ts mid" x="670.0" y="624">← n091, fusible 1 A (platine) : folio 2e</text>
   <path class="p w1" d="M380 560 V650 H560"/>
   <text class="idn mid" x="470" y="642">wire184 · 1,2 m</text>
-  <rect class="flag" x="560" y="641" width="220" height="18"/>
-  <text class="ts mid" x="670.0" y="654">← fusible 1 A, n093 (batterie moteur)</text>
+  <rect class="flag" x="560" y="641" width="260" height="18"/>
+  <text class="ts mid" x="690.0" y="654">← n093, fusible 1 A (batterie moteur) : folio 2e</text>
   <text class="ts" x="20" y="698">En vert : nouveau (étude E). Déposés : coupleur Scheiber, coupe-circuit de couplage et leurs câbles ; le guindeau est passé sur le circuit moteur (folio 2j).</text>
 </svg>

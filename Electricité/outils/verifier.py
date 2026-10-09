@@ -317,7 +317,12 @@ def controler_nodes_svg(svgs: list[Path], m: "Modele", r: Rapport) -> None:
         cites = nodes_svg(txt)
         for n in sorted(set(re.findall(r"\bn\d{1,2}\b", txt))):
             r.avert(rel(c), f"{n} : abréger les nœuds sur trois chiffres (n006, pas n6)")
-        for n in sorted(cites - set(m.nodes)):
+        # Un renvoi vers un autre folio peut citer un nœud d'une autre hypothèse : contrôlé par controler_renvois.
+        ailleurs = set()
+        for contenu, _ in renvois_svg(txt):
+            if folios_cites(contenu):
+                ailleurs |= nodes_svg(contenu)
+        for n in sorted(cites - ailleurs - set(m.nodes)):
             r.erreur(rel(c), f"{n} figure sur le folio mais n'existe pas dans les données")
         manquants: dict[str, list[str]] = {}
         for w in sorted(set(re.findall(r"wire\d{3}", txt)) & set(m.fils)):
@@ -327,6 +332,61 @@ def controler_nodes_svg(svgs: list[Path], m: "Modele", r: Rapport) -> None:
                     manquants.setdefault(n, []).append(w)
         for n, ws in sorted(manquants.items()):
             r.avert(rel(c), f"{n} (extrémité de {', '.join(ws)}) n'est pas cité sur le folio")
+
+
+def renvois_svg(txt: str) -> list[tuple[str, tuple[float, float, float, float]]]:
+    """Renvois d'un folio : texte des cadres « flag » (rect class flag ou flag-new) et leur rectangle."""
+    textes = [(float(x), float(y), re.sub(r"<[^>]+>", "", t))
+              for x, y, t in re.findall(r'<text[^>]* x="([\d.]+)" y="([\d.]+)"[^>]*>(.*?)</text>', txt)]
+    renvois = []
+    for x, y, w, h in re.findall(r'<rect class="flag(?:-new)?" x="([\d.]+)" y="([\d.]+)" '
+                                 r'width="([\d.]+)" height="([\d.]+)"', txt):
+        x, y, w, h = float(x), float(y), float(w), float(h)
+        contenu = " ".join(t for tx, ty, t in textes if x - 2 <= tx <= x + w + 2 and y <= ty <= y + h + 2)
+        renvois.append((contenu, (x, y, w, h)))
+    return renvois
+
+
+def folios_cites(texte: str) -> list[str]:
+    """Folios cités dans un renvoi : « folio 2i », « folios 1 et 2c », « folio 2i ou 2k »."""
+    folios = []
+    for m in re.finditer(r"\bfolios? ((?:\d[a-z]?)(?:(?:, | et | ou )\d[a-z]?)*)\b", texte):
+        folios += re.split(r", | et | ou ", m.group(1))
+    return folios
+
+
+def controler_renvois(svgs: list[Path], r: Rapport) -> None:
+    """Un renvoi (fil raccordé d'un seul côté sur le folio) cite le nœud d'arrivée, et le folio où il est
+    représenté s'il est ailleurs ; ce nœud doit être cité hors renvoi sur ce folio-là."""
+    tous = {re.match(r"folio-(\w+?)-", c.name).group(1): c for c in RACINE.rglob("folio-*.svg")}
+    for c in svgs:
+        txt = c.read_text(encoding="utf-8")
+        for contenu, _ in renvois_svg(txt):
+            nodes = nodes_svg(contenu)
+            if not nodes:
+                r.avert(rel(c), f"renvoi « {contenu} » : aucun nœud cité")
+                continue
+            folios = folios_cites(contenu)
+            cibles = []
+            for f in folios:
+                if f not in tous:
+                    r.avert(rel(c), f"renvoi « {contenu} » : folio {f} introuvable")
+                else:
+                    cibles.append(tous[f])
+            if not folios:
+                cibles = [c]
+            if not cibles:
+                continue
+            represente = set()
+            for cible in cibles:
+                t = cible.read_text(encoding="utf-8")
+                dans_renvois = " ".join(contenu_r for contenu_r, _ in renvois_svg(t))
+                hors = [n for n in re.findall(r"\b(?:node|n)\d{3}\b", re.sub(r"<[^>]+>", " ", t))]
+                represente |= {f"node{n[-3:]}" for n in hors
+                               if hors.count(n) > len(re.findall(rf"\b{n}\b", dans_renvois))}
+            if not nodes & represente:
+                ou = ", ".join(f"folio {f}" for f in folios) if folios else "ce folio"
+                r.avert(rel(c), f"renvoi « {contenu} » : {', '.join(sorted(nodes))} non représenté sur {ou}")
 
 
 def controler_svg(svgs: list[Path], fils_attendus: set[str], fils_existants: set[str],
@@ -518,6 +578,7 @@ def main() -> int:
     controler_svg(sorted((RACINE / "schemas").glob("*.svg")), set(releve.fils), set(releve.fils),
                   questions, traitees, anomalies, levees, "schemas", r)
     controler_nodes_svg(sorted((RACINE / "schemas").glob("folio-[1-9]*.svg")), releve, r)
+    controler_renvois(sorted((RACINE / "schemas").glob("folio-[1-9]*.svg")), r)
     controler_implantation(releve, r)
 
     # ---- Hypothèses
@@ -561,6 +622,7 @@ def main() -> int:
         controler_svg(sorted(chemin.parent.glob("*.svg")), ajoutes, set(m.fils),
                       questions, traitees, anomalies, levees, rel(chemin.parent), r)
         controler_nodes_svg(sorted(chemin.parent.glob("*.svg")), m, r)
+        controler_renvois(sorted(chemin.parent.glob("*.svg")), r)
 
     # ---- Installation cible : hypothèses retenues appliquées dans l'ordre (cible/cible.yaml)
     fichier_cible = CIBLE / "cible.yaml"
@@ -591,6 +653,7 @@ def main() -> int:
             controler_svg(sorted(CIBLE.glob("*.svg")), douze, set(m.fils),
                           questions, traitees, anomalies, levees, rel(CIBLE), r)
             controler_nodes_svg(sorted(CIBLE.glob("*.svg")), m, r)
+            controler_renvois(sorted(CIBLE.glob("*.svg")), r)
 
     # ---- Nomenclatures chiffrées
     schema_nomenc = json.loads((RACINE / "outils/schema/nomenclature.schema.json").read_text(encoding="utf-8"))
