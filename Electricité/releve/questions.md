@@ -22,6 +22,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 30/09 : sera vérifié, et traité si nécessaire, lors de la pose du compte-tours.
 - **Q42** Boîtier de distribution 230 V du cabinet de toilette : quatre disjoncteurs Legrand DNX3, numérotés 1 à 4 : C10, C10, C16, C16 (photo Boitier-230v-cabinet-toilette.jpg). Quel circuit sur chacun ? Le relevé connaît l'éclairage (10 A), les prises tribord et les prises bâbord (16 A) : que protège le second 10 A, ou est-il libre ?
   → 01/10 : à vérifier lors d'une visite.
+- **Q59** Télécommande du guindeau : section et couleur des fils wire061 (+ du relais vers le fusible de 5 A), wire062 (fusible vers la télécommande), wire063 et wire064 (montée et descente vers le relais) ; la commande masse du relais (node028) est-elle raccordée ?
 - **Q12** Longueurs réelles des fils du tableau de servitude, circuit par circuit.
   → 27/09 : pas d'information pour l'instant. À mesurer lors d'un démontage du tableau.
 - **Q58** Isolant des câbles existants : température inscrite sur la gaine (60, 70, 90 ou 105 °C, ou référence du câble) de wire019 et wire022 (6 mm², alimentation des deux tableaux) et de wire001 et wire006 (35 mm², câbles des batteries). Le courant admissible en dépend : environ 40 A en 6 mm² pour un isolant à 60 °C, 70 A à 105 °C ; environ 140 A en 35 mm² à 60 °C, 210 A à 105 °C. Conditionne les calibres retenus : fusible de 50 A sur wire019 (A-H2), 300 A sur wire006 (E-H1), 400 A sur wire001 (A-H2).

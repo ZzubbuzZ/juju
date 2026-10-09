@@ -170,7 +170,7 @@ incertains:
   - {x: 935, y: 218, w: 223, h: 192}
 
 pastilles:
-  - {id: Q2, x: 1140, y: 238}
+  - {id: Q59, x: 1140, y: 238}
 
 liaisons:
   - [node074, node070]
@@ -208,5 +208,5 @@ renvois:
 textes:
   - {x: 1150, y: 656, classe: "ts end", texte: "node006 · masse des charges : folio 1"}
   - {x: 1135, y: 70, classe: "ts mid", texte: "Guindeau 700 W"}
-  - {x: 1040, y: 426, classe: "ts tu mid", texte: "télécommande à relever (Q2)"}
+  - {x: 1040, y: 426, classe: "ts tu mid", texte: "télécommande : sections à relever (Q59)"}
   - {x: 20, y: 710, texte: "En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice)."}

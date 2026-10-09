@@ -250,7 +250,7 @@
   <text class="idn" x="670" y="600">n368</text>
   <text class="ts end" x="1150" y="656">node006 · masse des charges : folio 1</text>
   <text class="ts mid" x="1135" y="70">Guindeau 700 W</text>
-  <text class="ts tu mid" x="1040" y="426">télécommande à relever (Q2)</text>
+  <text class="ts tu mid" x="1040" y="426">télécommande : sections à relever (Q59)</text>
   <text class="ts" x="20" y="710">En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice).</text>
-  <g class="mk-q"><circle cx="1140" cy="238" r="11"/><text class="mid" x="1140" y="241.5">Q2</text></g>
+  <g class="mk-q"><circle cx="1140" cy="238" r="11"/><text class="mid" x="1140" y="241.5">Q59</text></g>
 </svg>
