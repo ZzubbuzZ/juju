@@ -10,10 +10,12 @@ les barres, le tracé des fils et les textes. Le reste vient du modèle (relevé
 fonction des bornes, polarité, section et statut des fils, nouveauté des appareils.
 
 Règles de dessin contrôlées par controler() (appelée aussi par verifier.py) :
-- un nœud est un rond sur le pourtour de son appareil, avec son ID abrégé et sa fonction ;
+- un nœud est un rond sur le pourtour de son appareil, avec son ID abrégé et sa fonction en dessous ;
+  pour une boîte, l'étiquette est à l'intérieur du contour ; un interrupteur a un pseudo-contour pointillé ;
 - un fil part exactement d'un nœud et arrive exactement sur un nœud (ou sur une barre, ou un renvoi) ;
 - ses segments font 0, 45, 90, 135… degrés ;
-- deux fils ne se superposent que sur un segment qui aboutit à un nœud qu'ils partagent (ils peuvent se croiser).
+- deux fils ne se superposent que sur un segment qui aboutit à un nœud qu'ils partagent (ils peuvent se croiser) ;
+- un fil ne traverse aucun appareil ni renvoi et n'en longe pas le contour.
 """
 from __future__ import annotations
 
@@ -52,6 +54,7 @@ STYLE = '''  <style>
     .dp{fill:var(--pos)}.dn{fill:var(--ink)}
     .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
     .lever{stroke:var(--ink);stroke-width:2}
+    .sw{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:5 3}
     .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
     .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
     .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
@@ -189,6 +192,7 @@ class Folio:
         self.traces = {}    # fil → [points]
         self.forme = {}     # nœud → forme de son appareil
         self.contours = []  # (nom, 'rect', (x0, y0, x1, y1), nœuds) ou (nom, 'cercle', (cx, cy, r), nœuds)
+        self.rect = {}      # nœud → contour rectangulaire de sa boîte (étiquette à l'intérieur)
         self.erreurs = []
         self.out = []
 
@@ -215,6 +219,8 @@ class Folio:
             self.pos[n] = p
             self.cote[n] = (cote, spec.get("etiquette"), spec.get("fonction"))
             self.forme[n] = ap.get("forme", "boite")
+            if self.forme[n] == "boite":
+                self.rect[n] = (x, y, x + w, y + h)
             if n not in self.M.nodes:
                 self.erreurs.append(f"{n} placé sur le folio mais absent du modèle {self.L['modele']}")
 
@@ -230,6 +236,13 @@ class Folio:
             (x1, y1), (x2, y2) = (self.pos[n] for n in list(ap["nodes"])[:2])
             r = (min(x1, x2), y1 - 9, max(x1, x2), y1 + 9) if y1 == y2 else (x1 - 8, min(y1, y2), x1 + 8, max(y1, y2))
             self.contours.append((nom, "rect", r, noeuds))
+        elif forme == "interrupteur":
+            r = self.contour_interrupteur(ap)
+            self.contours.append((nom, "rect", r, noeuds))
+            for n in noeuds:
+                x, y = self.pos[n]
+                if not (r[0] <= x <= r[2] and r[1] <= y <= r[3]) or (r[0] < x < r[2] and r[1] < y < r[3]):
+                    self.erreurs.append(f"{n} n'est pas sur le contour de {nom} {r}")
         neuf = ap.get("nouveau", self.nouveau(ap.get("id", "")))
         o = self.out
         if forme == "boite":
@@ -260,6 +273,8 @@ class Folio:
         elif forme == "interrupteur":
             n1, n2 = list(ap["nodes"])[:2]
             (x1, y1), (x2, y2) = self.pos[n1], self.pos[n2]
+            r = self.contour_interrupteur(ap)
+            o.append(f'<rect class="sw" x="{r[0]:g}" y="{r[1]:g}" width="{r[2] - r[0]:g}" height="{r[3] - r[1]:g}" rx="2"/>')
             if y1 == y2:
                 o.append(f'<path class="lever" d="M{x1:g} {y1:g} L{x2 - 3:g} {y1 - 13:g}"/>')
             else:
@@ -274,6 +289,14 @@ class Folio:
             for k, l in enumerate(ap.get("lignes", [])):
                 o.append(f'<text class="ts mid" x="{ap["cx"]}" y="{ap["cy"] + ap["r"] + 16 + 15 * k}">{escape(l)}</text>')
 
+    def contour_interrupteur(self, ap):
+        """Pseudo-contour d'un interrupteur : ses deux bornes au milieu de deux côtés opposés."""
+        (x1, y1), (x2, y2) = (self.pos[n] for n in list(ap["nodes"])[:2])
+        m = ap.get("marge", 16)
+        if y1 == y2:
+            return (min(x1, x2), y1 - m, max(x1, x2), y1 + m)
+        return (x1 - m, min(y1, y2), x1 + m, max(y1, y2))
+
     def etiquette_noeud(self, n):
         x, y = self.pos[n]
         cote, et, fonction = self.cote[n]
@@ -284,6 +307,11 @@ class Folio:
             f = fonction if fonction is not None else abreger(borne)
         if et:
             dx, dy, anc = et[0], et[1], (et[2] if len(et) > 2 else "")
+        elif n in self.rect:   # boîte : ID et fonction à l'intérieur du contour
+            dx, dy, anc = {"haut": (5, 14, ""), "bas": (5, -16 if f else -6, ""), "gauche": (7, -1 if f else 4, ""),
+                           "droite": (-7, -1 if f else 4, "end")}[cote]
+            if cote in ("haut", "bas") and x > (self.rect[n][0] + self.rect[n][2]) / 2:   # moitié droite : aligné à droite
+                dx, anc = -5, "end"
         else:
             dx, dy, anc = {"haut": (5, -17 if f else -6, ""), "bas": (5, 14, ""), "gauche": (-7, -6, "end"),
                            "droite": (7, -6, ""), "point": (6, -6, "")}.get(cote, (6, -6, ""))
@@ -292,6 +320,10 @@ class Folio:
         cls = "idn" if neuf else "id"
         a = f" {anc}" if anc else ""
         self.out.append(f'<text class="{cls}{a}" x="{x + dx:g}" y="{y + dy:g}">{court(n)}</text>')
+        if n in self.rect:
+            x0, y0, x1, y1 = self.rect[n]
+            if not (x0 < x + dx < x1 and y0 < y + dy - 8 and y + dy + (10 if f else 0) < y1):
+                self.erreurs.append(f"{n} : l'étiquette ({x + dx:g}, {y + dy:g}) sort du contour de son appareil")
         if f:
             self.out.append(f'<text class="pin{a}" x="{x + dx:g}" y="{y + dy + 10:g}">{escape(f)}</text>')
 

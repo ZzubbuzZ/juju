@@ -25,6 +25,7 @@
     .dp{fill:var(--pos)}.dn{fill:var(--ink)}
     .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
     .lever{stroke:var(--ink);stroke-width:2}
+    .sw{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:5 3}
     .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
     .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
     .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
@@ -43,92 +44,96 @@
   <text class="ts" x="30" y="58">Coffre de cockpit tribord</text>
   <rect class="bound" x="360" y="40" width="820" height="620"/>
   <text class="ts" x="370" y="58">Contremarche de la descente : platine des coupe-circuits</text>
-  <rect class="box" x="40" y="64" width="200" height="52" rx="2"/>
+  <rect class="box" x="40" y="64" width="200" height="64" rx="2"/>
   <text class="tb mid" x="140" y="84">Chargeur Dolphin 20 A</text>
   <text class="ts mid" x="140" y="99">batterie moteur seule · 230 V : folio 3</text>
-  <rect class="box" x="40" y="190" width="130" height="56" rx="2"/>
-  <text class="tb mid" x="105" y="210">Batterie moteur</text>
-  <text class="ts mid" x="105" y="225">Pb 110 Ah</text>
+  <rect class="box" x="40" y="180" width="130" height="80" rx="2"/>
+  <text class="tb mid" x="105" y="200">Batterie moteur</text>
+  <text class="ts mid" x="105" y="215">Pb 110 Ah</text>
   <rect class="fuse-new" x="232" y="211" width="48" height="18"/>
   <text class="idn mid" x="256" y="224">400 A</text>
   <text class="ts tn mid" x="256" y="258">A-H2</text>
   <rect class="fuse-new" x="224" y="150" width="16" height="36"/>
   <text class="idn end" x="220" y="172">30 A</text>
+  <rect class="sw" x="424" y="204" width="60" height="32" rx="2"/>
   <path class="lever" d="M424 220 L481 207"/>
   <text class="ts mid" x="454" y="196">CC moteur</text>
-  <rect class="box" x="760" y="190" width="170" height="60" rx="2"/>
-  <text class="tb mid" x="845" y="210">Yanmar 3GMD</text>
-  <text class="ts mid" x="845" y="225">démarreur + alternateur</text>
+  <rect class="box" x="760" y="160" width="170" height="90" rx="2"/>
+  <text class="tb mid" x="845" y="180">Yanmar 3GMD</text>
+  <text class="ts mid" x="845" y="195">démarreur + alternateur</text>
   <rect class="fuse" x="820" y="111" width="60" height="18"/>
   <text class="id mid" x="850" y="124">70 A</text>
   <text class="ts mid" x="850" y="100">disjoncteur du guindeau</text>
-  <rect class="box" x="960" y="92" width="80" height="68" rx="2"/>
-  <text class="tb mid" x="1000" y="114">Relais</text>
-  <text class="ts mid" x="1000" y="129">guindeau</text>
+  <rect class="box" x="940" y="80" width="140" height="110" rx="2"/>
+  <text class="tb mid" x="1010" y="100">Relais</text>
+  <text class="ts mid" x="1010" y="115">guindeau</text>
   <circle class="box" cx="1140" cy="125" r="20"/>
   <text class="tb mid" x="1140" y="130">M</text>
+  <rect class="sw" x="440" y="624" width="60" height="32" rx="2"/>
   <path class="lever" d="M440 640 L497 627"/>
-  <text class="ts mid" x="530" y="622">CC masse</text>
-  <rect class="fuse-new" x="476" y="262" width="16" height="40"/>
-  <text class="idn end" x="472" y="286">70 A</text>
-  <rect class="box-new" x="370" y="380" width="210" height="90" rx="2"/>
-  <text class="tb mid tn" x="475" y="400">Orion XS 12/12-50A</text>
-  <text class="ts mid" x="475" y="415">réglé vers 15 A</text>
-  <rect class="fuse-new" x="640" y="401" width="46" height="18"/>
-  <text class="idn mid" x="663" y="414">70 A</text>
-  <path class="lever" d="M540 500 L551 541"/>
-  <text class="ts tn " x="560" y="530">interrupteur à voyant (Q48)</text>
+  <text class="ts mid" x="530" y="618">CC masse</text>
+  <rect class="fuse-new" x="488" y="262" width="16" height="40"/>
+  <text class="idn end" x="484" y="286">70 A</text>
+  <rect class="box-new" x="370" y="380" width="210" height="110" rx="2"/>
+  <text class="tb mid tn" x="475" y="420">Orion XS 12/12-50A</text>
+  <text class="ts mid" x="475" y="435">réglé vers 15 A</text>
+  <rect class="fuse-new" x="640" y="441" width="46" height="18"/>
+  <text class="idn mid" x="663" y="454">70 A</text>
+  <rect class="sw" x="524" y="520" width="32" height="44" rx="2"/>
+  <path class="lever" d="M540 520 L551 561"/>
+  <text class="ts tn " x="564" y="546">interrupteur à voyant (Q48)</text>
   <rect class="fuse-new" x="620" y="571" width="46" height="18"/>
   <text class="idn mid" x="643" y="584">1 A</text>
   <path class="n w4" d="M500 640 H1150"/>
-  <path class="n w2" d="M40 108 L30 108 L30 222 L40 232"/>
+  <path class="n w2" d="M40 112 L30 112 L30 230 L40 240"/>
   <text class="idn" x="36" y="160">w201 · 6</text>
   <path class="p w4" d="M170 220 L232 220"/>
   <text class="idn mid" x="201" y="212">w160 · 35</text>
-  <path class="p w2" d="M232 150 L232 116"/>
+  <path class="p w2" d="M232 150 L232 128"/>
   <text class="idn end" x="226" y="140">w200 · 6</text>
   <path class="p w4" d="M280 220 L424 220"/>
   <text class="idn mid" x="388" y="212">w001 · 35</text>
   <path class="p w4" d="M484 220 L760 220"/>
   <text class="id mid" x="620" y="212">w012 · 35</text>
-  <path class="p w4" d="M484 220 L484 120 L820 120"/>
+  <path class="p w4" d="M484 220 L500 204 L500 120 L820 120"/>
   <text class="idn mid" x="680" y="112">w217 · 35 · guindeau sur le circuit moteur</text>
-  <path class="p w5" d="M880 120 L960 120"/>
-  <text class="id mid" x="920" y="112">w018 · 50</text>
-  <path class="p w3" d="M1040 110 L1126.8 110"/>
-  <text class="id mid" x="1083" y="129">w020 / w021</text>
-  <path class="p w3" d="M1040 140 L1126.8 140"/>
+  <path class="p w5" d="M880 120 L940 120"/>
+  <text class="id mid" x="906" y="112">w018 · 50</text>
+  <path class="p w3" d="M1080 110 L1126.8 110"/>
+  <text class="id mid" x="1100" y="104">w020</text>
+  <path class="p w3" d="M1080 140 L1126.8 140"/>
+  <text class="id mid" x="1100" y="156">w021</text>
   <path class="n w4" d="M880 640 L880 250"/>
   <text class="id" x="888" y="300">w013 · 35</text>
-  <path class="n w5" d="M1000 640 L1000 160"/>
+  <path class="n w5" d="M1000 640 L1000 190"/>
   <text class="id" x="1008" y="400">w015 · 50</text>
-  <path class="n w4" d="M40 232 L30 242 L30 640 L440 640"/>
+  <path class="n w4" d="M40 240 L30 250 L30 640 L440 640"/>
   <text class="id" x="36" y="300">w004 · 35</text>
-  <path class="p w3" d="M484 220 L484 262"/>
-  <text class="idn end" x="476" y="246">w202 · 16</text>
-  <path class="p w3" d="M484 302 L484 380"/>
-  <text class="idn end" x="476" y="344">w203 · 16</text>
-  <path class="p w3" d="M640 410 L580 410"/>
-  <text class="idn mid" x="610" y="402">w205 · 16</text>
-  <path class="p w3" d="M730 410 L686 410"/>
-  <text class="idn mid" x="708" y="402">w204 · 16</text>
-  <path class="n w3" d="M420 470 L420 620 L440 640"/>
-  <text class="idn end" x="412" y="560">w206 · 16</text>
-  <path class="p w1" d="M540 500 L540 470"/>
-  <text class="idn" x="548" y="488">w209 · 0,75</text>
-  <path class="n w1" d="M528 522 L462 522 L462 618 L440 640"/>
-  <text class="idn" x="470" y="590">w216 · voyant</text>
-  <path class="p w1" d="M620 580 L540 580 L540 544"/>
+  <path class="p w3" d="M484 220 L496 232 L496 262"/>
+  <text class="idn end" x="488" y="250">w202 · 16</text>
+  <path class="p w3" d="M496 302 L496 380"/>
+  <text class="idn end" x="488" y="344">w203 · 16</text>
+  <path class="p w3" d="M640 450 L580 450"/>
+  <text class="idn mid" x="610" y="442">w205 · 16</text>
+  <path class="p w3" d="M730 450 L686 450"/>
+  <text class="idn mid" x="708" y="442">w204 · 16</text>
+  <path class="n w3" d="M420 490 L420 620 L440 640"/>
+  <text class="idn" x="426" y="600">w206 · 16</text>
+  <path class="p w1" d="M540 520 L540 490"/>
+  <text class="idn end" x="532" y="506">w209 · 0,75</text>
+  <path class="n w1" d="M524 542 L400 542 L400 600 L440 640"/>
+  <text class="idn end" x="396" y="575">w216 · voyant</text>
+  <path class="p w1" d="M620 580 L540 580 L540 564"/>
   <text class="idn mid" x="580" y="574">w208 · 0,75</text>
-  <path class="p w1" d="M484 220 L504 240 L504 350 L910 350 L910 580 L666 580"/>
+  <path class="p w1" d="M484 220 L520 256 L520 350 L910 350 L910 580 L666 580"/>
   <text class="idn mid" x="680" y="344">w207 · + de l&#x27;entrée (notice)</text>
   <path class="p w2" d="M232 186 L232 220"/>
-  <rect class="flag" x="730" y="401" width="135" height="18"/>
-  <text class="ts mid" x="797.5" y="414">→ node009 · folio 2i</text>
-  <circle class="term" cx="40" cy="108" r="3.5"/>
-  <circle class="term" cx="232" cy="116" r="3.5"/>
+  <rect class="flag" x="730" y="441" width="135" height="18"/>
+  <text class="ts mid" x="797.5" y="454">→ node009 · folio 2i</text>
+  <circle class="term" cx="40" cy="112" r="3.5"/>
+  <circle class="term" cx="232" cy="128" r="3.5"/>
   <circle class="term" cx="170" cy="220" r="3.5"/>
-  <circle class="term" cx="40" cy="232" r="3.5"/>
+  <circle class="term" cx="40" cy="240" r="3.5"/>
   <circle class="term" cx="232" cy="220" r="3.5"/>
   <circle class="term" cx="280" cy="220" r="3.5"/>
   <circle class="term" cx="232" cy="150" r="3.5"/>
@@ -139,80 +144,80 @@
   <circle class="term" cx="880" cy="250" r="3.5"/>
   <circle class="term" cx="820" cy="120" r="3.5"/>
   <circle class="term" cx="880" cy="120" r="3.5"/>
-  <circle class="term" cx="960" cy="120" r="3.5"/>
-  <circle class="term" cx="1000" cy="160" r="3.5"/>
-  <circle class="term" cx="1040" cy="110" r="3.5"/>
-  <circle class="term" cx="1040" cy="140" r="3.5"/>
+  <circle class="term" cx="940" cy="120" r="3.5"/>
+  <circle class="term" cx="1000" cy="190" r="3.5"/>
+  <circle class="term" cx="1080" cy="110" r="3.5"/>
+  <circle class="term" cx="1080" cy="140" r="3.5"/>
   <circle class="term" cx="1126.8" cy="110" r="3.5"/>
   <circle class="term" cx="1126.8" cy="140" r="3.5"/>
   <circle class="term" cx="440" cy="640" r="3.5"/>
   <circle class="term" cx="500" cy="640" r="3.5"/>
-  <circle class="term" cx="484" cy="262" r="3.5"/>
-  <circle class="term" cx="484" cy="302" r="3.5"/>
-  <circle class="term" cx="484" cy="380" r="3.5"/>
-  <circle class="term" cx="580" cy="410" r="3.5"/>
-  <circle class="term" cx="420" cy="470" r="3.5"/>
-  <circle class="term" cx="540" cy="470" r="3.5"/>
-  <circle class="term" cx="640" cy="410" r="3.5"/>
-  <circle class="term" cx="686" cy="410" r="3.5"/>
-  <circle class="term" cx="540" cy="500" r="3.5"/>
-  <circle class="term" cx="540" cy="544" r="3.5"/>
-  <circle class="term" cx="528" cy="522" r="3.5"/>
+  <circle class="term" cx="496" cy="262" r="3.5"/>
+  <circle class="term" cx="496" cy="302" r="3.5"/>
+  <circle class="term" cx="496" cy="380" r="3.5"/>
+  <circle class="term" cx="580" cy="450" r="3.5"/>
+  <circle class="term" cx="420" cy="490" r="3.5"/>
+  <circle class="term" cx="540" cy="490" r="3.5"/>
+  <circle class="term" cx="640" cy="450" r="3.5"/>
+  <circle class="term" cx="686" cy="450" r="3.5"/>
+  <circle class="term" cx="540" cy="520" r="3.5"/>
+  <circle class="term" cx="540" cy="564" r="3.5"/>
+  <circle class="term" cx="524" cy="542" r="3.5"/>
   <circle class="term" cx="620" cy="580" r="3.5"/>
   <circle class="term" cx="666" cy="580" r="3.5"/>
-  <text class="id" x="44" y="128">n018</text>
-  <text class="pin" x="44" y="138">−</text>
-  <text class="id" x="238" y="129">n016</text>
-  <text class="pin" x="238" y="139">s1</text>
-  <text class="id" x="174" y="234">n001</text>
-  <text class="pin" x="174" y="244">+</text>
-  <text class="id" x="44" y="258">n002</text>
-  <text class="pin" x="44" y="268">−</text>
+  <text class="id" x="47" y="111">n018</text>
+  <text class="pin" x="47" y="121">−</text>
+  <text class="id end" x="227" y="112">n016</text>
+  <text class="pin end" x="227" y="122">s1</text>
+  <text class="id end" x="163" y="219">n001</text>
+  <text class="pin end" x="163" y="229">+</text>
+  <text class="id" x="47" y="239">n002</text>
+  <text class="pin" x="47" y="249">−</text>
   <text class="idn end" x="230" y="250">n070</text>
   <text class="idn" x="284" y="238">n071</text>
   <text class="idn" x="240" y="154">n075</text>
   <text class="idn" x="240" y="190">n074</text>
   <text class="id end" x="418" y="238">n003</text>
-  <text class="id" x="492" y="214">n004</text>
-  <text class="id end" x="754" y="234">n031</text>
-  <text class="pin end" x="754" y="244">+</text>
-  <text class="id" x="886" y="264">n032</text>
-  <text class="pin" x="886" y="274">−</text>
+  <text class="id" x="504" y="214">n004</text>
+  <text class="id" x="767" y="219">n031</text>
+  <text class="pin" x="767" y="229">+</text>
+  <text class="id end" x="875" y="234">n032</text>
+  <text class="pin end" x="875" y="244">−</text>
   <text class="id end" x="816" y="140">n020</text>
   <text class="id" x="884" y="140">n021</text>
-  <text class="id" x="966" y="144">n022</text>
-  <text class="pin" x="966" y="154">e+</text>
-  <text class="id" x="1006" y="174">n023</text>
-  <text class="pin" x="1006" y="184">e−</text>
-  <text class="id" x="1044" y="94">n024</text>
-  <text class="pin" x="1044" y="104">A</text>
-  <text class="id" x="1044" y="154">n025</text>
-  <text class="pin" x="1044" y="164">B</text>
+  <text class="id" x="947" y="119">n022</text>
+  <text class="pin" x="947" y="129">e+</text>
+  <text class="id" x="1005" y="174">n023</text>
+  <text class="pin" x="1005" y="184">e−</text>
+  <text class="id end" x="1073" y="109">n024</text>
+  <text class="pin end" x="1073" y="119">A</text>
+  <text class="id end" x="1073" y="139">n025</text>
+  <text class="pin end" x="1073" y="149">B</text>
   <text class="id" x="1128.8" y="90">n029</text>
   <text class="pin" x="1128.8" y="100">A</text>
   <text class="id" x="1128.8" y="156">n030</text>
   <text class="pin" x="1128.8" y="166">B</text>
   <text class="id end" x="432" y="658">n005</text>
   <text class="id" x="504" y="658">n006</text>
-  <text class="idn end" x="476" y="262">n364</text>
-  <text class="idn end" x="476" y="312">n365</text>
-  <text class="idn" x="490" y="374">n360</text>
-  <text class="pin" x="490" y="384">e+</text>
-  <text class="idn end" x="574" y="428">n361</text>
-  <text class="pin end" x="574" y="438">s+</text>
-  <text class="idn end" x="414" y="464">n362</text>
-  <text class="pin end" x="414" y="474">−</text>
-  <text class="idn end" x="534" y="464">n363</text>
-  <text class="pin end" x="534" y="474">H</text>
-  <text class="idn end" x="636" y="430">n367</text>
-  <text class="idn" x="690" y="430">n366</text>
-  <text class="idn end" x="532" y="504">n371</text>
-  <text class="idn" x="548" y="556">n370</text>
-  <text class="idn end" x="520" y="516">n379</text>
+  <text class="idn end" x="484" y="264">n364</text>
+  <text class="idn end" x="484" y="310">n365</text>
+  <text class="idn end" x="491" y="394">n360</text>
+  <text class="pin end" x="491" y="404">e+</text>
+  <text class="idn end" x="573" y="449">n361</text>
+  <text class="pin end" x="573" y="459">s+</text>
+  <text class="idn" x="425" y="474">n362</text>
+  <text class="pin" x="425" y="484">−</text>
+  <text class="idn end" x="535" y="474">n363</text>
+  <text class="pin end" x="535" y="484">H</text>
+  <text class="idn end" x="636" y="470">n367</text>
+  <text class="idn" x="690" y="470">n366</text>
+  <text class="idn" x="548" y="517">n371</text>
+  <text class="idn end" x="532" y="576">n370</text>
+  <text class="idn end" x="516" y="536">n379</text>
   <text class="idn end" x="616" y="600">n369</text>
   <text class="idn" x="670" y="600">n368</text>
   <text class="ts end" x="1150" y="656">node006 · masse des charges : folio 1</text>
   <text class="ts mid" x="1135" y="70">Guindeau 700 W</text>
-  <text class="ts mid" x="1100" y="192">télécommande : folio 1</text>
+  <text class="ts mid" x="1100" y="214">télécommande : folio 1</text>
   <text class="ts" x="20" y="690">En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice).</text>
 </svg>

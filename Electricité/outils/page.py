@@ -486,6 +486,7 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
 .dp{{fill:var(--pos)}}.dn{{fill:var(--ink)}}
 .term{{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}}
 .lever{{stroke:var(--ink);stroke-width:2}}
+.sw{{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:5 3}}
 .flag{{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}}
 .flag-new{{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}}
 .mk-a circle{{fill:var(--warn)}}
