@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-label="Afficheur du moniteur de batterie encastré au tableau de servitude à la place de l'indicateur à aiguille, relié au shunt par un câble de données.">
   <title>Folio 2f · Afficheur du moniteur de batterie</title>
-  <desc>Le shunt du folio 2e est celui d'un moniteur à afficheur. Le câble de données wire185 relie le shunt à l'afficheur, encastré au tableau de servitude à la place de l'indicateur à aiguille, dont le branchement sera vu à la pose ; la place suffit (Q41).</desc>
+  <desc>Le shunt du folio 2e est celui d'un moniteur à afficheur. Le câble de données w185 relie le shunt à l'afficheur, encastré au tableau de servitude à la place de l'indicateur à aiguille, dont le branchement sera vu à la pose ; la place suffit (Q41).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -48,8 +48,8 @@
 
   <!-- Câble de données -->
   <path class="n w2" d="M210 155 H700"/>
-  <text class="idn mid" x="455" y="145">wire185 · câble de données RJ12, environ 4 m</text>
-  <text class="ts mid" x="455" y="176">même trajet que wire019 (n083 → n100), de la descente à la table à carte</text>
+  <text class="idn mid" x="455" y="145">w185 · câble de données RJ12, environ 4 m</text>
+  <text class="ts mid" x="455" y="176">même trajet que w019 (n083 → n100), de la descente à la table à carte</text>
   <text class="idn end" x="694" y="146">n095</text>
 
   <!-- ============ Tableau de servitude ============ -->

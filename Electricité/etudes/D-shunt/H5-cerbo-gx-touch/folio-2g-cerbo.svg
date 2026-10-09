@@ -43,62 +43,97 @@
   <path class="p w4" d="M300 120 H420"/>
   <rect class="flag" x="100" y="111" width="200" height="18"/>
   <text class="ts mid" x="200" y="124">← n073, fusible 400 A : folio 2c</text>
+
   <circle class="term" cx="424" cy="120" r="4"/><circle class="term" cx="484" cy="120" r="4"/>
   <path class="lever" d="M424 120 L481 107"/>
   <text class="ts mid" x="454" y="94">CC servitude</text>
+
   <text class="id end" x="416" y="142">node009</text>
+
   <text class="id" x="478" y="142">node010</text>
+
 
   <!-- Alimentation du Cerbo GX depuis node010 -->
   <path class="p w1" d="M488 120 H560"/>
-  <text class="idn mid" x="524" y="112">wire186 · 0,75</text>
+  <text class="idn mid" x="524" y="112">w186 · 0,75</text>
+
   <rect class="fuse-new" x="560" y="111" width="46" height="18"/>
   <text class="idn mid" x="583" y="124">3 A</text>
-  <text class="idn mid" x="583" y="146">n340 · n341</text>
+
   <path class="p w1" d="M606 120 H700"/>
-  <text class="idn mid" x="653" y="112">wire187 · 0,75</text>
+  <text class="idn mid" x="653" y="112">w187 · 0,75</text>
+
 
   <!-- ============ Cerbo GX ============ -->
   <rect class="box-new" x="700" y="90" width="180" height="100" rx="2"/>
   <text class="tb mid tn" x="790" y="122">Cerbo GX</text>
+
   <text class="ts mid" x="790" y="140">centrale Victron · descente</text>
+
   <text class="ts mid" x="790" y="156">≈ 0,3 A allumé</text>
+
   <text class="idn" x="706" y="106">n342</text>
+
   <text class="idn" x="706" y="184">n343</text>
+
   <text class="idn end" x="874" y="184">n344</text>
+
   <text class="idn end" x="874" y="106">n345</text>
+
 
   <!-- Masse du Cerbo GX vers node006 -->
   <path class="n w1" d="M740 190 V260 H540"/>
-  <text class="idn" x="748" y="232">wire188 · 0,75</text>
+  <text class="idn" x="748" y="232">w188 · 0,75</text>
+
   <rect class="flag" x="290" y="251" width="250" height="18"/>
   <text class="ts mid" x="415" y="264">CC masse, côté charges · node006 · folio 1</text>
+
 
   <!-- ============ SmartShunt (D-H1) et VE.Direct ============ -->
   <rect class="box" x="80" y="310" width="190" height="60" rx="2"/>
   <text class="tb mid" x="175" y="334">SmartShunt 500 A</text>
+
   <text class="ts mid" x="175" y="351">pose et fils de mesure : folio 2e</text>
+
   <text class="idn" x="276" y="333">n094</text>
+
   <path class="n w2" d="M270 340 H840 V190"/>
-  <text class="idn mid" x="560" y="332">wire189 · câble VE.Direct 1,8 m</text>
+  <text class="idn mid" x="560" y="332">w189 · câble VE.Direct 1,8 m</text>
+
 
   <!-- ============ Table à carte : GX Touch 50 ============ -->
   <rect class="bound" x="930" y="60" width="250" height="200"/>
   <text class="ts" x="940" y="78">Table à carte</text>
+
   <path class="n w2" d="M880 140 H980"/>
-  <text class="idn mid" x="903" y="132">wire190</text>
+  <text class="idn mid" x="903" y="132">w190</text>
+
   <rect class="box-new" x="980" y="100" width="180" height="80" rx="2"/>
   <text class="tb mid tn" x="1070" y="128">GX Touch 50</text>
+
   <text class="ts mid" x="1070" y="145">écran tactile 5 pouces</text>
+
   <text class="ts mid" x="1070" y="161">alimenté par le Cerbo GX</text>
+
   <text class="idn" x="986" y="116">n346</text>
-  <text class="ts" x="940" y="206">wire190 : câble de l'écran, 2 m fourni</text>
-  <text class="ts" x="940" y="222">et rallonge de 2 m, trajet de wire019</text>
+
+  <text class="ts" x="940" y="206">w190 : câble de l'écran, 2 m fourni</text>
+
+  <text class="ts" x="940" y="222">et rallonge de 2 m, trajet de w019</text>
+
   <text class="ts" x="940" y="238">(n083 → n100)</text>
+
 
   <!-- ============ Notes ============ -->
   <text class="tb" x="40" y="410">Différence avec D-H1</text>
+
   <text class="t" x="40" y="430">Même SmartShunt, même position, mêmes fils de mesure (folio 2e). Le Cerbo GX lit le shunt par VE.Direct et affiche le bord sur l'écran.</text>
+
   <text class="t" x="40" y="448">Il est alimenté après le coupe-circuit de servitude : il s'éteint bateau coupé, alors que le shunt, alimenté avant, continue de compter.</text>
+
   <text class="t" x="40" y="466">Le régulateur solaire (étude C) et un futur chargeur Victron se brancheront sur le même Cerbo GX. nXXX = nodeXXX.</text>
+
+  <!-- nœuds des fusibles -->
+  <text class="idn end" x="557" y="133">n340</text>
+  <text class="idn" x="609" y="133">n341</text>
 </svg>

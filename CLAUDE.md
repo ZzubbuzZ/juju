@@ -32,9 +32,11 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 - Même bloc `<style>` autonome dans chaque folio (variables de couleur clair et sombre). `page.py` le retire quand il assemble la page.
 - `<title>` au format « Folio N · Nom », `<desc>` = légende d'une ou deux phrases.
 - Classes : `p` / `n` (fil + / −), `w1`…`w5` (épaisseur selon la section), `u` (zone d'ombre en pointillés bleus), `box`, `box-new` (nouveau, en vert), `box-unk`, `fuse`, `fuse-new`, `flag` (renvoi vers un nœud), `mk-a` / `mk-q` (pastilles d'anomalie et de question).
-- Écrire les identifiants en entier dans les étiquettes (`wire020 / wire021`, jamais `wire020/021`) : le vérificateur les recherche dans le texte.
+- Sur les folios, les fils s'écrivent en abrégé, `w020` pour wire020, et chacun en entier (`w020 / w021`, jamais `w020/021`) : le vérificateur les recherche dans le texte. Les données (YAML, propositions) gardent `wire020`.
 - Chaque folio cite les deux nœuds de chaque fil qu'il mentionne, en entier (`node006`) ou abrégés sur trois chiffres (`n006`), un par un (jamais `node300–302`). Le vérificateur le contrôle ; un fil cité seulement pour mémoire fait donc aussi apparaître ses nœuds.
 - Un fil dessiné d'un seul côté se termine par un renvoi (`flag`) qui cite le nœud d'arrivée, et « folio X » s'il est sur un autre folio (« folios 1 et 2c », « folio 2i ou 2k »). Ce nœud doit être cité hors renvoi sur le folio désigné, ou sur le folio courant si aucun folio n'est cité. Le vérificateur le contrôle.
+- Fusibles : un nœud à chaque extrémité, du côté du fil qui y arrive (au-dessus et au-dessous d'un fusible vertical, à gauche et à droite sous un fusible horizontal) ; le calibre reste au milieu.
+- Les fils ne se rejoignent que sur un nœud : chacun part de la borne de son nœud, jamais d'un point au milieu d'un autre câble. Une barre (trait prolongeant une borne, avec des points de raccordement) est admise si elle porte son nœud.
 - Dans une hypothèse, ce qui est nouveau est en vert (`box-new`, `fuse-new`, `idn`, `tn`).
 - 230 V : le folio 3 est unifilaire (un trait par câble, barres obliques = nombre de conducteurs) ; les trois fils du câble sont cités dans l'étiquette. Classes `ph`, `ne`, `pe` + `pey` réservées au multifilaire.
 - Folios : 0 implantation, 1 câblage 12 V actuel, 3 réseau 230 V, 4 installation 12 V cible (`cible/`) ; les hypothèses ont leurs propres folios (2a, 2b…).

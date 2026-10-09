@@ -78,7 +78,7 @@
   <!-- ============ Câble vers la prise dédiée ============ -->
   <path class="n w2" d="M260 230 V400 H420"/>
   <path class="n w1" d="M253 352 L267 344 M253 358 L267 350 M253 364 L267 356"/>
-  <text class="idn end" x="246" y="340">wire300 / wire301 / wire302</text>
+  <text class="idn end" x="246" y="340">w300 / w301 / w302</text>
   <text class="ts end" x="246" y="354">H07RN-F 3G1,5</text>
   <text class="ts end" x="246" y="368">≈ 1,5 m</text>
   <rect class="box-new" x="420" y="375" width="80" height="50" rx="2"/>
@@ -91,7 +91,7 @@
   <!-- ============ Cordon du ballon ============ -->
   <path class="n w2" d="M500 400 H700"/>
   <path class="n w1" d="M594 407 L602 393 M599 407 L607 393 M604 407 L612 393"/>
-  <text class="idn mid" x="600" y="386">wire303 / wire304 / wire305</text>
+  <text class="idn mid" x="600" y="386">w303 / w304 / w305</text>
   <text class="ts mid" x="600" y="424">cordon fourni, fiche intacte</text>
   <g class="mk-q"><circle cx="690" cy="440" r="11"/><text class="mid" x="690" y="443.5">Q55</text></g>
 

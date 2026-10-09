@@ -147,11 +147,16 @@ def lire_ids_section(chemin: Path, prefixe: str, titre: str) -> set[str]:
     return set(re.findall(rf"^- \*\*({prefixe}\d+)\*\*", section, re.M))
 
 
+def fils_svg(txt: str) -> set[str]:
+    """Fils cités dans un folio, en entier (wire234) ou en abrégé (w234)."""
+    return {f"wire{n}" for n in re.findall(r"\b(?:wire|w)(\d{3})\b", txt)}
+
+
 def ids_svg(chemins: list[Path]) -> tuple[set[str], set[str], set[str]]:
     fils, questions, anomalies = set(), set(), set()
     for c in chemins:
         txt = c.read_text(encoding="utf-8")
-        fils |= set(re.findall(r"wire\d{3}", txt))
+        fils |= fils_svg(txt)
         questions |= set(re.findall(r">(Q\d+)<", txt))
         anomalies |= set(re.findall(r">(A\d+)<", txt))
     return fils, questions, anomalies
@@ -325,7 +330,7 @@ def controler_nodes_svg(svgs: list[Path], m: "Modele", r: Rapport) -> None:
         for n in sorted(cites - ailleurs - set(m.nodes)):
             r.erreur(rel(c), f"{n} figure sur le folio mais n'existe pas dans les données")
         manquants: dict[str, list[str]] = {}
-        for w in sorted(set(re.findall(r"wire\d{3}", txt)) & set(m.fils)):
+        for w in sorted(fils_svg(txt) & set(m.fils)):
             for bout in ("de", "vers"):
                 n = m.fils[w][bout]
                 if n not in cites:

@@ -40,121 +40,195 @@
   <rect class="bg" x="0" y="0" width="100%" height="100%"/>
   <rect class="bound" x="20" y="40" width="320" height="290"/>
   <text class="ts" x="30" y="58">Coffre de cockpit tribord</text>
+
   <rect class="bound" x="360" y="40" width="820" height="640"/>
   <text class="ts" x="370" y="58">Contremarche de la descente : platine des coupe-circuits</text>
+
   <rect class="box" x="40" y="70" width="200" height="40" rx="2"/>
   <text class="tb mid" x="140" y="88">Chargeur Dolphin 20 A</text>
+
   <text class="ts mid" x="140" y="103">batterie moteur seule · 230 V : folio 3</text>
+
   <text class="id" x="66" y="124">n018</text>
-  <text class="id end" x="206" y="124">n016</text>
+
+  <text class="id end" x="228" y="121">n016</text>
+
   <rect class="box" x="40" y="180" width="150" height="56" rx="2"/>
   <text class="tb mid" x="115" y="202">Batterie moteur</text>
+
   <text class="ts mid" x="115" y="218">Pb 110 Ah</text>
+
   <text class="id" x="46" y="231">node002</text>
+
   <text class="id end" x="184" y="231">node001</text>
+
   <path class="p w4" d="M190 200 H232"/>
   <rect class="fuse" x="232" y="191" width="46" height="18"/>
   <text class="id mid" x="255" y="204">400 A</text>
+
   <text class="ts mid" x="255" y="226">A-H2</text>
-  <text class="id mid" x="255" y="240">n070 · n071</text>
-  <path class="p w2" d="M212 196 V170"/>
-  <circle class="dp" cx="212" cy="200" r="3.5"/>
-  <rect class="fuse-new" x="204" y="130" width="16" height="40"/>
-  <text class="idn" x="226" y="154">30 A</text>
-  <text class="idn" x="226" y="168">n074 · n075</text>
-  <path class="p w2" d="M212 130 V110"/>
-  <text class="idn" x="226" y="122">wire200 · 6</text>
+
+  <path class="p w2" d="M232 196 V176"/>
+  <circle class="dp" cx="232" cy="200" r="3.5"/>
+  <rect class="fuse-new" x="224" y="140" width="16" height="36"/>
+  <text class="idn" x="246" y="162">30 A</text>
+
+  <path class="p w2" d="M232 140 V110"/>
+  <text class="idn" x="240" y="128">w200 · 6</text>
+
   <path class="n w2" d="M60 110 V180"/>
-  <text class="idn" x="68" y="150">wire201 · 6</text>
+  <text class="idn" x="68" y="150">w201 · 6</text>
+
   <path class="p w4" d="M278 200 H420"/>
-  <text class="id mid" x="345" y="192">wire001 · 35</text>
+  <text class="id mid" x="345" y="192">w001 · 35</text>
+
   <circle class="term" cx="424" cy="200" r="4"/><circle class="term" cx="484" cy="200" r="4"/>
   <path class="lever" d="M424 200 L481 187"/>
   <text class="ts mid" x="454" y="178"></text>
+
   <text class="id end" x="418" y="218">node003</text>
+
   <text class="id" x="490" y="192">node004</text>
+
   <text class="ts end" x="410" y="168">CC moteur</text>
+
   <path class="p w4" d="M488 200 H760"/>
-  <text class="id mid" x="620" y="192">wire012 · 35</text>
+  <text class="id mid" x="620" y="192">w012 · 35</text>
+
   <rect class="box" x="760" y="170" width="170" height="60" rx="2"/>
   <text class="tb mid" x="845" y="195">Yanmar 3GMD</text>
+
   <text class="ts mid" x="845" y="212">démarreur + alternateur</text>
+
   <text class="id end" x="756" y="192">n031</text>
+
   <text class="id" x="886" y="244">n032</text>
+
   <path class="n w4" d="M880 230 V636"/>
-  <text class="id" x="888" y="300">wire013 · 35</text>
+  <text class="id" x="888" y="300">w013 · 35</text>
+
   <path class="p w4" d="M484 196 V120 H880"/>
-  <text class="idn mid" x="680" y="112">wire217 · 35 · guindeau sur le circuit moteur</text>
+  <text class="idn mid" x="680" y="112">w217 · 35 · guindeau sur le circuit moteur</text>
+
   <rect class="box" x="880" y="110" width="60" height="20"/>
   <text class="ts mid" x="910" y="124">70 A</text>
+
   <text class="ts mid" x="900" y="100">disj. guindeau · n020 / n021</text>
+
   <path class="p w5" d="M940 120 H980"/>
-  <text class="id end" x="975" y="150">wire018 · 50</text>
+  <text class="id end" x="975" y="150">w018 · 50</text>
+
   <rect class="box" x="980" y="95" width="80" height="50" rx="2"/>
   <text class="tb mid" x="1020" y="116">Relais</text>
+
   <text class="ts mid" x="1020" y="132">guindeau</text>
+
   <text class="id end" x="977" y="114">n022</text>
+
   <text class="id" x="1026" y="192">n023</text>
+
   <text class="id" x="1062" y="105">n024</text>
+
   <text class="id" x="1062" y="143">n025</text>
+
   <text class="id mid" x="1112" y="93">n029 · n030</text>
+
   <path class="p w3" d="M1060 110 H1090"/>
   <path class="n w3" d="M1060 130 H1090"/>
   <circle class="box" cx="1112" cy="120" r="20"/>
   <text class="tb mid" x="1112" y="125">M</text>
-  <text class="id mid" x="1112" y="158">wire020 / wire021</text>
+
+  <text class="id mid" x="1112" y="158">w020 / w021</text>
+
   <text class="ts mid" x="1112" y="174">télécommande : folio 1</text>
+
   <path class="n w5" d="M1020 145 V636"/>
-  <text class="id" x="1028" y="400">wire015 · 50</text>
+  <text class="id" x="1028" y="400">w015 · 50</text>
+
   <path class="n w4" d="M60 236 V640 H436"/>
-  <text class="id" x="68" y="300">wire004 · 35</text>
+  <text class="id" x="68" y="300">w004 · 35</text>
+
   <circle class="term" cx="440" cy="640" r="4"/><circle class="term" cx="500" cy="640" r="4"/>
   <path class="lever" d="M440 640 L497 627"/>
   <text class="ts" x="505" y="624">CC masse</text>
+
   <text class="id end" x="434" y="658">node005</text>
+
   <text class="id" x="504" y="658">node006</text>
+
   <path class="n w4" d="M504 640 H1150"/>
   <text class="ts end" x="1150" y="660">node006 · masse des charges : folio 1</text>
+
   <circle class="dn" cx="880" cy="640" r="4"/><circle class="dn" cx="1020" cy="640" r="4"/>
   <path class="p w3" d="M484 204 V250"/>
-  <text class="idn end" x="476" y="238">wire202 · 16</text>
+  <text class="idn end" x="476" y="228">w202 · 16</text>
+
   <rect class="fuse-new" x="476" y="250" width="16" height="40"/>
   <text class="idn end" x="470" y="268">70 A</text>
-  <text class="idn end" x="470" y="282">n364 · n365</text>
+
   <path class="p w3" d="M484 290 V380"/>
-  <text class="idn end" x="476" y="340">wire203 · 16</text>
+  <text class="idn end" x="476" y="340">w203 · 16</text>
+
   <rect class="box-new" x="380" y="380" width="190" height="90" rx="2"/>
   <text class="tb tn mid" x="475" y="404">Orion XS 12/12-50A</text>
+
   <text class="ts mid" x="475" y="420">réglé vers 15 A (alternateur 20 A)</text>
+
   <text class="id mid" x="475" y="438">n360 entrée · n361 sortie</text>
+
   <text class="id mid" x="475" y="454">n362 − · n363 remote H</text>
+
   <path class="p w3" d="M570 410 H610"/>
-  <text class="idn mid" x="590" y="402">wire205</text>
+  <text class="idn mid" x="590" y="402">w205</text>
+
   <rect class="fuse-new" x="610" y="401" width="46" height="18"/>
   <text class="idn mid" x="633" y="414">70 A</text>
-  <text class="idn mid" x="633" y="432">n366 · n367</text>
+
   <path class="p w3" d="M656 410 H700"/>
-  <text class="idn mid" x="678" y="402">wire204</text>
+  <text class="idn mid" x="678" y="402">w204</text>
+
   <rect class="flag" x="700" y="401" width="135" height="18"/>
   <text class="ts mid" x="767.5" y="414">→ node009 · folio 2i</text>
+
   <path class="n w3" d="M440 470 V636"/>
-  <text class="idn" x="446" y="486">wire206 · 16</text>
+  <text class="idn" x="446" y="486">w206 · 16</text>
+
   <path class="p w1" d="M540 470 V500"/>
-  <text class="idn" x="548" y="490">wire209</text>
+  <text class="idn" x="548" y="490">w209</text>
+
   <circle class="term" cx="540" cy="504" r="3.5"/><circle class="term" cx="540" cy="544" r="3.5"/>
   <path class="lever" d="M540 504 L551 541"/>
   <text class="id end" x="532" y="508">n371</text>
+
   <text class="id end" x="532" y="548">n370</text>
+
   <text class="ts tn" x="556" y="548">interrupteur à voyant (Q48)</text>
+
   <path class="n w1" d="M536 532 H462 V626 L443 637"/>
   <text class="idn" x="466" y="527">n379</text>
-  <text class="idn" x="468" y="600">wire216 · voyant</text>
+
+  <text class="idn" x="468" y="600">w216 · voyant</text>
+
   <path class="p w1" d="M540 548 V570 H600"/>
-  <text class="idn mid" x="560" y="562">wire208</text>
+  <text class="idn mid" x="560" y="562">w208</text>
+
   <rect class="fuse-new" x="600" y="561" width="46" height="18"/>
   <text class="idn mid" x="623" y="574">1 A</text>
-  <text class="idn mid" x="623" y="592">n368 · n369</text>
+
   <path class="p w1" d="M646 570 H852 V250 H504 V214 L488 203"/>
-  <text class="idn mid" x="680" y="244">wire207 · + de l'entrée (notice)</text>
+  <text class="idn mid" x="680" y="244">w207 · + de l'entrée (notice)</text>
+
   <text class="ts" x="20" y="678">En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice).</text>
+
+  <!-- nœuds des fusibles -->
+  <text class="id end" x="229" y="213">n070</text>
+  <text class="id" x="281" y="213">n071</text>
+  <text class="idn end" x="228" y="137">n075</text>
+  <text class="idn" x="238" y="187">n074</text>
+  <text class="idn end" x="478" y="247">n364</text>
+  <text class="idn end" x="478" y="301">n365</text>
+  <text class="idn end" x="607" y="423">n367</text>
+  <text class="idn" x="659" y="423">n366</text>
+  <text class="idn end" x="597" y="583">n369</text>
+  <text class="idn" x="649" y="583">n368</text>
 </svg>

@@ -40,94 +40,147 @@
   <rect class="bg" x="0" y="0" width="100%" height="100%"/>
   <rect class="bound" x="20" y="40" width="300" height="640"/>
   <text class="ts" x="30" y="58">Coffre de la cabine de poupe</text>
+
   <rect class="bound" x="340" y="40" width="840" height="640"/>
   <text class="ts" x="350" y="58">Contremarche de la descente</text>
+
   <rect class="box-new" x="40" y="250" width="200" height="70" rx="2"/>
   <text class="tb tn mid" x="140" y="273">LiFePO4 200 Ah</text>
+
   <text class="ts mid" x="140" y="289">Humsienk · BMS 250 A</text>
+
   <text class="id mid" x="140" y="308">node007 (+) · node008 (−)</text>
+
   <g class="mk-a"><circle cx="40" cy="250" r="11"/><text class="mid" x="40" y="253.5">A11</text></g>
   <path class="p w4" d="M240 270 H270"/>
-  <circle class="dp" cx="255" cy="270" r="3.5"/>
   <rect class="fuse-new" x="270" y="261" width="46" height="18"/>
   <text class="idn mid" x="293" y="274">300 A</text>
+
   <text class="ts tn mid" x="293" y="256">MEGA</text>
-  <text class="idn" x="268" y="292">n072 · n073</text>
+
   <path class="p w4" d="M316 270 H440"/>
-  <text class="id mid" x="410.0" y="262">wire006 · 35</text>
+  <text class="id mid" x="410.0" y="262">w006 · 35</text>
+
   <circle class="term" cx="444" cy="270" r="4"/><circle class="term" cx="504" cy="270" r="4"/>
   <path class="lever" d="M444 270 L501 257"/>
   <text class="ts mid" x="474" y="248">CC servitude</text>
+
   <text class="id end" x="438" y="288">node009</text>
+
   <text class="id" x="508" y="288">node010</text>
+
   <path class="p w2" d="M508 274 V340 H578"/>
-  <text class="idn" x="516" y="332">wire166</text>
+  <text class="idn" x="516" y="332">w166</text>
+
   <rect class="fuse-new" x="578" y="331" width="46" height="18"/>
   <text class="idn mid" x="601" y="344">50 A</text>
-  <text class="idn mid" x="601" y="362">n082 · n083</text>
+
   <path class="p w2" d="M624 340 H678"/>
-  <text class="id mid" x="651" y="332">wire019</text>
+  <text class="id mid" x="651" y="332">w019</text>
+
   <rect class="flag" x="678" y="331" width="260" height="18"/>
   <text class="ts mid" x="808.0" y="344">→ n100 · tableau de la table à carte : folio 2b</text>
+
   <path class="p w2" d="M516 274 V400 H578"/>
-  <text class="idn" x="524" y="392">wire167</text>
+  <text class="idn" x="524" y="392">w167</text>
+
   <rect class="fuse-new" x="578" y="391" width="46" height="18"/>
   <text class="idn mid" x="601" y="404">30 A</text>
-  <text class="idn mid" x="601" y="422">n084 · n085</text>
+
   <path class="p w2" d="M624 400 H678"/>
-  <text class="id mid" x="651" y="392">wire022</text>
+  <text class="id mid" x="651" y="392">w022</text>
+
   <rect class="box" x="678" y="380" width="230" height="56" rx="2"/>
   <text class="tb mid" x="793" y="401">Tableau Scheiber 2 voies</text>
+
   <text class="ts mid" x="793" y="418">frigo, pompe de cale : folio 1</text>
+
   <text class="id" x="684" y="431">node050</text>
+
   <text class="id end" x="902" y="431">node051</text>
+
   <path class="n w4" d="M240 305 H260 V620 H440"/>
-  <text class="id" x="270" y="612">wire009 · 35 (D-H1)</text>
+  <text class="id" x="270" y="612">w009 · 35 (D-H1)</text>
+
   <rect class="box" x="440" y="600" width="120" height="40" rx="2"/>
   <text class="tb mid" x="500" y="618">Shunt 500 A</text>
+
   <text class="ts mid" x="500" y="633">D-H1 · n086 · n087</text>
+
   <path class="n w4" d="M560 620 H996"/>
-  <text class="id mid" x="700" y="612">wire180 · 35</text>
+  <text class="id mid" x="700" y="612">w180 · 35</text>
+
   <circle class="term" cx="1000" cy="620" r="4"/><circle class="term" cx="1060" cy="620" r="4"/>
   <path class="lever" d="M1000 620 L1057 607"/>
   <text class="ts mid" x="1030" y="598"></text>
+
   <text class="id end" x="994" y="638">node005</text>
+
   <text class="id" x="1064" y="638">node006</text>
+
   <text class="ts mid" x="1090" y="596">CC masse</text>
+
   <path class="n w4" d="M1064 620 H1100 V650"/>
   <rect class="flag" x="1020" y="650" width="150" height="18"/>
   <text class="ts mid" x="1095.0" y="663">node006 · charges : folio 1</text>
+
   <path class="p w3" d="M440 266 V200 H600"/>
-  <text class="idn" x="448" y="214">wire204 · 16</text>
+  <text class="idn" x="448" y="214">w204 · 16</text>
+
   <rect class="fuse-new" x="600" y="191" width="46" height="18"/>
   <text class="idn mid" x="623" y="204">70 A</text>
-  <text class="idn mid" x="623" y="222">n366 · n367</text>
+
   <path class="p w3" d="M646 200 H720"/>
-  <text class="idn mid" x="683" y="192">wire205</text>
+  <text class="idn mid" x="683" y="192">w205</text>
+
   <rect class="flag" x="720" y="191" width="190" height="18"/>
   <text class="ts mid" x="815.0" y="204">n361 · Orion XS sortie · folio 2h</text>
+
   <rect class="flag" x="750" y="545" width="220" height="18"/>
-  <text class="ts mid" x="860.0" y="558">n362 · Orion XS − (wire206) · folio 2h</text>
+  <text class="ts mid" x="860.0" y="558">n362 · Orion XS − (w206) · folio 2h</text>
+
   <path class="n w3" d="M970 554 H992 V616"/>
   <path class="p w2" d="M448 266 V140 H600"/>
-  <text class="idn" x="456" y="160">wire210 · 4</text>
+  <text class="idn" x="456" y="160">w210 · 4</text>
+
   <rect class="fuse-new" x="600" y="131" width="46" height="18"/>
   <text class="idn mid" x="623" y="144">25 A</text>
-  <text class="idn mid" x="623" y="162">n377 · n378</text>
+
   <path class="p w2" d="M646 140 H720"/>
-  <text class="idn mid" x="683" y="132">wire211 · 4</text>
+  <text class="idn mid" x="683" y="132">w211 · 4</text>
+
   <rect class="box-new" x="720" y="100" width="200" height="80" rx="2"/>
   <text class="tb tn mid" x="820" y="123">Blue Smart IP67 12/17</text>
+
   <text class="ts mid" x="820" y="139">chargeur de quai LiFePO4</text>
+
   <text class="id mid" x="820" y="156">n372 + · n373 −</text>
+
   <text class="id mid" x="820" y="171">n374 · n375 · n376 (230 V)</text>
+
   <path class="n w2" d="M920 160 H1008 V616"/>
-  <text class="idn" x="1016" y="300">wire212 · 4</text>
+  <text class="idn" x="1016" y="300">w212 · 4</text>
+
   <path class="n w2" d="M820 100 V70 H940"/>
   <path class="n w1" d="M872 77 L880 63 M877 77 L885 63 M882 77 L890 63"/>
-  <text class="idn mid" x="880" y="92">wire213 · wire214 · wire215 · 3 × 1,5</text>
+  <text class="idn mid" x="880" y="92">w213 · w214 · w215 · 3 × 1,5</text>
+
   <rect class="flag" x="940" y="61" width="235" height="18"/>
   <text class="ts mid" x="1057.5" y="74">C10 · n211 · n209 · n212 · folio 3</text>
+
   <text class="ts" x="440" y="668">Fils de mesure du shunt : folio 2e.</text>
+
   <text class="ts" x="20" y="698">En vert : nouveau (étude E). Déposés : coupleur Scheiber, coupe-circuit de couplage et leurs câbles ; le guindeau est passé sur le circuit moteur (folio 2h).</text>
+
+  <!-- nœuds des fusibles -->
+  <text class="idn end" x="267" y="283">n072</text>
+  <text class="idn" x="319" y="283">n073</text>
+  <text class="idn end" x="575" y="353">n082</text>
+  <text class="idn" x="627" y="353">n083</text>
+  <text class="idn end" x="575" y="413">n084</text>
+  <text class="idn" x="627" y="413">n085</text>
+  <text class="idn end" x="597" y="213">n366</text>
+  <text class="idn" x="649" y="213">n367</text>
+  <text class="idn end" x="597" y="153">n377</text>
+  <text class="idn" x="649" y="153">n378</text>
 </svg>

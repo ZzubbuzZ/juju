@@ -49,8 +49,8 @@
 
   <path class="n w2" d="M170 140 H330"/>
   <path class="n w1" d="M244 147 L252 133 M249 147 L257 133 M254 147 L262 133"/>
-  <text class="id mid" x="250" y="116">wire029 · wire030</text>
-  <text class="id mid" x="250" y="128">wire034 · 3 × 2,5</text>
+  <text class="id mid" x="250" y="116">w029 · w030</text>
+  <text class="id mid" x="250" y="128">w034 · 3 × 2,5</text>
 
   <rect class="bound" x="312" y="62" width="398" height="193"/>
   <text class="ts" x="320" y="248">Boîtier d'arrivée · coffre de cockpit tribord · terre : node212</text>
@@ -62,8 +62,8 @@
   <text class="id mid" x="380" y="200">sortie n208 · n209</text>
   <path class="n w2" d="M430 140 H480 M480 140 V105 H540 M480 140 V195 H540"/>
   <circle class="dn" cx="480" cy="140" r="3.5"/>
-  <text class="id mid" x="510" y="98">wire031</text>
-  <text class="id mid" x="510" y="188">wire037</text>
+  <text class="id mid" x="510" y="98">w031</text>
+  <text class="id mid" x="510" y="188">w037</text>
   <rect class="box" x="540" y="95" width="60" height="20"/>
   <text class="ts mid" x="570" y="109">10 A</text>
   <text class="ts mid" x="570" y="131">chargeur</text>
@@ -76,8 +76,8 @@
   <!-- Chargeur -->
   <path class="n w2" d="M600 105 H900"/>
   <path class="n w1" d="M794 112 L802 98 M799 112 L807 98 M804 112 L812 98"/>
-  <text class="id mid" x="780" y="93">wire032 · wire033</text>
-  <text class="id mid" x="780" y="127">wire035 · 3 × 2,5</text>
+  <text class="id mid" x="780" y="93">w032 · w033</text>
+  <text class="id mid" x="780" y="127">w035 · 3 × 2,5</text>
   <rect class="box" x="900" y="70" width="170" height="82" rx="2"/>
   <text class="tb mid" x="985" y="94">Chargeur de quai</text>
   <text class="ts mid" x="985" y="111">Dolphin 12 V · 20 A</text>
@@ -87,7 +87,7 @@
   <!-- Vers les boîtiers de distribution -->
   <path class="n w2" d="M600 195 H640 V300 H310 V330"/>
   <path class="n w1" d="M464 307 L472 293 M469 307 L477 293 M474 307 L482 293"/>
-  <text class="id mid" x="470" y="287">wire038 · wire039 · wire040 · 3 × 2,5</text>
+  <text class="id mid" x="470" y="287">w038 · w039 · w040 · 3 × 2,5</text>
 
   <!-- ============ Boîtier tribord ============ -->
   <rect class="bound" x="60" y="330" width="500" height="100"/>
@@ -117,14 +117,14 @@
   <!-- Vers la boîte de dérivation bâbord -->
   <path class="n w2" d="M530 395 H815 V365 H900"/>
   <path class="n w1" d="M694 402 L702 388 M699 402 L707 388 M704 402 L712 388"/>
-  <text class="id mid" x="700" y="382">wire041 · wire042 · wire043 · 3 × 2,5</text>
+  <text class="id mid" x="700" y="382">w041 · w042 · w043 · 3 × 2,5</text>
 
   <!-- Plafonnier -->
   <path class="n w2" d="M150 405 V500"/>
   <path class="n w1" d="M143 458 L157 450 M143 464 L157 456 M143 470 L157 462"/>
-  <text class="id end" x="138" y="448">wire050</text>
-  <text class="id end" x="138" y="460">wire051</text>
-  <text class="id end" x="138" y="472">wire068</text>
+  <text class="id end" x="138" y="448">w050</text>
+  <text class="id end" x="138" y="460">w051</text>
+  <text class="id end" x="138" y="472">w068</text>
   <text class="id end" x="138" y="484">3 × 1,5</text>
   <circle class="box" cx="150" cy="515" r="15"/>
   <path class="n w1" d="M139 504 L161 526 M161 504 L139 526"/>
@@ -139,19 +139,19 @@
   <path class="n w1" d="M483 474 L497 466 M483 480 L497 472 M483 486 L497 478"/>
   <path class="n w2" d="M490 450 H600 V490"/>
   <path class="n w1" d="M593 474 L607 466 M593 480 L607 472 M593 486 L607 478"/>
-  <text class="id" x="612" y="462">wire065</text>
-  <text class="id" x="612" y="474">wire066</text>
-  <text class="id" x="612" y="486">wire067</text>
+  <text class="id" x="612" y="462">w065</text>
+  <text class="id" x="612" y="474">w066</text>
+  <text class="id" x="612" y="486">w067</text>
   <rect class="box" x="580" y="490" width="40" height="28" rx="2"/>
   <text class="pin mid" x="600" y="508">PC 16 A</text>
   <text class="tb mid" x="600" y="536">Prise toilette</text>
   <text class="id mid" x="610" y="550">n253 · n254 · n255</text>
-  <text class="id end" x="318" y="462">wire044</text>
-  <text class="id end" x="318" y="474">wire045</text>
-  <text class="id end" x="318" y="486">wire046</text>
-  <text class="id" x="502" y="462">wire047</text>
-  <text class="id" x="502" y="474">wire048</text>
-  <text class="id" x="502" y="486">wire049</text>
+  <text class="id end" x="318" y="462">w044</text>
+  <text class="id end" x="318" y="474">w045</text>
+  <text class="id end" x="318" y="486">w046</text>
+  <text class="id" x="502" y="462">w047</text>
+  <text class="id" x="502" y="474">w048</text>
+  <text class="id" x="502" y="486">w049</text>
   <rect class="box" x="310" y="490" width="40" height="28" rx="2"/>
   <text class="pin mid" x="330" y="508">PC 16 A</text>
   <rect class="box" x="470" y="490" width="40" height="28" rx="2"/>
@@ -163,7 +163,7 @@
   <path class="n w2" d="M330 518 V560"/>
   <path class="n w1" d="M323 545 L337 537 M323 551 L337 543"/>
   <text class="tb" x="340" y="536">Prise du frigo</text>
-  <text class="id end" x="318" y="540">wire052 · wire053</text>
+  <text class="id end" x="318" y="540">w052 · w053</text>
   <text class="id end" x="318" y="552">cordon 2 fils</text>
   <text class="ts" x="342" y="552">fiche sans terre</text>
   <text class="id end" x="318" y="528">n227 · n228 · n229</text>
@@ -188,12 +188,12 @@
   <circle class="dn" cx="990" cy="450" r="3.5"/>
   <path class="n w1" d="M903 474 L917 466 M903 480 L917 472 M903 486 L917 478"/>
   <path class="n w1" d="M1063 474 L1077 466 M1063 480 L1077 472 M1063 486 L1077 478"/>
-  <text class="id end" x="898" y="462">wire055</text>
-  <text class="id end" x="898" y="474">wire056</text>
-  <text class="id end" x="898" y="486">wire057</text>
-  <text class="id" x="1082" y="462">wire058</text>
-  <text class="id" x="1082" y="474">wire059</text>
-  <text class="id" x="1082" y="486">wire060</text>
+  <text class="id end" x="898" y="462">w055</text>
+  <text class="id end" x="898" y="474">w056</text>
+  <text class="id end" x="898" y="486">w057</text>
+  <text class="id" x="1082" y="462">w058</text>
+  <text class="id" x="1082" y="474">w059</text>
+  <text class="id" x="1082" y="486">w060</text>
   <rect class="box" x="890" y="490" width="40" height="28" rx="2"/>
   <text class="pin mid" x="910" y="508">PC 16 A</text>
   <rect class="box" x="1050" y="490" width="40" height="28" rx="2"/>
