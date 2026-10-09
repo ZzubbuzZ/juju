@@ -660,6 +660,22 @@ def main() -> int:
             controler_nodes_svg(sorted(CIBLE.glob("*.svg")), m, r)
             controler_renvois(sorted(CIBLE.glob("*.svg")), r)
 
+    # ---- Folios générés : règles de dessin et SVG à jour (outils/folio.py)
+    dispositions = sorted(RACINE.rglob("folio-*.yaml"))
+    if dispositions:
+        import folio as generateur
+        r.section("Folios générés (folio-*.yaml → outils/folio.py)")
+        mods = generateur.modeles()
+        for chemin in dispositions:
+            texte, err = generateur.generer(chemin, mods, ecrire=False)
+            for e in err:
+                r.erreur(rel(chemin), e)
+            svg = chemin.with_suffix(".svg")
+            if not svg.exists() or svg.read_text(encoding="utf-8") != texte:
+                r.erreur(rel(svg), "SVG pas à jour : lancer python Electricité/outils/folio.py")
+            elif not err:
+                r.ok(f"{rel(svg)} : règles de dessin respectées")
+
     # ---- Nomenclatures chiffrées
     schema_nomenc = json.loads((RACINE / "outils/schema/nomenclature.schema.json").read_text(encoding="utf-8"))
     for chemin in sorted((RACINE / "etudes").glob("*/H*/nomenclature.yaml")):
