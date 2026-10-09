@@ -15,13 +15,13 @@ zones:
 appareils:
   - id: chargeur-quai
     x: 40
-    y: 70
+    y: 64
     w: 200
-    h: 44
+    h: 52
     titre: Chargeur Dolphin 20 A
     lignes: ["batterie moteur seule · 230 V : folio 3"]
     nodes:
-      node018: [bas, 60]
+      node018: {cote: gauche, a: 108, etiquette: [4, 20]}
       node016: {cote: bas, a: 232, etiquette: [6, 13]}
   - id: bat-moteur
     x: 40
@@ -31,8 +31,8 @@ appareils:
     titre: Batterie moteur
     lignes: [Pb 110 Ah]
     nodes:
-      node001: {cote: droite, a: 220, etiquette: [-6, 16, end]}
-      node002: [bas, 60]
+      node001: {cote: droite, a: 220, etiquette: [4, 14]}
+      node002: {cote: gauche, a: 232, etiquette: [4, 26]}
   - id: fus-bat-moteur
     forme: fusible
     calibre: 400 A
@@ -46,8 +46,8 @@ appareils:
     calibre: 30 A
     calibre_cote: gauche
     nodes:
-      node075: {cote: point, xy: [232, 140], etiquette: [8, 8]}
-      node074: {cote: point, xy: [232, 180], etiquette: [8, 4]}
+      node075: {cote: point, xy: [232, 150], etiquette: [8, 4]}
+      node074: {cote: point, xy: [232, 186], etiquette: [8, 4]}
   - id: cc-moteur
     forme: interrupteur
     titre: CC moteur
@@ -63,7 +63,7 @@ appareils:
     titre: Yanmar 3GMD
     lignes: [démarreur + alternateur]
     nodes:
-      node031: {cote: gauche, a: 220, etiquette: [-6, -6, end]}
+      node031: {cote: gauche, a: 220, etiquette: [-6, 14, end]}
       node032: {cote: bas, a: 880, etiquette: [6, 14]}
   - id: disj-guindeau
     forme: fusible
@@ -82,9 +82,9 @@ appareils:
     titre_y: 22
     lignes: [guindeau]
     nodes:
-      node022: {cote: gauche, a: 120, etiquette: [6, 34]}
+      node022: {cote: gauche, a: 120, etiquette: [6, 24]}
       node023: {cote: bas, a: 1000, etiquette: [6, 14]}
-      node024: {cote: droite, a: 110, etiquette: [4, -6]}
+      node024: {cote: droite, a: 110, etiquette: [4, -16]}
       node025: {cote: droite, a: 140, etiquette: [4, 14]}
   - id: guindeau
     forme: cercle
@@ -93,7 +93,7 @@ appareils:
     r: 20
     symbole: M
     nodes:
-      node029: {angle: 131.41, cote: point, etiquette: [2, -10]}
+      node029: {angle: 131.41, cote: point, etiquette: [2, -20]}
       node030: {angle: 228.59, cote: point, etiquette: [2, 16]}
   - id: cc-masse
     forme: interrupteur
@@ -150,10 +150,10 @@ liaisons:
   - [node074, node070]
 
 fils:
-  wire201: {etiquette: [66, 156]}
+  wire201: {trace: [[30, 108], [30, 222]], etiquette: [36, 160]}
   wire160: {etiquette: [201, 212, mid]}
-  wire200: {etiquette: [226, 132, end]}
-  wire001: {etiquette: [352, 212, mid]}
+  wire200: {etiquette: [226, 140, end]}
+  wire001: {etiquette: [388, 212, mid]}
   wire012: {etiquette: [620, 212, mid]}
   wire217: {trace: [[484, 120]], etiquette: [680, 112, mid], texte: "w217 · 35 · guindeau sur le circuit moteur"}
   wire018: {etiquette: [920, 112, mid]}
@@ -161,7 +161,7 @@ fils:
   wire021: {}
   wire013: {trace: [[880, 640]], etiquette: [888, 300]}
   wire015: {trace: [[1000, 640]], etiquette: [1008, 400]}
-  wire004: {trace: [[60, 640]], etiquette: [68, 300]}
+  wire004: {trace: [[30, 242], [30, 640]], etiquette: [36, 300]}
   wire202: {etiquette: [476, 246, end]}
   wire203: {etiquette: [476, 344, end]}
   wire205: {etiquette: [610, 402, mid]}
@@ -170,13 +170,13 @@ fils:
   wire209: {etiquette: [548, 488]}
   wire216: {trace: [[462, 522], [462, 618]], etiquette: [470, 590], texte: "w216 · voyant"}
   wire208: {trace: [[540, 580]], etiquette: [580, 574, mid]}
-  wire207: {trace: [[504, 240], [504, 350], [852, 350], [852, 580]], etiquette: [680, 344, mid], texte: "w207 · + de l'entrée (notice)"}
+  wire207: {trace: [[504, 240], [504, 350], [910, 350], [910, 580]], etiquette: [680, 344, mid], texte: "w207 · + de l'entrée (notice)"}
 
 renvois:
   - {x: 730, y: 401, w: 135, texte: "→ node009 · folio 2i"}
 
 textes:
   - {x: 1150, y: 656, classe: "ts end", texte: "node006 · masse des charges : folio 1"}
-  - {x: 1135, y: 84, classe: "ts mid", texte: "Guindeau 700 W"}
+  - {x: 1135, y: 70, classe: "ts mid", texte: "Guindeau 700 W"}
   - {x: 1100, y: 192, classe: "ts mid", texte: "télécommande : folio 1"}
   - {x: 20, y: 690, texte: "En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice)."}

@@ -43,17 +43,17 @@
   <text class="ts" x="30" y="58">Coffre de cockpit tribord</text>
   <rect class="bound" x="360" y="40" width="820" height="620"/>
   <text class="ts" x="370" y="58">Contremarche de la descente : platine des coupe-circuits</text>
-  <rect class="box" x="40" y="70" width="200" height="44" rx="2"/>
-  <text class="tb mid" x="140" y="90">Chargeur Dolphin 20 A</text>
-  <text class="ts mid" x="140" y="105">batterie moteur seule · 230 V : folio 3</text>
+  <rect class="box" x="40" y="64" width="200" height="52" rx="2"/>
+  <text class="tb mid" x="140" y="84">Chargeur Dolphin 20 A</text>
+  <text class="ts mid" x="140" y="99">batterie moteur seule · 230 V : folio 3</text>
   <rect class="box" x="40" y="190" width="130" height="56" rx="2"/>
   <text class="tb mid" x="105" y="210">Batterie moteur</text>
   <text class="ts mid" x="105" y="225">Pb 110 Ah</text>
   <rect class="fuse-new" x="232" y="211" width="48" height="18"/>
   <text class="idn mid" x="256" y="224">400 A</text>
   <text class="ts tn mid" x="256" y="258">A-H2</text>
-  <rect class="fuse-new" x="224" y="140" width="16" height="40"/>
-  <text class="idn end" x="220" y="164">30 A</text>
+  <rect class="fuse-new" x="224" y="150" width="16" height="36"/>
+  <text class="idn end" x="220" y="172">30 A</text>
   <path class="lever" d="M424 220 L481 207"/>
   <text class="ts mid" x="454" y="196">CC moteur</text>
   <rect class="box" x="760" y="190" width="170" height="60" rx="2"/>
@@ -81,14 +81,14 @@
   <rect class="fuse-new" x="620" y="571" width="46" height="18"/>
   <text class="idn mid" x="643" y="584">1 A</text>
   <path class="n w4" d="M500 640 H1150"/>
-  <path class="n w2" d="M60 114 L60 246"/>
-  <text class="idn" x="66" y="156">w201 · 6</text>
+  <path class="n w2" d="M40 108 L30 108 L30 222 L40 232"/>
+  <text class="idn" x="36" y="160">w201 · 6</text>
   <path class="p w4" d="M170 220 L232 220"/>
   <text class="idn mid" x="201" y="212">w160 · 35</text>
-  <path class="p w2" d="M232 140 L232 114"/>
-  <text class="idn end" x="226" y="132">w200 · 6</text>
+  <path class="p w2" d="M232 150 L232 116"/>
+  <text class="idn end" x="226" y="140">w200 · 6</text>
   <path class="p w4" d="M280 220 L424 220"/>
-  <text class="idn mid" x="352" y="212">w001 · 35</text>
+  <text class="idn mid" x="388" y="212">w001 · 35</text>
   <path class="p w4" d="M484 220 L760 220"/>
   <text class="id mid" x="620" y="212">w012 · 35</text>
   <path class="p w4" d="M484 220 L484 120 L820 120"/>
@@ -102,8 +102,8 @@
   <text class="id" x="888" y="300">w013 · 35</text>
   <path class="n w5" d="M1000 640 L1000 160"/>
   <text class="id" x="1008" y="400">w015 · 50</text>
-  <path class="n w4" d="M60 246 L60 640 L440 640"/>
-  <text class="id" x="68" y="300">w004 · 35</text>
+  <path class="n w4" d="M40 232 L30 242 L30 640 L440 640"/>
+  <text class="id" x="36" y="300">w004 · 35</text>
   <path class="p w3" d="M484 220 L484 262"/>
   <text class="idn end" x="476" y="246">w202 · 16</text>
   <path class="p w3" d="M484 302 L484 380"/>
@@ -120,19 +120,19 @@
   <text class="idn" x="470" y="590">w216 · voyant</text>
   <path class="p w1" d="M620 580 L540 580 L540 544"/>
   <text class="idn mid" x="580" y="574">w208 · 0,75</text>
-  <path class="p w1" d="M484 220 L504 240 L504 350 L852 350 L852 580 L666 580"/>
+  <path class="p w1" d="M484 220 L504 240 L504 350 L910 350 L910 580 L666 580"/>
   <text class="idn mid" x="680" y="344">w207 · + de l&#x27;entrée (notice)</text>
-  <path class="p w2" d="M232 180 L232 220"/>
+  <path class="p w2" d="M232 186 L232 220"/>
   <rect class="flag" x="730" y="401" width="135" height="18"/>
   <text class="ts mid" x="797.5" y="414">→ node009 · folio 2i</text>
-  <circle class="term" cx="60" cy="114" r="3.5"/>
-  <circle class="term" cx="232" cy="114" r="3.5"/>
+  <circle class="term" cx="40" cy="108" r="3.5"/>
+  <circle class="term" cx="232" cy="116" r="3.5"/>
   <circle class="term" cx="170" cy="220" r="3.5"/>
-  <circle class="term" cx="60" cy="246" r="3.5"/>
+  <circle class="term" cx="40" cy="232" r="3.5"/>
   <circle class="term" cx="232" cy="220" r="3.5"/>
   <circle class="term" cx="280" cy="220" r="3.5"/>
-  <circle class="term" cx="232" cy="140" r="3.5"/>
-  <circle class="term" cx="232" cy="180" r="3.5"/>
+  <circle class="term" cx="232" cy="150" r="3.5"/>
+  <circle class="term" cx="232" cy="186" r="3.5"/>
   <circle class="term" cx="424" cy="220" r="3.5"/>
   <circle class="term" cx="484" cy="220" r="3.5"/>
   <circle class="term" cx="760" cy="220" r="3.5"/>
@@ -160,43 +160,59 @@
   <circle class="term" cx="528" cy="522" r="3.5"/>
   <circle class="term" cx="620" cy="580" r="3.5"/>
   <circle class="term" cx="666" cy="580" r="3.5"/>
-  <text class="id" x="65" y="128">n018 · −</text>
-  <text class="id" x="238" y="127">n016 · s1</text>
-  <text class="id end" x="164" y="236">n001 · +</text>
-  <text class="id" x="65" y="260">n002 · −</text>
-  <text class="idn end" x="230" y="250">n070 · bat</text>
-  <text class="idn" x="284" y="238">n071 · 2</text>
-  <text class="idn" x="240" y="148">n075 · 2</text>
-  <text class="idn" x="240" y="184">n074 · bat</text>
-  <text class="id end" x="418" y="238">n003 · bat</text>
-  <text class="id" x="492" y="214">n004 · ch</text>
-  <text class="id end" x="754" y="214">n031 · +</text>
-  <text class="id" x="886" y="264">n032 · −</text>
-  <text class="id end" x="816" y="140">n020 · 1</text>
-  <text class="id" x="884" y="140">n021 · 2</text>
-  <text class="id" x="966" y="154">n022 · e+</text>
-  <text class="id" x="1006" y="174">n023 · e−</text>
-  <text class="id" x="1044" y="104">n024 · A</text>
-  <text class="id" x="1044" y="154">n025 · B</text>
-  <text class="id" x="1128.8" y="100">n029 · A</text>
-  <text class="id" x="1128.8" y="156">n030 · B</text>
-  <text class="id end" x="432" y="658">n005 · bat</text>
-  <text class="id" x="504" y="658">n006 · ch</text>
-  <text class="idn end" x="476" y="262">n364 · 1</text>
-  <text class="idn end" x="476" y="312">n365 · 2</text>
-  <text class="idn" x="490" y="374">n360 · e+</text>
-  <text class="idn end" x="574" y="428">n361 · s+</text>
-  <text class="idn end" x="414" y="464">n362 · −</text>
-  <text class="idn end" x="534" y="464">n363 · H</text>
-  <text class="idn end" x="636" y="430">n367 · 2</text>
-  <text class="idn" x="690" y="430">n366 · bat</text>
-  <text class="idn end" x="532" y="504">n371 · s</text>
-  <text class="idn" x="548" y="556">n370 · e</text>
-  <text class="idn end" x="520" y="516">n379 · voyant</text>
-  <text class="idn end" x="616" y="600">n369 · 2</text>
-  <text class="idn" x="670" y="600">n368 · 1</text>
+  <text class="id" x="44" y="128">n018</text>
+  <text class="pin" x="44" y="138">−</text>
+  <text class="id" x="238" y="129">n016</text>
+  <text class="pin" x="238" y="139">s1</text>
+  <text class="id" x="174" y="234">n001</text>
+  <text class="pin" x="174" y="244">+</text>
+  <text class="id" x="44" y="258">n002</text>
+  <text class="pin" x="44" y="268">−</text>
+  <text class="idn end" x="230" y="250">n070</text>
+  <text class="idn" x="284" y="238">n071</text>
+  <text class="idn" x="240" y="154">n075</text>
+  <text class="idn" x="240" y="190">n074</text>
+  <text class="id end" x="418" y="238">n003</text>
+  <text class="id" x="492" y="214">n004</text>
+  <text class="id end" x="754" y="234">n031</text>
+  <text class="pin end" x="754" y="244">+</text>
+  <text class="id" x="886" y="264">n032</text>
+  <text class="pin" x="886" y="274">−</text>
+  <text class="id end" x="816" y="140">n020</text>
+  <text class="id" x="884" y="140">n021</text>
+  <text class="id" x="966" y="144">n022</text>
+  <text class="pin" x="966" y="154">e+</text>
+  <text class="id" x="1006" y="174">n023</text>
+  <text class="pin" x="1006" y="184">e−</text>
+  <text class="id" x="1044" y="94">n024</text>
+  <text class="pin" x="1044" y="104">A</text>
+  <text class="id" x="1044" y="154">n025</text>
+  <text class="pin" x="1044" y="164">B</text>
+  <text class="id" x="1128.8" y="90">n029</text>
+  <text class="pin" x="1128.8" y="100">A</text>
+  <text class="id" x="1128.8" y="156">n030</text>
+  <text class="pin" x="1128.8" y="166">B</text>
+  <text class="id end" x="432" y="658">n005</text>
+  <text class="id" x="504" y="658">n006</text>
+  <text class="idn end" x="476" y="262">n364</text>
+  <text class="idn end" x="476" y="312">n365</text>
+  <text class="idn" x="490" y="374">n360</text>
+  <text class="pin" x="490" y="384">e+</text>
+  <text class="idn end" x="574" y="428">n361</text>
+  <text class="pin end" x="574" y="438">s+</text>
+  <text class="idn end" x="414" y="464">n362</text>
+  <text class="pin end" x="414" y="474">−</text>
+  <text class="idn end" x="534" y="464">n363</text>
+  <text class="pin end" x="534" y="474">H</text>
+  <text class="idn end" x="636" y="430">n367</text>
+  <text class="idn" x="690" y="430">n366</text>
+  <text class="idn end" x="532" y="504">n371</text>
+  <text class="idn" x="548" y="556">n370</text>
+  <text class="idn end" x="520" y="516">n379</text>
+  <text class="idn end" x="616" y="600">n369</text>
+  <text class="idn" x="670" y="600">n368</text>
   <text class="ts end" x="1150" y="656">node006 · masse des charges : folio 1</text>
-  <text class="ts mid" x="1135" y="84">Guindeau 700 W</text>
+  <text class="ts mid" x="1135" y="70">Guindeau 700 W</text>
   <text class="ts mid" x="1100" y="192">télécommande : folio 1</text>
   <text class="ts" x="20" y="690">En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice).</text>
 </svg>

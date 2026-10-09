@@ -153,6 +153,30 @@ def recouvrement(s1, s2):
     return pt(lo), pt(hi)
 
 
+def traverse(a, b, typ, g, eps=0.75):
+    """« traverse » si le segment passe à l'intérieur du composant, « longe » s'il suit son contour, sinon None.
+    Toucher le contour en un point (un nœud) est permis."""
+    n = max(2, int(math.dist(a, b)))
+    pts = [(a[0] + (b[0] - a[0]) * k / n, a[1] + (b[1] - a[1]) * k / n) for k in range(1, n)]
+    if typ == "rect":
+        x0, y0, x1, y1 = g
+        dedans = [p for p in pts if x0 + eps < p[0] < x1 - eps and y0 + eps < p[1] < y1 - eps]
+        if dedans:
+            return "traverse"
+        bord = [p for p in pts if (abs(p[0] - x0) <= eps or abs(p[0] - x1) <= eps) and y0 - eps <= p[1] <= y1 + eps
+                or (abs(p[1] - y0) <= eps or abs(p[1] - y1) <= eps) and x0 - eps <= p[0] <= x1 + eps]
+        if len(bord) > 1:
+            return "longe le contour de"
+    else:
+        cx, cy, r = g
+        d = [math.dist(p, (cx, cy)) for p in pts]
+        if any(x < r - eps for x in d):
+            return "traverse"
+        if sum(1 for x in d if abs(x - r) <= eps) > 1:
+            return "longe le contour de"
+    return None
+
+
 # --------------------------------------------------------------------------- dessin
 class Folio:
     def __init__(self, chemin: Path, mods: dict):
@@ -163,6 +187,8 @@ class Folio:
         self.cote = {}      # nœud → côté (pour l'étiquette)
         self.barres = {}    # nœud → [(a, b)]
         self.traces = {}    # fil → [points]
+        self.forme = {}     # nœud → forme de son appareil
+        self.contours = []  # (nom, 'rect', (x0, y0, x1, y1), nœuds) ou (nom, 'cercle', (cx, cy, r), nœuds)
         self.erreurs = []
         self.out = []
 
@@ -188,11 +214,22 @@ class Folio:
                 p = (x if cote == "gauche" else x + w, a if a is not None else y + h / 2)
             self.pos[n] = p
             self.cote[n] = (cote, spec.get("etiquette"), spec.get("fonction"))
+            self.forme[n] = ap.get("forme", "boite")
             if n not in self.M.nodes:
                 self.erreurs.append(f"{n} placé sur le folio mais absent du modèle {self.L['modele']}")
 
     def dessiner_appareil(self, ap):
         forme = ap.get("forme", "boite")
+        noeuds = set(ap.get("nodes") or {})
+        nom = ap.get("id", "?")
+        if forme == "boite":
+            self.contours.append((nom, "rect", (ap["x"], ap["y"], ap["x"] + ap["w"], ap["y"] + ap["h"]), noeuds))
+        elif forme == "cercle":
+            self.contours.append((nom, "cercle", (ap["cx"], ap["cy"], ap["r"]), noeuds))
+        elif forme == "fusible":
+            (x1, y1), (x2, y2) = (self.pos[n] for n in list(ap["nodes"])[:2])
+            r = (min(x1, x2), y1 - 9, max(x1, x2), y1 + 9) if y1 == y2 else (x1 - 8, min(y1, y2), x1 + 8, max(y1, y2))
+            self.contours.append((nom, "rect", r, noeuds))
         neuf = ap.get("nouveau", self.nouveau(ap.get("id", "")))
         o = self.out
         if forme == "boite":
@@ -241,18 +278,22 @@ class Folio:
         x, y = self.pos[n]
         cote, et, fonction = self.cote[n]
         borne = self.M.nodes.get(n, {}).get("borne", "")
-        f = fonction if fonction is not None else abreger(borne)
-        texte = court(n) + (f" · {f}" if f else "")
+        if self.forme.get(n) in ("fusible", "interrupteur"):
+            f = fonction or ""
+        else:
+            f = fonction if fonction is not None else abreger(borne)
         if et:
             dx, dy, anc = et[0], et[1], (et[2] if len(et) > 2 else "")
         else:
-            dx, dy, anc = {"haut": (5, -6, ""), "bas": (5, 14, ""), "gauche": (-7, -5, "end"),
-                           "droite": (7, -5, ""), "point": (6, -6, "")}.get(cote, (6, -6, ""))
+            dx, dy, anc = {"haut": (5, -17 if f else -6, ""), "bas": (5, 14, ""), "gauche": (-7, -6, "end"),
+                           "droite": (7, -6, ""), "point": (6, -6, "")}.get(cote, (6, -6, ""))
         nd = self.M.nodes.get(n, {})
         neuf = nd.get("statut") == "propose" or self.nouveau(nd.get("equipement", ""))
         cls = "idn" if neuf else "id"
         a = f" {anc}" if anc else ""
-        self.out.append(f'<text class="{cls}{a}" x="{x + dx:g}" y="{y + dy:g}">{escape(texte)}</text>')
+        self.out.append(f'<text class="{cls}{a}" x="{x + dx:g}" y="{y + dy:g}">{court(n)}</text>')
+        if f:
+            self.out.append(f'<text class="pin{a}" x="{x + dx:g}" y="{y + dy + 10:g}">{escape(f)}</text>')
 
     # -- fils
     def classe_fil(self, w):
@@ -301,6 +342,13 @@ class Folio:
                 n = f[bout]
                 if n in self.pos and p != self.pos[n] and not self.sur_barre(n, p):
                     err.append(f"{w} : l'extrémité {p} n'est pas sur {n} {self.pos[n]}")
+        for w, pts in self.traces.items():
+            f = self.M.fils[w]
+            for a, b in zip(pts, pts[1:]):
+                for nom, typ, g, noeuds in self.contours:
+                    probleme = traverse(a, b, typ, g)
+                    if probleme:
+                        err.append(f"{w} : le segment {a} → {b} {probleme} {nom}")
         segs = [(w, a, b) for w, pts in self.traces.items() for a, b in zip(pts, pts[1:])]
         for i, (w1, a1, b1) in enumerate(segs):
             for w2, a2, b2 in segs[i + 1:]:
@@ -342,6 +390,7 @@ class Folio:
             pol = self.M.nodes[m[0]]["polarite"]
             o.append(f'<path class="{"n" if pol == "-" else "p"} w2" d="M{a[0]:g} {a[1]:g} L{b[0]:g} {b[1]:g}"/>')
         for rv in L.get("renvois", []) or []:
+            self.contours.append(("renvoi « " + rv["texte"] + " »", "rect", (rv["x"], rv["y"], rv["x"] + rv["w"], rv["y"] + rv.get("h", 18)), set()))
             cls = "flag-new" if rv.get("nouveau") else "flag"
             o.append(f'<rect class="{cls}" x="{rv["x"]}" y="{rv["y"]}" width="{rv["w"]}" height="{rv.get("h", 18)}"/>')
             o.append(f'<text class="ts mid" x="{rv["x"] + rv["w"] / 2:g}" y="{rv["y"] + 13}">{escape(rv["texte"])}</text>')
