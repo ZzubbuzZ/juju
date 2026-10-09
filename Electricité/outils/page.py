@@ -61,7 +61,7 @@ def folio(chemin: Path, contexte: str, racine: Path) -> str:
     desc = re.search(r"<desc>(.*?)</desc>", svg, re.S)
     svg = re.sub(r"\s*<style>.*?</style>", "", svg, flags=re.S)
     svg = re.sub(r"\s*<title>.*?</title>|\s*<desc>.*?</desc>", "", svg, flags=re.S)
-    numero, _, nom = (titre.group(1) if titre else chemin.stem).partition(" · ")
+    numero, _, nom = (html.unescape(titre.group(1)) if titre else chemin.stem).partition(" · ")
     return f"""
 <section class="folio">
   <div class="folio-head">

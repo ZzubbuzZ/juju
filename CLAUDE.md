@@ -58,6 +58,8 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 
 `python Electricité/outils/page.py` produit `Electricité/build/juju.html` (non versionné) : une seule page, avec un menu qui choisit la vue « Relevé » (branche `main` : folios de l'existant et des études fusionnées, anomalies, questions) ou une vue par branche d'étude (README de l'étude, folios et comparaison de ses hypothèses). Les branches sont lues par `git archive`, sans changer de branche ; la branche courante est lue sur le disque. Une étude fusionnée dans `main` n'a pas de vue propre.
 
+`python Electricité/outils/pdf.py` régénère la page puis l'imprime en PDF A4 paysage, `Electricité/build/juju.pdf` (non versionné) : page de garde et légende, un folio par page, puis comparaisons, cadrages, anomalies et questions, avec signets et numéros de page (dépendance : playwright).
+
 La page est publiée en artifact : https://claude.ai/artifact/Vj1VV9bWUtJjnwGRuP5a36 (republier sur la même URL après tout changement, sur n'importe quelle branche). Chaque vue a son ancre (`#releve`, `#etude-D`…).
 
 Python 3.12 est installé pour l'utilisateur. S'il n'est pas dans le PATH : `%LOCALAPPDATA%\Programs\Python\Python312\python.exe`. Dépendances : `Electricité/outils/requirements.txt`.

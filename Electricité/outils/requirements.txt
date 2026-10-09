@@ -1,2 +1,4 @@
 pyyaml>=6.0
 jsonschema>=4.18
+# pour outils/pdf.py seulement (puis : python -m playwright install chromium)
+playwright>=1.40
