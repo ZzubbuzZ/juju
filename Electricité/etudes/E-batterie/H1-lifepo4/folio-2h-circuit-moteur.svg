@@ -44,6 +44,7 @@
   <text class="ts" x="30" y="58">Coffre de cockpit tribord</text>
   <rect class="bound" x="360" y="40" width="820" height="640"/>
   <text class="ts" x="370" y="58">Contremarche de la descente : platine des coupe-circuits</text>
+  <rect class="u" x="935" y="218" width="223" height="192" rx="4"/>
   <rect class="box" x="40" y="64" width="200" height="64" rx="2"/>
   <text class="tb mid" x="140" y="84">Chargeur Dolphin 20 A</text>
   <text class="ts mid" x="140" y="99">batterie moteur seule · 230 V : folio 3</text>
@@ -64,9 +65,13 @@
   <rect class="fuse" x="820" y="111" width="60" height="18"/>
   <text class="id mid" x="850" y="124">70 A</text>
   <text class="ts mid" x="850" y="100">disjoncteur du guindeau</text>
-  <rect class="box" x="940" y="80" width="140" height="110" rx="2"/>
-  <text class="tb mid" x="1010" y="100">Relais</text>
-  <text class="ts mid" x="1010" y="115">guindeau</text>
+  <rect class="box" x="960" y="80" width="120" height="130" rx="2"/>
+  <text class="tb mid" x="1020" y="100">Relais</text>
+  <text class="ts mid" x="1020" y="115">guindeau</text>
+  <rect class="fuse" x="937" y="250" width="16" height="40"/>
+  <text class="id" x="957" y="274">5 A</text>
+  <rect class="box-unk" x="980" y="330" width="170" height="70" rx="2"/>
+  <text class="tb mid" x="1065" y="380">Télécommande</text>
   <circle class="box" cx="1140" cy="125" r="20"/>
   <text class="tb mid" x="1140" y="130">M</text>
   <rect class="sw" x="440" y="624" width="60" height="32" rx="2"/>
@@ -84,7 +89,7 @@
   <text class="ts tn " x="564" y="546">interrupteur à voyant (Q48)</text>
   <rect class="fuse-new" x="620" y="571" width="46" height="18"/>
   <text class="idn mid" x="643" y="584">1 A</text>
-  <path class="n w4" d="M500 640 H1150"/>
+  <path class="n w4" d="M500 640 H1170"/>
   <path class="n w2" d="M40 112 L30 112 L30 230 L40 240"/>
   <text class="idn" x="36" y="160">w201 · 6</text>
   <path class="p w4" d="M170 220 L232 220"/>
@@ -97,16 +102,24 @@
   <text class="id mid" x="620" y="212">w012 · 35</text>
   <path class="p w4" d="M484 220 L500 204 L500 120 L820 120"/>
   <text class="idn mid" x="680" y="112">w217 · 35 · guindeau sur le circuit moteur</text>
-  <path class="p w5" d="M880 120 L940 120"/>
+  <path class="p w5" d="M880 120 L960 120"/>
   <text class="id mid" x="906" y="112">w018 · 50</text>
   <path class="p w3" d="M1080 110 L1126.8 110"/>
   <text class="id mid" x="1100" y="104">w020</text>
   <path class="p w3" d="M1080 140 L1126.8 140"/>
   <text class="id mid" x="1100" y="156">w021</text>
   <path class="n w4" d="M900 640 L900 250"/>
-  <text class="id" x="908" y="300">w013 · 35</text>
-  <path class="n w5" d="M1000 640 L1000 190"/>
-  <text class="id" x="1008" y="400">w015 · 50</text>
+  <text class="id end" x="894" y="300">w013 · 35</text>
+  <path class="n w5" d="M1170 640 L1170 170 L1080 170"/>
+  <text class="id end" x="1164" y="470">w015 · 50</text>
+  <path class="u" d="M960 120 L945 135 L945 250"/>
+  <text class="id" x="952" y="228">w061</text>
+  <path class="u" d="M945 290 L945 365 L980 365"/>
+  <text class="id" x="951" y="322">w062</text>
+  <path class="u" d="M1030 330 L1030 210"/>
+  <text class="id mid" x="1024" y="270" transform="rotate(-90 1024 270)">w063</text>
+  <path class="u" d="M1066 330 L1066 210"/>
+  <text class="id mid" x="1060" y="270" transform="rotate(-90 1060 270)">w064</text>
   <path class="n w4" d="M40 240 L30 250 L30 656 L424 656 L440 640"/>
   <text class="id" x="36" y="300">w004 · 35</text>
   <path class="p w3" d="M484 220 L496 232 L496 262"/>
@@ -144,10 +157,17 @@
   <circle class="term" cx="900" cy="250" r="3.5"/>
   <circle class="term" cx="820" cy="120" r="3.5"/>
   <circle class="term" cx="880" cy="120" r="3.5"/>
-  <circle class="term" cx="940" cy="120" r="3.5"/>
-  <circle class="term" cx="1000" cy="190" r="3.5"/>
+  <circle class="term" cx="960" cy="120" r="3.5"/>
+  <circle class="term" cx="1080" cy="170" r="3.5"/>
   <circle class="term" cx="1080" cy="110" r="3.5"/>
   <circle class="term" cx="1080" cy="140" r="3.5"/>
+  <circle class="term" cx="1030" cy="210" r="3.5"/>
+  <circle class="term" cx="1066" cy="210" r="3.5"/>
+  <circle class="term" cx="945" cy="250" r="3.5"/>
+  <circle class="term" cx="945" cy="290" r="3.5"/>
+  <circle class="term" cx="980" cy="365" r="3.5"/>
+  <circle class="term" cx="1030" cy="330" r="3.5"/>
+  <circle class="term" cx="1066" cy="330" r="3.5"/>
   <circle class="term" cx="1126.8" cy="110" r="3.5"/>
   <circle class="term" cx="1126.8" cy="140" r="3.5"/>
   <circle class="term" cx="440" cy="640" r="3.5"/>
@@ -185,14 +205,26 @@
   <text class="pin end" x="895" y="244">−</text>
   <text class="id end" x="816" y="140">n020</text>
   <text class="id" x="884" y="140">n021</text>
-  <text class="id" x="947" y="119">n022</text>
-  <text class="pin" x="947" y="129">e+</text>
-  <text class="id" x="1005" y="174">n023</text>
-  <text class="pin" x="1005" y="184">e−</text>
+  <text class="id" x="967" y="119">n022</text>
+  <text class="pin" x="967" y="129">e+</text>
+  <text class="id end" x="1073" y="169">n023</text>
+  <text class="pin end" x="1073" y="179">e−</text>
   <text class="id end" x="1073" y="109">n024</text>
   <text class="pin end" x="1073" y="119">A</text>
   <text class="id end" x="1073" y="139">n025</text>
   <text class="pin end" x="1073" y="149">B</text>
+  <text class="id end" x="1025" y="194">n026</text>
+  <text class="pin end" x="1025" y="204">mont</text>
+  <text class="id end" x="1061" y="194">n027</text>
+  <text class="pin end" x="1061" y="204">desc</text>
+  <text class="id" x="953" y="244">n033</text>
+  <text class="id" x="953" y="304">n034</text>
+  <text class="id" x="987" y="364">n035</text>
+  <text class="pin" x="987" y="374">+</text>
+  <text class="id end" x="1025" y="344">n036</text>
+  <text class="pin end" x="1025" y="354">mont</text>
+  <text class="id" x="1071" y="344">n037</text>
+  <text class="pin" x="1071" y="354">desc</text>
   <text class="id" x="1128.8" y="90">n029</text>
   <text class="pin" x="1128.8" y="100">A</text>
   <text class="id" x="1128.8" y="156">n030</text>
@@ -218,6 +250,7 @@
   <text class="idn" x="670" y="600">n368</text>
   <text class="ts end" x="1150" y="656">node006 · masse des charges : folio 1</text>
   <text class="ts mid" x="1135" y="70">Guindeau 700 W</text>
-  <text class="ts mid" x="1100" y="214">télécommande : folio 1</text>
+  <text class="ts tu mid" x="1040" y="426">télécommande à relever (Q2)</text>
   <text class="ts" x="20" y="710">En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice).</text>
+  <g class="mk-q"><circle cx="1140" cy="238" r="11"/><text class="mid" x="1140" y="241.5">Q2</text></g>
 </svg>

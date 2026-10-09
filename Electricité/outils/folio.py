@@ -82,6 +82,7 @@ ABREGES = {
     "sortie moteur A": "A", "sortie moteur B": "B", "entrée": "e", "sortie": "s",
     "30 (entrée)": "30", "87 (sortie)": "87", "86 (bobine +)": "86", "85 (bobine −)": "85",
     "12 V +": "+", "12 V −": "−", "− batterie": "− bat", "− système": "− sys",
+    "commande montée": "mont", "commande descente": "desc", "commande masse": "−", "montée": "mont", "descente": "desc",
     "+ alimentation et mesure (Vbatt+)": "Vbat+", "entrée auxiliaire (tension batterie moteur)": "aux",
 }
 
@@ -207,6 +208,7 @@ class Folio:
         self.barres = {}    # nœud → [(a, b)]
         self.traces = {}    # fil → [points]
         self.liaisons = []  # (« n074 – n070 », a, b) : montage direct d'une borne sur une autre
+        self.cable = {}     # fil → câble unifilaire qui le porte
         self.forme = {}     # nœud → forme de son appareil
         self.contours = []  # (nom, 'rect', (x0, y0, x1, y1), nœuds) ou (nom, 'cercle', (cx, cy, r), nœuds)
         self.rect = {}      # nœud → contour rectangulaire de sa boîte (étiquette à l'intérieur)
@@ -314,7 +316,7 @@ class Folio:
             return (min(x1, x2), y1 - m, max(x1, x2), y1 + m)
         return (x1 - m, min(y1, y2), x1 + m, max(y1, y2))
 
-    def etiquette_noeud(self, n):
+    def etiquette_noeud(self, n, groupe=None):
         x, y = self.pos[n]
         cote, et, fonction = self.cote[n]
         borne = self.M.nodes.get(n, {}).get("borne", "")
@@ -322,6 +324,8 @@ class Folio:
             f = fonction or ""
         else:
             f = fonction if fonction is not None else abreger(borne)
+            if groupe and len(groupe) > 1 and fonction is None:
+                f = "/".join(abreger(self.M.nodes.get(g, {}).get("borne", "")) for g in groupe)
         if et:
             dx, dy, anc = et[0], et[1], (et[2] if len(et) > 2 else "")
         elif n in self.rect:   # boîte : ID et fonction à l'intérieur du contour
@@ -336,7 +340,8 @@ class Folio:
         neuf = nd.get("statut") == "propose" or self.nouveau(nd.get("equipement", ""))
         cls = "idn" if neuf else "id"
         a = f" {anc}" if anc else ""
-        self.out.append(f'<text class="{cls}{a}" x="{x + dx:g}" y="{y + dy:g}">{court(n)}</text>')
+        ident = " / ".join(court(g) for g in groupe) if groupe else court(n)
+        self.out.append(f'<text class="{cls}{a}" x="{x + dx:g}" y="{y + dy:g}">{ident}</text>')
         if n in self.rect:
             x0, y0, x1, y1 = self.rect[n]
             if not (x0 < x + dx < x1 and y0 < y + dy - 8 and y + dy + (10 if f else 0) < y1):
@@ -347,13 +352,15 @@ class Folio:
     # -- fils
     def classe_fil(self, w):
         f = self.M.fils[w]
+        if "section_mm2" not in f:   # section inconnue : partie incertaine, en pointillés bleus
+            return "u"
         pol = {self.M.nodes[f["de"]]["polarite"], self.M.nodes[f["vers"]]["polarite"]}
         c = "n" if pol <= {"-"} else ("ph" if "230V-phase" in pol else "ne" if "230V-neutre" in pol else "pe" if "230V-terre" in pol else "p")
         s = f.get("section_mm2", 1.5)
         ep = "w1" if s <= 1.5 else "w2" if s <= 6 else "w3" if s <= 16 else "w4" if s <= 35 else "w5"
         return f"{c} {ep}"
 
-    def dessiner_fil(self, w, spec):
+    def dessiner_fil(self, w, spec, dessin=True):
         if w not in self.M.fils:
             self.erreurs.append(f"{w} tracé mais absent du modèle {self.L['modele']}")
             return
@@ -366,8 +373,10 @@ class Folio:
                 if not pts or (pts[idx] != p and not self.sur_barre(n, pts[idx])):
                     pts.insert(0 if idx == 0 else len(pts), p)
         self.traces[w] = pts
+        if not dessin:
+            return
         d = "M" + " L".join(f"{x:g} {y:g}" for x, y in pts)
-        self.out.append(f'<path class="{self.classe_fil(w)}" d="{d}"/>')
+        self.out.append(f'<path class="{spec.get("classe") or self.classe_fil(w)}" d="{d}"/>')
         et = spec.get("etiquette")
         if et:
             texte = spec.get("texte") or (court(w) + (f" · {f['section_mm2']:g}".replace(".", ",") if "section_mm2" in f else ""))
@@ -375,6 +384,34 @@ class Folio:
             anc = f" {et[2]}" if len(et) > 2 and et[2] else ""
             rot = f' transform="rotate(-90 {et[0]:g} {et[1]:g})"' if len(et) > 3 and et[3] == "v" else ""
             self.out.append(f'<text class="{cls}{anc}" x="{et[0]:g}" y="{et[1]:g}"{rot}>{escape(texte)}</text>')
+
+    def dessiner_cable(self, nom, spec):
+        """Câble unifilaire : un seul trait pour ses conducteurs, barres obliques = nombre de conducteurs."""
+        fils = [w for w in spec["fils"] if w in self.M.fils]
+        for w in spec["fils"]:
+            self.dessiner_fil(w, {"trace": spec.get("trace", [])}, dessin=False)
+            self.cable[w] = nom
+        if not fils:
+            return
+        pts = self.traces[fils[0]]
+        d = "M" + " L".join(f"{x:g} {y:g}" for x, y in pts)
+        self.out.append(f'<path class="{spec.get("classe", "n w2")}" d="{d}"/>')
+        a, b = max(zip(pts, pts[1:]), key=lambda s: math.dist(*s))
+        x, y = spec.get("obliques_xy") or ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+        k = len(spec["fils"])
+        for i in range(k):
+            o = (i - (k - 1) / 2) * 5
+            if a[1] == b[1]:
+                self.out.append(f'<path class="n w1" d="M{x + o - 3:g} {y + 5:g} L{x + o + 3:g} {y - 5:g}"/>')
+            else:
+                self.out.append(f'<path class="n w1" d="M{x - 5:g} {y + o + 3:g} L{x + 5:g} {y + o - 3:g}"/>')
+        et = spec.get("etiquette")
+        if et:
+            texte = spec.get("texte") or " / ".join(court(w) for w in spec["fils"])
+            neuf = any(self.M.fils[w].get("statut") == "propose" for w in fils)
+            anc = f" {et[2]}" if len(et) > 2 and et[2] else ""
+            rot = f' transform="rotate(-90 {et[0]:g} {et[1]:g})"' if len(et) > 3 and et[3] == "v" else ""
+            self.out.append(f'<text class="{"idn" if neuf else "id"}{anc}" x="{et[0]:g}" y="{et[1]:g}"{rot}>{escape(texte)}</text>')
 
     def sur_barre(self, n, p):
         return any(sur_segment(p, a, b) for a, b in self.barres.get(n, []))
@@ -408,7 +445,7 @@ class Folio:
         segs = [(w, a, b) for w, pts in self.traces.items() for a, b in zip(pts, pts[1:])]
         for i, (w1, a1, b1) in enumerate(segs):
             for w2, a2, b2 in segs[i + 1:]:
-                if w1 == w2:
+                if w1 == w2 or (w1 in self.cable and self.cable.get(w2) == self.cable[w1]):
                     continue
                 r = recouvrement((a1, b1), (a2, b2))
                 if not r:
@@ -422,9 +459,10 @@ class Folio:
 
     def croisements(self):
         """Croisements entre fils (et barres) non admis par la mise en page (croisements_admis)."""
-        segs = [(court(w), a, b) for w, pts in self.traces.items() for a, b in zip(pts, pts[1:])]
+        segs = list(dict.fromkeys((self.cable.get(w) or court(w), a, b)
+                                  for w, pts in self.traces.items() for a, b in zip(pts, pts[1:])))
         segs += [(court(n), a, b) for n, bs in self.barres.items() for a, b in bs]
-        admis = {frozenset(court(x) for x in paire) for paire in self.L.get("croisements_admis", []) or []}
+        admis = {frozenset(x if x in (self.L.get("cables") or {}) else court(x) for x in paire) for paire in self.L.get("croisements_admis", []) or []}
         vus = []
         for i, (n1, a1, b1) in enumerate(segs):
             for n2, a2, b2 in segs[i + 1:]:
@@ -446,6 +484,11 @@ class Folio:
         for z in L.get("zones", []) or []:
             o.append(f'<rect class="bound" x="{z["x"]}" y="{z["y"]}" width="{z["w"]}" height="{z["h"]}"/>')
             o.append(f'<text class="ts" x="{z["x"] + 10}" y="{z["y"] + 18}">{escape(z["texte"])}</text>')
+        for z in L.get("incertains", []) or []:   # zone d'ombre : ce qui reste à relever
+            o.append(f'<rect class="u" x="{z["x"]}" y="{z["y"]}" width="{z["w"]}" height="{z["h"]}" rx="4"/>')
+            if z.get("texte"):
+                tx, ty = z.get("texte_xy", [z["x"] + 8, z["y"] + 16])
+                o.append(f'<text class="ts tu" x="{tx}" y="{ty}">{escape(z["texte"])}</text>')
         for ap in L.get("appareils", []):
             self.dessiner_appareil(ap)
         for b in L.get("barres", []) or []:
@@ -453,8 +496,12 @@ class Folio:
             o.append(f'<path class="{"n" if pol == "-" else "p"} {b.get("epaisseur", "w4")}" d="M{b["de"][0]} {b["de"][1]} H{b["a"][0]}"/>'
                      if b["de"][1] == b["a"][1] else
                      f'<path class="{"n" if pol == "-" else "p"} {b.get("epaisseur", "w4")}" d="M{b["de"][0]} {b["de"][1]} V{b["a"][1]}"/>')
+        for t in L.get("traits", []) or []:   # traits libres (repères, tuyauteries), hors règles des fils
+            o.append(f'<path class="{t.get("classe", "leader")}" d="M' + " L".join(f"{x:g} {y:g}" for x, y in t["points"]) + '"/>')
         for w, spec in (L.get("fils") or {}).items():
             self.dessiner_fil(w, spec or {})
+        for nom, spec in (L.get("cables") or {}).items():
+            self.dessiner_cable(nom, spec)
         for m in L.get("liaisons", []) or []:   # montage direct d'une borne sur une autre (sans fil)
             a, b = self.pos[m[0]], self.pos[m[1]]
             self.liaisons.append((f"liaison {court(m[0])} – {court(m[1])}", a, b))
@@ -468,8 +515,11 @@ class Folio:
         for n in self.pos:   # les ronds par-dessus les fils
             x, y = self.pos[n]
             o.append(f'<circle class="term" cx="{x:g}" cy="{y:g}" r="3.5"/>')
-        for n in self.pos:
-            self.etiquette_noeud(n)
+        groupes = {}
+        for n in self.pos:   # nœuds confondus (bornes d'un câble unifilaire) : une seule étiquette
+            groupes.setdefault(self.pos[n], []).append(n)
+        for ns in groupes.values():
+            self.etiquette_noeud(ns[0], ns)
         for t in L.get("textes", []) or []:
             o.append(f'<text class="{t.get("classe", "ts")}" x="{t["x"]}" y="{t["y"]}">{escape(t["texte"])}</text>')
         for p in L.get("pastilles", []) or []:

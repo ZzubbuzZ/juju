@@ -74,17 +74,37 @@ appareils:
       node020: {cote: point, xy: [820, 120], etiquette: [-4, 20, end]}
       node021: {cote: point, xy: [880, 120], etiquette: [4, 20]}
   - id: relais-guindeau
-    x: 940
+    x: 960
     y: 80
-    w: 140
-    h: 110
+    w: 120
+    h: 130
     titre: Relais
     lignes: [guindeau]
     nodes:
       node022: [gauche, 120]
-      node023: [bas, 1000]
+      node023: [droite, 170]
       node024: [droite, 110]
       node025: [droite, 140]
+      node026: [bas, 1030]
+      node027: [bas, 1066]
+  - id: fus-telecommande-guindeau
+    forme: fusible
+    calibre: 5 A
+    nodes:
+      node033: {cote: point, xy: [945, 250], etiquette: [8, -6]}
+      node034: {cote: point, xy: [945, 290], etiquette: [8, 14]}
+  - id: telecommande-guindeau
+    x: 980
+    y: 330
+    w: 170
+    h: 70
+    inconnu: true
+    titre: Télécommande
+    titre_y: 50
+    nodes:
+      node035: [gauche, 365]
+      node036: {cote: haut, a: 1030, etiquette: [-5, 14, end]}
+      node037: {cote: haut, a: 1066, etiquette: [5, 14]}
   - id: guindeau
     forme: cercle
     cx: 1140
@@ -144,7 +164,13 @@ appareils:
       node368: {cote: point, xy: [666, 580], etiquette: [4, 20]}
 
 barres:
-  - {node: node006, de: [500, 640], a: [1150, 640]}
+  - {node: node006, de: [500, 640], a: [1170, 640]}
+
+incertains:
+  - {x: 935, y: 218, w: 223, h: 192}
+
+pastilles:
+  - {id: Q2, x: 1140, y: 238}
 
 liaisons:
   - [node074, node070]
@@ -159,8 +185,12 @@ fils:
   wire018: {etiquette: [906, 112, mid]}
   wire020: {etiquette: [1100, 104, mid], texte: w020}
   wire021: {etiquette: [1100, 156, mid], texte: w021}
-  wire013: {trace: [[900, 640]], etiquette: [908, 300]}
-  wire015: {trace: [[1000, 640]], etiquette: [1008, 400]}
+  wire013: {trace: [[900, 640]], etiquette: [894, 300, end]}
+  wire015: {trace: [[1170, 640], [1170, 170]], etiquette: [1164, 470, end]}
+  wire061: {trace: [[945, 135]], etiquette: [952, 228]}
+  wire062: {trace: [[945, 365]], etiquette: [951, 322]}
+  wire063: {etiquette: [1024, 270, mid, v]}
+  wire064: {etiquette: [1060, 270, mid, v]}
   wire004: {trace: [[30, 250], [30, 656], [424, 656]], etiquette: [36, 300]}
   wire202: {trace: [[496, 232]], etiquette: [488, 250, end]}
   wire203: {etiquette: [488, 344, end]}
@@ -178,5 +208,5 @@ renvois:
 textes:
   - {x: 1150, y: 656, classe: "ts end", texte: "node006 · masse des charges : folio 1"}
   - {x: 1135, y: 70, classe: "ts mid", texte: "Guindeau 700 W"}
-  - {x: 1100, y: 214, classe: "ts mid", texte: "télécommande : folio 1"}
+  - {x: 1040, y: 426, classe: "ts tu mid", texte: "télécommande à relever (Q2)"}
   - {x: 20, y: 710, texte: "En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice)."}
