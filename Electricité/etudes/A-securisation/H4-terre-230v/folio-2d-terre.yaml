@@ -1,0 +1,110 @@
+# Mise en page du folio 2d (A-H4), lue par outils/folio.py qui produit le SVG voisin.
+# Multifilaire : phase (ph), neutre (ne) et terre (pe, doublée de tirets jaunes) conducteur par conducteur.
+folio: 2d
+titre: Terre 230 V et différentiel
+aria: "Arrivée 230 V proposée : la terre de la prise de quai passe par un isolateur galvanique maison avant la barrette de terre, et le différentiel est remplacé par un interrupteur différentiel de type A."
+desc: "La terre du ponton est conservée, à travers un isolateur galvanique maison placé sur son conducteur ; elle n'est pas reliée à la masse 12 V (Q40). Le différentiel d'arrivée est remplacé par un interrupteur différentiel bipolaire 30 mA de type A."
+modele: A-H4
+taille: [1200, 560]
+
+appareils:
+  - id: prise-quai
+    x: 40
+    y: 110
+    w: 140
+    h: 210
+    titre: Prise de quai
+    lignes: [EU · banc tribord]
+    nodes:
+      node203: [droite, 180]
+      node204: [droite, 210]
+      node205: [droite, 290]
+  - id: ddr-230v
+    x: 440
+    y: 150
+    w: 260
+    h: 90
+    titre: Interrupteur différentiel
+    lignes: [30 mA · type A · 40 A, remplace le Power Safe (Q36)]
+    nodes:
+      node206: {cote: gauche, a: 180, fonction: phase}
+      node207: {cote: gauche, a: 210, fonction: neutre}
+      node208: {cote: droite, a: 180, fonction: phase}
+      node209: {cote: droite, a: 210, fonction: neutre}
+  - id: isolateur-galvanique
+    x: 270
+    y: 262
+    w: 240
+    h: 56
+    titre: Isolateur
+    lignes: [galvanique maison]
+    nodes:
+      node256: [gauche, 290]
+      node257: [droite, 290]
+  - id: barrette-terre
+    forme: barre     # barrette de terre du boîtier d'arrivée : un point de raccordement
+    nodes:
+      node212: {cote: point, xy: [720, 290], etiquette: [-6, -8, end], fonction: ""}
+  - id: masse-12v
+    x: 760
+    y: 350
+    w: 170
+    h: 40
+    inconnu: true
+    titre: Masse 12 V (node005)
+    titre_y: 18
+    lignes: [non reliée à la terre]
+  - id: detail-isolateur
+    x: 40
+    y: 350
+    w: 640
+    h: 132
+
+fils:
+  wire029:
+    etiquette: [300, 173, mid]
+    texte: "w029 · phase"
+  wire030:
+    etiquette: [300, 203, mid]
+    texte: "w030 · neutre"
+  wire170:
+    etiquette: [225, 283, mid]
+  wire171:
+    etiquette: [615, 283, mid]
+  # départs vers le folio 3 : deux phases (même trait), deux neutres (même trait)
+  wire037:
+    trace: [[700, 180], [800, 180]]
+  wire031:
+    trace: [[700, 180], [800, 180]]
+    etiquette: [750, 173, mid]
+    texte: "w031 / w037"
+  wire033:
+    trace: [[700, 210], [800, 210]]
+  wire039:
+    trace: [[700, 210], [800, 210]]
+    etiquette: [750, 203, mid]
+    texte: "w033 / w039"
+
+renvois:
+  - {x: 800, y: 165, w: 360, h: 60, texte: "phases → disjoncteurs 10 A (n210) et 16 A (n213)"}
+
+traits:
+  # pas de liaison entre la terre et la masse 12 V (Q40)
+  - {classe: u, points: [[720, 294], [720, 330], [845, 330], [845, 350]]}
+
+pastilles:
+  - {id: A8, x: 510, y: 262}
+  - {id: Q40, x: 930, y: 350}
+
+textes:
+  - {x: 980, y: 213, classe: ts mid, texte: "neutres → chargeur (n201), boîtier tribord (n221) : folio 3"}
+  - {x: 730, y: 294, texte: "barrette de terre du boîtier d'arrivée"}
+  - {x: 730, y: 310, texte: "vers chargeur et prises : folio 3"}
+  - {x: 54, y: 372, classe: tb, texte: "Isolateur maison : un pont redresseur monophasé en module"}
+  - {x: 54, y: 392, classe: t, texte: "100 A, 1 000 V au moins, IFSM ≥ 1 000 A ; bornes + et − reliées par un pont de cuivre ;"}
+  - {x: 54, y: 410, classe: t, texte: "les deux bornes « ~ » deviennent les bornes de l'isolateur (deux diodes en série dans chaque sens)."}
+  - {x: 54, y: 428, classe: t, texte: "Sur radiateur, dans un boîtier étanche près de la prise de quai."}
+  - {x: 54, y: 452, classe: t, texte: "Contrôle chaque saison, câble de quai débranché : 0,9 à 1,2 V dans les deux sens."}
+  - {x: 54, y: 468, classe: t, texte: "« OL » = diode ouverte, la terre ne passe plus : ne plus brancher au quai."}
+  - {x: 40, y: 514, texte: "En vert : nouveau. Phase, neutre et terre sont dessinés conducteur par conducteur (multifilaire)."}
+  - {x: 40, y: 532, texte: "L'ancien fil de terre de la prise vers la barrette est remplacé par w170, l'isolateur et w171."}

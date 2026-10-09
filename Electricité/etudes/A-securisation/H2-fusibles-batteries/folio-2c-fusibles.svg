@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Fusibles proposés : un fusible de 400 A près de chaque batterie, un fusible sur chacun des quatre départs du coupleur et du chargeur, et un fusible à la source de chacun des câbles des deux tableaux.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Fusibles proposés : un fusible de 400 A près de chaque batterie, un fusible sur chacun des quatre départs du coupleur et du chargeur, et un fusible à la source de chacun des câbles des deux tableaux.">
   <title>Folio 2c · Fusibles de batterie et des départs</title>
   <desc>Chaque câble branché sur une batterie est désormais protégé à sa source : 400 A près des batteries (A2), 30 A pour le chargeur et 40 A pour le coupleur (A4), 50 A pour le tableau de la table à carte (A1), 30 A pour le tableau Scheiber (A6). Les câbles existants sont conservés et repris sur les porte-fusibles.</desc>
   <style>
@@ -39,189 +39,154 @@
     .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
   </style>
   <rect class="bg" x="0" y="0" width="100%" height="100%"/>
-
-  <!-- ============ Batterie moteur ============ -->
-  <rect class="box" x="40" y="90" width="150" height="60" rx="2"/>
-  <text class="tb mid" x="115" y="114">Batterie moteur</text>
-
-  <text class="ts mid" x="115" y="131">110 Ah · coffre tribord</text>
-
-  <text class="id end" x="184" y="145">node001</text>
-
-  <path class="p w4" d="M190 120 H260"/>
-  <text class="idn mid" x="225" y="108">w160 · 35</text>
-
-  <rect class="fuse-new" x="260" y="111" width="56" height="18"/>
-  <text class="idn mid" x="288" y="124">400 A</text>
-
-  <text class="ts mid tn" x="288" y="146">MEGA</text>
-
-  <g class="mk-a"><circle cx="288" cy="88" r="10"/><text class="mid" x="288" y="91.5">A2</text></g>
-  <path class="p w4" d="M316 120 H420"/>
-  <text class="id mid" x="370" y="110">w001 · 35</text>
-
-  <!-- CC moteur -->
-  <circle class="term" cx="424" cy="120" r="4"/><circle class="term" cx="484" cy="120" r="4"/>
-  <path class="lever" d="M424 120 L481 107"/>
-  <text class="ts mid" x="454" y="94">CC moteur</text>
-
-  <text class="id end" x="413" y="140">node003</text>
-
-  <path class="p w4" d="M488 120 H560"/>
-  <rect class="flag" x="560" y="111" width="240" height="18"/>
-  <text class="ts mid" x="680" y="124">node004 · démarreur, couplage : folio 1</text>
-
-
-  <!-- Départs de node003 -->
-  <path class="p w2" d="M420 124 V190 H500"/>
-  <path class="p w2" d="M428 124 V230 H500"/>
-  <text class="idn" x="436" y="184">w162 · 6</text>
-
-  <text class="idn" x="436" y="224">w164 · 6</text>
-
-  <rect class="fuse-new" x="500" y="181" width="46" height="18"/>
-  <text class="idn mid" x="523" y="194">30 A</text>
-
-  <rect class="fuse-new" x="500" y="221" width="46" height="18"/>
-  <text class="idn mid" x="523" y="234">40 A</text>
-
-  <path class="p w2" d="M546 190 H700"/>
-  <path class="p w2" d="M546 230 H700"/>
-  <text class="id mid" x="623" y="184">w003 · 6</text>
-
-  <text class="id mid" x="623" y="224">w002 · 6</text>
-
-  <rect class="flag" x="700" y="181" width="250" height="18"/>
-  <text class="ts mid" x="825" y="194">chargeur, sortie 1 · node016 · folio 1</text>
-
-  <rect class="flag" x="700" y="221" width="250" height="18"/>
-  <text class="ts mid" x="825" y="234">coupleur, entrée moteur · node013 · folio 1</text>
-
-  <g class="mk-a"><circle cx="580" cy="210" r="10"/><text class="mid" x="580" y="213.5">A4</text></g>
-
-  <!-- ============ Batterie de servitude ============ -->
-  <rect class="box" x="40" y="300" width="150" height="60" rx="2"/>
-  <text class="tb mid" x="115" y="324">Batterie servitude</text>
-
-  <text class="ts mid" x="115" y="341">110 Ah · cabine de poupe</text>
-
-  <text class="id end" x="184" y="355">node007</text>
-
-  <path class="p w4" d="M190 330 H260"/>
-  <text class="idn mid" x="225" y="318">w161 · 35</text>
-
-  <rect class="fuse-new" x="260" y="321" width="56" height="18"/>
-  <text class="idn mid" x="288" y="334">400 A</text>
-
-  <text class="ts mid tn" x="288" y="356">MEGA</text>
-
-  <g class="mk-a"><circle cx="288" cy="298" r="10"/><text class="mid" x="288" y="301.5">A2</text></g>
-  <path class="p w4" d="M316 330 H420"/>
-  <text class="id mid" x="370" y="320">w006 · 35</text>
-
-  <!-- CC servitude -->
-  <circle class="term" cx="424" cy="330" r="4"/><circle class="term" cx="484" cy="330" r="4"/>
-  <path class="lever" d="M424 330 L481 317"/>
-  <text class="ts end" x="474" y="304">CC servitude</text>
-
-  <text class="id end" x="413" y="350">node009</text>
-
-  <text class="id mid" x="484" y="350">node010</text>
-
-
-  <!-- Départs de node009 -->
-  <path class="p w2" d="M420 334 V400 H500"/>
-  <path class="p w2" d="M428 334 V440 H500"/>
-  <text class="idn" x="436" y="394">w163 · 6</text>
-
-  <text class="idn" x="436" y="434">w165 · 6</text>
-
-  <rect class="fuse-new" x="500" y="391" width="46" height="18"/>
-  <text class="idn mid" x="523" y="404">30 A</text>
-
-  <rect class="fuse-new" x="500" y="431" width="46" height="18"/>
-  <text class="idn mid" x="523" y="444">40 A</text>
-
-  <path class="p w2" d="M546 400 H700"/>
-  <path class="p w2" d="M546 440 H700"/>
-  <text class="id mid" x="623" y="394">w008 · 6</text>
-
-  <text class="id mid" x="623" y="434">w007 · 6</text>
-
-  <rect class="flag" x="700" y="391" width="250" height="18"/>
-  <text class="ts mid" x="825" y="404">chargeur, sortie 2 · node017 · folio 1</text>
-
-  <rect class="flag" x="700" y="431" width="250" height="18"/>
-  <text class="ts mid" x="825" y="444">coupleur, entrée servitude · node014 · folio 1</text>
-
-  <g class="mk-a"><circle cx="580" cy="420" r="10"/><text class="mid" x="580" y="423.5">A4</text></g>
-
-  <!-- ============ Guindeau et tableau de la table à carte ============ -->
-  <path class="p w4" d="M488 330 H960"/>
-  <text class="id mid" x="872" y="322">w017 · 35 (inchangé)</text>
-
-  <text class="id end" x="954" y="346">node020</text>
-
-  <rect class="box" x="960" y="310" width="130" height="40" rx="2"/>
-  <text class="tb mid" x="1025" y="328">Disj. guindeau</text>
-
-  <text class="ts mid" x="1025" y="343">vers le guindeau : folio 1</text>
-
-
-  <!-- Tableau de la table à carte, depuis node010 -->
-  <path class="p w2" d="M481 326 V255 H640"/>
-  <text class="idn end" x="476" y="280">w166 · 6</text>
-
-  <g class="mk-a"><circle cx="620" cy="238" r="10"/><text class="mid" x="620" y="241.5">A1</text></g>
-  <rect class="fuse-new" x="640" y="246" width="46" height="18"/>
-  <text class="idn mid" x="663" y="259">50 A</text>
-
-  <path class="p w2" d="M686 255 H950"/>
-  <text class="id mid" x="850" y="249">w019 · 6</text>
-
-  <rect class="flag" x="950" y="246" width="235" height="18"/>
-  <text class="ts mid" x="1067.5" y="259">tableau table à carte · node100 · folio 1</text>
-
-
-  <!-- Tableau Scheiber, depuis node010 -->
-  <path class="p w2" d="M487 326 V290 H760"/>
-  <text class="idn mid" x="722" y="284">w167 · 6</text>
-
-  <g class="mk-a"><circle cx="724" cy="308" r="10"/><text class="mid" x="724" y="311.5">A6</text></g>
-  <rect class="fuse-new" x="760" y="281" width="46" height="18"/>
-  <text class="idn mid" x="783" y="294">30 A</text>
-
-  <path class="p w2" d="M806 290 H950"/>
-  <text class="id mid" x="903" y="284">w022 · 6</text>
-
-  <rect class="flag" x="950" y="281" width="235" height="18"/>
-  <text class="ts mid" x="1067.5" y="294">tableau Scheiber · node050 · folio 1</text>
-
-
-  <!-- Légende -->
-  <text class="ts" x="40" y="520">En vert : nouveau (porte-fusibles et tronçons courts).</text>
-
-  <text class="ts" x="40" y="538">Les fils existants gardent leur numéro : seule leur extrémité côté source passe sur le fusible.</text>
-
-  <text class="ts" x="40" y="556">w001 et w006 restent en 35 mm² sous 400 A : écart accepté le 30/09 (w006 en 50 mm² à long terme).</text>
-
-  <text class="ts" x="40" y="574">Les tronçons w160 et w161, non protégés, doivent être aussi courts que possible. nXXX = nodeXXX (bornes des fusibles).</text>
-
-  <!-- nœuds des fusibles -->
-  <text class="idn end" x="257" y="133">n070</text>
-  <text class="idn" x="319" y="133">n071</text>
-  <text class="idn end" x="497" y="203">n074</text>
-  <text class="idn" x="549" y="203">n075</text>
-  <text class="idn end" x="497" y="243">n078</text>
-  <text class="idn" x="549" y="243">n079</text>
-  <text class="idn end" x="257" y="343">n072</text>
-  <text class="idn" x="319" y="343">n073</text>
-  <text class="idn end" x="497" y="413">n076</text>
-  <text class="idn" x="549" y="413">n077</text>
-  <text class="idn end" x="497" y="453">n080</text>
-  <text class="idn" x="549" y="453">n081</text>
-  <text class="idn end" x="637" y="268">n082</text>
-  <text class="idn" x="689" y="268">n083</text>
-  <text class="idn end" x="757" y="303">n084</text>
-  <text class="idn" x="809" y="303">n085</text>
+  <!-- Généré par outils/folio.py depuis folio-2c-fusibles.yaml : ne pas modifier à la main. -->
+  <rect class="box" x="40" y="90" width="150" height="70" rx="2"/>
+  <text class="tb mid" x="115" y="110">Batterie moteur</text>
+  <text class="ts mid" x="115" y="125">110 Ah · coffre tribord</text>
+  <rect class="fuse-new" x="260" y="131" width="56" height="18"/>
+  <text class="idn mid" x="288" y="144">400 A</text>
+  <text class="ts tn mid" x="288" y="166">MEGA</text>
+  <rect class="sw" x="424" y="124" width="60" height="32" rx="2"/>
+  <path class="lever" d="M424 140 L481 127"/>
+  <text class="ts mid" x="454" y="112">CC moteur</text>
+  <rect class="fuse-new" x="500" y="201" width="46" height="18"/>
+  <text class="idn mid" x="523" y="214">30 A</text>
+  <rect class="fuse-new" x="500" y="241" width="46" height="18"/>
+  <text class="idn mid" x="523" y="254">40 A</text>
+  <rect class="box" x="40" y="380" width="150" height="70" rx="2"/>
+  <text class="tb mid" x="115" y="400">Batterie servitude</text>
+  <text class="ts mid" x="115" y="415">110 Ah · cabine de poupe</text>
+  <rect class="fuse-new" x="260" y="421" width="56" height="18"/>
+  <text class="idn mid" x="288" y="434">400 A</text>
+  <text class="ts tn mid" x="288" y="456">MEGA</text>
+  <rect class="sw" x="424" y="414" width="60" height="32" rx="2"/>
+  <path class="lever" d="M424 430 L481 417"/>
+  <text class="ts end" x="476" y="402">CC servitude</text>
+  <rect class="fuse-new" x="500" y="501" width="46" height="18"/>
+  <text class="idn mid" x="523" y="514">30 A</text>
+  <rect class="fuse-new" x="500" y="541" width="46" height="18"/>
+  <text class="idn mid" x="523" y="554">40 A</text>
+  <rect class="fuse-new" x="640" y="331" width="46" height="18"/>
+  <text class="idn mid" x="663" y="344">50 A</text>
+  <rect class="fuse-new" x="760" y="371" width="46" height="18"/>
+  <text class="idn mid" x="783" y="384">30 A</text>
+  <rect class="box" x="960" y="405" width="220" height="50" rx="2"/>
+  <text class="tb mid" x="1070" y="423">Disj. guindeau</text>
+  <text class="ts mid" x="1070" y="438">vers le guindeau : folio 1</text>
+  <path class="p w3" d="M424 140 V250"/>
+  <path class="p w3" d="M424 430 V550"/>
+  <path class="p w3" d="M484 430 V340"/>
+  <path class="p w4" d="M190 140 L260 140"/>
+  <text class="idn mid" x="225" y="130">w160 · 35</text>
+  <path class="p w4" d="M316 140 L424 140"/>
+  <text class="idn mid" x="370" y="130">w001 · 35</text>
+  <path class="p w4" d="M484 140 L620 140"/>
+  <text class="id mid" x="566" y="158">w012 · 35</text>
+  <path class="p w4" d="M484 140 L504 140 L544 100 L620 100"/>
+  <text class="id mid" x="584" y="92">w010 · 35</text>
+  <path class="p w2" d="M424 210 L500 210"/>
+  <text class="idn" x="432" y="204">w162 · 6</text>
+  <path class="p w2" d="M546 210 L700 210"/>
+  <text class="idn mid" x="623" y="204">w003 · 6</text>
+  <path class="p w2" d="M424 250 L500 250"/>
+  <text class="idn" x="432" y="244">w164 · 6</text>
+  <path class="p w2" d="M546 250 L700 250"/>
+  <text class="idn mid" x="660" y="244">w002 · 6</text>
+  <path class="p w4" d="M190 430 L260 430"/>
+  <text class="idn mid" x="225" y="420">w161 · 35</text>
+  <path class="p w4" d="M316 430 L424 430"/>
+  <text class="idn mid" x="370" y="420">w006 · 35</text>
+  <path class="p w2" d="M424 510 L500 510"/>
+  <text class="idn" x="432" y="504">w163 · 6</text>
+  <path class="p w2" d="M546 510 L700 510"/>
+  <text class="idn mid" x="623" y="504">w008 · 6</text>
+  <path class="p w2" d="M424 550 L500 550"/>
+  <text class="idn" x="432" y="544">w165 · 6</text>
+  <path class="p w2" d="M546 550 L700 550"/>
+  <text class="idn mid" x="660" y="544">w007 · 6</text>
+  <path class="p w2" d="M484 340 L640 340"/>
+  <text class="idn" x="492" y="334">w166 · 6</text>
+  <path class="p w2" d="M686 340 L950 340"/>
+  <text class="idn mid" x="850" y="334">w019 · 6</text>
+  <path class="p w2" d="M484 380 L760 380"/>
+  <text class="idn" x="492" y="374">w167 · 6</text>
+  <path class="p w2" d="M806 380 L950 380"/>
+  <text class="idn mid" x="903" y="374">w022 · 6</text>
+  <path class="p w4" d="M484 430 L960 430"/>
+  <text class="id mid" x="880" y="422">w017 · 35 (inchangé)</text>
+  <rect class="flag" x="620" y="131" width="250" height="18"/>
+  <text class="ts mid" x="745" y="144">→ node031 · démarreur, alternateur · folio 1</text>
+  <rect class="flag" x="620" y="91" width="200" height="18"/>
+  <text class="ts mid" x="720" y="104">→ node012 · couplage · folio 1</text>
+  <rect class="flag" x="700" y="201" width="250" height="18"/>
+  <text class="ts mid" x="825" y="214">→ node016 · chargeur, sortie 1 · folio 1</text>
+  <rect class="flag" x="700" y="241" width="270" height="18"/>
+  <text class="ts mid" x="835" y="254">→ node013 · coupleur, entrée moteur · folio 1</text>
+  <rect class="flag" x="950" y="331" width="230" height="18"/>
+  <text class="ts mid" x="1065" y="344">→ node100 · tableau table à carte · folio 1</text>
+  <rect class="flag" x="950" y="371" width="230" height="18"/>
+  <text class="ts mid" x="1065" y="384">→ node050 · tableau Scheiber · folio 1</text>
+  <rect class="flag" x="700" y="501" width="250" height="18"/>
+  <text class="ts mid" x="825" y="514">→ node017 · chargeur, sortie 2 · folio 1</text>
+  <rect class="flag" x="700" y="541" width="270" height="18"/>
+  <text class="ts mid" x="835" y="554">→ node014 · coupleur, entrée servitude · folio 1</text>
+  <circle class="term" cx="190" cy="140" r="3.5"/>
+  <circle class="term" cx="260" cy="140" r="3.5"/>
+  <circle class="term" cx="316" cy="140" r="3.5"/>
+  <circle class="term" cx="424" cy="140" r="3.5"/>
+  <circle class="term" cx="484" cy="140" r="3.5"/>
+  <circle class="term" cx="500" cy="210" r="3.5"/>
+  <circle class="term" cx="546" cy="210" r="3.5"/>
+  <circle class="term" cx="500" cy="250" r="3.5"/>
+  <circle class="term" cx="546" cy="250" r="3.5"/>
+  <circle class="term" cx="190" cy="430" r="3.5"/>
+  <circle class="term" cx="260" cy="430" r="3.5"/>
+  <circle class="term" cx="316" cy="430" r="3.5"/>
+  <circle class="term" cx="424" cy="430" r="3.5"/>
+  <circle class="term" cx="484" cy="430" r="3.5"/>
+  <circle class="term" cx="500" cy="510" r="3.5"/>
+  <circle class="term" cx="546" cy="510" r="3.5"/>
+  <circle class="term" cx="500" cy="550" r="3.5"/>
+  <circle class="term" cx="546" cy="550" r="3.5"/>
+  <circle class="term" cx="640" cy="340" r="3.5"/>
+  <circle class="term" cx="686" cy="340" r="3.5"/>
+  <circle class="term" cx="760" cy="380" r="3.5"/>
+  <circle class="term" cx="806" cy="380" r="3.5"/>
+  <circle class="term" cx="960" cy="430" r="3.5"/>
+  <text class="id end" x="183" y="139">n001</text>
+  <text class="pin end" x="183" y="149">+</text>
+  <text class="idn end" x="256" y="162">n070</text>
+  <text class="idn" x="320" y="162">n071</text>
+  <text class="id end" x="420" y="160">n003</text>
+  <text class="id" x="488" y="160">n004</text>
+  <text class="idn end" x="496" y="230">n074</text>
+  <text class="idn" x="550" y="230">n075</text>
+  <text class="idn end" x="496" y="270">n078</text>
+  <text class="idn" x="550" y="270">n079</text>
+  <text class="id end" x="183" y="429">n007</text>
+  <text class="pin end" x="183" y="439">+</text>
+  <text class="idn end" x="256" y="452">n072</text>
+  <text class="idn" x="320" y="452">n073</text>
+  <text class="id end" x="420" y="450">n009</text>
+  <text class="id" x="488" y="450">n010</text>
+  <text class="idn end" x="496" y="530">n076</text>
+  <text class="idn" x="550" y="530">n077</text>
+  <text class="idn end" x="496" y="570">n080</text>
+  <text class="idn" x="550" y="570">n081</text>
+  <text class="idn end" x="636" y="360">n082</text>
+  <text class="idn" x="690" y="360">n083</text>
+  <text class="idn end" x="756" y="400">n084</text>
+  <text class="idn" x="810" y="400">n085</text>
+  <text class="id" x="967" y="429">n020</text>
+  <text class="pin" x="967" y="439">1</text>
+  <text class="ts" x="40" y="610">En vert : nouveau (porte-fusibles et tronçons courts).</text>
+  <text class="ts" x="40" y="628">Les fils existants gardent leur numéro : seule leur extrémité côté source passe sur le fusible.</text>
+  <text class="ts" x="40" y="646">w001 et w006 restent en 35 mm² sous 400 A : écart accepté le 30/09 (w006 en 50 mm² à long terme).</text>
+  <text class="ts" x="40" y="664">Les tronçons w160 et w161, non protégés, doivent être aussi courts que possible.</text>
+  <g class="mk-a"><circle cx="288" cy="108" r="11"/><text class="mid" x="288" y="111.5">A2</text></g>
+  <g class="mk-a"><circle cx="288" cy="398" r="11"/><text class="mid" x="288" y="401.5">A2</text></g>
+  <g class="mk-a"><circle cx="600" cy="230" r="11"/><text class="mid" x="600" y="233.5">A4</text></g>
+  <g class="mk-a"><circle cx="600" cy="530" r="11"/><text class="mid" x="600" y="533.5">A4</text></g>
+  <g class="mk-a"><circle cx="616" cy="322" r="11"/><text class="mid" x="616" y="325.5">A1</text></g>
+  <g class="mk-a"><circle cx="736" cy="360" r="11"/><text class="mid" x="736" y="363.5">A6</text></g>
 </svg>

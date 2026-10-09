@@ -1,0 +1,162 @@
+# Mise en page du folio 2c, lue par outils/folio.py qui produit le SVG voisin.
+# Nœuds : [côté, coordonnée le long du côté] ; un fil va d'un nœud à l'autre par « trace »
+# (points intermédiaires), en segments à 0, 45 ou 90°.
+folio: 2c
+titre: Fusibles de batterie et des départs
+aria: "Fusibles proposés : un fusible de 400 A près de chaque batterie, un fusible sur chacun des quatre départs du coupleur et du chargeur, et un fusible à la source de chacun des câbles des deux tableaux."
+desc: "Chaque câble branché sur une batterie est désormais protégé à sa source : 400 A près des batteries (A2), 30 A pour le chargeur et 40 A pour le coupleur (A4), 50 A pour le tableau de la table à carte (A1), 30 A pour le tableau Scheiber (A6). Les câbles existants sont conservés et repris sur les porte-fusibles."
+modele: A-H2
+taille: [1200, 700]
+
+appareils:
+  # --- Batterie moteur -------------------------------------------------------------
+  - id: bat-moteur
+    x: 40
+    y: 90
+    w: 150
+    h: 70
+    titre: Batterie moteur
+    lignes: [110 Ah · coffre tribord]
+    nodes:
+      node001: [droite, 140]
+  - id: fus-bat-moteur
+    forme: fusible
+    calibre: 400 A
+    titre: MEGA
+    titre_xy: [288, 166]
+    nodes:
+      node070: {cote: point, xy: [260, 140], etiquette: [-4, 22, end]}
+      node071: {cote: point, xy: [316, 140], etiquette: [4, 22]}
+  - id: cc-moteur
+    forme: interrupteur
+    titre: CC moteur
+    titre_xy: [454, 112]
+    nodes:
+      node003: {cote: point, xy: [424, 140], etiquette: [-4, 20, end]}
+      node004: {cote: point, xy: [484, 140], etiquette: [4, 20]}
+  - id: fus-chargeur-moteur
+    forme: fusible
+    calibre: 30 A
+    nodes:
+      node074: {cote: point, xy: [500, 210], etiquette: [-4, 20, end]}
+      node075: {cote: point, xy: [546, 210], etiquette: [4, 20]}
+  - id: fus-coupleur-moteur
+    forme: fusible
+    calibre: 40 A
+    nodes:
+      node078: {cote: point, xy: [500, 250], etiquette: [-4, 20, end]}
+      node079: {cote: point, xy: [546, 250], etiquette: [4, 20]}
+
+  # --- Batterie de servitude -------------------------------------------------------
+  - id: bat-servitude
+    x: 40
+    y: 380
+    w: 150
+    h: 70
+    titre: Batterie servitude
+    lignes: [110 Ah · cabine de poupe]
+    nodes:
+      node007: [droite, 430]
+  - id: fus-bat-servitude
+    forme: fusible
+    calibre: 400 A
+    titre: MEGA
+    titre_xy: [288, 456]
+    nodes:
+      node072: {cote: point, xy: [260, 430], etiquette: [-4, 22, end]}
+      node073: {cote: point, xy: [316, 430], etiquette: [4, 22]}
+  - id: cc-servitude
+    forme: interrupteur
+    titre: CC servitude
+    titre_xy: [476, 402]
+    titre_ancre: end
+    nodes:
+      node009: {cote: point, xy: [424, 430], etiquette: [-4, 20, end]}
+      node010: {cote: point, xy: [484, 430], etiquette: [4, 20]}
+  - id: fus-chargeur-servitude
+    forme: fusible
+    calibre: 30 A
+    nodes:
+      node076: {cote: point, xy: [500, 510], etiquette: [-4, 20, end]}
+      node077: {cote: point, xy: [546, 510], etiquette: [4, 20]}
+  - id: fus-coupleur-servitude
+    forme: fusible
+    calibre: 40 A
+    nodes:
+      node080: {cote: point, xy: [500, 550], etiquette: [-4, 20, end]}
+      node081: {cote: point, xy: [546, 550], etiquette: [4, 20]}
+
+  # --- Départs de node010 : tableaux et guindeau -----------------------------------
+  - id: fus-source-tableau-servitude
+    forme: fusible
+    calibre: 50 A
+    nodes:
+      node082: {cote: point, xy: [640, 340], etiquette: [-4, 20, end]}
+      node083: {cote: point, xy: [686, 340], etiquette: [4, 20]}
+  - id: fus-source-tableau-scheiber
+    forme: fusible
+    calibre: 30 A
+    nodes:
+      node084: {cote: point, xy: [760, 380], etiquette: [-4, 20, end]}
+      node085: {cote: point, xy: [806, 380], etiquette: [4, 20]}
+  - id: disj-guindeau
+    x: 960
+    y: 405
+    w: 220
+    h: 50
+    titre: Disj. guindeau
+    titre_y: 18
+    lignes: ["vers le guindeau : folio 1"]
+    nodes:
+      node020: [gauche, 430]
+
+# Bornes des coupe-circuits prolongées : un départ par point de raccordement.
+barres:
+  - {node: node003, de: [424, 140], a: [424, 250], epaisseur: w3}
+  - {node: node009, de: [424, 430], a: [424, 550], epaisseur: w3}
+  - {node: node010, de: [484, 430], a: [484, 340], epaisseur: w3}
+
+fils:
+  wire160: {etiquette: [225, 130, mid]}
+  wire001: {etiquette: [370, 130, mid]}
+  wire012: {trace: [[620, 140]], etiquette: [566, 158, mid]}
+  wire010: {trace: [[504, 140], [544, 100], [620, 100]], etiquette: [584, 92, mid]}
+  wire162: {trace: [[424, 210]], etiquette: [432, 204]}
+  wire003: {trace: [[700, 210]], etiquette: [623, 204, mid]}
+  wire164: {trace: [[424, 250]], etiquette: [432, 244]}
+  wire002: {trace: [[700, 250]], etiquette: [660, 244, mid]}
+  wire161: {etiquette: [225, 420, mid]}
+  wire006: {etiquette: [370, 420, mid]}
+  wire163: {trace: [[424, 510]], etiquette: [432, 504]}
+  wire008: {trace: [[700, 510]], etiquette: [623, 504, mid]}
+  wire165: {trace: [[424, 550]], etiquette: [432, 544]}
+  wire007: {trace: [[700, 550]], etiquette: [660, 544, mid]}
+  wire166: {trace: [[484, 340]], etiquette: [492, 334]}
+  wire019: {trace: [[950, 340]], etiquette: [850, 334, mid]}
+  wire167: {trace: [[484, 380]], etiquette: [492, 374]}
+  wire022: {trace: [[950, 380]], etiquette: [903, 374, mid]}
+  wire017: {etiquette: [880, 422, mid], texte: "w017 · 35 (inchangé)"}
+
+renvois:
+  - {x: 620, y: 131, w: 250, texte: "→ node031 · démarreur, alternateur · folio 1"}
+  - {x: 620, y: 91, w: 200, texte: "→ node012 · couplage · folio 1"}
+  - {x: 700, y: 201, w: 250, texte: "→ node016 · chargeur, sortie 1 · folio 1"}
+  - {x: 700, y: 241, w: 270, texte: "→ node013 · coupleur, entrée moteur · folio 1"}
+  - {x: 950, y: 331, w: 230, texte: "→ node100 · tableau table à carte · folio 1"}
+  - {x: 950, y: 371, w: 230, texte: "→ node050 · tableau Scheiber · folio 1"}
+  - {x: 700, y: 501, w: 250, texte: "→ node017 · chargeur, sortie 2 · folio 1"}
+  - {x: 700, y: 541, w: 270, texte: "→ node014 · coupleur, entrée servitude · folio 1"}
+
+pastilles:
+  - {id: A2, x: 288, y: 108}
+  - {id: A2, x: 288, y: 398}
+  - {id: A4, x: 600, y: 230}
+  - {id: A4, x: 600, y: 530}
+  - {id: A1, x: 616, y: 322}
+  - {id: A6, x: 736, y: 360}
+
+textes:
+  - {x: 40, y: 610, texte: "En vert : nouveau (porte-fusibles et tronçons courts)."}
+  - {x: 40, y: 628, texte: "Les fils existants gardent leur numéro : seule leur extrémité côté source passe sur le fusible."}
+  - {x: 40, y: 646, texte: "w001 et w006 restent en 35 mm² sous 400 A : écart accepté le 30/09 (w006 en 50 mm² à long terme)."}
+  - {x: 40, y: 664, texte: "Les tronçons w160 et w161, non protégés, doivent être aussi courts que possible."}

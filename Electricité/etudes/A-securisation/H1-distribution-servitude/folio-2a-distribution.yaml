@@ -1,0 +1,168 @@
+# Mise en page du folio 2a, lue par outils/folio.py qui produit le SVG voisin.
+# Nœuds : [côté, coordonnée le long du côté] ; un fil va d'un nœud à l'autre par « trace »
+# (points intermédiaires), en segments à 0, 45 ou 90°.
+folio: 2a
+titre: Distribution de servitude et tableau Scheiber
+aria: "Distribution proposée : une barrette positive après le coupe-circuit de servitude alimente le guindeau, le tableau de la table à carte par un fusible de 50 A et le tableau Scheiber par un fusible de 30 A. La pompe de cale automatique est alimentée en direct depuis la batterie par un fusible de 10 A et renvoie sa masse côté batteries."
+desc: "Une seule barrette + remplace les deux départs sans protection (A1, A6). Chaque départ a son fusible, placé à la source du câble qu'il protège. La pompe de cale ne dépend plus d'aucun coupe-circuit : ni pour son positif, ni pour sa masse. Ses deux fusibles passent à 3 A, le calibre du fabricant (A10)."
+modele: A-H1
+taille: [1200, 720]
+
+appareils:
+  - id: bat-servitude
+    x: 40
+    y: 80
+    w: 150
+    h: 80
+    titre: Batterie servitude
+    lignes: [110 Ah · Pb]
+    nodes:
+      node007: [droite, 130]
+      node008: [gauche, 130]
+  - id: cc-servitude
+    forme: interrupteur
+    titre: CC servitude +
+    titre_xy: [330, 102]
+    nodes:
+      node009: {cote: point, xy: [300, 130], etiquette: [-4, -8, end]}
+      node010: {cote: point, xy: [360, 130], etiquette: [4, 20]}
+  - id: fus-pompe-cale
+    forme: fusible
+    calibre: 3 A
+    nodes:
+      node065: {cote: point, xy: [284, 196], etiquette: [12, 4]}
+      node066: {cote: point, xy: [284, 236], etiquette: [12, 4]}
+
+  # Barrette + : une barre (node060) sur laquelle sont montés les fusibles des tableaux.
+  - id: barrette-servitude
+    forme: barre
+    nodes:
+      node060: {cote: point, xy: [450, 460], etiquette: [0, 16, mid], fonction: ""}
+  - id: disj-guindeau
+    forme: fusible
+    calibre: 70 A
+    titre: Disjoncteur guindeau (existant)
+    titre_xy: [570, 136]
+    nodes:
+      node020: {cote: point, xy: [540, 160], etiquette: [-4, 22, end]}
+      node021: {cote: point, xy: [600, 160], etiquette: [4, 22]}
+  - id: fus-tableau-servitude
+    forme: fusible
+    calibre: 50 A
+    nodes:
+      node061: {cote: point, xy: [450, 270], etiquette: [-4, 20, end]}
+      node062: {cote: point, xy: [496, 270], etiquette: [4, 20]}
+  - id: fus-tableau-scheiber
+    forme: fusible
+    calibre: 30 A
+    nodes:
+      node063: {cote: point, xy: [450, 390], etiquette: [-4, 20, end]}
+      node064: {cote: point, xy: [496, 390], etiquette: [4, 20]}
+  - id: tableau-servitude
+    x: 760
+    y: 240
+    w: 200
+    h: 60
+    titre: Tableau table à carte
+    lignes: ["détail : folio 2b"]
+    nodes:
+      node100: {cote: gauche, a: 270, fonction: "+"}
+      node101: {cote: droite, a: 280, fonction: "−"}
+  - id: tableau-scheiber
+    x: 640
+    y: 350
+    w: 220
+    h: 150
+    titre: Tableau Scheiber 2 voies
+    titre_y: 18
+    nodes:
+      node050: {cote: gauche, a: 390, fonction: "+"}
+      node052: {cote: droite, a: 395, fonction: frigo}
+      node051: {cote: droite, a: 470, fonction: "−"}
+      node053: {cote: bas, a: 683, fonction: cale}
+  - id: eps100
+    x: 900
+    y: 340
+    w: 140
+    h: 100
+    titre: EPS 100
+    titre_y: 18
+    lignes: [12 V / 230 V]
+    nodes:
+      node042: {cote: gauche, a: 395, fonction: bat +}
+      node043: {cote: bas, a: 930, fonction: bat −}
+      node044: {cote: droite, a: 395, fonction: gf +}
+      node045: {cote: droite, a: 420, fonction: gf −}
+  - id: groupe-froid
+    x: 1070
+    y: 340
+    w: 100
+    h: 100
+    titre: Groupe froid
+    titre_y: 18
+    lignes: [CU-55 · 40 W]
+    nodes:
+      node040: {cote: gauche, a: 395, fonction: "+"}
+      node041: {cote: gauche, a: 420, fonction: "−"}
+  - id: flotteur
+    forme: interrupteur
+    titre: Flotteur
+    titre_xy: [510, 539]
+    nodes:
+      node054: {cote: point, xy: [480, 563], etiquette: [-4, -8, end]}
+      node055: {cote: point, xy: [540, 563], etiquette: [4, -8]}
+  - id: pompe-cale
+    forme: cercle
+    cx: 700
+    cy: 580
+    r: 24
+    symbole: P
+    nodes:
+      node056: {angle: 135, cote: point, etiquette: [-4, -8, end]}
+      node057: {angle: 270, cote: point, etiquette: [6, 14]}
+  - id: cc-masse
+    forme: interrupteur
+    titre: CC masse (−)
+    titre_xy: [110, 690]
+    nodes:
+      node005: {cote: point, xy: [80, 640], etiquette: [-4, 20, end]}
+      node006: {cote: point, xy: [140, 640], etiquette: [4, 20]}
+
+barres:
+  - {node: node060, de: [450, 100], a: [450, 460]}
+  - {node: node006, de: [140, 640], a: [1185, 640]}
+
+fils:
+  wire006: {etiquette: [228, 122, mid]}
+  wire009: {trace: [[20, 130], [20, 640]], etiquette: [14, 400, mid, v]}
+  wire100: {trace: [[450, 130]], etiquette: [405, 122, mid]}
+  wire101: {trace: [[450, 160]], etiquette: [495, 152, mid]}
+  wire018: {trace: [[720, 160]], etiquette: [660, 152, mid]}
+  wire102: {etiquette: [628, 262, mid]}
+  wire103: {trace: [[1185, 640], [1185, 280]], etiquette: [1072, 272, mid]}
+  wire104: {etiquette: [568, 382, mid]}
+  wire023: {trace: [[880, 640], [880, 470]], etiquette: [874, 570, mid, v], texte: "w023 · 6 · existant"}
+  wire024: {etiquette: [880, 387, mid], texte: w024}
+  wire025: {trace: [[900, 470], [930, 440]], etiquette: [926, 478], texte: w025}
+  wire027: {etiquette: [1055, 388, mid], texte: w027}
+  wire028: {etiquette: [1055, 436, mid], texte: w028}
+  wire026: {trace: [[683, 500]], etiquette: [690, 540], texte: "w026 · 2,5 · existant"}
+  wire106: {trace: [[284, 146]], etiquette: [278, 171, mid, v], texte: w106}
+  wire107: {trace: [[284, 563]], etiquette: [380, 555, mid]}
+  wire108: {etiquette: [610, 580, mid]}
+  wire110: {trace: [[700, 612], [52, 612]], etiquette: [400, 606, mid]}
+
+renvois:
+  - {x: 720, y: 151, w: 300, texte: "→ node022 · relais du guindeau (inchangé) · folio 1"}
+
+textes:
+  - {x: 450, y: 88, classe: "tb mid tn", texte: "Barrette +"}
+  - {x: 115, y: 182, classe: "ts mid", texte: "fusible batterie :"}
+  - {x: 115, y: 197, classe: "ts mid", texte: "étape batteries (folio 2c)"}
+  - {x: 750, y: 425, classe: "ts mid", texte: "voie 1 : frigo, 15 A"}
+  - {x: 750, y: 441, classe: "ts mid", texte: "voie 2 : cale, marche forcée"}
+  - {x: 750, y: 457, classe: "ts mid tn", texte: "fusible de la voie 2 : 3 A"}
+  - {x: 970, y: 330, classe: "ts mid", texte: "liaison existante · entrée 230 V : folio 3"}
+  - {x: 734, y: 576, classe: tb, texte: "Pompe de cale"}
+  - {x: 734, y: 592, classe: ts, texte: "Tsunami T500"}
+  - {x: 400, y: 700, classe: "ts tn", texte: "w110 : masse côté batteries, la pompe reste active coupe-circuits ouverts."}

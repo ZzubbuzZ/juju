@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" role="img" aria-label="Schéma en échelle des 12 circuits du tableau de servitude : pour chaque circuit, fusible, interrupteur, fil positif, récepteur et fil de masse dédié vers la barre négative du tableau. Les trois feux du mât passent par un connecteur de pied de mât à six broches.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 810" role="img" aria-label="Schéma en échelle des 12 circuits du tableau de servitude : pour chaque circuit, fusible, interrupteur, fil positif, récepteur et fil de masse dédié vers la barre négative du tableau. Les trois feux du mât passent par un connecteur de pied de mât à six broches.">
   <title>Folio 2b · Tableau de la table à carte, 12 circuits</title>
   <desc>Un fusible et un interrupteur par circuit, comme sur le tableau actuel. Chaque récepteur renvoie sa masse par son propre fil. Les trois feux du mât passent par un connecteur de pont à 6 broches (b1 à b6), sans masse commune.</desc>
   <style>
@@ -39,193 +39,341 @@
     .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
   </style>
   <rect class="bg" x="0" y="0" width="100%" height="100%"/>
-
-  <text class="tb mid" x="150" y="36">node100 · + tableau</text>
-  <text class="ts mid" x="150" y="53">w102 · 10 mm² · F 50 A (← n062 · folio 2a)</text>
-  <text class="tb mid" x="1120" y="36">node101 · − tableau</text>
-  <text class="ts end" x="1190" y="53">w103 · 10 mm² (← node006 · folio 2a)</text>
-  <path class="p w3" d="M150 68 V672"/>
-  <path class="n w3" d="M1120 68 V672"/>
-  <text class="ts mid" x="460" y="164">connecteur pied de mât</text>
-  <path class="bound" d="M460 170 V296"/>
-  <path class="bound" d="M940 170 V296"/>
-
-  <!-- 0 feu route : bicolore -->
-  <text class="t end" x="136" y="104">feu route</text>
-  <circle class="dp" cx="150" cy="100" r="4"/>
-  <path class="p w2" d="M150 100 H190"/><rect class="fuse" x="190" y="92" width="44" height="16"/><text class="id mid" x="212" y="104">10 A</text>
-  <path class="p w2" d="M234 100 H258"/><circle class="term" cx="262" cy="100" r="3.5"/><circle class="term" cx="302" cy="100" r="3.5"/><path class="lever" d="M262 100 L300 90"/>
-  <path class="p w2" d="M306 100 H560"/><text class="id mid" x="430" y="94">w120 · 2,5</text>
-  <rect class="box" x="560" y="85" width="200" height="30" rx="2"/><text class="t mid" x="660" y="104">Feu bicolore (proue)</text>
-  <path class="n w2" d="M760 100 H1120"/><circle class="dn" cx="1120" cy="100" r="4"/><text class="id mid" x="940" y="94">w121 · 2,5</text>
-  <!-- 1 feu de poupe -->
-  <path class="p w1" d="M302 104 V144 H560"/><text class="id mid" x="440" y="138">w122 · 1,5</text>
-  <rect class="box" x="560" y="129" width="200" height="30" rx="2"/><text class="t mid" x="660" y="148">Feu de poupe</text>
-  <path class="n w1" d="M760 144 H1120"/><circle class="dn" cx="1120" cy="144" r="4"/><text class="id mid" x="940" y="138">w123 · 1,5</text>
-
-  <!-- 2 feu moteur -->
-  <text class="t end" x="136" y="192">feu moteur</text>
-  <circle class="dp" cx="150" cy="188" r="4"/>
-  <path class="p w2" d="M150 188 H190"/><rect class="fuse" x="190" y="180" width="44" height="16"/><text class="id mid" x="212" y="192">10 A</text>
-  <path class="p w2" d="M234 188 H258"/><circle class="term" cx="262" cy="188" r="3.5"/><circle class="term" cx="302" cy="188" r="3.5"/><path class="lever" d="M262 188 L300 178"/>
-  <path class="p w2" d="M306 188 H452"/><text class="id mid" x="378" y="182">w124 · 2,5</text>
-  <rect class="box" x="452" y="180" width="16" height="16"/><text class="pin mid" x="460" y="191">b1</text>
-  <path class="p w2" d="M468 188 H560"/><text class="id mid" x="514" y="182">w130</text>
-  <rect class="box" x="560" y="173" width="200" height="30" rx="2"/><text class="t mid" x="660" y="192">Feu de tête de mât</text>
-  <path class="n w2" d="M760 188 H932"/><text class="id mid" x="846" y="182">w131</text>
-  <rect class="box" x="932" y="180" width="16" height="16"/><text class="pin mid" x="940" y="191">b4</text>
-  <path class="n w2" d="M948 188 H1120"/><circle class="dn" cx="1120" cy="188" r="4"/><text class="id mid" x="1034" y="182">w125</text>
-
-  <!-- 3 mouillage -->
-  <text class="t end" x="136" y="236">mouillage</text>
-  <circle class="dp" cx="150" cy="232" r="4"/>
-  <path class="p w2" d="M150 232 H190"/><rect class="fuse" x="190" y="224" width="44" height="16"/><text class="id mid" x="212" y="236">10 A</text>
-  <path class="p w2" d="M234 232 H258"/><circle class="term" cx="262" cy="232" r="3.5"/><circle class="term" cx="302" cy="232" r="3.5"/><path class="lever" d="M262 232 L300 222"/>
-  <path class="p w2" d="M306 232 H452"/><text class="id mid" x="378" y="226">w126 · 2,5</text>
-  <rect class="box" x="452" y="224" width="16" height="16"/><text class="pin mid" x="460" y="235">b2</text>
-  <path class="p w2" d="M468 232 H560"/><text class="id mid" x="514" y="226">w132</text>
-  <rect class="box" x="560" y="217" width="200" height="30" rx="2"/><text class="t mid" x="660" y="236">Feu de mouillage (LED)</text>
-  <path class="n w2" d="M760 232 H932"/><text class="id mid" x="846" y="226">w133</text>
-  <rect class="box" x="932" y="224" width="16" height="16"/><text class="pin mid" x="940" y="235">b5</text>
-  <path class="n w2" d="M948 232 H1120"/><circle class="dn" cx="1120" cy="232" r="4"/><text class="id mid" x="1034" y="226">w127</text>
-
-  <!-- 4 projecteur -->
-  <text class="t end" x="136" y="280">projecteur</text>
-  <circle class="dp" cx="150" cy="276" r="4"/>
-  <path class="p w2" d="M150 276 H190"/><rect class="fuse" x="190" y="268" width="44" height="16"/><text class="id mid" x="212" y="280">10 A</text>
-  <path class="p w2" d="M234 276 H258"/><circle class="term" cx="262" cy="276" r="3.5"/><circle class="term" cx="302" cy="276" r="3.5"/><path class="lever" d="M262 276 L300 266"/>
-  <path class="p w2" d="M306 276 H452"/><text class="id mid" x="378" y="270">w128 · 2,5</text>
-  <rect class="box" x="452" y="268" width="16" height="16"/><text class="pin mid" x="460" y="279">b3</text>
-  <path class="p w2" d="M468 276 H560"/><text class="id mid" x="514" y="270">w134</text>
-  <rect class="box" x="560" y="261" width="200" height="30" rx="2"/><text class="t mid" x="660" y="280">Projecteur de pont</text>
-  <path class="n w2" d="M760 276 H932"/><text class="id mid" x="846" y="270">w135</text>
-  <rect class="box" x="932" y="268" width="16" height="16"/><text class="pin mid" x="940" y="279">b6</text>
-  <path class="n w2" d="M948 276 H1120"/><circle class="dn" cx="1120" cy="276" r="4"/><text class="id mid" x="1034" y="270">w129</text>
-
-  <!-- 5 pompe à eau -->
-  <text class="t end" x="136" y="324">pompe à eau</text>
-  <circle class="dp" cx="150" cy="320" r="4"/>
-  <path class="p w2" d="M150 320 H190"/><rect class="fuse" x="190" y="312" width="44" height="16"/><text class="id mid" x="212" y="324">15 A</text>
-  <path class="p w2" d="M234 320 H258"/><circle class="term" cx="262" cy="320" r="3.5"/><circle class="term" cx="302" cy="320" r="3.5"/><path class="lever" d="M262 320 L300 310"/>
-  <path class="p w2" d="M306 320 H560"/><text class="id mid" x="430" y="314">w136 · 2,5</text>
-  <rect class="box" x="560" y="305" width="200" height="30" rx="2"/><text class="t mid" x="660" y="324">Pompe à eau Seaflo</text>
-  <path class="n w2" d="M760 320 H1120"/><circle class="dn" cx="1120" cy="320" r="4"/><text class="id mid" x="940" y="314">w137 · 2,5</text>
-
-  <!-- 6 radio -->
-  <text class="t end" x="136" y="368">radio</text>
-  <circle class="dp" cx="150" cy="364" r="4"/>
-  <path class="p w1" d="M150 364 H190"/><rect class="fuse" x="190" y="356" width="44" height="16"/><text class="id mid" x="212" y="368">10 A</text>
-  <path class="p w1" d="M234 364 H258"/><circle class="term" cx="262" cy="364" r="3.5"/><circle class="term" cx="302" cy="364" r="3.5"/><path class="lever" d="M262 364 L300 354"/>
-  <path class="p w1" d="M306 364 H560"/><text class="id mid" x="430" y="358">w138 · 1,5</text>
-  <rect class="box" x="560" y="349" width="200" height="30" rx="2"/><text class="t mid" x="660" y="368">Autoradio</text>
-  <path class="n w1" d="M760 364 H1120"/><circle class="dn" cx="1120" cy="364" r="4"/><text class="id mid" x="940" y="358">w139 · 1,5</text>
-  <g class="mk-q"><circle cx="760" cy="349" r="11"/><text class="mid" x="760" y="352.5">Q8</text></g>
-
-  <!-- 7 prises 12 V -->
-  <text class="t end" x="136" y="412">prises 12 V</text>
-  <circle class="dp" cx="150" cy="408" r="4"/>
-  <path class="p w2" d="M150 408 H190"/><rect class="fuse" x="190" y="400" width="44" height="16"/><text class="id mid" x="212" y="412">10 A</text>
-  <path class="p w2" d="M234 408 H258"/><circle class="term" cx="262" cy="408" r="3.5"/><circle class="term" cx="302" cy="408" r="3.5"/><path class="lever" d="M262 408 L300 398"/>
-  <path class="p w2" d="M306 408 H560"/><text class="id mid" x="430" y="402">w140 · 2,5</text>
-  <rect class="box" x="560" y="393" width="200" height="30" rx="2"/><text class="t mid" x="660" y="412">Prise 12 V n°1</text>
-  <path class="n w2" d="M760 408 H1120"/><circle class="dn" cx="1120" cy="408" r="4"/><text class="id mid" x="940" y="402">w141 · 2,5</text>
-  <!-- 8 prise n°2 en série de câblage -->
-  <path class="p w2" d="M560 418 H546 V452 H560"/><text class="id end" x="532" y="456">w142 · 2,5</text>
-  <rect class="box" x="560" y="437" width="200" height="30" rx="2"/><text class="t mid" x="660" y="456">Prise 12 V n°2</text>
-  <path class="n w2" d="M760 418 H774 V452 H760"/><text class="id" x="798" y="456">w143 · 2,5</text>
-
-  <!-- 9 éclairage -->
-  <text class="t end" x="136" y="500">éclairage</text>
-  <circle class="dp" cx="150" cy="496" r="4"/>
-  <path class="p w2" d="M150 496 H190"/><rect class="fuse" x="190" y="488" width="44" height="16"/><text class="id mid" x="212" y="500">10 A</text>
-  <path class="p w2" d="M234 496 H258"/><circle class="term" cx="262" cy="496" r="3.5"/><circle class="term" cx="302" cy="496" r="3.5"/><path class="lever" d="M262 496 L300 486"/>
-  <path class="p w2" d="M306 496 H560"/><text class="id mid" x="430" y="490">w144 · 2,5</text>
-  <rect class="box" x="560" y="481" width="200" height="30" rx="2"/><text class="t mid" x="660" y="500">Bornier éclairage</text>
-  <path class="n w2" d="M760 496 H1120"/><circle class="dn" cx="1120" cy="496" r="4"/><text class="id mid" x="940" y="490">w145 · 2,5</text>
-  <g class="mk-q"><circle cx="760" cy="481" r="11"/><text class="mid" x="760" y="484.5">Q9</text></g>
-
-  <!-- 10 compas -->
-  <text class="t end" x="136" y="544">compas</text>
-  <circle class="dp" cx="150" cy="540" r="4"/>
-  <path class="p w1" d="M150 540 H190"/><rect class="fuse" x="190" y="532" width="44" height="16"/><text class="id mid" x="212" y="544">5 A</text>
-  <path class="p w1" d="M234 540 H258"/><circle class="term" cx="262" cy="540" r="3.5"/><circle class="term" cx="302" cy="540" r="3.5"/><path class="lever" d="M262 540 L300 530"/>
-  <path class="p w1" d="M306 540 H560"/><text class="id mid" x="430" y="534">w146 · 1,5</text>
-  <rect class="box" x="560" y="525" width="200" height="30" rx="2"/><text class="t mid" x="660" y="544">Compas</text>
-  <path class="n w1" d="M760 540 H1120"/><circle class="dn" cx="1120" cy="540" r="4"/><text class="id mid" x="940" y="534">w147 · 1,5</text>
-
-  <!-- 11 pilote -->
-  <text class="t end" x="136" y="588">pilote</text>
-  <circle class="dp" cx="150" cy="584" r="4"/>
-  <path class="p w3" d="M150 584 H190"/><rect class="fuse" x="190" y="576" width="44" height="16"/><text class="id mid" x="212" y="588">10 A</text>
-  <path class="p w3" d="M234 584 H258"/><circle class="term" cx="262" cy="584" r="3.5"/><circle class="term" cx="302" cy="584" r="3.5"/><path class="lever" d="M262 584 L300 574"/>
-  <path class="p w3" d="M306 584 H560"/><text class="id mid" x="430" y="577">w148 · 4</text>
-  <rect class="box" x="560" y="569" width="200" height="30" rx="2"/><text class="t mid" x="660" y="588">Pilote ST2000+</text>
-  <path class="n w3" d="M760 584 H1120"/><circle class="dn" cx="1120" cy="584" r="4"/><text class="id mid" x="940" y="577">w149 · 4</text>
-
-  <!-- 12 VHF -->
-  <text class="t end" x="136" y="632">VHF</text>
-  <circle class="dp" cx="150" cy="628" r="4"/>
-  <path class="p w2" d="M150 628 H190"/><rect class="fuse" x="190" y="620" width="44" height="16"/><text class="id mid" x="212" y="632">10 A</text>
-  <path class="p w2" d="M234 628 H258"/><circle class="term" cx="262" cy="628" r="3.5"/><circle class="term" cx="302" cy="628" r="3.5"/><path class="lever" d="M262 628 L300 618"/>
-  <path class="p w2" d="M306 628 H560"/><text class="id mid" x="430" y="622">w150 · 2,5</text>
-  <rect class="box" x="560" y="613" width="200" height="30" rx="2"/><text class="t mid" x="660" y="632">VHF GX2200 AIS</text>
-  <path class="n w2" d="M760 628 H1120"/><circle class="dn" cx="1120" cy="628" r="4"/><text class="id mid" x="940" y="622">w151 · 2,5</text>
-
-  <!-- 13 GPS loch -->
-  <text class="t end" x="136" y="676">GPS loch</text>
-  <path class="p w2" d="M150 672 H190"/><rect class="fuse" x="190" y="664" width="44" height="16"/><text class="id mid" x="212" y="676">10 A</text>
-  <path class="p w2" d="M234 672 H258"/><circle class="term" cx="262" cy="672" r="3.5"/><circle class="term" cx="302" cy="672" r="3.5"/><path class="lever" d="M262 672 L300 662"/>
-  <path class="p w2" d="M306 672 H560"/><text class="id mid" x="430" y="666">w152 · 2,5</text>
-  <rect class="box" x="560" y="657" width="200" height="30" rx="2"/><text class="t mid" x="660" y="676">Bornier instruments</text>
-  <path class="n w2" d="M760 672 H1120"/><text class="id mid" x="940" y="666">w153 · 2,5</text>
-  <g class="mk-q"><circle cx="760" cy="657" r="11"/><text class="mid" x="760" y="660.5">Q11</text></g>
-  <!-- nœuds -->
-  <text class="id" x="326" y="114">n102</text>
-  <text class="id end" x="556" y="114">n120</text>
-  <text class="id" x="764" y="114">n121</text>
-  <text class="id end" x="556" y="158">n122</text>
-  <text class="id" x="764" y="158">n123</text>
-  <text class="id" x="308" y="202">n103</text>
-  <text class="id end" x="556" y="202">n130</text>
-  <text class="id" x="764" y="202">n131</text>
-  <text class="id" x="472" y="202">n124</text>
-  <text class="id end" x="928" y="202">n127</text>
-  <text class="id" x="308" y="246">n109</text>
-  <text class="id end" x="556" y="246">n132</text>
-  <text class="id" x="764" y="246">n133</text>
-  <text class="id" x="472" y="246">n125</text>
-  <text class="id end" x="928" y="246">n128</text>
-  <text class="id" x="308" y="290">n108</text>
-  <text class="id end" x="556" y="290">n134</text>
-  <text class="id" x="764" y="290">n135</text>
-  <text class="id" x="472" y="290">n126</text>
-  <text class="id end" x="928" y="290">n129</text>
-  <text class="id" x="308" y="334">n104</text>
-  <text class="id end" x="556" y="334">n136</text>
-  <text class="id" x="764" y="334">n137</text>
-  <text class="id" x="308" y="378">n105</text>
-  <text class="id end" x="556" y="378">n138</text>
-  <text class="id" x="764" y="378">n139</text>
-  <text class="id" x="308" y="422">n106</text>
-  <text class="id end" x="556" y="402">n140</text>
-  <text class="id" x="778" y="430">n141</text>
-  <text class="id end" x="556" y="466">n142</text>
-  <text class="id" x="764" y="466">n143</text>
-  <text class="id" x="308" y="510">n107</text>
-  <text class="id end" x="556" y="510">n144</text>
-  <text class="id" x="764" y="510">n145</text>
-  <text class="id" x="308" y="554">n110</text>
-  <text class="id end" x="556" y="554">n146</text>
-  <text class="id" x="764" y="554">n147</text>
-  <text class="id" x="308" y="598">n111</text>
-  <text class="id end" x="556" y="598">n148</text>
-  <text class="id" x="764" y="598">n149</text>
-  <text class="id" x="308" y="642">n112</text>
-  <text class="id end" x="556" y="642">n150</text>
-  <text class="id" x="764" y="642">n151</text>
-  <text class="id" x="308" y="686">n113</text>
-  <text class="id end" x="556" y="686">n152</text>
-  <text class="id" x="764" y="686">n153</text>
-  <text class="ts" x="560" y="708">départs 1,5 mm², un fusible par appareil : GPSMAP 7407 xsv · répéteur MLR FX312 · loch · anémomètre Advansea</text>
-  <text class="ts tu" x="560" y="726">radar : alimentation inconnue · sondeur : intégré au GPS ?</text>
+  <!-- Généré par outils/folio.py depuis folio-2b-tableau-servitude.yaml : ne pas modifier à la main. -->
+  <rect class="box" x="20" y="60" width="320" height="670" rx="2"/>
+  <text class="tb mid" x="180" y="80">Tableau de servitude</text>
+  <text class="ts mid" x="180" y="95">12 fusibles · 12 interrupteurs</text>
+  <rect class="box" x="520" y="115" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="135">Feu bicolore (proue)</text>
+  <rect class="box" x="520" y="159" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="179">Feu de poupe</text>
+  <rect class="box" x="520" y="203" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="223">Feu de tête de mât</text>
+  <rect class="box" x="520" y="247" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="267">Feu de mouillage (LED)</text>
+  <rect class="box" x="520" y="291" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="311">Projecteur de pont</text>
+  <rect class="box" x="520" y="335" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="355">Pompe à eau Seaflo</text>
+  <rect class="box" x="520" y="379" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="399">Autoradio</text>
+  <rect class="box" x="520" y="423" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="443">Prise 12 V n°1</text>
+  <rect class="box" x="520" y="467" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="487">Prise 12 V n°2</text>
+  <rect class="box-new" x="520" y="511" width="280" height="30" rx="2"/>
+  <text class="tb mid tn" x="660" y="531">Bornier éclairage</text>
+  <rect class="box" x="520" y="555" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="575">Compas</text>
+  <rect class="box" x="520" y="599" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="619">Pilote ST2000+</text>
+  <rect class="box" x="520" y="643" width="280" height="30" rx="2"/>
+  <text class="tb mid" x="660" y="663">VHF GX2200 AIS</text>
+  <rect class="box-new" x="520" y="687" width="280" height="30" rx="2"/>
+  <text class="tb mid tn" x="660" y="707">Bornier instruments</text>
+  <path class="n w3" d="M300 730 V750"/>
+  <path class="n w3" d="M300 750 H1150"/>
+  <path class="n w3" d="M1150 750 V70"/>
+  <path class="p w3" d="M60 60 L60 702"/>
+  <path class="p w2" d="M60 130 L90 130"/>
+  <path class="fuse" d="M90 122 L134 122 L134 138 L90 138 L90 122"/>
+  <path class="p w2" d="M134 130 L160 130"/>
+  <path class="lever" d="M160 130 L194 119"/>
+  <path class="p w2" d="M198 130 L340 130"/>
+  <path class="p w2" d="M60 218 L90 218"/>
+  <path class="fuse" d="M90 210 L134 210 L134 226 L90 226 L90 210"/>
+  <path class="p w2" d="M134 218 L160 218"/>
+  <path class="lever" d="M160 218 L194 207"/>
+  <path class="p w2" d="M198 218 L340 218"/>
+  <path class="p w2" d="M60 262 L90 262"/>
+  <path class="fuse" d="M90 254 L134 254 L134 270 L90 270 L90 254"/>
+  <path class="p w2" d="M134 262 L160 262"/>
+  <path class="lever" d="M160 262 L194 251"/>
+  <path class="p w2" d="M198 262 L340 262"/>
+  <path class="p w2" d="M60 306 L90 306"/>
+  <path class="fuse" d="M90 298 L134 298 L134 314 L90 314 L90 298"/>
+  <path class="p w2" d="M134 306 L160 306"/>
+  <path class="lever" d="M160 306 L194 295"/>
+  <path class="p w2" d="M198 306 L340 306"/>
+  <path class="p w2" d="M60 350 L90 350"/>
+  <path class="fuse" d="M90 342 L134 342 L134 358 L90 358 L90 342"/>
+  <path class="p w2" d="M134 350 L160 350"/>
+  <path class="lever" d="M160 350 L194 339"/>
+  <path class="p w2" d="M198 350 L340 350"/>
+  <path class="p w2" d="M60 394 L90 394"/>
+  <path class="fuse" d="M90 386 L134 386 L134 402 L90 402 L90 386"/>
+  <path class="p w2" d="M134 394 L160 394"/>
+  <path class="lever" d="M160 394 L194 383"/>
+  <path class="p w2" d="M198 394 L340 394"/>
+  <path class="p w2" d="M60 438 L90 438"/>
+  <path class="fuse" d="M90 430 L134 430 L134 446 L90 446 L90 430"/>
+  <path class="p w2" d="M134 438 L160 438"/>
+  <path class="lever" d="M160 438 L194 427"/>
+  <path class="p w2" d="M198 438 L340 438"/>
+  <path class="p w2" d="M60 526 L90 526"/>
+  <path class="fuse" d="M90 518 L134 518 L134 534 L90 534 L90 518"/>
+  <path class="p w2" d="M134 526 L160 526"/>
+  <path class="lever" d="M160 526 L194 515"/>
+  <path class="p w2" d="M198 526 L340 526"/>
+  <path class="p w2" d="M60 570 L90 570"/>
+  <path class="fuse" d="M90 562 L134 562 L134 578 L90 578 L90 562"/>
+  <path class="p w2" d="M134 570 L160 570"/>
+  <path class="lever" d="M160 570 L194 559"/>
+  <path class="p w2" d="M198 570 L340 570"/>
+  <path class="p w2" d="M60 614 L90 614"/>
+  <path class="fuse" d="M90 606 L134 606 L134 622 L90 622 L90 606"/>
+  <path class="p w2" d="M134 614 L160 614"/>
+  <path class="lever" d="M160 614 L194 603"/>
+  <path class="p w2" d="M198 614 L340 614"/>
+  <path class="p w2" d="M60 658 L90 658"/>
+  <path class="fuse" d="M90 650 L134 650 L134 666 L90 666 L90 650"/>
+  <path class="p w2" d="M134 658 L160 658"/>
+  <path class="lever" d="M160 658 L194 647"/>
+  <path class="p w2" d="M198 658 L340 658"/>
+  <path class="p w2" d="M60 702 L90 702"/>
+  <path class="fuse" d="M90 694 L134 694 L134 710 L90 710 L90 694"/>
+  <path class="p w2" d="M134 702 L160 702"/>
+  <path class="lever" d="M160 702 L194 691"/>
+  <path class="p w2" d="M198 702 L340 702"/>
+  <path class="bound" d="M430 196 L430 336"/>
+  <path class="bound" d="M960 196 L960 336"/>
+  <path class="p w3" d="M60 40 L60 60"/>
+  <text class="idn" x="66" y="55">w102 · 10</text>
+  <path class="n w3" d="M1150 40 L1150 70"/>
+  <text class="idn end" x="1144" y="58">w103 · 10</text>
+  <path class="p w2" d="M340 130 L520 130"/>
+  <text class="idn mid" x="430" y="124">w120 · 2,5</text>
+  <path class="p w1" d="M340 130 L370 130 L370 174 L520 174"/>
+  <text class="idn mid" x="445" y="168">w122 · 1,5</text>
+  <path class="p w2" d="M340 350 L520 350"/>
+  <text class="idn mid" x="430" y="344">w136 · 2,5</text>
+  <path class="p w1" d="M340 394 L520 394"/>
+  <text class="idn mid" x="430" y="388">w138 · 1,5</text>
+  <path class="p w2" d="M340 438 L520 438"/>
+  <text class="idn mid" x="430" y="432">w140 · 2,5</text>
+  <path class="p w2" d="M340 526 L520 526"/>
+  <text class="idn mid" x="430" y="520">w144 · 2,5</text>
+  <path class="p w1" d="M340 570 L520 570"/>
+  <text class="idn mid" x="430" y="564">w146 · 1,5</text>
+  <path class="p w2" d="M340 614 L520 614"/>
+  <text class="idn mid" x="430" y="608">w148 · 4</text>
+  <path class="p w2" d="M340 658 L520 658"/>
+  <text class="idn mid" x="430" y="652">w150 · 2,5</text>
+  <path class="p w2" d="M340 702 L520 702"/>
+  <text class="idn mid" x="430" y="696">w152 · 2,5</text>
+  <path class="n w2" d="M1150 130 L800 130"/>
+  <text class="idn mid" x="975" y="124">w121 · 2,5</text>
+  <path class="n w1" d="M1150 174 L800 174"/>
+  <text class="idn mid" x="975" y="168">w123 · 1,5</text>
+  <path class="n w2" d="M1150 350 L800 350"/>
+  <text class="idn mid" x="975" y="344">w137 · 2,5</text>
+  <path class="n w1" d="M1150 394 L800 394"/>
+  <text class="idn mid" x="975" y="388">w139 · 1,5</text>
+  <path class="n w2" d="M1150 438 L800 438"/>
+  <text class="idn mid" x="975" y="432">w141 · 2,5</text>
+  <path class="n w2" d="M1150 526 L800 526"/>
+  <text class="idn mid" x="975" y="520">w145 · 2,5</text>
+  <path class="n w1" d="M1150 570 L800 570"/>
+  <text class="idn mid" x="975" y="564">w147 · 1,5</text>
+  <path class="n w2" d="M1150 614 L800 614"/>
+  <text class="idn mid" x="975" y="608">w149 · 4</text>
+  <path class="n w2" d="M1150 658 L800 658"/>
+  <text class="idn mid" x="975" y="652">w151 · 2,5</text>
+  <path class="n w2" d="M1150 702 L800 702"/>
+  <text class="idn mid" x="975" y="696">w153 · 2,5</text>
+  <path class="p w2" d="M340 218 L430 218"/>
+  <text class="idn mid" x="385" y="212">w124 · 2,5</text>
+  <path class="p w2" d="M430 218 L520 218"/>
+  <text class="idn mid" x="475" y="212">w130 · 2,5</text>
+  <path class="n w2" d="M960 218 L800 218"/>
+  <text class="idn mid" x="880" y="212">w131 · 2,5</text>
+  <path class="n w2" d="M1150 218 L960 218"/>
+  <text class="idn mid" x="1055" y="212">w125 · 2,5</text>
+  <path class="p w2" d="M340 262 L430 262"/>
+  <text class="idn mid" x="385" y="256">w126 · 2,5</text>
+  <path class="p w2" d="M430 262 L520 262"/>
+  <text class="idn mid" x="475" y="256">w132 · 2,5</text>
+  <path class="n w2" d="M960 262 L800 262"/>
+  <text class="idn mid" x="880" y="256">w133 · 2,5</text>
+  <path class="n w2" d="M1150 262 L960 262"/>
+  <text class="idn mid" x="1055" y="256">w127 · 2,5</text>
+  <path class="p w2" d="M340 306 L430 306"/>
+  <text class="idn mid" x="385" y="300">w128 · 2,5</text>
+  <path class="p w2" d="M430 306 L520 306"/>
+  <text class="idn mid" x="475" y="300">w134 · 2,5</text>
+  <path class="n w2" d="M960 306 L800 306"/>
+  <text class="idn mid" x="880" y="300">w135 · 2,5</text>
+  <path class="n w2" d="M1150 306 L960 306"/>
+  <text class="idn mid" x="1055" y="300">w129 · 2,5</text>
+  <path class="p w2" d="M520 438 L500 438 L500 482 L520 482"/>
+  <text class="idn end" x="494" y="472">w142 · 2,5</text>
+  <path class="n w2" d="M800 438 L820 438 L820 482 L800 482"/>
+  <text class="idn" x="826" y="472">w143 · 2,5</text>
+  <rect class="flag" x="20" y="22" width="230" height="18"/>
+  <text class="ts mid" x="135" y="35">→ node062 · fusible 50 A · folio 2a</text>
+  <rect class="flag" x="990" y="22" width="200" height="18"/>
+  <text class="ts mid" x="1090" y="35">→ node006 · CC masse · folio 2a</text>
+  <circle class="term" cx="60" cy="60" r="3.5"/>
+  <circle class="term" cx="300" cy="730" r="3.5"/>
+  <circle class="term" cx="340" cy="130" r="3.5"/>
+  <circle class="term" cx="340" cy="218" r="3.5"/>
+  <circle class="term" cx="340" cy="262" r="3.5"/>
+  <circle class="term" cx="340" cy="306" r="3.5"/>
+  <circle class="term" cx="340" cy="350" r="3.5"/>
+  <circle class="term" cx="340" cy="394" r="3.5"/>
+  <circle class="term" cx="340" cy="438" r="3.5"/>
+  <circle class="term" cx="340" cy="526" r="3.5"/>
+  <circle class="term" cx="340" cy="570" r="3.5"/>
+  <circle class="term" cx="340" cy="614" r="3.5"/>
+  <circle class="term" cx="340" cy="658" r="3.5"/>
+  <circle class="term" cx="340" cy="702" r="3.5"/>
+  <circle class="term" cx="520" cy="130" r="3.5"/>
+  <circle class="term" cx="800" cy="130" r="3.5"/>
+  <circle class="term" cx="520" cy="174" r="3.5"/>
+  <circle class="term" cx="800" cy="174" r="3.5"/>
+  <circle class="term" cx="520" cy="218" r="3.5"/>
+  <circle class="term" cx="800" cy="218" r="3.5"/>
+  <circle class="term" cx="520" cy="262" r="3.5"/>
+  <circle class="term" cx="800" cy="262" r="3.5"/>
+  <circle class="term" cx="520" cy="306" r="3.5"/>
+  <circle class="term" cx="800" cy="306" r="3.5"/>
+  <circle class="term" cx="520" cy="350" r="3.5"/>
+  <circle class="term" cx="800" cy="350" r="3.5"/>
+  <circle class="term" cx="520" cy="394" r="3.5"/>
+  <circle class="term" cx="800" cy="394" r="3.5"/>
+  <circle class="term" cx="520" cy="438" r="3.5"/>
+  <circle class="term" cx="800" cy="438" r="3.5"/>
+  <circle class="term" cx="520" cy="482" r="3.5"/>
+  <circle class="term" cx="800" cy="482" r="3.5"/>
+  <circle class="term" cx="520" cy="526" r="3.5"/>
+  <circle class="term" cx="800" cy="526" r="3.5"/>
+  <circle class="term" cx="520" cy="570" r="3.5"/>
+  <circle class="term" cx="800" cy="570" r="3.5"/>
+  <circle class="term" cx="520" cy="614" r="3.5"/>
+  <circle class="term" cx="800" cy="614" r="3.5"/>
+  <circle class="term" cx="520" cy="658" r="3.5"/>
+  <circle class="term" cx="800" cy="658" r="3.5"/>
+  <circle class="term" cx="520" cy="702" r="3.5"/>
+  <circle class="term" cx="800" cy="702" r="3.5"/>
+  <circle class="term" cx="430" cy="218" r="3.5"/>
+  <circle class="term" cx="430" cy="262" r="3.5"/>
+  <circle class="term" cx="430" cy="306" r="3.5"/>
+  <circle class="term" cx="960" cy="218" r="3.5"/>
+  <circle class="term" cx="960" cy="262" r="3.5"/>
+  <circle class="term" cx="960" cy="306" r="3.5"/>
+  <text class="id" x="65" y="74">n100</text>
+  <text class="pin" x="65" y="84">+</text>
+  <text class="id end" x="295" y="714">n101</text>
+  <text class="pin end" x="295" y="724">−</text>
+  <text class="id end" x="333" y="116">n102</text>
+  <text class="pin end" x="333" y="126">feu route</text>
+  <text class="id end" x="333" y="204">n103</text>
+  <text class="pin end" x="333" y="214">feu moteur</text>
+  <text class="id end" x="333" y="248">n109</text>
+  <text class="pin end" x="333" y="258">mouillage</text>
+  <text class="id end" x="333" y="292">n108</text>
+  <text class="pin end" x="333" y="302">projecteur</text>
+  <text class="id end" x="333" y="336">n104</text>
+  <text class="pin end" x="333" y="346">pompe à eau</text>
+  <text class="id end" x="333" y="380">n105</text>
+  <text class="pin end" x="333" y="390">radio</text>
+  <text class="id end" x="333" y="424">n106</text>
+  <text class="pin end" x="333" y="434">prises 12 V</text>
+  <text class="id end" x="333" y="512">n107</text>
+  <text class="pin end" x="333" y="522">éclairage</text>
+  <text class="id end" x="333" y="556">n110</text>
+  <text class="pin end" x="333" y="566">compas</text>
+  <text class="id end" x="333" y="600">n111</text>
+  <text class="pin end" x="333" y="610">pilote</text>
+  <text class="id end" x="333" y="644">n112</text>
+  <text class="pin end" x="333" y="654">VHF</text>
+  <text class="id end" x="333" y="688">n113</text>
+  <text class="pin end" x="333" y="698">GPS loch</text>
+  <text class="id" x="527" y="129">n120</text>
+  <text class="pin" x="527" y="139">+</text>
+  <text class="id end" x="793" y="129">n121</text>
+  <text class="pin end" x="793" y="139">−</text>
+  <text class="id" x="527" y="173">n122</text>
+  <text class="pin" x="527" y="183">+</text>
+  <text class="id end" x="793" y="173">n123</text>
+  <text class="pin end" x="793" y="183">−</text>
+  <text class="id" x="527" y="217">n130</text>
+  <text class="pin" x="527" y="227">+</text>
+  <text class="id end" x="793" y="217">n131</text>
+  <text class="pin end" x="793" y="227">−</text>
+  <text class="id" x="527" y="261">n132</text>
+  <text class="pin" x="527" y="271">+</text>
+  <text class="id end" x="793" y="261">n133</text>
+  <text class="pin end" x="793" y="271">−</text>
+  <text class="id" x="527" y="305">n134</text>
+  <text class="pin" x="527" y="315">+</text>
+  <text class="id end" x="793" y="305">n135</text>
+  <text class="pin end" x="793" y="315">−</text>
+  <text class="id" x="527" y="349">n136</text>
+  <text class="pin" x="527" y="359">+</text>
+  <text class="id end" x="793" y="349">n137</text>
+  <text class="pin end" x="793" y="359">−</text>
+  <text class="id" x="527" y="393">n138</text>
+  <text class="pin" x="527" y="403">+</text>
+  <text class="id end" x="793" y="393">n139</text>
+  <text class="pin end" x="793" y="403">−</text>
+  <text class="id" x="527" y="437">n140</text>
+  <text class="pin" x="527" y="447">+</text>
+  <text class="id end" x="793" y="437">n141</text>
+  <text class="pin end" x="793" y="447">−</text>
+  <text class="id" x="527" y="481">n142</text>
+  <text class="pin" x="527" y="491">+</text>
+  <text class="id end" x="793" y="481">n143</text>
+  <text class="pin end" x="793" y="491">−</text>
+  <text class="idn" x="527" y="525">n144</text>
+  <text class="pin" x="527" y="535">+</text>
+  <text class="idn end" x="793" y="525">n145</text>
+  <text class="pin end" x="793" y="535">−</text>
+  <text class="id" x="527" y="569">n146</text>
+  <text class="pin" x="527" y="579">+</text>
+  <text class="id end" x="793" y="569">n147</text>
+  <text class="pin end" x="793" y="579">−</text>
+  <text class="id" x="527" y="613">n148</text>
+  <text class="pin" x="527" y="623">+</text>
+  <text class="id end" x="793" y="613">n149</text>
+  <text class="pin end" x="793" y="623">−</text>
+  <text class="id" x="527" y="657">n150</text>
+  <text class="pin" x="527" y="667">+</text>
+  <text class="id end" x="793" y="657">n151</text>
+  <text class="pin end" x="793" y="667">−</text>
+  <text class="idn" x="527" y="701">n152</text>
+  <text class="pin" x="527" y="711">+</text>
+  <text class="idn end" x="793" y="701">n153</text>
+  <text class="pin end" x="793" y="711">−</text>
+  <text class="idn" x="436" y="232">n124</text>
+  <text class="pin" x="436" y="242">b1</text>
+  <text class="idn" x="436" y="276">n125</text>
+  <text class="pin" x="436" y="286">b2</text>
+  <text class="idn" x="436" y="320">n126</text>
+  <text class="pin" x="436" y="330">b3</text>
+  <text class="idn" x="966" y="232">n127</text>
+  <text class="pin" x="966" y="242">b4</text>
+  <text class="idn" x="966" y="276">n128</text>
+  <text class="pin" x="966" y="286">b5</text>
+  <text class="idn" x="966" y="320">n129</text>
+  <text class="pin" x="966" y="330">b6</text>
+  <text class="ts mid" x="430" y="190">connecteur pied de mât</text>
+  <text class="ts mid" x="960" y="190">connecteur pied de mât</text>
+  <text class="ts" x="520" y="778">départs 1,5 mm², un fusible par appareil : GPSMAP 7407 xsv · répéteur MLR FX312 · loch · anémomètre Advansea</text>
+  <text class="ts tu" x="520" y="796">radar : alimentation inconnue · sondeur : intégré au GPS ?</text>
+  <text class="id mid" x="112" y="134">10 A</text>
+  <text class="id mid" x="112" y="222">10 A</text>
+  <text class="id mid" x="112" y="266">10 A</text>
+  <text class="id mid" x="112" y="310">10 A</text>
+  <text class="id mid" x="112" y="354">15 A</text>
+  <text class="id mid" x="112" y="398">10 A</text>
+  <text class="id mid" x="112" y="442">10 A</text>
+  <text class="id mid" x="112" y="530">10 A</text>
+  <text class="id mid" x="112" y="574">5 A</text>
+  <text class="id mid" x="112" y="618">10 A</text>
+  <text class="id mid" x="112" y="662">10 A</text>
+  <text class="id mid" x="112" y="706">10 A</text>
+  <g class="mk-q"><circle cx="832" cy="380" r="11"/><text class="mid" x="832" y="383.5">Q8</text></g>
+  <g class="mk-q"><circle cx="832" cy="512" r="11"/><text class="mid" x="832" y="515.5">Q9</text></g>
+  <g class="mk-q"><circle cx="832" cy="688" r="11"/><text class="mid" x="832" y="691.5">Q11</text></g>
 </svg>
