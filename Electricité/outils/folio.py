@@ -190,6 +190,7 @@ class Folio:
         self.cote = {}      # nœud → côté (pour l'étiquette)
         self.barres = {}    # nœud → [(a, b)]
         self.traces = {}    # fil → [points]
+        self.liaisons = []  # (« n074 – n070 », a, b) : montage direct d'une borne sur une autre
         self.forme = {}     # nœud → forme de son appareil
         self.contours = []  # (nom, 'rect', (x0, y0, x1, y1), nœuds) ou (nom, 'cercle', (cx, cy, r), nœuds)
         self.rect = {}      # nœud → contour rectangulaire de sa boîte (étiquette à l'intérieur)
@@ -381,6 +382,13 @@ class Folio:
                     probleme = traverse(a, b, typ, g)
                     if probleme:
                         err.append(f"{w} : le segment {a} → {b} {probleme} {nom}")
+        for nom_l, a, b in self.liaisons:
+            if not angle_ok(a, b):
+                err.append(f"{nom_l} : segment {a} → {b} hors des angles 0/45/90°")
+            for nom, typ, g, noeuds in self.contours:
+                probleme = traverse(a, b, typ, g)
+                if probleme:
+                    err.append(f"{nom_l} : le segment {a} → {b} {probleme} {nom}")
         segs = [(w, a, b) for w, pts in self.traces.items() for a, b in zip(pts, pts[1:])]
         for i, (w1, a1, b1) in enumerate(segs):
             for w2, a2, b2 in segs[i + 1:]:
@@ -419,6 +427,7 @@ class Folio:
             self.dessiner_fil(w, spec or {})
         for m in L.get("liaisons", []) or []:   # montage direct d'une borne sur une autre (sans fil)
             a, b = self.pos[m[0]], self.pos[m[1]]
+            self.liaisons.append((f"liaison {court(m[0])} – {court(m[1])}", a, b))
             pol = self.M.nodes[m[0]]["polarite"]
             o.append(f'<path class="{"n" if pol == "-" else "p"} w2" d="M{a[0]:g} {a[1]:g} L{b[0]:g} {b[1]:g}"/>')
         for rv in L.get("renvois", []) or []:

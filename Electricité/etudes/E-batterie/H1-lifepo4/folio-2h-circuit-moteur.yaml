@@ -22,7 +22,7 @@ appareils:
     lignes: ["batterie moteur seule · 230 V : folio 3"]
     nodes:
       node018: [gauche, 112]
-      node016: [bas, 232]
+      node016: [bas, 216]
   - id: bat-moteur
     x: 40
     y: 180
@@ -46,8 +46,8 @@ appareils:
     calibre: 30 A
     calibre_cote: gauche
     nodes:
-      node075: {cote: point, xy: [232, 150], etiquette: [8, 4]}
-      node074: {cote: point, xy: [232, 186], etiquette: [8, 4]}
+      node075: {cote: point, xy: [216, 168], etiquette: [12, 4]}
+      node074: {cote: point, xy: [216, 204], etiquette: [12, 2]}
   - id: cc-moteur
     forme: interrupteur
     titre: CC moteur
@@ -151,8 +151,8 @@ liaisons:
 
 fils:
   wire201: {trace: [[30, 112], [30, 230]], etiquette: [36, 160]}
-  wire160: {etiquette: [201, 212, mid]}
-  wire200: {etiquette: [226, 140, end]}
+  wire160: {etiquette: [201, 236, mid]}
+  wire200: {etiquette: [210, 152, end]}
   wire001: {etiquette: [388, 212, mid]}
   wire012: {etiquette: [620, 212, mid]}
   wire217: {trace: [[500, 204], [500, 120]], etiquette: [680, 112, mid], texte: "w217 · 35 · guindeau sur le circuit moteur"}

@@ -53,8 +53,8 @@
   <rect class="fuse-new" x="232" y="211" width="48" height="18"/>
   <text class="idn mid" x="256" y="224">400 A</text>
   <text class="ts tn mid" x="256" y="258">A-H2</text>
-  <rect class="fuse-new" x="224" y="150" width="16" height="36"/>
-  <text class="idn end" x="220" y="172">30 A</text>
+  <rect class="fuse-new" x="208" y="168" width="16" height="36"/>
+  <text class="idn end" x="204" y="190">30 A</text>
   <rect class="sw" x="424" y="204" width="60" height="32" rx="2"/>
   <path class="lever" d="M424 220 L481 207"/>
   <text class="ts mid" x="454" y="196">CC moteur</text>
@@ -88,9 +88,9 @@
   <path class="n w2" d="M40 112 L30 112 L30 230 L40 240"/>
   <text class="idn" x="36" y="160">w201 · 6</text>
   <path class="p w4" d="M170 220 L232 220"/>
-  <text class="idn mid" x="201" y="212">w160 · 35</text>
-  <path class="p w2" d="M232 150 L232 128"/>
-  <text class="idn end" x="226" y="140">w200 · 6</text>
+  <text class="idn mid" x="201" y="236">w160 · 35</text>
+  <path class="p w2" d="M216 168 L216 128"/>
+  <text class="idn end" x="210" y="152">w200 · 6</text>
   <path class="p w4" d="M280 220 L424 220"/>
   <text class="idn mid" x="388" y="212">w001 · 35</text>
   <path class="p w4" d="M484 220 L760 220"/>
@@ -127,17 +127,17 @@
   <text class="idn mid" x="580" y="574">w208 · 0,75</text>
   <path class="p w1" d="M484 220 L520 256 L520 350 L910 350 L910 580 L666 580"/>
   <text class="idn mid" x="680" y="344">w207 · + de l&#x27;entrée (notice)</text>
-  <path class="p w2" d="M232 186 L232 220"/>
+  <path class="p w2" d="M216 204 L232 220"/>
   <rect class="flag" x="730" y="441" width="135" height="18"/>
   <text class="ts mid" x="797.5" y="454">→ node009 · folio 2i</text>
   <circle class="term" cx="40" cy="112" r="3.5"/>
-  <circle class="term" cx="232" cy="128" r="3.5"/>
+  <circle class="term" cx="216" cy="128" r="3.5"/>
   <circle class="term" cx="170" cy="220" r="3.5"/>
   <circle class="term" cx="40" cy="240" r="3.5"/>
   <circle class="term" cx="232" cy="220" r="3.5"/>
   <circle class="term" cx="280" cy="220" r="3.5"/>
-  <circle class="term" cx="232" cy="150" r="3.5"/>
-  <circle class="term" cx="232" cy="186" r="3.5"/>
+  <circle class="term" cx="216" cy="168" r="3.5"/>
+  <circle class="term" cx="216" cy="204" r="3.5"/>
   <circle class="term" cx="424" cy="220" r="3.5"/>
   <circle class="term" cx="484" cy="220" r="3.5"/>
   <circle class="term" cx="760" cy="220" r="3.5"/>
@@ -167,16 +167,16 @@
   <circle class="term" cx="666" cy="580" r="3.5"/>
   <text class="id" x="47" y="111">n018</text>
   <text class="pin" x="47" y="121">−</text>
-  <text class="id end" x="227" y="112">n016</text>
-  <text class="pin end" x="227" y="122">s1</text>
+  <text class="id end" x="211" y="112">n016</text>
+  <text class="pin end" x="211" y="122">s1</text>
   <text class="id end" x="163" y="219">n001</text>
   <text class="pin end" x="163" y="229">+</text>
   <text class="id" x="47" y="239">n002</text>
   <text class="pin" x="47" y="249">−</text>
   <text class="idn end" x="230" y="250">n070</text>
   <text class="idn" x="284" y="238">n071</text>
-  <text class="idn" x="240" y="154">n075</text>
-  <text class="idn" x="240" y="190">n074</text>
+  <text class="idn" x="228" y="172">n075</text>
+  <text class="idn" x="228" y="206">n074</text>
   <text class="id end" x="418" y="238">n003</text>
   <text class="id" x="504" y="214">n004</text>
   <text class="id" x="767" y="219">n031</text>
