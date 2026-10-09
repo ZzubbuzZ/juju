@@ -59,8 +59,8 @@
   <rect class="sw" x="764" y="379" width="60" height="32" rx="2"/>
   <path class="lever" d="M764 395 L821 382"/>
   <text class="ts mid" x="794" y="369">CC masse</text>
-  <path class="p w4" d="M484 160 L540 160"/>
-  <path class="n w4" d="M824 395 L900 395"/>
+  <path class="p w4" d="M484 160 H540"/>
+  <path class="n w4" d="M824 395 H900"/>
   <path class="p w4" d="M190 296 L220 296 L220 160 L260 160"/>
   <text class="idn" x="226" y="250">w161 · 35</text>
   <path class="p w4" d="M316 160 L424 160"/>

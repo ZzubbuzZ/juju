@@ -86,8 +86,8 @@ appareils:
       node024: [droite, 65]
       node025: [droite, 90]
       node023: [droite, 125]
-      node026: [bas, 870]
-      node027: [bas, 950]
+      node026: {cote: bas, a: 900, etiquette: [-5, -16, end]}
+      node027: {cote: bas, a: 950, etiquette: [-5, -16, end]}
   - id: guindeau
     forme: cercle
     cx: 1110
@@ -100,7 +100,6 @@ appareils:
   - id: fus-telecommande-guindeau
     forme: fusible
     calibre: 5 A
-    calibre_cote: gauche
     nodes:
       node033: {cote: point, xy: [824, 190], etiquette: [10, 4]}
       node034: {cote: point, xy: [824, 226], etiquette: [10, 4]}
@@ -114,8 +113,8 @@ appareils:
     titre_y: 60
     nodes:
       node035: [gauche, 270]
-      node036: [haut, 870]
-      node037: [haut, 950]
+      node036: {cote: haut, a: 900, etiquette: [-5, 14, end]}
+      node037: {cote: haut, a: 950, etiquette: [-5, 14, end]}
   # ---------------------------------------------------------------- Orion XS
   - id: fus-orion-entree
     forme: fusible
@@ -133,11 +132,11 @@ appareils:
   - id: inter-orion
     forme: interrupteur
     titre: interrupteur Orion XS
-    titre_xy: [670, 276]
+    titre_xy: [690, 276]
     nodes:
-      node370: {cote: point, xy: [640, 300], etiquette: [-4, 22, end]}
-      node371: {cote: point, xy: [700, 300], etiquette: [4, 22]}
-      node379: {cote: point, xy: [670, 316], etiquette: [6, 14]}
+      node370: {cote: point, xy: [660, 300], etiquette: [-4, 22, end]}
+      node371: {cote: point, xy: [720, 300], etiquette: [4, 22]}
+      node379: {cote: point, xy: [690, 316], etiquette: [6, 14]}
   - id: orion-xs
     x: 360
     y: 370
@@ -353,15 +352,15 @@ fils:
   wire013: {trace: [[1155, 990], [1155, 330], [760, 330]], etiquette: [1149, 420, mid, v]}
   wire061: {trace: [[824, 96]], etiquette: [818, 150, end]}
   wire062: {trace: [[824, 270]], etiquette: [818, 256, end]}
-  wire063: {etiquette: [866, 198, mid, v]}
+  wire063: {etiquette: [896, 198, mid, v]}
   wire064: {etiquette: [946, 198, mid, v]}
   # Orion XS
   wire202: {trace: [[496, 232]], etiquette: [488, 254, end], texte: "w202 · 16"}
   wire203: {etiquette: [488, 340, end]}
   wire207: {trace: [[530, 266], [530, 300]], etiquette: [540, 258]}
-  wire208: {etiquette: [608, 292, mid]}
+  wire208: {etiquette: [621, 292, mid]}
   wire209: {trace: [[740, 300], [740, 450]], etiquette: [746, 400]}
-  wire216: {renvoi: vers, trace: [[670, 340]], etiquette: [664, 334, end], texte: w216}
+  wire216: {renvoi: vers, trace: [[690, 340]], etiquette: [684, 334, end], texte: w216}
   wire205: {etiquette: [406, 488]}
   wire204: {trace: [[400, 646]], etiquette: [406, 590], texte: "w204 · 16"}
   wire206: {trace: [[18, 450], [18, 990]], etiquette: [190, 444, mid], texte: "w206 · 16"}
@@ -395,7 +394,7 @@ fils:
   wire028: {}
 
 renvois:
-  - {x: 605, y: 340, w: 130, nouveau: true, texte: "→ node005 · CC masse"}
+  - {x: 580, y: 340, w: 130, nouveau: true, texte: "→ node005 · CC masse"}
   - {x: 316, y: 793, w: 150, nouveau: true, texte: "→ node003 · CC moteur"}
 
 pastilles:

@@ -73,43 +73,40 @@
   <rect class="box" x="960" y="405" width="220" height="50" rx="2"/>
   <text class="tb mid" x="1070" y="423">Disj. guindeau</text>
   <text class="ts mid" x="1070" y="438">vers le guindeau : folio 1</text>
-  <path class="p w3" d="M424 140 V250"/>
-  <path class="p w3" d="M424 430 V550"/>
-  <path class="p w3" d="M484 430 V340"/>
   <path class="p w4" d="M190 140 L260 140"/>
   <text class="idn mid" x="225" y="130">w160 · 35</text>
   <path class="p w4" d="M316 140 L424 140"/>
-  <text class="idn mid" x="370" y="130">w001 · 35</text>
+  <text class="idn mid" x="355" y="130">w001 · 35</text>
   <path class="p w4" d="M484 140 L620 140"/>
   <text class="id mid" x="566" y="158">w012 · 35</text>
   <path class="p w4" d="M484 140 L504 140 L544 100 L620 100"/>
   <text class="id mid" x="584" y="92">w010 · 35</text>
-  <path class="p w2" d="M424 210 L500 210"/>
-  <text class="idn" x="432" y="204">w162 · 6</text>
+  <path class="p w2" d="M424 140 L410 154 L410 210 L500 210"/>
+  <text class="idn" x="418" y="204">w162 · 6</text>
   <path class="p w2" d="M546 210 L700 210"/>
   <text class="idn mid" x="623" y="204">w003 · 6</text>
-  <path class="p w2" d="M424 250 L500 250"/>
-  <text class="idn" x="432" y="244">w164 · 6</text>
+  <path class="p w2" d="M424 140 L396 168 L396 250 L500 250"/>
+  <text class="idn" x="404" y="244">w164 · 6</text>
   <path class="p w2" d="M546 250 L700 250"/>
   <text class="idn mid" x="660" y="244">w002 · 6</text>
   <path class="p w4" d="M190 430 L260 430"/>
   <text class="idn mid" x="225" y="420">w161 · 35</text>
   <path class="p w4" d="M316 430 L424 430"/>
-  <text class="idn mid" x="370" y="420">w006 · 35</text>
-  <path class="p w2" d="M424 510 L500 510"/>
-  <text class="idn" x="432" y="504">w163 · 6</text>
+  <text class="idn mid" x="355" y="420">w006 · 35</text>
+  <path class="p w2" d="M424 430 L410 444 L410 510 L500 510"/>
+  <text class="idn" x="418" y="504">w163 · 6</text>
   <path class="p w2" d="M546 510 L700 510"/>
   <text class="idn mid" x="623" y="504">w008 · 6</text>
-  <path class="p w2" d="M424 550 L500 550"/>
-  <text class="idn" x="432" y="544">w165 · 6</text>
+  <path class="p w2" d="M424 430 L396 458 L396 550 L500 550"/>
+  <text class="idn" x="404" y="544">w165 · 6</text>
   <path class="p w2" d="M546 550 L700 550"/>
   <text class="idn mid" x="660" y="544">w007 · 6</text>
-  <path class="p w2" d="M484 340 L640 340"/>
-  <text class="idn" x="492" y="334">w166 · 6</text>
+  <path class="p w2" d="M484 430 L498 416 L498 340 L640 340"/>
+  <text class="idn" x="506" y="334">w166 · 6</text>
   <path class="p w2" d="M686 340 L950 340"/>
   <text class="idn mid" x="850" y="334">w019 · 6</text>
-  <path class="p w2" d="M484 380 L760 380"/>
-  <text class="idn" x="492" y="374">w167 · 6</text>
+  <path class="p w2" d="M484 430 L512 402 L512 380 L760 380"/>
+  <text class="idn" x="520" y="374">w167 · 6</text>
   <path class="p w2" d="M806 380 L950 380"/>
   <text class="idn mid" x="903" y="374">w022 · 6</text>
   <path class="p w4" d="M484 430 L960 430"/>
@@ -157,7 +154,7 @@
   <text class="pin end" x="183" y="149">+</text>
   <text class="idn end" x="256" y="162">n070</text>
   <text class="idn" x="320" y="162">n071</text>
-  <text class="id end" x="420" y="160">n003</text>
+  <text class="id end" x="418" y="132">n003</text>
   <text class="id" x="488" y="160">n004</text>
   <text class="idn end" x="496" y="230">n074</text>
   <text class="idn" x="550" y="230">n075</text>
@@ -167,7 +164,7 @@
   <text class="pin end" x="183" y="439">+</text>
   <text class="idn end" x="256" y="452">n072</text>
   <text class="idn" x="320" y="452">n073</text>
-  <text class="id end" x="420" y="450">n009</text>
+  <text class="id end" x="418" y="422">n009</text>
   <text class="id" x="488" y="450">n010</text>
   <text class="idn end" x="496" y="530">n076</text>
   <text class="idn" x="550" y="530">n077</text>

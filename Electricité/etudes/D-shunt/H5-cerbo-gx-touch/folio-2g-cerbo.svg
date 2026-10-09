@@ -59,6 +59,7 @@
   <text class="tb mid tn" x="195" y="350">SmartShunt 500 A</text>
   <text class="ts mid" x="195" y="365">pose et fils de mesure : folio 2e</text>
   <path class="p w4" d="M300 120 L424 120"/>
+  <text class="idn mid" x="362" y="112">w006 · 35</text>
   <path class="p w1" d="M484 120 L560 120"/>
   <text class="idn mid" x="526" y="110">w186 · 0,75</text>
   <path class="p w1" d="M606 120 L700 120"/>

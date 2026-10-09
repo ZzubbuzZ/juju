@@ -56,10 +56,9 @@ appareils:
     nodes:
       node094: [droite, 385]
 
-traits:   # w006, de node073 (folio 2c) à node009
-  - {classe: "p w4", points: [[300, 120], [424, 120]]}
 
 fils:
+  wire006: {trace: [[300, 120]], etiquette: [362, 112, mid]}
   wire186: {etiquette: [526, 110, mid]}
   wire187: {etiquette: [653, 112, mid]}
   wire188: {trace: [[740, 280], [540, 280]], etiquette: [748, 252]}

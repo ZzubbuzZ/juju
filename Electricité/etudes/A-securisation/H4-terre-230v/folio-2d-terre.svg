@@ -84,11 +84,11 @@
   <circle class="term" cx="510" cy="290" r="3.5"/>
   <circle class="term" cx="720" cy="290" r="3.5"/>
   <text class="id end" x="173" y="179">n203</text>
-  <text class="pin end" x="173" y="189">phase</text>
+  <text class="pin end" x="173" y="189">P</text>
   <text class="id end" x="173" y="209">n204</text>
-  <text class="pin end" x="173" y="219">neutre</text>
+  <text class="pin end" x="173" y="219">N</text>
   <text class="id end" x="173" y="289">n205</text>
-  <text class="pin end" x="173" y="299">terre</text>
+  <text class="pin end" x="173" y="299">PE</text>
   <text class="idn" x="447" y="179">n206</text>
   <text class="pin" x="447" y="189">phase</text>
   <text class="idn" x="447" y="209">n207</text>

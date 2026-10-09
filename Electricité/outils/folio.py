@@ -82,6 +82,7 @@ ABREGES = {
     "sortie moteur A": "A", "sortie moteur B": "B", "entrée": "e", "sortie": "s",
     "30 (entrée)": "30", "87 (sortie)": "87", "86 (bobine +)": "86", "85 (bobine −)": "85",
     "12 V +": "+", "12 V −": "−", "− batterie": "− bat", "− système": "− sys",
+    "phase": "P", "neutre": "N", "terre": "PE",
     "commande montée": "mont", "commande descente": "desc", "commande masse": "−", "montée": "mont", "descente": "desc",
     "+ alimentation et mesure (Vbatt+)": "Vbat+", "entrée auxiliaire (tension batterie moteur)": "aux",
 }
@@ -450,6 +451,14 @@ class Folio:
                     probleme = traverse(a, b, typ, g)
                     if probleme:
                         err.append(f"{w} : le segment {a} → {b} {probleme} {nom}")
+        for n, bs in self.barres.items():   # une barre ne traverse ni ne longe un appareil non plus
+            for a, b in bs:
+                for nom, typ, g, noeuds in self.contours:
+                    if any(m != n and m in self.pos and sur_segment(self.pos[m], a, b) for m in noeuds):
+                        continue   # appareil monté directement sur la barre (peigne, barrette)
+                    probleme = traverse(a, b, typ, g)
+                    if probleme:
+                        err.append(f"barre {court(n)} : le segment {a} → {b} {probleme} {nom}")
         for nom_l, a, b in self.liaisons:
             if not angle_ok(a, b):
                 err.append(f"{nom_l} : segment {a} → {b} hors des angles 0/45/90°")

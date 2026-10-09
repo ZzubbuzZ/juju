@@ -68,16 +68,16 @@
   <circle class="box" cx="1110" cy="78" r="22"/>
   <text class="tb mid" x="1110" y="83">M</text>
   <rect class="fuse" x="816" y="190" width="16" height="36"/>
-  <text class="id end" x="812" y="212">5 A</text>
+  <text class="id" x="836" y="212">5 A</text>
   <rect class="box-unk" x="850" y="236" width="160" height="70" rx="2"/>
   <text class="tb mid" x="930" y="296">Télécommande</text>
   <rect class="fuse-new" x="488" y="262" width="16" height="36"/>
   <text class="idn end" x="484" y="284">70 A</text>
   <rect class="fuse-new" x="546" y="291" width="36" height="18"/>
   <text class="idn mid" x="564" y="304">1 A</text>
-  <rect class="sw" x="640" y="284" width="60" height="32" rx="2"/>
-  <path class="lever" d="M640 300 L697 287"/>
-  <text class="ts tn mid" x="670" y="276">interrupteur Orion XS</text>
+  <rect class="sw" x="660" y="284" width="60" height="32" rx="2"/>
+  <path class="lever" d="M660 300 L717 287"/>
+  <text class="ts tn mid" x="690" y="276">interrupteur Orion XS</text>
   <rect class="box-new" x="360" y="370" width="240" height="100" rx="2"/>
   <text class="tb mid tn" x="480" y="408">Orion XS 12/12-50A</text>
   <text class="ts mid" x="480" y="423">DC/DC · réglé vers 15 A</text>
@@ -163,8 +163,8 @@
   <text class="id end" x="818" y="150">w061</text>
   <path class="u" d="M824 226 L824 270 L850 270"/>
   <text class="id end" x="818" y="256">w062</text>
-  <path class="u" d="M870 236 L870 160"/>
-  <text class="id mid" x="866" y="198" transform="rotate(-90 866 198)">w063</text>
+  <path class="u" d="M900 236 L900 160"/>
+  <text class="id mid" x="896" y="198" transform="rotate(-90 896 198)">w063</text>
   <path class="u" d="M950 236 L950 160"/>
   <text class="id mid" x="946" y="198" transform="rotate(-90 946 198)">w064</text>
   <path class="p w3" d="M484 220 L496 232 L496 262"/>
@@ -173,12 +173,12 @@
   <text class="idn end" x="488" y="340">w203 · 16</text>
   <path class="p w1" d="M484 220 L530 266 L530 300 L546 300"/>
   <text class="idn" x="540" y="258">w207 · 0,75</text>
-  <path class="p w1" d="M582 300 L640 300"/>
-  <text class="idn mid" x="608" y="292">w208 · 0,75</text>
-  <path class="p w1" d="M700 300 L740 300 L740 450 L600 450"/>
+  <path class="p w1" d="M582 300 L660 300"/>
+  <text class="idn mid" x="621" y="292">w208 · 0,75</text>
+  <path class="p w1" d="M720 300 L740 300 L740 450 L600 450"/>
   <text class="idn" x="746" y="400">w209 · 0,75</text>
-  <path class="n w1" d="M670 316 L670 340"/>
-  <text class="idn end" x="664" y="334">w216</text>
+  <path class="n w1" d="M690 316 L690 340"/>
+  <text class="idn end" x="684" y="334">w216</text>
   <path class="p w3" d="M400 500 L400 470"/>
   <text class="idn" x="406" y="488">w205 · 16</text>
   <path class="p w3" d="M424 670 L400 646 L400 536"/>
@@ -237,8 +237,8 @@
   <path class="n w2" d="M980 855 L1010 855"/>
   <path class="p w2" d="M216 204 L232 220"/>
   <path class="p w2" d="M484 670 L520 670"/>
-  <rect class="flag-new" x="605" y="340" width="130" height="18"/>
-  <text class="ts mid" x="670" y="353">→ node005 · CC masse</text>
+  <rect class="flag-new" x="580" y="340" width="130" height="18"/>
+  <text class="ts mid" x="645" y="353">→ node005 · CC masse</text>
   <rect class="flag-new" x="316" y="793" width="150" height="18"/>
   <text class="ts mid" x="391" y="806">→ node003 · CC moteur</text>
   <circle class="term" cx="40" cy="95" r="3.5"/>
@@ -259,22 +259,22 @@
   <circle class="term" cx="980" cy="65" r="3.5"/>
   <circle class="term" cx="980" cy="90" r="3.5"/>
   <circle class="term" cx="980" cy="125" r="3.5"/>
-  <circle class="term" cx="870" cy="160" r="3.5"/>
+  <circle class="term" cx="900" cy="160" r="3.5"/>
   <circle class="term" cx="950" cy="160" r="3.5"/>
   <circle class="term" cx="1092.3" cy="65" r="3.5"/>
   <circle class="term" cx="1091.6" cy="90" r="3.5"/>
   <circle class="term" cx="824" cy="190" r="3.5"/>
   <circle class="term" cx="824" cy="226" r="3.5"/>
   <circle class="term" cx="850" cy="270" r="3.5"/>
-  <circle class="term" cx="870" cy="236" r="3.5"/>
+  <circle class="term" cx="900" cy="236" r="3.5"/>
   <circle class="term" cx="950" cy="236" r="3.5"/>
   <circle class="term" cx="496" cy="262" r="3.5"/>
   <circle class="term" cx="496" cy="298" r="3.5"/>
   <circle class="term" cx="546" cy="300" r="3.5"/>
   <circle class="term" cx="582" cy="300" r="3.5"/>
-  <circle class="term" cx="640" cy="300" r="3.5"/>
-  <circle class="term" cx="700" cy="300" r="3.5"/>
-  <circle class="term" cx="670" cy="316" r="3.5"/>
+  <circle class="term" cx="660" cy="300" r="3.5"/>
+  <circle class="term" cx="720" cy="300" r="3.5"/>
+  <circle class="term" cx="690" cy="316" r="3.5"/>
   <circle class="term" cx="496" cy="370" r="3.5"/>
   <circle class="term" cx="400" cy="470" r="3.5"/>
   <circle class="term" cx="360" cy="450" r="3.5"/>
@@ -353,8 +353,8 @@
   <text class="pin end" x="973" y="99">B</text>
   <text class="id end" x="973" y="124">n023</text>
   <text class="pin end" x="973" y="134">e−</text>
-  <text class="id" x="875" y="144">n026</text>
-  <text class="pin" x="875" y="154">mont</text>
+  <text class="id end" x="895" y="144">n026</text>
+  <text class="pin end" x="895" y="154">mont</text>
   <text class="id end" x="945" y="144">n027</text>
   <text class="pin end" x="945" y="154">desc</text>
   <text class="id end" x="1088.3" y="59">n029</text>
@@ -365,17 +365,17 @@
   <text class="id" x="834" y="230">n034</text>
   <text class="id" x="857" y="269">n035</text>
   <text class="pin" x="857" y="279">+</text>
-  <text class="id" x="875" y="250">n036</text>
-  <text class="pin" x="875" y="260">mont</text>
+  <text class="id end" x="895" y="250">n036</text>
+  <text class="pin end" x="895" y="260">mont</text>
   <text class="id end" x="945" y="250">n037</text>
   <text class="pin end" x="945" y="260">desc</text>
   <text class="idn end" x="484" y="266">n364</text>
   <text class="idn end" x="484" y="306">n365</text>
   <text class="idn end" x="544" y="320">n368</text>
   <text class="idn" x="584" y="320">n369</text>
-  <text class="idn end" x="636" y="322">n370</text>
-  <text class="idn" x="704" y="322">n371</text>
-  <text class="idn" x="676" y="330">n379</text>
+  <text class="idn end" x="656" y="322">n370</text>
+  <text class="idn" x="724" y="322">n371</text>
+  <text class="idn" x="696" y="330">n379</text>
   <text class="idn end" x="491" y="384">n360</text>
   <text class="pin end" x="491" y="394">e+</text>
   <text class="idn" x="405" y="454">n361</text>

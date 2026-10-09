@@ -165,7 +165,7 @@
   <path class="n w1" d="M782 425 L788 415"/>
   <path class="n w1" d="M787 425 L793 415"/>
   <path class="n w1" d="M792 425 L798 415"/>
-  <text class="id" x="632" y="412">w041 / w042 / w043 · 3 × 2,5</text>
+  <text class="id" x="688" y="412">w041 / w042 / w043</text>
   <path class="n w2" d="M1005 370 L1005 455 L915 455 L915 500"/>
   <path class="n w1" d="M952 460 L958 450"/>
   <path class="n w1" d="M957 460 L963 450"/>
@@ -246,19 +246,19 @@
   <text class="id" x="118" y="512">n233 / n234 / n235</text>
   <text class="pin" x="118" y="522">P / N / PE</text>
   <text class="id mid" x="300" y="516">n227 / n228 / n229</text>
-  <text class="pin mid" x="300" y="526">phase/neutre/terre</text>
+  <text class="pin mid" x="300" y="526">P/N/PE</text>
   <text class="id mid" x="300" y="626">n047 / n048</text>
   <text class="pin mid" x="300" y="636">P / N</text>
   <text class="id mid" x="470" y="516">n230 / n231 / n232</text>
-  <text class="pin mid" x="470" y="526">phase/neutre/terre</text>
+  <text class="pin mid" x="470" y="526">P/N/PE</text>
   <text class="id mid" x="640" y="516">n253 / n254 / n255</text>
-  <text class="pin mid" x="640" y="526">phase/neutre/terre</text>
+  <text class="pin mid" x="640" y="526">P/N/PE</text>
   <text class="id" x="876" y="388">n240 / n241 / n242</text>
   <text class="pin" x="876" y="398">P / N / PE</text>
   <text class="id mid" x="915" y="516">n247 / n248 / n249</text>
-  <text class="pin mid" x="915" y="526">phase/neutre/terre</text>
+  <text class="pin mid" x="915" y="526">P/N/PE</text>
   <text class="id mid" x="1095" y="516">n250 / n251 / n252</text>
-  <text class="pin mid" x="1095" y="526">phase/neutre/terre</text>
+  <text class="pin mid" x="1095" y="526">P/N/PE</text>
   <text class="id mid" x="260" y="183">3 × 2,5</text>
   <text class="tb mid" x="105" y="206">Bornes du port : 16 A</text>
   <text class="ts mid" x="105" y="223">≈ 3 700 W pour tout le bord</text>

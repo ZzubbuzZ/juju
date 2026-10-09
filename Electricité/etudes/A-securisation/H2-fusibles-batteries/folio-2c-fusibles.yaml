@@ -32,7 +32,7 @@ appareils:
     titre: CC moteur
     titre_xy: [454, 112]
     nodes:
-      node003: {cote: point, xy: [424, 140], etiquette: [-4, 20, end]}
+      node003: {cote: point, xy: [424, 140], etiquette: [-6, -8, end]}
       node004: {cote: point, xy: [484, 140], etiquette: [4, 20]}
   - id: fus-chargeur-moteur
     forme: fusible
@@ -71,7 +71,7 @@ appareils:
     titre_xy: [476, 402]
     titre_ancre: end
     nodes:
-      node009: {cote: point, xy: [424, 430], etiquette: [-4, 20, end]}
+      node009: {cote: point, xy: [424, 430], etiquette: [-6, -8, end]}
       node010: {cote: point, xy: [484, 430], etiquette: [4, 20]}
   - id: fus-chargeur-servitude
     forme: fusible
@@ -112,28 +112,25 @@ appareils:
 
 # Bornes des coupe-circuits prolongées : un départ par point de raccordement.
 barres:
-  - {node: node003, de: [424, 140], a: [424, 250], epaisseur: w3}
-  - {node: node009, de: [424, 430], a: [424, 550], epaisseur: w3}
-  - {node: node010, de: [484, 430], a: [484, 340], epaisseur: w3}
 
 fils:
   wire160: {etiquette: [225, 130, mid]}
-  wire001: {etiquette: [370, 130, mid]}
+  wire001: {etiquette: [355, 130, mid]}
   wire012: {trace: [[620, 140]], etiquette: [566, 158, mid]}
   wire010: {trace: [[504, 140], [544, 100], [620, 100]], etiquette: [584, 92, mid]}
-  wire162: {trace: [[424, 210]], etiquette: [432, 204]}
+  wire162: {trace: [[410, 154], [410, 210]], etiquette: [418, 204]}
   wire003: {trace: [[700, 210]], etiquette: [623, 204, mid]}
-  wire164: {trace: [[424, 250]], etiquette: [432, 244]}
+  wire164: {trace: [[396, 168], [396, 250]], etiquette: [404, 244]}
   wire002: {trace: [[700, 250]], etiquette: [660, 244, mid]}
   wire161: {etiquette: [225, 420, mid]}
-  wire006: {etiquette: [370, 420, mid]}
-  wire163: {trace: [[424, 510]], etiquette: [432, 504]}
+  wire006: {etiquette: [355, 420, mid]}
+  wire163: {trace: [[410, 444], [410, 510]], etiquette: [418, 504]}
   wire008: {trace: [[700, 510]], etiquette: [623, 504, mid]}
-  wire165: {trace: [[424, 550]], etiquette: [432, 544]}
+  wire165: {trace: [[396, 458], [396, 550]], etiquette: [404, 544]}
   wire007: {trace: [[700, 550]], etiquette: [660, 544, mid]}
-  wire166: {trace: [[484, 340]], etiquette: [492, 334]}
+  wire166: {trace: [[498, 416], [498, 340]], etiquette: [506, 334]}
   wire019: {trace: [[950, 340]], etiquette: [850, 334, mid]}
-  wire167: {trace: [[484, 380]], etiquette: [492, 374]}
+  wire167: {trace: [[512, 402], [512, 380]], etiquette: [520, 374]}
   wire022: {trace: [[950, 380]], etiquette: [903, 374, mid]}
   wire017: {etiquette: [880, 422, mid], texte: "w017 · 35 (inchangé)"}
 

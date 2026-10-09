@@ -68,9 +68,10 @@ appareils:
       node005: {cote: point, xy: [764, 395], etiquette: [6, 30]}
       node006: {cote: point, xy: [824, 395], etiquette: [4, 30]}
 
-traits:   # liaisons vers les renvois des nœuds qui ont d'autres fils, sur d'autres folios
-  - {classe: "p w4", points: [[484, 160], [540, 160]]}
-  - {classe: "n w4", points: [[824, 395], [900, 395]]}
+
+barres:   # nœuds qui ont d'autres fils, sur d'autres folios : prolongés jusqu'à leur renvoi
+  - {node: node010, de: [484, 160], a: [540, 160]}
+  - {node: node006, de: [824, 395], a: [900, 395]}
 
 fils:
   wire161: {trace: [[220, 296], [220, 160]], etiquette: [226, 250]}

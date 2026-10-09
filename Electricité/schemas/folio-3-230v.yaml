@@ -280,8 +280,8 @@ cables:
   babord:
     fils: [wire041, wire042, wire043]
     trace: [[620, 400], [620, 420], [820, 420], [820, 370], [870, 370]]
-    etiquette: [632, 412]
-    texte: "w041 / w042 / w043 · 3 × 2,5"
+    etiquette: [688, 412]
+    texte: "w041 / w042 / w043"
     obliques_xy: [790, 420]
   table-a-carte:
     fils: [wire055, wire056, wire057]
