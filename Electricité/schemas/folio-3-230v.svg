@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="Réseau 230 V en unifilaire : prise de quai, boîtier d'arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et plafonnier.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Réseau 230 V en unifilaire : prise de quai, boîtier d&#x27;arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et plafonnier.">
   <title>Folio 3 · Réseau 230 V</title>
-  <desc>L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord, dans le cabinet de toilette : 10 A pour l'éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation, et un second 10 A dont le circuit est à identifier (Q42). Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au plafonnier (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Aux bornes du port de Saint-Chamas, la prise fournit 16 A, soit environ 3 700 W pour tout le bord ; en escale, le calibre est souvent plus faible.</desc>
+  <desc>L&#x27;arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord, dans le cabinet de toilette : 10 A pour l&#x27;éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation, et un second 10 A dont le circuit est à identifier (Q42). Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au plafonnier (le cordon de l&#x27;EPS 100 n&#x27;en a pas), et elle n&#x27;est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Aux bornes du port de Saint-Chamas, la prise fournit 16 A, soit environ 3 700 W pour tout le bord ; en escale, le calibre est souvent plus faible.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -39,170 +39,234 @@
     .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
   </style>
   <rect class="bg" x="0" y="0" width="100%" height="100%"/>
-  <!-- ============ Arrivée ============ -->
-  <rect class="box" x="40" y="100" width="130" height="80" rx="2"/>
-  <text class="tb mid" x="105" y="125">Prise de quai</text>
-  <text class="ts mid" x="105" y="142">EU · banc tribord</text>
-  <text class="id mid" x="105" y="170">n203 · n204 · n205</text>
-  <text class="tb mid" x="105" y="212">Bornes du port : 16 A</text>
-  <text class="ts mid" x="105" y="229">≈ 3 700 W pour tout le bord</text>
-  <text class="ts mid" x="105" y="246">souvent moins en escale</text>
-
-  <path class="n w2" d="M170 140 H330"/>
-  <path class="n w1" d="M244 147 L252 133 M249 147 L257 133 M254 147 L262 133"/>
-  <text class="id mid" x="250" y="116">w029 · w030</text>
-  <text class="id mid" x="250" y="128">w034 · 3 × 2,5</text>
-
-  <rect class="bound" x="312" y="62" width="398" height="193"/>
-  <text class="ts" x="320" y="248">Boîtier d'arrivée · coffre de cockpit tribord · terre : node212</text>
-  <g class="mk-a"><circle cx="710" cy="62" r="10"/><text class="mid" x="710" y="65.5">A8</text></g>
-  <rect class="box" x="330" y="110" width="100" height="60" rx="2"/>
-  <text class="tb mid" x="380" y="136">Différentiel</text>
-  <text class="ts mid" x="380" y="153">30 mA · 25 A</text>
-  <text class="id mid" x="380" y="186">entrée n206 · n207</text>
-  <text class="id mid" x="380" y="200">sortie n208 · n209</text>
-  <path class="n w2" d="M430 140 H480 M480 140 V105 H540 M480 140 V195 H540"/>
-  <circle class="dn" cx="480" cy="140" r="3.5"/>
-  <text class="id mid" x="510" y="98">w031</text>
-  <text class="id mid" x="510" y="188">w037</text>
-  <rect class="box" x="540" y="95" width="60" height="20"/>
-  <text class="ts mid" x="570" y="109">10 A</text>
-  <text class="ts mid" x="570" y="131">chargeur</text>
-  <text class="id mid" x="570" y="144">n210 · n211</text>
-  <rect class="box" x="540" y="185" width="60" height="20"/>
-  <text class="ts mid" x="570" y="199">16 A</text>
-  <text class="ts mid" x="570" y="222">reste du bord</text>
-  <text class="id mid" x="570" y="234">n213 · n214</text>
-
-  <!-- Chargeur -->
-  <path class="n w2" d="M600 105 H900"/>
-  <path class="n w1" d="M794 112 L802 98 M799 112 L807 98 M804 112 L812 98"/>
-  <text class="id mid" x="780" y="93">w032 · w033</text>
-  <text class="id mid" x="780" y="127">w035 · 3 × 2,5</text>
-  <rect class="box" x="900" y="70" width="170" height="82" rx="2"/>
-  <text class="tb mid" x="985" y="94">Chargeur de quai</text>
-  <text class="ts mid" x="985" y="111">Dolphin 12 V · 20 A</text>
-  <text class="ts mid" x="985" y="127">sorties 12 V : folio 1</text>
-  <text class="id mid" x="985" y="144">n200 · n201 · n202</text>
-
-  <!-- Vers les boîtiers de distribution -->
-  <path class="n w2" d="M600 195 H640 V300 H310 V330"/>
-  <path class="n w1" d="M464 307 L472 293 M469 307 L477 293 M474 307 L482 293"/>
-  <text class="id mid" x="470" y="287">w038 · w039 · w040 · 3 × 2,5</text>
-
-  <!-- ============ Boîtier tribord ============ -->
-  <rect class="bound" x="60" y="330" width="500" height="100"/>
-  <text class="ts" x="70" y="347">Boîtier de distribution tribord · cabinet de toilette · 4 disjoncteurs Legrand DNX3</text>
-  <path class="n w4" d="M130 365 H530"/>
-  <text class="id" x="330" y="360">n220 · n221 · n222</text>
-  <circle class="dn" cx="310" cy="365" r="3.5"/>
-  <path class="n w2" d="M310 330 V365"/>
-  <path class="n w2" d="M150 365 V385 M410 365 V385 M510 365 V385"/>
-  <rect class="box" x="130" y="385" width="40" height="20"/>
-  <text class="ts mid" x="150" y="399">10 A</text>
-  <text class="ts" x="178" y="399">éclairage</text>
-  <text class="id" x="154" y="418">n224</text>
-  <path class="u" d="M270 365 V385"/>
-  <rect class="box-unk" x="250" y="385" width="40" height="20"/>
-  <text class="ts mid tu" x="270" y="399">10 A</text>
-  <g class="mk-q"><circle cx="270" cy="420" r="11"/><text class="mid" x="270" y="423.5">Q42</text></g>
-  <rect class="box" x="390" y="385" width="40" height="20"/>
-  <text class="ts mid" x="410" y="399">16 A</text>
-  <text class="ts end" x="402" y="422">prises tribord</text>
-  <text class="id" x="414" y="418">n226</text>
-  <rect class="box" x="490" y="385" width="40" height="20"/>
-  <text class="ts mid" x="510" y="399">16 A</text>
-  <text class="ts end" x="502" y="422">bâbord</text>
-  <text class="id" x="534" y="388">n237</text>
-
-  <!-- Vers la boîte de dérivation bâbord -->
-  <path class="n w2" d="M530 395 H815 V365 H900"/>
-  <path class="n w1" d="M694 402 L702 388 M699 402 L707 388 M704 402 L712 388"/>
-  <text class="id mid" x="700" y="382">w041 · w042 · w043 · 3 × 2,5</text>
-
-  <!-- Plafonnier -->
-  <path class="n w2" d="M150 405 V500"/>
-  <path class="n w1" d="M143 458 L157 450 M143 464 L157 456 M143 470 L157 462"/>
-  <text class="id end" x="138" y="448">w050</text>
-  <text class="id end" x="138" y="460">w051</text>
-  <text class="id end" x="138" y="472">w068</text>
-  <text class="id end" x="138" y="484">3 × 1,5</text>
-  <circle class="box" cx="150" cy="515" r="15"/>
-  <path class="n w1" d="M139 504 L161 526 M161 504 L139 526"/>
-  <text class="tb mid" x="150" y="548">Plafonnier 230 V</text>
-  <text class="ts mid" x="150" y="564">métallique, terre raccordée</text>
-  <text class="id mid" x="150" y="580">n233 · n234 · n235</text>
-
-  <!-- Prises tribord -->
-  <path class="n w2" d="M410 405 V450 M410 450 H330 V490 M410 450 H490 V490"/>
-  <circle class="dn" cx="410" cy="450" r="3.5"/>
-  <path class="n w1" d="M323 474 L337 466 M323 480 L337 472 M323 486 L337 478"/>
-  <path class="n w1" d="M483 474 L497 466 M483 480 L497 472 M483 486 L497 478"/>
-  <path class="n w2" d="M490 450 H600 V490"/>
-  <path class="n w1" d="M593 474 L607 466 M593 480 L607 472 M593 486 L607 478"/>
-  <text class="id" x="612" y="462">w065</text>
-  <text class="id" x="612" y="474">w066</text>
-  <text class="id" x="612" y="486">w067</text>
-  <rect class="box" x="580" y="490" width="40" height="28" rx="2"/>
-  <text class="pin mid" x="600" y="508">PC 16 A</text>
-  <text class="tb mid" x="600" y="536">Prise toilette</text>
-  <text class="id mid" x="610" y="550">n253 · n254 · n255</text>
-  <text class="id end" x="318" y="462">w044</text>
-  <text class="id end" x="318" y="474">w045</text>
-  <text class="id end" x="318" y="486">w046</text>
-  <text class="id" x="502" y="462">w047</text>
-  <text class="id" x="502" y="474">w048</text>
-  <text class="id" x="502" y="486">w049</text>
-  <rect class="box" x="310" y="490" width="40" height="28" rx="2"/>
-  <text class="pin mid" x="330" y="508">PC 16 A</text>
-  <rect class="box" x="470" y="490" width="40" height="28" rx="2"/>
-  <text class="pin mid" x="490" y="508">PC 16 A</text>
-  <text class="tb mid" x="490" y="536">Prise cuisine</text>
-  <text class="id mid" x="485" y="550">n230 · n231 · n232</text>
-
-  <!-- EPS 100 branché sur sa prise -->
-  <path class="n w2" d="M330 518 V560"/>
-  <path class="n w1" d="M323 545 L337 537 M323 551 L337 543"/>
-  <text class="tb" x="340" y="536">Prise du frigo</text>
-  <text class="id end" x="318" y="540">w052 · w053</text>
-  <text class="id end" x="318" y="552">cordon 2 fils</text>
-  <text class="ts" x="342" y="552">fiche sans terre</text>
-  <text class="id end" x="318" y="528">n227 · n228 · n229</text>
-  <rect class="box" x="280" y="560" width="100" height="40" rx="2"/>
-  <text class="tb mid" x="330" y="578">EPS 100</text>
-  <text class="ts mid" x="330" y="593">frigo · folio 1</text>
-  <text class="id" x="386" y="593">n047 · n048</text>
-
-  <!-- ============ Boîte de dérivation bâbord ============ -->
-  <rect class="bound" x="840" y="330" width="300" height="100"/>
-  <text class="ts" x="850" y="347">Boîte de dérivation bâbord · table à carte</text>
-  <path class="n w4" d="M900 365 H1080"/>
-  <circle class="dn" cx="900" cy="365" r="3.5"/>
-  <path class="n w2" d="M990 365 V405"/>
-  <circle class="dn" cx="990" cy="365" r="3.5"/>
-  <text class="ts" x="850" y="398">sans disjoncteur, alimentée</text>
-  <text class="ts" x="850" y="413">par le 16 A bâbord</text>
-  <text class="id" x="1010" y="398">n240 · n241 · n242</text>
-
-  <!-- Prises bâbord -->
-  <path class="n w2" d="M990 405 V450 M990 450 H910 V490 M990 450 H1070 V490"/>
-  <circle class="dn" cx="990" cy="450" r="3.5"/>
-  <path class="n w1" d="M903 474 L917 466 M903 480 L917 472 M903 486 L917 478"/>
-  <path class="n w1" d="M1063 474 L1077 466 M1063 480 L1077 472 M1063 486 L1077 478"/>
-  <text class="id end" x="898" y="462">w055</text>
-  <text class="id end" x="898" y="474">w056</text>
-  <text class="id end" x="898" y="486">w057</text>
-  <text class="id" x="1082" y="462">w058</text>
-  <text class="id" x="1082" y="474">w059</text>
-  <text class="id" x="1082" y="486">w060</text>
-  <rect class="box" x="890" y="490" width="40" height="28" rx="2"/>
-  <text class="pin mid" x="910" y="508">PC 16 A</text>
-  <rect class="box" x="1050" y="490" width="40" height="28" rx="2"/>
-  <text class="pin mid" x="1070" y="508">PC 16 A</text>
-  <text class="tb mid" x="910" y="536">Prise table à carte</text>
-  <text class="tb mid" x="1070" y="536">Prise armoire</text>
-  <text class="id mid" x="910" y="550">n247 · n248 · n249</text>
-  <text class="id mid" x="1070" y="550">n250 · n251 · n252</text>
-
-  <text class="ts" x="40" y="628">Schéma unifilaire : un trait par câble, les barres obliques donnent le nombre de conducteurs (3 : phase, neutre, terre).</text>
+  <!-- Généré par outils/folio.py depuis folio-3-230v.yaml : ne pas modifier à la main. -->
+  <rect class="bound" x="320" y="70" width="380" height="210"/>
+  <text class="ts" x="330" y="88">Boîtier d&#x27;arrivée · coffre de cockpit tribord · terre : barrette n212</text>
+  <rect class="bound" x="40" y="330" width="640" height="110"/>
+  <text class="ts" x="50" y="348">Boîtier de distribution tribord · cabinet de toilette · Legrand DNX3</text>
+  <rect class="bound" x="830" y="330" width="340" height="110"/>
+  <text class="ts" x="840" y="348">Boîte de dérivation bâbord · table à carte</text>
+  <rect class="u" x="222" y="372" width="16" height="28" rx="4"/>
+  <text class="ts tu" x="198" y="389">10 A</text>
+  <rect class="box" x="30" y="100" width="150" height="80" rx="2"/>
+  <text class="tb mid" x="105" y="120">Prise de quai</text>
+  <text class="ts mid" x="105" y="135">EU · banc tribord</text>
+  <rect class="box" x="340" y="110" width="150" height="100" rx="2"/>
+  <text class="tb mid" x="415" y="130">Différentiel</text>
+  <text class="ts mid" x="415" y="145">30 mA · 25 A</text>
+  <rect class="fuse" x="600" y="146" width="60" height="18"/>
+  <text class="id mid" x="630" y="159">10 A</text>
+  <text class="ts mid" x="630" y="141">chargeur</text>
+  <rect class="fuse" x="600" y="231" width="60" height="18"/>
+  <text class="id mid" x="630" y="244">16 A</text>
+  <text class="ts mid" x="630" y="226">reste du bord</text>
+  <rect class="box" x="900" y="80" width="200" height="100" rx="2"/>
+  <text class="tb mid" x="1000" y="100">Chargeur de quai</text>
+  <text class="ts mid" x="1000" y="115">Dolphin 12 V · 20 A</text>
+  <text class="ts mid" x="1000" y="130">sorties 12 V : folio 1</text>
+  <rect class="fuse" x="102" y="370" width="16" height="30"/>
+  <text class="id end" x="98" y="389">10 A</text>
+  <text class="ts " x="122" y="389">éclairage</text>
+  <rect class="fuse" x="462" y="370" width="16" height="30"/>
+  <text class="id end" x="458" y="389">16 A</text>
+  <text class="ts " x="482" y="389">prises tribord</text>
+  <rect class="fuse" x="612" y="370" width="16" height="30"/>
+  <text class="id end" x="608" y="389">16 A</text>
+  <text class="ts " x="632" y="389">bâbord</text>
+  <circle class="box" cx="110" cy="540" r="16"/>
+  <text class="tb mid" x="110" y="545">×</text>
+  <text class="ts mid" x="110" y="572">Plafonnier 230 V</text>
+  <text class="ts mid" x="110" y="587">métallique, terre raccordée</text>
+  <text class="ts mid" x="110" y="602">câble 3 × 1,5</text>
+  <rect class="box" x="235" y="500" width="130" height="64" rx="2"/>
+  <text class="tb mid" x="300" y="544">Prise du frigo</text>
+  <text class="ts mid" x="300" y="559">PC 16 A</text>
+  <rect class="box" x="235" y="610" width="130" height="64" rx="2"/>
+  <text class="tb mid" x="300" y="652">EPS 100</text>
+  <text class="ts mid" x="300" y="667">frigo · folio 1</text>
+  <rect class="box" x="405" y="500" width="130" height="64" rx="2"/>
+  <text class="tb mid" x="470" y="544">Prise cuisine</text>
+  <text class="ts mid" x="470" y="559">PC 16 A</text>
+  <rect class="box" x="575" y="500" width="130" height="64" rx="2"/>
+  <text class="tb mid" x="640" y="544">Prise toilette</text>
+  <text class="ts mid" x="640" y="559">PC 16 A</text>
+  <rect class="box" x="850" y="500" width="130" height="64" rx="2"/>
+  <text class="tb mid" x="915" y="544">Prise table à carte</text>
+  <text class="ts mid" x="915" y="559">PC 16 A</text>
+  <rect class="box" x="1030" y="500" width="130" height="64" rx="2"/>
+  <text class="tb mid" x="1095" y="544">Prise armoire</text>
+  <text class="ts mid" x="1095" y="559">PC 16 A</text>
+  <path class="n w4" d="M70 370 H650"/>
+  <path class="n w4" d="M70 370 H650"/>
+  <path class="n w4" d="M70 370 H650"/>
+  <path class="n w4" d="M870 370 H1140"/>
+  <path class="n w4" d="M870 370 H1140"/>
+  <path class="n w4" d="M870 370 H1140"/>
+  <path class="n w2" d="M660 155 H660"/>
+  <path class="n w2" d="M660 155 H660"/>
+  <path class="n w2" d="M660 240 H660"/>
+  <path class="n w2" d="M660 240 H660"/>
+  <path class="n w2" d="M110 400 H110"/>
+  <path class="n w2" d="M110 400 H110"/>
+  <path class="n w2" d="M470 400 H470"/>
+  <path class="n w2" d="M470 400 H470"/>
+  <path class="n w2" d="M620 400 H620"/>
+  <path class="n w2" d="M620 400 H620"/>
+  <path class="n w2" d="M300 564 H300"/>
+  <path class="n w2" d="M300 564 H300"/>
+  <circle class="dn" cx="540" cy="190" r="3.5"/>
+  <circle class="dn" cx="470" cy="465" r="3.5"/>
+  <circle class="dn" cx="1005" cy="370" r="3.5"/>
+  <circle class="dn" cx="1005" cy="455" r="3.5"/>
+  <path class="u" d="M490 190 L540 190 L540 240 L600 240"/>
+  <text class="id mid" x="570" y="232">w037</text>
+  <path class="n w2" d="M490 190 L540 190 L540 155 L600 155"/>
+  <text class="id mid" x="570" y="147">w031</text>
+  <path class="n w2" d="M180 165 L340 165"/>
+  <path class="n w1" d="M252 170 L258 160"/>
+  <path class="n w1" d="M257 170 L263 160"/>
+  <path class="n w1" d="M262 170 L268 160"/>
+  <text class="id mid" x="260" y="157">w029 / w030 / w034</text>
+  <path class="n w2" d="M660 155 L900 155"/>
+  <path class="n w1" d="M852 160 L858 150"/>
+  <path class="n w1" d="M857 160 L863 150"/>
+  <path class="n w1" d="M862 160 L868 150"/>
+  <text class="id" x="712" y="147">w032 / w033 / w035 · 3 × 2,5</text>
+  <path class="n w2" d="M660 240 L720 240 L720 300 L420 300 L420 370"/>
+  <path class="n w1" d="M652 305 L658 295"/>
+  <path class="n w1" d="M657 305 L663 295"/>
+  <path class="n w1" d="M662 305 L668 295"/>
+  <text class="id mid" x="560" y="292">w038 / w039 / w040 · 3 × 2,5</text>
+  <path class="n w2" d="M110 400 L110 524"/>
+  <path class="n w1" d="M105 493 L115 487"/>
+  <path class="n w1" d="M105 498 L115 492"/>
+  <path class="n w1" d="M105 503 L115 497"/>
+  <text class="id" x="118" y="470">w050 / w051 / w068</text>
+  <path class="n w2" d="M470 400 L470 465 L300 465 L300 500"/>
+  <path class="n w1" d="M292 489 L298 479"/>
+  <path class="n w1" d="M297 489 L303 479"/>
+  <path class="n w1" d="M302 489 L308 479"/>
+  <text class="id mid" x="385" y="457">w044 / w045 / w046</text>
+  <path class="n w2" d="M470 400 L470 465 L470 500"/>
+  <path class="n w1" d="M465 430.5 L475 424.5"/>
+  <path class="n w1" d="M465 435.5 L475 429.5"/>
+  <path class="n w1" d="M465 440.5 L475 434.5"/>
+  <text class="id" x="476" y="484">w047 / w048 / w049</text>
+  <path class="n w2" d="M470 400 L470 465 L640 465 L640 500"/>
+  <path class="n w1" d="M632 489 L638 479"/>
+  <path class="n w1" d="M637 489 L643 479"/>
+  <path class="n w1" d="M642 489 L648 479"/>
+  <text class="id mid" x="555" y="457">w065 / w066 / w067</text>
+  <path class="u" d="M300 610 L300 564"/>
+  <path class="n w1" d="M295 587.5 L305 581.5"/>
+  <path class="n w1" d="M295 592.5 L305 586.5"/>
+  <text class="id" x="306" y="590">w052 / w053 · cordon 2 fils, fiche sans terre</text>
+  <path class="n w2" d="M620 400 L620 420 L820 420 L820 370 L870 370"/>
+  <path class="n w1" d="M782 425 L788 415"/>
+  <path class="n w1" d="M787 425 L793 415"/>
+  <path class="n w1" d="M792 425 L798 415"/>
+  <text class="id" x="632" y="412">w041 / w042 / w043 · 3 × 2,5</text>
+  <path class="n w2" d="M1005 370 L1005 455 L915 455 L915 500"/>
+  <path class="n w1" d="M952 460 L958 450"/>
+  <path class="n w1" d="M957 460 L963 450"/>
+  <path class="n w1" d="M962 460 L968 450"/>
+  <text class="id end" x="909" y="484">w055 / w056 / w057</text>
+  <path class="n w2" d="M1005 370 L1005 455 L1095 455 L1095 500"/>
+  <path class="n w1" d="M1042 460 L1048 450"/>
+  <path class="n w1" d="M1047 460 L1053 450"/>
+  <path class="n w1" d="M1052 460 L1058 450"/>
+  <text class="id end" x="1089" y="484">w058 / w059 / w060</text>
+  <circle class="term" cx="180" cy="165" r="3.5"/>
+  <circle class="term" cx="180" cy="165" r="3.5"/>
+  <circle class="term" cx="180" cy="165" r="3.5"/>
+  <circle class="term" cx="340" cy="165" r="3.5"/>
+  <circle class="term" cx="340" cy="165" r="3.5"/>
+  <circle class="term" cx="340" cy="165" r="3.5"/>
+  <circle class="term" cx="490" cy="190" r="3.5"/>
+  <circle class="term" cx="490" cy="190" r="3.5"/>
+  <circle class="term" cx="600" cy="155" r="3.5"/>
+  <circle class="term" cx="660" cy="155" r="3.5"/>
+  <circle class="term" cx="600" cy="240" r="3.5"/>
+  <circle class="term" cx="660" cy="240" r="3.5"/>
+  <circle class="term" cx="900" cy="155" r="3.5"/>
+  <circle class="term" cx="900" cy="155" r="3.5"/>
+  <circle class="term" cx="900" cy="155" r="3.5"/>
+  <circle class="term" cx="420" cy="370" r="3.5"/>
+  <circle class="term" cx="420" cy="370" r="3.5"/>
+  <circle class="term" cx="420" cy="370" r="3.5"/>
+  <circle class="term" cx="110" cy="370" r="3.5"/>
+  <circle class="term" cx="110" cy="400" r="3.5"/>
+  <circle class="term" cx="470" cy="370" r="3.5"/>
+  <circle class="term" cx="470" cy="400" r="3.5"/>
+  <circle class="term" cx="620" cy="370" r="3.5"/>
+  <circle class="term" cx="620" cy="400" r="3.5"/>
+  <circle class="term" cx="110" cy="524" r="3.5"/>
+  <circle class="term" cx="110" cy="524" r="3.5"/>
+  <circle class="term" cx="110" cy="524" r="3.5"/>
+  <circle class="term" cx="300" cy="500" r="3.5"/>
+  <circle class="term" cx="300" cy="500" r="3.5"/>
+  <circle class="term" cx="300" cy="500" r="3.5"/>
+  <circle class="term" cx="300" cy="610" r="3.5"/>
+  <circle class="term" cx="300" cy="610" r="3.5"/>
+  <circle class="term" cx="470" cy="500" r="3.5"/>
+  <circle class="term" cx="470" cy="500" r="3.5"/>
+  <circle class="term" cx="470" cy="500" r="3.5"/>
+  <circle class="term" cx="640" cy="500" r="3.5"/>
+  <circle class="term" cx="640" cy="500" r="3.5"/>
+  <circle class="term" cx="640" cy="500" r="3.5"/>
+  <circle class="term" cx="870" cy="370" r="3.5"/>
+  <circle class="term" cx="870" cy="370" r="3.5"/>
+  <circle class="term" cx="870" cy="370" r="3.5"/>
+  <circle class="term" cx="915" cy="500" r="3.5"/>
+  <circle class="term" cx="915" cy="500" r="3.5"/>
+  <circle class="term" cx="915" cy="500" r="3.5"/>
+  <circle class="term" cx="1095" cy="500" r="3.5"/>
+  <circle class="term" cx="1095" cy="500" r="3.5"/>
+  <circle class="term" cx="1095" cy="500" r="3.5"/>
+  <text class="id end" x="173" y="164">n203 / n204 / n205</text>
+  <text class="pin end" x="173" y="174">P / N / PE</text>
+  <text class="id" x="347" y="164">n206 / n207 / n212</text>
+  <text class="pin" x="347" y="174">entrée P / N · PE</text>
+  <text class="id end" x="483" y="189">n208 / n209</text>
+  <text class="pin end" x="483" y="199">sortie P / N</text>
+  <text class="id end" x="598" y="177">n210</text>
+  <text class="id" x="662" y="177">n211</text>
+  <text class="id end" x="598" y="262">n213</text>
+  <text class="id" x="662" y="262">n214</text>
+  <text class="id" x="907" y="154">n200 / n201 / n202</text>
+  <text class="pin" x="907" y="164">P / N / PE</text>
+  <text class="id end" x="414" y="388">n220 / n221 / n222</text>
+  <text class="pin end" x="414" y="398">P / N / PE</text>
+  <text class="id" x="115" y="364">n223</text>
+  <text class="id" x="116" y="414">n224</text>
+  <text class="id" x="475" y="364">n225</text>
+  <text class="id" x="476" y="414">n226</text>
+  <text class="id" x="625" y="364">n236</text>
+  <text class="id end" x="614" y="414">n237</text>
+  <text class="id" x="118" y="512">n233 / n234 / n235</text>
+  <text class="pin" x="118" y="522">P / N / PE</text>
+  <text class="id mid" x="300" y="516">n227 / n228 / n229</text>
+  <text class="pin mid" x="300" y="526">phase/neutre/terre</text>
+  <text class="id mid" x="300" y="626">n047 / n048</text>
+  <text class="pin mid" x="300" y="636">P / N</text>
+  <text class="id mid" x="470" y="516">n230 / n231 / n232</text>
+  <text class="pin mid" x="470" y="526">phase/neutre/terre</text>
+  <text class="id mid" x="640" y="516">n253 / n254 / n255</text>
+  <text class="pin mid" x="640" y="526">phase/neutre/terre</text>
+  <text class="id" x="876" y="388">n240 / n241 / n242</text>
+  <text class="pin" x="876" y="398">P / N / PE</text>
+  <text class="id mid" x="915" y="516">n247 / n248 / n249</text>
+  <text class="pin mid" x="915" y="526">phase/neutre/terre</text>
+  <text class="id mid" x="1095" y="516">n250 / n251 / n252</text>
+  <text class="pin mid" x="1095" y="526">phase/neutre/terre</text>
+  <text class="id mid" x="260" y="183">3 × 2,5</text>
+  <text class="tb mid" x="105" y="206">Bornes du port : 16 A</text>
+  <text class="ts mid" x="105" y="223">≈ 3 700 W pour tout le bord</text>
+  <text class="ts mid" x="105" y="238">souvent moins en escale</text>
+  <text class="ts" x="1015" y="392">sans disjoncteur, alimentée</text>
+  <text class="ts" x="1015" y="407">par le 16 A bâbord</text>
+  <text class="ts" x="40" y="712">Schéma unifilaire : un trait par câble, les barres obliques donnent le nombre de conducteurs (3 : phase, neutre, terre). Câbles des prises : 3 × 2,5 mm².</text>
+  <text class="ts" x="40" y="730">Tous les disjoncteurs coupent la phase et le neutre. Neutre et terre de chaque câble partent des barrettes du boîtier (n209 et n212 à l&#x27;arrivée, n221 et n222 au boîtier tribord).</text>
+  <g class="mk-a"><circle cx="700" cy="70" r="11"/><text class="mid" x="700" y="73.5">A8</text></g>
+  <g class="mk-q"><circle cx="230" cy="418" r="11"/><text class="mid" x="230" y="421.5">Q42</text></g>
 </svg>

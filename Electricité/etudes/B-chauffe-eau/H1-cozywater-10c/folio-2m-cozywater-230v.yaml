@@ -1,0 +1,166 @@
+# Mise en page du folio 2m (B-H1), lue par outils/folio.py qui produit le SVG voisin.
+# Unifilaire comme le folio 3 : un câble = un trait (cables:), ses conducteurs cités dans l'étiquette.
+# Neutre (node221) et terre (node222) partent des barrettes du boîtier tribord avec la phase du second C10 :
+# une barre de longueur nulle les porte au départ du câble ; de même pour la fiche du ballon dans sa prise.
+folio: 2m
+titre: Chauffe-eau CozyWater 10C, alimentation
+aria: "Alimentation 230 volts du chauffe-eau : second disjoncteur de 10 ampères du boîtier tribord, câble de 3 fois 1,5 millimètres carrés vers une prise dédiée, cordon du ballon à fiche Schuko ; entrée 12 volts au folio 2n."
+desc: "Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par le second C10 du boîtier tribord (Q42), en aval du différentiel 30 mA. Unifilaire, comme le folio 3 ; l'entrée 12 V, câblée elle aussi, est au folio 2n ; le 230 V est prioritaire."
+modele: B-H1
+taille: [1200, 560]
+
+zones:
+  - {x: 60, y: 160, w: 660, h: 140, texte: "Boîtier de distribution tribord · cabinet de toilette · Legrand DNX3"}
+
+appareils:
+  # --- Amont ------------------------------------------------------------------------------
+  - id: boitier-arrivee
+    x: 40
+    y: 60
+    w: 190
+    h: 80
+    titre: Boîtier d'arrivée
+    lignes: [différentiel 30 mA · 16 A, coffre de cockpit (folio 3)]
+    nodes:
+      node214: {cote: droite, a: 125, fonction: "P / N / PE"}
+      node209: [droite, 125]
+      node212: [droite, 125]
+
+  # --- Boîtier tribord ---------------------------------------------------------------------
+  - id: boitier-230-tribord
+    forme: barre      # barres de phase, de neutre et de terre (barres: ci-dessous)
+    nodes:
+      node220: {cote: point, xy: [440, 200], etiquette: [-6, 18, end], fonction: "P / N / PE"}
+      node221: {cote: point, xy: [440, 200]}
+      node222: {cote: point, xy: [440, 200]}
+  - id: disj-trib-eclairage
+    forme: fusible
+    calibre: 10 A
+    calibre_cote: gauche
+    titre: éclairage
+    titre_xy: [152, 219]
+    titre_ancre: ""
+    nodes:
+      node223: {cote: point, xy: [140, 200], etiquette: [5, -6]}
+      node224: {cote: point, xy: [140, 230], etiquette: [6, 14]}
+  - id: disj-trib-10a-2
+    forme: fusible
+    nouveau: true
+    calibre: 10 A
+    calibre_cote: gauche
+    titre: ballon
+    titre_xy: [272, 219]
+    titre_ancre: ""
+    nodes:
+      node306: {cote: point, xy: [260, 200], etiquette: [5, -6]}
+      node307: {cote: point, xy: [260, 230], etiquette: [6, 14]}
+  - id: disj-trib-prises
+    forme: fusible
+    calibre: 16 A
+    calibre_cote: gauche
+    titre: prises tribord
+    titre_xy: [542, 219]
+    titre_ancre: ""
+    nodes:
+      node225: {cote: point, xy: [530, 200], etiquette: [5, -6]}
+      node226: {cote: point, xy: [530, 230], etiquette: [6, 14]}
+  - id: disj-babord-prises
+    forme: fusible
+    calibre: 16 A
+    calibre_cote: gauche
+    titre: bâbord
+    titre_xy: [672, 219]
+    titre_ancre: ""
+    nodes:
+      node236: {cote: point, xy: [660, 200], etiquette: [5, -6]}
+      node237: {cote: point, xy: [660, 230], etiquette: [6, 14]}
+
+  # --- Prise dédiée et ballon ---------------------------------------------------------------
+  - id: prise-230-ballon
+    x: 420
+    y: 440
+    w: 140
+    h: 72
+    titre: Prise dédiée
+    titre_y: 18
+    lignes: [PC 16 A · Schuko]
+    nodes:
+      node300: {cote: gauche, a: 490, fonction: "P / N / PE"}
+      node301: [gauche, 490]
+      node302: [gauche, 490]
+  - id: chauffe-eau
+    x: 720
+    y: 390
+    w: 220
+    h: 120
+    rx: 10
+    titre: CozyWater 10C
+    lignes: ["230 V · 800 W · 3,5 A", "12 V · 200 W (B-H3)", "circuit d'eau : folio 2l"]
+    nodes:
+      node303: {cote: gauche, a: 490, fonction: "P / N / PE"}
+      node304: [gauche, 490]
+      node305: [gauche, 490]
+  - id: panneau-commande
+    nouveau: true
+    x: 745
+    y: 250
+    w: 170
+    h: 50
+    titre: Panneau de commande
+    lignes: [fourni · minuterie]
+
+barres:
+  - {node: node220, de: [100, 200], a: [690, 200], classe: n}
+  - {node: node221, de: [100, 200], a: [690, 200], classe: n}
+  - {node: node222, de: [100, 200], a: [690, 200], classe: n}
+  # neutre et terre au départ du câble du second C10 (longueur nulle)
+  - {node: node221, de: [260, 230], a: [260, 230], classe: n, epaisseur: w2}
+  - {node: node222, de: [260, 230], a: [260, 230], classe: n, epaisseur: w2}
+  # fiche Schuko du ballon dans la prise dédiée
+  - {node: node300, de: [560, 490], a: [560, 490], classe: n, epaisseur: w2}
+  - {node: node301, de: [560, 490], a: [560, 490], classe: n, epaisseur: w2}
+  - {node: node302, de: [560, 490], a: [560, 490], classe: n, epaisseur: w2}
+
+cables:
+  arrivee:
+    fils: [wire038, wire039, wire040]
+    trace: [[230, 125], [440, 125], [440, 200]]
+    etiquette: [300, 117, mid]
+    obliques_xy: [380, 125]
+  prise-dediee:
+    fils: [wire300, wire301, wire302]
+    trace: [[260, 230], [260, 490], [420, 490]]
+    etiquette: [252, 380, end]
+    texte: "w300 / w301 / w302 · 3 × 1,5"
+    obliques_xy: [260, 420]
+  cordon:
+    fils: [wire303, wire304, wire305]
+    trace: [[560, 490], [720, 490]]
+    etiquette: [640, 482, mid]
+
+traits:
+  # repli si le second C10 n'est pas libre (Q42)
+  - {classe: u, points: [[530, 250], [530, 330], [300, 330]]}
+  - {classe: n w1, points: [[830, 390], [830, 300]]}
+  # entrée 12 V du ballon (B-H3, folio 2n)
+  - {classe: p w3, points: [[940, 450], [1000, 450]]}
+
+renvois:
+  - {x: 1000, y: 410, w: 180, h: 80, nouveau: true, texte: "Entrée 12 V · 200 W"}
+
+pastilles:
+  - {id: Q42, x: 236, y: 252}
+  - {id: Q55, x: 640, y: 532}
+  - {id: Q19, x: 940, y: 390}
+
+textes:
+  - {x: 30, y: 38, texte: "Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau"}
+  - {x: 252, y: 395, classe: ts end, texte: "H07RN-F 3G1,5 · ≈ 1,5 m"}
+  - {x: 310, y: 348, classe: ts tu, texte: "si le second C10 n'est pas libre (Q42) :"}
+  - {x: 310, y: 363, classe: ts tu, texte: "disjoncteur 10 A ajouté, ou C16 des prises tribord"}
+  - {x: 490, y: 530, classe: ts mid, texte: "près du boîtier tribord"}
+  - {x: 640, y: 508, classe: ts mid, texte: "cordon fourni, fiche intacte"}
+  - {x: 830, y: 240, classe: ts mid, texte: "emplacement et câble : Q55"}
+  - {x: 1090, y: 442, classe: ts mid, texte: "câblée en permanence"}
+  - {x: 1090, y: 458, classe: ts mid, texte: "relais 30 A (B-H3)"}
+  - {x: 1090, y: 476, classe: id mid, texte: "n318 · n319 : folio 2n"}

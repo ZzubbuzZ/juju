@@ -209,6 +209,7 @@ class Folio:
         self.traces = {}    # fil → [points]
         self.liaisons = []  # (« n074 – n070 », a, b) : montage direct d'une borne sur une autre
         self.cable = {}     # fil → câble unifilaire qui le porte
+        self.bout_renvoi = {}  # fil → (bout, point) arrêté sur un renvoi (renvoi: de|vers dans la mise en page)
         self.forme = {}     # nœud → forme de son appareil
         self.contours = []  # (nom, 'rect', (x0, y0, x1, y1), nœuds) ou (nom, 'cercle', (cx, cy, r), nœuds)
         self.rect = {}      # nœud → contour rectangulaire de sa boîte (étiquette à l'intérieur)
@@ -368,6 +369,9 @@ class Folio:
         pts = [tuple(p) for p in spec.get("trace", [])]
         for bout, idx in (("de", 0), ("vers", -1)):
             n = f[bout]
+            if spec.get("renvoi") == bout:   # ce bout s'arrête sur un renvoi, même si son nœud est sur le folio
+                self.bout_renvoi[w] = (bout, pts[idx])
+                continue
             if n in self.pos:
                 p = self.pos[n]
                 if not pts or (pts[idx] != p and not self.sur_barre(n, pts[idx])):
@@ -431,6 +435,12 @@ class Folio:
                     err.append(f"{w} : segment {a} → {b} hors des angles 0/45/90°")
             for bout, p in (("de", pts[0]), ("vers", pts[-1])):
                 n = f[bout]
+                if self.bout_renvoi.get(w, (None,))[0] == bout:
+                    sur_bord = lambda g: ((p[0] in (g[0], g[2]) and g[1] <= p[1] <= g[3]) or
+                                          (p[1] in (g[1], g[3]) and g[0] <= p[0] <= g[2]))
+                    if not any(nom.startswith("renvoi") and sur_bord(g) for nom, typ, g, _ in self.contours):
+                        err.append(f"{w} : l'extrémité {p} n'aboutit sur aucun renvoi")
+                    continue
                 if n in self.pos and p != self.pos[n] and not self.sur_barre(n, p):
                     err.append(f"{w} : l'extrémité {p} n'est pas sur {n} {self.pos[n]}")
         for w, pts in self.traces.items():
