@@ -8,7 +8,7 @@ fils:
   - { id: wire001, de: node001, vers: node003, section_mm2: 35, couleur: rouge, longueur_m: 2 }
   - { id: wire002, de: node003, vers: node013, section_mm2: 6, couleur: rouge, longueur_m: 0.5, note: "Sans fusible (A4)" }
   - { id: wire003, de: node003, vers: node016, section_mm2: 6, couleur: rouge, longueur_m: 2, note: "Sans fusible (A4)" }
-  - { id: wire004, de: node002, vers: node008, section_mm2: 35, couleur: noir, questions: [Q60], note: "Relie les négatifs des deux batteries : la batterie moteur rejoint le coupe-circuit des négatifs par wire009 (relevé du 11/10)" }
+  - { id: wire004, de: node002, vers: node008, section_mm2: 35, couleur: noir, questions: [Q60], note: "Relie les négatifs des deux batteries : la batterie moteur rejoint le coupe-circuit des négatifs par wire009 (relevé du 11/10). Trajet : coffre de cockpit tribord, compartiment moteur, cloison de la cabine arrière" }
   - { id: wire005, de: node018, vers: node005, section_mm2: 35, couleur: noir, longueur_m: 2 }
 
   # --- Batterie de servitude -----------------------------------------------------

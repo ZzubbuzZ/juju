@@ -18,7 +18,7 @@ En complément, **une gaine annelée fendue** sur les tronçons exposés (compar
 Par ordre d'importance, ceux des câbles non protégés par un fusible :
 
 1. **Batterie de servitude → compartiment moteur → descente** : wire009 (1 m, Q30), et wire006 si elle suit le même chemin (Q27).
-2. **Batterie moteur (coffre de cockpit) → platine des coupe-circuits** : wire001 et wire004.
+2. **Batterie moteur (coffre de cockpit)** : wire001 vers la platine des coupe-circuits ; wire004 vers la batterie de servitude, à travers le compartiment moteur puis la cloison de la cabine arrière (relevé du 11/10).
 3. **Vers l'avant** : les deux câbles de 50 mm² du guindeau (wire015, wire018), sur 10 m, qui traversent plusieurs cloisons.
 
 Il y a **une dizaine de passages** (Q35, 30/09). Leurs diamètres seront relevés à la pose : la nomenclature prévoit un assortiment de passe-fils, et deux embases par passage.
