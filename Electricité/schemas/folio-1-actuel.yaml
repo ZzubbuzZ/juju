@@ -239,6 +239,9 @@ croisements_admis:
   # (node003 / node004) au + servitude (node009) : sa masse, prise côté charges (node006, en bas), doit
   # franchir la ligne du + servitude. Elle ne peut pas passer par un renvoi, node006 étant sur le folio.
   - [wire014, node009]
+  # Le chargeur, entre les deux batteries, rejoint node005 sous la batterie de servitude ; wire004 relie
+  # les négatifs des deux batteries (node002 / node008) : l'un des deux doit franchir l'autre.
+  - [wire004, wire005]
 
 fils:
   # + moteur
@@ -271,7 +274,7 @@ fils:
   wire027: {etiquette: [880, 744, mid], texte: "w027 / w028 · 3,5"}
   wire028: {}
   # masses
-  wire004: {trace: [[20, 120], [20, 880]], etiquette: [32, 300, mid, v]}
+  wire004: {trace: [[20, 120], [20, 560], [60, 560]], etiquette: [32, 300, mid, v]}
   wire005: {trace: [[215, 390], [40, 390], [40, 880]], etiquette: [52, 640, mid, v]}
   wire009: {trace: [[100, 880]], etiquette: [112, 700, mid, v]}
   wire014: {trace: [[360, 880]], etiquette: [372, 620, mid, v]}

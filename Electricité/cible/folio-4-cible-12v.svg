@@ -138,7 +138,7 @@
   <path class="n w2" d="M40 95 L24 95 L24 204 L40 220"/>
   <text class="idn" x="30" y="135">w201 · 6</text>
   <path class="n w4" d="M40 220 L8 220 L8 990"/>
-  <text class="id mid" x="18" y="335" transform="rotate(-90 18 335)">w004 · 35</text>
+  <text class="idn mid" x="18" y="335" transform="rotate(-90 18 335)">w004 · 35</text>
   <path class="p w4" d="M190 220 L232 220"/>
   <text class="idn mid" x="211" y="236">w160</text>
   <path class="p w2" d="M216 168 L216 110"/>

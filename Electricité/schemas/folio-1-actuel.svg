@@ -159,7 +159,7 @@
   <path class="p w2" d="M850 770 L910 770"/>
   <text class="id mid" x="880" y="744">w027 / w028 · 3,5</text>
   <path class="n w2" d="M850 830 L910 830"/>
-  <path class="n w4" d="M60 120 L20 120 L20 880 L240 880"/>
+  <path class="n w4" d="M60 120 L20 120 L20 560 L60 560 L100 520"/>
   <text class="id mid" x="32" y="300" transform="rotate(-90 32 300)">w004 · 35</text>
   <path class="n w4" d="M215 340 L215 390 L40 390 L40 880 L240 880"/>
   <text class="id mid" x="52" y="640" transform="rotate(-90 52 640)">w005 · 35</text>

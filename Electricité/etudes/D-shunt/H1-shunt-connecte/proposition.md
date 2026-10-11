@@ -29,13 +29,14 @@ Emplacement **b** du [README de l'étude](../README.md#deux-emplacements-possibl
 | Fil | De → vers | Section | Rôle |
 |---|---|---|---|
 | wire009 (repris) | − batterie de servitude (node008) → shunt, côté batterie (node086) | 35 mm², 1 m | Câble existant : seule son extrémité côté coupe-circuit change |
+| wire004 (repris) | − batterie moteur (node002) → coupe-circuit des négatifs (node005) | 35 mm², longueur à relever (Q60) | Relevé sur le − de la batterie de servitude (node008) : son extrémité est reprise sur node005 pour ne pas passer par le shunt |
 | wire180 | shunt, côté système (node087) → coupe-circuit des négatifs (node005) | 35 mm², 0,2 m | Tout le reste du bord revient par ce fil |
 | wire181 → wire182 | côté batterie du coupe-circuit de servitude (node009) → fusible 1 A → shunt Vbatt+ (node088) | 0,75 mm² | Alimentation du shunt et mesure de la tension de servitude |
 | wire183 → wire184 | côté batterie du coupe-circuit moteur (node003) → fusible 1 A → entrée auxiliaire (node089) | 0,75 mm² | Tension de la batterie moteur |
 
 Points de câblage :
 
-- **Rien d'autre que wire009 sur la borne côté batterie du shunt.** C'est la condition d'une mesure juste : la batterie moteur (wire004) et le chargeur (wire005) restent sur node005, de l'autre côté.
+- **Rien d'autre que wire009 sur la borne côté batterie du shunt.** C'est la condition d'une mesure juste : le chargeur (wire005) reste sur node005, de l'autre côté, et la batterie moteur (wire004), relevée sur le − de la batterie de servitude, y est ramenée.
 - **Fils de mesure pris en aval des fusibles de 400 A**, sur la borne côté batterie des coupe-circuits : ils sont protégés en amont, et le moniteur reste alimenté coupe-circuits ouverts. Il mesure donc la consommation résiduelle et la charge au quai, bateau coupé.
 - **Fusible de 1 A à la source de chaque fil de mesure**, contre la borne, comme pour les autres départs (règle du dépôt). Le 0,75 mm² est largement protégé par 1 A.
 - Les deux coupe-circuits étant sur la même platine, les fils de mesure ne font que quelques dizaines de centimètres.

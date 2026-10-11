@@ -129,7 +129,7 @@
   <path class="u" d="M1066 330 L1066 210"/>
   <text class="id mid" x="1060" y="270" transform="rotate(-90 1060 270)">w064</text>
   <path class="n w4" d="M40 240 L30 250 L30 656 L424 656 L440 640"/>
-  <text class="id" x="36" y="300">w004 · 35</text>
+  <text class="idn" x="36" y="300">w004 · 35</text>
   <path class="p w3" d="M484 220 L496 232 L496 262"/>
   <text class="idn end" x="488" y="250">w202 · 16</text>
   <path class="p w3" d="M496 302 L496 446 L220 446 L220 470"/>

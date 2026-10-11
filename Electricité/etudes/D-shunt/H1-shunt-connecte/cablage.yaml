@@ -5,6 +5,8 @@
 # derrière la descente, près du coupe-circuit des négatifs.
 # wire009 garde son numéro : seule son extrémité côté coupe-circuit est reprise
 # sur le shunt (supprimé puis redéclaré avec sa nouvelle extrémité).
+# wire004 de même : relevé sur le − de la batterie de servitude (node008), il passerait
+# côté batterie du shunt ; son extrémité est reprise sur le coupe-circuit des négatifs.
 # Les deux fils de mesure partent du côté batterie des coupe-circuits, en aval des
 # fusibles de 400 A de A-H2 : le moniteur mesure même coupe-circuits ouverts.
 
@@ -13,7 +15,7 @@ titre: Shunt connecté, lecture sur smartphone
 base: A-H4
 
 supprime:
-  fils: [wire009]
+  fils: [wire004, wire009]
 
 equipements:
   - { id: shunt-servitude, type: shunt, designation: "Shunt connecté 500 A de la batterie de servitude (type Victron SmartShunt)", zone: descente, emplacement: "Derrière la platine des coupe-circuits, près du coupe-circuit des négatifs, accessible par l'ouverture côté cabine de poupe", statut: propose }
@@ -31,6 +33,9 @@ nodes:
   - { id: node093, equipement: fus-shunt-aux, borne: "2", polarite: "+" }
 
 fils:
+  # --- Négatif de la batterie moteur : ramené côté système du shunt
+  - { id: wire004, de: node002, vers: node005, section_mm2: 35, couleur: noir, statut: propose, questions: [Q60], note: "Câble existant, extrémité côté batterie de servitude (node008) reprise sur le coupe-circuit des négatifs ; rallonge ou câble refait selon le trajet (Q60)" }
+
   # --- Négatif de la batterie de servitude : seul fil côté batterie du shunt
   - { id: wire009, de: node008, vers: node086, section_mm2: 35, couleur: noir, longueur_m: 1, statut: propose, note: "Câble existant, extrémité côté coupe-circuit reprise sur le shunt" }
   - { id: wire180, de: node087, vers: node005, section_mm2: 35, couleur: noir, longueur_m: 0.2, statut: propose, note: "Tout le reste du bord (charges, chargeur, alternateur, batterie moteur) revient par ce fil" }
