@@ -11,8 +11,16 @@ taille: [1200, 710]
 zones:
   - {x: 20, y: 40, w: 300, h: 640, texte: Coffre de la cabine de poupe}
   - {x: 340, y: 40, w: 840, h: 640, texte: Contremarche de la descente}
+  - {x: 960, y: 46, w: 215, h: 74, texte: ""}
 
 appareils:
+  - id: disj-chargeur-lifepo4
+    forme: fusible
+    nouveau: true
+    calibre: 10 A
+    nodes:
+      node382: {cote: point, xy: [990, 64], etiquette: [-2, 22, end]}
+      node381: {cote: point, xy: [1036, 64], etiquette: [2, 22]}
   - id: bat-servitude
     x: 40
     y: 230
@@ -106,6 +114,9 @@ appareils:
       node006: {cote: point, xy: [1060, 620], etiquette: [-20, 0, end]}
 
 barres:
+  # neutre et terre au départ du câble du Blue Smart (longueur nulle)
+  - {node: node209, de: [990, 64], a: [990, 64], classe: n, epaisseur: w2}
+  - {node: node212, de: [990, 64], a: [990, 64], classe: n, epaisseur: w2}
   - {node: node006, de: [1060, 620], a: [1060, 640], epaisseur: w2}
 
 pastilles:
@@ -126,16 +137,17 @@ fils:
   wire180: {trace: [[1044, 544]], etiquette: [820, 536, mid]}
   wire212: {trace: [[1100, 150], [1100, 520]], etiquette: [1106, 330]}
   wire206: {trace: [[1040, 480], [1060, 480]], etiquette: [1054, 525, end]}
+  wire218: {trace: [[1085, 64]], etiquette: [1062, 56, mid], texte: w218, classe: n w2}
 
 cables:
   C10:
     fils: [wire213, wire214, wire215]
-    trace: [[940, 64], [760, 64]]
+    trace: [[990, 64], [760, 64]]
     etiquette: [840, 56, mid]
     texte: "w213 · w214 · w215 · 3 × 1,5"
 
 renvois:
-  - {x: 940, y: 55, w: 235, texte: "C10 · n211 · n209 · n212 · folio 3"}
+  - {x: 1085, y: 55, w: 88, texte: "n208 · folio 3"}
   - {x: 720, y: 191, w: 190, texte: "n361 · Orion XS sortie · folio 2h"}
   - {x: 730, y: 331, w: 260, texte: "→ n100 · tableau de la table à carte : folio 2b"}
   - {x: 830, y: 471, w: 210, texte: "n362 · Orion XS − · folio 2h"}
@@ -143,4 +155,6 @@ renvois:
 
 textes:
   - {x: 440, y: 590, texte: "Fils de mesure du shunt : folio 2e."}
+  - {x: 1068, y: 101, classe: "ts mid", texte: "C10 du Blue Smart · boîtier d'arrivée"}
+  - {x: 1068, y: 114, classe: "id mid", texte: "n209 / n212 : N et PE"}
   - {x: 20, y: 698, texte: "En vert : nouveau (étude E). Déposés : coupleur Scheiber, coupe-circuit de couplage et leurs câbles ; le guindeau est passé sur le circuit moteur (folio 2h)."}

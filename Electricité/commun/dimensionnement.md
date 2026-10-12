@@ -61,7 +61,7 @@ Le courant qu'un câble supporte dépend de la température admise par son isola
 |---|---|---|
 | Borne de Saint-Chamas | 16 A, environ 3 700 W | |
 | Consommation à bord, ballon compris | environ 1 450 W, soit 6,5 A | Sans contrainte ; en escale à 6 A, couper un chargeur pendant la chauffe |
-| Disjoncteur du chargeur (C10) : Dolphin et Blue Smart | environ 2,7 A | Conforme ; wire213 à wire215 en 1,5 mm² sur un C10 |
+| Disjoncteurs des chargeurs : un C10 pour le Dolphin, un C10 pour le Blue Smart (12/10) | 2,5 A et 1,5 A environ | Conforme ; wire213 à wire215 en 1,5 mm² sur le C10 du Blue Smart (node382) |
 | C10 libéré du boîtier tribord : prise du ballon, sous la table à carte | 3,5 A ; wire300 à wire302 en 1,5 mm², environ 5 m (est.), par une boîte de dérivation ; ΔU 0,2 % | Conforme ; câbles des deux C10 regroupés sur l'autre C10 (décision du 12/10, voir ci-dessous) |
 | Différentiel d'arrivée | 30 mA type A, 40 A (A-H4) | Calibre supérieur à la borne : conforme |
 
@@ -89,7 +89,7 @@ Le 12/10, les deux C10 sont trouvés occupés, chacun par un seul câble de 1,5 
 
 **Conséquences.** Le frigo sur le même C10 que l'éclairage serait coupé par un défaut d'éclairage, et inversement. C'est acceptable à quai, où ces circuits servent, mais ce n'est pas conseillé si le frigo doit rester en route en l'absence de l'équipage. Si l'on veut garder le frigo seul, le mettre sur le C16 des prises tribord (environ 0,5 A de plus), comme le relevé le suppose déjà. À vérifier à bord : quels câbles partent de chaque C10, et où ils vont (Q42, Q60).
 
-### Second C10 pour le chargeur de la LiFePO4 (option, à évaluer)
+### Second C10 pour le chargeur de la LiFePO4 (retenu le 12/10)
 
 Aujourd'hui, l'étude E prévoit les deux chargeurs de quai sur le même C10 du boîtier d'arrivée : le Dolphin (2,5 A au plus) et le Blue Smart IP67 12/17 (environ 1,5 A), soit environ 4 A pour 10 A. Un C10 de plus, pour le Blue Smart seul :
 
@@ -101,7 +101,7 @@ Aujourd'hui, l'étude E prévoit les deux chargeurs de quai sur le même C10 du 
 | Coût et travaux | rien | disjoncteur 1P+N C10 (Merlin Gerin DT40 ou équivalent, environ 20 à 30 €) ; le câble wire213 à wire215 part de ce disjoncteur au lieu de node211 |
 | Condition | | une place libre sur le rail du boîtier d'arrivée : il y en a une (Q63, 12/10) |
 
-Le câble 3 × 1,5 mm² du Blue Smart reste protégé : un C10 le protège comme aujourd'hui. **Verdict** : utile, pas nécessaire. La place existe (Q63, 12/10) : l'option est réalisable. Elle vaut surtout si le Blue Smart est raccordé par un boîtier à bornes (sans fiche à débrancher, Q53). Sinon, une prise dédiée au Blue Smart (Q53) donne déjà le moyen de le couper seul.
+Le câble 3 × 1,5 mm² du Blue Smart reste protégé : un C10 le protège comme aujourd'hui. **Verdict** : utile, pas nécessaire. **Retenu le 12/10** (disjoncteur à 9 €, place libre confirmée) : câblé dans E-H1 (node381, node382, wire218, folio 2i). La place existe (Q63, 12/10) : l'option est réalisable. Elle vaut surtout si le Blue Smart est raccordé par un boîtier à bornes (sans fiche à débrancher, Q53). Sinon, une prise dédiée au Blue Smart (Q53) donne déjà le moyen de le couper seul.
 
 ## Tableau de la table à carte (A-H1, différé)
 

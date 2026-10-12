@@ -155,7 +155,7 @@ cables:
     texte: "w213 · w214 · w215 · 3 × 1,5 · 6 m"
 
 renvois:
-  - {x: 670, y: 63, w: 220, texte: "C10 · n211 · n209 · n212 · folio 3"}
+  - {x: 670, y: 63, w: 220, texte: "C10 n382 · n209 · n212 · folio 2i"}
   - {x: 880, y: 351, w: 260, texte: "→ n100 · tableau de la table à carte : folio 2b"}
   - {x: 510, y: 643, w: 230, texte: "← n091, fusible 1 A (platine) : folio 2e"}
   - {x: 510, y: 667, w: 270, texte: "← n093, fusible 1 A (batterie moteur) : folio 2e"}
