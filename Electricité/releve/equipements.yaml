@@ -370,6 +370,7 @@ equipements:
     designation: Disjoncteur éclairage 230 V
     modele: Legrand DNX3 C10, phase + neutre
     calibre_A: 10
+    note: Un seul câble de 1,5 mm² en part (12/10).
 
   - id: disj-trib-prises
     type: disjoncteur
@@ -384,7 +385,7 @@ equipements:
     emplacement: Dans le boîtier de distribution tribord
     calibre_A: 10
     questions: [Q42]
-    note: Vu sur la photo du 01/10. Utilisé (12/10), circuit alimenté non vérifié.
+    note: "Vu sur la photo du 01/10. Utilisé (12/10) : un seul câble de 1,5 mm² en part, circuit alimenté non vérifié."
 
   - id: disj-babord-prises
     type: disjoncteur

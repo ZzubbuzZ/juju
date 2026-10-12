@@ -67,7 +67,7 @@ Le courant qu'un câble supporte dépend de la température admise par son isola
 
 ### Les deux C10 du boîtier tribord (Q42)
 
-Le 12/10, les deux C10 sont trouvés occupés, sans que leurs circuits aient été vérifiés. Deux hypothèses sont à vérifier à bord. Dans les deux cas, la question est de savoir si l'on peut regrouper ces circuits sur un seul C10 pour libérer l'autre au profit du ballon. Puissances estimées, à confirmer sur les appareils :
+Le 12/10, les deux C10 sont trouvés occupés, chacun par un seul câble de 1,5 mm², sans que leurs circuits aient été vérifiés. Deux hypothèses sont à vérifier à bord. Dans les deux cas, la question est de savoir si l'on peut regrouper ces circuits sur un seul C10 pour libérer l'autre au profit du ballon. Puissances estimées, à confirmer sur les appareils :
 
 | Charge | Puissance | Courant à 230 V | Base de l'estimation |
 |---|---|---|---|
@@ -77,13 +77,13 @@ Le 12/10, les deux C10 sont trouvés occupés, sans que leurs circuits aient ét
 
 | Répartition | C10 n° a | C10 n° b | Verdict |
 |---|---|---|---|
-| **Hypothèse 1 : éclairage réparti sur les deux C10** (état probable) | éclairage, une partie : 0,2 A | éclairage, le reste : 0,2 A | Regroupement possible : 0,4 A au plus sur un C10, soit 4 % de son calibre. L'autre C10 est libéré pour le ballon. |
-| **Hypothèse 2 : le frigo sur un C10** (et non sur le C16 des prises tribord, comme noté au relevé) | éclairage : 0,4 A | frigo : 0,5 A | Regroupement possible : 0,9 A au plus sur un C10, soit environ 200 W. L'autre C10 est libéré pour le ballon. |
+| **Hypothèse 1 : éclairage réparti sur les deux C10** (état probable) | un câble d'éclairage : 0,2 A | l'autre câble d'éclairage : 0,2 A | Regroupement possible : 0,4 A au plus sur un C10, soit 4 % de son calibre. L'autre C10 est libéré pour le ballon. |
+| **Hypothèse 2 : le frigo sur un C10** (et non sur le C16 des prises tribord, comme noté au relevé) | câble de l'éclairage : 0,4 A | câble du frigo : 0,5 A | Regroupement possible : 0,9 A au plus sur un C10, soit environ 200 W. L'autre C10 est libéré pour le ballon. |
 | Avec le ballon, après regroupement | éclairage et frigo éventuel : 0,9 A au plus | ballon seul : 3,5 A | Conforme. Même tout sur un seul C10, on ne ferait que 4,4 A, mais la notice du ballon et Q56 demandent un disjoncteur pour lui seul. |
 
 **Câbles en 1,5 mm².** Un câble de 1,5 mm² admet environ 16 A : un C10 le protège, quel que soit le nombre de départs. La chute de tension est négligeable à ces courants : 0,9 A sur 10 m aller donnent 2 × 10 × 0,9 × 0,0175 / 1,5 = 0,21 V, soit 0,1 % de 230 V. Un circuit de prise en 1,5 mm² sur un C10 (le frigo dans l'hypothèse 2) est aussi conforme.
 
-**Raccordement des départs.** Regrouper deux départs ou plus sur un disjoncteur demande de vérifier la borne : en général, on ne serre pas plus de deux conducteurs de même section sous une même vis. La notice du DNX3 donne la capacité exacte. Au-delà, il faut un répartiteur ou des bornes à levier (Wago 221) dans le boîtier, avec une seule liaison en 1,5 mm² vers le disjoncteur. Le neutre et la terre de chaque départ restent sur les barrettes.
+**Raccordement des départs.** Chaque C10 n'a qu'un câble de 1,5 mm² (12/10). Regrouper revient donc à mettre deux câbles de 1,5 mm² sur un même disjoncteur : deux conducteurs de même section sous une même vis sont en général admis (capacité exacte des bornes : notice du DNX3). Si la borne ne les accepte pas, il faut un répartiteur ou deux bornes à levier (Wago 221) dans le boîtier, avec une seule liaison en 1,5 mm² vers le disjoncteur. Le neutre et la terre de chaque câble restent sur les barrettes.
 
 **Conséquences.** Le frigo sur le même C10 que l'éclairage serait coupé par un défaut d'éclairage, et inversement. C'est acceptable à quai, où ces circuits servent, mais ce n'est pas conseillé si le frigo doit rester en route en l'absence de l'équipage. Si l'on veut garder le frigo seul, le mettre sur le C16 des prises tribord (environ 0,5 A de plus), comme le relevé le suppose déjà. À vérifier à bord : quels câbles partent de chaque C10, et où ils vont (Q42, Q60).
 
