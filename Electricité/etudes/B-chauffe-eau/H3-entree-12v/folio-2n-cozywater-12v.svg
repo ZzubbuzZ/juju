@@ -43,7 +43,7 @@
   <rect class="bound" x="20" y="40" width="300" height="450"/>
   <text class="ts" x="30" y="58">Contremarche de la descente : platine</text>
   <rect class="bound" x="600" y="40" width="580" height="450"/>
-  <text class="ts" x="610" y="58">Cabinet de toilette, près du ballon (Q19)</text>
+  <text class="ts" x="610" y="58">Sous la table à carte, près du ballon</text>
   <rect class="sw" x="120" y="124" width="60" height="32" rx="2"/>
   <path class="lever" d="M120 140 L177 127"/>
   <text class="ts mid" x="150" y="168">CC servitude</text>

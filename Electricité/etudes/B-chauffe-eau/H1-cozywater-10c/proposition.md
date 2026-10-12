@@ -14,9 +14,9 @@ points_faibles:
   - Sur le 230 V, eau chaude au quai seulement ; hors du quai, c'est l'entrée 12 V de B-H3.
   - Sur une borne de 6 A, le ballon et les deux chargeurs dépassent la borne ; couper un chargeur pendant la chauffe.
   - Pression ramenée de 2,8 à 1,5 bar à tous les robinets, eau froide comprise.
-  - Encombrement (270 × 400 × 290 mm) et fixations prévues pour 60 kg (Q19).
+  - Encombrement (270 × 400 × 290 mm) et fixations prévues pour 60 kg, sous la table à carte.
   - La notice exige une vidange complète à l'hivernage, même si le ballon n'a pas servi.
-decision: "07/10/2026 : ballon Carbest CozyWater 10C commandé par l'utilisateur. Prise dédiée plutôt que câble coupé et raccordé au disjoncteur (Q56, notice). Réducteur à 1,5 bar à la sortie de la pompe, pour tout le circuit, et vase de 1 L gonflé à 1,4 bar, après mesure de la coupure de la pompe. Étude fusionnée dans main le 07/10 ; restent l'emplacement exact (Q19), le second C10 (Q42), le circuit d'eau existant (Q54) et les raccords (Q55). 12/10 : les deux C10 sont occupés, chacun par un câble de 1,5 mm² (Q42) ; l'utilisateur regroupe ces deux câbles sur un seul C10 et tire un câble neuf du C10 libéré vers le ballon, raccordé par une boîte de dérivation (emplacement à définir)."
+decision: "07/10/2026 : ballon Carbest CozyWater 10C commandé par l'utilisateur. Prise dédiée plutôt que câble coupé et raccordé au disjoncteur (Q56, notice). Réducteur à 1,5 bar à la sortie de la pompe, pour tout le circuit, et vase de 1 L gonflé à 1,4 bar, après mesure de la coupure de la pompe. Étude fusionnée dans main le 07/10 ; restent l'emplacement exact (Q19), le second C10 (Q42), le circuit d'eau existant (Q54) et les raccords (Q55). 12/10 : les deux C10 sont occupés, chacun par un câble de 1,5 mm² (Q42) ; l'utilisateur regroupe ces deux câbles sur un seul C10 et tire un câble neuf du C10 libéré vers le ballon, raccordé par une boîte de dérivation (emplacement à définir). Ballon posé le 12/10 sous la table à carte ; tuyaux le long de la coque puis autour du puits de dérive par l'avant jusqu'au meuble sous l'évier ; réducteur et vase dans le coffre de cockpit tribord. C10 dédié au ballon confirmé par l'utilisateur."
 ---
 
 # B-H1 · Ballon CozyWater 10C sur le 230 V, circuit d'eau à pression réduite
@@ -45,13 +45,15 @@ Deux écarts avec la fiche du revendeur ([Camping-Car Plus](https://www.camping-
 
 Le ballon tire **3,5 A**. Le boîtier tribord a déjà ce que demande la notice : différentiel 30 mA à l'arrivée, puis des disjoncteurs de 10 et 16 A, sous les 16 A de la notice.
 
-**Raccordement retenu** (folio 2m) : une **prise 16 A avec terre, compatible Schuko**, posée près du boîtier tribord, seule sur le **second C10** du boîtier (node306, node307), par un câble 3G1,5 de 1,5 m environ (wire300 / wire301 / wire302). Le ballon se coupe seul au disjoncteur, sans toucher aux prises du bord, comme avec un raccordement direct.
+**Raccordement retenu** (folio 2m) : une **prise 16 A avec terre, compatible Schuko**, posée sous la table à carte près du ballon, seule sur le **second C10** du boîtier (node306, node307), par un câble 3G1,5 d'environ 5 m depuis le cabinet de toilette (wire300 / wire301 / wire302, longueur estimée). Le ballon se coupe seul au disjoncteur, sans toucher aux prises du bord, comme avec un raccordement direct.
+
+**Pourquoi un C10 dédié** (confirmé le 12/10) : la notice demande une protection de 16 A au plus ; un C16 serait donc conforme. Le disjoncteur protège le câble du bord, mais aussi le cordon et le câblage interne du ballon (relais, connexions) en cas de court-circuit, d'où cette limite. Le C10 donne une marge de plus, et coupe le ballon sans toucher aux autres circuits. La chute de tension est négligeable : 2 × 5 × 3,5 × 0,0175 / 1,5 = 0,41 V, soit 0,2 % de 230 V.
 
 **Pourquoi pas le câble directement au disjoncteur** (proposition de l'utilisateur, Q56) : il faudrait couper la fiche, ce que la notice interdit (« aucune modification structurelle à l'appareil ou au câblage électrique », « uniquement une prise avec contact de protection »). La garantie en dépend sans doute. La prise dédiée coûte une quinzaine d'euros et garde la fiche intacte ; elle permet aussi de débrancher le ballon pour l'hivernage ou une intervention.
 
 **Le second C10 n'est pas libre** (Q42, 12/10) : les deux C10 portent chacun un câble de 1,5 mm², sans doute l'éclairage 230 V, peut-être la prise du frigo. Décision de l'utilisateur : **regrouper ces deux câbles sur un seul C10**, qui porte alors moins de 1 A (bilan dans [dimensionnement.md](../../../commun/dimensionnement.md), « Les deux C10 du boîtier tribord »), et alimenter le ballon par le C10 libéré. Deux câbles de 1,5 mm² sous la même borne sont en général admis ; sinon, deux bornes à levier dans le boîtier et une seule liaison vers le disjoncteur. Le câble regroupé n'est pas encore au relevé (Q42, Q60) : il n'apparaît pas ici.
 
-**Boîte de dérivation** (décision du 12/10) : le câble neuf du C10 libéré rejoint la prise dédiée par une boîte de dérivation, dont l'emplacement reste à définir. La prise reste : la fiche du ballon ne se coupe pas (notice, Q56), donc le cordon du ballon ne se raccorde pas dans la boîte. La boîte n'a pas de nœud propre dans le câblage (la plage de l'étude B, node300 à node319, est pleine) : wire300 à wire302 vont du C10 à la prise en passant par elle.
+**Boîte de dérivation** (décision du 12/10) : le câble neuf du C10 libéré rejoint la prise dédiée, sous la table à carte, par une boîte de dérivation dont l'emplacement reste à définir. La prise reste : la fiche du ballon ne se coupe pas (notice, Q56), donc le cordon du ballon ne se raccorde pas dans la boîte. La boîte n'a pas de nœud propre dans le câblage (la plage de l'étude B, node300 à node319, est pleine) : wire300 à wire302 vont du C10 à la prise en passant par elle.
 
 **Pas de 12 V dans la même boîte, sauf cloison.** L'utilisateur envisage d'y raccorder aussi l'entrée 12 V (B-H3). Les règles des installations de bateau (ISO 13297 pour le 230 V, ABYC E-11) demandent de séparer le courant alternatif du courant continu : des faisceaux distincts, et, s'ils partagent un boîtier, une cloison qui les sépare et un marquage de chaque partie. La norme des bâtiments (NF C 15-100) dit la même chose pour la très basse tension : séparée du 230 V par une cloison, ou par une isolation prévue pour 230 V. Je n'ai pas relu les articles exacts ; ce principe est constant d'un texte à l'autre. Le plus simple est donc **deux boîtes côte à côte**, une pour le 230 V et une pour le 12 V (relais de 30 A, fusible de 1 A de B-H3). Une seule boîte reste possible si elle a deux compartiments séparés par une cloison, avec « 230 V » et « 12 V » marqués sur le couvercle. Un défaut d'isolant dans une boîte commune mettrait le 230 V sur le circuit 12 V, dont la masse n'est reliée ni à la terre ni au différentiel (A8).
 
@@ -115,7 +117,7 @@ Pourquoi à la sortie de la pompe plutôt que sur l'entrée du ballon seule (pre
 
 Règles du montage :
 
-- **Aucun clapet anti-retour entre le vase et le ballon** : il isolerait le ballon du vase, et la soupape rejetterait de nouveau à chaque chauffe. Le vase est **après la vanne d'arrêt** du ballon : le ballon reste protégé même si on ferme cette vanne pendant une chauffe.
+- **Aucun clapet anti-retour entre le vase et le ballon** : il isolerait le ballon du vase, et la soupape rejetterait de nouveau à chaque chauffe. Le vase est désormais dans le coffre de cockpit tribord, avec le réducteur (12/10), donc **avant la vanne d'arrêt** du ballon : cette vanne doit rester **ouverte pendant une chauffe**, sinon le ballon est isolé du vase et la soupape rejette. Mettre une étiquette sur la vanne, et ne la fermer que ballon coupé (vidange, intervention). La longueur du tuyau entre le coffre et le ballon ne gêne pas : l'eau dilatée remonte le tuyau d'eau froide jusqu'au vase.
 - **Rien entre la soupape et le ballon** (notice). Le tuyau de vidange de la soupape va vers un évier ou hors du bateau, jamais dans les fonds.
 - **Flexible court entre la pompe et le réducteur** : la notice de la pompe demande un tuyau souple à sa sortie (vibrations) et déconseille les raccords métalliques directement sur la pompe.
 - Les deux vannes d'arrêt (notice, « protection antigel ») résistent à l'eau chaude ; elles isolent le ballon pour la vidange, ou pour se servir de l'eau froide sans remplir un ballon vide.
@@ -146,7 +148,7 @@ Ces réglages seront repris dans la [documentation technique](../../../documenta
 
 ## À relever ou à confirmer
 
-- **Q19** : emplacement exact du ballon dans le cabinet de toilette (réponse du 07/10 : a priori), avec la place pour le vase, la soupape et les vannes.
+- **Q19** (répondue le 12/10) : ballon sous la table à carte, réducteur et vase dans le coffre de cockpit tribord.
 - **Q42** : les deux C10 sont occupés (12/10) ; suivre les deux câbles avant de les regrouper sur un seul C10, et choisir celui qui est libéré pour le ballon.
 - **Q54** : circuit d'eau existant (tuyau, robinets, mitigeurs) ; coupure et redémarrage de la pompe, mesurés avec le réducteur (étape 1).
 - **Q55** (reformulée le 07/10) : à la livraison du ballon, filetage de ses raccords et de la soupape, longueur de ses trois câbles, puissance inscrite sur la plaque.

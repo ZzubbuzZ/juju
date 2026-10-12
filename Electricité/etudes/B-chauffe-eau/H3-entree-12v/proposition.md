@@ -78,7 +78,7 @@ Folio 2n. Puissance en 6 mm², commande en 0,75 mm² :
 | wire312 | voyant (node380) → node319 | − du voyant |
 
 - **Départ à node010**, côté charges du coupe-circuit de servitude, comme les autres départs de la platine : ouvrir le coupe-circuit coupe aussi le ballon. Le fusible de 30 A (node308, node309) est monté sur le goujon.
-- **Relais et interrupteur près du ballon**, dans le cabinet de toilette : un seul câble de 6 mm² fait le trajet depuis la platine, avec son retour. La commande est prise sur la borne 30 du relais, à travers un fusible de 1 A : le fil de 0,75 mm² n'est pas protégé par le fusible de 30 A.
+- **Relais et interrupteur près du ballon**, sous la table à carte (ballon posé le 12/10) : un seul câble de 6 mm² fait le trajet depuis la platine, avec son retour. La commande est prise sur la borne 30 du relais, à travers un fusible de 1 A : le fil de 0,75 mm² n'est pas protégé par le fusible de 30 A.
 - **Retour sur node006** : le shunt (étude D) compte la consommation du ballon.
 - Chute de tension sur 3 m de 6 mm² à 17 A : environ 0,3 V, soit 2,5 %.
 - Numéros : node308 à node319 (fin de la plage de l'étude B) et node380, pris dans la plage de réserve ; wire306 à wire312.

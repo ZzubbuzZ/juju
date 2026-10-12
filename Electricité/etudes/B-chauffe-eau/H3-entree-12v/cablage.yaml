@@ -7,7 +7,7 @@
 # Départ du + côté charges du coupe-circuit de servitude (node010) : le coupe-circuit coupe aussi
 # le ballon. Retour du − sur node006, côté « bord » du shunt (D-H1, E-H1) : la consommation est
 # comptée. node010 et node006 sont inchangés par les études A, D et E.
-# Relais et interrupteur près du ballon, dans le cabinet de toilette (Q19, Q57).
+# Relais et interrupteur près du ballon, sous la table à carte (12/10). Trajet du 6 mm² : celui de wire019 (Q57).
 # Nœuds 308 à 319 (fin de la plage de l'étude B) et node380 (plage de réserve, la plage B est pleine).
 # Longueurs estimées (Q57).
 
@@ -17,7 +17,7 @@ base: B-H1
 
 equipements:
   - { id: fus-ballon-12v, type: fusible, designation: "Fusible de l'entrée 12 V du ballon", calibre_A: 30, emplacement: "Platine des coupe-circuits, sur le goujon côté charges du coupe-circuit de servitude", statut: propose, note: "Calibre imposé par la notice ; protège le câble de 6 mm²" }
-  - { id: relais-ballon, type: relais, designation: "Relais de l'entrée 12 V du ballon (contact à fermeture 30-87, 30 A)", emplacement: "Près du ballon, cabinet de toilette (Q57)", statut: propose }
+  - { id: relais-ballon, type: relais, designation: "Relais de l'entrée 12 V du ballon (contact à fermeture 30-87, 30 A)", emplacement: "Près du ballon, sous la table à carte (Q57)", statut: propose }
   - { id: fus-cde-ballon, type: fusible, designation: "Fusible de la commande du relais du ballon", calibre_A: 1, emplacement: "Porte-fusible en ligne, sur la borne 30 du relais", statut: propose }
   - { id: inter-ballon, type: interrupteur, designation: "Interrupteur à voyant « ballon sur batterie »", emplacement: "Près du panneau de commande du ballon (Q55, Q57)", statut: propose }
 

@@ -18,7 +18,7 @@ Le ballon pourrait se brancher sur une prise tribord, ou mieux sur un départ d�
 ## Questions préalables
 
 - **Q13** (traitée le 28/09) : le 3GMD est refroidi directement à l'eau de mer. Il n'a pas de circuit d'eau douce sur lequel brancher un ballon à échangeur.
-- **Q19** (ouverte) : place disponible pour le ballon. 07/10 : a priori dans le cabinet de toilette, emplacement exact à confirmer.
+- **Q19** (répondue le 12/10) : ballon posé sous la table à carte ; tuyaux le long de la coque puis autour du puits de dérive par l'avant jusqu'au meuble sous l'évier ; réducteur et vase dans le coffre de cockpit tribord.
 - **Q20** (traitée, corrigée le 01/10) : les bornes de quai du port de Saint-Chamas fournissent **16 A, soit environ 3 700 W**. Ce calibre n'est pas garanti en escale, où il est souvent plus faible (les exemples ci-dessous prennent 10 et 6 A). La première réponse (6 A au ponton) venait de la presse.
 - **Q42** (ouverte) : circuit du second disjoncteur de 10 A du boîtier tribord, peut-être libre pour le ballon.
 - **Q54** (ouverte) : circuit d'eau douce existant, robinets. 07/10 : notice de la pompe ajoutée, sans les pressions ; coupure variable. Coupure et redémarrage à mesurer avec le réducteur (B-H1, étape 1).
@@ -51,7 +51,7 @@ Conséquences :
 
 | | Principe | Eau chaude au quai | En navigation | Au mouillage | Dépend de |
 |---|---|---|---|---|---|
-| [H1](H1-cozywater-10c/proposition.md) | **Retenue** : CozyWater 10C sur le 230 V (800 W), prise dédiée, réducteur à 1,5 bar pour tout le circuit | oui | non | non | Q19, Q42, Q54, Q55 |
+| [H1](H1-cozywater-10c/proposition.md) | **Retenue** : CozyWater 10C sur le 230 V (800 W), prise dédiée, réducteur à 1,5 bar pour tout le circuit | oui | non | non | Q42, Q54, Q55 |
 | ~~H2~~ | ~~Résistance 230 V + échangeur sur le circuit moteur~~ | | | | **Écartée** (Q13) : moteur refroidi à l'eau de mer. Faire passer de l'eau de mer dans le ballon l'exposerait à la corrosion et au sel ; il faudrait remotoriser ou ajouter un circuit d'eau douce |
 | [H3](H3-entree-12v/proposition.md) | **Retenue le 08/10** : entrée 12 V (200 W) du même ballon, câblée en permanence par un relais, sur la LiFePO4 et le surplus solaire | oui | partiel | partiel | étude C (commande automatique), Q57 |
 | H4 | Résistance 230 V alimentée par un convertisseur en navigation | oui | oui | oui | à chiffrer pour l'écarter proprement : 500 W représentent environ 45 A en 12 V, et une chauffe complète (0,8 kWh) environ 65 Ah, l'essentiel d'une LiFePO4 de 100 Ah (étude E) et plus que ce que le plomb actuel peut fournir |
@@ -73,7 +73,7 @@ Sans H2, l'eau chaude en navigation et au mouillage ne peut venir que de l'élec
 | Tâche | Où | État |
 |---|---|---|
 | Vérifier que l'installation est correctement calibrée | B-H1 (230 V), B-H3 (12 V) | 230 V : prise dédiée sur le second C10 (3,5 A, différentiel 30 mA), folio 2m ; Q42. 12 V : relais et fusible 30 A, 6 mm² |
-| Trouver l'emplacement du ballon | Q19 | à relever à bord |
+| Trouver l'emplacement du ballon | Q19 | sous la table à carte (12/10) ; réducteur et vase dans le coffre de cockpit tribord |
 | Éléments du circuit d'eau pressurisé : pompe, vase, chauffe-eau, vanne de sécurité, robinet | B-H1, folio 2l | pompe Seaflo conservée ; réducteur 1,5 bar à la sortie de la pompe, pour tout le circuit ; vase Seaflo 1 L (SFAT-100-125-01) ; soupape 3 bar fournie ; robinets selon Q54 |
 | Relais de commande, fusibles | B-H3, folio 2n | fusible 30 A à la platine (node010), 6 mm², relais 30 A et interrupteur à voyant près du ballon ; longueurs à mesurer (Q57) |
 | Afficheur | B-H1 | fourni avec le ballon (panneau de commande, minuterie) |

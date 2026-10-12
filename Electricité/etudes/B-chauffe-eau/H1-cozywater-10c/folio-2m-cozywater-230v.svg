@@ -133,11 +133,11 @@
   <text class="idn" x="727" y="489">n303 / n304 / n305</text>
   <text class="pin" x="727" y="499">P / N / PE</text>
   <text class="ts" x="30" y="38">Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau</text>
-  <text class="ts end" x="252" y="395">H07RN-F 3G1,5 · ≈ 1,5 m</text>
+  <text class="ts end" x="252" y="395">H07RN-F 3G1,5 · ≈ 5 m</text>
   <text class="ts tu" x="310" y="348">C10 libéré : son câble actuel est regroupé</text>
   <text class="ts tu" x="310" y="363">sur l&#x27;autre C10 (Q42, 12/10)</text>
   <text class="ts end" x="252" y="410">par une boîte de dérivation</text>
-  <text class="ts mid" x="490" y="530">près du boîtier tribord</text>
+  <text class="ts mid" x="490" y="530">sous la table à carte</text>
   <text class="ts mid" x="640" y="508">cordon fourni, fiche intacte</text>
   <text class="ts mid" x="830" y="240">emplacement et câble : Q55</text>
   <text class="ts mid" x="1090" y="442">câblée en permanence</text>
@@ -145,5 +145,4 @@
   <text class="id mid" x="1090" y="476">n318 · n319 : folio 2n</text>
   <g class="mk-q"><circle cx="236" cy="252" r="11"/><text class="mid" x="236" y="255.5">Q42</text></g>
   <g class="mk-q"><circle cx="640" cy="532" r="11"/><text class="mid" x="640" y="535.5">Q55</text></g>
-  <g class="mk-q"><circle cx="940" cy="390" r="11"/><text class="mid" x="940" y="393.5">Q19</text></g>
 </svg>

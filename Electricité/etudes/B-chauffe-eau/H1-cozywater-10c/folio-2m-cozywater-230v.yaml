@@ -149,15 +149,14 @@ renvois:
 pastilles:
   - {id: Q42, x: 236, y: 252}
   - {id: Q55, x: 640, y: 532}
-  - {id: Q19, x: 940, y: 390}
 
 textes:
   - {x: 30, y: 38, texte: "Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau"}
-  - {x: 252, y: 395, classe: ts end, texte: "H07RN-F 3G1,5 · ≈ 1,5 m"}
+  - {x: 252, y: 395, classe: ts end, texte: "H07RN-F 3G1,5 · ≈ 5 m"}
   - {x: 310, y: 348, classe: ts tu, texte: "C10 libéré : son câble actuel est regroupé"}
   - {x: 310, y: 363, classe: ts tu, texte: "sur l'autre C10 (Q42, 12/10)"}
   - {x: 252, y: 410, classe: ts end, texte: "par une boîte de dérivation"}
-  - {x: 490, y: 530, classe: ts mid, texte: "près du boîtier tribord"}
+  - {x: 490, y: 530, classe: ts mid, texte: "sous la table à carte"}
   - {x: 640, y: 508, classe: ts mid, texte: "cordon fourni, fiche intacte"}
   - {x: 830, y: 240, classe: ts mid, texte: "emplacement et câble : Q55"}
   - {x: 1090, y: 442, classe: ts mid, texte: "câblée en permanence"}

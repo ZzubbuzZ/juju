@@ -10,7 +10,7 @@ taille: [1200, 545]
 
 zones:
   - {x: 20, y: 40, w: 300, h: 450, texte: "Contremarche de la descente : platine"}
-  - {x: 600, y: 40, w: 580, h: 450, texte: "Cabinet de toilette, près du ballon (Q19)"}
+  - {x: 600, y: 40, w: 580, h: 450, texte: "Sous la table à carte, près du ballon"}
 
 appareils:
   - id: cc-servitude
