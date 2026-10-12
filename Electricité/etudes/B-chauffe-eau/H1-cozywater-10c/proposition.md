@@ -16,7 +16,7 @@ points_faibles:
   - Pression ramenée de 2,8 à 1,5 bar à tous les robinets, eau froide comprise.
   - Encombrement (270 × 400 × 290 mm) et fixations prévues pour 60 kg (Q19).
   - La notice exige une vidange complète à l'hivernage, même si le ballon n'a pas servi.
-decision: "07/10/2026 : ballon Carbest CozyWater 10C commandé par l'utilisateur. Prise dédiée plutôt que câble coupé et raccordé au disjoncteur (Q56, notice). Réducteur à 1,5 bar à la sortie de la pompe, pour tout le circuit, et vase de 1 L gonflé à 1,4 bar, après mesure de la coupure de la pompe. Étude fusionnée dans main le 07/10 ; restent l'emplacement exact (Q19), le second C10 (Q42), le circuit d'eau existant (Q54) et les raccords (Q55)."
+decision: "07/10/2026 : ballon Carbest CozyWater 10C commandé par l'utilisateur. Prise dédiée plutôt que câble coupé et raccordé au disjoncteur (Q56, notice). Réducteur à 1,5 bar à la sortie de la pompe, pour tout le circuit, et vase de 1 L gonflé à 1,4 bar, après mesure de la coupure de la pompe. Étude fusionnée dans main le 07/10 ; restent l'emplacement exact (Q19), le second C10 (Q42), le circuit d'eau existant (Q54) et les raccords (Q55). 12/10 : les deux C10 sont occupés, chacun par un câble de 1,5 mm² (Q42) ; l'utilisateur regroupe ces deux câbles sur un seul C10 et tire un câble neuf du C10 libéré vers le ballon, raccordé par une boîte de dérivation (emplacement à définir)."
 ---
 
 # B-H1 · Ballon CozyWater 10C sur le 230 V, circuit d'eau à pression réduite
@@ -49,7 +49,11 @@ Le ballon tire **3,5 A**. Le boîtier tribord a déjà ce que demande la notice 
 
 **Pourquoi pas le câble directement au disjoncteur** (proposition de l'utilisateur, Q56) : il faudrait couper la fiche, ce que la notice interdit (« aucune modification structurelle à l'appareil ou au câblage électrique », « uniquement une prise avec contact de protection »). La garantie en dépend sans doute. La prise dédiée coûte une quinzaine d'euros et garde la fiche intacte ; elle permet aussi de débrancher le ballon pour l'hivernage ou une intervention.
 
-**Si le second C10 n'est pas libre** (Q42) : ajouter un disjoncteur 1P+N de 10 A dans le boîtier, s'il reste de la place sur le rail, ou à défaut brancher la prise dédiée sur le C16 des prises tribord. Seul le départ de wire300 change.
+**Le second C10 n'est pas libre** (Q42, 12/10) : les deux C10 portent chacun un câble de 1,5 mm², sans doute l'éclairage 230 V, peut-être la prise du frigo. Décision de l'utilisateur : **regrouper ces deux câbles sur un seul C10**, qui porte alors moins de 1 A (bilan dans [dimensionnement.md](../../../commun/dimensionnement.md), « Les deux C10 du boîtier tribord »), et alimenter le ballon par le C10 libéré. Deux câbles de 1,5 mm² sous la même borne sont en général admis ; sinon, deux bornes à levier dans le boîtier et une seule liaison vers le disjoncteur. Le câble regroupé n'est pas encore au relevé (Q42, Q60) : il n'apparaît pas ici.
+
+**Boîte de dérivation** (décision du 12/10) : le câble neuf du C10 libéré rejoint la prise dédiée par une boîte de dérivation, dont l'emplacement reste à définir. La prise reste : la fiche du ballon ne se coupe pas (notice, Q56), donc le cordon du ballon ne se raccorde pas dans la boîte. La boîte n'a pas de nœud propre dans le câblage (la plage de l'étude B, node300 à node319, est pleine) : wire300 à wire302 vont du C10 à la prise en passant par elle.
+
+**Pas de 12 V dans la même boîte, sauf cloison.** L'utilisateur envisage d'y raccorder aussi l'entrée 12 V (B-H3). Les règles des installations de bateau (ISO 13297 pour le 230 V, ABYC E-11) demandent de séparer le courant alternatif du courant continu : des faisceaux distincts, et, s'ils partagent un boîtier, une cloison qui les sépare et un marquage de chaque partie. La norme des bâtiments (NF C 15-100) dit la même chose pour la très basse tension : séparée du 230 V par une cloison, ou par une isolation prévue pour 230 V. Je n'ai pas relu les articles exacts ; ce principe est constant d'un texte à l'autre. Le plus simple est donc **deux boîtes côte à côte**, une pour le 230 V et une pour le 12 V (relais de 30 A, fusible de 1 A de B-H3). Une seule boîte reste possible si elle a deux compartiments séparés par une cloison, avec « 230 V » et « 12 V » marqués sur le couvercle. Un défaut d'isolant dans une boîte commune mettrait le 230 V sur le circuit 12 V, dont la masse n'est reliée ni à la terre ni au différentiel (A8).
 
 **Puissance au quai** (voir le README) : environ 650 W sans le ballon, avec les deux chargeurs de l'étude E, soit environ **1 450 W avec le ballon**.
 
@@ -143,6 +147,6 @@ Ces réglages seront repris dans la [documentation technique](../../../documenta
 ## À relever ou à confirmer
 
 - **Q19** : emplacement exact du ballon dans le cabinet de toilette (réponse du 07/10 : a priori), avec la place pour le vase, la soupape et les vannes.
-- **Q42** : le second C10 du boîtier tribord est-il libre ? Sinon, disjoncteur ajouté ou C16 des prises tribord.
+- **Q42** : les deux C10 sont occupés (12/10) ; suivre les deux câbles avant de les regrouper sur un seul C10, et choisir celui qui est libéré pour le ballon.
 - **Q54** : circuit d'eau existant (tuyau, robinets, mitigeurs) ; coupure et redémarrage de la pompe, mesurés avec le réducteur (étape 1).
 - **Q55** (reformulée le 07/10) : à la livraison du ballon, filetage de ses raccords et de la soupape, longueur de ses trois câbles, puissance inscrite sur la plaque.

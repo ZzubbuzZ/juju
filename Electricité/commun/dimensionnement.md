@@ -62,7 +62,7 @@ Le courant qu'un câble supporte dépend de la température admise par son isola
 | Borne de Saint-Chamas | 16 A, environ 3 700 W | |
 | Consommation à bord, ballon compris | environ 1 450 W, soit 6,5 A | Sans contrainte ; en escale à 6 A, couper un chargeur pendant la chauffe |
 | Disjoncteur du chargeur (C10) : Dolphin et Blue Smart | environ 2,7 A | Conforme ; wire213 à wire215 en 1,5 mm² sur un C10 |
-| Second C10 du boîtier tribord : prise du ballon | 3,5 A ; wire300 à wire302 en 1,5 mm² | Conforme en charge ; le C10 est occupé (Q42, 12/10) : le libérer, voir ci-dessous |
+| C10 libéré du boîtier tribord : prise du ballon | 3,5 A ; wire300 à wire302 en 1,5 mm², par une boîte de dérivation | Conforme ; câbles des deux C10 regroupés sur l'autre C10 (décision du 12/10, voir ci-dessous) |
 | Différentiel d'arrivée | 30 mA type A, 40 A (A-H4) | Calibre supérieur à la borne : conforme |
 
 ### Les deux C10 du boîtier tribord (Q42)
@@ -84,6 +84,8 @@ Le 12/10, les deux C10 sont trouvés occupés, chacun par un seul câble de 1,5 
 **Câbles en 1,5 mm².** Un câble de 1,5 mm² admet environ 16 A : un C10 le protège, quel que soit le nombre de départs. La chute de tension est négligeable à ces courants : 0,9 A sur 10 m aller donnent 2 × 10 × 0,9 × 0,0175 / 1,5 = 0,21 V, soit 0,1 % de 230 V. Un circuit de prise en 1,5 mm² sur un C10 (le frigo dans l'hypothèse 2) est aussi conforme.
 
 **Raccordement des départs.** Chaque C10 n'a qu'un câble de 1,5 mm² (12/10). Regrouper revient donc à mettre deux câbles de 1,5 mm² sur un même disjoncteur : deux conducteurs de même section sous une même vis sont en général admis (capacité exacte des bornes : notice du DNX3). Si la borne ne les accepte pas, il faut un répartiteur ou deux bornes à levier (Wago 221) dans le boîtier, avec une seule liaison en 1,5 mm² vers le disjoncteur. Le neutre et la terre de chaque câble restent sur les barrettes.
+
+**Décision du 12/10** : l'utilisateur regroupe les deux câbles sur un seul C10 et tire un câble neuf du C10 libéré vers le ballon, par une boîte de dérivation (B-H1). Le 12 V du ballon (B-H3) va dans une autre boîte, ou dans un compartiment séparé par une cloison.
 
 **Conséquences.** Le frigo sur le même C10 que l'éclairage serait coupé par un défaut d'éclairage, et inversement. C'est acceptable à quai, où ces circuits servent, mais ce n'est pas conseillé si le frigo doit rester en route en l'absence de l'équipage. Si l'on veut garder le frigo seul, le mettre sur le C16 des prises tribord (environ 0,5 A de plus), comme le relevé le suppose déjà. À vérifier à bord : quels câbles partent de chaque C10, et où ils vont (Q42, Q60).
 

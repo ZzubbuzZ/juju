@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Alimentation 230 volts du chauffe-eau : second disjoncteur de 10 ampères du boîtier tribord, câble de 3 fois 1,5 millimètres carrés vers une prise dédiée, cordon du ballon à fiche Schuko ; entrée 12 volts au folio 2n.">
   <title>Folio 2m · Chauffe-eau CozyWater 10C, alimentation</title>
-  <desc>Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par le second C10 du boîtier tribord (Q42), en aval du différentiel 30 mA. Unifilaire, comme le folio 3 ; l&#x27;entrée 12 V, câblée elle aussi, est au folio 2n ; le 230 V est prioritaire.</desc>
+  <desc>Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par un C10 du boîtier tribord, libéré en regroupant les câbles des deux C10 sur l&#x27;autre (Q42), en aval du différentiel 30 mA. Le câble passe par une boîte de dérivation. Unifilaire, comme le folio 3 ; l&#x27;entrée 12 V, câblée elle aussi, est au folio 2n ; le 230 V est prioritaire.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -77,7 +77,6 @@
   <path class="n w2" d="M560 490 H560"/>
   <path class="n w2" d="M560 490 H560"/>
   <path class="n w2" d="M560 490 H560"/>
-  <path class="u" d="M530 250 L530 330 L300 330"/>
   <path class="n w1" d="M830 390 L830 300"/>
   <path class="p w3" d="M940 450 L1000 450"/>
   <path class="n w2" d="M230 125 L440 125 L440 200"/>
@@ -135,8 +134,9 @@
   <text class="pin" x="727" y="499">P / N / PE</text>
   <text class="ts" x="30" y="38">Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau</text>
   <text class="ts end" x="252" y="395">H07RN-F 3G1,5 · ≈ 1,5 m</text>
-  <text class="ts tu" x="310" y="348">si le second C10 n&#x27;est pas libre (Q42) :</text>
-  <text class="ts tu" x="310" y="363">disjoncteur 10 A ajouté, ou C16 des prises tribord</text>
+  <text class="ts tu" x="310" y="348">C10 libéré : son câble actuel est regroupé</text>
+  <text class="ts tu" x="310" y="363">sur l&#x27;autre C10 (Q42, 12/10)</text>
+  <text class="ts end" x="252" y="410">par une boîte de dérivation</text>
   <text class="ts mid" x="490" y="530">près du boîtier tribord</text>
   <text class="ts mid" x="640" y="508">cordon fourni, fiche intacte</text>
   <text class="ts mid" x="830" y="240">emplacement et câble : Q55</text>

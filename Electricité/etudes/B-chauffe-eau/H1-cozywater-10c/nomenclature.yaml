@@ -19,8 +19,8 @@ lots:
     titre: Robinetterie (option, selon les robinets existants)
     note: Q54.
   electricite:
-    titre: "Raccordement 230 V : prise dédiée sur le second C10"
-    note: Décision du 07/10 (Q56). Second C10 à confirmer libre (Q42).
+    titre: "Raccordement 230 V : prise dédiée sur le C10 libéré"
+    note: Décision du 07/10 (Q56). Les deux C10 sont occupés (12/10, Q42) ; leurs câbles sont regroupés sur un seul C10.
 
 articles:
   # --- Lot ballon -------------------------------------------------------------------
@@ -42,4 +42,5 @@ articles:
 
   # --- Lot électricité --------------------------------------------------------------
   - { lot: electricite, designation: "Prise 230 V 16 A 2P+T en saillie, compatible fiche Schuko (hybride), avec boîte", quantite: 1, unite: pièce, prix_unitaire: 15, statut: estimation, note: "Près du boîtier tribord, à portée du câble du ballon (Q55)" }
-  - { lot: electricite, designation: "Câble H07RN-F 3G1,5 du second C10 à la prise, embouts de câblage, presse-étoupe, colliers", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Environ 1,5 m ; si le C10 n'est pas libre, ajouter un disjoncteur DNX3 1P+N 10 A (environ 15 €)", fils: [wire300, wire301, wire302] }
+  - { lot: electricite, designation: "Câble H07RN-F 3G1,5 du second C10 à la prise, embouts de câblage, presse-étoupe, colliers", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Environ 1,5 m, longueur à revoir selon la boîte de dérivation", fils: [wire300, wire301, wire302] }
+  - { lot: electricite, designation: "Boîte de dérivation étanche (IP55) pour le câble du ballon, bornes à levier Wago 221 ; bornes pour regrouper les deux câbles des C10", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Décision du 12/10. Le 12 V de B-H3 dans une autre boîte, ou une boîte à deux compartiments séparés par une cloison" }
