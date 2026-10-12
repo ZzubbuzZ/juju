@@ -99,9 +99,9 @@ Aujourd'hui, l'étude E prévoit les deux chargeurs de quai sur le même C10 du 
 | Défaut sur un chargeur | coupe les deux | coupe celui-là seul : l'autre batterie continue de charger |
 | Couper un chargeur à la main (borne de 6 A pendant la chauffe du ballon, B-H1 ; hivernage ; intervention) | débrancher sa fiche, si Q53 retient une prise ; sinon impossible sans couper l'autre | au disjoncteur |
 | Coût et travaux | rien | disjoncteur 1P+N C10 (Merlin Gerin DT40 ou équivalent, environ 20 à 30 €) ; le câble wire213 à wire215 part de ce disjoncteur au lieu de node211 |
-| Condition | | une place libre sur le rail du boîtier d'arrivée (Q63) |
+| Condition | | une place libre sur le rail du boîtier d'arrivée : il y en a une (Q63, 12/10) |
 
-Le câble 3 × 1,5 mm² du Blue Smart reste protégé : un C10 le protège comme aujourd'hui. **Verdict** : utile, pas nécessaire. Elle vaut surtout si le Blue Smart est raccordé par un boîtier à bornes (sans fiche à débrancher, Q53) et s'il reste une place dans le boîtier d'arrivée (Q63). Sinon, une prise dédiée au Blue Smart (Q53) donne déjà le moyen de le couper seul.
+Le câble 3 × 1,5 mm² du Blue Smart reste protégé : un C10 le protège comme aujourd'hui. **Verdict** : utile, pas nécessaire. La place existe (Q63, 12/10) : l'option est réalisable. Elle vaut surtout si le Blue Smart est raccordé par un boîtier à bornes (sans fiche à débrancher, Q53). Sinon, une prise dédiée au Blue Smart (Q53) donne déjà le moyen de le couper seul.
 
 ## Tableau de la table à carte (A-H1, différé)
 
@@ -129,7 +129,6 @@ Toutes les sections prévues conviennent. **Pompe à eau** : sa notice demande u
 
 - **Q58** : isolant des câbles de 6 et 35 mm² ; conditionne les calibres de 50 A et 300 A.
 - **Q57** : longueur du câble 12 V du ballon (3 m estimés, trajet de wire019 ; jusqu'à 12 m, le 6 mm² reste sous 10 %).
-- **Q63** : place pour un second C10 dans le boîtier d'arrivée (chargeur de la LiFePO4, option).
 - **Q12** : longueurs réelles des départs du tableau de la table à carte.
 - Longueurs de wire022 à wire026 (tableau Scheiber, frigo, pompe de cale) : non relevées, estimées ici.
 - **Q14** : courant de l'alternateur, qui fixe le réglage de l'Orion XS (15 A pour un alternateur de 20 A).

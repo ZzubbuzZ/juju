@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Circuit d&#x27;eau douce du chauffe-eau : pompe, réducteur à 1,5 bar pour tout le circuit, robinets d&#x27;eau froide, vanne d&#x27;arrêt, vase d&#x27;expansion de 1 litre, soupape de 3 bars, ballon CozyWater 10C, vanne d&#x27;arrêt et mitigeurs.">
   <title>Folio 2l · Chauffe-eau CozyWater 10C, circuit d&#x27;eau</title>
-  <desc>Le réducteur, à la sortie de la pompe, met l&#x27;eau froide et l&#x27;eau chaude à 1,5 bar quelle que soit la coupure de la pompe. Le vase de 1 L, gonflé à 1,4 bar et posé avec le réducteur dans le coffre de cockpit tribord, absorbe la dilatation de l&#x27;eau chaude sous la soupape de 3 bar ; le ballon est sous la table à carte (12/10).</desc>
+  <desc>Le réducteur, à la sortie de la pompe, met l&#x27;eau froide et l&#x27;eau chaude à 1,5 bar quelle que soit la coupure de la pompe. Le vase de 1 L, gonflé à 1,4 bar et posé avec la pompe et le réducteur dans le coffre de cockpit tribord, absorbe la dilatation de l&#x27;eau chaude sous la soupape de 3 bar ; le ballon est sous la table à carte (12/10).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -44,8 +44,8 @@
   <text class="ts" x="30" y="38">Circuit d&#x27;eau douce · trait plein : eau froide · tirets : eau chaude · en vert : nouveau</text>
   <rect class="bound" x="20" y="380" width="1160" height="200"/>
   <text class="ts" x="30" y="398">Réglages, dans l&#x27;ordre (B-H1)</text>
-  <rect class="bound" x="315" y="128" width="230" height="210"/>
-  <text class="ts" x="325" y="146">Coffre de cockpit tribord</text>
+  <rect class="bound" x="160" y="128" width="385" height="210"/>
+  <text class="ts" x="170" y="146">Coffre de cockpit tribord</text>
   <rect class="bound" x="680" y="128" width="320" height="155"/>
   <text class="ts" x="690" y="146"></text>
   <rect class="box-unk" x="40" y="160" width="100" height="50" rx="2"/>

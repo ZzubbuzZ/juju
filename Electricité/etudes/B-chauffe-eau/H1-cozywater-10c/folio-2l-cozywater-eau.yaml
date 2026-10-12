@@ -4,14 +4,14 @@
 folio: 2l
 titre: Chauffe-eau CozyWater 10C, circuit d'eau
 aria: "Circuit d'eau douce du chauffe-eau : pompe, réducteur à 1,5 bar pour tout le circuit, robinets d'eau froide, vanne d'arrêt, vase d'expansion de 1 litre, soupape de 3 bars, ballon CozyWater 10C, vanne d'arrêt et mitigeurs."
-desc: "Le réducteur, à la sortie de la pompe, met l'eau froide et l'eau chaude à 1,5 bar quelle que soit la coupure de la pompe. Le vase de 1 L, gonflé à 1,4 bar et posé avec le réducteur dans le coffre de cockpit tribord, absorbe la dilatation de l'eau chaude sous la soupape de 3 bar ; le ballon est sous la table à carte (12/10)."
+desc: "Le réducteur, à la sortie de la pompe, met l'eau froide et l'eau chaude à 1,5 bar quelle que soit la coupure de la pompe. Le vase de 1 L, gonflé à 1,4 bar et posé avec la pompe et le réducteur dans le coffre de cockpit tribord, absorbe la dilatation de l'eau chaude sous la soupape de 3 bar ; le ballon est sous la table à carte (12/10)."
 modele: B-H1
 taille: [1200, 600]
 
 zones:
   - {x: 20, y: 20, w: 1160, h: 340, texte: "Circuit d'eau douce · trait plein : eau froide · tirets : eau chaude · en vert : nouveau"}
   - {x: 20, y: 380, w: 1160, h: 200, texte: "Réglages, dans l'ordre (B-H1)"}
-  - {x: 315, y: 128, w: 230, h: 210, texte: "Coffre de cockpit tribord"}
+  - {x: 160, y: 128, w: 385, h: 210, texte: "Coffre de cockpit tribord"}
   - {x: 680, y: 128, w: 320, h: 155, texte: ""}
 
 appareils:

@@ -124,12 +124,13 @@
 
   <!-- Tribord et axe : bulles du bas -->
   <path class="leader" d="M185 580 L207 440"/>
-  <rect class="callout" x="40" y="580" width="290" height="108" rx="2"/>
+  <rect class="callout" x="40" y="580" width="290" height="127" rx="2"/>
   <text class="tb" x="52" y="600">Coffre de cockpit · tribord</text>
   <text class="t" x="52" y="619" data-equipement="bat-moteur">Batterie moteur 110 Ah</text>
   <text class="t" x="52" y="638" data-equipement="chargeur-quai">Chargeur de quai (au-dessus)</text>
   <text class="t" x="52" y="657" data-equipement="prise-quai">Prise de quai (sous le banc)</text>
   <text class="t" x="52" y="676"><tspan data-equipement="boitier-230v">Boîtier d'arrivée 230 V :</tspan> <tspan data-equipement="ddr-230v">diff. 30 mA,</tspan> <tspan data-equipement="disj-chargeur">10 A,</tspan> <tspan data-equipement="disj-230-reste">16 A</tspan></text>
+  <text class="t" x="52" y="695" data-equipement="pompe-eau">Pompe à eau douce Seaflo</text>
 
   <path class="leader" d="M455 595 L361 345"/>
   <rect class="callout" x="350" y="595" width="210" height="70" rx="2"/>

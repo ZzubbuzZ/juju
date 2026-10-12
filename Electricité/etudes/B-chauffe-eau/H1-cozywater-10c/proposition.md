@@ -148,7 +148,7 @@ Ces réglages seront repris dans la [documentation technique](../../../documenta
 
 ## À relever ou à confirmer
 
-- **Q19** (répondue le 12/10) : ballon sous la table à carte, réducteur et vase dans le coffre de cockpit tribord.
+- **Q19** (répondue le 12/10) : ballon sous la table à carte, réducteur et vase dans le coffre de cockpit tribord, avec la pompe (Q54) ; environ 3,5 m de tuyau d'eau chaude.
 - **Q42** : les deux C10 sont occupés (12/10) ; suivre les deux câbles avant de les regrouper sur un seul C10, et choisir celui qui est libéré pour le ballon.
 - **Q54** : circuit d'eau existant (tuyau, robinets, mitigeurs) ; coupure et redémarrage de la pompe, mesurés avec le réducteur (étape 1).
 - **Q55** (reformulée le 07/10) : à la livraison du ballon, filetage de ses raccords et de la soupape, longueur de ses trois câbles, puissance inscrite sur la plaque.

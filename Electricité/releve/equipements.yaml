@@ -157,6 +157,7 @@ equipements:
     type: recepteur
     designation: Pompe à eau douce
     modele: Seaflo SFDP1-045-040
+    zone: cockpit-coffre-tribord
     courant_A: 8
     courant_max_A: 15
     statut: estime
@@ -330,7 +331,7 @@ equipements:
     designation: Boîtier d'arrivée 230 V
     zone: cockpit-coffre-tribord
     emplacement: À côté du chargeur de quai
-    note: Différentiel 30 mA / 25 A en tête, puis un disjoncteur 10 A (chargeur) et un disjoncteur 16 A (reste du bord, vers le boîtier tribord).
+    note: Différentiel 30 mA / 25 A en tête, puis un disjoncteur 10 A (chargeur) et un disjoncteur 16 A (reste du bord, vers le boîtier tribord). Une place libre sur le rail (Q63, 12/10).
 
   - id: ddr-230v
     type: disjoncteur
