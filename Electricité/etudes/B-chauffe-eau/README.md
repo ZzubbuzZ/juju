@@ -6,7 +6,7 @@
 
 **Fusionnée dans `main` le 07/10** : le circuit d'eau et le raccordement 230 V sont fixés, quel que soit l'emplacement exact des éléments. Folios : [2l, circuit d'eau](H1-cozywater-10c/folio-2l-cozywater-eau.svg), [2m, alimentation 230 V](H1-cozywater-10c/folio-2m-cozywater-230v.svg) et [2n, entrée 12 V](H3-entree-12v/folio-2n-cozywater-12v.svg).
 
-**08/10 : B-H3 retenue.** Les deux entrées du ballon sont câblées en permanence ; le ballon choisit seul le 230 V quand il est présent, et un interrupteur à voyant autorise ou non la chauffe sur la batterie. Les réglages seront repris dans la [documentation technique](../../documentation-technique/README.md).
+**08/10 : B-H3 retenue.** Les deux entrées du ballon sont câblées en permanence ; le ballon choisit seul le 230 V quand il est présent, et un interrupteur à voyant autorise ou non la chauffe sur la batterie. Les réglages seront repris dans la [documentation technique](../../documentation-technique/README.md). **12/10** : ni relais ni interrupteur à voyant ; un disjoncteur 12 V CC de 30 A à commande manuelle, à la platine, protège le câble et sert d'interrupteur.
 
 **Base** : le relevé. L'étude A (sécurisation) doit être décidée avant le câblage définitif. Le réseau 230 V est relevé ([folio 3](../../schemas/folio-3-230v.svg)) :
 
@@ -53,7 +53,7 @@ Conséquences :
 |---|---|---|---|---|---|
 | [H1](H1-cozywater-10c/proposition.md) | **Retenue** : CozyWater 10C sur le 230 V (800 W), prise dédiée, réducteur à 1,5 bar pour tout le circuit | oui | non | non | Q42, Q54, Q55 |
 | ~~H2~~ | ~~Résistance 230 V + échangeur sur le circuit moteur~~ | | | | **Écartée** (Q13) : moteur refroidi à l'eau de mer. Faire passer de l'eau de mer dans le ballon l'exposerait à la corrosion et au sel ; il faudrait remotoriser ou ajouter un circuit d'eau douce |
-| [H3](H3-entree-12v/proposition.md) | **Retenue le 08/10** : entrée 12 V (200 W) du même ballon, câblée en permanence par un relais, sur la LiFePO4 et le surplus solaire | oui | partiel | partiel | étude C (commande automatique), Q57 |
+| [H3](H3-entree-12v/proposition.md) | **Retenue le 08/10** : entrée 12 V (200 W) du même ballon, câblée en permanence, coupée au disjoncteur (12/10), sur la LiFePO4 et le surplus solaire | oui | partiel | partiel | étude C (commande automatique), Q57 |
 | H4 | Résistance 230 V alimentée par un convertisseur en navigation | oui | oui | oui | à chiffrer pour l'écarter proprement : 500 W représentent environ 45 A en 12 V, et une chauffe complète (0,8 kWh) environ 65 Ah, l'essentiel d'une LiFePO4 de 100 Ah (étude E) et plus que ce que le plomb actuel peut fournir |
 
 ## Critères de comparaison
@@ -72,10 +72,10 @@ Sans H2, l'eau chaude en navigation et au mouillage ne peut venir que de l'élec
 
 | Tâche | Où | État |
 |---|---|---|
-| Vérifier que l'installation est correctement calibrée | B-H1 (230 V), B-H3 (12 V) | 230 V : prise dédiée sous la table à carte sur le C10 libéré (3,5 A, différentiel 30 mA), folio 2m. 12 V : relais et disjoncteur 12 V CC 30 A, 6 mm² |
+| Vérifier que l'installation est correctement calibrée | B-H1 (230 V), B-H3 (12 V) | 230 V : prise dédiée sous la table à carte sur le C10 libéré (3,5 A, différentiel 30 mA), folio 2m. 12 V : disjoncteur 12 V CC 30 A à commande manuelle, 6 mm² |
 | Trouver l'emplacement du ballon | Q19 | sous la table à carte (12/10) ; réducteur et vase dans le coffre de cockpit tribord |
 | Éléments du circuit d'eau pressurisé : pompe, vase, chauffe-eau, vanne de sécurité, robinet | B-H1, folio 2l | pompe Seaflo conservée ; réducteur 1,5 bar à la sortie de la pompe, pour tout le circuit ; vase Seaflo 1 L (SFAT-100-125-01) ; soupape 3 bar fournie ; robinets selon Q54 |
-| Relais de commande, fusibles | B-H3, folio 2n | disjoncteur 12 V CC 30 A à la platine (node010, à la place du fusible le 12/10), 6 mm², relais 30 A et interrupteur à voyant près du ballon ; longueurs à mesurer (Q57) |
+| Relais de commande, fusibles | B-H3, folio 2n | disjoncteur 12 V CC 30 A à commande manuelle à la platine (node010), qui sert d'interrupteur ; 6 mm² ; pas de relais (12/10) ; longueurs à mesurer (Q57) |
 | Afficheur | B-H1 | fourni avec le ballon (panneau de commande, minuterie) |
 | Pression du vase pour perdre le moins d'eau par la soupape | B-H1 | restatué le 07/10 : la coupure de la pompe varie, et même réglable elle ne suffirait pas ; réducteur à 1,5 bar, vase à 1,4 bar, après mesure de la pompe (B-H1, « Les réglages, dans l'ordre ») |
 | Petit matériel | nomenclatures de B-H1 et B-H3 | raccords à confirmer à réception (Q55) |

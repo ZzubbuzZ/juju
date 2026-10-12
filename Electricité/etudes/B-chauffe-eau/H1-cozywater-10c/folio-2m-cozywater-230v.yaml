@@ -160,5 +160,5 @@ textes:
   - {x: 640, y: 508, classe: ts mid, texte: "cordon fourni, fiche intacte"}
   - {x: 830, y: 240, classe: ts mid, texte: "emplacement et câble : Q55"}
   - {x: 1090, y: 442, classe: ts mid, texte: "câblée en permanence"}
-  - {x: 1090, y: 458, classe: ts mid, texte: "relais 30 A (B-H3)"}
+  - {x: 1090, y: 458, classe: ts mid, texte: "disjoncteur CC 30 A (B-H3)"}
   - {x: 1090, y: 476, classe: id mid, texte: "n318 · n319 : folio 2n"}

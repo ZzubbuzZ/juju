@@ -36,7 +36,7 @@ Nomenclature : [nomenclature.yaml](nomenclature.yaml). Schémas : [folio 2l](fol
 | Dimensions, poids | 270 × 400 × 290 mm (Ø × L × H), 6,9 kg à vide, environ 17 kg plein |
 | Pose | à plat, ou debout raccords vers le bas ; fixations pour 60 kg ; endroit sec et ventilé, **jamais recouvert ni isolé** |
 | 230 V | câble avec fiche Schuko ; « uniquement une prise avec contact de protection », 16 A au plus, différentiel recommandé ; « aucune modification […] au câblage électrique » |
-| 12 V | interrupteur et relais de 30 A, fusible de 30 A à la source (disjoncteur 12 V CC de 30 A retenu, B-H3), 6 mm² au moins |
+| 12 V | interrupteur et relais de 30 A, fusible de 30 A à la source, 6 mm² au moins (retenu, B-H3 : un disjoncteur 12 V CC de 30 A à commande manuelle, sans relais) |
 | Commande | panneau fourni : marche, température, minuterie, codes d'erreur |
 
 Deux écarts avec la fiche du revendeur ([Camping-Car Plus](https://www.camping-car-plus.com/chaud-froid-gaz/chauffages-chauffe-eau/chauffe-eau-electrique-carbest-cozywater-10l-12-230v-12938.html)), qui annonce 660 W en 230 V et une pose « horizontale uniquement ». Cette étude suit la notice ; la plaque du ballon tranchera (Q55). La fiche donne aussi des raccords de 1/2" mâle et un câble de 1,2 m, à vérifier à réception (Q55).

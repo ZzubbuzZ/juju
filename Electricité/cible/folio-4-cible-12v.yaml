@@ -246,17 +246,6 @@ appareils:
     nodes:
       node308: {cote: point, xy: [520, 670], etiquette: [0, -12, mid]}
       node309: {cote: point, xy: [566, 670], etiquette: [2, 20]}
-  - id: relais-ballon
-    x: 760
-    y: 643
-    w: 100
-    h: 60
-    titre: Relais 30 A
-    titre_y: 18
-    lignes: [près du ballon]
-    nodes:
-      node310: [gauche, 690]
-      node311: [droite, 690]
   - id: chauffe-eau
     x: 920
     y: 643
@@ -380,7 +369,6 @@ fils:
   wire166: {trace: [[544, 610]], etiquette: [536, 598, end]}
   wire019: {etiquette: [760, 602, mid]}
   wire306: {trace: [[720, 670], [740, 690]], etiquette: [640, 662, mid]}
-  wire307: {etiquette: [890, 682, mid], texte: w307}
   wire308: {trace: [[1115, 690], [1115, 990]], etiquette: [1111, 930, mid, v], texte: w308}
   wire016: {trace: [[1135, 990], [1135, 610]], etiquette: [1131, 930, mid, v]}
   wire167: {trace: [[514, 700], [514, 830]], etiquette: [520, 780]}
@@ -407,10 +395,7 @@ pastilles:
 
 textes:
   - {x: 1110, y: 44, classe: "ts mid", texte: "Guindeau 700 W"}
-  - {x: 870, y: 720, classe: "ts mid", texte: "commande du ballon (folio 2n) : fusible 1 A n314 / n315 monté sur n310,"}
-  - {x: 870, y: 734, classe: "ts mid", texte: "interrupteur à voyant n316 / n317 / n380"}
-  - {x: 870, y: 750, classe: "idn mid", texte: "w309 n315 → n316 · w310 n317 → n312"}
-  - {x: 870, y: 764, classe: "idn mid", texte: "w311 n313 → n319 · w312 n380 → n319"}
+  - {x: 870, y: 720, classe: "ts mid", texte: "disjoncteur CC 30 A à la platine : protection et interrupteur du ballon (folio 2n)"}
   - {x: 200, y: 1010, classe: "ts mid", texte: "côté batteries (avant le shunt)"}
   - {x: 620, y: 1010, classe: "ts mid", texte: "masse des charges"}
   - {x: 20, y: 1044, texte: "En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue."}

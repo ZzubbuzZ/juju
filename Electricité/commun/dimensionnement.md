@@ -25,7 +25,7 @@ Vérification des sections, des protections et des chutes de tension de l'instal
 | Frigo : batterie → tableau Scheiber → EPS 100 → groupe froid | wire022 à wire025, wire027, wire028 | 6 puis 3,5 mm², environ 6,5 m (est.) | 3,5 A ; 5 A au démarrage | 30 A (A-H2), puis 15 A (tableau Scheiber) | 1,8 % ; **2,6 %** au démarrage | Conforme ; longueurs de wire022 à wire025 non relevées |
 | Pompe de cale | wire026, wire036 | 2,5 mm², 3 m (est.) | 3 A | 10 A (tableau Scheiber) | 1,1 % | Section conforme ; fusible : anomalie A10 (3 A demandés) |
 
-Les fils de mesure et de commande (shunt, Orion XS, relais du ballon) sont en 0,75 mm² avec un fusible de 1 A à leur source : conforme.
+Les fils de mesure et de commande (shunt, Orion XS) sont en 0,75 mm² avec un fusible de 1 A à leur source : conforme.
 
 ## Alimentation du tableau de la table à carte
 
