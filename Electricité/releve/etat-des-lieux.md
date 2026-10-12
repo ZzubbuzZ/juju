@@ -41,7 +41,13 @@ Coupe circuit dédié sur pole 12v
 ### Equipements de servitudes
 
 - Batterie 12v 110Ah au Plomb sans entretien
-- 6 points lumineux (LED) 12v
+- Éclairage 12 V, 7 luminaires sur le circuit « éclairage » du tableau de servitude (relevé du 12/10 ; raccordement : Q9) :
+  - cabine de poupe : luminaire à 2 ampoules G11 à incandescence
+  - table à carte : plafonnier à LED
+  - cabine de proue : luminaire à 2 ampoules G11 à LED
+  - carré : plafonnier à LED et veilleuse à LED
+  - cuisine (cambuse) : plafonnier à LED
+  - cabinet de toilette : plafonnier à LED au-dessus de l'évier
 - Panneau de controle des equipements de bord (coté moteur) :
   - Interrupteur réfrigérateur + fusible 15A
   - Interrupteur Pompe de cale moteur + fusible 10A (Attwood Tsunami T500, sans flotteur, mise en route manuelle ; le fabricant demande un fusible de 3 A : anomalie A10)
@@ -117,10 +123,15 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 - Boîtier de distribution tribord, dans le cabinet de toilette, avec 4 disjoncteurs Legrand DNX3 : deux 10A (dont l'éclairage) et deux 16A (PE, un par bord) ; le circuit du second 10A est à identifier (Q42). Correction du 01/10, photo Boitier-230v-cabinet-toilette.jpg.
 - Boîte de dérivation bâbord, sans disjoncteur, à l'arrière gauche de la table à carte : les PE bâbord ne sont protégées que par le 16A du boîtier d'arrivée.
 - Une PE pour alimentation groupe froid Dometic EPS 100 sur boitier tribord
-- Une PE pour la cuisine sur boitier tribord
-- Un plafonnier d'éclairage sur boitier tribord
+- Une PE pour la cuisine (à tribord) sur boitier tribord
+- Une PE pour le cabinet de toilette sur boitier tribord
+- Éclairage 230 V sur le disjoncteur éclairage du boîtier tribord, 6 luminaires (relevé du 12/10 ; un plafonnier métallique à terre raccordée, lequel ? et répartition sur les disjoncteurs : Q60) :
+  - spots à LED GU10 : cabine de poupe, table à carte, cabine de proue, cabinet de toilette
+  - plafonniers barrettes à 2 spots : carré, cuisine (cambuse)
 - Une PE pour la table à carte sur la boîte de dérivation bâbord
-- Une PE pour le carré sur la boîte de dérivation bâbord
+- Une PE dans la cabine de poupe, derrière l'armoire (notée « PE du carré » jusqu'au 29/09), sur la boîte de dérivation bâbord
+- Une PE dans la cabine de proue (12/10), alimentation non relevée (Q61)
+- 2 prises 12 V allume-cigare à la table à carte, au tableau de servitude
 - Boîtier tribord dans le cabinet de toilette (correction du 01/10 : il était noté sur la cloison entre le cabinet de toilette et le coffre de cockpit).
 - La terre 230 V n'est reliée ni à la masse 12 V ni à un isolateur galvanique (anomalie A8).
 - Aux bornes de quai du port de Saint-Chamas, ponton compris, la prise fournit **16 A, soit environ 3 700 W** pour tout le bord (correction du 01/10 : 6 A au ponton et 12 A à quai étaient notés d'après une information de presse). Rien ne garantit ce calibre dans les autres ports, où il est souvent plus faible : l'installation doit rester utilisable en escale sur une borne de moindre calibre.

@@ -199,14 +199,67 @@ equipements:
 
   - id: eclairage
     type: recepteur
-    designation: Éclairage intérieur (5 ou 6 lampes)
+    designation: Éclairage intérieur 12 V (7 luminaires)
     courant_A: 5
     statut: estime
+    questions: [Q9]
+    note: "Circuit « éclairage » (10 A) du tableau de servitude. Luminaires relevés le 12/10, un par ligne ci-dessous (eclairage-12v-…) : six à LED, un à incandescence (cabine de poupe). Raccordement de chaque luminaire non relevé (Q9). Courant estimé avant ce relevé."
+
+  - id: eclairage-12v-poupe
+    type: recepteur
+    designation: Luminaire 12 V de la cabine de poupe
+    zone: cabine-poupe
+    note: Deux ampoules à culot G11, à incandescence (12/10).
+    questions: [Q9]
+
+  - id: eclairage-12v-table-a-carte
+    type: recepteur
+    designation: Plafonnier 12 V de la table à carte
+    zone: table-a-carte
+    note: LED (12/10).
+    questions: [Q9]
+
+  - id: eclairage-12v-proue
+    type: recepteur
+    designation: Luminaire 12 V de la cabine de proue
+    zone: cabine-proue
+    note: Deux ampoules à culot G11, à LED (12/10).
+    questions: [Q9]
+
+  - id: eclairage-12v-carre
+    type: recepteur
+    designation: Plafonnier 12 V du carré
+    zone: carre
+    note: LED (12/10).
+    questions: [Q9]
+
+  - id: eclairage-12v-veilleuse-carre
+    type: recepteur
+    designation: Veilleuse 12 V du carré
+    zone: carre
+    note: LED (12/10).
+    questions: [Q9]
+
+  - id: eclairage-12v-cuisine
+    type: recepteur
+    designation: Plafonnier 12 V de la cuisine (cambuse)
+    zone: cuisine
+    note: LED (12/10).
+    questions: [Q9]
+
+  - id: eclairage-12v-toilette
+    type: recepteur
+    designation: Plafonnier 12 V du cabinet de toilette
+    zone: cabinet-toilette
+    emplacement: Au-dessus de l'évier
+    note: LED (12/10).
     questions: [Q9]
 
   - id: prises-12v
     type: recepteur
     designation: Prises 12 V allume-cigare (x2)
+    zone: table-a-carte
+    emplacement: Au tableau de servitude, de part et d'autre de l'indicateur de charge
     courant_max_A: 10
 
   - id: autoradio
@@ -356,11 +409,55 @@ equipements:
     type: prise
     designation: Prise 230 V de la cuisine
     zone: cuisine
+    emplacement: À tribord (12/10)
 
   - id: plafonnier-230
     type: recepteur
-    designation: Plafonnier 230 V
-    note: Métallique (classe I), terre raccordée (30/09).
+    designation: Éclairage 230 V (6 luminaires)
+    questions: [Q60]
+    note: "Circuit du disjoncteur éclairage (10 A) du boîtier tribord, noté « plafonnier 230 V » jusqu'au 12/10 ; ses nœuds (node233-235) représentent le départ du circuit. Luminaires relevés le 12/10, un par ligne ci-dessous (eclairage-230-…) : quatre spots à LED GU10 et deux plafonniers barrettes à deux spots. Un plafonnier métallique (classe I) à terre raccordée a été relevé le 30/09 : lequel, et les autres sont-ils sur le même disjoncteur (Q60) ?"
+
+  - id: eclairage-230-poupe
+    type: recepteur
+    designation: Spot 230 V de la cabine de poupe
+    zone: cabine-poupe
+    note: Spot à LED, culot GU10 (12/10).
+    questions: [Q60]
+
+  - id: eclairage-230-table-a-carte
+    type: recepteur
+    designation: Spot 230 V de la table à carte
+    zone: table-a-carte
+    note: Spot à LED, culot GU10 (12/10).
+    questions: [Q60]
+
+  - id: eclairage-230-proue
+    type: recepteur
+    designation: Spot 230 V de la cabine de proue
+    zone: cabine-proue
+    note: Spot à LED, culot GU10 (12/10).
+    questions: [Q60]
+
+  - id: eclairage-230-carre
+    type: recepteur
+    designation: Plafonnier barrette 230 V du carré
+    zone: carre
+    note: Barrette à deux spots (12/10).
+    questions: [Q60]
+
+  - id: eclairage-230-cuisine
+    type: recepteur
+    designation: Plafonnier barrette 230 V de la cuisine (cambuse)
+    zone: cuisine
+    note: Barrette à deux spots (12/10).
+    questions: [Q60]
+
+  - id: eclairage-230-toilette
+    type: recepteur
+    designation: Spot 230 V du cabinet de toilette
+    zone: cabinet-toilette
+    note: Spot à LED, culot GU10 (12/10).
+    questions: [Q60]
 
   - id: prise-230-table-a-carte
     type: prise
@@ -369,9 +466,17 @@ equipements:
 
   - id: prise-230-armoire
     type: prise
-    designation: Prise 230 V de l'armoire derrière la table à carte
-    zone: table-a-carte
-    note: Notée « prise du carré » jusqu'au 29/09.
+    designation: Prise 230 V de la cabine de poupe, derrière l'armoire
+    zone: cabine-poupe
+    emplacement: Derrière l'armoire, qui est derrière la table à carte
+    note: Notée « prise du carré » jusqu'au 29/09, puis « prise de l'armoire derrière la table à carte » ; placée dans la cabine de poupe le 12/10.
+
+  - id: prise-230-proue
+    type: prise
+    designation: Prise 230 V de la cabine de proue
+    zone: cabine-proue
+    questions: [Q61]
+    note: Relevée le 12/10. Alimentation (boîte de dérivation bâbord ou prises tribord) non relevée (Q61).
 
   - id: prise-230-toilette
     type: prise

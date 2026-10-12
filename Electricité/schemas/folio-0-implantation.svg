@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Plan d'implantation vu de dessus : zones de l'aménagement du Gib'Sea 31 et équipements électriques placés dans chaque zone.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Plan d'implantation vu de dessus : zones de l'aménagement du Gib'Sea 31 et équipements électriques placés dans chaque zone.">
   <title>Folio 0 · Implantation des équipements</title>
-  <desc>Vue de dessus, avant à droite. Les batteries sont aux deux extrémités arrière (coffre de cockpit tribord, cabine de poupe bâbord), la distribution se concentre autour de la descente, et le guindeau est seul à l'avant, relié par 10 m de câble de 50 mm².</desc>
+  <desc>Vue de dessus, avant à droite. Les batteries sont aux deux extrémités arrière (coffre de cockpit tribord, cabine de poupe bâbord), la distribution se concentre autour de la descente, et le guindeau est seul à l'avant, relié par 10 m de câble de 50 mm². L'éclairage 12 V et 230 V et les prises sont indiqués zone par zone (relevé du 12/10).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -42,7 +42,7 @@
   <!-- Coque (vue de dessus, avant à droite) -->
   <path class="hull" d="M66 226 C 130 204, 400 178, 600 180 C 820 184, 1000 250, 1140 360 C 1000 470, 820 536, 600 540 C 400 542, 130 516, 66 494 Q 56 360 66 226 Z"/>
   <path class="bound" d="M70 360 H1130"/>
-  <text class="ts mid" x="720" y="172">BÂBORD</text>
+  <text class="ts mid" x="470" y="180">BÂBORD</text>
   <text class="ts mid" x="740" y="558">TRIBORD</text>
   <text class="tb" x="1152" y="365">AV</text>
   <text class="tb end" x="50" y="365">AR</text>
@@ -81,13 +81,17 @@
   <circle class="dn" cx="902" cy="360" r="4"/>
   <circle class="dn" cx="1056" cy="355" r="4"/>
   <circle class="dn" cx="340" cy="440" r="4"/>
+  <circle class="dn" cx="700" cy="420" r="4"/>
 
   <!-- Bâbord : bulles du haut -->
-  <path class="leader" d="M180 112 L212 290"/>
-  <rect class="callout" x="60" y="40" width="240" height="72" rx="2"/>
-  <text class="tb" x="72" y="60">Cabine de poupe · bâbord</text>
-  <text class="t" x="72" y="80" data-equipement="bat-servitude">Batterie de servitude 110 Ah</text>
-  <text class="t" x="72" y="99" data-equipement="disj-guindeau">Disjoncteur du guindeau</text>
+  <path class="leader" d="M180 146 L212 290"/>
+  <rect class="callout" x="40" y="21" width="265" height="125" rx="2"/>
+  <text class="tb" x="52" y="41">Cabine de poupe · bâbord</text>
+  <text class="t" x="52" y="61" data-equipement="bat-servitude">Batterie de servitude 110 Ah</text>
+  <text class="t" x="52" y="80" data-equipement="disj-guindeau">Disjoncteur du guindeau</text>
+  <text class="t" x="52" y="99" data-equipement="eclairage-12v-poupe">Luminaire 12 V : 2 × G11 à incandescence</text>
+  <text class="t" x="52" y="118" data-equipement="eclairage-230-poupe">Spot 230 V à LED (GU10)</text>
+  <text class="t" x="52" y="137" data-equipement="prise-230-armoire">Prise 230 V (derrière l'armoire)</text>
 
   <path class="leader" d="M440 112 L419 316"/>
   <rect class="callout" x="320" y="24" width="240" height="88" rx="2"/>
@@ -96,24 +100,27 @@
   <text class="t" x="332" y="82" data-equipement="coupleur">Coupleur (derrière la platine)</text>
   <text class="t" x="332" y="101" data-equipement="tableau-scheiber">Tableau Scheiber 2 voies</text>
 
-  <path class="leader" d="M640 149 L520 262"/>
-  <rect class="callout" x="580" y="21" width="242" height="128" rx="2"/>
-  <text class="tb" x="592" y="41">Table à carte · bâbord</text>
-  <text class="t" x="592" y="61" data-equipement="tableau-servitude">Tableau de servitude, 12 circuits</text>
-  <text class="t" x="592" y="80" data-equipement="indicateur-charge">Indicateur de charge à aiguille</text>
-  <text class="t" x="592" y="99">Prises 230 V : <tspan data-equipement="prise-230-table-a-carte">table,</tspan> <tspan data-equipement="prise-230-armoire">armoire</tspan></text>
-  <text class="t" x="592" y="118" data-equipement="boitier-230-babord">Boîte de dérivation 230 V</text>
-  <text class="t" x="592" y="137" data-equipement="repetiteur-gps">Répétiteur GPS (écran à la descente)</text>
+  <path class="leader" d="M640 168 L520 262"/>
+  <rect class="callout" x="580" y="14" width="242" height="154" rx="2"/>
+  <text class="tb" x="592" y="34">Table à carte · bâbord</text>
+  <text class="t" x="592" y="54" data-equipement="tableau-servitude">Tableau de servitude, 12 circuits</text>
+  <text class="t" x="592" y="73" data-equipement="indicateur-charge">Indicateur de charge à aiguille</text>
+  <text class="t" x="592" y="92" data-equipement="prises-12v">2 prises 12 V allume-cigare</text>
+  <text class="t" x="592" y="111"><tspan data-equipement="prise-230-table-a-carte">Prise 230 V,</tspan> <tspan data-equipement="boitier-230-babord">boîte de dérivation 230 V</tspan></text>
+  <text class="t" x="592" y="130" data-equipement="repetiteur-gps">Répétiteur GPS (écran à la descente)</text>
+  <text class="t" x="592" y="149"><tspan data-equipement="eclairage-12v-table-a-carte">Plafonnier 12 V à LED,</tspan> <tspan data-equipement="eclairage-230-table-a-carte">spot 230 V GU10</tspan></text>
 
-  <path class="leader" d="M930 92 L902 360"/>
-  <rect class="callout" x="830" y="40" width="200" height="52" rx="2"/>
-  <text class="tb" x="842" y="60">Cabine de proue</text>
-  <text class="t" x="842" y="80" data-equipement="relais-guindeau">Relais du guindeau</text>
+  <path class="leader" d="M930 109 L902 360"/>
+  <rect class="callout" x="835" y="14" width="200" height="95" rx="2"/>
+  <text class="tb" x="847" y="34">Cabine de proue</text>
+  <text class="t" x="847" y="54" data-equipement="relais-guindeau">Relais du guindeau</text>
+  <text class="t" x="847" y="73" data-equipement="eclairage-12v-proue">Luminaire 12 V : 2 × G11 à LED</text>
+  <text class="t" x="847" y="92"><tspan data-equipement="eclairage-230-proue">Spot 230 V GU10,</tspan> <tspan data-equipement="prise-230-proue">prise 230 V</tspan></text>
 
-  <path class="leader" d="M1095 172 L1056 355"/>
-  <rect class="callout" x="1000" y="120" width="190" height="52" rx="2"/>
-  <text class="tb" x="1012" y="140">Pont avant</text>
-  <text class="t" x="1012" y="160" data-equipement="guindeau">Guindeau Lewmar 700 W</text>
+  <path class="leader" d="M1095 182 L1056 355"/>
+  <rect class="callout" x="1000" y="130" width="190" height="52" rx="2"/>
+  <text class="tb" x="1012" y="150">Pont avant</text>
+  <text class="t" x="1012" y="170" data-equipement="guindeau">Guindeau Lewmar 700 W</text>
 
   <!-- Tribord et axe : bulles du bas -->
   <path class="leader" d="M185 580 L207 440"/>
@@ -131,15 +138,27 @@
   <text class="t" x="362" y="653" data-equipement="pompe-cale">Pompe de cale (cale moteur)</text>
 
   <path class="leader" d="M650 595 L520 470"/>
-  <rect class="callout" x="580" y="595" width="240" height="90" rx="2"/>
-  <text class="tb" x="592" y="615">Cuisine · tribord</text>
+  <rect class="callout" x="580" y="595" width="240" height="128" rx="2"/>
+  <text class="tb" x="592" y="615">Cuisine (cambuse) · tribord</text>
   <text class="t" x="592" y="634" data-equipement="groupe-froid">Groupe froid CU-55</text>
   <text class="t" x="592" y="653" data-equipement="eps100">EPS 100 (sous l'évier, à droite)</text>
-  <text class="t" x="592" y="672">Prises 230 V : <tspan data-equipement="prise-230-eps100">frigo,</tspan> <tspan data-equipement="prise-230-cuisine">cuisine</tspan></text>
+  <text class="t" x="592" y="672">Prises 230 V : <tspan data-equipement="prise-230-eps100">frigo,</tspan> <tspan data-equipement="prise-230-cuisine">cuisine (tribord)</tspan></text>
+  <text class="t" x="592" y="691" data-equipement="eclairage-12v-cuisine">Plafonnier 12 V à LED</text>
+  <text class="t" x="592" y="710" data-equipement="eclairage-230-cuisine">Barrette 230 V à 2 spots</text>
 
-  <path class="leader" d="M350 704 L340 440"/>
-  <rect class="callout" x="350" y="690" width="400" height="28" rx="2"/>
-  <text class="t" x="362" y="709"><tspan class="tb">Toilette · tribord :</tspan> <tspan data-equipement="boitier-230-tribord">boîtier de distribution 230 V (4 disjoncteurs),</tspan> <tspan data-equipement="prise-230-toilette">prise 230 V</tspan></text>
+  <path class="leader" d="M900 595 L700 420"/>
+  <rect class="callout" x="840" y="595" width="200" height="90" rx="2"/>
+  <text class="tb" x="852" y="615">Carré</text>
+  <text class="t" x="852" y="634" data-equipement="eclairage-12v-carre">Plafonnier 12 V à LED</text>
+  <text class="t" x="852" y="653" data-equipement="eclairage-12v-veilleuse-carre">Veilleuse 12 V à LED</text>
+  <text class="t" x="852" y="672" data-equipement="eclairage-230-carre">Barrette 230 V à 2 spots</text>
 
-  <text class="ts" x="40" y="746">Plan schématique d'après la brochure (photos/gibsea-31-drawing.jpg) : proportions approximatives, pas à l'échelle. Plafonnier 230 V non placé.</text>
+  <path class="leader" d="M345 735 L340 440"/>
+  <rect class="callout" x="340" y="735" width="480" height="47" rx="2"/>
+  <text class="t" x="352" y="754"><tspan class="tb">Toilette · tribord :</tspan> <tspan data-equipement="boitier-230-tribord">boîtier de distribution 230 V (4 disjoncteurs),</tspan> <tspan data-equipement="prise-230-toilette">prise 230 V</tspan></text>
+  <text class="t" x="352" y="773"><tspan data-equipement="eclairage-12v-toilette">Plafonnier 12 V à LED au-dessus de l'évier,</tspan> <tspan data-equipement="eclairage-230-toilette">spot 230 V GU10</tspan></text>
+
+  <text class="ts" x="860" y="720">Plan schématique d'après la brochure</text>
+  <text class="ts" x="860" y="736">(photos/gibsea-31-drawing.jpg) : proportions</text>
+  <text class="ts" x="860" y="752">approximatives, pas à l'échelle.</text>
 </svg>

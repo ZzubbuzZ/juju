@@ -6,8 +6,8 @@
 # raccordement ») porte ces nœuds, sous le rond du disjoncteur.
 folio: 3
 titre: Réseau 230 V
-aria: "Réseau 230 V en unifilaire : prise de quai, boîtier d'arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et plafonnier."
-desc: "L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord, dans le cabinet de toilette : 10 A pour l'éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation, et un second 10 A dont le circuit est à identifier (Q42). Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au plafonnier (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Aux bornes du port de Saint-Chamas, la prise fournit 16 A, soit environ 3 700 W pour tout le bord ; en escale, le calibre est souvent plus faible."
+aria: "Réseau 230 V en unifilaire : prise de quai, boîtier d'arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et éclairage."
+desc: "L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord, dans le cabinet de toilette : 10 A pour l'éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation, et un second 10 A dont le circuit est à identifier (Q42). La prise de la cabine de proue, relevée le 12/10, n'est pas encore raccordée sur le schéma (Q61). Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au circuit d'éclairage (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Aux bornes du port de Saint-Chamas, la prise fournit 16 A, soit environ 3 700 W pour tout le bord ; en escale, le calibre est souvent plus faible."
 modele: releve
 taille: [1200, 760]
 
@@ -19,6 +19,8 @@ zones:
 incertains:
   # second 10 A du boîtier tribord : circuit inconnu (Q42)
   - {x: 222, y: 372, w: 16, h: 28, texte: "10 A", texte_xy: [198, 389]}
+  # prise de la cabine de proue (12/10) : alimentation non relevée (Q61)
+  - {x: 960, y: 610, w: 200, h: 44, texte: "Prise cabine de proue : origine ?", texte_xy: [972, 637]}
 
 appareils:
   # --- Arrivée ------------------------------------------------------------------------
@@ -117,7 +119,7 @@ appareils:
     cy: 540
     r: 16
     symbole: "×"
-    lignes: [Plafonnier 230 V, "métallique, terre raccordée", "câble 3 × 1,5"]
+    lignes: [Éclairage 230 V, "6 luminaires, dont un", "métallique à terre", "câble 3 × 1,5"]
     nodes:
       node233: {angle: 90, cote: point, etiquette: [8, -12], fonction: "P / N / PE"}
       node234: {angle: 90, cote: point}
@@ -194,7 +196,7 @@ appareils:
     y: 500
     w: 130
     h: 64
-    titre: Prise armoire
+    titre: Prise cabine poupe
     titre_y: 44
     lignes: [PC 16 A]
     nodes:
@@ -301,6 +303,8 @@ jonctions:
 pastilles:
   - {id: A8, x: 700, y: 70}
   - {id: Q42, x: 230, y: 418}
+  - {id: Q60, x: 70, y: 540}
+  - {id: Q61, x: 1160, y: 610}
 
 textes:
   - {x: 260, y: 183, classe: id mid, texte: "3 × 2,5"}

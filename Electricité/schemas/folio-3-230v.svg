@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Réseau 230 V en unifilaire : prise de quai, boîtier d&#x27;arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et plafonnier.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Réseau 230 V en unifilaire : prise de quai, boîtier d&#x27;arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et éclairage.">
   <title>Folio 3 · Réseau 230 V</title>
-  <desc>L&#x27;arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord, dans le cabinet de toilette : 10 A pour l&#x27;éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation, et un second 10 A dont le circuit est à identifier (Q42). Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au plafonnier (le cordon de l&#x27;EPS 100 n&#x27;en a pas), et elle n&#x27;est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Aux bornes du port de Saint-Chamas, la prise fournit 16 A, soit environ 3 700 W pour tout le bord ; en escale, le calibre est souvent plus faible.</desc>
+  <desc>L&#x27;arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord, dans le cabinet de toilette : 10 A pour l&#x27;éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation, et un second 10 A dont le circuit est à identifier (Q42). La prise de la cabine de proue, relevée le 12/10, n&#x27;est pas encore raccordée sur le schéma (Q61). Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au circuit d&#x27;éclairage (le cordon de l&#x27;EPS 100 n&#x27;en a pas), et elle n&#x27;est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Aux bornes du port de Saint-Chamas, la prise fournit 16 A, soit environ 3 700 W pour tout le bord ; en escale, le calibre est souvent plus faible.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -48,6 +48,8 @@
   <text class="ts" x="840" y="348">Boîte de dérivation bâbord · table à carte</text>
   <rect class="u" x="222" y="372" width="16" height="28" rx="4"/>
   <text class="ts tu" x="198" y="389">10 A</text>
+  <rect class="u" x="960" y="610" width="200" height="44" rx="4"/>
+  <text class="ts tu" x="972" y="637">Prise cabine de proue : origine ?</text>
   <rect class="box" x="30" y="100" width="150" height="80" rx="2"/>
   <text class="tb mid" x="105" y="120">Prise de quai</text>
   <text class="ts mid" x="105" y="135">EU · banc tribord</text>
@@ -75,9 +77,10 @@
   <text class="ts " x="632" y="389">bâbord</text>
   <circle class="box" cx="110" cy="540" r="16"/>
   <text class="tb mid" x="110" y="545">×</text>
-  <text class="ts mid" x="110" y="572">Plafonnier 230 V</text>
-  <text class="ts mid" x="110" y="587">métallique, terre raccordée</text>
-  <text class="ts mid" x="110" y="602">câble 3 × 1,5</text>
+  <text class="ts mid" x="110" y="572">Éclairage 230 V</text>
+  <text class="ts mid" x="110" y="587">6 luminaires, dont un</text>
+  <text class="ts mid" x="110" y="602">métallique à terre</text>
+  <text class="ts mid" x="110" y="617">câble 3 × 1,5</text>
   <rect class="box" x="235" y="500" width="130" height="64" rx="2"/>
   <text class="tb mid" x="300" y="544">Prise du frigo</text>
   <text class="ts mid" x="300" y="559">PC 16 A</text>
@@ -94,7 +97,7 @@
   <text class="tb mid" x="915" y="544">Prise table à carte</text>
   <text class="ts mid" x="915" y="559">PC 16 A</text>
   <rect class="box" x="1030" y="500" width="130" height="64" rx="2"/>
-  <text class="tb mid" x="1095" y="544">Prise armoire</text>
+  <text class="tb mid" x="1095" y="544">Prise cabine poupe</text>
   <text class="ts mid" x="1095" y="559">PC 16 A</text>
   <path class="n w4" d="M70 370 H650"/>
   <path class="n w4" d="M70 370 H650"/>
@@ -269,4 +272,6 @@
   <text class="ts" x="40" y="730">Tous les disjoncteurs coupent la phase et le neutre. Neutre et terre de chaque câble partent des barrettes du boîtier (n209 et n212 à l&#x27;arrivée, n221 et n222 au boîtier tribord).</text>
   <g class="mk-a"><circle cx="700" cy="70" r="11"/><text class="mid" x="700" y="73.5">A8</text></g>
   <g class="mk-q"><circle cx="230" cy="418" r="11"/><text class="mid" x="230" y="421.5">Q42</text></g>
+  <g class="mk-q"><circle cx="70" cy="540" r="11"/><text class="mid" x="70" y="543.5">Q60</text></g>
+  <g class="mk-q"><circle cx="1160" cy="610" r="11"/><text class="mid" x="1160" y="613.5">Q61</text></g>
 </svg>

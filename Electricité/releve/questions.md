@@ -33,6 +33,9 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 27/09 : sans doute présent, branchement à vérifier.
 - **Q9** Éclairage intérieur : emplacement des 6 points lumineux LED et trajet des câbles.
   → 27/09 : pas d'information.
+  → 12/10 : sept luminaires 12 V. Cabine de poupe : luminaire à deux ampoules G11 à incandescence ; table à carte : plafonnier à LED ; cabine de proue : luminaire à deux ampoules G11 à LED ; carré : plafonnier et veilleuse à LED ; cuisine (cambuse) : plafonnier à LED ; cabinet de toilette : plafonnier à LED au-dessus de l'évier. Reste à relever : le trajet des câbles (un câble par luminaire depuis le tableau, ou une boucle ?), et si chaque luminaire a son propre interrupteur.
+- **Q60** Éclairage 230 V : six luminaires relevés le 12/10 (spots à LED GU10 dans la cabine de poupe, à la table à carte, dans la cabine de proue et dans le cabinet de toilette ; plafonniers barrettes à deux spots dans le carré et dans la cuisine). Lequel est le plafonnier métallique à terre raccordée relevé le 30/09 ? Les autres luminaires sont-ils métalliques, et leur terre est-elle raccordée ? Sont-ils tous sur le disjoncteur éclairage (C10) du boîtier tribord, ou certains sur le second C10 (Q42) ? Les luminaires bâbord passent-ils par la boîte de dérivation de la table à carte ?
+- **Q61** Prise 230 V de la cabine de proue, relevée le 12/10 : d'où vient son câble (boîte de dérivation bâbord, comme la table à carte et l'armoire, ou disjoncteur des prises tribord) ?
 - **Q11** Radar : marque, modèle et point d'alimentation. Le sondeur est-il celui intégré au GPSMAP xsv ?
   → 27/09 : pas d'information.
 
