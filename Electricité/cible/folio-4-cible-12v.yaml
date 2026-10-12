@@ -240,7 +240,7 @@ appareils:
     nodes:
       node100: {cote: gauche, a: 610, fonction: "+"}
       node101: {cote: droite, a: 610, fonction: "−"}
-  - id: fus-ballon-12v
+  - id: disj-ballon-12v
     forme: fusible
     calibre: 30 A
     nodes:

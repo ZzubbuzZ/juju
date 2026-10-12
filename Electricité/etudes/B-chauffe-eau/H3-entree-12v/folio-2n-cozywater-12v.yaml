@@ -3,8 +3,8 @@
 # (points intermédiaires), en segments à 0, 45 ou 90°.
 folio: 2n
 titre: Chauffe-eau CozyWater 10C, entrée 12 V
-aria: "Entrée 12 volts du chauffe-eau : fusible de 30 ampères côté charges du coupe-circuit de servitude, câble de 6 millimètres carrés jusqu'à un relais de 30 ampères près du ballon, commandé par un interrupteur à voyant protégé par un fusible de 1 ampère ; retour du négatif côté bord du shunt."
-desc: "L'entrée 12 V du ballon reste câblée en permanence à côté du 230 V, qui est prioritaire. Un fusible de 30 A à la platine, du 6 mm² et un relais de 30 A commandé par un interrupteur à voyant près du ballon, comme le demande la notice."
+aria: "Entrée 12 volts du chauffe-eau : disjoncteur 12 volts continu de 30 ampères côté charges du coupe-circuit de servitude, câble de 6 millimètres carrés jusqu'à un relais de 30 ampères près du ballon, commandé par un interrupteur à voyant protégé par un fusible de 1 ampère ; retour du négatif côté bord du shunt."
+desc: "L'entrée 12 V du ballon reste câblée en permanence à côté du 230 V, qui est prioritaire. Un disjoncteur 12 V CC de 30 A à la platine (à la place du fusible, 12/10), du 6 mm² et un relais de 30 A commandé par un interrupteur à voyant près du ballon, comme le demande la notice."
 modele: B-H3
 taille: [1200, 545]
 
@@ -20,9 +20,10 @@ appareils:
     nodes:
       node009: {cote: point, xy: [120, 140], etiquette: [-6, 20, end]}
       node010: {cote: point, xy: [180, 140], etiquette: [6, 36]}
-  - id: fus-ballon-12v
+  - id: disj-ballon-12v
     forme: fusible
     calibre: 30 A
+    titre: disj. CC
     nodes:
       node308: {cote: point, xy: [230, 140], etiquette: [-3, 13, end]}
       node309: {cote: point, xy: [276, 140], etiquette: [3, 13]}
@@ -96,7 +97,7 @@ pastilles:
   - {id: Q55, x: 1160, y: 100}
 
 textes:
-  - {x: 253, y: 166, classe: "ts mid tn", texte: "sur le goujon"}
+  - {x: 253, y: 166, classe: "ts mid tn", texte: "près du goujon"}
   - {x: 734, y: 366, classe: "tb mid tn", texte: "Interrupteur à voyant"}
   - {x: 734, y: 382, classe: "ts mid", texte: "« ballon sur batterie »"}
   - {x: 20, y: 512, texte: "En vert : nouveau. Le ballon choisit seul le 230 V quand il est présent ; l'interrupteur autorise ou non la chauffe sur la batterie (environ 45 Ah par chauffe)."}

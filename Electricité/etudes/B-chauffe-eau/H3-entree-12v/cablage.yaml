@@ -16,15 +16,15 @@ titre: Entrée 12 V du ballon, câblée en permanence par un relais
 base: B-H1
 
 equipements:
-  - { id: fus-ballon-12v, type: fusible, designation: "Fusible de l'entrée 12 V du ballon", calibre_A: 30, emplacement: "Platine des coupe-circuits, sur le goujon côté charges du coupe-circuit de servitude", statut: propose, note: "Calibre imposé par la notice ; protège le câble de 6 mm²" }
+  - { id: disj-ballon-12v, type: disjoncteur, designation: "Disjoncteur 12 V CC de l'entrée 12 V du ballon (à la place du fusible, 12/10)", calibre_A: 30, emplacement: "Platine des coupe-circuits, sur le goujon côté charges du coupe-circuit de servitude", statut: propose, note: "Calibre imposé par la notice ; protège le câble de 6 mm². Disjoncteur prévu pour le courant continu (12/10)" }
   - { id: relais-ballon, type: relais, designation: "Relais de l'entrée 12 V du ballon (contact à fermeture 30-87, 30 A)", emplacement: "Près du ballon, sous la table à carte (Q57)", statut: propose }
   - { id: fus-cde-ballon, type: fusible, designation: "Fusible de la commande du relais du ballon", calibre_A: 1, emplacement: "Porte-fusible en ligne, sur la borne 30 du relais", statut: propose }
   - { id: inter-ballon, type: interrupteur, designation: "Interrupteur à voyant « ballon sur batterie »", emplacement: "Près du panneau de commande du ballon (Q55, Q57)", statut: propose }
 
 nodes:
-  # --- Fusible de 30 A à la platine ---------------------------------------------------
-  - { id: node308, equipement: fus-ballon-12v, borne: "1 (côté source)", polarite: "+", monte_sur: node010 }
-  - { id: node309, equipement: fus-ballon-12v, borne: "2", polarite: "+" }
+  # --- Disjoncteur 12 V CC de 30 A à la platine (12/10 : remplace le fusible) ---------
+  - { id: node308, equipement: disj-ballon-12v, borne: "1 (côté source)", polarite: "+", monte_sur: node010 }
+  - { id: node309, equipement: disj-ballon-12v, borne: "2", polarite: "+" }
 
   # --- Relais -------------------------------------------------------------------------
   - { id: node310, equipement: relais-ballon, borne: "30 (entrée)", polarite: "+" }

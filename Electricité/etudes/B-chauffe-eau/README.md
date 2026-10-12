@@ -11,7 +11,7 @@
 **Base** : le relevé. L'étude A (sécurisation) doit être décidée avant le câblage définitif. Le réseau 230 V est relevé ([folio 3](../../schemas/folio-3-230v.svg)) :
 
 - boîtier d'arrivée (coffre de cockpit tribord) : différentiel 30 mA / 25 A, puis un disjoncteur de 10 A pour le chargeur et un de 16 A pour le reste du bord ;
-- boîtier de distribution tribord (cabinet de toilette) : quatre disjoncteurs Legrand DNX3, C10 pour l'éclairage, C16 pour les prises tribord (cuisine, frigo, toilette), C16 pour les prises bâbord, et un **second C10 dont le circuit est inconnu (Q42)**.
+- boîtier de distribution tribord (cabinet de toilette) : quatre disjoncteurs Legrand DNX3, C10 pour l'éclairage, C16 pour les prises tribord (cuisine, frigo, toilette), C16 pour les prises bâbord, et un **second C10, occupé lui aussi ; ses câbles sont regroupés sur l'autre C10 pour le libérer au profit du ballon (Q42, 12/10)**.
 
 Le ballon pourrait se brancher sur une prise tribord, ou mieux sur un départ dédié : le second C10 s'il est libre (Q42), sinon un disjoncteur ajouté. Tout ce qui passe par le boîtier tribord reste limité par le 16 A d'arrivée.
 
@@ -72,10 +72,10 @@ Sans H2, l'eau chaude en navigation et au mouillage ne peut venir que de l'élec
 
 | Tâche | Où | État |
 |---|---|---|
-| Vérifier que l'installation est correctement calibrée | B-H1 (230 V), B-H3 (12 V) | 230 V : prise dédiée sur le second C10 (3,5 A, différentiel 30 mA), folio 2m ; Q42. 12 V : relais et fusible 30 A, 6 mm² |
+| Vérifier que l'installation est correctement calibrée | B-H1 (230 V), B-H3 (12 V) | 230 V : prise dédiée sous la table à carte sur le C10 libéré (3,5 A, différentiel 30 mA), folio 2m. 12 V : relais et disjoncteur 12 V CC 30 A, 6 mm² |
 | Trouver l'emplacement du ballon | Q19 | sous la table à carte (12/10) ; réducteur et vase dans le coffre de cockpit tribord |
 | Éléments du circuit d'eau pressurisé : pompe, vase, chauffe-eau, vanne de sécurité, robinet | B-H1, folio 2l | pompe Seaflo conservée ; réducteur 1,5 bar à la sortie de la pompe, pour tout le circuit ; vase Seaflo 1 L (SFAT-100-125-01) ; soupape 3 bar fournie ; robinets selon Q54 |
-| Relais de commande, fusibles | B-H3, folio 2n | fusible 30 A à la platine (node010), 6 mm², relais 30 A et interrupteur à voyant près du ballon ; longueurs à mesurer (Q57) |
+| Relais de commande, fusibles | B-H3, folio 2n | disjoncteur 12 V CC 30 A à la platine (node010, à la place du fusible le 12/10), 6 mm², relais 30 A et interrupteur à voyant près du ballon ; longueurs à mesurer (Q57) |
 | Afficheur | B-H1 | fourni avec le ballon (panneau de commande, minuterie) |
 | Pression du vase pour perdre le moins d'eau par la soupape | B-H1 | restatué le 07/10 : la coupure de la pompe varie, et même réglable elle ne suffirait pas ; réducteur à 1,5 bar, vase à 1,4 bar, après mesure de la pompe (B-H1, « Les réglages, dans l'ordre ») |
 | Petit matériel | nomenclatures de B-H1 et B-H3 | raccords à confirmer à réception (Q55) |

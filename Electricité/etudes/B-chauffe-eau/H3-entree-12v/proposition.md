@@ -2,7 +2,7 @@
 hypothese: B-H3
 titre: Entrée 12 V du ballon (200 W), sur la LiFePO4 et le surplus solaire
 etat: retenue
-resume: L'entrée 12 V de 200 W du CozyWater 10C (B-H1) est câblée en permanence, à côté du 230 V ; le ballon choisit seul le 230 V quand il est là. Elle part du côté charges du coupe-circuit de servitude par un fusible de 30 A et du câble de 6 mm², à travers un relais de 30 A commandé par un interrupteur à voyant près du ballon, comme le demande la notice. Elle sert quand le surplus solaire (étude C) ou une batterie pleine le permettent.
+resume: L'entrée 12 V de 200 W du CozyWater 10C (B-H1) est câblée en permanence, à côté du 230 V ; le ballon choisit seul le 230 V quand il est là. Elle part du côté charges du coupe-circuit de servitude par un disjoncteur 12 V CC de 30 A et du câble de 6 mm², à travers un relais de 30 A commandé par un interrupteur à voyant près du ballon, comme le demande la notice. Elle sert quand le surplus solaire (étude C) ou une batterie pleine le permettent.
 points_forts:
   - Eau chaude hors du quai, sans autre appareil ni convertisseur ; la résistance est déjà dans le ballon.
   - Câblage court et simple (relais, fusible, interrupteur) ; le ballon passe seul sur le 230 V au quai.
@@ -13,7 +13,7 @@ points_faibles:
   - "Au moteur, l'alternateur de 20 A (Q14), bridé à 15 A par le DC/DC, ne couvre pas les 17 A du ballon."
   - Sans régulateur à sortie de délestage, la commande reste manuelle ; un oubli vide la batterie jusqu'à la coupure du BMS.
   - Trajet et longueur du câble de 6 mm² à relever à bord (Q57).
-decision: "08/10/2026 : retenue par l'utilisateur, les deux entrées du ballon câblées en permanence. Départ du + côté charges du coupe-circuit de servitude (node010), proposé par Claude. Relais et interrupteur près du ballon. Longueurs à mesurer (Q57)."
+decision: "08/10/2026 : retenue par l'utilisateur, les deux entrées du ballon câblées en permanence. Départ du + côté charges du coupe-circuit de servitude (node010), proposé par Claude. Relais et interrupteur près du ballon. Longueurs à mesurer (Q57). 12/10 : disjoncteur 12 V CC de 30 A à la place du fusible de 30 A."
 ---
 
 # B-H3 · Entrée 12 V du ballon, sur la LiFePO4 et le surplus solaire
@@ -69,7 +69,7 @@ Folio 2n. Puissance en 6 mm², commande en 0,75 mm² :
 
 | Fil | De → vers | Rôle |
 |---|---|---|
-| wire306 | fusible 30 A (node309) → relais, borne 30 (node310) | +, de la platine au ballon, environ 3 m |
+| wire306 | disjoncteur 30 A (node309) → relais, borne 30 (node310) | +, de la platine au ballon, environ 3 m |
 | wire307 | relais, borne 87 (node311) → ballon 12 V + (node318) | + commuté |
 | wire308 | ballon 12 V − (node319) → node006 | −, côté « bord » du shunt, environ 3 m |
 | wire309 | fusible 1 A (node315) → interrupteur (node316) | alimentation de la commande, prise sur la borne 30 |
@@ -77,8 +77,12 @@ Folio 2n. Puissance en 6 mm², commande en 0,75 mm² :
 | wire311 | relais, borne 85 (node313) → node319 | − de la bobine |
 | wire312 | voyant (node380) → node319 | − du voyant |
 
-- **Départ à node010**, côté charges du coupe-circuit de servitude, comme les autres départs de la platine : ouvrir le coupe-circuit coupe aussi le ballon. Le fusible de 30 A (node308, node309) est monté sur le goujon.
-- **Relais et interrupteur près du ballon**, sous la table à carte (ballon posé le 12/10) : un seul câble de 6 mm² fait le trajet depuis la platine, avec son retour. La commande est prise sur la borne 30 du relais, à travers un fusible de 1 A : le fil de 0,75 mm² n'est pas protégé par le fusible de 30 A.
+- **Départ à node010**, côté charges du coupe-circuit de servitude, comme les autres départs de la platine : ouvrir le coupe-circuit coupe aussi le ballon. Le disjoncteur de 30 A (node308, node309) est fixé au plus près du goujon, par un câble court de 6 mm².
+- **Disjoncteur à la place du fusible** (décision du 12/10). Il remplit le rôle que la notice demande au fusible de 30 A, il se réarme sans pièce de rechange et sert de coupure du 12 V du ballon à la platine. Trois points pour le choisir :
+  - **prévu pour le courant continu** : marqué « DC », 12/24 V CC ou plus. Un disjoncteur modulaire de tableau 230 V, sans marquage DC, ne convient pas : un arc en courant continu ne s'éteint pas de lui-même au passage par zéro, et l'appareil peut ne pas couper. Conviennent : un disjoncteur thermique de bateau en saillie (type Blue Sea série 285 ou équivalent), ou un modulaire marqué DC (gamme photovoltaïque) ;
+  - **30 A**, comme le fusible : il protège le 6 mm² et le ballon tire 17 A, sans déclenchement intempestif ;
+  - **pouvoir de coupure** : une LiFePO4 de 200 Ah peut débiter plusieurs milliers d'ampères en court-circuit. Le MEGA de 300 A en tête de la batterie (E-H1) reste la protection de secours ; prendre de préférence un disjoncteur annoncé pour au moins 1 000 à 3 000 A en 12 V CC (notice du modèle).
+- **Relais et interrupteur près du ballon**, sous la table à carte (ballon posé le 12/10) : un seul câble de 6 mm² fait le trajet depuis la platine, avec son retour. La commande est prise sur la borne 30 du relais, à travers un fusible de 1 A : le fil de 0,75 mm² n'est pas protégé par le disjoncteur de 30 A.
 - **Retour sur node006** : le shunt (étude D) compte la consommation du ballon.
 - Chute de tension sur 3 m de 6 mm² à 17 A : environ 0,3 V, soit 2,5 %.
 - Numéros : node308 à node319 (fin de la plage de l'étude B) et node380, pris dans la plage de réserve ; wire306 à wire312.
