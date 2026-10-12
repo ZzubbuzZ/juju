@@ -11,8 +11,8 @@ points_faibles:
   - "Chauffe lente : environ 2 h 40 pour 10 L de 15 à 60 °C."
   - "Environ 45 Ah par chauffe : au mouillage, la consommation passe d'environ 60 à environ 105 Ah par jour, et l'autonomie de la LiFePO4 d'environ trois jours à un jour et demi."
   - "Au moteur, l'alternateur de 20 A (Q14), bridé à 15 A par le DC/DC, ne couvre pas les 17 A du ballon."
-  - "Commande manuelle à la platine, sans voyant près du ballon ; un oubli vide la batterie jusqu'à la coupure du BMS."
-  - "Écart à la notice, qui demande un relais et un interrupteur ; une commande automatique (étude C) demandera d'ajouter un organe commandé."
+  - "Commande manuelle à la platine ; l'état de chauffe se lit sur le panneau de commande du ballon. Un oubli vide la batterie jusqu'à la coupure du BMS."
+  - "Écart à la notice, qui demande un relais et un interrupteur ; mais elle est commune au CozyWater 10 (sans panneau) et au 10C. Une commande automatique (étude C) demandera d'ajouter un organe commandé."
   - Trajet et longueur du câble de 6 mm² à relever à bord (Q57).
 decision: "08/10/2026 : retenue par l'utilisateur, les deux entrées du ballon câblées en permanence. Départ du + côté charges du coupe-circuit de servitude (node010), proposé par Claude. Relais et interrupteur près du ballon. Longueurs à mesurer (Q57). 12/10 : disjoncteur 12 V CC de 30 A à commande manuelle à la place du fusible ; relais et interrupteur à voyant supprimés par l'utilisateur (consommation de la bobine)."
 ---
@@ -62,7 +62,7 @@ En attendant, l'entrée 12 V reste utile pour une chauffe ponctuelle, batterie p
 La notice demande un interrupteur qui commande un relais de 30 A. L'utilisateur les supprime : le **disjoncteur 12 V CC de 30 A**, à la platine, sert d'interrupteur « ballon sur batterie ». Ouvert, le ballon ne peut pas tirer sur la batterie ; fermé, il chauffe sur le 12 V dès que le 230 V manque.
 
 - **Consommation du relais** : la bobine d'un relais automobile tire environ 0,15 A (1,8 W), mais seulement quand l'interrupteur est fermé, pas en permanence. Laissé fermé 24 h, cela ferait environ 3,6 Ah par jour, le voyant en plus. Sans relais, cette perte disparaît.
-- **Ce qu'on perd** : l'interrupteur et son voyant près du panneau de commande ; on manœuvre le disjoncteur à la platine, dans la descente, à côté de la table à carte.
+- **Le voyant n'est pas nécessaire** (remarque de l'utilisateur, 12/10) : la notice est commune au CozyWater 10, sans panneau, et au 10C, dont le panneau de commande affiche l'état de marche, la température et les erreurs (notice, pages 61 à 64 : « panneau de commande/affichage (CozyWater 10C uniquement) »). Sur le 10C, c'est le panneau qui renseigne ; on manœuvre seulement le disjoncteur à la platine, dans la descente, à côté de la table à carte.
 - **Le disjoncteur doit pouvoir servir d'interrupteur** : un modèle à levier ou à bascule, prévu pour être manœuvré souvent (les disjoncteurs de bateau « switchable », ou un modulaire marqué DC). Un disjoncteur thermique à simple bouton de réarmement ne convient pas.
 - **Avec l'étude C** : une commande automatique par le régulateur solaire demandera un organe commandé. Pour ne rien consommer au repos : un relais bistable (il ne consomme qu'au basculement), ou un interrupteur électronique de batterie (type Victron BatteryProtect, quelques mA, avec en plus une coupure en tension basse). Le disjoncteur resterait en amont.
 
@@ -91,4 +91,4 @@ wire307 et wire309 à wire312, node310 à node317 et node380 (relais, fusible de
 ## Reste à faire
 
 - Mesurer le trajet de la platine au ballon (Q57) et la longueur des fils 12 V du ballon (Q55).
-- Commande par le régulateur solaire, avec l'étude C.
+- **À reprendre avec l'étude C** (remarque conservée le 12/10) : pour une commande automatique par le régulateur solaire, ajouter en aval du disjoncteur un organe commandé qui ne consomme rien au repos, relais bistable ou coupe-batterie électronique (type Victron BatteryProtect, quelques mA, avec coupure en tension basse).
