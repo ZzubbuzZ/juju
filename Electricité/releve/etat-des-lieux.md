@@ -120,7 +120,7 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 
 3 boitiers électriques : 
 - Boitier d'arrivée dans le coffre cockpit tribord avec dicjoncteur différentiel 30mA/25A protégeant tout le circuit + 1 disjoncteur 10A pour le chargeur de quai, et 1 disjonteur 16A pour le reste.
-- Boîtier de distribution tribord, dans le cabinet de toilette, avec 4 disjoncteurs Legrand DNX3 : deux 10A (dont l'éclairage) et deux 16A (PE, un par bord) ; le circuit du second 10A est à identifier (Q42). Correction du 01/10, photo Boitier-230v-cabinet-toilette.jpg.
+- Boîtier de distribution tribord, dans le cabinet de toilette, avec 4 disjoncteurs Legrand DNX3 : deux 10A (dont l'éclairage) et deux 16A (PE, un par bord) ; le second 10A est utilisé, son circuit est à identifier (Q42, 12/10). Correction du 01/10, photo Boitier-230v-cabinet-toilette.jpg.
 - Boîte de dérivation bâbord, sans disjoncteur, à l'arrière gauche de la table à carte : les PE bâbord ne sont protégées que par le 16A du boîtier d'arrivée.
 - Une PE pour alimentation groupe froid Dometic EPS 100 sur boitier tribord
 - Une PE pour la cuisine (à tribord) sur boitier tribord

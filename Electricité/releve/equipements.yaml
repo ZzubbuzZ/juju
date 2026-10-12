@@ -363,7 +363,7 @@ equipements:
     zone: cabinet-toilette
     emplacement: Dans le cabinet de toilette (correction du 01/10, noté auparavant sur la cloison du coffre de cockpit)
     questions: [Q42]
-    note: "Quatre disjoncteurs Legrand DNX3 phase + neutre, numérotés 1 à 4 sur l'étiquette, sans affectation écrite (photo Boitier-230v-cabinet-toilette.jpg, 01/10) : C10, C10, C16, C16. Circuits connus : éclairage (10 A), prises tribord et prises bâbord (16 A). Le second 10 A et la position de chaque circuit sont à relever (Q42)."
+    note: "Quatre disjoncteurs Legrand DNX3 phase + neutre, numérotés 1 à 4 sur l'étiquette, sans affectation écrite (photo Boitier-230v-cabinet-toilette.jpg, 01/10) : C10, C10, C16, C16. Circuits connus : éclairage (10 A), prises tribord et prises bâbord (16 A). Le second 10 A est utilisé (12/10) ; son circuit et la position de chaque circuit sont à relever (Q42)."
 
   - id: disj-trib-eclairage
     type: disjoncteur
@@ -384,7 +384,7 @@ equipements:
     emplacement: Dans le boîtier de distribution tribord
     calibre_A: 10
     questions: [Q42]
-    note: Vu sur la photo du 01/10 ; circuit alimenté inconnu.
+    note: Vu sur la photo du 01/10. Utilisé (12/10), circuit alimenté non vérifié.
 
   - id: disj-babord-prises
     type: disjoncteur
