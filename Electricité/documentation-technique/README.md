@@ -4,6 +4,8 @@ Le manuel du bord : comment l'installation est montée, comment la régler et l'
 
 Pour l'instant, une liste des sections à écrire.
 
+Le livret d'utilisation et de dépannage (fonctionnement normal, conduite en cas de problème) a son plan dans [livret-plan.md](livret-plan.md), en attente.
+
 ## À faire
 
 - [ ] **Ajouter une section installation/réglage du circuit d'eau** (source : [B-H1](../etudes/B-chauffe-eau/H1-cozywater-10c/proposition.md), folios 2l et 2m).
