@@ -17,7 +17,7 @@ points_faibles:
   - Guindeau utilisé moteur arrêté ; il entame la batterie de démarrage (environ 2 à 3 Ah par mouillage).
   - Commande manuelle du DC/DC (Q48) ; un oubli au port le laisse démarrer sur la charge du Dolphin.
   - Fusible MEGA (décision du 05/10) ; un MRBF aurait un meilleur pouvoir de coupure, pour le même prix.
-decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node004), masse du voyant sur node005. 12/10 : le Blue Smart a son propre C10, posé dans la place libre du boîtier d'arrivée (Q63) ; le Dolphin garde le sien."
+decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node004), masse du voyant sur node005. 12/10 : le Blue Smart a son propre C10, posé dans la place libre du boîtier d'arrivée (Q63) ; le Dolphin garde le sien. 13/10 : couplage définitivement déposé ; secours d'une batterie moteur défectueuse par un booster de démarrage autonome."
 ---
 
 # E-H1 · Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
@@ -141,9 +141,15 @@ Il consistait à conserver le coupe-circuit de couplage (node009 → wire011 →
 - **Alternateur** : moteur démarré, il chargerait la LiFePO4 sans contrôle jusqu'à l'ouverture du couplage, au risque d'une surtension si le BMS coupe.
 - **Guindeau** : le couplage servait aussi à faire tourner le guindeau sur la batterie moteur ; il y est maintenant raccordé directement (1 bis).
 
+### Niveau 2 bis : booster de démarrage autonome (décision du 13/10)
+
+Le guindeau étant passé sur la batterie moteur, une batterie moteur défectueuse prive à la fois du démarrage et de l'ancre. L'utilisateur a réexaminé le 13/10 la conservation du couplage, réservé au cas où le coupe-circuit moteur est ouvert : écartée, trop dangereuse à gérer (une fermeture simultanée par erreur, justement quand la batterie moteur est défectueuse, viderait la LiFePO4 dans un élément en court-circuit) et sans garantie de démarrage (courant de pointe du BMS inconnu). **Le couplage reste déposé.**
+
+À la place, un **booster de démarrage lithium autonome**, rangé à bord et tenu chargé : coupe-circuit moteur ouvert (et borne + de la batterie moteur débranchée si elle est défectueuse), pinces sur le côté charges du coupe-circuit moteur (node004) et sur la masse moteur. Aucun lien entre les deux batteries, donc aucun risque de parallèle. Limite : il démarre le moteur, mais ne fait pas tourner le guindeau longtemps ; une fois le moteur lancé, l'alternateur alimente le guindeau.
+
 ### Recommandation
 
-**Niveau 1 seul.** Il couvre le cas le plus fréquent, la batterie moteur déchargée, sans matériel ni autre manœuvre que la fermeture habituelle du coupe-circuit moteur. Une batterie moteur défectueuse loin d'un port reste un cas non couvert : la parade est son remplacement préventif.
+**Niveau 1, et le booster (niveau 2 bis) pour une batterie moteur défectueuse.** Le niveau 1 couvre le cas le plus fréquent, la batterie moteur déchargée, sans matériel ni autre manœuvre que la fermeture habituelle du coupe-circuit moteur. Le booster couvre la batterie moteur défectueuse, sans relier les deux batteries.
 
 ## Choix de la batterie
 
