@@ -18,3 +18,6 @@ Le livret d'utilisation et de dépannage (fonctionnement normal, conduite en cas
   - Utilisation : panneau de commande, minuterie, chauffe à 70 °C de temps en temps ; disjoncteur « ballon sur batterie » ouvert sauf surplus solaire ou batterie pleine (environ 45 Ah par chauffe).
   - Hivernage : vidange par la soupape, soupape laissée ouverte, vannes fermées.
   - Contrôles périodiques : gonflage du vase, tuyau de vidange de la soupape, filtre de la pompe.
+
+- [ ] **Rechanges à bord** (liste à tenir avec le livret).
+  - Fusible de 30 A du faisceau du tableau moteur (13/10, Q1) : type à relever sur le porte-fusible, puis en acheter un.

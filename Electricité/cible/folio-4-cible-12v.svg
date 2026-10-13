@@ -207,6 +207,8 @@
   <text class="idn end" x="536" y="598">w166 · 6</text>
   <path class="p w2" d="M606 610 L880 610"/>
   <text class="idn mid" x="760" y="602">w019 · 6</text>
+  <path class="p w2" d="M484 670 L520 670"/>
+  <text class="idn mid" x="502" y="688">w313</text>
   <path class="p w2" d="M566 670 L720 670 L740 690 L920 690"/>
   <text class="idn mid" x="640" y="662">w306 · 6</text>
   <path class="n w2" d="M1100 690 L1115 690 L1115 990"/>
@@ -231,7 +233,6 @@
   <text class="id mid" x="995" y="890">w027 / w028 · 3,5</text>
   <path class="n w2" d="M980 855 L1010 855"/>
   <path class="p w2" d="M216 204 L232 220"/>
-  <path class="p w2" d="M484 670 L520 670"/>
   <rect class="flag-new" x="580" y="340" width="130" height="18"/>
   <text class="ts mid" x="645" y="353">→ node005 · CC masse</text>
   <rect class="flag-new" x="316" y="793" width="150" height="18"/>
@@ -446,13 +447,12 @@
   <text class="id end" x="374" y="982">n005</text>
   <text class="id" x="446" y="1010">n006</text>
   <text class="ts mid" x="1110" y="44">Guindeau 700 W</text>
-  <text class="ts mid" x="870" y="720">disjoncteur CC 30 A à la platine : protection et interrupteur du ballon (folio 2n)</text>
+  <text class="ts mid" x="870" y="720">disjoncteur CC 30 A à côté du disj. guindeau : protection et interrupteur du ballon (folio 2n)</text>
   <text class="ts mid" x="200" y="1010">côté batteries (avant le shunt)</text>
   <text class="ts mid" x="620" y="1010">masse des charges</text>
   <text class="ts" x="20" y="1044">En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue.</text>
   <text class="ts" x="20" y="1062">Détail : folios 2c (fusibles), 2e (shunt), 2h et 2i (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md.</text>
   <g class="mk-q"><circle cx="370" cy="196" r="11"/><text class="mid" x="370" y="199.5">Q58</text></g>
-  <g class="mk-q"><circle cx="780" cy="160" r="11"/><text class="mid" x="780" y="163.5">Q14</text></g>
   <g class="mk-q"><circle cx="1004" cy="182" r="11"/><text class="mid" x="1004" y="185.5">Q59</text></g>
   <g class="mk-q"><circle cx="346" cy="696" r="11"/><text class="mid" x="346" y="699.5">Q58</text></g>
   <g class="mk-q"><circle cx="840" cy="610" r="11"/><text class="mid" x="840" y="613.5">Q58</text></g>

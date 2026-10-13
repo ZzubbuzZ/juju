@@ -16,7 +16,7 @@ equipements:
   - { id: fus-pompe-cale, type: fusible, designation: "Fusible de la pompe de cale automatique", calibre_A: 3, emplacement: "À moins de 18 cm de la borne de node009", statut: propose }
   - { id: flotteur, type: interrupteur, designation: "Flotteur de la pompe de cale", statut: propose }
   - { id: connecteur-mat, type: connecteur, designation: "Connecteur de pont au pied de mât, 6 broches", statut: propose }
-  - { id: bornier-eclairage, type: bornier, designation: "Bornier de départ de l'éclairage", statut: propose, questions: [Q9] }
+  - { id: bornier-eclairage, type: bornier, designation: "Bornier de départ de l'éclairage", statut: propose }
   - { id: bornier-instruments, type: bornier, designation: "Bornier des instruments, un fusible par appareil", statut: propose, questions: [Q11] }
 
 nodes:

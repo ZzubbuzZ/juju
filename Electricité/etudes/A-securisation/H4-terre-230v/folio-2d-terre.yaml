@@ -3,7 +3,7 @@
 folio: 2d
 titre: Terre 230 V et différentiel
 aria: "Arrivée 230 V proposée : la terre de la prise de quai passe par un isolateur galvanique maison avant la barrette de terre, et le différentiel est remplacé par un interrupteur différentiel de type A."
-desc: "La terre du ponton est conservée, à travers un isolateur galvanique maison placé sur son conducteur ; elle n'est pas reliée à la masse 12 V (Q40). Le différentiel d'arrivée est remplacé par un interrupteur différentiel bipolaire 30 mA de type A."
+desc: "La terre du ponton est conservée, à travers un isolateur galvanique maison placé sur son conducteur ; elle n'est pas reliée à la masse 12 V ; l'arbre et l'hélice, reliés au moteur par un accouplement métallique, mettent la masse 12 V à la mer (13/10). Le différentiel d'arrivée est remplacé par un interrupteur différentiel bipolaire 30 mA de type A."
 modele: A-H4
 taille: [1200, 560]
 
@@ -89,12 +89,11 @@ renvois:
   - {x: 800, y: 165, w: 360, h: 60, texte: "phases → disjoncteurs 10 A (n210) et 16 A (n213)"}
 
 traits:
-  # pas de liaison entre la terre et la masse 12 V (Q40)
+  # pas de liaison entre la terre et la masse 12 V ; masse 12 V à la mer par l'arbre (accouplement métallique, 13/10)
   - {classe: u, points: [[720, 294], [720, 330], [845, 330], [845, 350]]}
 
 pastilles:
   - {id: A8, x: 510, y: 262}
-  - {id: Q40, x: 930, y: 350}
 
 textes:
   - {x: 980, y: 213, classe: ts mid, texte: "neutres → chargeur (n201), boîtier tribord (n221) : folio 3"}

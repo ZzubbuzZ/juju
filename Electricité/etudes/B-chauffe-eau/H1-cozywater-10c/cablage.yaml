@@ -14,8 +14,8 @@ titre: Ballon Carbest CozyWater 10C sur le 230 V, prise dédiée
 base: releve
 
 equipements:
-  - { id: prise-230-ballon, type: prise, designation: "Prise 230 V dédiée au ballon, 16 A avec terre, compatible Schuko (fiche hybride)", zone: table-a-carte, emplacement: "Sous la table à carte, à portée du cordon du ballon (Q55)", statut: propose }
-  - { id: chauffe-eau, type: recepteur, designation: "Chauffe-eau Carbest CozyWater 10C (entrée 230 V)", modele: "670604, 10 L, 230 V 800 W et 12 V 200 W", zone: table-a-carte, emplacement: "Sous la table à carte, posé le 12/10", puissance_W: 800, courant_A: 3.5, statut: propose, questions: [Q55], note: "Entrée 12 V non raccordée ici : B-H3" }
+  - { id: prise-230-ballon, type: prise, designation: "Prise 230 V dédiée au ballon, 16 A avec terre, compatible Schuko (fiche hybride)", zone: table-a-carte, emplacement: "Sous la table à carte, à moins de 2 m du ballon (longueur du cordon)", statut: propose }
+  - { id: chauffe-eau, type: recepteur, designation: "Chauffe-eau Carbest CozyWater 10C (entrée 230 V)", modele: "670604, 10 L, 230 V 800 W et 12 V 200 W", zone: table-a-carte, emplacement: "Sous la table à carte, posé le 12/10", puissance_W: 800, courant_A: 3.5, statut: propose, note: "Entrée 12 V non raccordée ici : B-H3" }
 
 nodes:
   # --- C10 libéré du boîtier tribord (son câble actuel est regroupé sur l'autre C10, Q42) ---
@@ -39,6 +39,6 @@ fils:
   - { id: wire302, de: node222, vers: node302, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 5, statut: propose }
 
   # --- Cordon du ballon, fourni, fiche Schuko (à ne pas modifier) -----------------------
-  - { id: wire303, de: node300, vers: node303, statut: propose, note: "Cordon du ballon ; section et longueur à relever à réception (Q55)", questions: [Q55] }
+  - { id: wire303, de: node300, vers: node303, statut: propose, note: "Cordon du ballon, 2 m, fiche Schuko (13/10)" }
   - { id: wire304, de: node301, vers: node304, statut: propose }
   - { id: wire305, de: node302, vers: node305, statut: propose }

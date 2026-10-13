@@ -48,7 +48,7 @@
   <text class="ts" x="170" y="146">Coffre de cockpit tribord</text>
   <rect class="bound" x="680" y="128" width="320" height="155"/>
   <text class="ts" x="690" y="146"></text>
-  <rect class="box-unk" x="40" y="160" width="100" height="50" rx="2"/>
+  <rect class="box" x="40" y="160" width="100" height="50" rx="2"/>
   <rect class="box" x="170" y="160" width="120" height="50" rx="2"/>
   <text class="tb mid" x="230" y="180">Pompe Seaflo</text>
   <text class="ts mid" x="230" y="195">coupure ≈ 2,8 bar</text>
@@ -68,7 +68,7 @@
   <text class="ts mid" x="882.5" y="193">2,5 bar en service, 3 bar au plus</text>
   <text class="ts mid" x="882.5" y="208">alimentation : folio 2m</text>
   <rect class="box-new" x="1010" y="148" width="30" height="24" rx="2"/>
-  <rect class="box-unk" x="1035" y="270" width="110" height="40" rx="2"/>
+  <rect class="box" x="1035" y="270" width="110" height="40" rx="2"/>
   <path class="n w3" d="M140 185 L170 185"/>
   <path class="n w3" d="M290 185 L330 185" stroke-dasharray="2 3"/>
   <path class="n w3" d="M450 185 L560 185"/>
@@ -84,15 +84,15 @@
   <path class="n w3" d="M1040 160 L1070 160 L1070 270" stroke-dasharray="10 5"/>
   <circle class="dn" cx="470" cy="185" r="3.5"/>
   <circle class="dn" cx="520" cy="185" r="3.5"/>
-  <text class="tb mid tu" x="90" y="182">Réservoir</text>
-  <text class="ts mid" x="90" y="198">eau douce</text>
+  <text class="tb mid" x="90" y="182">Réservoir</text>
+  <text class="ts mid" x="90" y="198">à la poupe</text>
   <text class="ts mid" x="155" y="230">filtre</text>
   <text class="id mid" x="230" y="226">SFDP1-045-040</text>
   <text class="ts mid" x="230" y="243">coupure variable</text>
   <text class="ts mid" x="310" y="230">flexible</text>
   <text class="ts mid" x="310" y="243">court</text>
   <text class="id mid" x="390" y="236">Pundmann 1/2&quot;</text>
-  <text class="tb tn" x="500" y="66">1,5 bar à tous les robinets, eau froide et eau chaude</text>
+  <text class="tb tn" x="500" y="66">1,5 bar à tous les robinets, eau froide et eau chaude · tuyau cristal 12,5 × 18,5</text>
   <text class="ts mid tu" x="700" y="117">robinets froids</text>
   <text class="ts mid tn" x="575" y="150">vanne</text>
   <text class="ts mid tn" x="575" y="163">d&#x27;arrêt</text>
@@ -104,11 +104,11 @@
   <text class="ts" x="560" y="290">aucun clapet</text>
   <text class="ts" x="560" y="303">entre vase et ballon</text>
   <text class="ts end" x="992" y="276">Sous la table à carte</text>
-  <text class="id mid" x="882" y="232">raccords 1/2&quot; mâle (revendeur)</text>
+  <text class="id mid" x="882" y="232">raccords 1/2&quot;</text>
   <text class="ts mid tn" x="1025" y="195">vanne</text>
   <text class="ts mid tn" x="1025" y="208">d&#x27;arrêt</text>
-  <text class="tb mid tu" x="1090" y="289">Mitigeurs</text>
-  <text class="ts mid" x="1090" y="303">cuisine, toilette</text>
+  <text class="tb mid" x="1090" y="289">Mitigeur</text>
+  <text class="ts mid" x="1090" y="303">évier de la cuisine</text>
   <text class="t" x="40" y="425">1. Réducteur réglé au maximum : son manomètre suit la pompe. Noter coupure et redémarrage sur une dizaine de cycles.</text>
   <text class="ts" x="60" y="442">Coupure la plus basse ≥ 2 bar : consigne 1,5 bar · entre 1,7 et 2 bar : consigne 1,2 bar, vase à 1,1 bar · plus bas : réparer la pompe d&#x27;abord.</text>
   <text class="t" x="40" y="468">2. Vase gonflé à la consigne moins 0,1 bar (1,4 bar), circuit sans pression : pompe coupée, un robinet ouvert.</text>
@@ -116,9 +116,4 @@
   <text class="t" x="40" y="516">4. Remplir et purger le ballon : soupape fermée (levier horizontal), robinet sur chaud ouvert jusqu&#x27;à l&#x27;eau sans air.</text>
   <text class="t" x="40" y="540">5. Essai : chauffer à 75 °C robinets fermés. Attendu ≈ 2,0 bar à 60 °C, ≈ 2,4 bar à 75 °C ; la soupape ne goutte pas.</text>
   <text class="ts" x="60" y="562">Au-delà de 2,7 bar : regonfler le vase, vérifier qu&#x27;aucun clapet ni la vanne d&#x27;arrêt ne l&#x27;isole du ballon. Ne pas toucher à la vis du bypass de la pompe (notice).</text>
-  <g class="mk-q"><circle cx="140" cy="160" r="11"/><text class="mid" x="140" y="163.5">Q54</text></g>
-  <g class="mk-q"><circle cx="290" cy="160" r="11"/><text class="mid" x="290" y="163.5">Q54</text></g>
-  <g class="mk-q"><circle cx="745" cy="100" r="11"/><text class="mid" x="745" y="103.5">Q54</text></g>
-  <g class="mk-q"><circle cx="990" cy="135" r="11"/><text class="mid" x="990" y="138.5">Q55</text></g>
-  <g class="mk-q"><circle cx="1145" cy="270" r="11"/><text class="mid" x="1145" y="273.5">Q54</text></g>
 </svg>

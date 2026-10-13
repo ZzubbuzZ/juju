@@ -139,10 +139,9 @@
   <text class="ts end" x="252" y="410">par une boîte de dérivation</text>
   <text class="ts mid" x="490" y="530">sous la table à carte</text>
   <text class="ts mid" x="640" y="508">cordon fourni, fiche intacte</text>
-  <text class="ts mid" x="830" y="240">emplacement et câble : Q55</text>
+  <text class="ts mid" x="830" y="240">sur le tableau de servitude · câble 3 m</text>
   <text class="ts mid" x="1090" y="442">câblée en permanence</text>
   <text class="ts mid" x="1090" y="458">disjoncteur CC 30 A (B-H3)</text>
   <text class="id mid" x="1090" y="476">n318 · n319 : folio 2n</text>
   <g class="mk-q"><circle cx="236" cy="252" r="11"/><text class="mid" x="236" y="255.5">Q42</text></g>
-  <g class="mk-q"><circle cx="640" cy="532" r="11"/><text class="mid" x="640" y="535.5">Q55</text></g>
 </svg>

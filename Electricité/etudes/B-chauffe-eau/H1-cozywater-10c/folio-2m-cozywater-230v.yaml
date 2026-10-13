@@ -148,7 +148,6 @@ renvois:
 
 pastilles:
   - {id: Q42, x: 236, y: 252}
-  - {id: Q55, x: 640, y: 532}
 
 textes:
   - {x: 30, y: 38, texte: "Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau"}
@@ -158,7 +157,7 @@ textes:
   - {x: 252, y: 410, classe: ts end, texte: "par une boîte de dérivation"}
   - {x: 490, y: 530, classe: ts mid, texte: "sous la table à carte"}
   - {x: 640, y: 508, classe: ts mid, texte: "cordon fourni, fiche intacte"}
-  - {x: 830, y: 240, classe: ts mid, texte: "emplacement et câble : Q55"}
+  - {x: 830, y: 240, classe: ts mid, texte: "sur le tableau de servitude · câble 3 m"}
   - {x: 1090, y: 442, classe: ts mid, texte: "câblée en permanence"}
   - {x: 1090, y: 458, classe: ts mid, texte: "disjoncteur CC 30 A (B-H3)"}
   - {x: 1090, y: 476, classe: id mid, texte: "n318 · n319 : folio 2n"}

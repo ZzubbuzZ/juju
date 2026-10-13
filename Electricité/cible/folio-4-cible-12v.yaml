@@ -322,7 +322,6 @@ barres:
 
 liaisons:
   - [node074, node070]
-  - [node010, node308]
 
 fils:
   # batterie moteur et Dolphin
@@ -368,6 +367,7 @@ fils:
   # départs
   wire166: {trace: [[544, 610]], etiquette: [536, 598, end]}
   wire019: {etiquette: [760, 602, mid]}
+  wire313: {etiquette: [502, 688, mid], texte: w313}
   wire306: {trace: [[720, 670], [740, 690]], etiquette: [640, 662, mid]}
   wire308: {trace: [[1115, 690], [1115, 990]], etiquette: [1111, 930, mid, v], texte: w308}
   wire016: {trace: [[1135, 990], [1135, 610]], etiquette: [1131, 930, mid, v]}
@@ -387,7 +387,6 @@ renvois:
 
 pastilles:
   - {id: Q58, x: 370, y: 196}
-  - {id: Q14, x: 780, y: 160}
   - {id: Q59, x: 1004, y: 182}
   - {id: Q58, x: 346, y: 696}
   - {id: Q58, x: 840, y: 610}
@@ -395,7 +394,7 @@ pastilles:
 
 textes:
   - {x: 1110, y: 44, classe: "ts mid", texte: "Guindeau 700 W"}
-  - {x: 870, y: 720, classe: "ts mid", texte: "disjoncteur CC 30 A à la platine : protection et interrupteur du ballon (folio 2n)"}
+  - {x: 870, y: 720, classe: "ts mid", texte: "disjoncteur CC 30 A à côté du disj. guindeau : protection et interrupteur du ballon (folio 2n)"}
   - {x: 200, y: 1010, classe: "ts mid", texte: "côté batteries (avant le shunt)"}
   - {x: 620, y: 1010, classe: "ts mid", texte: "masse des charges"}
   - {x: 20, y: 1044, texte: "En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue."}

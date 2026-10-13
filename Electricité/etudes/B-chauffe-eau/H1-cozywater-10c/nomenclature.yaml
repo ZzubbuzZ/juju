@@ -2,8 +2,8 @@
 #
 # B-H1 : nomenclature chiffrée. Prix TTC en euros du 07/10/2026. Ballon et réducteur : pages
 # revendeur ouvertes ; vase : prix relevé par recherche (revendeur britannique en rupture, pas de
-# revendeur français trouvé) ; le reste en estimation. Raccords à confirmer à réception (Q55)
-# et selon le tuyau du bord (Q54). Prise dédiée décidée le 07/10 (Q56).
+# revendeur français trouvé) ; le reste en estimation. Raccords du ballon en 1/2" (confirmé le 13/10)
+# ; tuyau du bord en tuyau cristal 12,5 × 18,5 mm (13/10). Prise dédiée décidée le 07/10 (Q56).
 
 hypothese: B-H1
 devise: EUR
@@ -14,10 +14,10 @@ lots:
     note: Soupape de 3 bar, tuyau de vidange et panneau de commande fournis avec le ballon.
   eau:
     titre: Circuit d'eau à pression réduite (réducteur, vase, vannes d'arrêt), raccords
-    note: Raccords du ballon en 1/2" mâle d'après le revendeur (Q55). Tuyau du bord inconnu (Q54).
+    note: 'Raccords du ballon en 1/2" (13/10). Tuyau du bord en tuyau cristal 12,5 × 18,5 mm, donc raccords cannelés de 12 à 13 mm vers 1/2".'
   confort:
     titre: Robinetterie (option, selon les robinets existants)
-    note: Q54.
+    note: L'évier a déjà un mitigeur eau chaude / eau froide (13/10) ; pas de distribution au cabinet de toilette pour l'instant.
   electricite:
     titre: "Raccordement 230 V : prise dédiée sur le C10 libéré"
     note: Décision du 07/10 (Q56). Les deux C10 sont occupés (12/10, Q42) ; leurs câbles sont regroupés sur un seul C10.
@@ -37,7 +37,6 @@ articles:
   - { lot: eau, designation: "Pompe à pied ou à vélo avec manomètre, pour gonfler le vase", quantite: 1, unite: pièce, prix_unitaire: 0, statut: estimation, note: "Sans doute déjà à bord ou à la maison" }
 
   # --- Lot confort ------------------------------------------------------------------
-  - { lot: confort, designation: "Mitigeur évier eau chaude et eau froide, flexibles", quantite: 1, unite: pièce, prix_unitaire: 50, statut: estimation, note: "Seulement si le robinet existant est en eau froide seule (Q54)" }
   - { lot: confort, designation: "Mitigeur thermostatique anti-brûlure 1/2\" à la sortie du ballon (option)", quantite: 1, unite: pièce, prix_unitaire: 40, statut: estimation, note: "Option : eau à 45 °C au robinet avec un ballon à 70 °C" }
 
   # --- Lot électricité --------------------------------------------------------------

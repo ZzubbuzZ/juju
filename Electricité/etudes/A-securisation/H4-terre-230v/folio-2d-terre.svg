@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Arrivée 230 V proposée : la terre de la prise de quai passe par un isolateur galvanique maison avant la barrette de terre, et le différentiel est remplacé par un interrupteur différentiel de type A.">
   <title>Folio 2d · Terre 230 V et différentiel</title>
-  <desc>La terre du ponton est conservée, à travers un isolateur galvanique maison placé sur son conducteur ; elle n&#x27;est pas reliée à la masse 12 V (Q40). Le différentiel d&#x27;arrivée est remplacé par un interrupteur différentiel bipolaire 30 mA de type A.</desc>
+  <desc>La terre du ponton est conservée, à travers un isolateur galvanique maison placé sur son conducteur ; elle n&#x27;est pas reliée à la masse 12 V ; l&#x27;arbre et l&#x27;hélice, reliés au moteur par un accouplement métallique, mettent la masse 12 V à la mer (13/10). Le différentiel d&#x27;arrivée est remplacé par un interrupteur différentiel bipolaire 30 mA de type A.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -114,5 +114,4 @@
   <text class="ts" x="40" y="514">En vert : nouveau. Phase, neutre et terre sont dessinés conducteur par conducteur (multifilaire).</text>
   <text class="ts" x="40" y="532">L&#x27;ancien fil de terre de la prise vers la barrette est remplacé par w170, l&#x27;isolateur et w171.</text>
   <g class="mk-a"><circle cx="510" cy="262" r="11"/><text class="mid" x="510" y="265.5">A8</text></g>
-  <g class="mk-q"><circle cx="930" cy="350" r="11"/><text class="mid" x="930" y="353.5">Q40</text></g>
 </svg>

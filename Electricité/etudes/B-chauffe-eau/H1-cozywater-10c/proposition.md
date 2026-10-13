@@ -150,5 +150,5 @@ Ces réglages seront repris dans la [documentation technique](../../../documenta
 
 - **Q19** (répondue le 12/10) : ballon sous la table à carte, réducteur et vase dans le coffre de cockpit tribord, avec la pompe (Q54) ; environ 3,5 m de tuyau d'eau chaude.
 - **Q42** : les deux C10 sont occupés (12/10) ; suivre les deux câbles avant de les regrouper sur un seul C10, et choisir celui qui est libéré pour le ballon.
-- **Q54** : circuit d'eau existant (tuyau, robinets, mitigeurs) ; coupure et redémarrage de la pompe, mesurés avec le réducteur (étape 1).
-- **Q55** (reformulée le 07/10) : à la livraison du ballon, filetage de ses raccords et de la soupape, longueur de ses trois câbles, puissance inscrite sur la plaque.
+- **Q54** (répondue le 13/10) : réservoir à la poupe, tuyau cristal 12,5 × 18,5 mm, mitigeur déjà posé à l'évier, pas de distribution au cabinet de toilette. Reste la mesure de la coupure et du redémarrage de la pompe avec le réducteur (étape 1).
+- **Q55** (répondue le 13/10) : raccords en 1/2", fils 12 V de 1 m, cordon 230 V de 2 m, câble du panneau de 3 m ; panneau posé sur le tableau de servitude. Puissance de la plaque non relevée : 800 W (notice) retenus.

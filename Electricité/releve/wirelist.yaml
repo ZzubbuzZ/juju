@@ -76,7 +76,7 @@ fils:
   - { id: wire049, de: node222, vers: node232, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
   - { id: wire050, de: node224, vers: node233, section_mm2: 1.5 }
   - { id: wire051, de: node221, vers: node234, section_mm2: 1.5 }
-  - { id: wire068, de: node222, vers: node235, section_mm2: 1.5, note: "Terre du plafonnier, raccordée (30/09)" }
+  - { id: wire068, de: node222, vers: node235, section_mm2: 1.5, statut: a_verifier, note: "Terre du circuit d'éclairage ; notée raccordée le 30/09 sur un plafonnier qui était une erreur (13/10) : à vérifier (Q60)", questions: [Q60] }
   - { id: wire052, de: node047, vers: node227, note: "Cordon de l'EPS 100, branché sur sa prise ; fiche à deux contacts, sans terre (29/09)" }
   - { id: wire053, de: node048, vers: node228 }
   # wire054 (terre du cordon de l'EPS 100) supprimé le 29/09 : le cordon n'a pas de terre. Numéro à ne pas réutiliser.
@@ -89,3 +89,6 @@ fils:
   - { id: wire065, de: node226, vers: node253, section_mm2: 2.5, statut: a_verifier, note: "Prise du cabinet de toilette (30/09) ; raccordement en étoile supposé, non relevé" }
   - { id: wire066, de: node221, vers: node254, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé" }
   - { id: wire067, de: node222, vers: node255, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé" }
+  - { id: wire069, de: node240, vers: node243, section_mm2: 2.5, statut: a_verifier, note: "Prise de la cabine de proue, sur la boîte de dérivation bâbord (13/10) ; raccordement en étoile supposé, section prise comme celle des autres prises" }
+  - { id: wire070, de: node241, vers: node244, section_mm2: 2.5, statut: a_verifier }
+  - { id: wire071, de: node242, vers: node245, section_mm2: 2.5, statut: a_verifier }

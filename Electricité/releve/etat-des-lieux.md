@@ -33,7 +33,7 @@ Les points suivants sont à revoir sur le circuit 12v :
 
 ### Moteur
 Moteur Yanmar 3GMD, d'après la plaque signalétique (d'abord noté 3GM30). Refroidissement direct à l'eau de mer.
-Alternateur d'environ 20 A (spécification d'origine ; celui de Juju semble plus récent mais semblable, plaque à relever : Q14).
+Alternateur de 20 A, sans borne W (13/10). Tableau moteur (contact, jauges) alimenté par le faisceau d'origine depuis le + du démarreur, à travers un fusible de 30 A (13/10). Accouplement de l'arbre d'hélice métallique, sans câble de masse sur le tube d'étambot (13/10).
 Démarreur : 60 A à vide, 460 A rotor bloqué (couple maximal, vitesse nulle), puissance maximale entre 200 et 275 A ([manuel d'atelier Yanmar](documentation/YANMAR-WORKSHOP-MANUAL-1GM-2GM-3GM-3HM.pdf)).
 Batterie Varta 110Ah au Plomb sans entretien
 Coupe circuit dédié sur pole 12v
@@ -125,12 +125,13 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 - Une PE pour alimentation groupe froid Dometic EPS 100 sur boitier tribord
 - Une PE pour la cuisine (à tribord) sur boitier tribord
 - Une PE pour le cabinet de toilette sur boitier tribord
-- Éclairage 230 V sur le disjoncteur éclairage du boîtier tribord, 6 luminaires (relevé du 12/10 ; un plafonnier métallique à terre raccordée, lequel ? et répartition sur les disjoncteurs : Q60) :
+- Éclairage 230 V sur le disjoncteur éclairage du boîtier tribord, 6 luminaires (relevé du 12/10 ; terre et matière des luminaires à relever, répartition sur les disjoncteurs : Q60) :
   - spots à LED GU10 : cabine de poupe, table à carte, cabine de proue, cabinet de toilette
-  - plafonniers barrettes à 2 spots : carré, cuisine (cambuse)
+  - réglette à 2 spots dans le carré (le « plafonnier métallique » noté le 30/09 était une erreur, 13/10), plafonnier barrette à 2 spots dans la cuisine (cambuse)
+  - l'éclairage part directement des C10 ; les boîtes de dérivation ne servent qu'aux prises (13/10)
 - Une PE pour la table à carte sur la boîte de dérivation bâbord
 - Une PE dans la cabine de poupe, derrière l'armoire (notée « PE du carré » jusqu'au 29/09), sur la boîte de dérivation bâbord
-- Une PE dans la cabine de proue (12/10), alimentation non relevée (Q61)
+- Une PE dans la cabine de proue (12/10), sur la boîte de dérivation bâbord (13/10)
 - 2 prises 12 V allume-cigare à la table à carte, au tableau de servitude
 - Boîtier tribord dans le cabinet de toilette (correction du 01/10 : il était noté sur la cloison entre le cabinet de toilette et le coffre de cockpit).
 - La terre 230 V n'est reliée ni à la masse 12 V ni à un isolateur galvanique (anomalie A8).

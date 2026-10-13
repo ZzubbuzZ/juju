@@ -74,7 +74,7 @@
   <text class="ts mid" x="705" y="105">démarreur + alternateur</text>
   <rect class="box-unk" x="880" y="70" width="200" height="60" rx="2"/>
   <text class="tb mid" x="980" y="95">Tableau moteur</text>
-  <text class="ts mid" x="980" y="110">contact · jauges</text>
+  <text class="ts mid" x="980" y="110">contact · jauges · fusible 30 A</text>
   <rect class="fuse" x="690" y="471" width="60" height="18"/>
   <text class="id mid" x="720" y="484">70 A</text>
   <text class="ts mid" x="720" y="458">Disjoncteur guindeau</text>
@@ -334,6 +334,5 @@
   <g class="mk-q"><circle cx="648" cy="512" r="11"/><text class="mid" x="648" y="515.5">Q58</text></g>
   <g class="mk-a"><circle cx="553" cy="715" r="11"/><text class="mid" x="553" y="718.5">A10</text></g>
   <g class="mk-a"><circle cx="880" cy="800" r="11"/><text class="mid" x="880" y="803.5">A7</text></g>
-  <g class="mk-q"><circle cx="1080" cy="70" r="11"/><text class="mid" x="1080" y="73.5">Q1</text></g>
   <g class="mk-q"><circle cx="1040" cy="252" r="11"/><text class="mid" x="1040" y="255.5">Q59</text></g>
 </svg>

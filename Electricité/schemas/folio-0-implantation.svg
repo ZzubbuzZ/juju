@@ -152,7 +152,7 @@
   <text class="tb" x="852" y="615">Carré</text>
   <text class="t" x="852" y="634" data-equipement="eclairage-12v-carre">Plafonnier 12 V à LED</text>
   <text class="t" x="852" y="653" data-equipement="eclairage-12v-veilleuse-carre">Veilleuse 12 V à LED</text>
-  <text class="t" x="852" y="672" data-equipement="eclairage-230-carre">Barrette 230 V à 2 spots</text>
+  <text class="t" x="852" y="672" data-equipement="eclairage-230-carre">Réglette 230 V à 2 spots</text>
 
   <path class="leader" d="M345 735 L340 440"/>
   <rect class="callout" x="340" y="735" width="480" height="47" rx="2"/>

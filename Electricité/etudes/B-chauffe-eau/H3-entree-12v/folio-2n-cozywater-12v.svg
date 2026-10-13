@@ -60,11 +60,12 @@
   <text class="ts mid" x="150" y="406">CC masse</text>
   <path class="p w4" d="M104 90 L104 124 L120 140"/>
   <path class="n w3" d="M120 430 L60 430 L60 460"/>
+  <path class="p w2" d="M180 140 L230 140"/>
+  <text class="idn mid" x="205" y="132">w313</text>
   <path class="p w2" d="M276 140 L900 140 L920 120 L960 120"/>
   <text class="idn mid" x="470" y="132">w306 · 6 mm² · ≈ 3 m</text>
   <path class="n w2" d="M960 230 L940 250 L940 430 L180 430"/>
   <text class="idn mid" x="560" y="422">w308 · 6 mm² · ≈ 3 m</text>
-  <path class="p w2" d="M230 140 L180 140"/>
   <rect class="flag" x="40" y="72" width="250" height="18"/>
   <text class="ts mid" x="165" y="85">← n073, MEGA 300 A : folio 2i ou 2k</text>
   <rect class="flag" x="30" y="460" width="230" height="18"/>
@@ -87,12 +88,11 @@
   <text class="pin" x="967" y="239">−</text>
   <text class="id end" x="114" y="452">n005</text>
   <text class="id" x="186" y="452">n006</text>
-  <text class="ts mid tn" x="253" y="166">près du goujon</text>
+  <text class="ts mid tn" x="253" y="166">à côté du disj. guindeau</text>
   <text class="ts mid" x="253" y="182">sert d&#x27;interrupteur</text>
   <text class="ts mid" x="253" y="196">« ballon sur batterie »</text>
   <text class="ts" x="20" y="512">En vert : nouveau. Le ballon choisit seul le 230 V quand il est présent ; le disjoncteur, fermé, autorise la chauffe sur la batterie (environ 45 Ah par chauffe).</text>
   <text class="ts" x="20" y="530">Sans relais ni interrupteur à voyant (12/10) : aucune consommation au repos. Le − revient côté « bord » du shunt : la consommation du ballon est comptée.</text>
   <g class="mk-q"><circle cx="1180" cy="40" r="11"/><text class="mid" x="1180" y="43.5">Q57</text></g>
   <g class="mk-q"><circle cx="560" cy="140" r="11"/><text class="mid" x="560" y="143.5">Q57</text></g>
-  <g class="mk-q"><circle cx="1160" cy="100" r="11"/><text class="mid" x="1160" y="103.5">Q55</text></g>
 </svg>

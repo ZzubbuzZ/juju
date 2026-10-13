@@ -72,8 +72,7 @@ equipements:
     designation: Moteur Yanmar (démarreur + alternateur)
     modele: Yanmar 3GMD (plaque signalétique)
     zone: compartiment-moteur
-    note: "L'état des lieux initial indiquait 3GM30. Refroidissement direct à l'eau de mer. Alternateur d'environ 20 A (spécification d'origine ; celui de Juju semble plus récent mais semblable). Démarreur (manuel d'atelier Yanmar) : 60 A à vide, 460 A rotor bloqué, puissance maximale entre 200 et 275 A."
-    questions: [Q1, Q14]
+    note: "L'état des lieux initial indiquait 3GM30. Refroidissement direct à l'eau de mer. Alternateur de 20 A, sans borne W (13/10). Démarreur (manuel d'atelier Yanmar) : 60 A à vide, 460 A rotor bloqué, puissance maximale entre 200 et 275 A. Tableau moteur (contact, jauges) alimenté par le faisceau d'origine depuis le + du démarreur, à travers un fusible de 30 A (13/10) ; fusible de rechange à acheter. Accouplement de l'arbre d'hélice métallique, sans câble de masse sur le tube d'étambot (13/10) : arbre et hélice sont à la masse 12 V."
 
   # --- Guindeau ----------------------------------------------------------------
   - id: disj-guindeau
@@ -203,50 +202,43 @@ equipements:
     designation: Éclairage intérieur 12 V (7 luminaires)
     courant_A: 5
     statut: estime
-    questions: [Q9]
-    note: "Circuit « éclairage » (10 A) du tableau de servitude. Luminaires relevés le 12/10, un par ligne ci-dessous (eclairage-12v-…) : six à LED, un à incandescence (cabine de poupe). Raccordement de chaque luminaire non relevé (Q9). Courant estimé avant ce relevé."
+    note: "Circuit « éclairage » (10 A) du tableau de servitude. Luminaires relevés le 12/10, un par ligne ci-dessous (eclairage-12v-…) : six à LED, un à incandescence (cabine de poupe). Chaque luminaire a son interrupteur ; câblage historique, trajet non relevé (13/10). Courant estimé avant ce relevé."
 
   - id: eclairage-12v-poupe
     type: recepteur
     designation: Luminaire 12 V de la cabine de poupe
     zone: cabine-poupe
     note: Deux ampoules à culot G11, à incandescence (12/10).
-    questions: [Q9]
 
   - id: eclairage-12v-table-a-carte
     type: recepteur
     designation: Plafonnier 12 V de la table à carte
     zone: table-a-carte
     note: LED (12/10).
-    questions: [Q9]
 
   - id: eclairage-12v-proue
     type: recepteur
     designation: Luminaire 12 V de la cabine de proue
     zone: cabine-proue
     note: Deux ampoules à culot G11, à LED (12/10).
-    questions: [Q9]
 
   - id: eclairage-12v-carre
     type: recepteur
     designation: Plafonnier 12 V du carré
     zone: carre
     note: LED (12/10).
-    questions: [Q9]
 
   - id: eclairage-12v-veilleuse-carre
     type: recepteur
     designation: Veilleuse 12 V du carré
     zone: carre
     note: LED (12/10).
-    questions: [Q9]
 
   - id: eclairage-12v-cuisine
     type: recepteur
     designation: Plafonnier 12 V de la cuisine (cambuse)
     zone: cuisine
     note: LED (12/10).
-    questions: [Q9]
 
   - id: eclairage-12v-toilette
     type: recepteur
@@ -254,7 +246,6 @@ equipements:
     zone: cabinet-toilette
     emplacement: Au-dessus de l'évier
     note: LED (12/10).
-    questions: [Q9]
 
   - id: prises-12v
     type: recepteur
@@ -417,7 +408,7 @@ equipements:
     type: recepteur
     designation: Éclairage 230 V (6 luminaires)
     questions: [Q60]
-    note: "Circuit du disjoncteur éclairage (10 A) du boîtier tribord, noté « plafonnier 230 V » jusqu'au 12/10 ; ses nœuds (node233-235) représentent le départ du circuit. Luminaires relevés le 12/10, un par ligne ci-dessous (eclairage-230-…) : quatre spots à LED GU10 et deux plafonniers barrettes à deux spots. Un plafonnier métallique (classe I) à terre raccordée a été relevé le 30/09 : lequel, et les autres sont-ils sur le même disjoncteur (Q60) ?"
+    note: "Circuit du disjoncteur éclairage (10 A) du boîtier tribord, noté « plafonnier 230 V » jusqu'au 12/10 ; ses nœuds (node233-235) représentent le départ du circuit, qui ne passe pas par les boîtes de dérivation (réservées aux prises, 13/10). Luminaires relevés le 12/10, un par ligne ci-dessous (eclairage-230-…) : quatre spots à LED GU10, une réglette dans le carré et un plafonnier barrette dans la cuisine. Le plafonnier métallique noté le 30/09 était une erreur (13/10) : présence d'une terre et matière des luminaires à relever (Q60)."
 
   - id: eclairage-230-poupe
     type: recepteur
@@ -442,9 +433,9 @@ equipements:
 
   - id: eclairage-230-carre
     type: recepteur
-    designation: Plafonnier barrette 230 V du carré
+    designation: Réglette 230 V du carré
     zone: carre
-    note: Barrette à deux spots (12/10).
+    note: Barrette à deux spots (12/10). Le « plafonnier 230 V métallique » relevé le 30/09 était cette réglette (correction du 13/10).
     questions: [Q60]
 
   - id: eclairage-230-cuisine
@@ -477,8 +468,7 @@ equipements:
     type: prise
     designation: Prise 230 V de la cabine de proue
     zone: cabine-proue
-    questions: [Q61]
-    note: Relevée le 12/10. Alimentation (boîte de dérivation bâbord ou prises tribord) non relevée (Q61).
+    note: Relevée le 12/10. Alimentée par la boîte de dérivation bâbord (13/10).
 
   - id: prise-230-toilette
     type: prise

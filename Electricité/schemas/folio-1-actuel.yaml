@@ -105,7 +105,7 @@ appareils:
     inconnu: true
     titre: Tableau moteur
     titre_y: 25
-    lignes: [contact · jauges]
+    lignes: [contact · jauges · fusible 30 A]
 
   # ---- guindeau
   - id: disj-guindeau
@@ -231,7 +231,7 @@ incertains:
   - {x: 785, y: 252, w: 255, h: 160, texte: "télécommande : sections à relever (Q59)", texte_xy: [788, 244]}
 
 traits:
-  # tableau moteur : raccordement inconnu (Q1)
+  # tableau moteur : faisceau d'origine depuis le + démarreur, fusible 30 A (13/10), non numéroté
   - {classe: u, points: [[790, 100], [880, 100]]}
 
 croisements_admis:
@@ -307,5 +307,4 @@ pastilles:
   - {id: Q58, x: 648, y: 512}
   - {id: A10, x: 553, y: 715}
   - {id: A7, x: 880, y: 800}
-  - {id: Q1, x: 1080, y: 70}
   - {id: Q59, x: 1040, y: 252}

@@ -10,7 +10,7 @@ points_forts:
 points_faibles:
   - "Chauffe lente : environ 2 h 40 pour 10 L de 15 à 60 °C."
   - "Environ 45 Ah par chauffe : au mouillage, la consommation passe d'environ 60 à environ 105 Ah par jour, et l'autonomie de la LiFePO4 d'environ trois jours à un jour et demi."
-  - "Au moteur, l'alternateur de 20 A (Q14), bridé à 15 A par le DC/DC, ne couvre pas les 17 A du ballon."
+  - "Au moteur, l'alternateur de 20 A, bridé à 15 A par le DC/DC, ne couvre pas les 17 A du ballon."
   - "Commande manuelle à la platine ; l'état de chauffe se lit sur le panneau de commande du ballon. Un oubli vide la batterie jusqu'à la coupure du BMS."
   - "Écart à la notice, qui demande un relais et un interrupteur ; mais elle est commune au CozyWater 10 (sans panneau) et au 10C. Une commande automatique (étude C) demandera d'ajouter un organe commandé."
   - Trajet et longueur du câble de 6 mm² à relever à bord (Q57).
@@ -53,7 +53,7 @@ Chauffer 10 L de 15 à 60 °C demande environ 0,52 kWh, soit environ **45 Ah** s
 | Mouillage ([bilan](../../../commun/bilan-energetique.yaml)) | environ 60 Ah/jour | environ 105 Ah/jour |
 | Autonomie de la LiFePO4 (160 à 180 Ah utiles) | environ 3 jours | environ 1,5 jour |
 
-Au moteur, le DC/DC de l'étude E charge la LiFePO4 à 15 A environ (alternateur de 20 A, Q14) : le ballon consomme plus que la charge. L'entrée 12 V n'est donc rentable qu'avec un **surplus solaire** : environ 200 W de panneaux en plein soleil, en plus de la consommation du bord. C'est l'étude C qui dira si ce surplus existe.
+Au moteur, le DC/DC de l'étude E charge la LiFePO4 à 15 A environ (alternateur de 20 A) : le ballon consomme plus que la charge. L'entrée 12 V n'est donc rentable qu'avec un **surplus solaire** : environ 200 W de panneaux en plein soleil, en plus de la consommation du bord. C'est l'étude C qui dira si ce surplus existe.
 
 En attendant, l'entrée 12 V reste utile pour une chauffe ponctuelle, batterie pleine, la veille d'un retour au port.
 
@@ -72,12 +72,13 @@ Folio 2n. Tout en 6 mm² :
 
 | Fil | De → vers | Rôle |
 |---|---|---|
-| wire306 | disjoncteur 30 A (node309) → ballon 12 V + (node318) | +, de la platine au ballon, environ 3 m |
+| wire313 | node010 → disjoncteur 30 A (node308) | liaison courte, environ 0,5 m |
+| wire306 | disjoncteur 30 A (node309) → ballon 12 V + (node318) | +, du disjoncteur au ballon, par le bord bâbord et les coffres de la cabine de poupe |
 | wire308 | ballon 12 V − (node319) → node006 | −, côté « bord » du shunt, environ 3 m |
 
 wire307 et wire309 à wire312, node310 à node317 et node380 (relais, fusible de 1 A, interrupteur à voyant) sont supprimés le 12/10 ; ils n'avaient pas été posés.
 
-- **Départ à node010**, côté charges du coupe-circuit de servitude, comme les autres départs de la platine : ouvrir le coupe-circuit coupe aussi le ballon. Le disjoncteur de 30 A (node308, node309) est fixé au plus près du goujon, par un câble court de 6 mm².
+- **Départ à node010**, côté charges du coupe-circuit de servitude, comme les autres départs de la platine : ouvrir le coupe-circuit coupe aussi le ballon. Le disjoncteur de 30 A (node308, node309) est placé à côté du disjoncteur du guindeau, sous l'ouverture d'accès aux coupe-circuits (13/10), relié au goujon par une liaison courte de 6 mm² (wire313). Cette liaison n'est protégée que par le MEGA de 300 A : la garder la plus courte possible, gainée et bridée.
 - **Disjoncteur à la place du fusible** (décision du 12/10). Il remplit le rôle que la notice demande au fusible de 30 A, il se réarme sans pièce de rechange et sert d'interrupteur du 12 V du ballon. Quatre points pour le choisir :
   - **prévu pour le courant continu** : marqué « DC », 12/24 V CC ou plus. Un disjoncteur modulaire de tableau 230 V, sans marquage DC, ne convient pas : un arc en courant continu ne s'éteint pas de lui-même au passage par zéro, et l'appareil peut ne pas couper. Conviennent : un disjoncteur de bateau à levier ou à bascule, ou un modulaire marqué DC (gamme photovoltaïque) ;
   - **manœuvrable** : il sert d'interrupteur, donc un modèle à levier ou à bascule, pas à simple bouton de réarmement ;
@@ -90,5 +91,5 @@ wire307 et wire309 à wire312, node310 à node317 et node380 (relais, fusible de
 
 ## Reste à faire
 
-- Mesurer le trajet de la platine au ballon (Q57) et la longueur des fils 12 V du ballon (Q55).
+- Mesurer la longueur du câble 12 V (Q57) : trajet relevé le 13/10, par le bord bâbord et les coffres de la cabine de poupe, sans doute plus de 3 m (environ 4 % de chute à 5 m). Les fils 12 V du ballon font 1 m (Q55).
 - **À reprendre avec l'étude C** (remarque conservée le 12/10) : pour une commande automatique par le régulateur solaire, ajouter en aval du disjoncteur un organe commandé qui ne consomme rien au repos, relais bistable ou coupe-batterie électronique (type Victron BatteryProtect, quelques mA, avec coupure en tension basse).

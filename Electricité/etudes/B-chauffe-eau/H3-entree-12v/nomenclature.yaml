@@ -13,5 +13,5 @@ lots:
 
 articles:
   - { lot: douze_volts, designation: "Disjoncteur 12 V CC 30 A à commande manuelle (levier ou bascule, prévu pour servir d'interrupteur), marqué DC, au plus près de la source", quantite: 1, unite: pièce, prix_unitaire: 30, statut: estimation, note: "Remplace le porte-fusible, le relais et l'interrupteur à voyant (12/10). Calibre imposé par la notice ; à la platine, sur node010. Marquage DC et pouvoir de coupure à vérifier" }
-  - { lot: douze_volts, designation: "Câble étamé 6 mm² rouge et noir", quantite: 10, unite: m, prix_unitaire: 3, statut: estimation, note: "Environ 6,5 m posés (Q57) ; négatif côté « bord » du shunt (étude D)", fils: [wire306, wire308] }
+  - { lot: douze_volts, designation: "Câble étamé 6 mm² rouge et noir", quantite: 10, unite: m, prix_unitaire: 3, statut: estimation, note: "Environ 6,5 m posés (Q57) ; négatif côté « bord » du shunt (étude D)", fils: [wire306, wire308, wire313] }
   - { lot: douze_volts, designation: "Cosses 6 mm², gaine thermorétractable", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation }

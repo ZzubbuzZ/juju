@@ -8,7 +8,8 @@
 # Départ du + côté charges du coupe-circuit de servitude (node010) : le coupe-circuit coupe aussi
 # le ballon. Retour du − sur node006, côté « bord » du shunt (D-H1, E-H1) : la consommation est
 # comptée. node010 et node006 sont inchangés par les études A, D et E.
-# Ballon sous la table à carte (12/10). Trajet du 6 mm² : celui de wire019 (Q57).
+# Ballon sous la table à carte (12/10). Trajet du 6 mm² (13/10) : le long du bord bâbord jusqu'aux coffres de la
+# cabine de poupe, à travers eux jusqu'à la batterie de servitude, puis au disjoncteur, à côté de celui du guindeau (Q57).
 # Nœuds node308, node309, node318, node319 ; node310 à node317 et node380 (relais, commande) supprimés le 12/10.
 # Longueurs estimées (Q57).
 
@@ -17,11 +18,11 @@ titre: Entrée 12 V du ballon, câblée en permanence, coupée au disjoncteur
 base: B-H1
 
 equipements:
-  - { id: disj-ballon-12v, type: disjoncteur, designation: "Disjoncteur 12 V CC de l'entrée 12 V du ballon, à commande manuelle : protection et interrupteur « ballon sur batterie » (12/10)", calibre_A: 30, emplacement: "Platine des coupe-circuits, sur le goujon côté charges du coupe-circuit de servitude", statut: propose, note: "Calibre imposé par la notice ; protège le câble de 6 mm². Disjoncteur prévu pour le courant continu et pour servir d'interrupteur (12/10) ; remplace le fusible, le relais et l'interrupteur à voyant de la notice" }
+  - { id: disj-ballon-12v, type: disjoncteur, designation: "Disjoncteur 12 V CC de l'entrée 12 V du ballon, à commande manuelle : protection et interrupteur « ballon sur batterie » (12/10)", calibre_A: 30, emplacement: "À côté du disjoncteur du guindeau, sous l'ouverture d'accès aux coupe-circuits (cabine de poupe), 13/10", statut: propose, note: "Calibre imposé par la notice ; protège le câble de 6 mm². Disjoncteur prévu pour le courant continu et pour servir d'interrupteur (12/10) ; remplace le fusible, le relais et l'interrupteur à voyant de la notice" }
 
 nodes:
   # --- Disjoncteur 12 V CC de 30 A à la platine (12/10 : remplace le fusible) ---------
-  - { id: node308, equipement: disj-ballon-12v, borne: "1 (côté source)", polarite: "+", monte_sur: node010 }
+  - { id: node308, equipement: disj-ballon-12v, borne: "1 (côté source)", polarite: "+" }
   - { id: node309, equipement: disj-ballon-12v, borne: "2", polarite: "+" }
 
   # --- Ballon, entrée 12 V ------------------------------------------------------------
@@ -30,6 +31,7 @@ nodes:
 
 fils:
   # --- Puissance : 6 mm², environ 17 A --------------------------------------------------
-  - { id: wire306, de: node309, vers: node318, section_mm2: 6, couleur: rouge, longueur_m: 3, statut: propose, questions: [Q57], note: "Platine → ballon (12/10 : sans relais) ; longueur estimée. Chute de tension environ 2,5 % à 17 A sur 3 m" }
+  - { id: wire313, de: node010, vers: node308, section_mm2: 6, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Liaison courte de la platine au disjoncteur, placé à côté de celui du guindeau (13/10) ; protégée seulement par le MEGA de 300 A : la plus courte possible, gainée et bridée" }
+  - { id: wire306, de: node309, vers: node318, section_mm2: 6, couleur: rouge, longueur_m: 3, statut: propose, questions: [Q57], note: "Disjoncteur → ballon, par le bord bâbord et les coffres de la cabine de poupe (13/10) ; longueur estimée, sans doute plus de 3 m (Q57). À 5 m, chute de tension d'environ 4 %" }
   - { id: wire308, de: node319, vers: node006, section_mm2: 6, couleur: noir, longueur_m: 3, statut: propose, questions: [Q57], note: "Côté « bord » du shunt : la consommation du ballon est comptée" }
 
