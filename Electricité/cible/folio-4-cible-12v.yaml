@@ -67,13 +67,25 @@ appareils:
       node031: [gauche, 220]
       node032: [bas, 760]
   # ---------------------------------------------------------------- guindeau
+  - id: selecteur-guindeau
+    nouveau: true
+    x: 530
+    y: 50
+    w: 120
+    h: 60
+    titre: Sélecteur
+    titre_y: 17
+    nodes:
+      node383: [gauche, 80]
+      node385: [droite, 80]
+      node384: [bas, 590]
   - id: disj-guindeau
     forme: fusible
     calibre: 70 A
     titre: disj. guindeau
     nodes:
-      node020: {cote: point, xy: [600, 80], etiquette: [-2, 20, end]}
-      node021: {cote: point, xy: [656, 80], etiquette: [2, 20]}
+      node020: {cote: point, xy: [680, 80], etiquette: [-2, 20, end]}
+      node021: {cote: point, xy: [736, 80], etiquette: [2, 20]}
   - id: relais-guindeau
     x: 840
     y: 50
@@ -332,8 +344,10 @@ fils:
   wire001: {etiquette: [330, 212, mid]}
   wire012: {etiquette: [578, 212, mid]}
   # guindeau
-  wire217: {trace: [[500, 204], [500, 80]], etiquette: [506, 140]}
-  wire018: {etiquette: [748, 72, mid]}
+  wire217: {trace: [[500, 204], [500, 80]], etiquette: [506, 185]}
+  wire220: {etiquette: [665, 72, mid], texte: w220}
+  wire219: {trace: [[590, 132]], renvoi: de, etiquette: [596, 126], texte: w219}
+  wire018: {etiquette: [790, 72, mid]}
   wire020: {etiquette: [1034, 81, mid], texte: "w020 / w021 · 10"}
   wire021: {}
   wire015: {trace: [[1175, 990], [1175, 125]], etiquette: [1169, 420, mid, v]}
@@ -382,6 +396,7 @@ fils:
   wire028: {}
 
 renvois:
+  - {x: 520, y: 132, w: 140, nouveau: true, texte: "n010 · servitude, plus bas"}
   - {x: 580, y: 340, w: 130, nouveau: true, texte: "→ node005 · CC masse"}
   - {x: 316, y: 793, w: 150, nouveau: true, texte: "→ node003 · CC moteur"}
 

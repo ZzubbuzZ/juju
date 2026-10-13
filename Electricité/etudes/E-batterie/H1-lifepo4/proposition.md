@@ -17,7 +17,7 @@ points_faibles:
   - Guindeau utilisé moteur arrêté ; il entame la batterie de démarrage (environ 2 à 3 Ah par mouillage).
   - Commande manuelle du DC/DC (Q48) ; un oubli au port le laisse démarrer sur la charge du Dolphin.
   - Fusible MEGA (décision du 05/10) ; un MRBF aurait un meilleur pouvoir de coupure, pour le même prix.
-decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node004), masse du voyant sur node005. 12/10 : le Blue Smart a son propre C10, posé dans la place libre du boîtier d'arrivée (Q63) ; le Dolphin garde le sien. 13/10 : couplage définitivement déposé ; secours d'une batterie moteur défectueuse par un booster de démarrage autonome."
+decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node004), masse du voyant sur node005. 12/10 : le Blue Smart a son propre C10, posé dans la place libre du boîtier d'arrivée (Q63) ; le Dolphin garde le sien. 13/10 : couplage définitivement déposé ; secours d'une batterie moteur défectueuse par un booster de démarrage autonome. 13/10 : sélecteur 3 positions (moteur / off / servitude) pour le guindeau, en secours d'une batterie moteur défectueuse."
 ---
 
 # E-H1 · Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
@@ -47,6 +47,24 @@ Le guindeau était alimenté par la servitude : wire017, de node010 (côté char
 - **Le shunt de l'étude D ne compte plus le guindeau** : son bilan ne mesure que la vie à bord.
 - **Protection** : wire217 est protégé, comme wire012, par le fusible de 400 A de la batterie moteur (A-H2) ; le disjoncteur de 70 A protège ensuite wire018. Ouvrir le coupe-circuit moteur coupe aussi le guindeau.
 - **Revers** : guindeau utilisé moteur arrêté, il entame la batterie de démarrage, environ 2 à 3 Ah par mouillage (50 A pendant 2 à 3 minutes), sur 110 Ah. Sans conséquence pour le démarrage, mais la règle reste de relever l'ancre moteur tournant.
+
+### 1 ter. Sélecteur de batterie du guindeau (décision du 13/10)
+
+Avec le guindeau sur la batterie moteur, une batterie moteur défectueuse priverait aussi de l'ancre. Le booster (voir « Démarrage de secours ») démarre le moteur mais ne fait pas tourner le guindeau. Un **sélecteur 3 positions** choisit la source du guindeau :
+
+- **1, batterie moteur** (position normale) : wire217, de node004, arrive au sélecteur (node383) ;
+- **off** ;
+- **2, batterie de servitude** (secours) : wire219, 35 mm², de node010 (côté charges du coupe-circuit de servitude, protégé par le MEGA de 300 A) au sélecteur (node384).
+
+Le commun (node385) rejoint le disjoncteur de 70 A par wire220. Le guindeau tire 50 à 60 A, bien sous les 250 A du BMS. Le retour passe par la masse commune ; en position 2, le shunt compte le courant du guindeau.
+
+Conditions :
+- **aucune position commune** (« BOTH ») et coupure avant fermeture : les deux batteries ne sont jamais reliées. Les sélecteurs courants « 1-2-BOTH-OFF » ne conviennent pas ;
+- au moins 70 A en continu ;
+- ne jamais basculer guindeau en marche ;
+- position normale : 1 ; la position 2 est un secours, à signaler dans le livret.
+
+Numéros : node383 à node385 (plage de réserve, la plage E est pleine), wire219 et wire220.
 
 ### 2. Remplacer le coupleur Scheiber par un chargeur DC/DC
 

@@ -35,6 +35,7 @@ equipements:
   # --- Chargeur de quai LiFePO4 --------------------------------------------------
   - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: descente, emplacement: "Dans la contremarche, avec le shunt (variante coffre : E-H4)", statut: propose }
   - { id: disj-chargeur-lifepo4, type: disjoncteur, designation: "Disjoncteur du chargeur de quai LiFePO4", modele: "1P+N C10", zone: cockpit-coffre-tribord, emplacement: "Boîtier d'arrivée 230 V, place libre du rail (Q63)", calibre_A: 10, statut: propose, note: "Retenu le 12/10 : le Blue Smart a son propre C10, le Dolphin garde le sien (node210, node211)" }
+  - { id: selecteur-guindeau, type: interrupteur, designation: "Sélecteur de batterie du guindeau, 3 positions : moteur / off / servitude, sans position commune", zone: cabine-poupe, emplacement: "Près du disjoncteur du guindeau, sous l'ouverture d'accès aux coupe-circuits", statut: propose, note: "Retenu le 13/10. Position normale : moteur. Servitude : secours si la batterie moteur est défectueuse. Sans position « BOTH » et à coupure avant fermeture, pour ne jamais relier les deux batteries. Au moins 70 A en continu. Ne pas basculer guindeau en marche" }
   - { id: fus-chargeur-lifepo4, type: fusible, designation: "Fusible de la sortie du chargeur de quai LiFePO4", calibre_A: 25, emplacement: "Contre la borne côté batterie du coupe-circuit de servitude", statut: propose, note: "Calibre à confirmer sur la notice du Blue Smart" }
 
 nodes:
@@ -67,6 +68,9 @@ nodes:
   # node381 et node382 : plage de réserve (la plage E, node360-379, est pleine)
   - { id: node381, equipement: disj-chargeur-lifepo4, borne: "entrée", polarite: 230V-phase }
   - { id: node382, equipement: disj-chargeur-lifepo4, borne: "sortie", polarite: 230V-phase }
+  - { id: node383, equipement: selecteur-guindeau, borne: "1 (batterie moteur)", polarite: "+" }
+  - { id: node384, equipement: selecteur-guindeau, borne: "2 (batterie de servitude)", polarite: "+" }
+  - { id: node385, equipement: selecteur-guindeau, borne: "commun (vers le guindeau)", polarite: commute }
 
 fils:
   # --- Dolphin, au plus près de la batterie moteur ------------------------------------
@@ -85,7 +89,9 @@ fils:
   - { id: wire216, de: node379, vers: node005, section_mm2: 0.75, couleur: noir, longueur_m: 0.5, statut: propose, note: "Masse du voyant sur le coupe-circuit des négatifs, côté batteries (08/10)" }
 
   # --- Guindeau sur le circuit moteur (05/10) ----------------------------------------------
-  - { id: wire217, de: node004, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 0.5, remplace: wire017, statut: propose, note: "Le guindeau est alimenté par la batterie moteur, côté charges du coupe-circuit moteur, au lieu de la servitude" }
+  - { id: wire217, de: node004, vers: node383, section_mm2: 35, couleur: rouge, longueur_m: 0.5, remplace: wire017, statut: propose, note: "Le guindeau est alimenté par la batterie moteur, côté charges du coupe-circuit moteur, au lieu de la servitude Arrive au sélecteur du guindeau, position 1 (13/10)." }
+  - { id: wire219, de: node010, vers: node384, section_mm2: 35, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Secours du guindeau par la LiFePO4 (13/10), position 2 du sélecteur ; protégé par le MEGA de 300 A" }
+  - { id: wire220, de: node385, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 0.3, statut: propose, note: "Commun du sélecteur vers le disjoncteur du guindeau" }
 
   # --- Chargeur de quai LiFePO4 : 12 V ---------------------------------------------------
   - { id: wire210, de: node009, vers: node377, section_mm2: 4, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }

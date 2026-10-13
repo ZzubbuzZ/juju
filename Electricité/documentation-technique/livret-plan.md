@@ -1,6 +1,6 @@
 # Livret électrique de Juju : plan (exécution différée)
 
-Plan proposé le 13/10/2026, mis de côté à la demande de l'utilisateur : la conduite à tenir en cas de panne de la batterie moteur n'est pas arrêtée (booster, sélecteur du guindeau). Rédaction à reprendre une fois ce point tranché.
+Plan proposé le 13/10/2026, mis de côté à la demande de l'utilisateur. La conduite en cas de panne de la batterie moteur est arrêtée depuis le 13/10 : booster pour le démarrage, sélecteur 3 positions pour le guindeau (E-H1). Rédaction à reprendre quand l'utilisateur le demandera.
 
 **But.** Un livret court, imprimable, rangé à la table à carte, pour **utiliser** l'installation au quotidien et **réagir** en cas de problème. Le manuel du bord ([README](README.md) de ce dossier) garde le montage, les réglages et l'entretien détaillé ; le livret y renvoie. Chaque consigne cite les repères posés à bord (numéros de fils, coupe-circuits, disjoncteurs).
 
@@ -26,7 +26,7 @@ Plan proposé le 13/10/2026, mis de côté à la demande de l'utilisateur : la c
 2. Plus rien sur la servitude : BMS coupé, MEGA fondu, coupe-circuit ; réarmement du BMS.
 3. Le moteur ne démarre pas : recharge de secours par l'Orion XS, puis booster (procédure à arrêter, voir plus haut).
 4. La LiFePO4 ne charge pas : au moteur (Orion XS), au quai (Blue Smart).
-5. Le guindeau ne répond pas : disjoncteur 70 A, fusible 5 A de la télécommande (et sélecteur, s'il est retenu).
+5. Le guindeau ne répond pas : disjoncteur 70 A, fusible 5 A de la télécommande, position du sélecteur (1 moteur, 2 servitude en secours ; ne pas basculer guindeau en marche).
 6. Un circuit du tableau ne marche plus : fusibles, calibres, rechanges.
 7. Pas de 230 V, ou le différentiel déclenche : borne du port, recherche du circuit en défaut.
 8. Le frigo ne refroidit pas : EPS 100, tension.

@@ -66,6 +66,18 @@ appareils:
     nodes:
       node031: [gauche, 220]
       node032: [bas, 900]
+  - id: selecteur-guindeau
+    nouveau: true
+    x: 600
+    y: 90
+    w: 150
+    h: 60
+    titre: Sélecteur
+    titre_y: 17
+    nodes:
+      node383: [gauche, 120]
+      node385: [droite, 120]
+      node384: [bas, 675]
   - id: disj-guindeau
     forme: fusible
     calibre: 70 A
@@ -183,7 +195,9 @@ fils:
   wire200: {etiquette: [210, 152, end]}
   wire001: {etiquette: [388, 212, mid]}
   wire012: {etiquette: [620, 212, mid]}
-  wire217: {trace: [[500, 204], [500, 120]], etiquette: [680, 112, mid], texte: "w217 · 35 · guindeau sur le circuit moteur"}
+  wire217: {trace: [[500, 204], [500, 120]], etiquette: [530, 112, mid], texte: "w217 · 35 · pos. 1"}
+  wire220: {etiquette: [775, 112, mid], texte: "w220 · 35"}
+  wire219: {trace: [[675, 176]], etiquette: [681, 170], texte: "w219 · pos. 2"}
   wire018: {etiquette: [906, 112, mid]}
   wire020: {etiquette: [1100, 104, mid], texte: w020}
   wire021: {etiquette: [1100, 156, mid], texte: w021}
@@ -205,6 +219,7 @@ fils:
   wire207: {trace: [[520, 256], [520, 350], [870, 350], [870, 580]], etiquette: [680, 344, mid], texte: "w207 · + de l'entrée (notice)"}
 
 renvois:
+  - {x: 600, y: 176, w: 150, nouveau: true, texte: "n010 · servitude : folio 2k"}
   - {x: 40, y: 374, w: 170, texte: "w204 · 16 → n007 · folio 2k"}
   - {x: 135, y: 600, w: 130, texte: "→ n087 · folio 2k"}
 
