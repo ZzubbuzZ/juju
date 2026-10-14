@@ -104,7 +104,7 @@ Une fois le shunt posé, un protocole simple permet de remplacer les estimations
 
 ## Décision
 
-**14/10/2026** : **H1 retenue** par l'utilisateur : SmartShunt 500 A, lecture et alarme sur smartphone. H2, H3 et H4 écartées. Emplacement tranché le même jour avec l'étude E : dans la niche de la contremarche (emplacement b), avec l'Orion XS et le chargeur de quai (E-H1 ; E-H4 écartée). H6 reste possible plus tard : le Cerbo-S GX se branche sur le port VE.Direct du SmartShunt sans rien racheter (Q44). Le câblage de H1 est déjà dans l'installation cible (base de E-H1). Ce qui suit retrace les étapes précédentes.
+**14/10/2026** : **H1 retenue** par l'utilisateur : SmartShunt 500 A, lecture et alarme sur smartphone. H2, H3 et H4 écartées. Emplacement tranché le même jour avec l'étude E : dans la niche de la contremarche (emplacement b), avec l'Orion XS ; le chargeur de quai va au coffre de cockpit, son négatif revient côté « bord » du shunt (E-H5 ; E-H4 écartée). H6 reste possible plus tard : le Cerbo-S GX se branche sur le port VE.Direct du SmartShunt sans rien racheter (Q44). Le câblage de H1 est déjà dans l'installation cible (base de E-H1). Ce qui suit retrace les étapes précédentes.
 
 **05/10/2026** : emplacement du shunt, avec le chargeur de quai, à décider sur place (contremarche ou coffre de la batterie). H5 écartée (place incertaine pour le Cerbo GX et l'écran, Q43 ; prix). H6 attend Q44 (traceur et réseau NMEA 2000, à voir à la prochaine visite). Le SmartShunt (H1) est envisagé, pas encore commandé : voir [ce que le shunt apporte](#ce-que-le-shunt-apporte-à-linstallation-mis-à-jour-le-0510). Le choix entre lecture sur téléphone (H1) et afficheur avec alarme visible (H2) reste ouvert.
 

@@ -21,7 +21,7 @@ Vérification des sections, des protections et des chutes de tension de l'instal
 | Guindeau en secours sur la LiFePO4 (sélecteur en position 2, 13/10) | wire219, wire220, wire018, wire020, wire021, wire015 | 35, 50 et 10 mm², trajet voisin du circuit moteur | 50 A normal, 60 A en charge | MEGA 300 A, puis disjoncteur 70 A | voisine du circuit moteur | Acceptable en secours ; 50 à 60 A sous les 250 A du BMS |
 | Dolphin → batterie moteur | wire200, wire201 | 6 mm², 0,5 + 0,5 m | 20 A | 30 A à la batterie | 0,5 % | Conforme |
 | Orion XS, entrée et sortie | wire202 à wire206 | 16 mm², 0,65 + 0,5 m | réglé vers 15 A ; 50 A au plus | 70 A aux deux bouts (notice) | 0,2 % à 15 A ; 0,5 % à 50 A | Conforme |
-| Blue Smart IP67 12/17 → servitude | wire210 à wire212 | 4 mm², 0,65 + 0,5 m | 17 A | 25 A à la source | 0,7 % | Conforme |
+| Blue Smart IP67 12/17 (coffre de cockpit, E-H5) → servitude | wire210 à wire212 | 4 mm² 0,15 m, puis 10 mm² 2 × 5 m (Q64) | 17 A | 25 A à la source | 2,6 % | Conforme sous 3 % ; fin de charge corrigée par la tension du shunt (VE.Smart) |
 | Ballon, entrée 12 V (B-H3) | wire306 à wire308 | 6 mm², 3,5 + 3 m (est. : trajet de wire019, ballon sous la table à carte, Q57) | 17 A | disjoncteur 12 V CC de 30 A à la platine (notice : 30 A ; 12/10) | 2,8 % | Conforme (confort, 10 %) |
 | Frigo : batterie → tableau Scheiber → EPS 100 → groupe froid | wire022 à wire025, wire027, wire028 | 6 puis 3,5 mm², environ 6,5 m (est.) | 3,5 A ; 5 A au démarrage | 30 A (A-H2), puis 15 A (tableau Scheiber) | 1,8 % ; **2,6 %** au démarrage | Conforme ; longueurs de wire022 à wire025 non relevées |
 | Pompe de cale | wire026, wire036 | 2,5 mm², 3 m (est.) | 3 A | 10 A (tableau Scheiber) | 1,1 % | Section conforme ; fusible : anomalie A10 (3 A demandés) |

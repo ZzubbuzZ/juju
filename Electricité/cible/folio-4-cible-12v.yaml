@@ -6,7 +6,7 @@
 folio: 4
 titre: Installation 12 V cible
 aria: "Installation 12 volts cible : batterie moteur et guindeau, batterie LiFePO4 avec son shunt, chargeur DC/DC Orion XS, chargeur de quai Blue Smart, départs protégés vers les tableaux et l'entrée 12 volts du chauffe-eau."
-desc: "Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur."
+desc: "Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Le Blue Smart est au coffre de cockpit (E-H5), relié à la niche de la contremarche en 10 mm²."
 modele: cible
 taille: [1200, 1080]
 
@@ -175,7 +175,7 @@ appareils:
     w: 200
     h: 70
     titre: Blue Smart IP67 12/17
-    lignes: ["chargeur de quai · 230 V : folio 3"]
+    lignes: ["coffre de cockpit · E-H5"]
     nodes:
       node372: [droite, 525]
       node373: [gauche, 525]
@@ -367,9 +367,9 @@ fils:
   wire204: {trace: [[400, 646]], etiquette: [406, 590], texte: "w204 · 16"}
   wire206: {trace: [[18, 450], [18, 990]], etiquette: [190, 444, mid], texte: "w206 · 16"}
   # Blue Smart, LiFePO4, shunt
-  wire211: {trace: [[290, 626], [290, 525]], etiquette: [265, 517, mid], texte: "w211 · 4"}
+  wire211: {trace: [[290, 626], [290, 525]], etiquette: [265, 517, mid], texte: "w211 · 10"}
   wire210: {trace: [[400, 646], [380, 626]], etiquette: [392, 660, end], texte: "w210 · 4"}
-  wire212: {trace: [[28, 525], [28, 990]], etiquette: [37, 580, mid, v], texte: "w212 · 4"}
+  wire212: {trace: [[28, 525], [28, 990]], etiquette: [37, 580, mid, v], texte: "w212 · 10"}
   wire161: {etiquette: [211, 662, mid], texte: w161}
   wire006: {etiquette: [300, 686, mid]}
   wire009: {etiquette: [56, 728]}
@@ -413,4 +413,4 @@ textes:
   - {x: 200, y: 1010, classe: "ts mid", texte: "côté batteries (avant le shunt)"}
   - {x: 620, y: 1010, classe: "ts mid", texte: "masse des charges"}
   - {x: 20, y: 1044, texte: "En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue."}
-  - {x: 20, y: 1062, texte: "Détail : folios 2c (fusibles), 2e (shunt), 2h et 2i (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md."}
+  - {x: 20, y: 1062, texte: "Détail : folios 2e (shunt), 2h et 2o (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md."}

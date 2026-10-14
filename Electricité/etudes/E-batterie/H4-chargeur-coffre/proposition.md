@@ -12,7 +12,7 @@ points_faibles:
   - Le fil de commande de l'Orion XS fait environ 2 m.
   - Coffre à ouvrir pour accéder à l'Orion XS, au shunt et au chargeur ; un peu de chaleur près de la batterie en pleine charge.
   - Les fils de mesure du shunt et wire180 remontent à la platine, environ 1 à 1,2 m.
-decision: "05/10/2026 : variante retenue ou non sur place, face à E-H1. 14/10 : écartée, l'utilisateur retient E-H1 : l'Orion XS, le Blue Smart et le shunt tiennent dans la niche de la contremarche (implantation dans E-H1)."
+decision: "05/10/2026 : variante retenue ou non sur place, face à E-H1. 14/10 : écartée, l'utilisateur retient E-H5 : l'Orion XS et le shunt dans la niche de la contremarche (E-H1), le Blue Smart au coffre de cockpit."
 ---
 
 # E-H4 · Variante : Orion XS, chargeur de quai et shunt dans le coffre de la batterie

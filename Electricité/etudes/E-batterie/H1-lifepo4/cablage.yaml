@@ -3,7 +3,8 @@
 # E-H1 : différences avec D-H1 (shunt de servitude posé dans la contremarche, sur le
 # programme retenu de l'étude A). Décisions du 02/10 et du 05/10.
 # Chargeur de quai LiFePO4 et shunt ensemble, dans la contremarche de la descente
-# (emplacement b). La variante « dans le coffre de la batterie », E-H4, est écartée le 14/10.
+# (emplacement b). La variante « dans le coffre de la batterie », E-H4, est écartée le 14/10 ;
+# E-H5 (retenue le 14/10) déplace le chargeur de quai au coffre de cockpit.
 # Nœuds 360 à 379 réservés à l'étude E ; fils wire200 et suivants.
 # Longueurs estimées, à mesurer à la pose. Orion XS : fusibles de 70 A aux deux extrémités et 16 mm²
 # jusqu'à 5 m (notice Victron, § 3.3). Guindeau déplacé sur le circuit moteur (décision du 05/10).
@@ -33,7 +34,7 @@ equipements:
   - { id: inter-orion, type: interrupteur, designation: "Interrupteur à voyant de l'Orion XS (« ouvrir au port »), entre le + de l'entrée et la broche H (option b de la notice)", zone: descente, emplacement: "Près du tableau Scheiber 2 voies (Q48)", statut: propose }
 
   # --- Chargeur de quai LiFePO4 --------------------------------------------------
-  - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: descente, emplacement: "Niche de la contremarche, en bas du fond, avec le shunt (14/10)", statut: propose }
+  - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: descente, emplacement: "Dans la contremarche, avec le shunt (14/10 : déplacé au coffre de cockpit par E-H5)", statut: propose }
   - { id: disj-chargeur-lifepo4, type: disjoncteur, designation: "Disjoncteur du chargeur de quai LiFePO4", modele: "1P+N C10", zone: cockpit-coffre-tribord, emplacement: "Boîtier d'arrivée 230 V, place libre du rail (Q63)", calibre_A: 10, statut: propose, note: "Retenu le 12/10 : le Blue Smart a son propre C10, le Dolphin garde le sien (node210, node211)" }
   - { id: selecteur-guindeau, type: interrupteur, designation: "Sélecteur de batterie du guindeau, 3 positions 1 / OFF / 2, OFF entre 1 et 2 (300 A continu)", zone: cabine-poupe, emplacement: "Près du disjoncteur du guindeau, sous l'ouverture d'accès aux coupe-circuits", statut: propose, note: "Commandé le 13/10 : 300 A en continu, IP66, goujons M10. OFF entre 1 et 2 : pas de liaison entre les batteries au passage (à contrôler au multimètre à réception, aucune continuité entre 1 et 2 en tournant). Basculer guindeau à l'arrêt. Position normale : 1 (moteur) ; 2 : secours" }
   - { id: fus-chargeur-lifepo4, type: fusible, designation: "Fusible de la sortie du chargeur de quai LiFePO4", calibre_A: 25, emplacement: "Contre la borne côté batterie du coupe-circuit de servitude", statut: propose, note: "Calibre à confirmer sur la notice du Blue Smart" }

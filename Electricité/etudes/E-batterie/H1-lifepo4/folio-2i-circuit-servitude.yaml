@@ -6,6 +6,7 @@ titre: Circuit servitude cible (Orion XS, chargeur de quai et shunt dans la cont
 aria: "Circuit servitude cible : LiFePO4, Orion XS, Blue Smart, départs et shunt dans la contremarche."
 desc: "Batterie de servitude LiFePO4 et ses chargeurs : sortie de l'Orion XS et Blue Smart, chacun avec son fusible à la source ; départs vers les tableaux, shunt et coupe-circuit des négatifs. La commande de l'Orion XS est prise côté moteur (folio 2h)."
 modele: E-H1
+archive: "remplacé le 14/10 par le folio 2o (E-H5) : le Blue Smart va au coffre de cockpit ; l'Orion XS et le shunt restent dans la niche."
 taille: [1200, 710]
 
 zones:

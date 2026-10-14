@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1080" role="img" aria-label="Installation 12 volts cible : batterie moteur et guindeau, batterie LiFePO4 avec son shunt, chargeur DC/DC Orion XS, chargeur de quai Blue Smart, départs protégés vers les tableaux et l&#x27;entrée 12 volts du chauffe-eau.">
   <title>Folio 4 · Installation 12 V cible</title>
-  <desc>Tout le 12 V tel qu&#x27;il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur.</desc>
+  <desc>Tout le 12 V tel qu&#x27;il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Le Blue Smart est au coffre de cockpit (E-H5), relié à la niche de la contremarche en 10 mm².</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -88,7 +88,7 @@
   <text class="idn" x="412" y="522">70 A</text>
   <rect class="box-new" x="40" y="470" width="200" height="70" rx="2"/>
   <text class="tb mid tn" x="140" y="490">Blue Smart IP67 12/17</text>
-  <text class="ts mid" x="140" y="505">chargeur de quai · 230 V : folio 3</text>
+  <text class="ts mid" x="140" y="505">coffre de cockpit · E-H5</text>
   <rect class="fuse-new" x="314" y="617" width="46" height="18"/>
   <text class="idn mid" x="337" y="630">25 A</text>
   <rect class="box-new" x="40" y="620" width="150" height="80" rx="2"/>
@@ -188,12 +188,12 @@
   <text class="idn" x="406" y="590">w204 · 16</text>
   <path class="n w3" d="M360 450 L18 450 L18 990"/>
   <text class="idn mid" x="190" y="444">w206 · 16</text>
-  <path class="p w2" d="M314 626 L290 626 L290 525 L240 525"/>
-  <text class="idn mid" x="265" y="517">w211 · 4</text>
+  <path class="p w3" d="M314 626 L290 626 L290 525 L240 525"/>
+  <text class="idn mid" x="265" y="517">w211 · 10</text>
   <path class="p w2" d="M424 670 L400 646 L380 626 L360 626"/>
   <text class="idn end" x="392" y="660">w210 · 4</text>
-  <path class="n w2" d="M40 525 L28 525 L28 990"/>
-  <text class="idn mid" x="37" y="580" transform="rotate(-90 37 580)">w212 · 4</text>
+  <path class="n w3" d="M40 525 L28 525 L28 990"/>
+  <text class="idn mid" x="37" y="580" transform="rotate(-90 37 580)">w212 · 10</text>
   <path class="p w4" d="M190 670 L232 670"/>
   <text class="idn mid" x="211" y="662">w161</text>
   <path class="p w4" d="M280 670 L424 670"/>
@@ -468,7 +468,7 @@
   <text class="ts mid" x="200" y="1010">côté batteries (avant le shunt)</text>
   <text class="ts mid" x="620" y="1010">masse des charges</text>
   <text class="ts" x="20" y="1044">En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue.</text>
-  <text class="ts" x="20" y="1062">Détail : folios 2c (fusibles), 2e (shunt), 2h et 2i (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md.</text>
+  <text class="ts" x="20" y="1062">Détail : folios 2e (shunt), 2h et 2o (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md.</text>
   <g class="mk-q"><circle cx="370" cy="196" r="11"/><text class="mid" x="370" y="199.5">Q58</text></g>
   <g class="mk-q"><circle cx="1004" cy="182" r="11"/><text class="mid" x="1004" y="185.5">Q59</text></g>
   <g class="mk-q"><circle cx="346" cy="696" r="11"/><text class="mid" x="346" y="699.5">Q58</text></g>

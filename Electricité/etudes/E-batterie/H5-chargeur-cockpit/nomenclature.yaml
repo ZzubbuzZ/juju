@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
+#
+# E-H5 : différence avec E-H1 seulement (câbles du Blue Smart). Le reste du matériel, Blue
+# Smart compris, est dans la nomenclature de E-H1. Prix estimés le 14/10/2026.
+
+hypothese: E-H5
+devise: EUR
+
+lots:
+  quai:
+    titre: Blue Smart au coffre de cockpit, sortie 12 V prolongée jusqu'à la niche
+    note: Remplace les câbles courts du lot « quai » de E-H1 (wire211 à wire215).
+
+articles:
+  - { lot: quai, designation: "Câble étamé 10 mm² rouge et noir, coffre de cockpit → niche de la contremarche", quantite: 10, unite: m, prix_unitaire: 6, statut: estimation, note: "2 × 5 m estimés (Q64)", fils: [wire211, wire212] }
+  - { lot: quai, designation: "Jonction des câbles 12 V fournis du chargeur sur le 10 mm² (cosses M8 et goujons isolés, ou bornier sous capot), cosses 10 mm², gaine", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, fils: [wire211, wire212] }
+  - { lot: quai, designation: "Câble 230 V H07RN-F 3 × 1,5 mm² court (≈ 1 m) du C10 à une prise ou un boîtier à bornes Wago dans le coffre", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Q53", fils: [wire213, wire214, wire215] }

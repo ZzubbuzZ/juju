@@ -57,7 +57,7 @@ fils:
   wire308: {trace: [[940, 250], [940, 430]], etiquette: [560, 422, mid], texte: "w308 · 6 mm² · ≈ 3 m"}
 
 renvois:
-  - {x: 40, y: 72, w: 250, texte: "← n073, MEGA 300 A : folio 2i"}
+  - {x: 40, y: 72, w: 250, texte: "← n073, MEGA 300 A : folio 2o"}
   - {x: 30, y: 460, w: 230, texte: "← n087, shunt côté « bord » : folio 2e"}
 
 pastilles:

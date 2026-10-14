@@ -6,7 +6,7 @@ titre: Circuit moteur cible (Orion XS dans le coffre de la batterie)
 aria: "Circuit moteur cible, variante : Orion XS dans le coffre de la batterie de servitude."
 desc: "Batterie moteur et ses consommateurs : démarreur et alternateur, guindeau désormais alimenté par le coupe-circuit moteur, Dolphin raccordé au plus près de la batterie, et entrée de l'Orion XS avec son fusible de 70 A. Variante : l'Orion XS est dans le coffre de la batterie de servitude."
 modele: E-H4
-archive: "hypothèse E-H4 écartée le 14/10 : l'Orion XS, le Blue Smart et le shunt vont dans la niche de la contremarche (E-H1, folios 2h et 2i)."
+archive: "hypothèse E-H4 écartée le 14/10 : l'Orion XS et le shunt vont dans la niche de la contremarche, le Blue Smart au coffre de cockpit (E-H5, folios 2h et 2o)."
 taille: [1200, 720]
 
 zones:

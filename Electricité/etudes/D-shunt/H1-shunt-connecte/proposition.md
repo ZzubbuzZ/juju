@@ -10,7 +10,7 @@ points_forts:
 points_faibles:
   - Lecture et alarme de tension basse sur le téléphone seulement.
   - Pas d'afficheur dédié possible ; une lecture fixe ne peut s'ajouter que par l'écran d'un Cerbo GX (H5), bien plus cher.
-decision: "14/10/2026 : retenue par l'utilisateur, lecture et alarme sur smartphone (application VictronConnect). Emplacement : niche de la contremarche (emplacement b), avec l'Orion XS et le chargeur de quai (E-H1 retenue, E-H4 écartée le 14/10). Un Cerbo GX (H6) reste possible plus tard par le port VE.Direct, sans rien racheter."
+decision: "14/10/2026 : retenue par l'utilisateur, lecture et alarme sur smartphone (application VictronConnect). Emplacement : niche de la contremarche (emplacement b), avec l'Orion XS ; chargeur de quai au coffre de cockpit (E-H5 retenue, E-H4 écartée le 14/10). Un Cerbo GX (H6) reste possible plus tard par le port VE.Direct, sans rien racheter."
 ---
 
 # D-H1 · Shunt connecté, lecture sur smartphone
