@@ -221,7 +221,7 @@ equipements:
     type: recepteur
     designation: Luminaire 12 V de la cabine de poupe
     zone: cabine-poupe
-    note: Deux ampoules à culot G11, à incandescence (12/10).
+    note: "Deux ampoules à culot G11 de 1 W (15/10), notées à incandescence le 12/10 : 1 W correspond plutôt à des LED."
 
   - id: eclairage-12v-table-a-carte
     type: recepteur
@@ -233,7 +233,7 @@ equipements:
     type: recepteur
     designation: Luminaire 12 V de la cabine de proue
     zone: cabine-proue
-    note: Deux ampoules à culot G11, à LED (12/10).
+    note: Deux ampoules à culot G11 à LED (12/10), de 1 W chacune (15/10).
 
   - id: eclairage-12v-carre
     type: recepteur

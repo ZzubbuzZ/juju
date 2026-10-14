@@ -17,5 +17,5 @@ articles:
   - { lot: mesure, designation: "Câble étamé 0,75 mm² rouge (fils de mesure)", quantite: 2, unite: m, prix_unitaire: 1, statut: estimation, fils: [wire181, wire182, wire183, wire184] }
   - { lot: mesure, designation: "Câble étamé 35 mm² noir (shunt → coupe-circuit des négatifs)", quantite: 0.5, unite: m, prix_unitaire: 14, statut: estimation, fils: [wire180] }
   - { lot: mesure, designation: "Cosses tubulaires étamées 35 mm² (wire180, et reprise de wire009 sur le shunt)", quantite: 3, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire180, wire009] }
-  - { lot: mesure, designation: "Reprise de wire004 (− batterie moteur) sur le coupe-circuit des négatifs : câble 35 mm² noir et cosses", quantite: 1, unite: lot, statut: a_chiffrer, fils: [wire004], note: "Rallonge ou câble refait : dépend du trajet et de la longueur (Q60)" }
+  - { lot: mesure, designation: "Reprise de wire004 (− batterie moteur) sur le coupe-circuit des négatifs : câble 35 mm² noir et cosses", quantite: 1, unite: lot, statut: a_chiffrer, fils: [wire004], note: "Rallonge ou câble refait : dépend du trajet et de la longueur (Q62)" }
   - { lot: mesure, designation: "Cosses à œillet 0,75 mm² et gaine thermorétractable", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire181, wire182, wire183, wire184] }

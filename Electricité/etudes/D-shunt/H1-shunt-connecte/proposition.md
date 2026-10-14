@@ -30,7 +30,7 @@ Emplacement **b** du [README de l'étude](../README.md#deux-emplacements-possibl
 | Fil | De → vers | Section | Rôle |
 |---|---|---|---|
 | wire009 (repris) | − batterie de servitude (node008) → shunt, côté batterie (node086) | 35 mm², 1 m | Câble existant : seule son extrémité côté coupe-circuit change |
-| wire004 (repris) | − batterie moteur (node002) → coupe-circuit des négatifs (node005) | 35 mm², longueur à relever (Q60) | Relevé sur le − de la batterie de servitude (node008) : son extrémité est reprise sur node005 pour ne pas passer par le shunt |
+| wire004 (repris) | − batterie moteur (node002) → coupe-circuit des négatifs (node005) | 35 mm², longueur à relever (Q62) | Relevé sur le − de la batterie de servitude (node008) : son extrémité est reprise sur node005 pour ne pas passer par le shunt |
 | wire180 | shunt, côté système (node087) → coupe-circuit des négatifs (node005) | 35 mm², 0,2 m | Tout le reste du bord revient par ce fil |
 | wire181 → wire182 | côté batterie du coupe-circuit de servitude (node009) → fusible 1 A → shunt Vbatt+ (node088) | 0,75 mm² | Alimentation du shunt et mesure de la tension de servitude |
 | wire183 → wire184 | côté batterie du coupe-circuit moteur (node003) → fusible 1 A → entrée auxiliaire (node089) | 0,75 mm² | Tension de la batterie moteur |

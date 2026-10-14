@@ -34,7 +34,7 @@ nodes:
 
 fils:
   # --- Négatif de la batterie moteur : ramené côté système du shunt
-  - { id: wire004, de: node002, vers: node005, section_mm2: 35, couleur: noir, statut: propose, questions: [Q60], note: "Câble existant, extrémité côté batterie de servitude (node008) reprise sur le coupe-circuit des négatifs ; rallonge ou câble refait selon le trajet (Q60)" }
+  - { id: wire004, de: node002, vers: node005, section_mm2: 35, couleur: noir, statut: propose, questions: [Q62], note: "Câble existant, extrémité côté batterie de servitude (node008) reprise sur le coupe-circuit des négatifs ; rallonge ou câble refait selon le trajet (Q60)" }
 
   # --- Négatif de la batterie de servitude : seul fil côté batterie du shunt
   - { id: wire009, de: node008, vers: node086, section_mm2: 35, couleur: noir, longueur_m: 1, statut: propose, note: "Câble existant, extrémité côté coupe-circuit reprise sur le shunt" }
