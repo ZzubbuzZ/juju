@@ -66,7 +66,7 @@ Conditions :
 
 **Modèle commandé le 13/10** (fiche relevée par l'utilisateur le 14/10) : 3 positions, 300 A en continu, IP66, goujons M10, marque non indiquée. La fiche annonce une « fermeture avant ouverture », mais **la position OFF est entre 1 et 2** (remarque de l'utilisateur, 14/10) : en tournant de 1 à 2, le contact 1 s'ouvre en arrivant sur OFF avant que le contact 2 se ferme. Les deux batteries ne peuvent donc pas être reliées, même un instant. La mention de la fiche est sans doute reprise des sélecteurs 1-2-BOTH, où 1 et 2 sont voisins.
 
-**Contrôle à réception**, au multimètre en position continuité (bip), sélecteur non câblé : pointes sur les bornes 1 et 2, tourner lentement de 1 à 2 et retour. **Aucun bip à aucun moment.** S'il bipe, même brièvement, le renvoyer.
+**Contrôle à réception**, au multimètre en position continuité (bip), sélecteur non câblé : pointes sur les bornes 1 et 2, tourner lentement de 1 à 2 **dans les deux sens** : par OFF (horaire, 90° puis 180°), et par l'autre côté (antihoraire, 180°), puis faire un tour complet. **Aucun bip à aucun moment.** Si le passage antihoraire bipe (les deux contacts se touchent), poser une butée mécanique qui empêche de passer de 1 à 2 par ce côté (vis ou plot dans la course du levier, sur la platine), sinon renvoyer le sélecteur. Si aucun sens ne bipe, la butée reste utile pour imposer de passer par OFF, mais n'est pas indispensable.
 
 Précaution d'usage, conservée : basculer guindeau à l'arrêt, et de préférence coupe-circuit moteur ouvert quand on passe en secours (batterie moteur défectueuse).
 
