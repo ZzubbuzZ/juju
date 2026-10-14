@@ -1,3 +1,17 @@
+---
+hypothese: A-H2
+titre: Fusibles de batterie et des départs
+etat: retenue
+resume: Un fusible de 400 A près de chaque batterie, et un fusible à la source de chaque câble branché sur une batterie (chargeur, coupleur, tableaux de la table à carte et Scheiber). Les câbles existants sont conservés et repris sur les porte-fusibles.
+points_forts:
+  - Plus aucun câble de batterie sans protection (A1, A2, A4, A6).
+  - Câbles existants conservés, seule leur extrémité côté source change.
+points_faibles:
+  - wire001 et wire006 restent en 35 mm² sous 400 A (écart accepté, à surveiller par l'historique du shunt).
+  - Tronçons courts non protégés entre batterie et fusible (w160, w161).
+decision: "30/09/2026 : retenue, option A à 400 A sur les deux batteries ; chargeur 30 A, coupleur 40 A ; 01/10 : fusibles de 50 A (wire019) et de 30 A (wire022) ajoutés. Côté servitude, l'étude E (05/10) remplace le plomb, le coupleur et le couplage : MEGA de 300 A sur la LiFePO4."
+---
+
 # A-H2 · Fusibles de batterie
 
 Hypothèse de l'étude A. Base : le relevé, ou A-H1 si elle est retenue. Anomalies traitées : **A2** (aucun fusible en sortie des batteries), **A4** (fils du coupleur et du chargeur sans fusible), et depuis le 01/10 **A1** et **A6** (câbles des tableaux de la table à carte et Scheiber sans fusible).

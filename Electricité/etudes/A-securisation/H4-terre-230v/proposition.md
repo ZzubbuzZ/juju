@@ -1,3 +1,16 @@
+---
+hypothese: A-H4
+titre: Terre 230 V, isolateur galvanique et différentiel de type A
+etat: retenue
+resume: La terre du ponton est conservée à travers un isolateur galvanique maison, sans liaison entre la terre et la masse 12 V ; le différentiel d'arrivée est remplacé par un interrupteur différentiel 30 mA de type A.
+points_forts:
+  - Différentiel documenté, de type adapté aux chargeurs à découpage (Q36).
+  - Isolateur prêt si une liaison terre / masse apparaît plus tard (A8).
+points_faibles:
+  - Isolateur maison à contrôler chaque saison.
+decision: "30/09/2026 : retenue ; isolateur galvanique maison, pas de liaison terre / masse 12 V, transformateur d'isolement écarté. 13/10 : accouplement de l'arbre métallique vérifié (Q40)."
+---
+
 # A-H4 · Terre 230 V
 
 Hypothèse de l'étude A. Base : le relevé. Anomalie traitée : **A8** (terre 230 V et masse 12 V reliées nulle part, pas d'isolateur galvanique). Principes détaillés dans le [README de l'étude](../README.md#terre-230-v--bonnes-pratiques).

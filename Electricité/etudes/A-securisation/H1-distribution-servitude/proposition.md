@@ -1,3 +1,19 @@
+---
+hypothese: A-H1
+titre: Distribution de servitude, pompe de cale automatique et tableau de la table à carte
+etat: differee
+resume: Une barrette + après le coupe-circuit de servitude regroupe les départs, chacun protégé à sa source ; pompe de cale automatique à flotteur alimentée en direct, fusibles de 3 A ; tableau de la table à carte recâblé, un fil de masse par récepteur.
+points_forts:
+  - Distribution lisible, un fusible par départ à sa source (A1, A6).
+  - Pompe de cale automatique, indépendante des coupe-circuits, protégée au calibre du fabricant (A10).
+  - Tableau de la table à carte fiabilisé, masses séparées.
+points_faibles:
+  - Environ 640 € pour les trois lots, dont 407 € pour le recâblage du tableau.
+  - A1 et A6 sont déjà traités à moindre coût par les fusibles de A-H2.
+  - Longueurs des fils du tableau à mesurer (Q12).
+decision: "30/09/2026 : différée, sauf le fusible de 50 A à la source de wire019, repris dans A-H2. Risque accepté en attendant : A10 (pompe de cale protégée en 10 A). À reprendre sur la base de l'installation cible."
+---
+
 # A-H1 · Distribution de servitude
 
 Hypothèse de l'étude A (sécurisation). Base : le [relevé](../../../releve/etat-des-lieux.md).

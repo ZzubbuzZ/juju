@@ -6,6 +6,7 @@ titre: Tableau de la table à carte, 12 circuits
 aria: "Schéma en échelle des 12 circuits du tableau de servitude : pour chaque circuit, fusible, interrupteur, fil positif, récepteur et fil de masse dédié vers la barre négative du tableau. Les trois feux du mât passent par un connecteur de pied de mât à six broches."
 desc: "Un fusible et un interrupteur par circuit, comme sur le tableau actuel. Chaque récepteur renvoie sa masse par son propre fil. Les trois feux du mât passent par un connecteur de pont à 6 broches (b1 à b6), sans masse commune."
 modele: A-H1
+archive: "hypothèse A-H1 différée le 30/09 (recâblage du tableau de la table à carte)."
 taille: [1200, 810]
 
 appareils:

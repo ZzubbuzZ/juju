@@ -1,3 +1,16 @@
+---
+hypothese: A-H5
+titre: Passages de cloison
+etat: retenue
+resume: Passe-fils dans chaque trou de cloison, câbles fixés de part et d'autre, gaine annelée sur les tronçons exposés ; en priorité les câbles sans fusible.
+points_forts:
+  - Supprime l'usure de l'isolant sur l'arête des trous (A9).
+  - Peu coûteux, réalisable au fil des interventions.
+points_faibles:
+  - Une dizaine de passages, diamètres à relever sur place (Q35).
+decision: "30/09/2026 : retenue."
+---
+
 # A-H5 · Passages de cloison
 
 Hypothèse de l'étude A. Base : le relevé. Anomalie traitée : **A9** (câbles passant dans de simples trous de cloison).

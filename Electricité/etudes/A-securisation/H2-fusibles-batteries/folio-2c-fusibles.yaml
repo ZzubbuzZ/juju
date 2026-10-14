@@ -6,6 +6,7 @@ titre: Fusibles de batterie et des départs
 aria: "Fusibles proposés : un fusible de 400 A près de chaque batterie, un fusible sur chacun des quatre départs du coupleur et du chargeur, et un fusible à la source de chacun des câbles des deux tableaux."
 desc: "Chaque câble branché sur une batterie est désormais protégé à sa source : 400 A près des batteries (A2), 30 A pour le chargeur et 40 A pour le coupleur (A4), 50 A pour le tableau de la table à carte (A1), 30 A pour le tableau Scheiber (A6). Les câbles existants sont conservés et repris sur les porte-fusibles."
 modele: A-H2
+archive: "dépassé par l'étude E (05/10) : servitude au plomb, coupleur et couplage déposés. Fusibles de l'installation cible : folios 4, 2h et 2i."
 taille: [1200, 700]
 
 appareils:

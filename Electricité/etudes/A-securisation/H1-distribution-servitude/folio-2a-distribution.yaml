@@ -6,6 +6,7 @@ titre: Distribution de servitude et tableau Scheiber
 aria: "Distribution proposée : une barrette positive après le coupe-circuit de servitude alimente le guindeau, le tableau de la table à carte par un fusible de 50 A et le tableau Scheiber par un fusible de 30 A. La pompe de cale automatique est alimentée en direct depuis la batterie par un fusible de 10 A et renvoie sa masse côté batteries."
 desc: "Une seule barrette + remplace les deux départs sans protection (A1, A6). Chaque départ a son fusible, placé à la source du câble qu'il protège. La pompe de cale ne dépend plus d'aucun coupe-circuit : ni pour son positif, ni pour sa masse. Ses deux fusibles passent à 3 A, le calibre du fabricant (A10)."
 modele: A-H1
+archive: "hypothèse A-H1 différée le 30/09 (seul le fusible de 50 A de wire019 est retenu, dans A-H2) ; à reprendre sur la base de l'installation cible."
 taille: [1200, 720]
 
 appareils:

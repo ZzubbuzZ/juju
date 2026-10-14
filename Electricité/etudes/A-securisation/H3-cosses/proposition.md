@@ -1,3 +1,16 @@
+---
+hypothese: A-H3
+titre: Cosses de la batterie moteur et de l'EPS 100
+etat: retenue
+resume: Cosses tubulaires de 35 mm² serties sur les câbles de la batterie moteur, après coupe de la partie abîmée, et raccordement correct de la liaison EPS 100 → groupe froid.
+points_forts:
+  - Contacts fiables sur le circuit du démarreur (A3) et du frigo (A7).
+  - L'outillage de sertissage sert à toutes les hypothèses.
+points_faibles:
+  - Pince hydraulique ou sertisseuse à frapper nécessaire pour le 35 mm².
+decision: "30/09/2026 : retenue ; les câbles sont conservés, seules les cosses sont serties."
+---
+
 # A-H3 · Cosses
 
 Hypothèse de l'étude A. Base : le relevé. Anomalies traitées : **A3** (câbles de la batterie moteur sans cosses serties) et **A7** (liaison EPS 100 → groupe froid vissée sans cosse).
