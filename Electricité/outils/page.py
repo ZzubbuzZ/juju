@@ -12,6 +12,10 @@ Chaque branche est lue avec `git archive`, sans changer de branche ; la branche
 courante est lue sur le disque, modifications non commitées comprises. Une branche
 d'étude dont le dossier Electricité/ est identique à celui de main (étude fusionnée)
 n'a pas de vue propre. Les fichiers du dépôt restent la source : la page se régénère.
+
+Un folio dont la mise en page porte `archive: <motif>` (folio dépassé, hypothèse écartée ou
+différée) quitte le fil de la vue : il est rangé, avec son motif, dans une section « Folios
+archivés » repliée en fin de vue (dépliée à l'impression par outils/pdf.py).
 """
 from __future__ import annotations
 
@@ -55,7 +59,31 @@ def extraire(branche: str, destination: Path) -> Path:
     return destination / prefixe
 
 
-def folio(chemin: Path, contexte: str, racine: Path) -> str:
+def motif_archive(chemin: Path) -> str:
+    """Motif d'archivage lu dans la mise en page voisine du SVG (champ `archive`), vide sinon."""
+    disposition = chemin.with_suffix(".yaml")
+    if not disposition.exists():
+        return ""
+    return str((yaml.safe_load(disposition.read_text(encoding="utf-8")) or {}).get("archive") or "")
+
+
+def folios_et_archives(chemins: list[tuple[Path, str]], racine: Path) -> list[str]:
+    """Folios en service, puis une section repliée qui regroupe les folios archivés."""
+    actifs, archives = [], []
+    for chemin, contexte in chemins:
+        motif = motif_archive(chemin)
+        (archives if motif else actifs).append(folio(chemin, contexte, racine, motif))
+    if archives:
+        actifs.append(f"""
+<details class="archives">
+  <summary>Folios archivés ({len(archives)}) : hypothèses écartées ou différées, folios dépassés</summary>
+  <div class="archives-corps">{"".join(archives)}
+  </div>
+</details>""")
+    return actifs
+
+
+def folio(chemin: Path, contexte: str, racine: Path, archive: str = "") -> str:
     svg = chemin.read_text(encoding="utf-8")
     titre = re.search(r"<title>(.*?)</title>", svg, re.S)
     desc = re.search(r"<desc>(.*?)</desc>", svg, re.S)
@@ -67,7 +95,9 @@ def folio(chemin: Path, contexte: str, racine: Path) -> str:
   <div class="folio-head">
     <span class="folio-no">{html.escape(numero.upper())}</span>
     <h2>{html.escape(nom or numero)}</h2>
-    <p>{html.escape(contexte)} · <code>{html.escape(chemin.relative_to(racine).as_posix())}</code></p>
+    <p>{html.escape(contexte)} · <code>{html.escape(chemin.relative_to(racine).as_posix())}</code></p>{
+    f'''
+    <p class="archive-motif">Archivé : {inline(archive)}</p>''' if archive else ""}
   </div>
   <figure>
     <div class="sheet">{svg}</div>
@@ -294,16 +324,17 @@ def entete_vue(branche: str, commit: str) -> str:
 
 
 def vue_releve(racine: Path, branche: str, commit: str) -> str:
-    folios = [folio(c, "Relevé", racine) for c in sorted((racine / "schemas").glob("*.svg"))]
-    folios += [folio(c, "Installation cible", racine) for c in sorted((racine / "cible").glob("*.svg"))]
-    for c in sorted((racine / "etudes").glob("*/H*/*.svg")):
-        folios.append(folio(c, f"Étude {c.parent.parent.name} · hypothèse {c.parent.name}", racine))
+    chemins = [(c, "Relevé") for c in sorted((racine / "schemas").glob("*.svg"))]
+    chemins += [(c, "Installation cible") for c in sorted((racine / "cible").glob("*.svg"))]
+    chemins += [(c, f"Étude {c.parent.parent.name} · hypothèse {c.parent.name}")
+                for c in sorted((racine / "etudes").glob("*/H*/*.svg"))]
+    folios = folios_et_archives(chemins, racine)
     return "\n".join([entete_vue(branche, commit), *folios, *comparaisons(racine), notes(racine)])
 
 
 def vue_etude(racine: Path, branche: str, commit: str, dossier: str) -> str:
-    folios = [folio(c, f"Étude {dossier} · hypothèse {c.parent.name}", racine)
-              for c in sorted((racine / "etudes" / dossier).glob("H*/*.svg"))]
+    folios = folios_et_archives([(c, f"Étude {dossier} · hypothèse {c.parent.name}")
+                                 for c in sorted((racine / "etudes" / dossier).glob("H*/*.svg"))], racine)
     renvoi = ('<p class="vue-renvoi">Folios de l\'existant, anomalies et questions : '
               'voir la vue <a href="#releve">Relevé</a>.</p>')
     return "\n".join([entete_vue(branche, commit), cadrage(racine, branche, dossier), *folios,
@@ -450,6 +481,12 @@ code{{font-family:var(--mono);font-size:.88em}}
 .vue[hidden]{{display:none}}
 .vue-source,.vue-renvoi{{margin:0;color:var(--muted);font-size:14px}}
 .vue-renvoi a{{color:var(--ink);text-underline-offset:2px}}
+.archives{{border:1px dashed var(--line);background:var(--sheet);padding:12px 16px}}
+.archives summary{{cursor:pointer;font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.04em}}
+.archives summary:focus-visible{{outline:2px solid var(--unk);outline-offset:2px}}
+.archives-corps{{display:grid;gap:48px;margin-top:24px}}
+.archives section.folio{{opacity:.85}}
+.folio-head p.archive-motif{{color:var(--warn);font-weight:500}}
 .readme{{max-width:85ch;display:grid;gap:12px}}
 .readme h2,.readme h3,.readme h4{{margin:14px 0 0;font-weight:600;text-wrap:balance}}
 .readme h2{{font-size:19px}}.readme h3{{font-size:16px}}.readme h4{{font-size:15px}}

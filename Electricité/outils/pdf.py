@@ -57,6 +57,11 @@ figcaption { font-size: 11.5px; margin-top: 6px; max-width: none; }
 .notes li { margin-bottom: 7px; }
 .notes.traitees { break-before: page; }
 .readme { max-width: none; }
+.archives { border: 0; padding: 0; background: none; }
+.archives summary { break-before: page; list-style: none; font-size: 18px; color: var(--ink); }
+.archives-corps { display: block; margin-top: 0; }
+.archives-corps > section.folio:first-child { break-before: auto; }
+.archives section.folio { opacity: 1; }
 a { color: inherit; }
 """
 
@@ -77,6 +82,8 @@ def imprimer(html: Path, sortie: Path) -> None:
         p.evaluate("""() => document.querySelectorAll('.vue').forEach(v => {
             const h = document.createElement('h1'); h.className = 'vue-titre';
             h.textContent = v.dataset.titre; v.prepend(h); v.hidden = false; })""")
+        # folios archivés : section dépliée à l'impression
+        p.evaluate("() => document.querySelectorAll('details.archives').forEach(d => d.open = true)")
         p.emulate_media(media="print")
         p.pdf(path=str(sortie), format="A4", landscape=True, print_background=True,
               display_header_footer=True, header_template="<span></span>", footer_template=PIED,
