@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Alimentation 230 volts du chauffe-eau : second disjoncteur de 10 ampères du boîtier tribord, câble de 3 fois 1,5 millimètres carrés vers une prise dédiée, cordon du ballon à fiche Schuko ; entrée 12 volts au folio 2n.">
   <title>Folio 2m · Chauffe-eau CozyWater 10C, alimentation</title>
-  <desc>Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par un C10 du boîtier tribord, libéré en regroupant les câbles des deux C10 sur l&#x27;autre (Q42), en aval du différentiel 30 mA. Le câble passe par une boîte de dérivation. Unifilaire, comme le folio 3 ; l&#x27;entrée 12 V, câblée elle aussi, est au folio 2n ; le 230 V est prioritaire.</desc>
+  <desc>Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par le C10 n°2 du boîtier tribord, en aval du différentiel 30 mA. Le C10 n°2 est libéré en transférant son câble, l&#x27;éclairage bâbord, sur le C10 n°1, qui alimente alors tout l&#x27;éclairage (Q42, affectation supposée). Le câble passe par une boîte de dérivation. Unifilaire, comme le folio 3 ; l&#x27;entrée 12 V, câblée elle aussi, est au folio 2n ; le 230 V est prioritaire.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -22,6 +22,7 @@
     .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
     .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
     .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .fx{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round}.fx-new{fill:none;stroke:var(--new);stroke-width:1.4;stroke-linecap:round}
     .dp{fill:var(--pos)}.dn{fill:var(--ink)}
     .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
     .lever{stroke:var(--ink);stroke-width:2}
@@ -44,18 +45,22 @@
   <text class="ts" x="70" y="178">Boîtier de distribution tribord · cabinet de toilette · Legrand DNX3</text>
   <rect class="box" x="40" y="60" width="190" height="80" rx="2"/>
   <text class="tb mid" x="135" y="80">Boîtier d&#x27;arrivée</text>
-  <text class="ts mid" x="135" y="95">différentiel 30 mA · 16 A</text>
-  <text class="ts mid" x="135" y="110">coffre de cockpit (folio 3)</text>
+  <text class="ts mid" x="135" y="95">différentiel 30 mA</text>
+  <text class="ts mid" x="135" y="110">sans disjoncteur (A12)</text>
   <rect class="fuse" x="132" y="200" width="16" height="30"/>
+  <path class="fx" d="M134 204 L146 216 M134 216 L146 204"/>
   <text class="id end" x="128" y="219">10 A</text>
-  <text class="ts " x="152" y="219">éclairage</text>
-  <rect class="fuse-new" x="252" y="200" width="16" height="30"/>
-  <text class="idn end" x="248" y="219">10 A</text>
-  <text class="ts tn " x="272" y="219">ballon</text>
+  <text class="ts " x="152" y="219">tout l&#x27;éclairage</text>
+  <rect class="fuse" x="252" y="200" width="16" height="30"/>
+  <path class="fx" d="M254 204 L266 216 M254 216 L266 204"/>
+  <text class="id" x="272" y="219">10 A</text>
+  <text class="ts " x="298" y="219">ballon</text>
   <rect class="fuse" x="522" y="200" width="16" height="30"/>
+  <path class="fx" d="M524 204 L536 216 M524 216 L536 204"/>
   <text class="id end" x="518" y="219">16 A</text>
   <text class="ts " x="542" y="219">prises tribord</text>
   <rect class="fuse" x="652" y="200" width="16" height="30"/>
+  <path class="fx" d="M654 204 L666 216 M654 216 L666 204"/>
   <text class="id end" x="648" y="219">16 A</text>
   <text class="ts " x="672" y="219">bâbord</text>
   <rect class="box-new" x="420" y="440" width="140" height="72" rx="2"/>
@@ -72,6 +77,8 @@
   <path class="n w4" d="M100 200 H690"/>
   <path class="n w4" d="M100 200 H690"/>
   <path class="n w4" d="M100 200 H690"/>
+  <path class="n w2" d="M140 230 H140"/>
+  <path class="n w2" d="M140 230 H140"/>
   <path class="n w2" d="M260 230 H260"/>
   <path class="n w2" d="M260 230 H260"/>
   <path class="n w2" d="M560 490 H560"/>
@@ -79,6 +86,11 @@
   <path class="n w2" d="M560 490 H560"/>
   <path class="n w1" d="M830 390 L830 300"/>
   <path class="p w3" d="M940 450 L1000 450"/>
+  <path class="n w2" d="M140 230 L140 330"/>
+  <path class="n w1" d="M135 268 L145 262"/>
+  <path class="n w1" d="M135 273 L145 267"/>
+  <path class="n w1" d="M135 278 L145 272"/>
+  <text class="idn end" x="134" y="290">w074 / w075 / w076</text>
   <path class="n w2" d="M230 125 L440 125 L440 200"/>
   <path class="n w1" d="M372 130 L378 120"/>
   <path class="n w1" d="M377 130 L383 120"/>
@@ -94,6 +106,8 @@
   <path class="n w1" d="M637 495 L643 485"/>
   <path class="n w1" d="M642 495 L648 485"/>
   <text class="idn mid" x="640" y="482">w303 / w304 / w305</text>
+  <rect class="flag-new" x="30" y="330" width="205" height="18"/>
+  <text class="ts mid" x="132.5" y="343">→ n217 / n218 / n219 : folio 3</text>
   <rect class="flag-new" x="1000" y="410" width="180" height="80"/>
   <text class="ts mid" x="1090" y="423">Entrée 12 V · 200 W</text>
   <circle class="term" cx="230" cy="125" r="3.5"/>
@@ -116,14 +130,14 @@
   <circle class="term" cx="720" cy="490" r="3.5"/>
   <circle class="term" cx="720" cy="490" r="3.5"/>
   <circle class="term" cx="720" cy="490" r="3.5"/>
-  <text class="id end" x="223" y="124">n214 / n209 / n212</text>
+  <text class="id end" x="223" y="124">n208 / n209 / n212</text>
   <text class="pin end" x="223" y="134">P / N / PE</text>
   <text class="id end" x="434" y="218">n220 / n221 / n222</text>
   <text class="pin end" x="434" y="228">P / N / PE</text>
   <text class="id" x="145" y="194">n223</text>
   <text class="id" x="146" y="244">n224</text>
-  <text class="id" x="265" y="194">n306</text>
-  <text class="id" x="266" y="244">n307</text>
+  <text class="id" x="265" y="194">n215</text>
+  <text class="id" x="266" y="244">n216</text>
   <text class="id" x="535" y="194">n225</text>
   <text class="id" x="536" y="244">n226</text>
   <text class="id" x="665" y="194">n236</text>
@@ -134,8 +148,11 @@
   <text class="pin" x="727" y="499">P / N / PE</text>
   <text class="ts" x="30" y="38">Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau</text>
   <text class="ts end" x="252" y="395">H07RN-F 3G1,5 · ≈ 5 m</text>
-  <text class="ts tu" x="310" y="348">C10 libéré : son câble actuel est regroupé</text>
-  <text class="ts tu" x="310" y="363">sur l&#x27;autre C10 (Q42, 12/10)</text>
+  <text class="tb tn" x="300" y="345">Transfert à faire avant de poser le ballon :</text>
+  <text class="ts" x="300" y="361">le câble de l&#x27;éclairage bâbord (w074) passe</text>
+  <text class="ts" x="300" y="376">du C10 n°2 au C10 n°1, qui alimente alors</text>
+  <text class="ts" x="300" y="391">tout l&#x27;éclairage (≈ 0,4 A) ; le C10 n°2 libéré</text>
+  <text class="ts" x="300" y="406">alimente le ballon. Affectation supposée (Q42).</text>
   <text class="ts end" x="252" y="410">par une boîte de dérivation</text>
   <text class="ts mid" x="490" y="530">sous la table à carte</text>
   <text class="ts mid" x="640" y="508">cordon fourni, fiche intacte</text>
@@ -144,4 +161,5 @@
   <text class="ts mid" x="1090" y="458">disjoncteur CC 30 A (B-H3)</text>
   <text class="id mid" x="1090" y="476">n318 · n319 : folio 2n</text>
   <g class="mk-q"><circle cx="236" cy="252" r="11"/><text class="mid" x="236" y="255.5">Q42</text></g>
+  <g class="mk-a"><circle cx="240" cy="70" r="11"/><text class="mid" x="240" y="73.5">A12</text></g>
 </svg>

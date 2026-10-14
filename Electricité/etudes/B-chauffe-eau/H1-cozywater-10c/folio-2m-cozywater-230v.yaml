@@ -5,7 +5,7 @@
 folio: 2m
 titre: Chauffe-eau CozyWater 10C, alimentation
 aria: "Alimentation 230 volts du chauffe-eau : second disjoncteur de 10 ampères du boîtier tribord, câble de 3 fois 1,5 millimètres carrés vers une prise dédiée, cordon du ballon à fiche Schuko ; entrée 12 volts au folio 2n."
-desc: "Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par un C10 du boîtier tribord, libéré en regroupant les câbles des deux C10 sur l'autre (Q42), en aval du différentiel 30 mA. Le câble passe par une boîte de dérivation. Unifilaire, comme le folio 3 ; l'entrée 12 V, câblée elle aussi, est au folio 2n ; le 230 V est prioritaire."
+desc: "Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par le C10 n°2 du boîtier tribord, en aval du différentiel 30 mA. Le C10 n°2 est libéré en transférant son câble, l'éclairage bâbord, sur le C10 n°1, qui alimente alors tout l'éclairage (Q42, affectation supposée). Le câble passe par une boîte de dérivation. Unifilaire, comme le folio 3 ; l'entrée 12 V, câblée elle aussi, est au folio 2n ; le 230 V est prioritaire."
 modele: B-H1
 taille: [1200, 560]
 
@@ -20,9 +20,9 @@ appareils:
     w: 190
     h: 80
     titre: Boîtier d'arrivée
-    lignes: [différentiel 30 mA · 16 A, coffre de cockpit (folio 3)]
+    lignes: [différentiel 30 mA, sans disjoncteur (A12)]
     nodes:
-      node214: {cote: droite, a: 125, fonction: "P / N / PE"}
+      node208: {cote: droite, a: 125, fonction: "P / N / PE"}
       node209: [droite, 125]
       node212: [droite, 125]
 
@@ -37,7 +37,7 @@ appareils:
     forme: fusible
     calibre: 10 A
     calibre_cote: gauche
-    titre: éclairage
+    titre: tout l'éclairage
     titre_xy: [152, 219]
     titre_ancre: ""
     nodes:
@@ -45,15 +45,13 @@ appareils:
       node224: {cote: point, xy: [140, 230], etiquette: [6, 14]}
   - id: disj-trib-10a-2
     forme: fusible
-    nouveau: true
     calibre: 10 A
-    calibre_cote: gauche
     titre: ballon
-    titre_xy: [272, 219]
+    titre_xy: [298, 219]
     titre_ancre: ""
     nodes:
-      node306: {cote: point, xy: [260, 200], etiquette: [5, -6]}
-      node307: {cote: point, xy: [260, 230], etiquette: [6, 14]}
+      node215: {cote: point, xy: [260, 200], etiquette: [5, -6]}
+      node216: {cote: point, xy: [260, 230], etiquette: [6, 14]}
   - id: disj-trib-prises
     forme: fusible
     calibre: 16 A
@@ -113,6 +111,9 @@ barres:
   - {node: node220, de: [100, 200], a: [690, 200], classe: n}
   - {node: node221, de: [100, 200], a: [690, 200], classe: n}
   - {node: node222, de: [100, 200], a: [690, 200], classe: n}
+  # neutre et terre au départ du câble de l'éclairage bâbord, transféré sur le C10 n°1 (longueur nulle)
+  - {node: node221, de: [140, 230], a: [140, 230], classe: n, epaisseur: w2}
+  - {node: node222, de: [140, 230], a: [140, 230], classe: n, epaisseur: w2}
   # neutre et terre au départ du câble du second C10 (longueur nulle)
   - {node: node221, de: [260, 230], a: [260, 230], classe: n, epaisseur: w2}
   - {node: node222, de: [260, 230], a: [260, 230], classe: n, epaisseur: w2}
@@ -122,6 +123,12 @@ barres:
   - {node: node302, de: [560, 490], a: [560, 490], classe: n, epaisseur: w2}
 
 cables:
+  eclairage-babord:
+    fils: [wire074, wire075, wire076]
+    trace: [[140, 230], [140, 330]]
+    etiquette: [134, 290, end]
+    texte: "w074 / w075 / w076"
+    obliques_xy: [140, 270]
   arrivee:
     fils: [wire038, wire039, wire040]
     trace: [[230, 125], [440, 125], [440, 200]]
@@ -144,16 +151,21 @@ traits:
   - {classe: p w3, points: [[940, 450], [1000, 450]]}
 
 renvois:
+  - {x: 30, y: 330, w: 205, nouveau: true, texte: "→ n217 / n218 / n219 : folio 3"}
   - {x: 1000, y: 410, w: 180, h: 80, nouveau: true, texte: "Entrée 12 V · 200 W"}
 
 pastilles:
   - {id: Q42, x: 236, y: 252}
+  - {id: A12, x: 240, y: 70}
 
 textes:
   - {x: 30, y: 38, texte: "Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau"}
   - {x: 252, y: 395, classe: ts end, texte: "H07RN-F 3G1,5 · ≈ 5 m"}
-  - {x: 310, y: 348, classe: ts tu, texte: "C10 libéré : son câble actuel est regroupé"}
-  - {x: 310, y: 363, classe: ts tu, texte: "sur l'autre C10 (Q42, 12/10)"}
+  - {x: 300, y: 345, classe: tb tn, texte: "Transfert à faire avant de poser le ballon :"}
+  - {x: 300, y: 361, classe: ts, texte: "le câble de l'éclairage bâbord (w074) passe"}
+  - {x: 300, y: 376, classe: ts, texte: "du C10 n°2 au C10 n°1, qui alimente alors"}
+  - {x: 300, y: 391, classe: ts, texte: "tout l'éclairage (≈ 0,4 A) ; le C10 n°2 libéré"}
+  - {x: 300, y: 406, classe: ts, texte: "alimente le ballon. Affectation supposée (Q42)."}
   - {x: 252, y: 410, classe: ts end, texte: "par une boîte de dérivation"}
   - {x: 490, y: 530, classe: ts mid, texte: "sous la table à carte"}
   - {x: 640, y: 508, classe: ts mid, texte: "cordon fourni, fiche intacte"}

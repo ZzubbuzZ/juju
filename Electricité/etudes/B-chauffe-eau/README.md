@@ -10,7 +10,7 @@
 
 **Base** : le relevé. L'étude A (sécurisation) doit être décidée avant le câblage définitif. Le réseau 230 V est relevé ([folio 3](../../schemas/folio-3-230v.svg)) :
 
-- boîtier d'arrivée (coffre de cockpit tribord) : différentiel 30 mA / 25 A, puis un disjoncteur de 10 A pour le chargeur et un de 16 A pour le reste du bord ;
+- boîtier d'arrivée (coffre de cockpit tribord) : différentiel 30 mA / 25 A, puis un disjoncteur de 10 A pour le chargeur ; le reste du bord part directement du différentiel, sans disjoncteur (correction du 15/10, A12) ;
 - boîtier de distribution tribord (cabinet de toilette) : quatre disjoncteurs Legrand DNX3, C10 pour l'éclairage, C16 pour les prises tribord (cuisine, frigo, toilette), C16 pour les prises bâbord, et un **second C10, occupé lui aussi ; ses câbles sont regroupés sur l'autre C10 pour le libérer au profit du ballon (Q42, 12/10)**.
 
 Le ballon pourrait se brancher sur une prise tribord, ou mieux sur un départ dédié : le second C10 s'il est libre (Q42), sinon un disjoncteur ajouté. Tout ce qui passe par le boîtier tribord reste limité par le 16 A d'arrivée.
@@ -45,7 +45,7 @@ Conséquences :
 
 - **À Saint-Chamas, la puissance n'est plus une contrainte.** À 800 W, chauffer les 10 L du CozyWater de 15 °C à 60 °C demande environ 0,52 kWh, soit **environ 45 min** avec les pertes.
 - **En escale, il faut pouvoir réduire la puissance.** Deux solutions : un ballon à **résistance de 500 à 750 W**, qui convient partout au prix d'une chauffe plus lente, ou un **interrupteur de délestage** qui coupe le ballon (ou les chargeurs) sur une borne faible.
-- Le disjoncteur de 16 A d'arrivée limite de toute façon l'ensemble des prises et du ballon à environ 3 700 W.
+- La borne du port (16 A à Saint-Chamas) limite de toute façon l'ensemble des prises et du ballon à environ 3 700 W ; il n'y a pas de disjoncteur d'arrivée à bord (15/10, A12).
 
 ## Hypothèses à explorer
 

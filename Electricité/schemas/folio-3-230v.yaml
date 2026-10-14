@@ -7,18 +7,14 @@
 folio: 3
 titre: Réseau 230 V
 aria: "Réseau 230 V en unifilaire : prise de quai, boîtier d'arrivée avec différentiel 30 mA, chargeur, boîtier de distribution tribord et boîte de dérivation bâbord alimentant prises et éclairage."
-desc: "L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur, 16 A pour le reste) alimente le boîtier de distribution tribord, dans le cabinet de toilette : 10 A pour l'éclairage, 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation, et un second 10 A, utilisé, dont le circuit est à identifier (Q42). Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au circuit d'éclairage (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Aux bornes du port de Saint-Chamas, la prise fournit 16 A, soit environ 3 700 W pour tout le bord ; en escale, le calibre est souvent plus faible."
+desc: "L'arrivée (différentiel 30 mA en tête, 10 A pour le chargeur) alimente directement, sans disjoncteur, le boîtier de distribution tribord, dans le cabinet de toilette (A12) : deux 10 A pour l'éclairage, supposés tribord et bâbord (Q42), 16 A pour les prises tribord, 16 A pour les prises bâbord, qui passent par une simple boîte de dérivation. Tous les disjoncteurs coupent la phase et le neutre. La terre arrive aux prises, au chargeur et au circuit d'éclairage (le cordon de l'EPS 100 n'en a pas), et elle n'est reliée ni à la masse 12 V ni à un isolateur galvanique (A8). Aux bornes du port de Saint-Chamas, la prise fournit 16 A, soit environ 3 700 W pour tout le bord ; en escale, le calibre est souvent plus faible."
 modele: releve
 taille: [1200, 760]
 
 zones:
   - {x: 320, y: 70, w: 380, h: 210, texte: "Boîtier d'arrivée · coffre de cockpit tribord · terre : barrette n212"}
-  - {x: 40, y: 330, w: 640, h: 110, texte: "Boîtier de distribution tribord · cabinet de toilette · Legrand DNX3"}
+  - {x: 40, y: 322, w: 640, h: 118, texte: "Boîtier de distribution tribord · cabinet de toilette · Legrand DNX3"}
   - {x: 830, y: 330, w: 340, h: 110, texte: "Boîte de dérivation bâbord · table à carte"}
-
-incertains:
-  # second 10 A du boîtier tribord : utilisé (12/10), circuit inconnu (Q42)
-  - {x: 222, y: 372, w: 16, h: 28, texte: "10 A", texte_xy: [198, 389]}
 
 appareils:
   # --- Arrivée ------------------------------------------------------------------------
@@ -53,13 +49,6 @@ appareils:
     nodes:
       node210: {cote: point, xy: [600, 155], etiquette: [-2, 22, end]}
       node211: {cote: point, xy: [660, 155], etiquette: [2, 22]}
-  - id: disj-230-reste
-    forme: fusible
-    calibre: 16 A
-    titre: reste du bord
-    nodes:
-      node213: {cote: point, xy: [600, 240], etiquette: [-2, 22, end]}
-      node214: {cote: point, xy: [660, 240], etiquette: [2, 22]}
   - id: chargeur-quai
     x: 900
     y: 80
@@ -76,19 +65,28 @@ appareils:
   - id: boitier-230-tribord
     forme: barre      # barres de phase, de neutre et de terre (barres: ci-dessous)
     nodes:
-      node220: {cote: point, xy: [420, 370], etiquette: [-6, 18, end], fonction: "P / N / PE"}
+      node220: {cote: point, xy: [420, 370], etiquette: [-6, -16, end], fonction: "P / N / PE"}
       node221: {cote: point, xy: [420, 370]}
       node222: {cote: point, xy: [420, 370]}
   - id: disj-trib-eclairage
     forme: fusible
     calibre: 10 A
     calibre_cote: gauche
-    titre: éclairage
+    titre: éclairage tribord
     titre_xy: [122, 389]
     titre_ancre: ""
     nodes:
       node223: {cote: point, xy: [110, 370], etiquette: [5, -6]}
       node224: {cote: point, xy: [110, 400], etiquette: [6, 14]}
+  - id: disj-trib-10a-2
+    forme: fusible
+    calibre: 10 A
+    titre: éclairage bâbord
+    titre_xy: [272, 389]
+    titre_ancre: ""
+    nodes:
+      node215: {cote: point, xy: [230, 370], etiquette: [5, -6]}
+      node216: {cote: point, xy: [230, 400], etiquette: [-6, 14, end]}
   - id: disj-trib-prises
     forme: fusible
     calibre: 16 A
@@ -117,11 +115,22 @@ appareils:
     cy: 540
     r: 16
     symbole: "×"
-    lignes: [Éclairage 230 V, "6 luminaires", "terre à vérifier", "câble 3 × 1,5"]
+    lignes: [Éclairage tribord, "terre à vérifier"]
     nodes:
       node233: {angle: 90, cote: point, etiquette: [8, -12], fonction: "P / N / PE"}
       node234: {angle: 90, cote: point}
       node235: {angle: 90, cote: point}
+  - id: eclairage-230-babord
+    forme: cercle
+    cx: 200
+    cy: 640
+    r: 16
+    symbole: "×"
+    lignes: [Éclairage, bâbord (Q42)]
+    nodes:
+      node217: {angle: 90, cote: point, etiquette: [-8, -12, end], fonction: "P / N / PE"}
+      node218: {angle: 90, cote: point}
+      node219: {angle: 90, cote: point}
   - id: prise-230-eps100
     x: 235
     y: 500
@@ -225,10 +234,11 @@ barres:
   # points de raccordement du neutre et de la terre au départ des câbles (longueur nulle)
   - {node: node209, de: [660, 155], a: [660, 155], classe: n, epaisseur: w2}
   - {node: node212, de: [660, 155], a: [660, 155], classe: n, epaisseur: w2}
-  - {node: node209, de: [660, 240], a: [660, 240], classe: n, epaisseur: w2}
-  - {node: node212, de: [660, 240], a: [660, 240], classe: n, epaisseur: w2}
+  - {node: node212, de: [490, 190], a: [490, 190], classe: n, epaisseur: w2}
   - {node: node221, de: [110, 400], a: [110, 400], classe: n, epaisseur: w2}
   - {node: node222, de: [110, 400], a: [110, 400], classe: n, epaisseur: w2}
+  - {node: node221, de: [230, 400], a: [230, 400], classe: n, epaisseur: w2}
+  - {node: node222, de: [230, 400], a: [230, 400], classe: n, epaisseur: w2}
   - {node: node221, de: [470, 400], a: [470, 400], classe: n, epaisseur: w2}
   - {node: node222, de: [470, 400], a: [470, 400], classe: n, epaisseur: w2}
   - {node: node221, de: [620, 400], a: [620, 400], classe: n, epaisseur: w2}
@@ -239,11 +249,8 @@ barres:
 
 fils:
   # câblage interne du boîtier d'arrivée (phase seule)
-  wire037:
-    trace: [[490, 190], [540, 190], [540, 240], [600, 240]]
-    etiquette: [570, 232, mid]
   wire031:
-    trace: [[490, 190], [540, 190], [540, 155], [600, 155]]
+    trace: [[490, 190], [525, 155], [600, 155]]
     etiquette: [570, 147, mid]
     texte: w031
     classe: n w2
@@ -261,10 +268,15 @@ cables:
     obliques_xy: [860, 155]
   tribord:
     fils: [wire038, wire039, wire040]
-    trace: [[660, 240], [720, 240], [720, 300], [420, 300], [420, 370]]
+    trace: [[490, 190], [540, 240], [720, 240], [720, 300], [420, 300], [420, 370]]
     etiquette: [560, 292, mid]
     texte: "w038 / w039 / w040 · 3 × 2,5"
     obliques_xy: [660, 300]
+  eclairage-babord:
+    fils: [wire074, wire075, wire076]
+    trace: [[230, 400], [230, 594], [200, 624]]
+    etiquette: [251, 452, mid, v]
+    obliques_xy: [230, 560]
   plafonnier:
     fils: [wire050, wire051, wire068]
     trace: [[110, 400], [110, 524]]
@@ -309,14 +321,14 @@ cables:
     etiquette: [1089, 484, end]
 
 jonctions:
-  - [540, 190]
   - [470, 465]
   - [1005, 370]
   - [1005, 455]
 
 pastilles:
   - {id: A8, x: 700, y: 70}
-  - {id: Q42, x: 230, y: 418}
+  - {id: Q42, x: 300, y: 418}
+  - {id: A12, x: 620, y: 262}
   - {id: Q60, x: 70, y: 540}
 
 textes:
@@ -327,4 +339,5 @@ textes:
   - {x: 836, y: 416, texte: "sans disjoncteur, alimentée"}
   - {x: 836, y: 431, texte: "par le 16 A bâbord"}
   - {x: 40, y: 712, texte: "Schéma unifilaire : un trait par câble, les barres obliques donnent le nombre de conducteurs (3 : phase, neutre, terre). Câbles des prises : 3 × 2,5 mm²."}
+  - {x: 560, y: 262, classe: ts end, texte: "sans disjoncteur (A12)"}
   - {x: 40, y: 730, texte: "Tous les disjoncteurs coupent la phase et le neutre. Neutre et terre de chaque câble partent des barrettes du boîtier (n209 et n212 à l'arrivée, n221 et n222 au boîtier tribord)."}

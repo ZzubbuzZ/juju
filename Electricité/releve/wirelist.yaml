@@ -22,6 +22,8 @@ fils:
   - { id: wire011, de: node009, vers: node011, section_mm2: 35, couleur: rouge, longueur_m: 0.2 }
   - { id: wire012, de: node004, vers: node031, section_mm2: 35, couleur: rouge, longueur_m: 1 }
   - { id: wire013, de: node006, vers: node032, section_mm2: 35, couleur: noir, longueur_m: 1 }
+  - { id: wire072, de: node031, vers: node038, questions: [Q65], note: "Faisceau d'origine Yanmar, du + démarreur au porte-fusible de 30 A (Q1, 13/10) ; section et couleur à relever" }
+  - { id: wire073, de: node039, vers: node019, questions: [Q65], note: "Faisceau d'origine, du porte-fusible au tableau moteur ; section et couleur à relever" }
   - { id: wire014, de: node006, vers: node015, section_mm2: 6, couleur: noir, longueur_m: 1, note: "Masse du coupleur côté charges" }
 
   # --- Guindeau et tableau de servitude ------------------------------------------
@@ -61,8 +63,7 @@ fils:
   - { id: wire035, de: node212, vers: node202, section_mm2: 2.5 }
 
   # --- 230 V : distribution (description du 28/09, photo Circuit-electrique-230v)
-  - { id: wire037, de: node208, vers: node213, note: "Câblage interne du boîtier d'arrivée" }
-  - { id: wire038, de: node214, vers: node220, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
+  - { id: wire038, de: node208, vers: node220, section_mm2: 2.5, statut: a_verifier, note: "Depuis la sortie phase du différentiel, sans disjoncteur (15/10, A12 ; partait d'un disjoncteur 16 A inexistant, relevé par erreur). Chemin exact non relevé, jugé secondaire" }
   - { id: wire039, de: node209, vers: node221, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
   - { id: wire040, de: node212, vers: node222, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
   - { id: wire041, de: node237, vers: node240, section_mm2: 2.5, statut: a_verifier, note: "Depuis le disjoncteur 16 A bâbord du boîtier tribord (30/09) ; chemin exact non relevé" }
@@ -77,6 +78,9 @@ fils:
   - { id: wire050, de: node224, vers: node233, section_mm2: 1.5 }
   - { id: wire051, de: node221, vers: node234, section_mm2: 1.5 }
   - { id: wire068, de: node222, vers: node235, section_mm2: 1.5, statut: a_verifier, note: "Terre du circuit d'éclairage ; notée raccordée le 30/09 sur un plafonnier qui était une erreur (13/10) : à vérifier (Q60)", questions: [Q60] }
+  - { id: wire074, de: node216, vers: node217, section_mm2: 1.5, statut: estime, questions: [Q42], note: "Câble de l'éclairage bâbord, seul câble du C10 n°2 (12/10) ; affectation supposée (15/10)" }
+  - { id: wire075, de: node221, vers: node218, section_mm2: 1.5, statut: estime }
+  - { id: wire076, de: node222, vers: node219, section_mm2: 1.5, statut: a_verifier, note: "Terre du circuit d'éclairage bâbord, comme wire068 : à vérifier" }
   - { id: wire052, de: node047, vers: node227, note: "Cordon de l'EPS 100, branché sur sa prise ; fiche à deux contacts, sans terre (29/09)" }
   - { id: wire053, de: node048, vers: node228 }
   # wire054 (terre du cordon de l'EPS 100) supprimé le 29/09 : le cordon n'a pas de terre. Numéro à ne pas réutiliser.

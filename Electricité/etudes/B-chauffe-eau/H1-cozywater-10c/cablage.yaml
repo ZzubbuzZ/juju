@@ -8,20 +8,23 @@
 # propre : la plage node300-319 est pleine).
 # Nœuds 300 à 319 réservés à l'étude B ; fils wire300 et suivants.
 # Ballon posé sous la table à carte (12/10) ; câble de 5 m estimé depuis le boîtier tribord (cabinet de toilette).
+# 15/10 : le relevé affecte (supposé) le C10 n°1 à l'éclairage tribord et le C10 n°2 à l'éclairage bâbord,
+# avec leurs nœuds (node215, node216). Le câble de l'éclairage bâbord (wire074) passe sur le C10 n°1 ;
+# le C10 n°2 libéré alimente le ballon. node306 et node307, qui tenaient lieu de bornes du C10 n°2 avant
+# que le relevé les numérote, sont retirés (jamais posés ni étiquetés) et ne seront pas réutilisés.
 
 hypothese: B-H1
 titre: Ballon Carbest CozyWater 10C sur le 230 V, prise dédiée
 base: releve
+
+supprime:
+  fils: [wire074]
 
 equipements:
   - { id: prise-230-ballon, type: prise, designation: "Prise 230 V dédiée au ballon, 16 A avec terre, compatible Schuko (fiche hybride)", zone: table-a-carte, emplacement: "Sous la table à carte, à moins de 2 m du ballon (longueur du cordon)", statut: propose }
   - { id: chauffe-eau, type: recepteur, designation: "Chauffe-eau Carbest CozyWater 10C (entrée 230 V)", modele: "670604, 10 L, 230 V 800 W et 12 V 200 W", zone: table-a-carte, emplacement: "Sous la table à carte, posé le 12/10", puissance_W: 800, courant_A: 3.5, statut: propose, note: "Entrée 12 V non raccordée ici : B-H3" }
 
 nodes:
-  # --- C10 libéré du boîtier tribord (son câble actuel est regroupé sur l'autre C10, Q42) ---
-  - { id: node306, equipement: disj-trib-10a-2, borne: "entrée", polarite: 230V-phase, monte_sur: node220, questions: [Q42] }
-  - { id: node307, equipement: disj-trib-10a-2, borne: "sortie", polarite: 230V-phase, questions: [Q42] }
-
   # --- Prise dédiée -----------------------------------------------------------------
   - { id: node300, equipement: prise-230-ballon, borne: "phase", polarite: 230V-phase }
   - { id: node301, equipement: prise-230-ballon, borne: "neutre", polarite: 230V-neutre }
@@ -33,8 +36,11 @@ nodes:
   - { id: node305, equipement: chauffe-eau, borne: "230 V terre", polarite: 230V-terre }
 
 fils:
+  # --- Transfert de l'éclairage bâbord du C10 n°2 sur le C10 n°1 (libère le C10 n°2) -------
+  - { id: wire074, de: node224, vers: node217, section_mm2: 1.5, statut: propose, questions: [Q42], note: "Câble de l'éclairage bâbord, débranché du C10 n°2 (node216) et repris sur le C10 n°1 (node224), qui alimente alors tout l'éclairage 230 V (0,4 A environ). Affectation des C10 supposée (15/10)" }
+
   # --- Câble 3 × 1,5 mm² du second C10 à la prise dédiée -----------------------------
-  - { id: wire300, de: node307, vers: node300, section_mm2: 1.5, couleur: marron, longueur_m: 5, statut: propose, note: "Câble H07RN-F 3G1,5 ; protégé par le C10. Passe par une boîte de dérivation (12/10). Longueur estimée", questions: [Q42] }
+  - { id: wire300, de: node216, vers: node300, section_mm2: 1.5, couleur: marron, longueur_m: 5, statut: propose, note: "Câble H07RN-F 3G1,5 ; protégé par le C10. Passe par une boîte de dérivation (12/10). Longueur estimée", questions: [Q42] }
   - { id: wire301, de: node221, vers: node301, section_mm2: 1.5, couleur: bleu, longueur_m: 5, statut: propose }
   - { id: wire302, de: node222, vers: node302, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 5, statut: propose }
 

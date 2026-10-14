@@ -72,12 +72,12 @@ fils:
   wire171:
     etiquette: [615, 283, mid]
   # départs vers le folio 3 : deux phases (même trait), deux neutres (même trait)
-  wire037:
+  wire038:
     trace: [[700, 180], [800, 180]]
   wire031:
     trace: [[700, 180], [800, 180]]
     etiquette: [750, 173, mid]
-    texte: "w031 / w037"
+    texte: "w031 / w038"
   wire033:
     trace: [[700, 210], [800, 210]]
   wire039:
@@ -86,7 +86,7 @@ fils:
     texte: "w033 / w039"
 
 renvois:
-  - {x: 800, y: 165, w: 360, h: 60, texte: "phases → disjoncteurs 10 A (n210) et 16 A (n213)"}
+  - {x: 800, y: 165, w: 360, h: 60, texte: "phases → disjoncteur 10 A (n210), boîtier tribord (n220)"}
 
 traits:
   # pas de liaison entre la terre et la masse 12 V ; masse 12 V à la mer par l'arbre (accouplement métallique, 13/10)

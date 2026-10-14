@@ -338,20 +338,22 @@ liaisons:
 fils:
   # batterie moteur et Dolphin
   wire201: {trace: [[24, 95], [24, 204]], etiquette: [30, 135]}
-  wire004: {trace: [[8, 220], [8, 990]], etiquette: [18, 335, mid, v]}
+  wire004: {trace: [[8, 220], [8, 970], [28, 990]], etiquette: [18, 335, mid, v]}
   wire160: {etiquette: [211, 236, mid], texte: w160}
   wire200: {etiquette: [222, 140]}
   wire001: {etiquette: [330, 212, mid]}
-  wire012: {etiquette: [578, 212, mid]}
+  wire012: {etiquette: [565, 234, mid]}
   # guindeau
-  wire217: {trace: [[500, 204], [500, 80]], etiquette: [506, 185]}
+  wire217: {trace: [[500, 204], [500, 80]], etiquette: [506, 165]}
+  # tableau moteur : faisceau d'origine (relevé, Q1), dessiné au folio 1
+  wire072: {trace: [[603, 203]], renvoi: vers}
   wire220: {etiquette: [665, 72, mid], texte: w220}
   wire219: {trace: [[590, 132]], renvoi: de, etiquette: [596, 126], texte: w219}
   wire018: {etiquette: [790, 72, mid]}
   wire020: {etiquette: [1034, 81, mid], texte: "w020 / w021 · 10"}
   wire021: {}
-  wire015: {trace: [[1175, 990], [1175, 125]], etiquette: [1169, 420, mid, v]}
-  wire013: {trace: [[1155, 990], [1155, 330], [760, 330]], etiquette: [1149, 420, mid, v]}
+  wire015: {trace: [[1155, 990], [1175, 970], [1175, 125]], etiquette: [1169, 420, mid, v]}
+  wire013: {trace: [[1135, 990], [1155, 970], [1155, 330], [760, 330]], etiquette: [1149, 420, mid, v]}
   wire061: {trace: [[824, 96]], etiquette: [818, 150, end]}
   wire062: {trace: [[824, 270]], etiquette: [818, 256, end]}
   wire063: {etiquette: [896, 198, mid, v]}
@@ -365,15 +367,15 @@ fils:
   wire216: {renvoi: vers, trace: [[690, 340]], etiquette: [684, 334, end], texte: w216}
   wire205: {etiquette: [406, 488]}
   wire204: {trace: [[400, 646]], etiquette: [406, 590], texte: "w204 · 16"}
-  wire206: {trace: [[18, 450], [18, 990]], etiquette: [190, 444, mid], texte: "w206 · 16"}
+  wire206: {trace: [[18, 450], [18, 970], [38, 990]], etiquette: [190, 444, mid], texte: "w206 · 16"}
   # Blue Smart, LiFePO4, shunt
   wire211: {trace: [[290, 626], [290, 525]], etiquette: [265, 517, mid], texte: "w211 · 10"}
   wire210: {trace: [[400, 646], [380, 626]], etiquette: [392, 660, end], texte: "w210 · 4"}
-  wire212: {trace: [[28, 525], [28, 990]], etiquette: [37, 580, mid, v], texte: "w212 · 10"}
+  wire212: {trace: [[28, 525], [28, 970], [48, 990]], etiquette: [37, 580, mid, v], texte: "w212 · 10"}
   wire161: {etiquette: [211, 662, mid], texte: w161}
   wire006: {etiquette: [300, 686, mid]}
   wire009: {etiquette: [56, 728]}
-  wire180: {trace: [[110, 990]], etiquette: [116, 900], texte: "w180 · 35"}
+  wire180: {trace: [[110, 970], [130, 990]], etiquette: [116, 900], texte: "w180 · 35"}
   wire181: {trace: [[408, 686]]}
   wire182: {trace: [[408, 770]], etiquette: [300, 762, mid], texte: "w181 / w182 · 0,75"}
   wire184: {etiquette: [238, 794, mid], texte: w184}
@@ -383,11 +385,11 @@ fils:
   wire019: {etiquette: [760, 602, mid]}
   wire313: {etiquette: [502, 688, mid], texte: w313}
   wire306: {trace: [[720, 670], [740, 690]], etiquette: [640, 662, mid]}
-  wire308: {trace: [[1115, 690], [1115, 990]], etiquette: [1111, 930, mid, v], texte: w308}
-  wire016: {trace: [[1135, 990], [1135, 610]], etiquette: [1131, 930, mid, v]}
+  wire308: {trace: [[1115, 690], [1115, 970], [1095, 990]], etiquette: [1111, 930, mid, v], texte: w308}
+  wire016: {trace: [[1115, 990], [1135, 970], [1135, 610]], etiquette: [1131, 930, mid, v]}
   wire167: {trace: [[514, 700], [514, 830]], etiquette: [520, 780]}
   wire022: {etiquette: [618, 822, mid]}
-  wire023: {trace: [[770, 990]], etiquette: [776, 960]}
+  wire023: {trace: [[750, 990], [770, 970]], etiquette: [776, 960]}
   wire024: {etiquette: [850, 822, mid]}
   wire025: {trace: [[802, 875], [830, 875], [850, 855]], etiquette: [826, 890, mid]}
   wire026: {etiquette: [684, 875, end]}
@@ -396,6 +398,7 @@ fils:
   wire028: {}
 
 renvois:
+  - {x: 515, y: 185, w: 97, texte: "→ n038 · folio 1"}
   - {x: 520, y: 132, w: 140, nouveau: true, texte: "n010 · servitude, plus bas"}
   - {x: 580, y: 340, w: 130, nouveau: true, texte: "→ node005 · CC masse"}
   - {x: 316, y: 793, w: 150, nouveau: true, texte: "→ node003 · CC moteur"}
@@ -412,5 +415,6 @@ textes:
   - {x: 870, y: 720, classe: "ts mid", texte: "disjoncteur CC 30 A à côté du disj. guindeau : protection et interrupteur du ballon (folio 2n)"}
   - {x: 200, y: 1010, classe: "ts mid", texte: "côté batteries (avant le shunt)"}
   - {x: 620, y: 1010, classe: "ts mid", texte: "masse des charges"}
+  - {x: 20, y: 1028, texte: "Tableau moteur (relevé, folio 1) : w072 du + démarreur (n031) au fusible de 30 A (n038), puis w073 de n039 au tableau (n019) ; sections à relever (Q65)."}
   - {x: 20, y: 1044, texte: "En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue."}
   - {x: 20, y: 1062, texte: "Détail : folios 2e (shunt), 2h et 2o (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md."}

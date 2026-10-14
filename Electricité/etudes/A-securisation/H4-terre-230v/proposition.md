@@ -185,6 +185,7 @@ Le chauffe-eau confirme donc la conclusion précédente : **la liaison (1) est i
 L'appareil actuel, un Power Safe ID55225, n'a aucune documentation trouvable : on ne connaît ni son type ni son âge, et il porte à lui seul la protection des personnes. Il est remplacé par un modèle courant, au format modulaire du boîtier :
 
 - **Interrupteur différentiel bipolaire**, qui coupe la phase et le neutre. Un interrupteur suffit : les surintensités sont déjà coupées en aval par le DT40 C10 et le 16 A d'arrivée. Un disjoncteur différentiel ajouterait cette protection pour le câblage interne du boîtier, sans nécessité ici.
+  **À revoir (15/10)** : le 16 A d'arrivée n'existe pas (A12). Le câble du boîtier tribord (wire038 à wire040) n'est protégé que par la borne du port : un disjoncteur différentiel 16 A, ou un C16 ajouté après l'interrupteur différentiel, le protégerait. Le calibre de l'isolateur galvanique (point 1 de « Quel modèle ? ») est à revoir de même.
 - **30 mA**, pour la protection des personnes.
 - **Type A** : il détecte les fuites alternatives et les fuites « redressées » que produisent les appareils électroniques, comme le chargeur. Le type AC ne voit que les premières. Les types F et B, faits pour les onduleurs et les variateurs, ne sont pas nécessaires à bord.
 - **Calibre de 40 A** : ce calibre est celui du courant qu'il supporte, pas une protection. Il doit dépasser celui des protections placées en aval ; 40 A est le calibre courant, et le moins cher, de ces appareils.

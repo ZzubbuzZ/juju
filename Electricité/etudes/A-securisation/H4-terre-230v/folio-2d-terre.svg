@@ -22,6 +22,7 @@
     .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
     .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
     .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .fx{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round}.fx-new{fill:none;stroke:var(--new);stroke-width:1.4;stroke-linecap:round}
     .dp{fill:var(--pos)}.dn{fill:var(--ink)}
     .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
     .lever{stroke:var(--ink);stroke-width:2}
@@ -65,14 +66,14 @@
   <path class="pe w2" d="M510 290 L720 290"/>
   <path class="pey w2" d="M510 290 L720 290"/>
   <text class="idn mid" x="615" y="283">w171 · 2,5</text>
-  <path class="u" d="M700 180 L800 180"/>
   <path class="ph w2" d="M700 180 L800 180"/>
-  <text class="id mid" x="750" y="173">w031 / w037</text>
+  <path class="ph w2" d="M700 180 L800 180"/>
+  <text class="id mid" x="750" y="173">w031 / w038</text>
   <path class="ne w2" d="M700 210 L800 210"/>
   <path class="ne w2" d="M700 210 L800 210"/>
   <text class="id mid" x="750" y="203">w033 / w039</text>
   <rect class="flag" x="800" y="165" width="360" height="60"/>
-  <text class="ts mid" x="980" y="178">phases → disjoncteurs 10 A (n210) et 16 A (n213)</text>
+  <text class="ts mid" x="980" y="178">phases → disjoncteur 10 A (n210), boîtier tribord (n220)</text>
   <circle class="term" cx="180" cy="180" r="3.5"/>
   <circle class="term" cx="180" cy="210" r="3.5"/>
   <circle class="term" cx="180" cy="290" r="3.5"/>

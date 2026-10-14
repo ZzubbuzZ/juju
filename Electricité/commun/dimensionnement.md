@@ -68,6 +68,8 @@ Le courant qu'un câble supporte dépend de la température admise par son isola
 
 ### Les deux C10 du boîtier tribord (Q42)
 
+**15/10** : affectation supposée par l'utilisateur, C10 n°1 éclairage tribord, C10 n°2 éclairage bâbord (hypothèse 1 ci-dessous). Le câble bâbord (wire074) passe sur le C10 n°1, le C10 n°2 alimente le ballon (B-H1). Le câble d'alimentation du boîtier tribord (wire038 à wire040, 2,5 mm²) n'a pas de disjoncteur à l'arrivée (A12) : il n'est protégé que par la borne du port.
+
 Le 12/10, les deux C10 sont trouvés occupés, chacun par un seul câble de 1,5 mm², sans que leurs circuits aient été vérifiés. Deux hypothèses sont à vérifier à bord. Dans les deux cas, la question est de savoir si l'on peut regrouper ces circuits sur un seul C10 pour libérer l'autre au profit du ballon. Puissances estimées, à confirmer sur les appareils :
 
 | Charge | Puissance | Courant à 230 V | Base de l'estimation |

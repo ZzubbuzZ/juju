@@ -54,6 +54,10 @@ nodes:
   # --- Moteur --------------------------------------------------------------------
   - { id: node031, equipement: moteur, borne: "+ démarreur / alternateur", polarite: "+" }
   - { id: node032, equipement: moteur, borne: "masse moteur", polarite: "-" }
+  - { id: node038, equipement: fus-tableau-moteur, borne: "1 (côté démarreur)", polarite: "+" }
+  - { id: node039, equipement: fus-tableau-moteur, borne: "2 (côté tableau)", polarite: "+" }
+  # node019 : seul numéro libre pour le tableau moteur, la plage 020-039 étant pleine
+  - { id: node019, equipement: tableau-moteur, borne: "+", polarite: "+" }
 
   # --- Frigo ---------------------------------------------------------------------
   - { id: node040, equipement: groupe-froid, borne: "+ 12/24 V", polarite: "+" }
@@ -104,8 +108,6 @@ nodes:
   - { id: node210, equipement: disj-chargeur, borne: "entrée", polarite: 230V-phase }
   - { id: node211, equipement: disj-chargeur, borne: "sortie", polarite: 230V-phase }
   - { id: node212, equipement: boitier-230v, borne: "barrette de terre", polarite: 230V-terre }
-  - { id: node213, equipement: disj-230-reste, borne: "entrée", polarite: 230V-phase }
-  - { id: node214, equipement: disj-230-reste, borne: "sortie", polarite: 230V-phase }
   - { id: node220, equipement: boitier-230-tribord, borne: "barre de phase", polarite: 230V-phase }
   - { id: node221, equipement: boitier-230-tribord, borne: "barrette de neutre", polarite: 230V-neutre }
   - { id: node222, equipement: boitier-230-tribord, borne: "barrette de terre", polarite: 230V-terre }
@@ -113,6 +115,8 @@ nodes:
   - { id: node224, equipement: disj-trib-eclairage, borne: "sortie", polarite: 230V-phase }
   - { id: node225, equipement: disj-trib-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node220 }
   - { id: node226, equipement: disj-trib-prises, borne: "sortie", polarite: 230V-phase }
+  - { id: node215, equipement: disj-trib-10a-2, borne: "entrée", polarite: 230V-phase, monte_sur: node220 }
+  - { id: node216, equipement: disj-trib-10a-2, borne: "sortie", polarite: 230V-phase }
   - { id: node236, equipement: disj-babord-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node220 }
   - { id: node237, equipement: disj-babord-prises, borne: "sortie", polarite: 230V-phase }
   - { id: node240, equipement: boitier-230-babord, borne: "phase", polarite: 230V-phase }
@@ -136,6 +140,9 @@ nodes:
   - { id: node243, equipement: prise-230-proue, borne: "phase", polarite: 230V-phase }
   - { id: node244, equipement: prise-230-proue, borne: "neutre", polarite: 230V-neutre }
   - { id: node245, equipement: prise-230-proue, borne: "terre", polarite: 230V-terre }
+  - { id: node217, equipement: eclairage-230-babord, borne: "phase", polarite: 230V-phase, statut: estime }
+  - { id: node218, equipement: eclairage-230-babord, borne: "neutre", polarite: 230V-neutre, statut: estime }
+  - { id: node219, equipement: eclairage-230-babord, borne: "terre", polarite: 230V-terre, statut: estime }
   - { id: node233, equipement: plafonnier-230, borne: "phase", polarite: 230V-phase }
   - { id: node234, equipement: plafonnier-230, borne: "neutre", polarite: 230V-neutre }
   - { id: node235, equipement: plafonnier-230, borne: "terre", polarite: 230V-terre }
