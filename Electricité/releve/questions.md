@@ -45,6 +45,10 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 12/10 : le ballon est sous la table à carte. Le câble 12 V fait donc le même trajet que wire019 (platine des coupe-circuits → tableau de la table à carte, 3 m relevés) : 3 m estimés, à mesurer. Où passe wire019, et reste-t-il de la place dans son passage pour un câble de 6 mm² aller et retour ?
   → 13/10 : le câble longe le bord bâbord jusqu'aux coffres de la cabine de poupe, les traverse jusqu'à la batterie de servitude, puis remonte au disjoncteur 12 V du ballon, placé à côté du disjoncteur du guindeau (sous l'ouverture d'accès aux coupe-circuits). Reste à mesurer la longueur.
 
+### Pour l'étude E (batterie de servitude)
+
+- **Q64** Blue Smart au coffre de cockpit tribord (E-H5, retenue le 14/10) : longueur du trajet d'un câble 12 V entre le coffre de cockpit (près du boîtier d'arrivée 230 V) et la niche de la contremarche des coupe-circuits, par où il passe et quelles cloisons il traverse. Longueur et section des câbles 12 V fournis avec le chargeur (sortie + et −), et diamètre de leurs cosses. Q50 donne environ 5 m jusqu'au coffre de la batterie de servitude : la section de 10 mm² en dépend.
+
 ### Pour l'étude D (shunt)
 
 - **Q44** Traceur Garmin GPSMAP 7407 : modèle exact (xsv ou xdv, étiquette au dos) et version du logiciel (Paramètres > Système > Informations système). Est-il raccordé à un réseau NMEA 2000 (câble à connecteur rond à 5 broches, connecteurs en T, bouchons de terminaison) ? Si oui, où passe le câble principal, et d'où vient son alimentation 12 V ? Où est placé le traceur, et d'où vient son alimentation ? Conditionne D-H6 (lecture du shunt sur le traceur).
