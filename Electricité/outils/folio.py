@@ -53,6 +53,7 @@ STYLE = '''  <style>
     .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
     .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
     .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .fx{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round}.fx-new{fill:none;stroke:var(--new);stroke-width:1.4;stroke-linecap:round}
     .dp{fill:var(--pos)}.dn{fill:var(--ink)}
     .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
     .lever{stroke:var(--ink);stroke-width:2}
@@ -280,11 +281,28 @@ class Folio:
             (x1, y1), (x2, y2) = self.pos[n1], self.pos[n2]
             cls = "fuse-new" if neuf else "fuse"
             tcls = "idn" if neuf else "id"
+            fx = "fx-new" if neuf else "fx"
+            # disjoncteur (type des données) : grande croix à l'extrémité côté 1re borne ; fusible : trait axial
+            disj = self.M.equipements.get(ap.get("id", ""), {}).get("type") == "disjoncteur"
             if y1 == y2:   # horizontal
-                o.append(f'<rect class="{cls}" x="{min(x1, x2):g}" y="{y1 - 9:g}" width="{abs(x2 - x1):g}" height="18"/>')
-                o.append(f'<text class="{tcls} mid" x="{(x1 + x2) / 2:g}" y="{y1 + 4:g}">{escape(ap["calibre"])}</text>')
+                g, dr = min(x1, x2), max(x1, x2)
+                o.append(f'<rect class="{cls}" x="{g:g}" y="{y1 - 9:g}" width="{dr - g:g}" height="18"/>')
+                if disj:
+                    c = x1 + 10 if x1 < x2 else x1 - 10
+                    o.append(f'<path class="{fx}" d="M{c - 7:g} {y1 - 7:g} L{c + 7:g} {y1 + 7:g} M{c - 7:g} {y1 + 7:g} L{c + 7:g} {y1 - 7:g}"/>')
+                else:
+                    o.append(f'<path class="{fx}" d="M{g + 4:g} {y1:g} H{dr - 4:g}"/>')
+                # calibre à l'extérieur, sous le milieu (les étiquettes des bornes partent vers l'extérieur)
+                cy = y1 - 13 if ap.get("calibre_cote") == "haut" else y1 + 22
+                o.append(f'<text class="{tcls} mid" x="{(x1 + x2) / 2:g}" y="{cy:g}">{escape(ap["calibre"])}</text>')
             else:
-                o.append(f'<rect class="{cls}" x="{x1 - 8:g}" y="{min(y1, y2):g}" width="16" height="{abs(y2 - y1):g}"/>')
+                h, b = min(y1, y2), max(y1, y2)
+                o.append(f'<rect class="{cls}" x="{x1 - 8:g}" y="{h:g}" width="16" height="{b - h:g}"/>')
+                if disj:
+                    c = y1 + 10 if y1 < y2 else y1 - 10
+                    o.append(f'<path class="{fx}" d="M{x1 - 6:g} {c - 6:g} L{x1 + 6:g} {c + 6:g} M{x1 - 6:g} {c + 6:g} L{x1 + 6:g} {c - 6:g}"/>')
+                else:
+                    o.append(f'<path class="{fx}" d="M{x1:g} {h + 4:g} V{b - 4:g}"/>')
                 d = ap.get("calibre_cote", "droite")
                 tx = x1 + 12 if d == "droite" else x1 - 12
                 o.append(f'<text class="{tcls}{"" if d == "droite" else " end"}" x="{tx:g}" y="{(y1 + y2) / 2 + 4:g}">{escape(ap["calibre"])}</text>')
@@ -444,6 +462,14 @@ class Folio:
                     continue
                 if n in self.pos and p != self.pos[n] and not self.sur_barre(n, p):
                     err.append(f"{w} : l'extrémité {p} n'est pas sur {n} {self.pos[n]}")
+                elif n in self.pos and p != self.pos[n] and w not in self.cable and len(pts) > 1:
+                    # arrivée sur une barre : dernier segment à 45°, orienté vers le côté où se trouve le nœud
+                    q = pts[1] if bout == "de" else pts[-2]
+                    a, b = next((a, b) for a, b in self.barres[n] if sur_segment(p, a, b))
+                    k = 0 if a[1] == b[1] else 1   # axe de la barre
+                    vers_noeud = self.pos[n][k] - p[k]
+                    if not (abs(p[0] - q[0]) == abs(p[1] - q[1]) != 0 and (p[k] - q[k]) * vers_noeud > 0):
+                        err.append(f"{w} : arrive sur la barre de {court(n)} en {p} sans segment à 45° orienté vers {court(n)} {self.pos[n]}")
         for w, pts in self.traces.items():
             f = self.M.fils[w]
             for a, b in zip(pts, pts[1:]):

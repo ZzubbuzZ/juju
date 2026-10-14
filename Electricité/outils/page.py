@@ -520,6 +520,7 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
 .box-unk{{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}}
 .fuse{{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}}
 .fuse-new{{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}}
+.fx{{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round}}.fx-new{{fill:none;stroke:var(--new);stroke-width:1.4;stroke-linecap:round}}
 .dp{{fill:var(--pos)}}.dn{{fill:var(--ink)}}
 .term{{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}}
 .lever{{stroke:var(--ink);stroke-width:2}}
@@ -552,6 +553,8 @@ svg text{{font-family:var(--font);fill:var(--ink)}}
     <span><svg width="34" height="10"><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--muted);stroke-width:2.5"/></svg>4–10 mm²</span>
     <span><svg width="34" height="10"><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--muted);stroke-width:1.3"/></svg>1,5–2,5 mm²</span>
     <span><svg width="34" height="10"><line x1="2" y1="5" x2="32" y2="5" style="stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4"/></svg>zone d'ombre</span>
+    <span><svg width="44" height="20"><line x1="0" y1="10" x2="44" y2="10" style="stroke:var(--ink);stroke-width:1.5"/><rect x="8" y="3" width="28" height="14" style="fill:var(--sheet);stroke:var(--ink);stroke-width:1.3"/><line x1="11" y1="10" x2="33" y2="10" style="stroke:var(--ink);stroke-width:1.2"/></svg>fusible</span>
+    <span><svg width="44" height="20"><line x1="0" y1="10" x2="44" y2="10" style="stroke:var(--ink);stroke-width:1.5"/><rect x="8" y="3" width="28" height="14" style="fill:var(--sheet);stroke:var(--ink);stroke-width:1.3"/><path d="M12 4 L24 16 M12 16 L24 4" style="fill:none;stroke:var(--ink);stroke-width:1.2"/></svg>disjoncteur</span>
     <span><svg width="22" height="22"><circle cx="11" cy="11" r="9" style="fill:var(--warn)"/></svg>anomalie (A)</span>
     <span><svg width="22" height="22"><circle cx="11" cy="11" r="9" style="fill:var(--sheet);stroke:var(--unk);stroke-width:1.5"/></svg>question à relever (Q)</span>
     <span><svg width="30" height="16"><rect x="1" y="2" width="28" height="12" style="fill:var(--new-soft);stroke:var(--new);stroke-width:1.5"/></svg>nouveau (hypothèse)</span>

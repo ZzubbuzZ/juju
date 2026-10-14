@@ -242,7 +242,7 @@ traits:
 
 fils:
   wire102: {trace: [[60, 40]], etiquette: [66, 55]}
-  wire103: {trace: [[1150, 40], [1150, 70]], etiquette: [1144, 58, end]}
+  wire103: {trace: [[1130, 40], [1130, 50], [1150, 70]], etiquette: [1144, 58, end]}
   wire120: {etiquette: [430, 124, mid]}
   wire122: {trace: [[370, 130], [370, 174]], etiquette: [445, 168, mid]}
   wire136: {etiquette: [430, 344, mid]}
@@ -253,28 +253,28 @@ fils:
   wire148: {etiquette: [430, 608, mid]}
   wire150: {etiquette: [430, 652, mid]}
   wire152: {etiquette: [430, 696, mid]}
-  wire121: {trace: [[1150, 130]], etiquette: [975, 124, mid]}
-  wire123: {trace: [[1150, 174]], etiquette: [975, 168, mid]}
-  wire137: {trace: [[1150, 350]], etiquette: [975, 344, mid]}
-  wire139: {trace: [[1150, 394]], etiquette: [975, 388, mid]}
-  wire141: {trace: [[1150, 438]], etiquette: [975, 432, mid]}
-  wire145: {trace: [[1150, 526]], etiquette: [975, 520, mid]}
-  wire147: {trace: [[1150, 570]], etiquette: [975, 564, mid]}
-  wire149: {trace: [[1150, 614]], etiquette: [975, 608, mid]}
-  wire151: {trace: [[1150, 658]], etiquette: [975, 652, mid]}
-  wire153: {trace: [[1150, 702]], etiquette: [975, 696, mid]}
+  wire121: {trace: [[1150, 150], [1130, 130]], etiquette: [975, 124, mid]}
+  wire123: {trace: [[1150, 194], [1130, 174]], etiquette: [975, 168, mid]}
+  wire137: {trace: [[1150, 370], [1130, 350]], etiquette: [975, 344, mid]}
+  wire139: {trace: [[1150, 414], [1130, 394]], etiquette: [975, 388, mid]}
+  wire141: {trace: [[1150, 458], [1130, 438]], etiquette: [975, 432, mid]}
+  wire145: {trace: [[1150, 546], [1130, 526]], etiquette: [975, 520, mid]}
+  wire147: {trace: [[1150, 590], [1130, 570]], etiquette: [975, 564, mid]}
+  wire149: {trace: [[1150, 634], [1130, 614]], etiquette: [975, 608, mid]}
+  wire151: {trace: [[1150, 678], [1130, 658]], etiquette: [975, 652, mid]}
+  wire153: {trace: [[1150, 722], [1130, 702]], etiquette: [975, 696, mid]}
   wire124: {etiquette: [385, 212, mid]}
   wire130: {etiquette: [475, 212, mid]}
   wire131: {etiquette: [880, 212, mid]}
-  wire125: {trace: [[1150, 218]], etiquette: [1055, 212, mid]}
+  wire125: {trace: [[1150, 238], [1130, 218]], etiquette: [1055, 212, mid]}
   wire126: {etiquette: [385, 256, mid]}
   wire132: {etiquette: [475, 256, mid]}
   wire133: {etiquette: [880, 256, mid]}
-  wire127: {trace: [[1150, 262]], etiquette: [1055, 256, mid]}
+  wire127: {trace: [[1150, 282], [1130, 262]], etiquette: [1055, 256, mid]}
   wire128: {etiquette: [385, 300, mid]}
   wire134: {etiquette: [475, 300, mid]}
   wire135: {etiquette: [880, 300, mid]}
-  wire129: {trace: [[1150, 306]], etiquette: [1055, 300, mid]}
+  wire129: {trace: [[1150, 326], [1130, 306]], etiquette: [1055, 300, mid]}
   wire142: {trace: [[500, 438], [500, 482]], etiquette: [494, 472, end]}
   wire143: {trace: [[820, 438], [820, 482]], etiquette: [826, 472]}
 

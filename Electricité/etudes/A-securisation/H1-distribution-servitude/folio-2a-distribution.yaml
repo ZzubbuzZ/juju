@@ -136,13 +136,13 @@ barres:
 fils:
   wire006: {etiquette: [228, 122, mid]}
   wire009: {trace: [[20, 130], [20, 640]], etiquette: [14, 400, mid, v]}
-  wire100: {trace: [[450, 130]], etiquette: [405, 122, mid]}
-  wire101: {trace: [[450, 160]], etiquette: [495, 152, mid]}
+  wire100: {trace: [[430, 130], [450, 150]], etiquette: [405, 122, mid]}
+  wire101: {trace: [[450, 180], [470, 160]], etiquette: [495, 152, mid]}
   wire018: {trace: [[720, 160]], etiquette: [660, 152, mid]}
   wire102: {etiquette: [628, 262, mid]}
-  wire103: {trace: [[1185, 640], [1185, 280]], etiquette: [1072, 272, mid]}
+  wire103: {trace: [[1165, 640], [1185, 620], [1185, 280]], etiquette: [1072, 272, mid]}
   wire104: {etiquette: [568, 382, mid]}
-  wire023: {trace: [[880, 640], [880, 470]], etiquette: [874, 570, mid, v], texte: "w023 · 6 · existant"}
+  wire023: {trace: [[860, 640], [880, 620], [880, 470]], etiquette: [874, 570, mid, v], texte: "w023 · 6 · existant"}
   wire024: {etiquette: [880, 387, mid], texte: w024}
   wire025: {trace: [[900, 470], [930, 440]], etiquette: [926, 478], texte: w025}
   wire027: {etiquette: [1055, 388, mid], texte: w027}

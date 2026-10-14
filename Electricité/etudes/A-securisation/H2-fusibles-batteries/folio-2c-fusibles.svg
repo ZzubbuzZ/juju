@@ -22,6 +22,7 @@
     .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
     .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
     .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .fx{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round}.fx-new{fill:none;stroke:var(--new);stroke-width:1.4;stroke-linecap:round}
     .dp{fill:var(--pos)}.dn{fill:var(--ink)}
     .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
     .lever{stroke:var(--ink);stroke-width:2}
@@ -44,32 +45,40 @@
   <text class="tb mid" x="115" y="110">Batterie moteur</text>
   <text class="ts mid" x="115" y="125">110 Ah · coffre tribord</text>
   <rect class="fuse-new" x="260" y="131" width="56" height="18"/>
-  <text class="idn mid" x="288" y="144">400 A</text>
+  <path class="fx-new" d="M264 140 H312"/>
+  <text class="idn mid" x="288" y="162">400 A</text>
   <text class="ts tn mid" x="288" y="166">MEGA</text>
   <rect class="sw" x="424" y="124" width="60" height="32" rx="2"/>
   <path class="lever" d="M424 140 L481 127"/>
   <text class="ts mid" x="454" y="112">CC moteur</text>
   <rect class="fuse-new" x="500" y="201" width="46" height="18"/>
-  <text class="idn mid" x="523" y="214">30 A</text>
+  <path class="fx-new" d="M504 210 H542"/>
+  <text class="idn mid" x="523" y="232">30 A</text>
   <rect class="fuse-new" x="500" y="241" width="46" height="18"/>
-  <text class="idn mid" x="523" y="254">40 A</text>
+  <path class="fx-new" d="M504 250 H542"/>
+  <text class="idn mid" x="523" y="272">40 A</text>
   <rect class="box" x="40" y="380" width="150" height="70" rx="2"/>
   <text class="tb mid" x="115" y="400">Batterie servitude</text>
   <text class="ts mid" x="115" y="415">110 Ah · cabine de poupe</text>
   <rect class="fuse-new" x="260" y="421" width="56" height="18"/>
-  <text class="idn mid" x="288" y="434">400 A</text>
+  <path class="fx-new" d="M264 430 H312"/>
+  <text class="idn mid" x="288" y="452">400 A</text>
   <text class="ts tn mid" x="288" y="456">MEGA</text>
   <rect class="sw" x="424" y="414" width="60" height="32" rx="2"/>
   <path class="lever" d="M424 430 L481 417"/>
   <text class="ts end" x="476" y="402">CC servitude</text>
   <rect class="fuse-new" x="500" y="501" width="46" height="18"/>
-  <text class="idn mid" x="523" y="514">30 A</text>
+  <path class="fx-new" d="M504 510 H542"/>
+  <text class="idn mid" x="523" y="532">30 A</text>
   <rect class="fuse-new" x="500" y="541" width="46" height="18"/>
-  <text class="idn mid" x="523" y="554">40 A</text>
+  <path class="fx-new" d="M504 550 H542"/>
+  <text class="idn mid" x="523" y="572">40 A</text>
   <rect class="fuse-new" x="640" y="331" width="46" height="18"/>
-  <text class="idn mid" x="663" y="344">50 A</text>
+  <path class="fx-new" d="M644 340 H682"/>
+  <text class="idn mid" x="663" y="362">50 A</text>
   <rect class="fuse-new" x="760" y="371" width="46" height="18"/>
-  <text class="idn mid" x="783" y="384">30 A</text>
+  <path class="fx-new" d="M764 380 H802"/>
+  <text class="idn mid" x="783" y="402">30 A</text>
   <rect class="box" x="960" y="405" width="220" height="50" rx="2"/>
   <text class="tb mid" x="1070" y="423">Disj. guindeau</text>
   <text class="ts mid" x="1070" y="438">vers le guindeau : folio 1</text>

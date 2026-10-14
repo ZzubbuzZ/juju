@@ -202,8 +202,8 @@ fils:
   wire018: {etiquette: [906, 112, mid]}
   wire020: {etiquette: [1100, 104, mid], texte: w020}
   wire021: {etiquette: [1100, 156, mid], texte: w021}
-  wire013: {trace: [[900, 640]], etiquette: [894, 300, end]}
-  wire015: {trace: [[1170, 640], [1170, 170]], etiquette: [1164, 470, end]}
+  wire013: {trace: [[880, 640], [900, 620]], etiquette: [894, 300, end]}
+  wire015: {trace: [[1150, 640], [1170, 620], [1170, 170]], etiquette: [1164, 470, end]}
   wire061: {trace: [[945, 135]], etiquette: [952, 228]}
   wire062: {trace: [[945, 365]], etiquette: [951, 322]}
   wire063: {etiquette: [1024, 270, mid, v]}

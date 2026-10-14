@@ -22,6 +22,7 @@
     .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
     .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
     .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .fx{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round}.fx-new{fill:none;stroke:var(--new);stroke-width:1.4;stroke-linecap:round}
     .dp{fill:var(--pos)}.dn{fill:var(--ink)}
     .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
     .lever{stroke:var(--ink);stroke-width:2}
@@ -44,15 +45,18 @@
   <text class="tb mid" x="115" y="318">Batterie servitude</text>
   <text class="ts mid" x="115" y="333">110 Ah · cabine de poupe</text>
   <rect class="fuse-new" x="260" y="151" width="56" height="18"/>
-  <text class="idn mid" x="288" y="164">400 A</text>
+  <path class="fx-new" d="M264 160 H312"/>
+  <text class="idn mid" x="288" y="182">400 A</text>
   <text class="ts tn mid" x="288" y="186">A-H2</text>
   <rect class="sw" x="424" y="144" width="60" height="32" rx="2"/>
   <path class="lever" d="M424 160 L481 147"/>
   <text class="ts mid" x="454" y="134">CC servitude</text>
   <rect class="fuse-new" x="460" y="221" width="46" height="18"/>
-  <text class="idn mid" x="483" y="234">1 A</text>
+  <path class="fx-new" d="M464 230 H502"/>
+  <text class="idn mid" x="483" y="252">1 A</text>
   <rect class="fuse-new" x="700" y="221" width="46" height="18"/>
-  <text class="idn mid" x="723" y="234">1 A</text>
+  <path class="fx-new" d="M704 230 H742"/>
+  <text class="idn mid" x="723" y="252">1 A</text>
   <rect class="box-new" x="460" y="325" width="200" height="80" rx="2"/>
   <text class="tb mid tn" x="560" y="369">Shunt 500 A</text>
   <text class="ts mid" x="560" y="384">connecté · Bluetooth</text>
