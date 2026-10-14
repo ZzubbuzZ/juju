@@ -27,6 +27,7 @@ zones:
   - id: descente
     designation: Descente (escalier d'accès au carré)
     bord: axe
+    note: "Niche derrière la contremarche des coupe-circuits (relevé du 14/10) : prisme droit de 26 cm de haut à base trapézoïdale ; face des coupe-circuits 30 cm, face opposée 19 cm, fond perpendiculaire aux deux 45 cm, dont 6 cm occupés par les coupe-circuits. Fenêtre d'accès de 15 × 35 cm dans la face oblique, côté cabine de poupe."
 
   - id: cuisine
     designation: Cuisine (cambuse)
