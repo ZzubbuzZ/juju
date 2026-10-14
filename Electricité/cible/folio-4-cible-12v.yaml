@@ -6,7 +6,7 @@
 folio: 4
 titre: Installation 12 V cible
 aria: "Installation 12 volts cible : batterie moteur et guindeau, batterie LiFePO4 avec son shunt, chargeur DC/DC Orion XS, chargeur de quai Blue Smart, départs protégés vers les tableaux et l'entrée 12 volts du chauffe-eau."
-desc: "Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Variante encore ouverte : E-H4 (coffre de la batterie, folios 2j et 2k)."
+desc: "Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur."
 modele: cible
 taille: [1200, 1080]
 
@@ -156,7 +156,7 @@ appareils:
     h: 100
     titre: Orion XS 12/12-50A
     titre_y: 38
-    lignes: ["DC/DC · réglé vers 15 A", "contremarche (ou coffre : E-H4)"]
+    lignes: ["DC/DC · réglé vers 15 A", "niche de la contremarche"]
     nodes:
       node360: [haut, 496]
       node361: [bas, 400]

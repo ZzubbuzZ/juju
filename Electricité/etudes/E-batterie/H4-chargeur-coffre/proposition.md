@@ -1,7 +1,7 @@
 ---
 hypothese: E-H4
 titre: Variante de E-H1, Orion XS, chargeur de quai et shunt dans le coffre de la batterie
-etat: proposee
+etat: ecartee
 resume: Même installation que E-H1, mais l'Orion XS, le chargeur de quai Blue Smart et le shunt de l'étude D sont posés dans le coffre de la LiFePO4 au lieu de la contremarche. Choix sur place, selon la place disponible dans la contremarche.
 points_forts:
   - Câbles de sortie et négatifs de l'Orion XS, du chargeur et du shunt très courts, tout dans le même coffre.
@@ -12,7 +12,7 @@ points_faibles:
   - Le fil de commande de l'Orion XS fait environ 2 m.
   - Coffre à ouvrir pour accéder à l'Orion XS, au shunt et au chargeur ; un peu de chaleur près de la batterie en pleine charge.
   - Les fils de mesure du shunt et wire180 remontent à la platine, environ 1 à 1,2 m.
-decision: "05/10/2026 : variante retenue ou non sur place, face à E-H1 (tout dans la contremarche)."
+decision: "05/10/2026 : variante retenue ou non sur place, face à E-H1. 14/10 : écartée, l'utilisateur retient E-H1 : l'Orion XS, le Blue Smart et le shunt tiennent dans la niche de la contremarche (implantation dans E-H1)."
 ---
 
 # E-H4 · Variante : Orion XS, chargeur de quai et shunt dans le coffre de la batterie

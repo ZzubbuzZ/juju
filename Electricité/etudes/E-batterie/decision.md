@@ -21,11 +21,11 @@
 
 Le SmartShunt (étude D) n'est pas encore commandé.
 
-**Emplacements des chargeurs (05/10)** : le Blue Smart se place **avec le shunt de l'étude D**, soit dans la contremarche de la descente, près de la platine, soit dans le coffre de la batterie de servitude : à décider sur place selon la place dans la contremarche (Q53). Son alimentation 230 V vient du disjoncteur du chargeur de quai (C10) par un câble dédié, jusqu'à une prise dédiée ou un boîtier de raccordement à bornes Wago (Q53). Dans les deux cas, son câble 12 V reste court. Le Dolphin, qui ne charge plus que la batterie moteur, est raccordé **au plus près d'elle** (fusible de 30 A à la batterie, négatif sur sa borne −), au lieu de passer par la platine.
+**Emplacements des chargeurs (05/10)** : le Blue Smart se place **avec le shunt de l'étude D**, soit dans la contremarche de la descente, près de la platine, soit dans le coffre de la batterie de servitude, à décider sur place (Q53). **14/10 : dans la niche de la contremarche** (E-H1), avec l'Orion XS et le shunt ; E-H4 écartée. Son alimentation 230 V vient du disjoncteur du chargeur de quai (C10) par un câble dédié, jusqu'à une prise dédiée ou un boîtier de raccordement à bornes Wago (Q53). Dans les deux cas, son câble 12 V reste court. Le Dolphin, qui ne charge plus que la batterie moteur, est raccordé **au plus près d'elle** (fusible de 30 A à la batterie, négatif sur sa borne −), au lieu de passer par la platine.
 
-## Ce qui reste à décider (mis à jour le 08/10)
+## Ce qui reste à décider (mis à jour le 14/10)
 
-- **Emplacement de l'Orion XS, du chargeur de quai et du shunt** : contremarche de la descente (H1, folios 2h et 2i) ou coffre de la batterie (H4, folios 2j et 2k), sur place. Les deux variantes sont fusionnées dans `main` ; celle qui n'est pas retenue sera marquée écartée.
+- ~~Emplacement de l'Orion XS, du chargeur de quai et du shunt~~ : tranché le 14/10, niche de la contremarche (H1, folios 2h et 2i). H4 écartée, folios 2j et 2k archivés.
 
 Tranché le 08/10 : calibre du fusible MEGA de la servitude, **300 A**.
 

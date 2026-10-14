@@ -22,7 +22,7 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 | [H1](H1-lifepo4/proposition.md) | Batterie LiFePO4 (200 Ah commandée le 05/10) à la place du plomb, chargeur DC/DC à la place du coupleur Scheiber, coupe-circuit de couplage déposé, chargeur de quai dédié à la LiFePO4 | Supprimé à la source | environ 900 € | **Retenue** le 02/10 |
 | [H2](H2-plomb-ventile/proposition.md) | Plomb conservé en place, coffre ventilé vers l'extérieur | Évacué | environ 90 € | Écartée le 02/10 |
 | [H3](H3-plomb-deplace/proposition.md) | Plomb déplacé dans un coffre ventilé hors des cabines | Évacué hors des cabines | environ 190 € | Écartée le 02/10 |
-| [H4](H4-chargeur-coffre/proposition.md) | Variante de H1 : Orion XS, chargeur de quai et shunt dans le coffre de la batterie au lieu de la contremarche | Supprimé à la source | comme H1, à quelques mètres de câble près | À choisir sur place face à H1 |
+| [H4](H4-chargeur-coffre/proposition.md) | Variante de H1 : Orion XS, chargeur de quai et shunt dans le coffre de la batterie au lieu de la contremarche | Supprimé à la source | comme H1, à quelques mètres de câble près | Écartée le 14/10 : tout tient dans la contremarche |
 
 Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Toutes les questions de l'étude sont répondues (Q45 à Q53). **Câblage écrit le 05/10** : [H1](H1-lifepo4/cablage.yaml) (base : D-H1, Orion XS, chargeur de quai et shunt dans la contremarche) et sa variante [H4](H4-chargeur-coffre/cablage.yaml) (dans le coffre de la batterie). Folios cibles, chacun avec un circuit moteur et un circuit servitude : H1, [2h](H1-lifepo4/folio-2h-circuit-moteur.svg) et [2i](H1-lifepo4/folio-2i-circuit-servitude.svg) ; H4, [2j](H4-chargeur-coffre/folio-2j-circuit-moteur.svg) et [2k](H4-chargeur-coffre/folio-2k-circuit-servitude.svg). Nouveaux numéros : node360 à node379, wire200 à wire217 ; node074 (fusible de 30 A du Dolphin) est remonté sur le goujon du fusible de 400 A. Le guindeau passe sur le circuit moteur (wire217 remplace wire017).
 
@@ -50,6 +50,8 @@ Les coûts sont les totaux des nomenclatures : prix relevés par recherche web l
 **05/10/2026 : matériel commandé** : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Victron Orion XS 12/12-50A, Victron Blue Smart IP67 12/17 ; fusible MEGA pour la batterie de servitude, sans classe T. Détail et conséquences dans [decision.md](decision.md) et [H1](H1-lifepo4/proposition.md#batterie-commandée-0510). La batterie fait 52 cm et 26 kg ; sa place dans le coffre n'est pas un problème (Q51).
 
 **08/10/2026** : calibre du fusible MEGA confirmé à 300 A ; étude fusionnée dans `main`, avec les deux variantes d'emplacement (H1 contremarche, H4 coffre) à départager à bord.
+
+**14/10/2026** : emplacement tranché, **H1** : l'Orion XS, le Blue Smart et le shunt tiennent dans la niche de la contremarche (implantation dans [H1](H1-lifepo4/proposition.md#implantation-dans-la-niche-1410)). H4 écartée, folios 2j et 2k archivés.
 
 **Réponses du 05/10** : commande manuelle de l'Orion XS par un interrupteur près du tableau Scheiber (Q48) ; place de la batterie sans problème (Q51) ; Blue Smart BPC121713006 à 118 € (Q52) ; 230 V du Blue Smart par un câble dédié depuis le disjoncteur du chargeur (Q53). Orion XS acheté 259 €.
 

@@ -100,4 +100,4 @@ textes:
   - {x: 40, y: 578, classe: t, texte: "et démarreur quand le coupe-circuit de couplage est fermé (d'où le calibre de 500 A). Les fils de mesure partent du côté batterie"}
   - {x: 40, y: 596, classe: t, texte: "des coupe-circuits, après les fusibles de 400 A : la mesure continue coupe-circuits ouverts. Lecture sur smartphone (D-H1)."}
   - {x: 40, y: 626, classe: ts tu, texte: "Avec l'étude E (décidée le 05/10) : LiFePO4 de 200 Ah, Orion XS et Blue Smart à la place du coupleur et de la sortie 2 du Dolphin ; le démarreur ne traverse plus le shunt."}
-  - {x: 40, y: 642, classe: ts tu, texte: "Le shunt va avec le chargeur de quai : dans la contremarche (folio 2i, E-H1) ou dans le coffre de la batterie (folio 2k, E-H4), au choix sur place."}
+  - {x: 40, y: 642, classe: ts tu, texte: "Le shunt va avec le chargeur de quai : dans la contremarche (folio 2i, E-H1, retenue le 14/10)."}

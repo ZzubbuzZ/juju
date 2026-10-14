@@ -17,14 +17,14 @@ points_faibles:
   - Guindeau utilisé moteur arrêté ; il entame la batterie de démarrage (environ 2 à 3 Ah par mouillage).
   - Commande manuelle du DC/DC (Q48) ; un oubli au port le laisse démarrer sur la charge du Dolphin.
   - Fusible MEGA (décision du 05/10) ; un MRBF aurait un meilleur pouvoir de coupure, pour le même prix.
-decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node004), masse du voyant sur node005. 12/10 : le Blue Smart a son propre C10, posé dans la place libre du boîtier d'arrivée (Q63) ; le Dolphin garde le sien. 13/10 : couplage définitivement déposé ; secours d'une batterie moteur défectueuse par un booster de démarrage autonome. 13/10 : sélecteur 3 positions (moteur / off / servitude) pour le guindeau, en secours d'une batterie moteur défectueuse."
+decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node004), masse du voyant sur node005. 12/10 : le Blue Smart a son propre C10, posé dans la place libre du boîtier d'arrivée (Q63) ; le Dolphin garde le sien. 13/10 : couplage définitivement déposé ; secours d'une batterie moteur défectueuse par un booster de démarrage autonome. 13/10 : sélecteur 3 positions (moteur / off / servitude) pour le guindeau, en secours d'une batterie moteur défectueuse. 14/10 : emplacement tranché, l'Orion XS, le Blue Smart et le shunt dans la niche de la contremarche (E-H4 écartée) ; implantation proposée dans « Implantation dans la niche »."
 ---
 
 # E-H1 · Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
 
 Hypothèse de l'étude E. Base : **A-H4** (programme retenu de l'étude A, avec les fusibles de A-H2).
 
-Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **900 €**. Câblage : [cablage.yaml](cablage.yaml) (base : **D-H1**, le shunt de l'étude D), avec l'Orion XS, le chargeur de quai et le shunt dans la contremarche : [folio 2h](folio-2h-circuit-moteur.svg) (circuit moteur cible) et [folio 2i](folio-2i-circuit-servitude.svg) (circuit servitude cible). Variante dans le coffre de la batterie : [E-H4](../H4-chargeur-coffre/proposition.md), folios [2j](../H4-chargeur-coffre/folio-2j-circuit-moteur.svg) et [2k](../H4-chargeur-coffre/folio-2k-circuit-servitude.svg). Choix sur place (Q53). Réponses du 03/10 : place suffisante dans le coffre (Q45), pas de gel (Q47), second chargeur à côté du Dolphin (Q49).
+Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **900 €**. Câblage : [cablage.yaml](cablage.yaml) (base : **D-H1**, le shunt de l'étude D), avec l'Orion XS, le chargeur de quai et le shunt dans la contremarche : [folio 2h](folio-2h-circuit-moteur.svg) (circuit moteur cible) et [folio 2i](folio-2i-circuit-servitude.svg) (circuit servitude cible). La variante dans le coffre de la batterie, [E-H4](../H4-chargeur-coffre/proposition.md), est écartée le 14/10 : tout tient dans la niche de la contremarche (voir [Implantation dans la niche](#implantation-dans-la-niche-1410)). Réponses du 03/10 : place suffisante dans le coffre (Q45), pas de gel (Q47), second chargeur à côté du Dolphin (Q49).
 
 ## Principe
 
@@ -116,7 +116,7 @@ Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de 
 - Profil adapté : absorption vers 14,2 V, puis floating bas ou mode stockage ; coupure de la charge par temps froid si le modèle a une sonde.
 - 15 A suffisent pour recharger 100 Ah en une nuit de quai ; le Dolphin reste à 20 A pour la seule batterie moteur.
 - **230 V** : le chargeur consomme environ 1,5 A ; avec le Dolphin (2,5 A au plus), un départ de 10 A suffirait. Retenu le 12/10 : un **C10 par chargeur**, le second dans la place libre du boîtier d'arrivée (Q63, node381, node382, wire218), pour couper un chargeur sans l'autre (borne de 6 A pendant la chauffe du ballon, intervention) et qu'un défaut sur l'un ne coupe pas l'autre. Avec 16 A aux bornes du port, la puissance de quai n'est pas une contrainte.
-- **Emplacement** : **avec le shunt de l'étude D**, dans la contremarche de la descente (H1) ou dans le coffre de la batterie (H4), à décider sur place (05/10), et non dans le coffre de cockpit tribord envisagé avec Q49. Voir « Chargeur de quai : Blue Smart IP67 12/17 » ci-dessous.
+- **Emplacement** : **avec le shunt de l'étude D**, dans la niche de la contremarche de la descente (décision du 14/10, E-H4 écartée), et non dans le coffre de cockpit tribord envisagé avec Q49. Voir « Chargeur de quai : Blue Smart IP67 12/17 » ci-dessous.
 
 **Le DC/DC ne doit alors tourner qu'au moteur.** Sinon, l'absorption du Dolphin à 14,4 V le ferait démarrer (seuil d'usine 14,0 V) et l'on retrouverait le problème ci-dessus. La tension seule ne permet pas de distinguer l'alternateur (environ 14,2 à 14,4 V) du Dolphin (14,4 V). On commande donc le DC/DC par son **entrée « remote »**, par un fil fin protégé à sa source (Q48, ci-dessous). Sa détection de tension reste active avec les réglages d'usine : clé tournée mais moteur arrêté, il ne tire rien sur la batterie moteur.
 
@@ -204,7 +204,7 @@ Ce que ce choix change par rapport à la batterie de 100 Ah étudiée :
 - **Côté 12 V**, le câble ne fait que quelques dizaines de centimètres : la chute de tension devient négligeable, la section est celle de la notice, et un **fusible de 25 A à sa source** le protège. Le + rejoint le côté batterie du coupe-circuit de servitude (node009) dans la contremarche, ou la borne + de la batterie, avant le fusible de 300 A, dans le coffre (H4) : dans les deux cas, la charge reste possible coupe-circuit ouvert.
 - **Le négatif doit revenir du côté « bord » du shunt** de l'étude D, sinon la charge n'est pas comptée. Le chargeur et le shunt étant posés ensemble, ce fil reste court dans les deux variantes.
 - **Côté 230 V**, c'est l'alimentation qui fait le trajet d'environ 5 m, mais elle ne transporte qu'environ 1,5 A : un câble 3 × 1,5 mm² (H07RN-F) suffit largement. **Choix du 05/10 (Q53)** : un câble dédié depuis le disjoncteur du chargeur de quai (C10), dans le boîtier d'arrivée (depuis le 12/10, un C10 à lui seul), jusqu'à une prise dédiée ou un boîtier de raccordement à bornes Wago près du chargeur. Le chargeur reste derrière le différentiel de 30 mA.
-- **Emplacement définitif** (05/10) : l'Orion XS, le chargeur et le shunt de l'étude D vont ensemble, soit dans la contremarche de la descente, près de la platine, soit dans le coffre de la batterie ; à décider sur place selon la place dans la contremarche. Dans la contremarche, le + du chargeur rejoint le côté batterie du coupe-circuit de servitude (node009) avec son fusible à la source, et le câble 230 V est un peu plus court.
+- **Emplacement définitif** (14/10) : l'Orion XS, le chargeur et le shunt de l'étude D vont ensemble dans la niche de la contremarche de la descente, près de la platine (E-H4, dans le coffre de la batterie, est écartée). Dans la contremarche, le + du chargeur rejoint le côté batterie du coupe-circuit de servitude (node009) avec son fusible à la source, et le câble 230 V est un peu plus court.
 - **Chaleur** : environ 40 W perdus en pleine charge. Le boîtier IP67 supporte l'humidité du coffre, mais il lui faut un peu d'air autour ; à fixer sur une paroi, pas contre la batterie.
 
 ### Dolphin : sortie moteur au plus près de la batterie moteur (décision du 05/10)
@@ -224,6 +224,27 @@ Réserve, consignée pour mémoire (voir « Conséquences » ci-dessous) : la pa
 
 **Calibre : 300 A au lieu de 400 A** (proposé le 05/10, confirmé par l'utilisateur le 08/10). Le BMS coupe à 250 A : un fusible de 400 A ne servirait qu'en court-circuit. 300 A laisse passer tout ce que le BMS autorise, et respecte la règle des 150 % pour wire006 en 35 mm² (environ 210 A en continu) : l'écart accepté dans A-H2 pour wire006 disparaît, et wire006 en 50 mm² n'est plus nécessaire, même à long terme.
 
+## Implantation dans la niche (14/10)
+
+La niche derrière la contremarche (relevé du 14/10, zone `descente`) est un prisme droit de 26 cm de haut à base trapézoïdale : face des coupe-circuits 30 cm, face opposée 19 cm, fond de 45 cm dont 6 cm occupés par les coupe-circuits, fenêtre d'accès de 15 × 35 cm dans la face oblique, côté cabine de poupe. Volume d'environ 29 L.
+
+Implantation proposée (plan à l'échelle : [artifact](https://claude.ai/artifact/2zAbUvVvrjaFc8BZUj71cU)) :
+
+| Paroi | Appareils | Encombrement (fiches constructeur) |
+|---|---|---|
+| Fond, en bas | Blue Smart IP67 12/17, couché ; ses câbles sortent aux deux bouts, environ 6 cm de chaque côté pour les courber | 219 × 99 × 65 mm |
+| Fond, en haut | Fusible de 70 A de l'entrée de l'Orion XS (côté coupe-circuits), SmartShunt, puis les fusibles MIDI de 70 A (sortie Orion XS), 25 A (Blue Smart), 50 A (wire019) et 30 A (wire022) | shunt 120 × 46 × 54 mm ; porte-fusible MIDI ≈ 60 × 30 × 30 mm (estimé) |
+| Face de 19 cm | Orion XS, câbles de 16 mm² courbés dessous (environ 11 cm) | 137 × 123 × 40 mm |
+
+- Il reste au moins 13 cm devant les appareils pour passer la main.
+- Victron conseille 10 cm libres autour de l'Orion XS ; il n'y en aura qu'environ 3 sur les côtés. Réglé vers 15 A, il dissipe quelques watts ; au pire, il réduit son courant plus tôt.
+- Le Blue Smart ne charge qu'au quai, moteur arrêté, et l'Orion XS que moteur en marche : ils ne chauffent jamais ensemble.
+- Le SmartShunt IP65 est livré avec ses deux fils de mesure de 1,5 m, protégés par un fusible de 1 A (fiche constructeur).
+- La chute de tension dans wire009 (1 m, 35 mm², environ 0,5 mΩ) ne fausse que la tension lue par le shunt : moins de 10 mV en charge, sans effet sur l'état de charge, compté en ampères-heures. Rien à compenser ni à rapprocher.
+- Le sélecteur du guindeau n'est pas dans la niche : il est près du disjoncteur du guindeau, sous l'ouverture d'accès.
+
+À vérifier à la pose : place prise par les câbles existants (35 mm² des coupe-circuits, wire009, wire019, wire022 ; le coupleur déposé en libère), position de la fenêtre sur la face oblique (supposée centrée : l'Orion XS sur la face de 19 cm serait alors au bord de la fenêtre), plancher de la niche et voisinage du compartiment moteur, face du Blue Smart qui se visse à la paroi.
+
 ## Changements de câblage (à écrire dans `cablage.yaml`)
 
 | Action | Éléments |
@@ -235,7 +256,7 @@ Réserve, consignée pour mémoire (voir « Conséquences » ci-dessous) : la pa
 | Remplacement | Sortie 1 du Dolphin : wire003, wire162 et leur fusible de 30 A (A-H2) déposés ; câble court jusqu'à un fusible de 30 A à la batterie moteur (node001). Négatif du Dolphin (wire005) ramené sur la borne − de la batterie moteur (node002) |
 | Remplacement | Batterie de servitude : mêmes bornes (node007, node008), wire161 et wire009 repris |
 | Ajout | Orion XS : entrée côté charges du coupe-circuit moteur (node004, 08/10), sortie sur la batterie de servitude (node009, ou node007 dans le coffre), masse côté « bord » du shunt ; fusibles MIDI de 70 A aux deux extrémités, câbles de 16 mm² (wire202 à wire206). Commande : interrupteur à voyant entre le + de l'entrée (fusible de 1 A sur node004) et la broche H, voyant au coupe-circuit des négatifs (node005) (wire207 à wire209, wire216) ; cavalier H-L retiré |
-| Ajout | Chargeur de quai LiFePO4, avec le shunt (contremarche ou coffre de la batterie, sur place) : 230 V par un câble dédié depuis le disjoncteur du chargeur (C10) jusqu'à une prise ou un boîtier à bornes Wago (Q53), sortie 12 V courte avec fusible à sa source (node007 dans le coffre, node009 dans la contremarche), négatif côté « bord » du shunt |
+| Ajout | Chargeur de quai LiFePO4, avec le shunt dans la niche de la contremarche (14/10) : 230 V par un câble dédié depuis le disjoncteur du chargeur (C10) jusqu'à une prise ou un boîtier à bornes Wago (Q53), sortie 12 V courte avec fusible à sa source (node009, côté batterie du coupe-circuit de servitude), négatif côté « bord » du shunt |
 
 ## Conséquences
 

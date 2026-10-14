@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1080" role="img" aria-label="Installation 12 volts cible : batterie moteur et guindeau, batterie LiFePO4 avec son shunt, chargeur DC/DC Orion XS, chargeur de quai Blue Smart, départs protégés vers les tableaux et l&#x27;entrée 12 volts du chauffe-eau.">
   <title>Folio 4 · Installation 12 V cible</title>
-  <desc>Tout le 12 V tel qu&#x27;il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Variante encore ouverte : E-H4 (coffre de la batterie, folios 2j et 2k).</desc>
+  <desc>Tout le 12 V tel qu&#x27;il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -83,7 +83,7 @@
   <rect class="box-new" x="360" y="370" width="240" height="100" rx="2"/>
   <text class="tb mid tn" x="480" y="408">Orion XS 12/12-50A</text>
   <text class="ts mid" x="480" y="423">DC/DC · réglé vers 15 A</text>
-  <text class="ts mid" x="480" y="438">contremarche (ou coffre : E-H4)</text>
+  <text class="ts mid" x="480" y="438">niche de la contremarche</text>
   <rect class="fuse-new" x="392" y="500" width="16" height="36"/>
   <text class="idn" x="412" y="522">70 A</text>
   <rect class="box-new" x="40" y="470" width="200" height="70" rx="2"/>
