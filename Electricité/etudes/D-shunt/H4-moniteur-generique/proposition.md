@@ -1,7 +1,7 @@
 ---
 hypothese: D-H4
 titre: Moniteur générique bas coût
-etat: ecartee_proposee
+etat: ecartee
 resume: Shunt et afficheur sans marque (type Junctek KH140F, 400 A), avec application Bluetooth.
 points_forts:
   - Le moins cher, afficheur et Bluetooth compris.
@@ -9,6 +9,7 @@ points_faibles:
   - Shunt de 400 A, sous les 500 A visés pour le démarrage couplé.
   - Précision à faible courant et dérive du zéro inconnues, alors que c'est la consommation de veille qu'il faut surveiller.
   - Tenue en milieu marin et consommation propre inconnues.
+decision: "14/10/2026 : écartée, l'utilisateur retient D-H1."
 ---
 
 # D-H4 · Moniteur générique bas coût

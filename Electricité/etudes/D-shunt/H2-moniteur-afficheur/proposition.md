@@ -1,7 +1,7 @@
 ---
 hypothese: D-H2
 titre: Moniteur avec afficheur à la table à carte
-etat: recommandee
+etat: ecartee
 resume: Même shunt et même pose que H1, avec un afficheur rond à la place de l'indicateur de charge à aiguille, relié par un câble de données.
 points_forts:
   - Lecture et alarme sans téléphone, à la table à carte.
@@ -10,6 +10,7 @@ points_forts:
 points_faibles:
   - Câble de données à tirer de la descente à la table à carte.
   - Diamètre du trou et branchement de l'indicateur à voir à la pose ; découpe à adapter au besoin.
+decision: "14/10/2026 : écartée, l'utilisateur retient D-H1 (lecture sur smartphone, sans afficheur fixe)."
 ---
 
 # D-H2 · Moniteur avec afficheur à la table à carte

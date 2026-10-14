@@ -75,16 +75,16 @@ Les modèles cités sont des exemples de familles de produits. Leurs caractéris
 
 | | Principe | Lecture | Batterie moteur | Coût estimé | État |
 |---|---|---|---|---|---|
-| [H1](H1-shunt-connecte/proposition.md) | Shunt connecté seul (type Victron SmartShunt 500 A) | Application sur smartphone | Tension par l'entrée auxiliaire | environ 120 € | Rédigée, [folio 2e](H1-shunt-connecte/folio-2e-shunt.svg) |
-| [H2](H2-moniteur-afficheur/proposition.md) | Moniteur avec afficheur (type Victron BMV-712 Smart) | Afficheur rond à la place de l'indicateur à aiguille, et application | Tension par l'entrée auxiliaire | environ 177 €, plus une éventuelle adaptation de la découpe | Rédigée, [folio 2f](H2-moniteur-afficheur/folio-2f-afficheur.svg) |
-| [H3](H3-simarine-pico/proposition.md) | Moniteur multi-capteurs (Simarine Pico et shunt SC503) | Afficheur couleur | Second shunt, ou mesure de tension | environ 400 € | Non développée, à écarter : voir ci-dessous |
-| [H4](H4-moniteur-generique/proposition.md) | Moniteur générique bas coût (type Junctek KH140F, 400 A) | Afficheur et application | Selon le modèle | environ 90 € | Non développée, à écarter : voir ci-dessous |
-| [H5](H5-cerbo-gx-touch/proposition.md) | SmartShunt de H1, centrale Victron Cerbo GX et écran tactile GX Touch 50 | Écran 5 pouces à la table à carte, application, portail VRM | Tension par l'entrée auxiliaire du shunt | environ 635 € | Écartée le 05/10 (place incertaine, Q43 ; prix) |
+| [H1](H1-shunt-connecte/proposition.md) | Shunt connecté seul (type Victron SmartShunt 500 A) | Application sur smartphone | Tension par l'entrée auxiliaire | environ 120 € | **Retenue le 14/10**, [folio 2e](H1-shunt-connecte/folio-2e-shunt.svg) |
+| [H2](H2-moniteur-afficheur/proposition.md) | Moniteur avec afficheur (type Victron BMV-712 Smart) | Afficheur rond à la place de l'indicateur à aiguille, et application | Tension par l'entrée auxiliaire | environ 177 €, plus une éventuelle adaptation de la découpe | Écartée le 14/10, [folio 2f](H2-moniteur-afficheur/folio-2f-afficheur.svg) (archivé) |
+| [H3](H3-simarine-pico/proposition.md) | Moniteur multi-capteurs (Simarine Pico et shunt SC503) | Afficheur couleur | Second shunt, ou mesure de tension | environ 400 € | Non développée, écartée le 14/10 |
+| [H4](H4-moniteur-generique/proposition.md) | Moniteur générique bas coût (type Junctek KH140F, 400 A) | Afficheur et application | Selon le modèle | environ 90 € | Non développée, écartée le 14/10 |
+| [H5](H5-cerbo-gx-touch/proposition.md) | SmartShunt de H1, centrale Victron Cerbo GX et écran tactile GX Touch 50 | Écran 5 pouces à la table à carte, application, portail VRM | Tension par l'entrée auxiliaire du shunt | environ 635 € | Écartée le 05/10 (place incertaine, Q43 ; prix), folio 2g archivé |
 | [H6](H6-cerbo-traceur-garmin/proposition.md) | SmartShunt de H1 et centrale Victron Cerbo-S GX sans écran, données transmises au traceur Garmin par NMEA 2000 | Traceur GPSMAP 7407 quand il est allumé, application, portail VRM | Tension par l'entrée auxiliaire du shunt (affichage sur le traceur à vérifier) | environ 560 €, 440 € si le traceur est déjà sur un réseau NMEA 2000 | Rédigée sans câblage, en attente de Q44 |
 
 H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire009 repris sur le shunt, wire180 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire181 à wire184). H2 ajoute le câble de données wire185 et l'afficheur. Nouveaux numéros : node086 à node095, wire180 à wire185. H5 reprend H1 et ajoute un Cerbo GX alimenté après le coupe-circuit de servitude (fusible 3 A), relié au shunt par VE.Direct et à l'écran : node340 à node346, wire186 à wire190.
 
-**Pourquoi ne pas développer H3 et H4** (à confirmer) :
+**Pourquoi H3 et H4 n'ont pas été développées** (écartées le 14/10) :
 
 - **H3** : son intérêt est de lire aussi les jauges de réservoir et plusieurs batteries. Juju n'a pas de jauge à relier, et l'objectif ne demande qu'une tension pour la batterie moteur. Elle coûte plus du double de H2 sans répondre à un besoin listé, et son kit standard n'a qu'un shunt de 300 A.
 - **H4** : l'état de charge se calcule en additionnant le courant pendant des jours. Une petite erreur à faible courant (veille, pompe de cale) ou une dérive du zéro fausse le résultat, et c'est justement la consommation de veille que l'étude doit surveiller (détection du court-circuit résistif de A-H2). Sa tenue en milieu marin et sa consommation propre sont inconnues. Son shunt de 400 A est en outre sous les 500 A visés. L'économie, environ 75 €, ne compense pas une mesure à laquelle on ne peut pas se fier.
@@ -104,9 +104,10 @@ Une fois le shunt posé, un protocole simple permet de remplacer les estimations
 
 ## Décision
 
+**14/10/2026** : **H1 retenue** par l'utilisateur : SmartShunt 500 A, lecture et alarme sur smartphone. H2, H3 et H4 écartées. L'emplacement reste à décider sur place, avec le chargeur de quai (contremarche, E-H1, ou coffre de la batterie, E-H4). H6 reste possible plus tard : le Cerbo-S GX se branche sur le port VE.Direct du SmartShunt sans rien racheter (Q44). Le câblage de H1 est déjà dans l'installation cible (base de E-H1). Ce qui suit retrace les étapes précédentes.
+
 **05/10/2026** : emplacement du shunt, avec le chargeur de quai, à décider sur place (contremarche ou coffre de la batterie). H5 écartée (place incertaine pour le Cerbo GX et l'écran, Q43 ; prix). H6 attend Q44 (traceur et réseau NMEA 2000, à voir à la prochaine visite). Le SmartShunt (H1) est envisagé, pas encore commandé : voir [ce que le shunt apporte](#ce-que-le-shunt-apporte-à-linstallation-mis-à-jour-le-0510). Le choix entre lecture sur téléphone (H1) et afficheur avec alarme visible (H2) reste ouvert.
 
-En attente. Le choix porte sur la lecture : smartphone seul (H1) ou afficheur fixe (H2).
 
 Proposition de Claude (01/10) : **H2**. L'afficheur prend la place de l'indicateur à aiguille sans découpe nouvelle, l'alarme de tension basse est visible sans téléphone, et un shunt connecté seul (H1) n'accepte pas d'afficheur dédié : une lecture fixe ne pourrait s'y ajouter que par l'écran d'un Cerbo GX (H5), bien plus cher. Aux prix relevés le 01/10, les deux coûtaient le même prix ; avec ceux trouvés le 05/10 (SmartShunt IP65 à 86 €, BMV-712 à 137 €), H2 coûte environ 60 € de plus que H1 (177 € contre 120 €). À trancher, ainsi que l'écartement de H3 et H4.
 

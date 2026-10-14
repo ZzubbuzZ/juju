@@ -4,6 +4,7 @@ titre: Supervision Cerbo GX et écran GX Touch 50
 aria: "Cerbo GX alimenté par un fusible de 3 A après le coupe-circuit de servitude, relié au SmartShunt par un câble VE.Direct et à un écran tactile GX Touch 50 à la table à carte."
 desc: "Le SmartShunt du folio 2e est lu par un Cerbo GX posé près des coupe-circuits, alimenté côté charges du coupe-circuit de servitude à travers un fusible de 3 A. Le Cerbo GX pilote un écran tactile GX Touch 50 à la table à carte. Hypothèse écartée le 05/10 : place incertaine (Q43) et prix."
 modele: D-H5
+archive: "hypothèse D-H5 écartée le 05/10 (place incertaine, Q43 ; prix)."
 taille: [1200, 525]
 
 zones:

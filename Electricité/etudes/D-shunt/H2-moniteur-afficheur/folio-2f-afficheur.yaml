@@ -4,6 +4,7 @@ titre: Afficheur du moniteur de batterie
 aria: "Afficheur du moniteur de batterie encastré au tableau de servitude à la place de l'indicateur à aiguille, relié au shunt par un câble de données."
 desc: "Le shunt du folio 2e est celui d'un moniteur à afficheur. Le câble de données w185 relie le shunt à l'afficheur, encastré au tableau de servitude à la place de l'indicateur à aiguille, dont le branchement sera vu à la pose ; la place suffit (Q41)."
 modele: D-H2
+archive: "hypothèse D-H2 écartée le 14/10 : D-H1 retenue, lecture sur smartphone."
 taille: [1200, 370]
 
 zones:

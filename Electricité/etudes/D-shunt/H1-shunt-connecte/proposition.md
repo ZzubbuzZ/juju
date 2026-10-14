@@ -1,7 +1,7 @@
 ---
 hypothese: D-H1
 titre: Shunt connecté, lecture sur smartphone
-etat: proposee
+etat: retenue
 resume: Shunt Bluetooth de 500 A sur le négatif de la batterie de servitude ; état de charge, historique et tension de la batterie moteur dans l'application.
 points_forts:
   - Le plus simple à poser, rien à percer au tableau.
@@ -10,6 +10,7 @@ points_forts:
 points_faibles:
   - Lecture et alarme de tension basse sur le téléphone seulement.
   - Pas d'afficheur dédié possible ; une lecture fixe ne peut s'ajouter que par l'écran d'un Cerbo GX (H5), bien plus cher.
+decision: "14/10/2026 : retenue par l'utilisateur, lecture et alarme sur smartphone (application VictronConnect). Emplacement, avec le chargeur de quai, à décider sur place (contremarche, E-H1, ou coffre de la batterie, E-H4). Un Cerbo GX (H6) reste possible plus tard par le port VE.Direct, sans rien racheter."
 ---
 
 # D-H1 · Shunt connecté, lecture sur smartphone
