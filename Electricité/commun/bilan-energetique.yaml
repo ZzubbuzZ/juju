@@ -56,9 +56,10 @@ consommateurs:
     note: Feu à LED (Q7).
 
   - equipement: eclairage
-    courant_A: 3
+    courant_A: 1.6
     heures_par_jour: { navigation: 2, mouillage: 3 }
     statut: estime
+    note: "Tout allumé (15/10) : quatre ampoules G11 de 1 W (poupe, proue) et cinq luminaires à LED estimés à 3 W (table à carte, carré et veilleuse, cuisine, toilette), soit environ 19 W. Remplace l'estimation de 3 A antérieure à l'inventaire du 12/10 (Q9)."
 
   - equipement: pompe-eau
     courant_A: 8
