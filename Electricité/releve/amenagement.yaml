@@ -29,9 +29,9 @@ zones:
     bord: axe
 
   - id: cuisine
-    designation: Cuisine
+    designation: Cuisine (cambuse)
     bord: tribord
-    note: Meuble bas sous l'évier, entre le puits de dérive et la glacière.
+    note: Meuble bas sous l'évier, entre le puits de dérive et la glacière. Appelée « cambuse » dans le relevé de l'éclairage du 12/10.
 
   - id: table-a-carte
     designation: Table à carte

@@ -30,7 +30,7 @@ fils:
   # --- Chargeur de quai dans le coffre ------------------------------------------------------
   - { id: wire210, de: node007, vers: node377, section_mm2: 4, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Sur la borne + de la batterie : la charge reste possible coupe-circuit ouvert" }
   - { id: wire212, de: node373, vers: node087, section_mm2: 4, couleur: noir, longueur_m: 0.3, statut: propose, note: "Côté « bord » du shunt, dans le coffre" }
-  - { id: wire213, de: node211, vers: node374, section_mm2: 1.5, couleur: marron, longueur_m: 6, statut: propose, note: "Câble 3 × 1,5 mm² dédié jusqu'au coffre de la batterie (environ 5 m, Q50), prise ou boîtier à bornes Wago (Q53)" }
+  - { id: wire213, de: node382, vers: node374, section_mm2: 1.5, couleur: marron, longueur_m: 6, statut: propose, note: "Câble 3 × 1,5 mm² dédié jusqu'au coffre de la batterie (environ 5 m, Q50), prise ou boîtier à bornes Wago (Q53)" }
   - { id: wire214, de: node209, vers: node375, section_mm2: 1.5, couleur: bleu, longueur_m: 6, statut: propose }
   - { id: wire215, de: node212, vers: node376, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 6, statut: propose }
 

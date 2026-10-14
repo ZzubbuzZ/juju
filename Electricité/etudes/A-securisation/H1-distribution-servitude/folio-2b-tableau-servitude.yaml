@@ -283,7 +283,6 @@ renvois:
 
 pastilles:
   - {id: Q8, x: 832, y: 380}
-  - {id: Q9, x: 832, y: 512}
   - {id: Q11, x: 832, y: 688}
 
 textes:

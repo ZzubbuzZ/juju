@@ -44,6 +44,10 @@
   <text class="ts" x="30" y="58">Coffre de la cabine de poupe</text>
   <rect class="bound" x="340" y="40" width="840" height="640"/>
   <text class="ts" x="350" y="58">Contremarche de la descente</text>
+  <rect class="bound" x="960" y="46" width="215" height="74"/>
+  <text class="ts" x="970" y="64"></text>
+  <rect class="fuse-new" x="990" y="55" width="46" height="18"/>
+  <text class="idn mid" x="1013" y="68">10 A</text>
   <rect class="box-new" x="40" y="230" width="150" height="90" rx="2"/>
   <text class="tb mid tn" x="115" y="250">LiFePO4 200 Ah</text>
   <text class="ts mid" x="115" y="265">Humsienk · BMS 250 A</text>
@@ -73,6 +77,8 @@
   <rect class="sw" x="1044" y="560" width="32" height="60" rx="2"/>
   <path class="lever" d="M1060 560 L1071 617"/>
   <text class="ts " x="1084" y="594">CC masse</text>
+  <path class="n w2" d="M990 64 H990"/>
+  <path class="n w2" d="M990 64 H990"/>
   <path class="n w2" d="M1060 620 V640"/>
   <path class="p w4" d="M190 286 L254 286"/>
   <text class="idn" x="193" y="303">w161 · 35</text>
@@ -102,13 +108,15 @@
   <text class="idn" x="1106" y="330">w212 · 4</text>
   <path class="n w3" d="M1040 480 L1060 480 L1060 560"/>
   <text class="idn end" x="1054" y="525">w206 · 16</text>
-  <path class="n w2" d="M940 64 L760 64 L760 84"/>
-  <path class="n w1" d="M842 69 L848 59"/>
-  <path class="n w1" d="M847 69 L853 59"/>
-  <path class="n w1" d="M852 69 L858 59"/>
+  <path class="n w2" d="M1085 64 L1036 64"/>
+  <text class="idn mid" x="1062" y="56">w218</text>
+  <path class="n w2" d="M990 64 L760 64 L760 84"/>
+  <path class="n w1" d="M867 69 L873 59"/>
+  <path class="n w1" d="M872 69 L878 59"/>
+  <path class="n w1" d="M877 69 L883 59"/>
   <text class="idn mid" x="840" y="56">w213 · w214 · w215 · 3 × 1,5</text>
-  <rect class="flag" x="940" y="55" width="235" height="18"/>
-  <text class="ts mid" x="1057.5" y="68">C10 · n211 · n209 · n212 · folio 3</text>
+  <rect class="flag" x="1085" y="55" width="88" height="18"/>
+  <text class="ts mid" x="1129" y="68">n208 · folio 3</text>
   <rect class="flag" x="720" y="191" width="190" height="18"/>
   <text class="ts mid" x="815" y="204">n361 · Orion XS sortie · folio 2h</text>
   <rect class="flag" x="730" y="331" width="260" height="18"/>
@@ -117,6 +125,8 @@
   <text class="ts mid" x="935" y="484">n362 · Orion XS − · folio 2h</text>
   <rect class="flag" x="985" y="640" width="150" height="18"/>
   <text class="ts mid" x="1060" y="653">node006 · charges : folio 1</text>
+  <circle class="term" cx="990" cy="64" r="3.5"/>
+  <circle class="term" cx="1036" cy="64" r="3.5"/>
   <circle class="term" cx="190" cy="286" r="3.5"/>
   <circle class="term" cx="170" cy="320" r="3.5"/>
   <circle class="term" cx="254" cy="286" r="3.5"/>
@@ -142,6 +152,8 @@
   <circle class="term" cx="600" cy="544" r="3.5"/>
   <circle class="term" cx="1060" cy="560" r="3.5"/>
   <circle class="term" cx="1060" cy="620" r="3.5"/>
+  <text class="idn end" x="988" y="86">n382</text>
+  <text class="idn" x="1038" y="86">n381</text>
   <text class="idn end" x="183" y="285">n007</text>
   <text class="pin end" x="183" y="295">+</text>
   <text class="idn end" x="165" y="304">n008</text>
@@ -175,6 +187,8 @@
   <text class="id end" x="1040" y="574">n005</text>
   <text class="id end" x="1040" y="620">n006</text>
   <text class="ts" x="440" y="590">Fils de mesure du shunt : folio 2e.</text>
+  <text class="ts mid" x="1068" y="101">C10 du Blue Smart · boîtier d&#x27;arrivée</text>
+  <text class="id mid" x="1068" y="114">n209 / n212 : N et PE</text>
   <text class="ts" x="20" y="698">En vert : nouveau (étude E). Déposés : coupleur Scheiber, coupe-circuit de couplage et leurs câbles ; le guindeau est passé sur le circuit moteur (folio 2h).</text>
   <g class="mk-a"><circle cx="40" cy="230" r="11"/><text class="mid" x="40" y="233.5">A11</text></g>
 </svg>

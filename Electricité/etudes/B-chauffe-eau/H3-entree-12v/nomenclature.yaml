@@ -9,11 +9,9 @@ devise: EUR
 lots:
   douze_volts:
     titre: Raccordement de l'entrée 12 V du ballon (notice, page 67)
-    note: Commande manuelle par interrupteur ; commande par le régulateur solaire avec l'étude C.
+    note: Commande manuelle par le disjoncteur à la platine (12/10) ; une commande automatique par le régulateur solaire reste possible avec l'étude C.
 
 articles:
-  - { lot: douze_volts, designation: "Relais 12 V à fermeture, 30 A au moins (contact 30-87), avec support", quantite: 1, unite: pièce, prix_unitaire: 10, statut: estimation, note: "Exigé par la notice ; près du ballon" }
-  - { lot: douze_volts, designation: "Interrupteur à voyant 12 V, porte-fusible en ligne et fusible 1 A pour la bobine du relais", quantite: 1, unite: lot, prix_unitaire: 12, statut: estimation }
-  - { lot: douze_volts, designation: "Porte-fusible étanche et fusible 30 A, au plus près de la source", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Calibre imposé par la notice ; à la platine, sur node010" }
-  - { lot: douze_volts, designation: "Câble étamé 6 mm² rouge et noir", quantite: 10, unite: m, prix_unitaire: 3, statut: estimation, note: "Environ 6,5 m posés (Q57) ; négatif côté « bord » du shunt (étude D)", fils: [wire306, wire307, wire308] }
-  - { lot: douze_volts, designation: "Cosses 6 mm², gaine thermorétractable, fil fin 0,75 mm² rouge et noir pour la commande du relais et le voyant", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, fils: [wire309, wire310, wire311, wire312] }
+  - { lot: douze_volts, designation: "Disjoncteur 12 V CC 30 A à commande manuelle (levier ou bascule, prévu pour servir d'interrupteur), marqué DC, au plus près de la source", quantite: 1, unite: pièce, prix_unitaire: 30, statut: estimation, note: "Remplace le porte-fusible, le relais et l'interrupteur à voyant (12/10). Calibre imposé par la notice ; à la platine, sur node010. Marquage DC et pouvoir de coupure à vérifier" }
+  - { lot: douze_volts, designation: "Câble étamé 6 mm² rouge et noir", quantite: 10, unite: m, prix_unitaire: 3, statut: estimation, note: "Environ 6,5 m posés (Q57) ; négatif côté « bord » du shunt (étude D)", fils: [wire306, wire308, wire313] }
+  - { lot: douze_volts, designation: "Cosses 6 mm², gaine thermorétractable", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation }

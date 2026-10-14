@@ -17,11 +17,12 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ### Câblage existant
 
-- **Q1** Tableau moteur (contact, jauges) : est-il branché sur le câble du démarreur (node031) ? Avec ou sans fusible ?
-  → 29/09 : le faisceau d'origine Yanmar comporte un porte-fusible ; on ne sait pas encore si le motoriste de Juju l'a conservé.
-  → 30/09 : sera vérifié, et traité si nécessaire, lors de la pose du compte-tours.
 - **Q42** Boîtier de distribution 230 V du cabinet de toilette : quatre disjoncteurs Legrand DNX3, numérotés 1 à 4 : C10, C10, C16, C16 (photo Boitier-230v-cabinet-toilette.jpg). Quel circuit sur chacun ? Le relevé connaît l'éclairage (10 A), les prises tribord et les prises bâbord (16 A) : que protège le second 10 A, ou est-il libre ?
   → 01/10 : à vérifier lors d'une visite.
+  → 12/10 : les deux disjoncteurs de 10 A sont utilisés ; le circuit du second n'a pas été vérifié. Il ne peut donc pas alimenter la prise dédiée du ballon (Q56). Reste à relever : ce que protège le second 10 A (une partie de l'éclairage 230 V, Q60 ?) et la position de chaque circuit sur l'étiquette.
+  → 12/10 : hypothèses de l'utilisateur, à vérifier à bord : (1) l'éclairage 230 V, tout à LED, est réparti sur les deux C10 ; (2) la prise du frigo (EPS 100) est sur un des C10, et non sur le C16 des prises tribord comme le suppose le relevé. Pour chaque C10, relever les câbles qui en partent (section, nombre) et où ils vont. Bilan dans commun/dimensionnement.md (« Les deux C10 du boîtier tribord ») : dans les deux cas, un seul C10 suffit (moins de 1 A), et l'autre peut être libéré pour le ballon.
+  → 12/10 : un seul câble de 1,5 mm² part de chacun des deux C10. Reste à suivre ces deux câbles : quels luminaires (ou quelle prise) chacun alimente, et comment il se ramifie (boîtes de dérivation, raccordement de luminaire à luminaire).
+  → 12/10 : décision de l'utilisateur, les deux câbles seront regroupés sur un seul C10, et l'autre alimentera le ballon par un câble neuf et une boîte de dérivation (B-H1). Suivre les deux câbles avant le regroupement reste utile au relevé.
 - **Q59** Télécommande du guindeau : section et couleur des fils wire061 (+ du relais vers le fusible de 5 A), wire062 (fusible vers la télécommande), wire063 et wire064 (montée et descente vers le relais) ; la commande masse du relais (node028) est-elle raccordée ?
 - **Q12** Longueurs réelles des fils du tableau de servitude, circuit par circuit.
   → 27/09 : pas d'information pour l'instant. À mesurer lors d'un démontage du tableau.
@@ -31,30 +32,16 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 - **Q8** Autoradio : le fil de mémoire permanente est-il présent, et branché sur un + permanent ?
   → 27/09 : sans doute présent, branchement à vérifier.
-- **Q9** Éclairage intérieur : emplacement des 6 points lumineux LED et trajet des câbles.
-  → 27/09 : pas d'information.
+- **Q60** Éclairage 230 V : six luminaires relevés le 12/10 (spots à LED GU10 dans la cabine de poupe, à la table à carte, dans la cabine de proue et dans le cabinet de toilette ; plafonniers barrettes à deux spots dans le carré et dans la cuisine). Lequel est le plafonnier métallique à terre raccordée relevé le 30/09 ? Les autres luminaires sont-ils métalliques, et leur terre est-elle raccordée ? Sont-ils tous sur le disjoncteur éclairage (C10) du boîtier tribord, ou certains sur le second C10, utilisé lui aussi (Q42) ? Les luminaires bâbord passent-ils par la boîte de dérivation de la table à carte ?
+  → 13/10 : correction : le « plafonnier 230 V métallique » relevé le 30/09 était une erreur ; c'est la réglette du carré. Les boîtes de dérivation ne servent qu'aux prises : l'éclairage part directement des C10. Reste à relever : réglette et spots métalliques ou non, et leur terre raccordée ou non ; répartition entre les deux C10 (Q42).
 - **Q11** Radar : marque, modèle et point d'alimentation. Le sondeur est-il celui intégré au GPSMAP xsv ?
   → 27/09 : pas d'information.
 
-### Moteur
-
-- **Q14** Alternateur : ampérage exact (plaque), borne de sortie (B+), présence d'une borne W pour un compte-tours.
-  → 27/09 : à demander à Julie.
-  → 28/09 : d'après les spécifications et les photos, l'alternateur d'origine donne 20 A au plus ; celui de Juju semble plus récent mais semblable. Plaque et bornes à relever.
-- **Q40** Pièces immergées reliées au moteur, donc à la masse 12 V (vérifiable depuis le bord) : l'accouplement entre l'arbre de l'inverseur et l'arbre d'hélice est-il métallique, ou comporte-t-il un manchon isolant (flector) ? Un câble de mise à la masse arrive-t-il sur le tube d'étambot ? Conditionne la coupure du différentiel sans liaison terre / masse 12 V (A-H4).
-
 ### Pour les études B (chauffe-eau) et C (solaire)
 
-- **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
-  → 28/09 : pas encore de réponse.
-  → 07/10 : le ballon commandé (Carbest CozyWater 10C) mesure 270 × 400 × 290 mm (Ø × L × H) et pèse 6,9 kg à vide, environ 17 kg plein. Il se pose à plat, ou debout raccords vers le bas, dans un endroit sec et ventilé (il ne doit pas être recouvert ni isolé). Les fixations doivent tenir 60 kg. Il faut aussi de la place pour le réducteur de pression, le vase d'expansion et les deux vannes d'arrêt, la soupape doit rester accessible et son tuyau de vidange doit pouvoir sortir à l'extérieur ou dans un évier. Quels emplacements possibles, et à quelle distance du circuit d'eau, d'une prise 230 V et du tableau de servitude ?
-  → 07/10 : a priori dans le cabinet de toilette, comme le boîtier de distribution 230 V tribord. Emplacement exact à confirmer.
-- **Q54** Circuit d'eau douce existant : volume et position du réservoir ; type et diamètre du tuyau ; trajet de la pompe Seaflo jusqu'aux robinets (cuisine, cabinet de toilette) ; modèle des robinets (eau froide seule ou mitigeur) ; présence d'un vase ou d'un accumulateur. Avec un manomètre sur un robinet : pression à laquelle la pompe redémarre (la coupure est annoncée à 2,8 bar). Conditionne le réglage du réducteur et du vase (B-H1).
-  → 07/10 : notice de la pompe ajoutée (documentation/SEAFLO-Notice-pompe-41-series-SFDP1-045-040.pdf) ; elle ne donne pas les pressions. La pression d'arrêt semble variable. B-H1 prévoit de mesurer la coupure et le redémarrage avec le manomètre du réducteur avant de le régler (voir la procédure dans B-H1).
-  → 08/10 : précision sur la question : c'est la coupure la plus basse de la pompe qui conditionne le réglage du réducteur (2 bar au moins pour 1,5 bar), pas le redémarrage (B-H1, « Les réglages, dans l'ordre »). Reste à relever : réservoir, tuyaux, robinets et mitigeurs.
-- **Q55** À la réception du ballon : filetage et diamètre de l'entrée d'eau froide, de la sortie d'eau chaude et de la soupape ; longueur du câble du panneau de commande, du câble 230 V et des fils 12 V. Où poser le panneau de commande ?
-  → 07/10 : question pas claire pour l'utilisateur. Reformulée : quand le ballon sera livré, relever (1) le diamètre et le type de filetage de ses deux raccords d'eau et de la soupape, pour acheter les bons raccords (le revendeur annonce 1/2" mâle, la notice ne dit rien) ; (2) la longueur des trois câbles qui sortent du ballon (230 V à fiche Schuko, fils 12 V, câble du panneau de commande), pour savoir jusqu'où on peut éloigner le ballon de sa prise et le panneau du ballon ; (3) la puissance inscrite sur la plaque (800 W selon la notice, 660 W selon le revendeur).
 - **Q57** Entrée 12 V du ballon (B-H3, retenue le 08/10) : trajet et longueur du câble 6 mm² entre la platine des coupe-circuits (contremarche de la descente) et le ballon, dans le cabinet de toilette ; cloisons à traverser. Place pour le relais de 30 A près du ballon, et pour l'interrupteur à voyant près du panneau de commande.
+  → 12/10 : le ballon est sous la table à carte. Le câble 12 V fait donc le même trajet que wire019 (platine des coupe-circuits → tableau de la table à carte, 3 m relevés) : 3 m estimés, à mesurer. Où passe wire019, et reste-t-il de la place dans son passage pour un câble de 6 mm² aller et retour ?
+  → 13/10 : le câble longe le bord bâbord jusqu'aux coffres de la cabine de poupe, les traverse jusqu'à la batterie de servitude, puis remonte au disjoncteur 12 V du ballon, placé à côté du disjoncteur du guindeau (sous l'ouverture d'accès aux coupe-circuits). Reste à mesurer la longueur.
 
 ### Pour l'étude D (shunt)
 
@@ -63,6 +50,38 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ## Réponses
 
+- **Q1** Tableau moteur (contact, jauges) : est-il branché sur le câble du démarreur (node031) ? Avec ou sans fusible ?
+  → 29/09 : le faisceau d'origine Yanmar comporte un porte-fusible ; on ne sait pas encore si le motoriste de Juju l'a conservé.
+  → 30/09 : sera vérifié, et traité si nécessaire, lors de la pose du compte-tours.
+  → 13/10 : oui, par le faisceau d'origine, à travers un fusible de 30 A. Acheter un fusible de rechange (type à relever sur le porte-fusible).
+- **Q9** Éclairage intérieur : emplacement des 6 points lumineux LED et trajet des câbles.
+  → 27/09 : pas d'information.
+  → 12/10 : sept luminaires 12 V. Cabine de poupe : luminaire à deux ampoules G11 à incandescence ; table à carte : plafonnier à LED ; cabine de proue : luminaire à deux ampoules G11 à LED ; carré : plafonnier et veilleuse à LED ; cuisine (cambuse) : plafonnier à LED ; cabinet de toilette : plafonnier à LED au-dessus de l'évier. Reste à relever : le trajet des câbles (un câble par luminaire depuis le tableau, ou une boucle ?), et si chaque luminaire a son propre interrupteur.
+  → 13/10 : chaque luminaire a son propre interrupteur ; le câblage est historique, son trajet n'est pas relevé (sans incidence tant que le tableau n'est pas refait, A-H1).
+- **Q14** Alternateur : ampérage exact (plaque), borne de sortie (B+), présence d'une borne W pour un compte-tours.
+  → 27/09 : à demander à Julie.
+  → 28/09 : d'après les spécifications et les photos, l'alternateur d'origine donne 20 A au plus ; celui de Juju semble plus récent mais semblable. Plaque et bornes à relever.
+  → 13/10 : 20 A, pas de borne W. Un compte-tours ne pourra pas se brancher sur l'alternateur (prise de mesure à trouver lors de sa pose, Q1).
+- **Q40** Pièces immergées reliées au moteur, donc à la masse 12 V (vérifiable depuis le bord) : l'accouplement entre l'arbre de l'inverseur et l'arbre d'hélice est-il métallique, ou comporte-t-il un manchon isolant (flector) ? Un câble de mise à la masse arrive-t-il sur le tube d'étambot ? Conditionne la coupure du différentiel sans liaison terre / masse 12 V (A-H4).
+  → 13/10 : accouplement métallique, pas de câble de masse sur le tube d'étambot. L'arbre et l'hélice sont donc reliés au moteur, donc à la masse 12 V : la condition de A-H4 est remplie.
+- **Q54** Circuit d'eau douce existant : volume et position du réservoir ; type et diamètre du tuyau ; trajet de la pompe Seaflo jusqu'aux robinets (cuisine, cabinet de toilette) ; modèle des robinets (eau froide seule ou mitigeur) ; présence d'un vase ou d'un accumulateur. Avec un manomètre sur un robinet : pression à laquelle la pompe redémarre (la coupure est annoncée à 2,8 bar). Conditionne le réglage du réducteur et du vase (B-H1).
+  → 07/10 : notice de la pompe ajoutée (documentation/SEAFLO-Notice-pompe-41-series-SFDP1-045-040.pdf) ; elle ne donne pas les pressions. La pression d'arrêt semble variable. B-H1 prévoit de mesurer la coupure et le redémarrage avec le manomètre du réducteur avant de le régler (voir la procédure dans B-H1).
+  → 08/10 : précision sur la question : c'est la coupure la plus basse de la pompe qui conditionne le réglage du réducteur (2 bar au moins pour 1,5 bar), pas le redémarrage (B-H1, « Les réglages, dans l'ordre »). Reste à relever : réservoir, tuyaux, robinets et mitigeurs.
+  → 12/10 : réducteur et vase dans le coffre de cockpit tribord ; tuyaux du ballon le long de la coque, puis autour du puits de dérive par l'avant jusqu'au meuble bas sous l'évier. Reste à relever : la pompe est-elle dans ce coffre (le réducteur va à sa sortie) ? L'eau chaude va-t-elle aussi au cabinet de toilette ?
+  → 12/10 : oui, la pompe est dans le coffre de cockpit tribord. Environ 3,5 m de tuyau d'eau chaude posés. Reste : réservoir (volume, position), tuyaux et robinets existants, eau chaude au cabinet de toilette ou non.
+  → 13/10 : réservoir à la poupe ; tuyauterie en tuyau cristal 12,5 × 18,5 mm ; le robinet de l'évier a été remplacé par un mitigeur eau chaude / eau froide ; pas de distribution au cabinet de toilette pour l'instant. Volume du réservoir non relevé, sans incidence sur B-H1.
+- **Q55** À la réception du ballon : filetage et diamètre de l'entrée d'eau froide, de la sortie d'eau chaude et de la soupape ; longueur du câble du panneau de commande, du câble 230 V et des fils 12 V. Où poser le panneau de commande ?
+  → 07/10 : question pas claire pour l'utilisateur. Reformulée : quand le ballon sera livré, relever (1) le diamètre et le type de filetage de ses deux raccords d'eau et de la soupape, pour acheter les bons raccords (le revendeur annonce 1/2" mâle, la notice ne dit rien) ; (2) la longueur des trois câbles qui sortent du ballon (230 V à fiche Schuko, fils 12 V, câble du panneau de commande), pour savoir jusqu'où on peut éloigner le ballon de sa prise et le panneau du ballon ; (3) la puissance inscrite sur la plaque (800 W selon la notice, 660 W selon le revendeur).
+  → 13/10 : raccords en 1/2" ; fils 12 V de 1 m, cordon 230 V de 2 m, câble du panneau de commande de 3 m. Le panneau sera posé sur le tableau de servitude (table à carte). Puissance de la plaque non relevée : B-H1 garde les 800 W de la notice.
+- **Q61** Prise 230 V de la cabine de proue, relevée le 12/10 : d'où vient son câble (boîte de dérivation bâbord, comme la table à carte et l'armoire, ou disjoncteur des prises tribord) ?
+  → 13/10 : bâbord, par la boîte de dérivation de la table à carte (wire069 à wire071).
+- **Q63** Boîtier d'arrivée 230 V (coffre de cockpit tribord) : reste-t-il une place libre sur le rail, à côté du différentiel, du C10 du chargeur et du C16, pour un disjoncteur 1P+N de plus (un module de 18 mm) ? Sert au second C10 envisagé pour le chargeur de la LiFePO4 (voir commun/dimensionnement.md).
+  → 12/10 : oui, un emplacement est disponible.
+- **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
+  → 28/09 : pas encore de réponse.
+  → 07/10 : le ballon commandé (Carbest CozyWater 10C) mesure 270 × 400 × 290 mm (Ø × L × H) et pèse 6,9 kg à vide, environ 17 kg plein. Il se pose à plat, ou debout raccords vers le bas, dans un endroit sec et ventilé (il ne doit pas être recouvert ni isolé). Les fixations doivent tenir 60 kg. Il faut aussi de la place pour le réducteur de pression, le vase d'expansion et les deux vannes d'arrêt, la soupape doit rester accessible et son tuyau de vidange doit pouvoir sortir à l'extérieur ou dans un évier. Quels emplacements possibles, et à quelle distance du circuit d'eau, d'une prise 230 V et du tableau de servitude ?
+  → 07/10 : a priori dans le cabinet de toilette, comme le boîtier de distribution 230 V tribord. Emplacement exact à confirmer.
+  → 12/10 : ballon posé sous la table à carte, après discussion à bord. Les tuyaux longent la coque puis contournent le puits de dérive par l'avant jusqu'au meuble bas sous l'évier. Le réducteur de pression et le vase d'expansion iront dans le coffre de cockpit tribord.
 - **Q56** Prise 230 V qui alimentera le ballon : le câble du ballon se termine par une fiche Schuko. Les prises du bord ont-elles une terre à broche (norme française) ? La fiche Schuko y entre si la prise accepte les fiches hybrides. Laquelle utiliser, sur quel disjoncteur (voir Q42) ?
   → 07/10 : l'utilisateur proposait de raccorder le câble directement au disjoncteur. La notice l'interdit (« prise avec contact de protection », aucune modification du câblage). Décision : **prise dédiée** avec terre, compatible Schuko, posée près du boîtier tribord et alimentée seule par un disjoncteur (le second C10 si Q42 le confirme libre).
 - **Q48** Tableau moteur : existe-t-il un + 12 V présent seulement quand la clé de contact est tournée (borne du contacteur à clé, voyant de charge, fil « D+ » de l'alternateur) ? Quel trajet jusqu'à la platine des coupe-circuits ? Un fil fin y commanderait le chargeur DC/DC (E-H1). Voir aussi Q1.

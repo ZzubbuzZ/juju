@@ -33,7 +33,7 @@ Les points suivants sont à revoir sur le circuit 12v :
 
 ### Moteur
 Moteur Yanmar 3GMD, d'après la plaque signalétique (d'abord noté 3GM30). Refroidissement direct à l'eau de mer.
-Alternateur d'environ 20 A (spécification d'origine ; celui de Juju semble plus récent mais semblable, plaque à relever : Q14).
+Alternateur de 20 A, sans borne W (13/10). Tableau moteur (contact, jauges) alimenté par le faisceau d'origine depuis le + du démarreur, à travers un fusible de 30 A (13/10). Accouplement de l'arbre d'hélice métallique, sans câble de masse sur le tube d'étambot (13/10).
 Démarreur : 60 A à vide, 460 A rotor bloqué (couple maximal, vitesse nulle), puissance maximale entre 200 et 275 A ([manuel d'atelier Yanmar](documentation/YANMAR-WORKSHOP-MANUAL-1GM-2GM-3GM-3HM.pdf)).
 Batterie Varta 110Ah au Plomb sans entretien
 Coupe circuit dédié sur pole 12v
@@ -41,7 +41,13 @@ Coupe circuit dédié sur pole 12v
 ### Equipements de servitudes
 
 - Batterie 12v 110Ah au Plomb sans entretien
-- 6 points lumineux (LED) 12v
+- Éclairage 12 V, 7 luminaires sur le circuit « éclairage » du tableau de servitude (relevé du 12/10 ; raccordement : Q9) :
+  - cabine de poupe : luminaire à 2 ampoules G11 à incandescence
+  - table à carte : plafonnier à LED
+  - cabine de proue : luminaire à 2 ampoules G11 à LED
+  - carré : plafonnier à LED et veilleuse à LED
+  - cuisine (cambuse) : plafonnier à LED
+  - cabinet de toilette : plafonnier à LED au-dessus de l'évier
 - Panneau de controle des equipements de bord (coté moteur) :
   - Interrupteur réfrigérateur + fusible 15A
   - Interrupteur Pompe de cale moteur + fusible 10A (Attwood Tsunami T500, sans flotteur, mise en route manuelle ; le fabricant demande un fusible de 3 A : anomalie A10)
@@ -114,13 +120,19 @@ Les 4 coupes circuits sont disposés en carré, à chaque coin
 
 3 boitiers électriques : 
 - Boitier d'arrivée dans le coffre cockpit tribord avec dicjoncteur différentiel 30mA/25A protégeant tout le circuit + 1 disjoncteur 10A pour le chargeur de quai, et 1 disjonteur 16A pour le reste.
-- Boîtier de distribution tribord, dans le cabinet de toilette, avec 4 disjoncteurs Legrand DNX3 : deux 10A (dont l'éclairage) et deux 16A (PE, un par bord) ; le circuit du second 10A est à identifier (Q42). Correction du 01/10, photo Boitier-230v-cabinet-toilette.jpg.
+- Boîtier de distribution tribord, dans le cabinet de toilette, avec 4 disjoncteurs Legrand DNX3 : deux 10A (dont l'éclairage) et deux 16A (PE, un par bord) ; le second 10A est utilisé, son circuit est à identifier (Q42, 12/10). Correction du 01/10, photo Boitier-230v-cabinet-toilette.jpg.
 - Boîte de dérivation bâbord, sans disjoncteur, à l'arrière gauche de la table à carte : les PE bâbord ne sont protégées que par le 16A du boîtier d'arrivée.
 - Une PE pour alimentation groupe froid Dometic EPS 100 sur boitier tribord
-- Une PE pour la cuisine sur boitier tribord
-- Un plafonnier d'éclairage sur boitier tribord
+- Une PE pour la cuisine (à tribord) sur boitier tribord
+- Une PE pour le cabinet de toilette sur boitier tribord
+- Éclairage 230 V sur le disjoncteur éclairage du boîtier tribord, 6 luminaires (relevé du 12/10 ; terre et matière des luminaires à relever, répartition sur les disjoncteurs : Q60) :
+  - spots à LED GU10 : cabine de poupe, table à carte, cabine de proue, cabinet de toilette
+  - réglette à 2 spots dans le carré (le « plafonnier métallique » noté le 30/09 était une erreur, 13/10), plafonnier barrette à 2 spots dans la cuisine (cambuse)
+  - l'éclairage part directement des C10 ; les boîtes de dérivation ne servent qu'aux prises (13/10)
 - Une PE pour la table à carte sur la boîte de dérivation bâbord
-- Une PE pour le carré sur la boîte de dérivation bâbord
+- Une PE dans la cabine de poupe, derrière l'armoire (notée « PE du carré » jusqu'au 29/09), sur la boîte de dérivation bâbord
+- Une PE dans la cabine de proue (12/10), sur la boîte de dérivation bâbord (13/10)
+- 2 prises 12 V allume-cigare à la table à carte, au tableau de servitude
 - Boîtier tribord dans le cabinet de toilette (correction du 01/10 : il était noté sur la cloison entre le cabinet de toilette et le coffre de cockpit).
 - La terre 230 V n'est reliée ni à la masse 12 V ni à un isolateur galvanique (anomalie A8).
 - Aux bornes de quai du port de Saint-Chamas, ponton compris, la prise fournit **16 A, soit environ 3 700 W** pour tout le bord (correction du 01/10 : 6 A au ponton et 12 A à quai étaient notés d'après une information de presse). Rien ne garantit ce calibre dans les autres ports, où il est souvent plus faible : l'installation doit rester utilisable en escale sur une borne de moindre calibre.

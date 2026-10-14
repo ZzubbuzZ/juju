@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 545" role="img" aria-label="Entrée 12 volts du chauffe-eau : fusible de 30 ampères côté charges du coupe-circuit de servitude, câble de 6 millimètres carrés jusqu&#x27;à un relais de 30 ampères près du ballon, commandé par un interrupteur à voyant protégé par un fusible de 1 ampère ; retour du négatif côté bord du shunt.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 545" role="img" aria-label="Entrée 12 volts du chauffe-eau : disjoncteur 12 volts continu de 30 ampères à commande manuelle côté charges du coupe-circuit de servitude, câble de 6 millimètres carrés jusqu&#x27;au ballon ; retour du négatif côté bord du shunt.">
   <title>Folio 2n · Chauffe-eau CozyWater 10C, entrée 12 V</title>
-  <desc>L&#x27;entrée 12 V du ballon reste câblée en permanence à côté du 230 V, qui est prioritaire. Un fusible de 30 A à la platine, du 6 mm² et un relais de 30 A commandé par un interrupteur à voyant près du ballon, comme le demande la notice.</desc>
+  <desc>L&#x27;entrée 12 V du ballon reste câblée en permanence à côté du 230 V, qui est prioritaire. Un disjoncteur 12 V CC de 30 A à commande manuelle, à la platine, protège le 6 mm² et sert d&#x27;interrupteur « ballon sur batterie » ; il remplace le fusible, le relais et l&#x27;interrupteur à voyant de la notice (12/10).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -43,19 +43,13 @@
   <rect class="bound" x="20" y="40" width="300" height="450"/>
   <text class="ts" x="30" y="58">Contremarche de la descente : platine</text>
   <rect class="bound" x="600" y="40" width="580" height="450"/>
-  <text class="ts" x="610" y="58">Cabinet de toilette, près du ballon (Q19)</text>
+  <text class="ts" x="610" y="58">Sous la table à carte, près du ballon</text>
   <rect class="sw" x="120" y="124" width="60" height="32" rx="2"/>
   <path class="lever" d="M120 140 L177 127"/>
   <text class="ts mid" x="150" y="168">CC servitude</text>
   <rect class="fuse-new" x="230" y="131" width="46" height="18"/>
   <text class="idn mid" x="253" y="144">30 A</text>
-  <rect class="box-new" x="690" y="90" width="160" height="90" rx="2"/>
-  <text class="tb mid tn" x="770" y="110">Relais 30 A</text>
-  <text class="ts mid" x="770" y="125">contact 30-87</text>
-  <rect class="fuse-new" x="652" y="170" width="16" height="36"/>
-  <text class="idn" x="672" y="192">1 A</text>
-  <rect class="sw" x="704" y="284" width="60" height="32" rx="2"/>
-  <path class="lever" d="M704 300 L761 287"/>
+  <text class="ts tn mid" x="253" y="126">disj. CC</text>
   <rect class="box-new" x="960" y="100" width="200" height="150" rx="2"/>
   <text class="tb mid tn" x="1060" y="128">CozyWater 10C</text>
   <text class="ts mid" x="1060" y="143">entrée 12 V · 200 W · ≈ 17 A</text>
@@ -66,22 +60,12 @@
   <text class="ts mid" x="150" y="406">CC masse</text>
   <path class="p w4" d="M104 90 L104 124 L120 140"/>
   <path class="n w3" d="M120 430 L60 430 L60 460"/>
-  <path class="p w2" d="M276 140 L690 140"/>
+  <path class="p w2" d="M180 140 L230 140"/>
+  <text class="idn mid" x="205" y="132">w313</text>
+  <path class="p w2" d="M276 140 L900 140 L920 120 L960 120"/>
   <text class="idn mid" x="470" y="132">w306 · 6 mm² · ≈ 3 m</text>
-  <path class="p w2" d="M850 120 L960 120"/>
-  <text class="idn mid" x="905" y="112">w307 · 6</text>
-  <path class="p w1" d="M660 206 L660 300 L704 300"/>
-  <text class="idn mid" x="654" y="254" transform="rotate(-90 654 254)">w309 · 0,75</text>
-  <path class="p w1" d="M764 300 L780 300 L780 180"/>
-  <text class="idn" x="786" y="250">w310 · 0,75</text>
-  <path class="n w1" d="M820 180 L820 200 L930 200 L960 230"/>
-  <text class="idn mid" x="880" y="195">w311 · 0,75</text>
-  <path class="n w1" d="M734 316 L734 330 L860 330 L860 230 L960 230"/>
-  <text class="idn mid" x="800" y="346">w312 · voyant</text>
   <path class="n w2" d="M960 230 L940 250 L940 430 L180 430"/>
   <text class="idn mid" x="560" y="422">w308 · 6 mm² · ≈ 3 m</text>
-  <path class="p w2" d="M230 140 L180 140"/>
-  <path class="p w2" d="M660 170 L690 140"/>
   <rect class="flag" x="40" y="72" width="250" height="18"/>
   <text class="ts mid" x="165" y="85">← n073, MEGA 300 A : folio 2i ou 2k</text>
   <rect class="flag" x="30" y="460" width="230" height="18"/>
@@ -90,15 +74,6 @@
   <circle class="term" cx="180" cy="140" r="3.5"/>
   <circle class="term" cx="230" cy="140" r="3.5"/>
   <circle class="term" cx="276" cy="140" r="3.5"/>
-  <circle class="term" cx="690" cy="140" r="3.5"/>
-  <circle class="term" cx="850" cy="120" r="3.5"/>
-  <circle class="term" cx="780" cy="180" r="3.5"/>
-  <circle class="term" cx="820" cy="180" r="3.5"/>
-  <circle class="term" cx="660" cy="170" r="3.5"/>
-  <circle class="term" cx="660" cy="206" r="3.5"/>
-  <circle class="term" cx="704" cy="300" r="3.5"/>
-  <circle class="term" cx="764" cy="300" r="3.5"/>
-  <circle class="term" cx="734" cy="316" r="3.5"/>
   <circle class="term" cx="960" cy="120" r="3.5"/>
   <circle class="term" cx="960" cy="230" r="3.5"/>
   <circle class="term" cx="120" cy="430" r="3.5"/>
@@ -107,31 +82,17 @@
   <text class="id" x="186" y="176">n010</text>
   <text class="idn end" x="227" y="153">n308</text>
   <text class="idn" x="279" y="153">n309</text>
-  <text class="idn" x="697" y="139">n310</text>
-  <text class="pin" x="697" y="149">30</text>
-  <text class="idn end" x="843" y="119">n311</text>
-  <text class="pin end" x="843" y="129">87</text>
-  <text class="idn end" x="775" y="164">n312</text>
-  <text class="pin end" x="775" y="174">86</text>
-  <text class="idn end" x="815" y="164">n313</text>
-  <text class="pin end" x="815" y="174">85</text>
-  <text class="idn end" x="649" y="174">n314</text>
-  <text class="idn end" x="649" y="210">n315</text>
-  <text class="idn end" x="698" y="292">n316</text>
-  <text class="idn" x="770" y="318">n317</text>
-  <text class="idn end" x="728" y="330">n380</text>
   <text class="idn" x="967" y="119">n318</text>
   <text class="pin" x="967" y="129">+</text>
   <text class="idn" x="967" y="229">n319</text>
   <text class="pin" x="967" y="239">−</text>
   <text class="id end" x="114" y="452">n005</text>
   <text class="id" x="186" y="452">n006</text>
-  <text class="ts mid tn" x="253" y="166">sur le goujon</text>
-  <text class="tb mid tn" x="734" y="366">Interrupteur à voyant</text>
-  <text class="ts mid" x="734" y="382">« ballon sur batterie »</text>
-  <text class="ts" x="20" y="512">En vert : nouveau. Le ballon choisit seul le 230 V quand il est présent ; l&#x27;interrupteur autorise ou non la chauffe sur la batterie (environ 45 Ah par chauffe).</text>
-  <text class="ts" x="20" y="530">Commande prise sur la borne 30 du relais, à travers un fusible de 1 A. Le − revient côté « bord » du shunt : la consommation du ballon est comptée.</text>
+  <text class="ts mid tn" x="253" y="166">à côté du disj. guindeau</text>
+  <text class="ts mid" x="253" y="182">sert d&#x27;interrupteur</text>
+  <text class="ts mid" x="253" y="196">« ballon sur batterie »</text>
+  <text class="ts" x="20" y="512">En vert : nouveau. Le ballon choisit seul le 230 V quand il est présent ; le disjoncteur, fermé, autorise la chauffe sur la batterie (environ 45 Ah par chauffe).</text>
+  <text class="ts" x="20" y="530">Sans relais ni interrupteur à voyant (12/10) : aucune consommation au repos. Le − revient côté « bord » du shunt : la consommation du ballon est comptée.</text>
   <g class="mk-q"><circle cx="1180" cy="40" r="11"/><text class="mid" x="1180" y="43.5">Q57</text></g>
   <g class="mk-q"><circle cx="560" cy="140" r="11"/><text class="mid" x="560" y="143.5">Q57</text></g>
-  <g class="mk-q"><circle cx="1160" cy="100" r="11"/><text class="mid" x="1160" y="103.5">Q55</text></g>
 </svg>

@@ -11,7 +11,7 @@ wire034 (terre de la prise de quai vers la barrette du boîtier d'arrivée) est 
 ## Décision du 30/09
 
 - **Terre du ponton ↔ terre du bord (1)** : conservée, à travers un **[isolateur galvanique maison](#isolateur-maison-retenu)**, à la place de wire034.
-- **Liaison terre / masse 12 V (2)** : **non faite**. Un défaut 230 V sur le circuit 12 V s'écoule par l'arbre, l'hélice et l'eau, et fait déclencher le différentiel sans attendre un contact (voir la variante ci-dessous), à condition que l'arbre soit relié électriquement au moteur : **à vérifier depuis le bord** (Q40 : accouplement entre l'arbre de l'inverseur et l'arbre d'hélice, câble de masse sur le tube d'étambot).
+- **Liaison terre / masse 12 V (2)** : **non faite**. Un défaut 230 V sur le circuit 12 V s'écoule par l'arbre, l'hélice et l'eau, et fait déclencher le différentiel sans attendre un contact (voir la variante ci-dessous), à condition que l'arbre soit relié électriquement au moteur : **vérifié le 13/10** (Q40) : l'accouplement entre l'arbre de l'inverseur et l'arbre d'hélice est métallique ; il n'y a pas de câble de masse sur le tube d'étambot.
 - L'isolateur est donc aujourd'hui une **précaution** : tant que (2) n'existe pas, il n'y a aucun courant galvanique à bloquer. Il servira si une liaison apparaît plus tard : chauffe-eau de l'étude B en H3, ou appareil dont le négatif serait relié au boîtier.
 - **Transformateur d'isolement** : écarté.
 - **Différentiel d'arrivée** : [remplacé par un type A](#remplacement-du-différentiel-darrivée-q36) (Q36).
@@ -51,7 +51,7 @@ Pour situer l'isolateur : la liaison (2) **sans** isolateur mettrait les pièces
 Deux points restent à vérifier à bord, car ils conditionnent la colonne « Sans liaison » :
 
 - **Liaison cachée : écartée.** Certains chargeurs relient leur négatif de sortie à leur boîtier, donc à la terre, ce qui ferait exister la liaison (2) sans isolateur. Ce n'est le cas d'aucun des deux appareils : la notice du Dolphin annonce des sorties « isolées », et l'EPS 100 n'est pas relié à la terre (cordon à fiche deux contacts, Q38). Une mesure à l'ohmmètre le confirmerait sans frais : câble de quai débranché, entre la broche de terre de la prise de quai et le négatif 12 V, on doit lire un circuit ouvert.
-- **Pièces immergées réellement reliées au 12 V** (Q40) : type d'accouplement entre l'arbre de l'inverseur et l'arbre d'hélice, câble de masse sur le tube d'étambot, anode ; liaison éventuelle de la dérive en fonte, des passe-coques ou de la sonde du sondeur à la masse. Tout se vérifie depuis le bord.
+- **Pièces immergées réellement reliées au 12 V** (Q40, répondue le 13/10) : accouplement métallique, donc arbre et hélice à la masse 12 V ; pas de câble de masse sur le tube d'étambot. Restent possibles : anode, dérive en fonte, passe-coques, sonde du sondeur.
 
 Dans tous les cas, **tester le différentiel régulièrement** avec son bouton de test.
 

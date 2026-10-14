@@ -72,8 +72,7 @@ equipements:
     designation: Moteur Yanmar (démarreur + alternateur)
     modele: Yanmar 3GMD (plaque signalétique)
     zone: compartiment-moteur
-    note: "L'état des lieux initial indiquait 3GM30. Refroidissement direct à l'eau de mer. Alternateur d'environ 20 A (spécification d'origine ; celui de Juju semble plus récent mais semblable). Démarreur (manuel d'atelier Yanmar) : 60 A à vide, 460 A rotor bloqué, puissance maximale entre 200 et 275 A."
-    questions: [Q1, Q14]
+    note: "L'état des lieux initial indiquait 3GM30. Refroidissement direct à l'eau de mer. Alternateur de 20 A, sans borne W (13/10). Démarreur (manuel d'atelier Yanmar) : 60 A à vide, 460 A rotor bloqué, puissance maximale entre 200 et 275 A. Tableau moteur (contact, jauges) alimenté par le faisceau d'origine depuis le + du démarreur, à travers un fusible de 30 A (13/10) ; fusible de rechange à acheter. Accouplement de l'arbre d'hélice métallique, sans câble de masse sur le tube d'étambot (13/10) : arbre et hélice sont à la masse 12 V."
 
   # --- Guindeau ----------------------------------------------------------------
   - id: disj-guindeau
@@ -157,6 +156,7 @@ equipements:
     type: recepteur
     designation: Pompe à eau douce
     modele: Seaflo SFDP1-045-040
+    zone: cockpit-coffre-tribord
     courant_A: 8
     courant_max_A: 15
     statut: estime
@@ -199,14 +199,59 @@ equipements:
 
   - id: eclairage
     type: recepteur
-    designation: Éclairage intérieur (5 ou 6 lampes)
+    designation: Éclairage intérieur 12 V (7 luminaires)
     courant_A: 5
     statut: estime
-    questions: [Q9]
+    note: "Circuit « éclairage » (10 A) du tableau de servitude. Luminaires relevés le 12/10, un par ligne ci-dessous (eclairage-12v-…) : six à LED, un à incandescence (cabine de poupe). Chaque luminaire a son interrupteur ; câblage historique, trajet non relevé (13/10). Courant estimé avant ce relevé."
+
+  - id: eclairage-12v-poupe
+    type: recepteur
+    designation: Luminaire 12 V de la cabine de poupe
+    zone: cabine-poupe
+    note: Deux ampoules à culot G11, à incandescence (12/10).
+
+  - id: eclairage-12v-table-a-carte
+    type: recepteur
+    designation: Plafonnier 12 V de la table à carte
+    zone: table-a-carte
+    note: LED (12/10).
+
+  - id: eclairage-12v-proue
+    type: recepteur
+    designation: Luminaire 12 V de la cabine de proue
+    zone: cabine-proue
+    note: Deux ampoules à culot G11, à LED (12/10).
+
+  - id: eclairage-12v-carre
+    type: recepteur
+    designation: Plafonnier 12 V du carré
+    zone: carre
+    note: LED (12/10).
+
+  - id: eclairage-12v-veilleuse-carre
+    type: recepteur
+    designation: Veilleuse 12 V du carré
+    zone: carre
+    note: LED (12/10).
+
+  - id: eclairage-12v-cuisine
+    type: recepteur
+    designation: Plafonnier 12 V de la cuisine (cambuse)
+    zone: cuisine
+    note: LED (12/10).
+
+  - id: eclairage-12v-toilette
+    type: recepteur
+    designation: Plafonnier 12 V du cabinet de toilette
+    zone: cabinet-toilette
+    emplacement: Au-dessus de l'évier
+    note: LED (12/10).
 
   - id: prises-12v
     type: recepteur
     designation: Prises 12 V allume-cigare (x2)
+    zone: table-a-carte
+    emplacement: Au tableau de servitude, de part et d'autre de l'indicateur de charge
     courant_max_A: 10
 
   - id: autoradio
@@ -277,7 +322,7 @@ equipements:
     designation: Boîtier d'arrivée 230 V
     zone: cockpit-coffre-tribord
     emplacement: À côté du chargeur de quai
-    note: Différentiel 30 mA / 25 A en tête, puis un disjoncteur 10 A (chargeur) et un disjoncteur 16 A (reste du bord, vers le boîtier tribord).
+    note: Différentiel 30 mA / 25 A en tête, puis un disjoncteur 10 A (chargeur) et un disjoncteur 16 A (reste du bord, vers le boîtier tribord). Une place libre sur le rail (Q63, 12/10).
 
   - id: ddr-230v
     type: disjoncteur
@@ -310,13 +355,14 @@ equipements:
     zone: cabinet-toilette
     emplacement: Dans le cabinet de toilette (correction du 01/10, noté auparavant sur la cloison du coffre de cockpit)
     questions: [Q42]
-    note: "Quatre disjoncteurs Legrand DNX3 phase + neutre, numérotés 1 à 4 sur l'étiquette, sans affectation écrite (photo Boitier-230v-cabinet-toilette.jpg, 01/10) : C10, C10, C16, C16. Circuits connus : éclairage (10 A), prises tribord et prises bâbord (16 A). Le second 10 A et la position de chaque circuit sont à relever (Q42)."
+    note: "Quatre disjoncteurs Legrand DNX3 phase + neutre, numérotés 1 à 4 sur l'étiquette, sans affectation écrite (photo Boitier-230v-cabinet-toilette.jpg, 01/10) : C10, C10, C16, C16. Circuits connus : éclairage (10 A), prises tribord et prises bâbord (16 A). Le second 10 A est utilisé (12/10) ; son circuit et la position de chaque circuit sont à relever (Q42)."
 
   - id: disj-trib-eclairage
     type: disjoncteur
     designation: Disjoncteur éclairage 230 V
     modele: Legrand DNX3 C10, phase + neutre
     calibre_A: 10
+    note: Un seul câble de 1,5 mm² en part (12/10).
 
   - id: disj-trib-prises
     type: disjoncteur
@@ -331,7 +377,7 @@ equipements:
     emplacement: Dans le boîtier de distribution tribord
     calibre_A: 10
     questions: [Q42]
-    note: Vu sur la photo du 01/10 ; circuit alimenté inconnu.
+    note: "Vu sur la photo du 01/10. Utilisé (12/10) : un seul câble de 1,5 mm² en part, circuit alimenté non vérifié."
 
   - id: disj-babord-prises
     type: disjoncteur
@@ -356,11 +402,55 @@ equipements:
     type: prise
     designation: Prise 230 V de la cuisine
     zone: cuisine
+    emplacement: À tribord (12/10)
 
   - id: plafonnier-230
     type: recepteur
-    designation: Plafonnier 230 V
-    note: Métallique (classe I), terre raccordée (30/09).
+    designation: Éclairage 230 V (6 luminaires)
+    questions: [Q60]
+    note: "Circuit du disjoncteur éclairage (10 A) du boîtier tribord, noté « plafonnier 230 V » jusqu'au 12/10 ; ses nœuds (node233-235) représentent le départ du circuit, qui ne passe pas par les boîtes de dérivation (réservées aux prises, 13/10). Luminaires relevés le 12/10, un par ligne ci-dessous (eclairage-230-…) : quatre spots à LED GU10, une réglette dans le carré et un plafonnier barrette dans la cuisine. Le plafonnier métallique noté le 30/09 était une erreur (13/10) : présence d'une terre et matière des luminaires à relever (Q60)."
+
+  - id: eclairage-230-poupe
+    type: recepteur
+    designation: Spot 230 V de la cabine de poupe
+    zone: cabine-poupe
+    note: Spot à LED, culot GU10 (12/10).
+    questions: [Q60]
+
+  - id: eclairage-230-table-a-carte
+    type: recepteur
+    designation: Spot 230 V de la table à carte
+    zone: table-a-carte
+    note: Spot à LED, culot GU10 (12/10).
+    questions: [Q60]
+
+  - id: eclairage-230-proue
+    type: recepteur
+    designation: Spot 230 V de la cabine de proue
+    zone: cabine-proue
+    note: Spot à LED, culot GU10 (12/10).
+    questions: [Q60]
+
+  - id: eclairage-230-carre
+    type: recepteur
+    designation: Réglette 230 V du carré
+    zone: carre
+    note: Barrette à deux spots (12/10). Le « plafonnier 230 V métallique » relevé le 30/09 était cette réglette (correction du 13/10).
+    questions: [Q60]
+
+  - id: eclairage-230-cuisine
+    type: recepteur
+    designation: Plafonnier barrette 230 V de la cuisine (cambuse)
+    zone: cuisine
+    note: Barrette à deux spots (12/10).
+    questions: [Q60]
+
+  - id: eclairage-230-toilette
+    type: recepteur
+    designation: Spot 230 V du cabinet de toilette
+    zone: cabinet-toilette
+    note: Spot à LED, culot GU10 (12/10).
+    questions: [Q60]
 
   - id: prise-230-table-a-carte
     type: prise
@@ -369,9 +459,16 @@ equipements:
 
   - id: prise-230-armoire
     type: prise
-    designation: Prise 230 V de l'armoire derrière la table à carte
-    zone: table-a-carte
-    note: Notée « prise du carré » jusqu'au 29/09.
+    designation: Prise 230 V de la cabine de poupe, derrière l'armoire
+    zone: cabine-poupe
+    emplacement: Derrière l'armoire, qui est derrière la table à carte
+    note: Notée « prise du carré » jusqu'au 29/09, puis « prise de l'armoire derrière la table à carte » ; placée dans la cabine de poupe le 12/10.
+
+  - id: prise-230-proue
+    type: prise
+    designation: Prise 230 V de la cabine de proue
+    zone: cabine-proue
+    note: Relevée le 12/10. Alimentée par la boîte de dérivation bâbord (13/10).
 
   - id: prise-230-toilette
     type: prise

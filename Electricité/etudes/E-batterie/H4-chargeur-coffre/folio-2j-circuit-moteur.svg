@@ -64,6 +64,8 @@
   <rect class="box" x="760" y="160" width="170" height="90" rx="2"/>
   <text class="tb mid" x="845" y="180">Yanmar 3GMD</text>
   <text class="ts mid" x="845" y="195">démarreur + alternateur</text>
+  <rect class="box-new" x="600" y="90" width="150" height="60" rx="2"/>
+  <text class="tb mid tn" x="675" y="107">Sélecteur</text>
   <rect class="fuse" x="820" y="111" width="60" height="18"/>
   <text class="id mid" x="850" y="124">70 A</text>
   <text class="ts mid" x="850" y="100">disjoncteur du guindeau</text>
@@ -102,8 +104,12 @@
   <text class="idn mid" x="388" y="212">w001 · 35</text>
   <path class="p w4" d="M484 220 L760 220"/>
   <text class="id mid" x="620" y="212">w012 · 35</text>
-  <path class="p w4" d="M484 220 L500 204 L500 120 L820 120"/>
-  <text class="idn mid" x="680" y="112">w217 · 35 · guindeau sur le circuit moteur</text>
+  <path class="p w4" d="M484 220 L500 204 L500 120 L600 120"/>
+  <text class="idn mid" x="530" y="112">w217 · 35 · pos. 1</text>
+  <path class="p w4" d="M750 120 L820 120"/>
+  <text class="idn mid" x="775" y="112">w220 · 35</text>
+  <path class="p w4" d="M675 176 L675 150"/>
+  <text class="idn" x="681" y="170">w219 · pos. 2</text>
   <path class="p w5" d="M880 120 L960 120"/>
   <text class="id mid" x="906" y="112">w018 · 50</text>
   <path class="p w3" d="M1080 110 L1126.8 110"/>
@@ -142,6 +148,8 @@
   <path class="p w1" d="M484 220 L520 256 L520 350 L870 350 L870 580 L666 580"/>
   <text class="idn mid" x="680" y="344">w207 · + de l&#x27;entrée (notice)</text>
   <path class="p w2" d="M216 204 L232 220"/>
+  <rect class="flag-new" x="600" y="176" width="150" height="18"/>
+  <text class="ts mid" x="675" y="189">n010 · servitude : folio 2k</text>
   <rect class="flag" x="40" y="374" width="170" height="18"/>
   <text class="ts mid" x="125" y="387">w204 · 16 → n007 · folio 2k</text>
   <rect class="flag" x="135" y="600" width="130" height="18"/>
@@ -158,6 +166,9 @@
   <circle class="term" cx="484" cy="220" r="3.5"/>
   <circle class="term" cx="760" cy="220" r="3.5"/>
   <circle class="term" cx="900" cy="250" r="3.5"/>
+  <circle class="term" cx="600" cy="120" r="3.5"/>
+  <circle class="term" cx="750" cy="120" r="3.5"/>
+  <circle class="term" cx="675" cy="150" r="3.5"/>
   <circle class="term" cx="820" cy="120" r="3.5"/>
   <circle class="term" cx="880" cy="120" r="3.5"/>
   <circle class="term" cx="960" cy="120" r="3.5"/>
@@ -206,6 +217,12 @@
   <text class="pin" x="767" y="229">+</text>
   <text class="id end" x="895" y="234">n032</text>
   <text class="pin end" x="895" y="244">−</text>
+  <text class="idn" x="607" y="119">n383</text>
+  <text class="pin" x="607" y="129">1</text>
+  <text class="idn end" x="743" y="119">n385</text>
+  <text class="pin end" x="743" y="129">commun</text>
+  <text class="idn" x="680" y="134">n384</text>
+  <text class="pin" x="680" y="144">2</text>
   <text class="id end" x="816" y="140">n020</text>
   <text class="id" x="884" y="140">n021</text>
   <text class="id" x="967" y="119">n022</text>

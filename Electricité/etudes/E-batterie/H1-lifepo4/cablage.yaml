@@ -34,6 +34,8 @@ equipements:
 
   # --- Chargeur de quai LiFePO4 --------------------------------------------------
   - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: descente, emplacement: "Dans la contremarche, avec le shunt (variante coffre : E-H4)", statut: propose }
+  - { id: disj-chargeur-lifepo4, type: disjoncteur, designation: "Disjoncteur du chargeur de quai LiFePO4", modele: "1P+N C10", zone: cockpit-coffre-tribord, emplacement: "Boîtier d'arrivée 230 V, place libre du rail (Q63)", calibre_A: 10, statut: propose, note: "Retenu le 12/10 : le Blue Smart a son propre C10, le Dolphin garde le sien (node210, node211)" }
+  - { id: selecteur-guindeau, type: interrupteur, designation: "Sélecteur de batterie du guindeau, 3 positions 1 / OFF / 2, OFF entre 1 et 2 (300 A continu)", zone: cabine-poupe, emplacement: "Près du disjoncteur du guindeau, sous l'ouverture d'accès aux coupe-circuits", statut: propose, note: "Commandé le 13/10 : 300 A en continu, IP66, goujons M10. OFF entre 1 et 2 : pas de liaison entre les batteries au passage (à contrôler au multimètre à réception, aucune continuité entre 1 et 2 en tournant). Basculer guindeau à l'arrêt. Position normale : 1 (moteur) ; 2 : secours" }
   - { id: fus-chargeur-lifepo4, type: fusible, designation: "Fusible de la sortie du chargeur de quai LiFePO4", calibre_A: 25, emplacement: "Contre la borne côté batterie du coupe-circuit de servitude", statut: propose, note: "Calibre à confirmer sur la notice du Blue Smart" }
 
 nodes:
@@ -63,6 +65,12 @@ nodes:
   - { id: node376, equipement: chargeur-lifepo4, borne: "230 V terre", polarite: 230V-terre }
   - { id: node377, equipement: fus-chargeur-lifepo4, borne: "1 (côté batterie)", polarite: "+" }
   - { id: node378, equipement: fus-chargeur-lifepo4, borne: "2", polarite: "+" }
+  # node381 et node382 : plage de réserve (la plage E, node360-379, est pleine)
+  - { id: node381, equipement: disj-chargeur-lifepo4, borne: "entrée", polarite: 230V-phase }
+  - { id: node382, equipement: disj-chargeur-lifepo4, borne: "sortie", polarite: 230V-phase }
+  - { id: node383, equipement: selecteur-guindeau, borne: "1 (batterie moteur)", polarite: "+" }
+  - { id: node384, equipement: selecteur-guindeau, borne: "2 (batterie de servitude)", polarite: "+" }
+  - { id: node385, equipement: selecteur-guindeau, borne: "commun (vers le guindeau)", polarite: commute }
 
 fils:
   # --- Dolphin, au plus près de la batterie moteur ------------------------------------
@@ -81,14 +89,17 @@ fils:
   - { id: wire216, de: node379, vers: node005, section_mm2: 0.75, couleur: noir, longueur_m: 0.5, statut: propose, note: "Masse du voyant sur le coupe-circuit des négatifs, côté batteries (08/10)" }
 
   # --- Guindeau sur le circuit moteur (05/10) ----------------------------------------------
-  - { id: wire217, de: node004, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 0.5, remplace: wire017, statut: propose, note: "Le guindeau est alimenté par la batterie moteur, côté charges du coupe-circuit moteur, au lieu de la servitude" }
+  - { id: wire217, de: node004, vers: node383, section_mm2: 35, couleur: rouge, longueur_m: 0.5, remplace: wire017, statut: propose, note: "Le guindeau est alimenté par la batterie moteur, côté charges du coupe-circuit moteur, au lieu de la servitude Arrive au sélecteur du guindeau, position 1 (13/10)." }
+  - { id: wire219, de: node010, vers: node384, section_mm2: 35, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Secours du guindeau par la LiFePO4 (13/10), position 2 du sélecteur ; protégé par le MEGA de 300 A" }
+  - { id: wire220, de: node385, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 0.3, statut: propose, note: "Commun du sélecteur vers le disjoncteur du guindeau" }
 
   # --- Chargeur de quai LiFePO4 : 12 V ---------------------------------------------------
   - { id: wire210, de: node009, vers: node377, section_mm2: 4, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
   - { id: wire211, de: node378, vers: node372, section_mm2: 4, couleur: rouge, longueur_m: 0.5, statut: propose }
   - { id: wire212, de: node373, vers: node005, section_mm2: 4, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge est comptée" }
 
-  # --- Chargeur de quai LiFePO4 : 230 V depuis le disjoncteur du chargeur (Q53) ------------
-  - { id: wire213, de: node211, vers: node374, section_mm2: 1.5, couleur: marron, longueur_m: 4, statut: propose, note: "Câble 3 × 1,5 mm² dédié, jusqu'à une prise ou un boîtier à bornes Wago près du chargeur (Q53) ; longueur estimée" }
+  # --- Chargeur de quai LiFePO4 : 230 V depuis son propre C10 (12/10, Q63) et un câble dédié (Q53) ---
+  - { id: wire218, de: node208, vers: node381, statut: propose, note: "Câblage interne du boîtier d'arrivée, depuis la sortie phase du différentiel, comme wire031 et wire037" }
+  - { id: wire213, de: node382, vers: node374, section_mm2: 1.5, couleur: marron, longueur_m: 4, statut: propose, note: "Câble 3 × 1,5 mm² dédié, jusqu'à une prise ou un boîtier à bornes Wago près du chargeur (Q53) ; longueur estimée" }
   - { id: wire214, de: node209, vers: node375, section_mm2: 1.5, couleur: bleu, longueur_m: 4, statut: propose }
   - { id: wire215, de: node212, vers: node376, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 4, statut: propose }

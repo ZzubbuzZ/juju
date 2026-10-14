@@ -5,7 +5,7 @@
 folio: 2m
 titre: Chauffe-eau CozyWater 10C, alimentation
 aria: "Alimentation 230 volts du chauffe-eau : second disjoncteur de 10 ampères du boîtier tribord, câble de 3 fois 1,5 millimètres carrés vers une prise dédiée, cordon du ballon à fiche Schuko ; entrée 12 volts au folio 2n."
-desc: "Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par le second C10 du boîtier tribord (Q42), en aval du différentiel 30 mA. Unifilaire, comme le folio 3 ; l'entrée 12 V, câblée elle aussi, est au folio 2n ; le 230 V est prioritaire."
+desc: "Le ballon se branche par sa fiche Schuko, intacte, sur une prise dédiée alimentée seule par un C10 du boîtier tribord, libéré en regroupant les câbles des deux C10 sur l'autre (Q42), en aval du différentiel 30 mA. Le câble passe par une boîte de dérivation. Unifilaire, comme le folio 3 ; l'entrée 12 V, câblée elle aussi, est au folio 2n ; le 230 V est prioritaire."
 modele: B-H1
 taille: [1200, 560]
 
@@ -139,8 +139,6 @@ cables:
     etiquette: [640, 482, mid]
 
 traits:
-  # repli si le second C10 n'est pas libre (Q42)
-  - {classe: u, points: [[530, 250], [530, 330], [300, 330]]}
   - {classe: n w1, points: [[830, 390], [830, 300]]}
   # entrée 12 V du ballon (B-H3, folio 2n)
   - {classe: p w3, points: [[940, 450], [1000, 450]]}
@@ -150,17 +148,16 @@ renvois:
 
 pastilles:
   - {id: Q42, x: 236, y: 252}
-  - {id: Q55, x: 640, y: 532}
-  - {id: Q19, x: 940, y: 390}
 
 textes:
   - {x: 30, y: 38, texte: "Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau"}
-  - {x: 252, y: 395, classe: ts end, texte: "H07RN-F 3G1,5 · ≈ 1,5 m"}
-  - {x: 310, y: 348, classe: ts tu, texte: "si le second C10 n'est pas libre (Q42) :"}
-  - {x: 310, y: 363, classe: ts tu, texte: "disjoncteur 10 A ajouté, ou C16 des prises tribord"}
-  - {x: 490, y: 530, classe: ts mid, texte: "près du boîtier tribord"}
+  - {x: 252, y: 395, classe: ts end, texte: "H07RN-F 3G1,5 · ≈ 5 m"}
+  - {x: 310, y: 348, classe: ts tu, texte: "C10 libéré : son câble actuel est regroupé"}
+  - {x: 310, y: 363, classe: ts tu, texte: "sur l'autre C10 (Q42, 12/10)"}
+  - {x: 252, y: 410, classe: ts end, texte: "par une boîte de dérivation"}
+  - {x: 490, y: 530, classe: ts mid, texte: "sous la table à carte"}
   - {x: 640, y: 508, classe: ts mid, texte: "cordon fourni, fiche intacte"}
-  - {x: 830, y: 240, classe: ts mid, texte: "emplacement et câble : Q55"}
+  - {x: 830, y: 240, classe: ts mid, texte: "sur le tableau de servitude · câble 3 m"}
   - {x: 1090, y: 442, classe: ts mid, texte: "câblée en permanence"}
-  - {x: 1090, y: 458, classe: ts mid, texte: "relais 30 A (B-H3)"}
+  - {x: 1090, y: 458, classe: ts mid, texte: "disjoncteur CC 30 A (B-H3)"}
   - {x: 1090, y: 476, classe: id mid, texte: "n318 · n319 : folio 2n"}

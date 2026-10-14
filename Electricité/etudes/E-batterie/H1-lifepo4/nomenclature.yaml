@@ -17,6 +17,9 @@ lots:
   guindeau:
     titre: Guindeau sur le circuit moteur (décision du 05/10)
     note: Alimenté par la batterie moteur, côté charges du coupe-circuit moteur, au lieu de la servitude.
+  secours:
+    titre: Démarrage de secours d'une batterie moteur défectueuse (décision du 13/10)
+    note: Booster autonome, sans lien entre les deux batteries ; le couplage reste déposé.
   quai:
     titre: Chargeur de quai dédié à la LiFePO4, près de la batterie ; Dolphin conservé pour la batterie moteur seule, raccordé au plus près d'elle
     note: À côté du Dolphin (Q49) ; section du câble 12 V selon la longueur du trajet (Q50).
@@ -36,7 +39,11 @@ articles:
 
   # --- Lot quai ---------------------------------------------------------------------
   - { lot: quai, designation: "Victron Blue Smart IP67 12/17, profil LiFePO4, Bluetooth", reference: BPC121713006, quantite: 1, unite: pièce, prix_unitaire: 118, statut: devis, source: "Achat de l'utilisateur", date_prix: "2026-10-05" }
-  - { lot: quai, designation: "Câble 230 V H07RN-F 3 × 1,5 mm² depuis le disjoncteur du chargeur (C10), prise dédiée ou boîtier de raccordement à bornes Wago, passe-fils et colliers", quantite: 1, unite: lot, prix_unitaire: 40, statut: estimation, note: "Q53 ; longueur selon l'emplacement retenu sur place (contremarche ou coffre de la batterie)", fils: [wire213, wire214, wire215] }
+  - { lot: quai, designation: "Disjoncteur 1P+N C10 pour le Blue Smart, dans la place libre du boîtier d'arrivée, et pont de phase depuis le différentiel", quantite: 1, unite: pièce, prix_unitaire: 9, statut: catalogue, source: "Leroy Merlin, prix donné par l'utilisateur (page non ouverte)", date_prix: "2026-10-12", note: "Retenu le 12/10 (Q63) ; vérifier qu'il entre dans le boîtier (même rail, même hauteur que le C10 du Dolphin)", fils: [wire218] }
+  - { lot: quai, designation: "Câble 230 V H07RN-F 3 × 1,5 mm² depuis le C10 du Blue Smart, prise dédiée ou boîtier de raccordement à bornes Wago, passe-fils et colliers", quantite: 1, unite: lot, prix_unitaire: 40, statut: estimation, note: "Q53 ; longueur selon l'emplacement retenu sur place (contremarche ou coffre de la batterie)", fils: [wire213, wire214, wire215] }
   - { lot: quai, designation: "Câble étamé court rouge et noir vers la batterie de servitude, porte-fusible et fusible à la batterie (environ 25 A), cosses", quantite: 1, unite: lot, prix_unitaire: 25, statut: estimation, note: "Section selon la notice ; négatif côté « bord » du shunt (étude D)", fils: [wire210, wire211, wire212] }
   - { lot: quai, designation: "Dolphin : câble court 6 mm² de la sortie 1 au fusible de 30 A de la batterie moteur, cosses (fusible et porte-fusible repris de la platine, A-H2)", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation, fils: [wire200, wire201] }
   - { lot: guindeau, designation: "Câble étamé 35 mm² rouge (coupe-circuit moteur → disjoncteur du guindeau) et cosses", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, fils: [wire217] }
+  - { lot: guindeau, designation: "Sélecteur de batterie 3 positions 1 / OFF / 2, 300 A en continu, IP66, goujons M10 (marque non indiquée sur la fiche)", quantite: 1, unite: pièce, prix_unitaire: 60, statut: estimation, note: "Commandé le 13/10 (lien Amazon donné par l'utilisateur, https://amzn.eu/d/0jdkDCW7, page non ouverte : accès bloqué depuis la session). Caractéristiques relevées sur la fiche par l'utilisateur le 14/10 : OFF entre 1 et 2, contrôle au multimètre à réception, voir E-H1 ; prix payé à reporter" }
+  - { lot: guindeau, designation: "Câble étamé 35 mm² rouge (servitude → sélecteur, sélecteur → disjoncteur) et cosses", quantite: 1, unite: lot, prix_unitaire: 20, statut: estimation, fils: [wire219, wire220] }
+  - { lot: secours, designation: "Booster de démarrage lithium autonome pour diesel 12 V (3 cylindres), avec pinces", quantite: 1, unite: pièce, prix_unitaire: 100, statut: estimation, note: "Modèle à choisir ; à garder chargé (recharge USB ou 12 V)" }

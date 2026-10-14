@@ -17,7 +17,7 @@ points_faibles:
   - Guindeau utilisé moteur arrêté ; il entame la batterie de démarrage (environ 2 à 3 Ah par mouillage).
   - Commande manuelle du DC/DC (Q48) ; un oubli au port le laisse démarrer sur la charge du Dolphin.
   - Fusible MEGA (décision du 05/10) ; un MRBF aurait un meilleur pouvoir de coupure, pour le même prix.
-decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node004), masse du voyant sur node005."
+decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node004), masse du voyant sur node005. 12/10 : le Blue Smart a son propre C10, posé dans la place libre du boîtier d'arrivée (Q63) ; le Dolphin garde le sien. 13/10 : couplage définitivement déposé ; secours d'une batterie moteur défectueuse par un booster de démarrage autonome. 13/10 : sélecteur 3 positions (moteur / off / servitude) pour le guindeau, en secours d'une batterie moteur défectueuse."
 ---
 
 # E-H1 · Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
@@ -48,6 +48,30 @@ Le guindeau était alimenté par la servitude : wire017, de node010 (côté char
 - **Protection** : wire217 est protégé, comme wire012, par le fusible de 400 A de la batterie moteur (A-H2) ; le disjoncteur de 70 A protège ensuite wire018. Ouvrir le coupe-circuit moteur coupe aussi le guindeau.
 - **Revers** : guindeau utilisé moteur arrêté, il entame la batterie de démarrage, environ 2 à 3 Ah par mouillage (50 A pendant 2 à 3 minutes), sur 110 Ah. Sans conséquence pour le démarrage, mais la règle reste de relever l'ancre moteur tournant.
 
+### 1 ter. Sélecteur de batterie du guindeau (décision du 13/10)
+
+Avec le guindeau sur la batterie moteur, une batterie moteur défectueuse priverait aussi de l'ancre. Le booster (voir « Démarrage de secours ») démarre le moteur mais ne fait pas tourner le guindeau. Un **sélecteur 3 positions** choisit la source du guindeau :
+
+- **1, batterie moteur** (position normale) : wire217, de node004, arrive au sélecteur (node383) ;
+- **off** ;
+- **2, batterie de servitude** (secours) : wire219, 35 mm², de node010 (côté charges du coupe-circuit de servitude, protégé par le MEGA de 300 A) au sélecteur (node384).
+
+Le commun (node385) rejoint le disjoncteur de 70 A par wire220. Le guindeau tire 50 à 60 A, bien sous les 250 A du BMS. Le retour passe par la masse commune ; en position 2, le shunt compte le courant du guindeau.
+
+Conditions :
+- **aucune position commune** (« BOTH ») : les deux batteries ne sont jamais reliées. Les sélecteurs courants « 1-2-BOTH-OFF » ne conviennent pas ;
+- au moins 70 A en continu ;
+- ne jamais basculer guindeau en marche ;
+- position normale : 1 ; la position 2 est un secours, à signaler dans le livret.
+
+**Modèle commandé le 13/10** (fiche relevée par l'utilisateur le 14/10) : 3 positions, 300 A en continu, IP66, goujons M10, marque non indiquée. La fiche annonce une « fermeture avant ouverture », mais **la position OFF est entre 1 et 2** (remarque de l'utilisateur, 14/10) : en tournant de 1 à 2, le contact 1 s'ouvre en arrivant sur OFF avant que le contact 2 se ferme. Les deux batteries ne peuvent donc pas être reliées, même un instant. La mention de la fiche est sans doute reprise des sélecteurs 1-2-BOTH, où 1 et 2 sont voisins.
+
+**Contrôle à réception**, au multimètre en position continuité (bip), sélecteur non câblé : pointes sur les bornes 1 et 2, tourner lentement de 1 à 2 **dans les deux sens** : par OFF (horaire, 90° puis 180°), et par l'autre côté (antihoraire, 180°), puis faire un tour complet. **Aucun bip à aucun moment.** Si le passage antihoraire bipe (les deux contacts se touchent), poser une butée mécanique qui empêche de passer de 1 à 2 par ce côté (vis ou plot dans la course du levier, sur la platine), sinon renvoyer le sélecteur. Si aucun sens ne bipe, la butée reste utile pour imposer de passer par OFF, mais n'est pas indispensable.
+
+Précaution d'usage, conservée : basculer guindeau à l'arrêt, et de préférence coupe-circuit moteur ouvert quand on passe en secours (batterie moteur défectueuse).
+
+Numéros : node383 à node385 (plage de réserve, la plage E est pleine), wire219 et wire220.
+
 ### 2. Remplacer le coupleur Scheiber par un chargeur DC/DC
 
 Le coupleur à relais relie les deux batteries dès que la tension monte : même problème que le couplage manuel. Il est déposé, avec ses fils (wire002, wire007, wire014) et les fusibles de 40 A que A-H2 avait mis sur ses départs (wire164, wire165).
@@ -55,7 +79,7 @@ Le coupleur à relais relie les deux batteries dès que la tension monte : même
 Un **chargeur DC/DC** (type Victron Orion XS 12/12-50A) le remplace. Il prend le courant sur la batterie moteur et charge la LiFePO4 avec son propre profil :
 
 - **L'alternateur ne voit que la batterie au plomb**, qu'il sait charger. Si le BMS de la LiFePO4 coupe, l'alternateur n'est pas exposé à la surtension d'une coupure brutale de charge.
-- **Courant réglable** : l'alternateur de Juju ne donne qu'environ 20 A (Q14). Le courant du DC/DC doit être réglé en dessous, vers 15 A, pour ne pas vider la batterie moteur. Le modèle de 50 A est choisi pour son prix et sa disponibilité, pas pour sa puissance ; un modèle de 18 ou 30 A conviendrait aussi.
+- **Courant réglable** : l'alternateur de Juju donne 20 A (plaque, Q14, 13/10). Le courant du DC/DC doit être réglé en dessous, vers 15 A, pour ne pas vider la batterie moteur. Le modèle de 50 A est choisi pour son prix et sa disponibilité, pas pour sa puissance ; un modèle de 18 ou 30 A conviendrait aussi.
 - **Démarrage au moteur seulement** : le DC/DC est autorisé par son entrée « remote », commandée par un interrupteur (Q48, voir « Commande du DC/DC »), puis se met en route quand la tension de la batterie moteur indique que l'alternateur charge. Sans cette entrée, la charge de quai du Dolphin le ferait démarrer (voir 3).
 - **Fusibles et câbles (notice Victron, § 3.3)** : un fusible à chaque extrémité, puisque chacune aboutit à une batterie, de **60 à 70 A** pour le modèle de 50 A, avec du **16 mm²** jusqu'à 5 m (21 mm² de 5 à 10 m). Choix : **fusibles MIDI de 70 A** et câble de 16 mm². Le calibre est celui de l'appareil, pas du courant réglé : l'Orion XS peut débiter 50 A si son réglage change, et le fusible doit tenir ce courant avec une marge. Le 16 mm² tient bien plus de 70 A ; c'est la chute de tension qui fixe sa section.
 - **Recharge de secours inversée** : 25 A au plus, la moitié du courant nominal (notice), donc sous les 50 A de l'appareil et les 70 A des fusibles. Elle reste possible interrupteur ouvert, coupe-circuit moteur fermé (voir « Démarrage de secours »).
@@ -91,7 +115,7 @@ Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de 
 
 - Profil adapté : absorption vers 14,2 V, puis floating bas ou mode stockage ; coupure de la charge par temps froid si le modèle a une sonde.
 - 15 A suffisent pour recharger 100 Ah en une nuit de quai ; le Dolphin reste à 20 A pour la seule batterie moteur.
-- **230 V** : le chargeur consomme environ 1,5 A ; avec le Dolphin (2,5 A au plus), un départ de 10 A suffit. Avec 16 A aux bornes du port, la puissance de quai n'est pas une contrainte.
+- **230 V** : le chargeur consomme environ 1,5 A ; avec le Dolphin (2,5 A au plus), un départ de 10 A suffirait. Retenu le 12/10 : un **C10 par chargeur**, le second dans la place libre du boîtier d'arrivée (Q63, node381, node382, wire218), pour couper un chargeur sans l'autre (borne de 6 A pendant la chauffe du ballon, intervention) et qu'un défaut sur l'un ne coupe pas l'autre. Avec 16 A aux bornes du port, la puissance de quai n'est pas une contrainte.
 - **Emplacement** : **avec le shunt de l'étude D**, dans la contremarche de la descente (H1) ou dans le coffre de la batterie (H4), à décider sur place (05/10), et non dans le coffre de cockpit tribord envisagé avec Q49. Voir « Chargeur de quai : Blue Smart IP67 12/17 » ci-dessous.
 
 **Le DC/DC ne doit alors tourner qu'au moteur.** Sinon, l'absorption du Dolphin à 14,4 V le ferait démarrer (seuil d'usine 14,0 V) et l'on retrouverait le problème ci-dessus. La tension seule ne permet pas de distinguer l'alternateur (environ 14,2 à 14,4 V) du Dolphin (14,4 V). On commande donc le DC/DC par son **entrée « remote »**, par un fil fin protégé à sa source (Q48, ci-dessous). Sa détection de tension reste active avec les réglages d'usine : clé tournée mais moteur arrêté, il ne tire rien sur la batterie moteur.
@@ -141,9 +165,15 @@ Il consistait à conserver le coupe-circuit de couplage (node009 → wire011 →
 - **Alternateur** : moteur démarré, il chargerait la LiFePO4 sans contrôle jusqu'à l'ouverture du couplage, au risque d'une surtension si le BMS coupe.
 - **Guindeau** : le couplage servait aussi à faire tourner le guindeau sur la batterie moteur ; il y est maintenant raccordé directement (1 bis).
 
+### Niveau 2 bis : booster de démarrage autonome (décision du 13/10)
+
+Le guindeau étant passé sur la batterie moteur, une batterie moteur défectueuse prive à la fois du démarrage et de l'ancre. L'utilisateur a réexaminé le 13/10 la conservation du couplage, réservé au cas où le coupe-circuit moteur est ouvert : écartée, trop dangereuse à gérer (une fermeture simultanée par erreur, justement quand la batterie moteur est défectueuse, viderait la LiFePO4 dans un élément en court-circuit) et sans garantie de démarrage (courant de pointe du BMS inconnu). **Le couplage reste déposé.**
+
+À la place, un **booster de démarrage lithium autonome**, rangé à bord et tenu chargé : coupe-circuit moteur ouvert (et borne + de la batterie moteur débranchée si elle est défectueuse), pinces sur le côté charges du coupe-circuit moteur (node004) et sur la masse moteur. Aucun lien entre les deux batteries, donc aucun risque de parallèle. Limite : il démarre le moteur, mais ne fait pas tourner le guindeau longtemps ; une fois le moteur lancé, l'alternateur alimente le guindeau.
+
 ### Recommandation
 
-**Niveau 1 seul.** Il couvre le cas le plus fréquent, la batterie moteur déchargée, sans matériel ni autre manœuvre que la fermeture habituelle du coupe-circuit moteur. Une batterie moteur défectueuse loin d'un port reste un cas non couvert : la parade est son remplacement préventif.
+**Niveau 1, et le booster (niveau 2 bis) pour une batterie moteur défectueuse.** Le niveau 1 couvre le cas le plus fréquent, la batterie moteur déchargée, sans matériel ni autre manœuvre que la fermeture habituelle du coupe-circuit moteur. Le booster couvre la batterie moteur défectueuse, sans relier les deux batteries.
 
 ## Choix de la batterie
 
@@ -173,7 +203,7 @@ Ce que ce choix change par rapport à la batterie de 100 Ah étudiée :
 
 - **Côté 12 V**, le câble ne fait que quelques dizaines de centimètres : la chute de tension devient négligeable, la section est celle de la notice, et un **fusible de 25 A à sa source** le protège. Le + rejoint le côté batterie du coupe-circuit de servitude (node009) dans la contremarche, ou la borne + de la batterie, avant le fusible de 300 A, dans le coffre (H4) : dans les deux cas, la charge reste possible coupe-circuit ouvert.
 - **Le négatif doit revenir du côté « bord » du shunt** de l'étude D, sinon la charge n'est pas comptée. Le chargeur et le shunt étant posés ensemble, ce fil reste court dans les deux variantes.
-- **Côté 230 V**, c'est l'alimentation qui fait le trajet d'environ 5 m, mais elle ne transporte qu'environ 1,5 A : un câble 3 × 1,5 mm² (H07RN-F) suffit largement. **Choix du 05/10 (Q53)** : un câble dédié depuis le disjoncteur du chargeur de quai (C10), dans le boîtier d'arrivée, jusqu'à une prise dédiée ou un boîtier de raccordement à bornes Wago près du chargeur. Le chargeur reste derrière le différentiel de 30 mA.
+- **Côté 230 V**, c'est l'alimentation qui fait le trajet d'environ 5 m, mais elle ne transporte qu'environ 1,5 A : un câble 3 × 1,5 mm² (H07RN-F) suffit largement. **Choix du 05/10 (Q53)** : un câble dédié depuis le disjoncteur du chargeur de quai (C10), dans le boîtier d'arrivée (depuis le 12/10, un C10 à lui seul), jusqu'à une prise dédiée ou un boîtier de raccordement à bornes Wago près du chargeur. Le chargeur reste derrière le différentiel de 30 mA.
 - **Emplacement définitif** (05/10) : l'Orion XS, le chargeur et le shunt de l'étude D vont ensemble, soit dans la contremarche de la descente, près de la platine, soit dans le coffre de la batterie ; à décider sur place selon la place dans la contremarche. Dans la contremarche, le + du chargeur rejoint le côté batterie du coupe-circuit de servitude (node009) avec son fusible à la source, et le câble 230 V est un peu plus court.
 - **Chaleur** : environ 40 W perdus en pleine charge. Le boîtier IP67 supporte l'humidité du coffre, mais il lui faut un peu d'air autour ; à fixer sur une paroi, pas contre la batterie.
 
