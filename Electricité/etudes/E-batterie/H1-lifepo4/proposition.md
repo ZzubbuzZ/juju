@@ -59,10 +59,12 @@ Avec le guindeau sur la batterie moteur, une batterie moteur défectueuse priver
 Le commun (node385) rejoint le disjoncteur de 70 A par wire220. Le guindeau tire 50 à 60 A, bien sous les 250 A du BMS. Le retour passe par la masse commune ; en position 2, le shunt compte le courant du guindeau.
 
 Conditions :
-- **aucune position commune** (« BOTH ») et coupure avant fermeture : les deux batteries ne sont jamais reliées. Les sélecteurs courants « 1-2-BOTH-OFF » ne conviennent pas ;
+- **aucune position commune** (« BOTH ») : les deux batteries ne sont jamais reliées. Les sélecteurs courants « 1-2-BOTH-OFF » ne conviennent pas ;
 - au moins 70 A en continu ;
 - ne jamais basculer guindeau en marche ;
 - position normale : 1 ; la position 2 est un secours, à signaler dans le livret.
+
+**Modèle commandé le 13/10** (fiche relevée par l'utilisateur le 14/10) : 3 positions OFF / 1 / 2, sans position BOTH, 300 A en continu, IP66, goujons M10, marque non indiquée. Il est à **fermeture avant ouverture** : en passant de 1 à 2, les deux contacts se touchent un court instant, donc les deux batteries aussi. Une fraction de seconde ne détruit rien avec des batteries saines, mais c'est précisément quand la batterie moteur est défectueuse qu'on bascule. **Règle : basculer toujours coupe-circuit moteur ouvert** (et guindeau à l'arrêt) ; le contact fugitif ne relie alors la LiFePO4 qu'au démarreur et à l'alternateur, moteur arrêté, sans effet. Pour revenir en position 1, même règle, puis refermer le coupe-circuit moteur.
 
 Numéros : node383 à node385 (plage de réserve, la plage E est pleine), wire219 et wire220.
 
