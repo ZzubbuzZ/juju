@@ -22,7 +22,7 @@ zones:
   - id: compartiment-moteur
     designation: Compartiment moteur
     bord: axe
-    note: Derrière l'escalier de descente, entre le cabinet de toilette et la cabine de poupe.
+    note: "Derrière l'escalier de descente, entre le cabinet de toilette et la cabine de poupe. Il chevauche en partie la cabine de poupe, à la hauteur de la batterie de servitude et de la niche d'accès aux coupe-circuits, aux fusibles et à l'Orion XS (15/10)."
 
   - id: descente
     designation: Descente (escalier d'accès au carré)

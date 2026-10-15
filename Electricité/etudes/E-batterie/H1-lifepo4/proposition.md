@@ -240,7 +240,7 @@ Implantation proposée (plan à l'échelle : [artifact](https://claude.ai/artifa
 - Victron conseille 10 cm libres autour de l'Orion XS ; il n'y en aura qu'environ 3 sur les côtés. Réglé vers 15 A, il dissipe quelques watts ; au pire, il réduit son courant plus tôt.
 - Le SmartShunt IP65 est livré avec ses deux fils de mesure de 1,5 m, protégés par un fusible de 1 A (fiche constructeur).
 - La chute de tension dans wire010 (1 m, 35 mm², environ 0,5 mΩ) ne fausse que la tension lue par le shunt : moins de 10 mV en charge, sans effet sur l'état de charge, compté en ampères-heures. Rien à compenser ni à rapprocher.
-- Le sélecteur du guindeau n'est pas dans la niche : il est près du disjoncteur du guindeau, sous l'ouverture d'accès.
+- Le sélecteur du guindeau est à la descente (15/10).
 
 À vérifier à la pose : place prise par les câbles existants (35 mm² des coupe-circuits, wire010, wire200, wire158 ; le coupleur déposé en libère), position de la fenêtre sur la face oblique (supposée centrée : l'Orion XS sur la face de 19 cm serait alors au bord de la fenêtre), plancher de la niche et voisinage du compartiment moteur.
 

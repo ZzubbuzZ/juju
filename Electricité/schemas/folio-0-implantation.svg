@@ -53,8 +53,8 @@
   <text class="ts mid" x="160" y="318">Cabine de poupe</text>
   <rect class="zone" data-zone="cockpit-coffre-tribord" x="100" y="392" width="215" height="100" rx="3"/>
   <text class="ts mid" x="160" y="410">Coffre de cockpit</text>
-  <rect class="zone" data-zone="compartiment-moteur" x="330" y="300" width="62" height="80" rx="3"/>
-  <text class="ts mid" x="361" y="316">Moteur</text>
+  <rect class="zone" data-zone="compartiment-moteur" x="286" y="292" width="106" height="88" rx="3" style="fill-opacity:.85"/>
+  <text class="ts mid" x="339" y="372">Moteur</text>
   <rect class="zone" data-zone="cabinet-toilette" x="330" y="388" width="62" height="100" rx="3"/>
   <text class="ts mid" x="361" y="478">Toilette</text>
   <rect class="zone" data-zone="descente" x="398" y="300" width="42" height="110" rx="3"/>
@@ -73,9 +73,9 @@
   <text class="pin mid" x="1056" y="382">pont avant</text>
 
   <!-- Points d'ancrage -->
-  <circle class="dn" cx="212" cy="290" r="4"/>
+  <circle class="dn" cx="262" cy="300" r="4"/>
   <circle class="dn" cx="207" cy="440" r="4"/>
-  <circle class="dn" cx="361" cy="345" r="4"/>
+  <circle class="dn" cx="339" cy="336" r="4"/>
   <circle class="dn" cx="419" cy="316" r="4"/>
   <circle class="dn" cx="520" cy="262" r="4"/>
   <circle class="dn" cx="520" cy="470" r="4"/>
@@ -85,7 +85,7 @@
   <circle class="dn" cx="700" cy="420" r="4"/>
 
   <!-- Bâbord : bulles du haut -->
-  <path class="leader" d="M180 146 L212 290"/>
+  <path class="leader" d="M180 146 L262 300"/>
   <rect class="callout" x="40" y="21" width="265" height="125" rx="2"/>
   <text class="tb" x="52" y="41">Cabine de poupe · bâbord</text>
   <text class="t" x="52" y="61" data-equipement="bat-servitude">Batterie de servitude 110 Ah</text>
@@ -133,7 +133,7 @@
   <text class="t" x="52" y="676"><tspan data-equipement="boitier-230v">Boîtier d'arrivée 230 V :</tspan> <tspan data-equipement="ddr-230v">diff. 30 mA,</tspan> <tspan data-equipement="disj-chargeur">10 A (chargeur)</tspan></text>
   <text class="t" x="52" y="695" data-equipement="pompe-eau">Pompe à eau douce Seaflo</text>
 
-  <path class="leader" d="M455 595 L361 345"/>
+  <path class="leader" d="M455 595 L339 336"/>
   <rect class="callout" x="350" y="595" width="210" height="70" rx="2"/>
   <text class="tb" x="362" y="615">Compartiment moteur</text>
   <text class="t" x="362" y="634" data-equipement="moteur">Moteur Yanmar 3GMD</text>
