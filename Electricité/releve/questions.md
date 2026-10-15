@@ -50,6 +50,11 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 - **Q64** Blue Smart au coffre de cockpit tribord (E-H5, retenue le 14/10) : longueur du trajet d'un câble 12 V entre le coffre de cockpit (près du boîtier d'arrivée 230 V) et la niche de la contremarche des coupe-circuits, par où il passe et quelles cloisons il traverse. Longueur et section des câbles 12 V fournis avec le chargeur (sortie + et −), et diamètre de leurs cosses. Q50 donne environ 5 m jusqu'au coffre de la batterie de servitude : la section de 10 mm² en dépend.
 
+### Pour le livret de bord
+
+- **Q66** Lutte contre le feu : combien d'extincteurs à bord, de quel type (poudre, CO2, eau, mousse), de quelle capacité, où sont-ils fixés, et quelle est leur date de contrôle ? Y a-t-il une couverture anti-feu, et où ? Sert à la fiche « Odeur de brûlé, fumée » du livret.
+- **Q67** Batterie LiFePO4 Humsienk : son application Bluetooth permet-elle de couper la décharge et la charge du BMS (interrupteurs « charge » et « décharge » dans l'application), et la coupure tient-elle jusqu'à ce qu'on la rétablisse ? Ce serait le seul moyen de couper la batterie de servitude sans retirer son fusible MEGA (livret, fiche « Odeur de brûlé, fumée »).
+
 ### Pour l'étude D (shunt)
 
 - **Q44** Traceur Garmin GPSMAP 7407 : modèle exact (xsv ou xdv, étiquette au dos) et version du logiciel (Paramètres > Système > Informations système). Est-il raccordé à un réseau NMEA 2000 (câble à connecteur rond à 5 broches, connecteurs en T, bouchons de terminaison) ? Si oui, où passe le câble principal, et d'où vient son alimentation 12 V ? Où est placé le traceur, et d'où vient son alimentation ? Conditionne D-H6 (lecture du shunt sur le traceur).

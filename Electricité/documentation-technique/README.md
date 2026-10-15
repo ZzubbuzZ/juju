@@ -4,7 +4,7 @@ Le manuel du bord : comment l'installation est montée, comment la régler et l'
 
 Pour l'instant, une liste des sections à écrire.
 
-Le livret d'utilisation et de dépannage (fonctionnement normal, conduite en cas de problème) a son plan dans [livret-plan.md](livret-plan.md), en attente.
+Le livret d'utilisation et de dépannage (fonctionnement normal, conduite en cas de problème) est rédigé à part, dans [livret/](../livret/README.md).
 
 ## À faire
 

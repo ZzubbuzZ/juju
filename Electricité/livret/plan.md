@@ -1,8 +1,8 @@
-# Livret électrique de Juju : plan (exécution différée)
+# Livret électrique de Juju : plan
 
-Plan proposé le 13/10/2026, mis de côté à la demande de l'utilisateur. La conduite en cas de panne de la batterie moteur est arrêtée depuis le 13/10 : booster pour le démarrage, sélecteur 3 positions pour le guindeau (E-H1). Rédaction à reprendre quand l'utilisateur le demandera.
+Plan proposé le 13/10/2026, rédaction commencée le 16/10. La conduite en cas de panne de la batterie moteur est arrêtée depuis le 13/10 : booster pour le démarrage, sélecteur 3 positions pour le guindeau (E-H1).
 
-**But.** Un livret court, imprimable, rangé à la table à carte, pour **utiliser** l'installation au quotidien et **réagir** en cas de problème. Le manuel du bord ([README](README.md) de ce dossier) garde le montage, les réglages et l'entretien détaillé ; le livret y renvoie. Chaque consigne cite les repères posés à bord (numéros de fils, coupe-circuits, disjoncteurs).
+**But.** Un livret court, imprimable, rangé à la table à carte, pour **utiliser** l'installation au quotidien et **réagir** en cas de problème. Le manuel du bord ([documentation-technique](../documentation-technique/README.md)) garde le montage, les réglages et l'entretien détaillé ; le livret y renvoie. Chaque consigne cite les repères posés à bord (numéros de fils, coupe-circuits, disjoncteurs).
 
 ## Plan
 
@@ -40,11 +40,15 @@ Plan proposé le 13/10/2026, mis de côté à la demande de l'utilisateur. La co
 
 **5. Entretien courant** : calendrier d'une page, renvoyant au manuel du bord.
 
-## Questions à trancher avant la rédaction
+## Décisions du 16/10
 
-1. Format : A5 plastifié à la table à carte, ou A4 ; fiches réflexes recto seul ?
-2. Lecteurs : le propriétaire seul, ou aussi un équipier qui ne connaît pas l'installation (niveau de détail) ?
-3. Installation décrite : la cible (après travaux), en marquant ce qui n'est pas encore posé, ou l'existant au fur et à mesure ?
-4. Emplacement : un dossier `livret/` à côté de `documentation-technique/`, imprimable en PDF comme la page de consultation ?
+1. **Format** : A4. Une fiche réflexe tient sur un recto ; son verso porte les explications.
+2. **Lecteurs** : le chef de bord, ou un équipier qui cherche une information sans connaître l'installation. Chaque consigne dit où se trouve l'organe à manœuvrer.
+3. **Installation décrite** : la cible (après travaux). Tant que les travaux ne sont pas finis, le livret ne s'applique pas tel quel à bord.
+4. **Emplacement** : ce dossier, `livret/`. Une fiche par fichier dans `fiches/`, numérotée comme le plan.
 
-Première fiche à rédiger une fois le plan validé : « odeur de brûlé, fumée ».
+## Avancement
+
+| Fiche | État |
+|---|---|
+| [3.1 Odeur de brûlé, fumée](fiches/3-1-brule-fumee.md) | Rédigée le 16/10 ; attend Q66 (extincteurs) et Q67 (coupure du BMS par l'application) |
