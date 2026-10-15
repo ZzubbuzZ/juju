@@ -90,7 +90,7 @@
   <text class="tb" x="52" y="41">Cabine de poupe · bâbord</text>
   <text class="t" x="52" y="61" data-equipement="bat-servitude">Batterie de servitude 110 Ah</text>
   <text class="t" x="52" y="80" data-equipement="disj-guindeau">Disjoncteur du guindeau</text>
-  <text class="t" x="52" y="99" data-equipement="eclairage-12v-poupe">Luminaire 12 V : 2 × G11 à incandescence</text>
+  <text class="t" x="52" y="99" data-equipement="eclairage-12v-poupe">Luminaire 12 V : 2 × G11 de 1 W</text>
   <text class="t" x="52" y="118" data-equipement="eclairage-230-poupe">Spot 230 V à LED (GU10)</text>
   <text class="t" x="52" y="137" data-equipement="prise-230-armoire">Prise 230 V (derrière l'armoire)</text>
 
@@ -115,7 +115,7 @@
   <rect class="callout" x="835" y="14" width="200" height="95" rx="2"/>
   <text class="tb" x="847" y="34">Cabine de proue</text>
   <text class="t" x="847" y="54" data-equipement="relais-guindeau">Relais du guindeau</text>
-  <text class="t" x="847" y="73" data-equipement="eclairage-12v-proue">Luminaire 12 V : 2 × G11 à LED</text>
+  <text class="t" x="847" y="73" data-equipement="eclairage-12v-proue">Luminaire 12 V : 2 × G11 à LED, 1 W</text>
   <text class="t" x="847" y="92"><tspan data-equipement="eclairage-230-proue">Spot 230 V GU10,</tspan> <tspan data-equipement="prise-230-proue">prise 230 V</tspan></text>
 
   <path class="leader" d="M1095 182 L1056 355"/>

@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Plan d'implantation de l'installation cible vu de dessus : zones de l'aménagement du Gib'Sea 31 et équipements électriques placés dans chaque zone, nouveaux équipements en vert.">
+  <title>Folio 5 · Implantation cible</title>
+  <desc>Les mêmes zones que le folio 0, avec l'installation telle qu'elle sera après les études retenues (cible/cible.yaml). La LiFePO4 remplace le plomb dans la cabine de poupe, l'Orion XS et le shunt vont dans la niche de la contremarche, le Blue Smart dans le coffre de cockpit, le ballon sous la table à carte ; en vert, ce qui est nouveau.</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .fx{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round}.fx-new{fill:none;stroke:var(--new);stroke-width:1.4;stroke-linecap:round}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .sw{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:5 3}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+  <!-- Coque (vue de dessus, avant à droite) -->
+  <path class="hull" d="M66 226 C 130 204, 400 178, 600 180 C 820 184, 1000 250, 1140 360 C 1000 470, 820 536, 600 540 C 400 542, 130 516, 66 494 Q 56 360 66 226 Z"/>
+  <path class="bound" d="M70 360 H1130"/>
+  <text class="ts mid" x="470" y="180">BÂBORD</text>
+  <text class="ts mid" x="740" y="558">TRIBORD</text>
+  <text class="tb" x="1152" y="365">AV</text>
+  <text class="tb end" x="50" y="365">AR</text>
+
+  <!-- Zones -->
+  <rect class="zone" data-zone="cabine-poupe" x="100" y="232" width="225" height="96" rx="3"/>
+  <text class="ts mid" x="160" y="318">Cabine de poupe</text>
+  <rect class="zone" data-zone="cockpit-coffre-tribord" x="100" y="392" width="215" height="100" rx="3"/>
+  <text class="ts mid" x="160" y="410">Coffre de cockpit</text>
+  <rect class="zone" data-zone="compartiment-moteur" x="330" y="300" width="62" height="80" rx="3"/>
+  <text class="ts mid" x="361" y="316">Moteur</text>
+  <rect class="zone" data-zone="cabinet-toilette" x="330" y="388" width="62" height="100" rx="3"/>
+  <text class="ts mid" x="361" y="478">Toilette</text>
+  <rect class="zone" data-zone="descente" x="398" y="300" width="42" height="110" rx="3"/>
+  <text class="ts mid" x="424" y="372" transform="rotate(-90 424 372)">Descente</text>
+  <rect class="zone" data-zone="table-a-carte" x="450" y="200" width="105" height="90" rx="3"/>
+  <text class="ts mid" x="490" y="220">Table à carte</text>
+  <rect class="zone" data-zone="cuisine" x="450" y="425" width="140" height="98" rx="3"/>
+  <text class="ts mid" x="520" y="512">Cuisine</text>
+  <rect class="zone" data-zone="carre" x="600" y="235" width="215" height="230" rx="3"/>
+  <text class="ts mid" x="690" y="300">Carré</text>
+  <rect class="bound" x="452" y="352" width="116" height="16"/>
+  <text class="pin mid" x="510" y="364">puits de dérive</text>
+  <path class="zone" data-zone="cabine-proue" d="M830 262 L975 288 L975 432 L830 458 Z"/>
+  <text class="ts mid" x="902" y="425">Cabine de proue</text>
+  <rect class="zone-pont" data-zone="pont-avant" x="1010" y="332" width="92" height="56" rx="3"/>
+  <text class="pin mid" x="1056" y="382">pont avant</text>
+
+  <!-- Points d'ancrage -->
+  <circle class="dn" cx="212" cy="290" r="4"/>
+  <circle class="dn" cx="207" cy="440" r="4"/>
+  <circle class="dn" cx="361" cy="345" r="4"/>
+  <circle class="dn" cx="419" cy="316" r="4"/>
+  <circle class="dn" cx="520" cy="262" r="4"/>
+  <circle class="dn" cx="520" cy="470" r="4"/>
+  <circle class="dn" cx="902" cy="360" r="4"/>
+  <circle class="dn" cx="1056" cy="355" r="4"/>
+  <circle class="dn" cx="340" cy="440" r="4"/>
+  <circle class="dn" cx="700" cy="420" r="4"/>
+
+
+  <!-- Bâbord : bulles du haut -->
+  <path class="leader" d="M180 146 L212 290"/>
+  <rect class="callout" x="34" y="14" width="282" height="132" rx="2"/>
+  <text class="tb" x="46" y="34">Cabine de poupe · bâbord</text>
+  <text class="t tn" x="46" y="53"><tspan data-equipement="bat-servitude">Batterie LiFePO4 200 Ah,</tspan> <tspan data-equipement="fus-bat-servitude">fusible MEGA 300 A</tspan></text>
+  <text class="t" x="46" y="72"><tspan data-equipement="disj-guindeau">Disj. guindeau 70 A,</tspan> <tspan class="tn" data-equipement="selecteur-guindeau">sélecteur 1 / OFF / 2</tspan></text>
+  <text class="t tn" x="46" y="91" data-equipement="disj-ballon-12v">Disjoncteur 12 V 30 A du ballon (interrupteur)</text>
+  <text class="t" x="46" y="110"><tspan data-equipement="eclairage-12v-poupe">Luminaire 12 V 2 × G11 1 W,</tspan> <tspan data-equipement="eclairage-230-poupe">spot 230 V GU10</tspan></text>
+  <text class="t" x="46" y="129" data-equipement="prise-230-armoire">Prise 230 V (derrière l'armoire)</text>
+
+  <path class="leader" d="M440 140 L419 316"/>
+  <rect class="callout" x="326" y="14" width="246" height="126" rx="2"/>
+  <text class="tb" x="338" y="34">Descente · contremarche et niche</text>
+  <text class="t" x="338" y="53"><tspan data-equipement="cc-moteur">Platine : 3 coupe-circuits</tspan><tspan data-equipement="cc-servitude"/><tspan data-equipement="cc-masse"/></text>
+  <text class="t tn" x="338" y="72"><tspan data-equipement="orion-xs">Niche : Orion XS,</tspan> <tspan data-equipement="shunt-servitude">SmartShunt 500 A</tspan></text>
+  <text class="t tn" x="338" y="91"><tspan data-equipement="fus-orion-entree">Fusibles MIDI (départs, Orion XS)</tspan><tspan data-equipement="fus-orion-sortie"/><tspan data-equipement="fus-chargeur-lifepo4"/><tspan data-equipement="fus-source-tableau-servitude"/><tspan data-equipement="fus-source-tableau-scheiber"/></text>
+  <text class="t tn" x="338" y="110" data-equipement="inter-orion">Interrupteur à voyant de l'Orion XS</text>
+  <text class="t" x="338" y="129" data-equipement="tableau-scheiber">Tableau Scheiber 2 voies</text>
+
+  <path class="leader" d="M640 168 L520 262"/>
+  <rect class="callout" x="582" y="6" width="244" height="162" rx="2"/>
+  <text class="tb" x="594" y="25">Table à carte · bâbord</text>
+  <text class="t" x="594" y="44" data-equipement="tableau-servitude">Tableau de servitude, 12 circuits</text>
+  <text class="t" x="594" y="62" data-equipement="indicateur-charge">Indicateur de charge à aiguille</text>
+  <text class="t" x="594" y="80" data-equipement="prises-12v">2 prises 12 V allume-cigare</text>
+  <text class="t" x="594" y="98"><tspan data-equipement="prise-230-table-a-carte">Prise 230 V,</tspan> <tspan data-equipement="boitier-230-babord">boîte de dérivation 230 V</tspan></text>
+  <text class="t" x="594" y="116" data-equipement="repetiteur-gps">Répétiteur GPS (écran à la descente)</text>
+  <text class="t" x="594" y="134"><tspan data-equipement="eclairage-12v-table-a-carte">Plafonnier 12 V à LED,</tspan> <tspan data-equipement="eclairage-230-table-a-carte">spot 230 V GU10</tspan></text>
+  <text class="t tn" x="594" y="152"><tspan data-equipement="chauffe-eau">Ballon CozyWater 10C</tspan> <tspan data-equipement="prise-230-ballon">et sa prise</tspan></text>
+
+  <path class="leader" d="M930 109 L902 360"/>
+  <rect class="callout" x="840" y="14" width="200" height="95" rx="2"/>
+  <text class="tb" x="852" y="34">Cabine de proue</text>
+  <text class="t" x="852" y="54" data-equipement="relais-guindeau">Relais du guindeau</text>
+  <text class="t" x="852" y="73" data-equipement="eclairage-12v-proue">Luminaire 12 V : 2 × G11 1 W</text>
+  <text class="t" x="852" y="92"><tspan data-equipement="eclairage-230-proue">Spot 230 V GU10,</tspan> <tspan data-equipement="prise-230-proue">prise 230 V</tspan></text>
+
+  <path class="leader" d="M1095 182 L1056 355"/>
+  <rect class="callout" x="1000" y="130" width="190" height="52" rx="2"/>
+  <text class="tb" x="1012" y="150">Pont avant</text>
+  <text class="t" x="1012" y="170" data-equipement="guindeau">Guindeau Lewmar 700 W</text>
+
+  <!-- Tribord et axe : bulles du bas -->
+  <path class="leader" d="M185 572 L207 440"/>
+  <rect class="callout" x="34" y="572" width="300" height="146" rx="2"/>
+  <text class="tb" x="46" y="592">Coffre de cockpit · tribord</text>
+  <text class="t" x="46" y="611"><tspan data-equipement="bat-moteur">Batterie moteur 110 Ah,</tspan> <tspan class="tn" data-equipement="fus-bat-moteur">MEGA 400 A</tspan></text>
+  <text class="t" x="46" y="630"><tspan data-equipement="chargeur-quai">Chargeur Dolphin (batterie moteur seule),</tspan> <tspan class="tn" data-equipement="fus-chargeur-moteur">30 A</tspan></text>
+  <text class="t tn" x="46" y="649" data-equipement="chargeur-lifepo4">Chargeur Blue Smart IP67 12/17 (LiFePO4)</text>
+  <text class="t" x="46" y="668"><tspan data-equipement="prise-quai">Prise de quai,</tspan> <tspan class="tn" data-equipement="isolateur-galvanique">isolateur galvanique</tspan></text>
+  <text class="t" x="46" y="687"><tspan data-equipement="boitier-230v">Boîtier d'arrivée :</tspan> <tspan class="tn" data-equipement="ddr-230v">diff. type A,</tspan> <tspan data-equipement="disj-chargeur">C10 Dolphin,</tspan> <tspan class="tn" data-equipement="disj-chargeur-lifepo4">C10 Blue Smart</tspan></text>
+  <text class="t" x="46" y="706" data-equipement="pompe-eau">Pompe à eau douce Seaflo</text>
+
+  <path class="leader" d="M455 595 L361 345"/>
+  <rect class="callout" x="350" y="595" width="210" height="70" rx="2"/>
+  <text class="tb" x="362" y="615">Compartiment moteur</text>
+  <text class="t" x="362" y="634" data-equipement="moteur">Moteur Yanmar 3GMD</text>
+  <text class="t" x="362" y="653" data-equipement="pompe-cale">Pompe de cale (cale moteur)</text>
+
+  <path class="leader" d="M650 595 L520 470"/>
+  <rect class="callout" x="580" y="595" width="240" height="128" rx="2"/>
+  <text class="tb" x="592" y="615">Cuisine (cambuse) · tribord</text>
+  <text class="t" x="592" y="634" data-equipement="groupe-froid">Groupe froid CU-55</text>
+  <text class="t" x="592" y="653" data-equipement="eps100">EPS 100 (sous l'évier, à droite)</text>
+  <text class="t" x="592" y="672">Prises 230 V : <tspan data-equipement="prise-230-eps100">frigo,</tspan> <tspan data-equipement="prise-230-cuisine">cuisine (tribord)</tspan></text>
+  <text class="t" x="592" y="691" data-equipement="eclairage-12v-cuisine">Plafonnier 12 V à LED</text>
+  <text class="t" x="592" y="710" data-equipement="eclairage-230-cuisine">Barrette 230 V à 2 spots</text>
+
+  <path class="leader" d="M900 595 L700 420"/>
+  <rect class="callout" x="840" y="595" width="200" height="90" rx="2"/>
+  <text class="tb" x="852" y="615">Carré</text>
+  <text class="t" x="852" y="634" data-equipement="eclairage-12v-carre">Plafonnier 12 V à LED</text>
+  <text class="t" x="852" y="653" data-equipement="eclairage-12v-veilleuse-carre">Veilleuse 12 V à LED</text>
+  <text class="t" x="852" y="672" data-equipement="eclairage-230-carre">Réglette 230 V à 2 spots</text>
+
+  <path class="leader" d="M345 735 L340 440"/>
+  <rect class="callout" x="340" y="735" width="480" height="47" rx="2"/>
+  <text class="t" x="352" y="754"><tspan class="tb">Toilette · tribord :</tspan> <tspan data-equipement="boitier-230-tribord">boîtier 230 V, C10 n°2 pour le ballon,</tspan> <tspan data-equipement="prise-230-toilette">prise 230 V</tspan></text>
+  <text class="t" x="352" y="773"><tspan data-equipement="eclairage-12v-toilette">Plafonnier 12 V à LED au-dessus de l'évier,</tspan> <tspan data-equipement="eclairage-230-toilette">spot 230 V GU10</tspan></text>
+
+  <text class="ts tn" x="860" y="704">En vert : nouveau (études retenues).</text>
+  <text class="ts" x="860" y="720">Déposés : batterie au plomb, coupleur</text>
+  <text class="ts" x="860" y="736">Scheiber, coupe-circuit de couplage.</text>
+  <text class="ts" x="860" y="752">Câblage : folio 4. Pas à l'échelle.</text>
+</svg>

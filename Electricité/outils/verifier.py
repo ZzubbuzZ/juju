@@ -46,6 +46,7 @@ SECTIONS_NORMALISEES = {0.75, 1, 1.5, 2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95, 120
 COULEURS_230V = {"230V-phase": {"marron", "noir", "gris", "rouge"}, "230V-neutre": {"bleu"},
                  "230V-terre": {"vert-jaune"}}
 IMPLANTATION = RACINE / "schemas" / "folio-0-implantation.svg"
+IMPLANTATION_CIBLE = RACINE / "cible" / "folio-5-implantation-cible.svg"
 CIBLE = RACINE / "cible"
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -421,13 +422,14 @@ def controler_svg(svgs: list[Path], fils_attendus: set[str], fils_existants: set
     r.ok(f"{len(svgs)} schéma(s), {len(dessin & fils_existants)} fils dessinés")
 
 
-def controler_implantation(m: Modele, r: Rapport) -> None:
-    """Chaque zone et chaque équipement placé doivent figurer sur le plan (attributs data-zone / data-equipement)."""
-    ou = rel(IMPLANTATION)
-    if not IMPLANTATION.exists():
+def controler_implantation(m: Modele, r: Rapport, plan: Path = IMPLANTATION) -> None:
+    """Chaque zone et chaque équipement placé doivent figurer sur le plan (attributs data-zone / data-equipement).
+    Le folio 0 est contrôlé avec le relevé, le folio 5 (implantation cible) avec le modèle cible."""
+    ou = rel(plan)
+    if not plan.exists():
         r.avert(ou, "plan d'implantation absent")
         return
-    txt = IMPLANTATION.read_text(encoding="utf-8")
+    txt = plan.read_text(encoding="utf-8")
     zones = set(re.findall(r'data-zone="([a-z0-9-]+)"', txt))
     equip = set(re.findall(r'data-equipement="([a-z0-9-]+)"', txt))
     places = {e["id"] for e in m.equipements.values() if "zone" in e}
@@ -664,6 +666,7 @@ def main() -> int:
                           questions, traitees, anomalies, levees, rel(CIBLE), r)
             controler_nodes_svg(sorted(CIBLE.glob("*.svg")), m, r)
             controler_renvois(sorted(CIBLE.glob("*.svg")), r)
+            controler_implantation(m, r, IMPLANTATION_CIBLE)
 
     # ---- Folios générés : règles de dessin et SVG à jour (outils/folio.py)
     dispositions = sorted(RACINE.rglob("folio-*.yaml"))
