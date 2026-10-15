@@ -24,13 +24,13 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 12/10 : un seul câble de 1,5 mm² part de chacun des deux C10. Reste à suivre ces deux câbles : quels luminaires (ou quelle prise) chacun alimente, et comment il se ramifie (boîtes de dérivation, raccordement de luminaire à luminaire).
   → 12/10 : décision de l'utilisateur, les deux câbles seront regroupés sur un seul C10, et l'autre alimentera le ballon par un câble neuf et une boîte de dérivation (B-H1). Suivre les deux câbles avant le regroupement reste utile au relevé.
   → 15/10 : hypothèse de l'utilisateur, à vérifier à bord : le C10 n°1 (à gauche) alimente l'éclairage tribord, le C10 n°2 (à droite) l'éclairage bâbord. Notée en « estimé » dans le relevé (folio 3).
-- **Q65** Faisceau du tableau moteur (réponse à Q1 du 13/10) : section et couleur de wire072 (+ démarreur → porte-fusible de 30 A) et de wire073 (porte-fusible → tableau moteur) ; emplacement du porte-fusible et type de fusible ; d'où vient la masse du tableau.
-- **Q59** Télécommande du guindeau : section et couleur des fils wire061 (+ du relais vers le fusible de 5 A), wire062 (fusible vers la télécommande), wire063 et wire064 (montée et descente vers le relais) ; la commande masse du relais (node028) est-elle raccordée ?
-- **Q62** Trajet et longueur de wire004 (− batterie moteur, coffre de cockpit tribord → − batterie de servitude, cabine de poupe). Le 11/10, wire004 a été relevé entre les deux bornes −, et non jusqu'au coupe-circuit des négatifs : la longueur de 2 m notée jusque-là correspondait à l'ancien trajet supposé.
-  → 11/10 : wire004 part de la batterie moteur, traverse le compartiment moteur, puis passe la cloison de la cabine arrière jusqu'à la batterie de servitude. Reste à mesurer la longueur.
+- **Q65** Faisceau du tableau moteur (réponse à Q1 du 13/10) : section et couleur de wire106 (+ démarreur → porte-fusible de 30 A) et de wire107 (porte-fusible → tableau moteur) ; emplacement du porte-fusible et type de fusible ; d'où vient la masse du tableau.
+- **Q59** Télécommande du guindeau : section et couleur des fils wire110 (+ du relais vers le fusible de 5 A), wire115 (fusible vers la télécommande), wire113 et wire114 (montée et descente vers le relais) ; la commande masse du relais (node116) est-elle raccordée ?
+- **Q62** Trajet et longueur de wire003 (− batterie moteur, coffre de cockpit tribord → − batterie de servitude, cabine de poupe). Le 11/10, wire003 a été relevé entre les deux bornes −, et non jusqu'au coupe-circuit des négatifs : la longueur de 2 m notée jusque-là correspondait à l'ancien trajet supposé.
+  → 11/10 : wire003 part de la batterie moteur, traverse le compartiment moteur, puis passe la cloison de la cabine arrière jusqu'à la batterie de servitude. Reste à mesurer la longueur.
 - **Q12** Longueurs réelles des fils du tableau de servitude, circuit par circuit.
   → 27/09 : pas d'information pour l'instant. À mesurer lors d'un démontage du tableau.
-- **Q58** Isolant des câbles existants : température inscrite sur la gaine (60, 70, 90 ou 105 °C, ou référence du câble) de wire019 et wire022 (6 mm², alimentation des deux tableaux) et de wire001 et wire006 (35 mm², câbles des batteries). Le courant admissible en dépend : environ 40 A en 6 mm² pour un isolant à 60 °C, 70 A à 105 °C ; environ 140 A en 35 mm² à 60 °C, 210 A à 105 °C. Conditionne les calibres retenus : fusible de 50 A sur wire019 (A-H2), 300 A sur wire006 (E-H1), 400 A sur wire001 (A-H2).
+- **Q58** Isolant des câbles existants : température inscrite sur la gaine (60, 70, 90 ou 105 °C, ou référence du câble) de wire200 et wire158 (6 mm², alimentation des deux tableaux) et de wire001 et wire008 (35 mm², câbles des batteries). Le courant admissible en dépend : environ 40 A en 6 mm² pour un isolant à 60 °C, 70 A à 105 °C ; environ 140 A en 35 mm² à 60 °C, 210 A à 105 °C. Conditionne les calibres retenus : fusible de 50 A sur wire200 (A-H2), 300 A sur wire008 (E-H1), 400 A sur wire001 (A-H2).
 
 ### Équipements
 
@@ -44,7 +44,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 ### Pour les études B (chauffe-eau) et C (solaire)
 
 - **Q57** Entrée 12 V du ballon (B-H3, retenue le 08/10) : trajet et longueur du câble 6 mm² entre la platine des coupe-circuits (contremarche de la descente) et le ballon, dans le cabinet de toilette ; cloisons à traverser. Place pour le relais de 30 A près du ballon, et pour l'interrupteur à voyant près du panneau de commande.
-  → 12/10 : le ballon est sous la table à carte. Le câble 12 V fait donc le même trajet que wire019 (platine des coupe-circuits → tableau de la table à carte, 3 m relevés) : 3 m estimés, à mesurer. Où passe wire019, et reste-t-il de la place dans son passage pour un câble de 6 mm² aller et retour ?
+  → 12/10 : le ballon est sous la table à carte. Le câble 12 V fait donc le même trajet que wire200 (platine des coupe-circuits → tableau de la table à carte, 3 m relevés) : 3 m estimés, à mesurer. Où passe wire200, et reste-t-il de la place dans son passage pour un câble de 6 mm² aller et retour ?
   → 13/10 : le câble longe le bord bâbord jusqu'aux coffres de la cabine de poupe, les traverse jusqu'à la batterie de servitude, puis remonte au disjoncteur 12 V du ballon, placé à côté du disjoncteur du guindeau (sous l'ouverture d'accès aux coupe-circuits). Reste à mesurer la longueur.
 
 ### Pour l'étude E (batterie de servitude)
@@ -58,7 +58,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ## Réponses
 
-- **Q1** Tableau moteur (contact, jauges) : est-il branché sur le câble du démarreur (node031) ? Avec ou sans fusible ?
+- **Q1** Tableau moteur (contact, jauges) : est-il branché sur le câble du démarreur (node100) ? Avec ou sans fusible ?
   → 29/09 : le faisceau d'origine Yanmar comporte un porte-fusible ; on ne sait pas encore si le motoriste de Juju l'a conservé.
   → 30/09 : sera vérifié, et traité si nécessaire, lors de la pose du compte-tours.
   → 13/10 : oui, par le faisceau d'origine, à travers un fusible de 30 A. Acheter un fusible de rechange (type à relever sur le porte-fusible).
@@ -82,7 +82,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 07/10 : question pas claire pour l'utilisateur. Reformulée : quand le ballon sera livré, relever (1) le diamètre et le type de filetage de ses deux raccords d'eau et de la soupape, pour acheter les bons raccords (le revendeur annonce 1/2" mâle, la notice ne dit rien) ; (2) la longueur des trois câbles qui sortent du ballon (230 V à fiche Schuko, fils 12 V, câble du panneau de commande), pour savoir jusqu'où on peut éloigner le ballon de sa prise et le panneau du ballon ; (3) la puissance inscrite sur la plaque (800 W selon la notice, 660 W selon le revendeur).
   → 13/10 : raccords en 1/2" ; fils 12 V de 1 m, cordon 230 V de 2 m, câble du panneau de commande de 3 m. Le panneau sera posé sur le tableau de servitude (table à carte). Puissance de la plaque non relevée : B-H1 garde les 800 W de la notice.
 - **Q61** Prise 230 V de la cabine de proue, relevée le 12/10 : d'où vient son câble (boîte de dérivation bâbord, comme la table à carte et l'armoire, ou disjoncteur des prises tribord) ?
-  → 13/10 : bâbord, par la boîte de dérivation de la table à carte (wire069 à wire071).
+  → 13/10 : bâbord, par la boîte de dérivation de la table à carte (wire348 à wire350).
 - **Q63** Boîtier d'arrivée 230 V (coffre de cockpit tribord) : reste-t-il une place libre sur le rail, à côté du différentiel, du C10 du chargeur et du C16, pour un disjoncteur 1P+N de plus (un module de 18 mm) ? Sert au second C10 envisagé pour le chargeur de la LiFePO4 (voir commun/dimensionnement.md).
   → 12/10 : oui, un emplacement est disponible.
 - **Q19** Place disponible pour un ballon de 10 à 15 L : volume, distance au moteur et au circuit d'eau douce.
@@ -121,7 +121,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 28/09 : terre 230 V et masse 12 V séparées, pas d'isolateur galvanique (anomalie A8). Boîtier tribord sur la cloison entre le cabinet de toilette et le coffre de cockpit. Raccordement des prises (étoile ou chaîne) : non relevé, jugé secondaire.
   → 29/09 : correction, il n'y a pas de disjoncteur à bâbord. Le « boîtier bâbord » est une simple boîte de dérivation, à l'arrière gauche de la table à carte (+ 1 PE). Seul le boîtier tribord porte deux disjoncteurs (10 A éclairage, 16 A prises).
   → 30/09 : chargeur sur un Merlin Gerin DT40 C10, éclairage et prises sur des Legrand DNX3 C10 et C16 : modèles phase + neutre, qui coupent les deux conducteurs. Le boîtier tribord porte un C10 (éclairage) et deux C16 (prises, un par bord). Cinq prises : table à carte et armoire derrière la table à carte (bâbord), groupe froid, cuisine et cabinet de toilette (tribord). Modèle du 16 A d'arrivée non relevé.
-  → 30/09 : le plafonnier est métallique, et sa terre est raccordée (wire068).
+  → 30/09 : le plafonnier est métallique, et sa terre est raccordée (wire327).
   → 01/10 : correction, le boîtier tribord est dans le cabinet de toilette, et il porte quatre disjoncteurs : C10, C10, C16, C16 (photo Boitier-230v-cabinet-toilette.jpg ; affectation : Q42).
 - **Q38** EPS 100 : son cordon 230 V n'a pas de terre (fiche à deux contacts). Son boîtier est-il en plastique, et porte-t-il le double carré de la classe II ? Un boîtier métallique sans terre serait une anomalie.
   → 30/09 : la fiche n'a pas de contact de terre : l'appareil est donc de classe II, conçu pour fonctionner sans terre.
@@ -132,7 +132,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q36** Différentiel 30 mA du boîtier d'arrivée : de quel type est-il (AC, A ou F, symbole imprimé sur l'appareil) ? Déclenche-t-il quand on appuie sur son bouton de test ? Un chargeur à découpage peut produire des fuites que le type AC détecte mal.
   → 30/09 : Power Safe ID55225, aucune documentation trouvée, type inconnu. Remplacement étudié dans A-H4.
 - **Q3** Tableau Scheiber 2 voies : d'où viennent son alimentation et sa masse ?
-  → 27/09 : des coupe-circuits situés juste à côté. Fils ajoutés au relevé (wire022, wire023) ; bornes exactes et sections reportées en Q25.
+  → 27/09 : des coupe-circuits situés juste à côté. Fils ajoutés au relevé (wire158, wire162) ; bornes exactes et sections reportées en Q25.
 - **Q4** Pompe de cale : y a-t-il déjà un flotteur ?
   → 27/09 : non, la pompe est manuelle.
   → 29/09 : précision, la pompe est électrique ; c'est sa mise en route qui est manuelle (interrupteur du tableau Scheiber), faute de flotteur.
@@ -143,7 +143,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 28/09 : correction après lecture de la notice (tableau 7.5) : 50 A est le courant normal du Pro-Series 1000 ; le disjoncteur préconisé est de 70 A. Calibre installé à lire (Q34).
   → 29/09 : 70 A, lu sur l'appareil (Q34).
 - **Q16** Fils EPS 100 → groupe froid : section et longueur.
-  → 27/09 : 3,5 mm², longueur estimée à 3 m (wire027, wire028).
+  → 27/09 : 3,5 mm², longueur estimée à 3 m (wire171, wire172).
 - **Q17** Port d'attache et zone de navigation habituelle.
   → 27/09 : étang de Berre (port de Saint-Chamas), navigation en Méditerranée.
 - **Q18** Bimini, capote, portique : lesquels existent ?
@@ -160,13 +160,13 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q24** Plan d'aménagement du Gib'Sea 31.
   → 27/09 : `photos/gibsea-31-drawing.jpg` (plan de brochure, de faible résolution).
 - **Q25** Tableau Scheiber 2 voies : raccordement, sections, masse de la pompe, raccordement de l'EPS 100.
-  → 28/09 : + sur node010 et masse sur node006, en 6 mm² (wire022, wire023), sans fusible (A6). Départ pompe en 2,5 mm² (wire026). Masse de la pompe sur la barrette du tableau (wire036). Câble étamé vissé sans cosse sur l'EPS 100 (nouvelle anomalie A7) ; la différence entre 3,5 mm² et AWG 12 est sans conséquence. Section du départ frigo reportée en Q29.
+  → 28/09 : + sur node021 et masse sur node023, en 6 mm² (wire158, wire162), sans fusible (A6). Départ pompe en 2,5 mm² (wire167). Masse de la pompe sur la barrette du tableau (wire168). Câble étamé vissé sans cosse sur l'EPS 100 (nouvelle anomalie A7) ; la différence entre 3,5 mm² et AWG 12 est sans conséquence. Section du départ frigo reportée en Q29.
 - **Q26** Reste du réseau 230 V.
   → 28/09 : trois boîtiers. Boîtier d'arrivée (coffre de cockpit tribord) : différentiel 30 mA / 25 A, disjoncteurs 10 A (chargeur) et 16 A (reste du bord). Deux boîtiers de distribution, un par bord, avec 10 A pour l'éclairage et 16 A pour les prises. Tribord : prise du frigo (EPS 100), prise de la cuisine, plafonnier. Bâbord : prise de la table à carte, prise du carré. Prises en 3 × 2,5 mm², éclairage en 3 × 1,5 mm², arrivée et chargeur en 3 × 2,5 mm². Détails reportés en Q31. Schéma : folio 3.
   → 29/09 : correction (Q31), le boîtier bâbord est une simple boîte de dérivation, sans disjoncteur.
   → 15/10 : correction : il n'y a pas de disjoncteur 16 A dans le boîtier d'arrivée. Le reste du bord (boîtier tribord) est relié directement à la sortie du différentiel (anomalie A12).
 - **Q27** Place pour le shunt près de la batterie de servitude.
-  → 28/09 : wire009 part du coffre de batterie, traverse la cloison vers le compartiment moteur, puis remonte derrière la descente jusqu'au coupe-circuit des négatifs. Le shunt peut donc se placer soit au départ, dans le coffre de batterie, soit à l'arrivée, derrière la descente, accessible par l'ouverture côté cabine de poupe (voir étude D). Longueur à vérifier : Q30.
+  → 28/09 : wire010 part du coffre de batterie, traverse la cloison vers le compartiment moteur, puis remonte derrière la descente jusqu'au coupe-circuit des négatifs. Le shunt peut donc se placer soit au départ, dans le coffre de batterie, soit à l'arrivée, derrière la descente, accessible par l'ouverture côté cabine de poupe (voir étude D). Longueur à vérifier : Q30.
 - **Q28** Place pour un afficheur à la table à carte.
   → 28/09 : oui, en remplacement de l'ancien indicateur de charge à aiguille.
 - **Q13** Refroidissement du moteur 3GMD.
@@ -174,7 +174,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 - **Q33** Que désigne le « puits de dérive » ?
   → 28/09 : la quille est en deux parties : un aileron lesté en polyester et une dérive relevable en fonte, qui remonte dans un puits situé entre la table à carte et la cuisine (plus en arrière que sur la première version du folio 0).
 - **Q2** Télécommande du guindeau : d'où vient son 12 V, et est-il protégé par un fusible ?
-  → 29/09 : du + d'entrée du relais du guindeau (node022), à travers un fusible de 5 A (wire061 à wire064).
+  → 29/09 : du + d'entrée du relais du guindeau (node110), à travers un fusible de 5 A (wire110, wire113, wire114, wire115).
 - **Q5** Pompe de cale : marque et modèle, pour confirmer le fusible de 10 A.
   → 27/09 : pas d'information.
   → 29/09 : Attwood Tsunami T500 (réf. 4606 / 4640). Fusible recommandé par le fabricant : 3 A. Le fusible de 10 A du tableau Scheiber protège bien le câble de 2,5 mm², mais pas le moteur de la pompe (nouvelle anomalie A10).
@@ -184,11 +184,11 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 27/09 : pilote de barre franche. À demander à Julie pour le reste.
   → 28/09 : la photo Vue-tableau-table-a-carte montre une notice « ST1000 Plus & ST2000 Plus » : Raymarine ST1000+ ou ST2000+, à confirmer.
   → 29/09 : Raymarine ST2000+.
-- **Q29** Tableau Scheiber : section du départ frigo vers l'EPS 100 (wire024), et le retour de l'EPS 100 arrive-t-il bien sur la barrette de masse du tableau (wire025) ?
+- **Q29** Tableau Scheiber : section du départ frigo vers l'EPS 100 (wire165), et le retour de l'EPS 100 arrive-t-il bien sur la barrette de masse du tableau (wire166) ?
   → 29/09 : départ en 3,5 mm² ; le retour arrive bien sur la barrette de masse du tableau. Section du retour : Q37.
-- **Q37** Retour de l'EPS 100 vers la barrette de masse du tableau Scheiber (wire025) : même câble de 3,5 mm² que le départ (wire024) ?
+- **Q37** Retour de l'EPS 100 vers la barrette de masse du tableau Scheiber (wire166) : même câble de 3,5 mm² que le départ (wire165) ?
   → 29/09 : oui, 3,5 mm² aussi.
-- **Q30** Longueur réelle de wire009 (− batterie de servitude → coupe-circuit des négatifs).
+- **Q30** Longueur réelle de wire010 (− batterie de servitude → coupe-circuit des négatifs).
   → 29/09 : 1 m confirmé. La batterie est juste derrière la paroi latérale du bloc moteur, et la contremarche des coupe-circuits juste au-dessus.
 - **Q32** Répétiteur GPS MLR FX312 : où est-il fixé ?
   → 29/09 : en deux parties : l'unité principale à la table à carte, et un écran déporté au-dessus de la descente, côté cockpit.

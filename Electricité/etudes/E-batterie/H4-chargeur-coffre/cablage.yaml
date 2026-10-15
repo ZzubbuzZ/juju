@@ -11,7 +11,7 @@ base: E-H1
 
 supprime:
   equipements: [shunt-servitude, chargeur-lifepo4, fus-chargeur-lifepo4, orion-xs, fus-orion-sortie]
-  fils: [wire009, wire180, wire182, wire184, wire203, wire204, wire206, wire209, wire210, wire212, wire213, wire214, wire215]
+  fils: [wire010, wire011, wire012, wire013, wire065, wire058, wire062, wire067, wire056, wire059, wire311, wire312, wire313]
 
 equipements:
   - { id: shunt-servitude, type: shunt, designation: "Shunt connecté 500 A de la batterie de servitude (type Victron SmartShunt)", zone: cabine-poupe, emplacement: "Dans le coffre de la batterie de servitude, contre la paroi", statut: propose }
@@ -21,21 +21,21 @@ equipements:
   - { id: fus-chargeur-lifepo4, type: fusible, designation: "Fusible de la sortie du chargeur de quai LiFePO4", calibre_A: 25, emplacement: "À la borne + de la batterie de servitude, du côté batterie du fusible de 300 A", statut: propose, note: "Calibre à confirmer sur la notice du Blue Smart" }
 
 fils:
-  # --- Shunt dans le coffre : wire009 court, wire180 remonte à la platine ----------------
-  - { id: wire009, de: node008, vers: node086, section_mm2: 35, couleur: noir, longueur_m: 0.2, statut: propose, note: "Câble existant raccourci, ou refait court" }
-  - { id: wire180, de: node087, vers: node005, section_mm2: 35, couleur: noir, longueur_m: 1, statut: propose, note: "Du shunt, dans le coffre, au coupe-circuit des négatifs : reprend le trajet de l'ancien wire009" }
-  - { id: wire182, de: node091, vers: node088, section_mm2: 0.75, couleur: rouge, longueur_m: 1.2, statut: propose }
-  - { id: wire184, de: node093, vers: node089, section_mm2: 0.75, couleur: rouge, longueur_m: 1.2, statut: propose }
+  # --- Shunt dans le coffre : wire010 court, wire011 remonte à la platine ----------------
+  - { id: wire010, de: node008, vers: node011, section_mm2: 35, couleur: noir, longueur_m: 0.2, statut: propose, note: "Câble existant raccourci, ou refait court" }
+  - { id: wire011, de: node012, vers: node022, section_mm2: 35, couleur: noir, longueur_m: 1, statut: propose, note: "Du shunt, dans le coffre, au coupe-circuit des négatifs : reprend le trajet de l'ancien wire010" }
+  - { id: wire012, de: node017, vers: node013, section_mm2: 0.75, couleur: rouge, longueur_m: 1.2, statut: propose }
+  - { id: wire013, de: node019, vers: node014, section_mm2: 0.75, couleur: rouge, longueur_m: 1.2, statut: propose }
 
   # --- Chargeur de quai dans le coffre ------------------------------------------------------
-  - { id: wire210, de: node007, vers: node377, section_mm2: 4, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Sur la borne + de la batterie : la charge reste possible coupe-circuit ouvert" }
-  - { id: wire212, de: node373, vers: node087, section_mm2: 4, couleur: noir, longueur_m: 0.3, statut: propose, note: "Côté « bord » du shunt, dans le coffre" }
-  - { id: wire213, de: node382, vers: node374, section_mm2: 1.5, couleur: marron, longueur_m: 6, statut: propose, note: "Câble 3 × 1,5 mm² dédié jusqu'au coffre de la batterie (environ 5 m, Q50), prise ou boîtier à bornes Wago (Q53)" }
-  - { id: wire214, de: node209, vers: node375, section_mm2: 1.5, couleur: bleu, longueur_m: 6, statut: propose }
-  - { id: wire215, de: node212, vers: node376, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 6, statut: propose }
+  - { id: wire056, de: node007, vers: node059, section_mm2: 4, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Sur la borne + de la batterie : la charge reste possible coupe-circuit ouvert" }
+  - { id: wire059, de: node058, vers: node012, section_mm2: 4, couleur: noir, longueur_m: 0.3, statut: propose, note: "Côté « bord » du shunt, dans le coffre" }
+  - { id: wire311, de: node316, vers: node317, section_mm2: 1.5, couleur: marron, longueur_m: 6, statut: propose, note: "Câble 3 × 1,5 mm² dédié jusqu'au coffre de la batterie (environ 5 m, Q50), prise ou boîtier à bornes Wago (Q53)" }
+  - { id: wire312, de: node309, vers: node318, section_mm2: 1.5, couleur: bleu, longueur_m: 6, statut: propose }
+  - { id: wire313, de: node307, vers: node319, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 6, statut: propose }
 
   # --- Orion XS dans le coffre -----------------------------------------------------------------
-  - { id: wire203, de: node365, vers: node360, section_mm2: 16, couleur: rouge, longueur_m: 1.5, statut: propose, note: "Du fusible de 70 A de la platine (côté moteur) jusqu'au coffre" }
-  - { id: wire204, de: node007, vers: node366, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Sur la borne + de la batterie de servitude" }
-  - { id: wire206, de: node362, vers: node087, section_mm2: 16, couleur: noir, longueur_m: 0.3, statut: propose, note: "Côté « bord » du shunt, dans le coffre" }
-  - { id: wire209, de: node371, vers: node363, section_mm2: 0.75, couleur: rouge, longueur_m: 2, statut: propose, note: "Commande « remote » : de l'interrupteur, près du tableau Scheiber, jusqu'au coffre" }
+  - { id: wire065, de: node066, vers: node061, section_mm2: 16, couleur: rouge, longueur_m: 1.5, statut: propose, note: "Du fusible de 70 A de la platine (côté moteur) jusqu'au coffre" }
+  - { id: wire058, de: node007, vers: node067, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Sur la borne + de la batterie de servitude" }
+  - { id: wire062, de: node063, vers: node012, section_mm2: 16, couleur: noir, longueur_m: 0.3, statut: propose, note: "Côté « bord » du shunt, dans le coffre" }
+  - { id: wire067, de: node072, vers: node064, section_mm2: 0.75, couleur: rouge, longueur_m: 2, statut: propose, note: "Commande « remote » : de l'interrupteur, près du tableau Scheiber, jusqu'au coffre" }

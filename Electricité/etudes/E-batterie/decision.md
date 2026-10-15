@@ -6,8 +6,8 @@
 
 - Batterie LiFePO4 à BMS intégré, dans le coffre actuel de la cabine de poupe : plus d'hydrogène dans la cabine (anomalie A11).
 - Coupleur Scheiber déposé, remplacé par un chargeur DC/DC (Victron Orion XS), commandé manuellement par un interrupteur à voyant (Q48, 05/10).
-- Coupe-circuit de couplage déposé avec wire010 et wire011, sans exception : les deux batteries n'ont pas la même tension (05/10).
-- **Guindeau sur le circuit moteur** (05/10) : wire217, depuis node004, remplace wire017.
+- Coupe-circuit de couplage déposé avec wire007 et wire015, sans exception : les deux batteries n'ont pas la même tension (05/10).
+- **Guindeau sur le circuit moteur** (05/10) : wire101, depuis node006, remplace wire102.
 - Chargeur de quai dédié à la LiFePO4 ; le Dolphin ne charge plus que la batterie moteur (sa sortie 2 est débranchée).
 
 ## Matériel commandé (05/10/2026)

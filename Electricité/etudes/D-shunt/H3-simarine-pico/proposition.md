@@ -15,6 +15,6 @@ decision: "14/10/2026 : écartée, l'utilisateur retient D-H1."
 
 # D-H3 · Moniteur multi-capteurs Simarine Pico
 
-Hypothèse de l'étude D, non développée : son écartement est proposé (voir le [README de l'étude](../README.md#hypothèses)). La pose serait celle de D-H1 (shunt sur wire009, fils de mesure protégés à 1 A) ; aucun `cablage.yaml` n'est écrit tant qu'elle n'est pas retenue.
+Hypothèse de l'étude D, non développée : son écartement est proposé (voir le [README de l'étude](../README.md#hypothèses)). La pose serait celle de D-H1 (shunt sur wire010, fils de mesure protégés à 1 A) ; aucun `cablage.yaml` n'est écrit tant qu'elle n'est pas retenue.
 
 Nomenclature : [nomenclature.yaml](nomenclature.yaml), pour comparer les coûts.

@@ -19,11 +19,11 @@ Hypothèse de l'étude A. Base : le relevé. Anomalie traitée : **A8** (terre 2
 - Schéma : [folio 2d](folio-2d-terre.svg).
 - Nomenclature : [nomenclature.yaml](nomenclature.yaml).
 
-wire034 (terre de la prise de quai vers la barrette du boîtier d'arrivée) est remplacé par wire170, l'isolateur et wire171. Le nouveau différentiel reprend l'emplacement et les bornes de l'ancien (node206 à node209).
+wire302 (terre de la prise de quai vers la barrette du boîtier d'arrivée) est remplacé par wire303, l'isolateur et wire304. Le nouveau différentiel reprend l'emplacement et les bornes de l'ancien (node305, node306, node308, node309).
 
 ## Décision du 30/09
 
-- **Terre du ponton ↔ terre du bord (1)** : conservée, à travers un **[isolateur galvanique maison](#isolateur-maison-retenu)**, à la place de wire034.
+- **Terre du ponton ↔ terre du bord (1)** : conservée, à travers un **[isolateur galvanique maison](#isolateur-maison-retenu)**, à la place de wire302.
 - **Liaison terre / masse 12 V (2)** : **non faite**. Un défaut 230 V sur le circuit 12 V s'écoule par l'arbre, l'hélice et l'eau, et fait déclencher le différentiel sans attendre un contact (voir la variante ci-dessous), à condition que l'arbre soit relié électriquement au moteur : **vérifié le 13/10** (Q40) : l'accouplement entre l'arbre de l'inverseur et l'arbre d'hélice est métallique ; il n'y a pas de câble de masse sur le tube d'étambot.
 - L'isolateur est donc aujourd'hui une **précaution** : tant que (2) n'existe pas, il n'y a aucun courant galvanique à bloquer. Il servira si une liaison apparaît plus tard : chauffe-eau de l'étude B en H3, ou appareil dont le négatif serait relié au boîtier.
 - **Transformateur d'isolement** : écarté.
@@ -34,8 +34,8 @@ wire034 (terre de la prise de quai vers la barrette du boîtier d'arrivée) est 
 
 La décision ne retient que le point 1, avec un isolateur maison ; le point 2 reste décrit pour mémoire.
 
-1. **Isolateur galvanique** en série sur le conducteur de terre, juste après la prise de quai, dans le coffre de cockpit tribord : entre la terre de la prise (node205) et la barrette de terre du boîtier d'arrivée (node212), à la place de wire034.
-2. **Liaison terre / masse 12 V en un point unique** : un fil vert-jaune de la barrette de terre du boîtier d'arrivée vers le négatif 12 V, **côté batteries du coupe-circuit des négatifs** (node005). Ainsi, la liaison n'est jamais ouverte par ce coupe-circuit. Le boîtier d'arrivée et la platine des coupe-circuits sont proches : quelques mètres de fil suffisent.
+1. **Isolateur galvanique** en série sur le conducteur de terre, juste après la prise de quai, dans le coffre de cockpit tribord : entre la terre de la prise (node302) et la barrette de terre du boîtier d'arrivée (node307), à la place de wire302.
+2. **Liaison terre / masse 12 V en un point unique** : un fil vert-jaune de la barrette de terre du boîtier d'arrivée vers le négatif 12 V, **côté batteries du coupe-circuit des négatifs** (node022). Ainsi, la liaison n'est jamais ouverte par ce coupe-circuit. Le boîtier d'arrivée et la platine des coupe-circuits sont proches : quelques mètres de fil suffisent.
 
 ## Variante : ne pas relier la terre à la masse 12 V
 
@@ -74,9 +74,9 @@ Dans tous les cas, **tester le différentiel régulièrement** avec son bouton d
 
 Au lieu de filtrer la terre du quai, on coupe tout lien électrique entre le bord et le ponton : l'énergie passe par le champ magnétique d'un transformateur 230 V / 230 V, et le bord crée son propre réseau.
 
-1. **Primaire, côté quai** : le transformateur se place entre la prise de quai et le boîtier d'arrivée, dans le coffre de cockpit tribord. La phase et le neutre du quai arrivent au primaire à travers un disjoncteur phase + neutre (intégré à certains modèles). La terre du quai ne va qu'à l'écran placé entre les deux enroulements, et au boîtier selon le modèle : suivre sa notice. Elle ne pénètre pas plus loin à bord ; wire034 disparaît.
+1. **Primaire, côté quai** : le transformateur se place entre la prise de quai et le boîtier d'arrivée, dans le coffre de cockpit tribord. La phase et le neutre du quai arrivent au primaire à travers un disjoncteur phase + neutre (intégré à certains modèles). La terre du quai ne va qu'à l'écran placé entre les deux enroulements, et au boîtier selon le modèle : suivre sa notice. Elle ne pénètre pas plus loin à bord ; wire302 disparaît.
 2. **Secondaire, côté bord** : un des deux fils du secondaire devient le neutre du bord, relié à la terre du bord au transformateur. C'est la liaison terre-neutre qu'on ne pouvait pas faire à bord sans transformateur (voir le cas du chauffe-eau) : ici, le bord définit lui-même son neutre, et l'inversion au ponton ne compte plus. Le différentiel 30 mA existant reste en aval, dans le boîtier d'arrivée : un courant de défaut qui part vers la terre du bord revient au secondaire par la liaison terre-neutre, sans repasser par le différentiel, qui coupe.
-3. **Liaison terre du bord ↔ masse 12 V** (node005), comme au point 2 du principe. Elle ne pose plus de problème de corrosion, puisque la terre du bord ne touche plus le ponton : on garde la coupure immédiate d'un défaut 230 V sur le circuit 12 V, sans isolateur.
+3. **Liaison terre du bord ↔ masse 12 V** (node022), comme au point 2 du principe. Elle ne pose plus de problème de corrosion, puisque la terre du bord ne touche plus le ponton : on garde la coupure immédiate d'un défaut 230 V sur le circuit 12 V, sans isolateur.
 
 **Ce qu'il règle** : la corrosion galvanique par le ponton, sans diodes ni risque de panne silencieuse ; l'inversion phase / neutre ; la liaison terre / masse 12 V ; le ballon à double résistance de l'étude B (H3), sans restriction.
 
@@ -117,7 +117,7 @@ Le Victron VDI-16 satisfait le premier critère ; le deuxième est à vérifier 
 **Montage** :
 
 1. Le module sur un radiateur en aluminium, avec de la pâte thermique, dans un boîtier étanche fixé près de la prise de quai, dans le coffre de cockpit tribord.
-2. Borne « ~ » 1 : la terre de la prise de quai (node205). Borne « ~ » 2 : la barrette de terre du boîtier d'arrivée (node212). Les deux fils en vert-jaune 2,5 mm², comme le reste de la terre ; ils remplacent wire034.
+2. Borne « ~ » 1 : la terre de la prise de quai (node302). Borne « ~ » 2 : la barrette de terre du boîtier d'arrivée (node307). Les deux fils en vert-jaune 2,5 mm², comme le reste de la terre ; ils remplacent wire302.
 3. Repérer le boîtier : « Isolateur galvanique : à contrôler chaque saison ».
 
 **Contrôle**, à inscrire dans l'entretien, en début de saison et après tout déclenchement du différentiel sur un défaut : câble de quai débranché, multimètre en position « diode » entre les deux bornes « ~ », dans un sens puis dans l'autre.
@@ -178,14 +178,14 @@ Le chauffe-eau confirme donc la conclusion précédente : **la liaison (1) est i
 
 **Pourquoi ne pas relier la terre au neutre à bord, à la place du quai ?** Ce serait refaire à bord la liaison terre-neutre qui existe à terre, chez le distributeur. Le différentiel fonctionnerait, puisque le courant de défaut reviendrait par la terre sans repasser par lui. Mais la prise du ponton ne garantit pas quel conducteur est la phase : une fois sur deux, les carcasses du bord seraient reliées à la phase. Et si le neutre du ponton est coupé en amont, la terre du bord ne serait plus reliée à rien. Cette liaison n'est admise qu'au secondaire d'un transformateur d'isolement, où le bord crée son propre réseau. Sans transformateur, la terre du bord se relie à celle du quai, et seulement à elle.
 
-**Conséquence pour l'étude B, hypothèse H3** (résistance 12 V sur le surplus solaire, dans le même ballon) : la cuve, reliée à la terre, porterait aussi une résistance 12 V. Si le négatif de cette résistance touche la cuve, ou si la résistance 230 V se fend, la terre et le 12 V se rejoignent par le ballon : la liaison (2) existe alors de fait, sans isolateur, avec la corrosion galvanique qui va avec. Et un défaut de la résistance 230 V peut mettre du 230 V sur le circuit 12 V, le cas même où la liaison (2) fait couper le différentiel avant tout contact. **Si B-H3 est retenue, il faut la liaison (2).** L'isolateur étant déjà en place, il suffira d'ajouter le fil vers node005. Avec B-H1 (résistance 230 V seule), la décision du 30/09 reste valable.
+**Conséquence pour l'étude B, hypothèse H3** (résistance 12 V sur le surplus solaire, dans le même ballon) : la cuve, reliée à la terre, porterait aussi une résistance 12 V. Si le négatif de cette résistance touche la cuve, ou si la résistance 230 V se fend, la terre et le 12 V se rejoignent par le ballon : la liaison (2) existe alors de fait, sans isolateur, avec la corrosion galvanique qui va avec. Et un défaut de la résistance 230 V peut mettre du 230 V sur le circuit 12 V, le cas même où la liaison (2) fait couper le différentiel avant tout contact. **Si B-H3 est retenue, il faut la liaison (2).** L'isolateur étant déjà en place, il suffira d'ajouter le fil vers node022. Avec B-H1 (résistance 230 V seule), la décision du 30/09 reste valable.
 
 ## Remplacement du différentiel d'arrivée (Q36)
 
 L'appareil actuel, un Power Safe ID55225, n'a aucune documentation trouvable : on ne connaît ni son type ni son âge, et il porte à lui seul la protection des personnes. Il est remplacé par un modèle courant, au format modulaire du boîtier :
 
 - **Interrupteur différentiel bipolaire**, qui coupe la phase et le neutre. Un interrupteur suffit : les surintensités sont déjà coupées en aval par le DT40 C10 et le 16 A d'arrivée. Un disjoncteur différentiel ajouterait cette protection pour le câblage interne du boîtier, sans nécessité ici.
-  **À revoir (15/10)** : le 16 A d'arrivée n'existe pas (A12). Le câble du boîtier tribord (wire038 à wire040) n'est protégé que par la borne du port : un disjoncteur différentiel 16 A, ou un C16 ajouté après l'interrupteur différentiel, le protégerait. Le calibre de l'isolateur galvanique (point 1 de « Quel modèle ? ») est à revoir de même.
+  **À revoir (15/10)** : le 16 A d'arrivée n'existe pas (A12). Le câble du boîtier tribord (wire308 à wire310) n'est protégé que par la borne du port : un disjoncteur différentiel 16 A, ou un C16 ajouté après l'interrupteur différentiel, le protégerait. Le calibre de l'isolateur galvanique (point 1 de « Quel modèle ? ») est à revoir de même.
 - **30 mA**, pour la protection des personnes.
 - **Type A** : il détecte les fuites alternatives et les fuites « redressées » que produisent les appareils électroniques, comme le chargeur. Le type AC ne voit que les premières. Les types F et B, faits pour les onduleurs et les variateurs, ne sont pas nécessaires à bord.
 - **Calibre de 40 A** : ce calibre est celui du courant qu'il supporte, pas une protection. Il doit dépasser celui des protections placées en aval ; 40 A est le calibre courant, et le moins cher, de ces appareils.

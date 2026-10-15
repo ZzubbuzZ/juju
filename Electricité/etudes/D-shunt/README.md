@@ -28,31 +28,31 @@ Un shunt ne compte que le courant qui le traverse. Pour mesurer la batterie de s
 Sur Juju, cette place existe déjà (voir le [folio 1](../../schemas/folio-1-actuel.svg)) :
 
 ```
-avant :  node008 (− batterie servitude) ──── wire009, 35 mm², 1 m ────► node005 (CC masse, côté batteries)
-après :  node008 ── câble court ──► [SHUNT] ── câble court ──► node005
+avant :  node008 (− batterie servitude) ──── wire010, 35 mm², 1 m ────► node022 (CC masse, côté batteries)
+après :  node008 ── câble court ──► [SHUNT] ── câble court ──► node022
 ```
 
 Ce que cette position mesure correctement :
 
-- **Toutes les charges de servitude**, y compris la pompe de cale automatique prévue par A-H1, dont la masse revient sur node005.
-- **Le chargeur de quai** : sa masse (wire005) arrive sur node005, donc du côté charges du shunt. Sa charge de la batterie de servitude est comptée.
+- **Toutes les charges de servitude**, y compris la pompe de cale automatique prévue par A-H1, dont la masse revient sur node022.
+- **Le chargeur de quai** : sa masse (wire060) arrive sur node022, donc du côté charges du shunt. Sa charge de la batterie de servitude est comptée.
 - **L'alternateur, via le coupleur** : le courant de charge revient par la masse commune, puis traverse le shunt vers la batterie de servitude.
 - **Le démarreur, quand le coupe-circuit de couplage est fermé** : la batterie de servitude participe alors au démarrage, et ce courant de plusieurs centaines d'ampères traverse le shunt. Il faut donc un shunt dimensionné en conséquence (500 A).
 
-Le coupe-circuit des négatifs (node005 → node006) reste en aval du shunt. Le shunt continue donc de mesurer bateau coupé : consommation résiduelle, pompe de cale, chargeur de quai.
+Le coupe-circuit des négatifs (node022 → node023) reste en aval du shunt. Le shunt continue donc de mesurer bateau coupé : consommation résiduelle, pompe de cale, chargeur de quai.
 
-La mise en commun des masses ne gêne pas la mesure, tant que **seul le négatif de la batterie de servitude** est raccordé côté batterie du shunt. La batterie moteur reste sur node005 par wire004, sans passer par le shunt.
+La mise en commun des masses ne gêne pas la mesure, tant que **seul le négatif de la batterie de servitude** est raccordé côté batterie du shunt. La batterie moteur reste sur node022 par wire003, sans passer par le shunt.
 
 ### Deux emplacements possibles
 
-wire009 part du coffre de la batterie de servitude, traverse la cloison vers le compartiment moteur, puis remonte derrière la descente jusqu'au coupe-circuit des négatifs (Q27). Électriquement, le shunt peut se placer à n'importe quel point de ce fil. Deux emplacements sont pratiques :
+wire010 part du coffre de la batterie de servitude, traverse la cloison vers le compartiment moteur, puis remonte derrière la descente jusqu'au coupe-circuit des négatifs (Q27). Électriquement, le shunt peut se placer à n'importe quel point de ce fil. Deux emplacements sont pratiques :
 
 | | Emplacement | Pour | Contre |
 |---|---|---|---|
 | a | Au départ, dans le coffre de la batterie de servitude (cabine de poupe) | Fil d'alimentation du shunt très court jusqu'au + de la batterie | Coffre à ouvrir pour y accéder ; humidité éventuelle au fond du coffre |
-| b | À l'arrivée, derrière la descente, près du coupe-circuit des négatifs | Accessible par l'ouverture côté cabine de poupe, avec le coupleur ; près du tableau et de la table à carte | Fil d'alimentation du shunt plus long, jusqu'à la batterie ou au côté batterie du coupe-circuit de servitude (node009) |
+| b | À l'arrivée, derrière la descente, près du coupe-circuit des négatifs | Accessible par l'ouverture côté cabine de poupe, avec le coupleur ; près du tableau et de la table à carte | Fil d'alimentation du shunt plus long, jusqu'à la batterie ou au côté batterie du coupe-circuit de servitude (node020) |
 
-L'emplacement b regroupe les organes de coupure et de mesure au même endroit. wire009 ne fait que 1 m (Q30, confirmé le 29/09) : la batterie est juste derrière la paroi latérale du bloc moteur, et la contremarche des coupe-circuits juste au-dessus. Le fil d'alimentation du shunt reste donc court dans les deux cas, ce qui ôte à a son principal avantage.
+L'emplacement b regroupe les organes de coupure et de mesure au même endroit. wire010 ne fait que 1 m (Q30, confirmé le 29/09) : la batterie est juste derrière la paroi latérale du bloc moteur, et la contremarche des coupe-circuits juste au-dessus. Le fil d'alimentation du shunt reste donc court dans les deux cas, ce qui ôte à a son principal avantage.
 
 **Décision du 05/10** : le shunt et le chargeur de quai Blue Smart de l'étude E iront ensemble, soit dans la contremarche de la descente (emplacement b), soit dans le coffre de la batterie de servitude (emplacement a), selon la place disponible dans la contremarche, à voir sur place (Q53). Le négatif du chargeur doit revenir du côté « bord » du shunt pour que la charge soit comptée : les mettre ensemble garde ce fil court dans les deux cas.
 
@@ -66,7 +66,7 @@ L'objectif fixé pour la batterie moteur est de **surveiller sa tension**, pas d
 - **Lecture souhaitée** : l'application sur smartphone suffit-elle, ou faut-il un afficheur fixe à la table à carte ? C'est un choix à faire, qui distingue les hypothèses H1 et H2.
 - **Place pour un afficheur** (Q28, traitée) : oui, à la place de l'ancien indicateur de charge à aiguille du tableau de servitude. H2 ne demande donc aucune découpe nouvelle, sous réserve du diamètre du trou.
 - **Indicateur à aiguille** (Q41, traitée le 03/10) : la place suffit pour l'afficheur ; branchement et diamètre du trou à voir à la pose.
-- **Longueur réelle de wire009** (Q30, traitée) : 1 m confirmé.
+- **Longueur réelle de wire010** (Q30, traitée) : 1 m confirmé.
 - **Traceur Garmin et réseau NMEA 2000** (Q44, ouverte) : modèle exact, réseau existant ou non, emplacement et alimentation. Utile pour H6 seulement.
 
 ## Hypothèses
@@ -82,7 +82,7 @@ Les modèles cités sont des exemples de familles de produits. Leurs caractéris
 | [H5](H5-cerbo-gx-touch/proposition.md) | SmartShunt de H1, centrale Victron Cerbo GX et écran tactile GX Touch 50 | Écran 5 pouces à la table à carte, application, portail VRM | Tension par l'entrée auxiliaire du shunt | environ 635 € | Écartée le 05/10 (place incertaine, Q43 ; prix), folio 2g archivé |
 | [H6](H6-cerbo-traceur-garmin/proposition.md) | SmartShunt de H1 et centrale Victron Cerbo-S GX sans écran, données transmises au traceur Garmin par NMEA 2000 | Traceur GPSMAP 7407 quand il est allumé, application, portail VRM | Tension par l'entrée auxiliaire du shunt (affichage sur le traceur à vérifier) | environ 560 €, 440 € si le traceur est déjà sur un réseau NMEA 2000 | Rédigée sans câblage, en attente de Q44 |
 
-H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire009 repris sur le shunt, wire180 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire181 à wire184). H2 ajoute le câble de données wire185 et l'afficheur. Nouveaux numéros : node086 à node095, wire180 à wire185. H5 reprend H1 et ajoute un Cerbo GX alimenté après le coupe-circuit de servitude (fusible 3 A), relié au shunt par VE.Direct et à l'écran : node340 à node346, wire186 à wire190.
+H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire010 repris sur le shunt, wire011 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire006, wire012, wire013, wire014). H2 ajoute le câble de données wire150 et l'afficheur. Nouveaux numéros : node011, node012, node013, node014, node015, node016, node017, node018, node019, node179, wire006, wire011, wire012, wire013, wire014, wire150. H5 reprend H1 et ajoute un Cerbo GX alimenté après le coupe-circuit de servitude (fusible 3 A), relié au shunt par VE.Direct et à l'écran : node180 à node186, wire151, wire155, wire160, wire174, wire175.
 
 **Pourquoi H3 et H4 n'ont pas été développées** (écartées le 14/10) :
 

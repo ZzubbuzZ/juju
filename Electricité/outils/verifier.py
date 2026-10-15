@@ -211,8 +211,31 @@ def appliquer_delta(base: Modele, delta: dict, nom: str, source: str, r: Rapport
     return m
 
 
+# Sections de numérotation (15/10), communes aux nœuds et aux fils ; un fil prend la section de son bout le
+# plus en aval. Le 230 V occupe seul 300-399 ; 250-299 et 400+ sont libres.
+SECTIONS = ((1, 49, "batteries, coupe-circuits, shunt"), (50, 99, "charge"), (100, 149, "moteur et guindeau"),
+            (150, 199, "distribution 12 V"), (200, 249, "tableau de servitude"), (300, 399, "230 V"))
+
+
+def controler_sections(m: Modele, r: Rapport) -> None:
+    """Chaque numéro tombe dans une section ; le 230 V, et lui seul, dans 300-399."""
+    for genre, elems in (("nœud", m.nodes), ("fil", m.fils)):
+        for i, e in elems.items():
+            num = int(i[4:])
+            if not any(a <= num <= b for a, b, _ in SECTIONS):
+                r.avert(m.nom, f"{i} : numéro hors des sections (voir CLAUDE.md)")
+                continue
+            if genre == "nœud":
+                ac = e.get("polarite", "").startswith("230V")
+            else:
+                ac = all(m.nodes.get(e[k], {}).get("polarite", "").startswith("230V") for k in ("de", "vers"))
+            if ac != (300 <= num <= 399):
+                r.avert(m.nom, f"{i} : {'230 V hors' if ac else '12 V dans'} la section 300-399 du 230 V")
+
+
 def controler(m: Modele, questions: set[str], traitees: set[str], r: Rapport) -> None:
     ou = m.nom
+    controler_sections(m, r)
     for e in m.equipements.values():
         if "zone" in e and e["zone"] not in m.zones:
             r.erreur(ou, f"{e['id']} : zone inconnue « {e['zone']} » (voir releve/amenagement.yaml)")
@@ -582,9 +605,6 @@ def main() -> int:
     for elem in (*releve.equipements.values(), *releve.nodes.values(), *releve.fils.values()):
         if elem.get("statut") == "propose":
             r.erreur("releve", f"{elem['id']} a le statut « propose » : un élément proposé va dans etudes/")
-    for w in releve.fils:
-        if int(w[4:]) >= 100:
-            r.avert("releve", f"{w} : les numéros wire100+ sont réservés aux propositions")
     if invalides:
         r.info(f"contrôles croisés suspendus tant que {', '.join(invalides)} est invalide : corriger d'abord les erreurs ci-dessus")
         print(f"\n{r.erreurs} erreur(s), {r.avertissements} avertissement(s)")

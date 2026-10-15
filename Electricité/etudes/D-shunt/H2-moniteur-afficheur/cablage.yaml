@@ -19,8 +19,8 @@ equipements:
   - { id: afficheur-batterie, type: recepteur, designation: "Afficheur du moniteur de batterie (rond, encastré), alimenté par le câble de données", zone: table-a-carte, emplacement: "Au tableau de servitude, à la place de l'indicateur de charge à aiguille", statut: propose }
 
 nodes:
-  - { id: node094, equipement: shunt-servitude, borne: "données (RJ12)", polarite: commande }
-  - { id: node095, equipement: afficheur-batterie, borne: "données (RJ12)", polarite: commande }
+  - { id: node015, equipement: shunt-servitude, borne: "données (RJ12)", polarite: commande }
+  - { id: node179, equipement: afficheur-batterie, borne: "données (RJ12)", polarite: commande }
 
 fils:
-  - { id: wire185, de: node094, vers: node095, longueur_m: 4, statut: propose, note: "Câble de données RJ12 fourni avec le moniteur (10 m). Longueur estimée sur le trajet de wire019 (3 m), avec de la marge" }
+  - { id: wire150, de: node015, vers: node179, longueur_m: 4, statut: propose, note: "Câble de données RJ12 fourni avec le moniteur (10 m). Longueur estimée sur le trajet de wire200 (3 m), avec de la marge" }

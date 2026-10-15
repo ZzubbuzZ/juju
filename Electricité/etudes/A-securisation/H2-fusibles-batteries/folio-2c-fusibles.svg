@@ -83,59 +83,59 @@
   <text class="tb mid" x="1070" y="423">Disj. guindeau</text>
   <text class="ts mid" x="1070" y="438">vers le guindeau : folio 1</text>
   <path class="p w4" d="M190 140 L260 140"/>
-  <text class="idn mid" x="225" y="130">w160 · 35</text>
+  <text class="idn mid" x="225" y="130">w002 · 35</text>
   <path class="p w4" d="M316 140 L424 140"/>
   <text class="idn mid" x="355" y="130">w001 · 35</text>
   <path class="p w4" d="M484 140 L620 140"/>
-  <text class="id mid" x="566" y="158">w012 · 35</text>
+  <text class="id mid" x="566" y="158">w100 · 35</text>
   <path class="p w4" d="M484 140 L504 140 L544 100 L620 100"/>
-  <text class="id mid" x="584" y="92">w010 · 35</text>
+  <text class="id mid" x="584" y="92">w007 · 35</text>
   <path class="p w2" d="M424 140 L410 154 L410 210 L500 210"/>
-  <text class="idn" x="418" y="204">w162 · 6</text>
+  <text class="idn" x="418" y="204">w052 · 6</text>
   <path class="p w2" d="M546 210 L700 210"/>
-  <text class="idn mid" x="623" y="204">w003 · 6</text>
+  <text class="idn mid" x="623" y="204">w051 · 6</text>
   <path class="p w2" d="M424 140 L396 168 L396 250 L500 250"/>
-  <text class="idn" x="404" y="244">w164 · 6</text>
+  <text class="idn" x="404" y="244">w005 · 6</text>
   <path class="p w2" d="M546 250 L700 250"/>
-  <text class="idn mid" x="660" y="244">w002 · 6</text>
+  <text class="idn mid" x="660" y="244">w004 · 6</text>
   <path class="p w4" d="M190 430 L260 430"/>
-  <text class="idn mid" x="225" y="420">w161 · 35</text>
+  <text class="idn mid" x="225" y="420">w009 · 35</text>
   <path class="p w4" d="M316 430 L424 430"/>
-  <text class="idn mid" x="355" y="420">w006 · 35</text>
+  <text class="idn mid" x="355" y="420">w008 · 35</text>
   <path class="p w2" d="M424 430 L410 444 L410 510 L500 510"/>
-  <text class="idn" x="418" y="504">w163 · 6</text>
+  <text class="idn" x="418" y="504">w057 · 6</text>
   <path class="p w2" d="M546 510 L700 510"/>
-  <text class="idn mid" x="623" y="504">w008 · 6</text>
+  <text class="idn mid" x="623" y="504">w055 · 6</text>
   <path class="p w2" d="M424 430 L396 458 L396 550 L500 550"/>
-  <text class="idn" x="404" y="544">w165 · 6</text>
+  <text class="idn" x="404" y="544">w017 · 6</text>
   <path class="p w2" d="M546 550 L700 550"/>
-  <text class="idn mid" x="660" y="544">w007 · 6</text>
+  <text class="idn mid" x="660" y="544">w016 · 6</text>
   <path class="p w2" d="M484 430 L498 416 L498 340 L640 340"/>
-  <text class="idn" x="506" y="334">w166 · 6</text>
+  <text class="idn" x="506" y="334">w157 · 6</text>
   <path class="p w2" d="M686 340 L950 340"/>
-  <text class="idn mid" x="850" y="334">w019 · 6</text>
+  <text class="idn mid" x="850" y="334">w200 · 6</text>
   <path class="p w2" d="M484 430 L512 402 L512 380 L760 380"/>
-  <text class="idn" x="520" y="374">w167 · 6</text>
+  <text class="idn" x="520" y="374">w156 · 6</text>
   <path class="p w2" d="M806 380 L950 380"/>
-  <text class="idn mid" x="903" y="374">w022 · 6</text>
+  <text class="idn mid" x="903" y="374">w158 · 6</text>
   <path class="p w4" d="M484 430 L960 430"/>
-  <text class="id mid" x="880" y="422">w017 · 35 (inchangé)</text>
+  <text class="id mid" x="880" y="422">w102 · 35 (inchangé)</text>
   <rect class="flag" x="620" y="131" width="250" height="18"/>
-  <text class="ts mid" x="745" y="144">→ node031 · démarreur, alternateur · folio 1</text>
+  <text class="ts mid" x="745" y="144">→ node100 · démarreur, alternateur · folio 1</text>
   <rect class="flag" x="620" y="91" width="200" height="18"/>
-  <text class="ts mid" x="720" y="104">→ node012 · couplage · folio 1</text>
+  <text class="ts mid" x="720" y="104">→ node025 · couplage · folio 1</text>
   <rect class="flag" x="700" y="201" width="250" height="18"/>
-  <text class="ts mid" x="825" y="214">→ node016 · chargeur, sortie 1 · folio 1</text>
+  <text class="ts mid" x="825" y="214">→ node050 · chargeur, sortie 1 · folio 1</text>
   <rect class="flag" x="700" y="241" width="270" height="18"/>
-  <text class="ts mid" x="835" y="254">→ node013 · coupleur, entrée moteur · folio 1</text>
+  <text class="ts mid" x="835" y="254">→ node026 · coupleur, entrée moteur · folio 1</text>
   <rect class="flag" x="950" y="331" width="230" height="18"/>
-  <text class="ts mid" x="1065" y="344">→ node100 · tableau table à carte · folio 1</text>
+  <text class="ts mid" x="1065" y="344">→ node200 · tableau table à carte · folio 1</text>
   <rect class="flag" x="950" y="371" width="230" height="18"/>
-  <text class="ts mid" x="1065" y="384">→ node050 · tableau Scheiber · folio 1</text>
+  <text class="ts mid" x="1065" y="384">→ node159 · tableau Scheiber · folio 1</text>
   <rect class="flag" x="700" y="501" width="250" height="18"/>
-  <text class="ts mid" x="825" y="514">→ node017 · chargeur, sortie 2 · folio 1</text>
+  <text class="ts mid" x="825" y="514">→ node051 · chargeur, sortie 2 · folio 1</text>
   <rect class="flag" x="700" y="541" width="270" height="18"/>
-  <text class="ts mid" x="835" y="554">→ node014 · coupleur, entrée servitude · folio 1</text>
+  <text class="ts mid" x="835" y="554">→ node027 · coupleur, entrée servitude · folio 1</text>
   <circle class="term" cx="190" cy="140" r="3.5"/>
   <circle class="term" cx="260" cy="140" r="3.5"/>
   <circle class="term" cx="316" cy="140" r="3.5"/>
@@ -161,34 +161,34 @@
   <circle class="term" cx="960" cy="430" r="3.5"/>
   <text class="id end" x="183" y="139">n001</text>
   <text class="pin end" x="183" y="149">+</text>
-  <text class="idn end" x="256" y="162">n070</text>
-  <text class="idn" x="320" y="162">n071</text>
-  <text class="id end" x="418" y="132">n003</text>
-  <text class="id" x="488" y="160">n004</text>
-  <text class="idn end" x="496" y="230">n074</text>
-  <text class="idn" x="550" y="230">n075</text>
-  <text class="idn end" x="496" y="270">n078</text>
-  <text class="idn" x="550" y="270">n079</text>
+  <text class="idn end" x="256" y="162">n003</text>
+  <text class="idn" x="320" y="162">n004</text>
+  <text class="id end" x="418" y="132">n005</text>
+  <text class="id" x="488" y="160">n006</text>
+  <text class="idn end" x="496" y="230">n053</text>
+  <text class="idn" x="550" y="230">n054</text>
+  <text class="idn end" x="496" y="270">n029</text>
+  <text class="idn" x="550" y="270">n030</text>
   <text class="id end" x="183" y="429">n007</text>
   <text class="pin end" x="183" y="439">+</text>
-  <text class="idn end" x="256" y="452">n072</text>
-  <text class="idn" x="320" y="452">n073</text>
-  <text class="id end" x="418" y="422">n009</text>
-  <text class="id" x="488" y="450">n010</text>
-  <text class="idn end" x="496" y="530">n076</text>
-  <text class="idn" x="550" y="530">n077</text>
-  <text class="idn end" x="496" y="570">n080</text>
-  <text class="idn" x="550" y="570">n081</text>
-  <text class="idn end" x="636" y="360">n082</text>
-  <text class="idn" x="690" y="360">n083</text>
-  <text class="idn end" x="756" y="400">n084</text>
-  <text class="idn" x="810" y="400">n085</text>
-  <text class="id" x="967" y="429">n020</text>
+  <text class="idn end" x="256" y="452">n009</text>
+  <text class="idn" x="320" y="452">n010</text>
+  <text class="id end" x="418" y="422">n020</text>
+  <text class="id" x="488" y="450">n021</text>
+  <text class="idn end" x="496" y="530">n055</text>
+  <text class="idn" x="550" y="530">n056</text>
+  <text class="idn end" x="496" y="570">n031</text>
+  <text class="idn" x="550" y="570">n032</text>
+  <text class="idn end" x="636" y="360">n151</text>
+  <text class="idn" x="690" y="360">n152</text>
+  <text class="idn end" x="756" y="400">n155</text>
+  <text class="idn" x="810" y="400">n156</text>
+  <text class="id" x="967" y="429">n108</text>
   <text class="pin" x="967" y="439">1</text>
   <text class="ts" x="40" y="610">En vert : nouveau (porte-fusibles et tronçons courts).</text>
   <text class="ts" x="40" y="628">Les fils existants gardent leur numéro : seule leur extrémité côté source passe sur le fusible.</text>
-  <text class="ts" x="40" y="646">w001 et w006 restent en 35 mm² sous 400 A : écart accepté le 30/09 (w006 en 50 mm² à long terme).</text>
-  <text class="ts" x="40" y="664">Les tronçons w160 et w161, non protégés, doivent être aussi courts que possible.</text>
+  <text class="ts" x="40" y="646">w001 et w008 restent en 35 mm² sous 400 A : écart accepté le 30/09 (w008 en 50 mm² à long terme).</text>
+  <text class="ts" x="40" y="664">Les tronçons w002 et w009, non protégés, doivent être aussi courts que possible.</text>
   <g class="mk-a"><circle cx="288" cy="108" r="11"/><text class="mid" x="288" y="111.5">A2</text></g>
   <g class="mk-a"><circle cx="288" cy="398" r="11"/><text class="mid" x="288" y="401.5">A2</text></g>
   <g class="mk-a"><circle cx="600" cy="230" r="11"/><text class="mid" x="600" y="233.5">A4</text></g>

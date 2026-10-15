@@ -10,7 +10,7 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 
 - Batterie de servitude : 110 Ah, plomb « sans entretien », dans un coffre sous le matelas de la cabine de poupe, contre le coffre moteur. Type exact (ouverte ou AGM) et dimensions non relevés ; le coffre a de la place pour une batterie de taille voisine (Q45, 03/10).
 - Batterie moteur : Varta 110 Ah, plomb, dans le coffre de cockpit tribord. Elle n'est pas concernée par l'étude.
-- Coupleur Scheiber 38.14700 à relais, prévu pour le plomb uniquement. Le coupe-circuit de couplage (node011, node012) met les deux batteries en parallèle à la main.
+- Coupleur Scheiber 38.14700 à relais, prévu pour le plomb uniquement. Le coupe-circuit de couplage (node024, node025) met les deux batteries en parallèle à la main.
 - Chargeur de quai Dolphin 12 V 20 A, trois sorties, prévu pour le plomb uniquement. Sa notice ne prévoit pas de mélanger les technologies.
 - Alternateur d'environ 20 A (spécification d'origine, Q14).
 - Bilan énergétique (estimations) : environ 60 Ah par jour au mouillage et 87 Ah par jour en navigation.
@@ -25,7 +25,7 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 | [H4](H4-chargeur-coffre/proposition.md) | Variante de H1 : Orion XS, chargeur de quai et shunt dans le coffre de la batterie au lieu de la contremarche | Supprimé à la source | comme H1, à quelques mètres de câble près | Écartée le 14/10 |
 | [H5](H5-chargeur-cockpit/proposition.md) | Variante de H1 : Blue Smart au coffre de cockpit, sortie 12 V en 10 mm² jusqu'à la niche ; Orion XS et shunt dans la contremarche | Supprimé à la source | H1 et environ 75 € de câbles | **Retenue le 14/10** |
 
-Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Toutes les questions de l'étude sont répondues (Q45 à Q53). **Câblage écrit le 05/10** : [H1](H1-lifepo4/cablage.yaml) (base : D-H1, Orion XS, chargeur de quai et shunt dans la contremarche) et sa variante [H4](H4-chargeur-coffre/cablage.yaml) (dans le coffre de la batterie). Folios cibles, chacun avec un circuit moteur et un circuit servitude : H1, [2h](H1-lifepo4/folio-2h-circuit-moteur.svg) et [2i](H1-lifepo4/folio-2i-circuit-servitude.svg) ; H4, [2j](H4-chargeur-coffre/folio-2j-circuit-moteur.svg) et [2k](H4-chargeur-coffre/folio-2k-circuit-servitude.svg). Nouveaux numéros : node360 à node379, wire200 à wire217 ; node074 (fusible de 30 A du Dolphin) est remonté sur le goujon du fusible de 400 A. Le guindeau passe sur le circuit moteur (wire217 remplace wire017).
+Les coûts sont les totaux des nomenclatures : prix relevés par recherche web le 01/10/2026 pour la batterie et les chargeurs, estimations pour le reste. Toutes les questions de l'étude sont répondues (Q45 à Q53). **Câblage écrit le 05/10** : [H1](H1-lifepo4/cablage.yaml) (base : D-H1, Orion XS, chargeur de quai et shunt dans la contremarche) et sa variante [H4](H4-chargeur-coffre/cablage.yaml) (dans le coffre de la batterie). Folios cibles, chacun avec un circuit moteur et un circuit servitude : H1, [2h](H1-lifepo4/folio-2h-circuit-moteur.svg) et [2i](H1-lifepo4/folio-2i-circuit-servitude.svg) ; H4, [2j](H4-chargeur-coffre/folio-2j-circuit-moteur.svg) et [2k](H4-chargeur-coffre/folio-2k-circuit-servitude.svg). Nouveaux numéros : node057, node058, node059, node060, node061, node062, node063, node064, node065, node066, node067, node068, node069, node070, node071, node072, node073, node317, node318, node319, wire050, wire053, wire054, wire056, wire058, wire059, wire061, wire062, wire063, wire064, wire065, wire066, wire067, wire068, wire101, wire311, wire312, wire313 ; node053 (fusible de 30 A du Dolphin) est remonté sur le goujon du fusible de 400 A. Le guindeau passe sur le circuit moteur (wire101 remplace wire102).
 
 ## Critères de comparaison
 
@@ -38,7 +38,7 @@ Les coûts sont les totaux des nomenclatures : prix relevés par recherche web l
 
 ## Ce que l'étude change chez les autres
 
-- **Étude A** : H1 dépose le coupleur et le coupe-circuit de couplage, donc les fusibles de leurs départs (wire164, wire165) et le fusible de la sortie 2 du chargeur (wire163) deviennent inutiles. Le fusible de 400 A de la batterie de servitude doit avoir un pouvoir de coupure suffisant pour une LiFePO4.
+- **Étude A** : H1 dépose le coupleur et le coupe-circuit de couplage, donc les fusibles de leurs départs (wire005, wire017) et le fusible de la sortie 2 du chargeur (wire057) deviennent inutiles. Le fusible de 400 A de la batterie de servitude doit avoir un pouvoir de coupure suffisant pour une LiFePO4.
 - **Étude D** : le shunt de 500 A était justifié par le démarrage avec les batteries couplées. Sans couplage, et avec le guindeau sur la batterie moteur (05/10), ni le démarreur ni le guindeau ne le traversent ; le plus fort courant est celui des départs de la servitude. Le SmartShunt de 500 A reste le plus petit modèle, il est conservé ; sa chimie se règle sur LiFePO4.
 - **Étude C** : le régulateur solaire devra avoir un profil LiFePO4.
 - **Réseau 230 V (folio 3)** : H1 ajoute un second chargeur de quai, sur le disjoncteur de 10 A du chargeur.

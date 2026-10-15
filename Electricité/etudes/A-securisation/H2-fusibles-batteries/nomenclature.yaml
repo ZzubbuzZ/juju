@@ -11,7 +11,7 @@ lots:
   batteries:
     titre: Fusibles de 400 A près des deux batteries
     anomalies: [A2]
-    note: wire001 et wire006 conservés en 35 mm² (option A de proposition.md, décision du 30/09).
+    note: wire001 et wire008 conservés en 35 mm² (option A de proposition.md, décision du 30/09).
   departs:
     titre: Fusibles des départs coupleur et chargeur
     anomalies: [A4]
@@ -22,34 +22,34 @@ lots:
     titre: Fusible de 30 A à la source du câble du tableau Scheiber
     anomalies: [A6]
   long_terme:
-    titre: wire006 refait en 50 mm² (différé, correction à long terme)
+    titre: wire008 refait en 50 mm² (différé, correction à long terme)
     note: Écart accepté le 30/09 ; à corriger quand l'installation vieillira, le court-circuit partiel devenant plus probable avec l'usure.
 
 articles:
   # --- Lot batteries -------------------------------------------------------------
   - { lot: batteries, designation: "Porte-fusible MEGA, fixé à côté de la batterie", quantite: 2, unite: pièce, prix_unitaire: 15, statut: estimation }
   - { lot: batteries, designation: "Fusibles MEGA 400 A", quantite: 3, unite: pièce, prix_unitaire: 8, statut: estimation, note: "Deux en place, un de rechange" }
-  - { lot: batteries, designation: "Câble étamé 35 mm² rouge (borne de batterie → porte-fusible, deux tronçons courts)", quantite: 0.6, unite: m, prix_unitaire: 14, statut: estimation, fils: [wire160, wire161] }
-  - { lot: batteries, designation: "Cosses tubulaires étamées 35 mm² (tronçons courts, et reprise de wire001 et wire006 sur les fusibles)", quantite: 6, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire160, wire161, wire001, wire006] }
+  - { lot: batteries, designation: "Câble étamé 35 mm² rouge (borne de batterie → porte-fusible, deux tronçons courts)", quantite: 0.6, unite: m, prix_unitaire: 14, statut: estimation, fils: [wire002, wire009] }
+  - { lot: batteries, designation: "Cosses tubulaires étamées 35 mm² (tronçons courts, et reprise de wire001 et wire008 sur les fusibles)", quantite: 6, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire002, wire009, wire001, wire008] }
 
   # --- Lot départs ---------------------------------------------------------------
   - { lot: departs, designation: "Porte-fusible MIDI", quantite: 4, unite: pièce, prix_unitaire: 12, statut: estimation }
   - { lot: departs, designation: "Fusibles MIDI (2 × 30 A, 2 × 40 A)", quantite: 4, unite: pièce, prix_unitaire: 6, statut: estimation }
-  - { lot: departs, designation: "Câble étamé 6 mm² rouge (coupe-circuit → porte-fusibles)", quantite: 2, unite: m, prix_unitaire: 3.5, statut: estimation, fils: [wire162, wire163, wire164, wire165] }
-  - { lot: departs, designation: "Cosses tubulaires étamées 6 mm² (tronçons courts, et reprise des câbles existants sur les fusibles)", quantite: 12, unite: pièce, prix_unitaire: 1, statut: estimation, fils: [wire162, wire163, wire164, wire165, wire002, wire003, wire007, wire008] }
+  - { lot: departs, designation: "Câble étamé 6 mm² rouge (coupe-circuit → porte-fusibles)", quantite: 2, unite: m, prix_unitaire: 3.5, statut: estimation, fils: [wire052, wire057, wire005, wire017] }
+  - { lot: departs, designation: "Cosses tubulaires étamées 6 mm² (tronçons courts, et reprise des câbles existants sur les fusibles)", quantite: 12, unite: pièce, prix_unitaire: 1, statut: estimation, fils: [wire052, wire057, wire005, wire017, wire004, wire051, wire016, wire055] }
 
   # --- Lot tableau (A1) ------------------------------------------------------------
   - { lot: tableau, designation: "Porte-fusible MIDI", quantite: 1, unite: pièce, prix_unitaire: 12, statut: estimation }
   - { lot: tableau, designation: "Fusible MIDI 50 A", quantite: 2, unite: pièce, prix_unitaire: 6, statut: estimation, note: "Un en place, un de rechange" }
-  - { lot: tableau, designation: "Câble étamé 6 mm² rouge (coupe-circuit de servitude → porte-fusible)", quantite: 0.5, unite: m, prix_unitaire: 3.5, statut: estimation, fils: [wire166] }
-  - { lot: tableau, designation: "Cosses tubulaires étamées 6 mm² et gaine", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire166, wire019] }
+  - { lot: tableau, designation: "Câble étamé 6 mm² rouge (coupe-circuit de servitude → porte-fusible)", quantite: 0.5, unite: m, prix_unitaire: 3.5, statut: estimation, fils: [wire157] }
+  - { lot: tableau, designation: "Cosses tubulaires étamées 6 mm² et gaine", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire157, wire200] }
 
   # --- Lot scheiber (A6) -------------------------------------------------------------
   - { lot: scheiber, designation: "Porte-fusible MIDI", quantite: 1, unite: pièce, prix_unitaire: 12, statut: estimation }
   - { lot: scheiber, designation: "Fusible MIDI 30 A", quantite: 2, unite: pièce, prix_unitaire: 6, statut: estimation, note: "Un en place, un de rechange" }
-  - { lot: scheiber, designation: "Câble étamé 6 mm² rouge (coupe-circuit de servitude → porte-fusible)", quantite: 0.5, unite: m, prix_unitaire: 3.5, statut: estimation, fils: [wire167] }
-  - { lot: scheiber, designation: "Cosses tubulaires étamées 6 mm² et gaine", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire167, wire022] }
+  - { lot: scheiber, designation: "Câble étamé 6 mm² rouge (coupe-circuit de servitude → porte-fusible)", quantite: 0.5, unite: m, prix_unitaire: 3.5, statut: estimation, fils: [wire156] }
+  - { lot: scheiber, designation: "Cosses tubulaires étamées 6 mm² et gaine", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire156, wire158] }
 
   # --- Lot long terme ----------------------------------------------------------------
-  - { lot: long_terme, designation: "Câble étamé 50 mm² rouge (wire006 refait)", quantite: 1.2, unite: m, prix_unitaire: 18, statut: estimation }
+  - { lot: long_terme, designation: "Câble étamé 50 mm² rouge (wire008 refait)", quantite: 1.2, unite: m, prix_unitaire: 18, statut: estimation }
   - { lot: long_terme, designation: "Cosses tubulaires étamées 50 mm²", quantite: 2, unite: pièce, prix_unitaire: 4, statut: estimation }

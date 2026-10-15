@@ -78,7 +78,7 @@ equipements:
     type: tableau
     designation: Tableau moteur (contact, jauges)
     questions: [Q65]
-    note: "Alimenté par le faisceau d'origine Yanmar depuis le + du démarreur (node031), à travers un fusible de 30 A (Q1, 13/10). Masse et emplacement non relevés (Q65)."
+    note: "Alimenté par le faisceau d'origine Yanmar depuis le + du démarreur (node100), à travers un fusible de 30 A (Q1, 13/10). Masse et emplacement non relevés (Q65)."
 
   - id: fus-tableau-moteur
     type: fusible
@@ -415,14 +415,14 @@ equipements:
     designation: Éclairage 230 V tribord (circuit du C10 n°1)
     statut: estime
     questions: [Q42, Q60]
-    note: "Circuit du disjoncteur éclairage (10 A) du boîtier tribord, noté « plafonnier 230 V » jusqu'au 12/10 ; ses nœuds (node233-235) représentent le départ du circuit, qui ne passe pas par les boîtes de dérivation (réservées aux prises, 13/10). Luminaires relevés le 12/10, un par ligne ci-dessous (eclairage-230-…) : quatre spots à LED GU10, une réglette dans le carré et un plafonnier barrette dans la cuisine. Le plafonnier métallique noté le 30/09 était une erreur (13/10) : présence d'une terre et matière des luminaires à relever (Q60)."
+    note: "Circuit du disjoncteur éclairage (10 A) du boîtier tribord, noté « plafonnier 230 V » jusqu'au 12/10 ; ses nœuds (node325-327) représentent le départ du circuit, qui ne passe pas par les boîtes de dérivation (réservées aux prises, 13/10). Luminaires relevés le 12/10, un par ligne ci-dessous (eclairage-230-…) : quatre spots à LED GU10, une réglette dans le carré et un plafonnier barrette dans la cuisine. Le plafonnier métallique noté le 30/09 était une erreur (13/10) : présence d'une terre et matière des luminaires à relever (Q60)."
 
   - id: eclairage-230-babord
     type: recepteur
     designation: Éclairage 230 V bâbord (circuit du C10 n°2)
     statut: estime
     questions: [Q42, Q60]
-    note: "Départ du second C10, supposé alimenter l'éclairage bâbord (15/10, Q42) ; ses nœuds (node217-219) représentent le départ du circuit. Répartition des six luminaires entre les deux circuits non relevée."
+    note: "Départ du second C10, supposé alimenter l'éclairage bâbord (15/10, Q42) ; ses nœuds (node330-332) représentent le départ du circuit. Répartition des six luminaires entre les deux circuits non relevée."
 
   - id: eclairage-230-poupe
     type: recepteur

@@ -5,12 +5,12 @@
 # Notice, page 67 : interrupteur et relais de 30 A sur le +, fusible de 30 A au plus près de la
 # source, 6 mm² au moins. Décision du 12/10 : ni relais ni interrupteur ; un disjoncteur 12 V CC de
 # 30 A à commande manuelle, à la platine, protège le câble et sert d'interrupteur.
-# Départ du + côté charges du coupe-circuit de servitude (node010) : le coupe-circuit coupe aussi
-# le ballon. Retour du − sur node006, côté « bord » du shunt (D-H1, E-H1) : la consommation est
-# comptée. node010 et node006 sont inchangés par les études A, D et E.
+# Départ du + côté charges du coupe-circuit de servitude (node021) : le coupe-circuit coupe aussi
+# le ballon. Retour du − sur node023, côté « bord » du shunt (D-H1, E-H1) : la consommation est
+# comptée. node021 et node023 sont inchangés par les études A, D et E.
 # Ballon sous la table à carte (12/10). Trajet du 6 mm² (13/10) : le long du bord bâbord jusqu'aux coffres de la
 # cabine de poupe, à travers eux jusqu'à la batterie de servitude, puis au disjoncteur, à côté de celui du guindeau (Q57).
-# Nœuds node308, node309, node318, node319 ; node310 à node317 et node380 (relais, commande) supprimés le 12/10.
+# Nœuds node175, node176, node177, node178 ; ceux du relais et de sa commande ont été supprimés le 12/10.
 # Longueurs estimées (Q57).
 
 hypothese: B-H3
@@ -22,16 +22,16 @@ equipements:
 
 nodes:
   # --- Disjoncteur 12 V CC de 30 A à la platine (12/10 : remplace le fusible) ---------
-  - { id: node308, equipement: disj-ballon-12v, borne: "1 (côté source)", polarite: "+" }
-  - { id: node309, equipement: disj-ballon-12v, borne: "2", polarite: "+" }
+  - { id: node175, equipement: disj-ballon-12v, borne: "1 (côté source)", polarite: "+" }
+  - { id: node176, equipement: disj-ballon-12v, borne: "2", polarite: "+" }
 
   # --- Ballon, entrée 12 V ------------------------------------------------------------
-  - { id: node318, equipement: chauffe-eau, borne: "12 V +", polarite: "+" }
-  - { id: node319, equipement: chauffe-eau, borne: "12 V −", polarite: "-" }
+  - { id: node177, equipement: chauffe-eau, borne: "12 V +", polarite: "+" }
+  - { id: node178, equipement: chauffe-eau, borne: "12 V −", polarite: "-" }
 
 fils:
   # --- Puissance : 6 mm², environ 17 A --------------------------------------------------
-  - { id: wire313, de: node010, vers: node308, section_mm2: 6, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Liaison courte de la platine au disjoncteur, placé à côté de celui du guindeau (13/10) ; protégée seulement par le MEGA de 300 A : la plus courte possible, gainée et bridée" }
-  - { id: wire306, de: node309, vers: node318, section_mm2: 6, couleur: rouge, longueur_m: 3, statut: propose, questions: [Q57], note: "Disjoncteur → ballon, par le bord bâbord et les coffres de la cabine de poupe (13/10) ; longueur estimée, sans doute plus de 3 m (Q57). À 5 m, chute de tension d'environ 4 %" }
-  - { id: wire308, de: node319, vers: node006, section_mm2: 6, couleur: noir, longueur_m: 3, statut: propose, questions: [Q57], note: "Côté « bord » du shunt : la consommation du ballon est comptée" }
+  - { id: wire154, de: node021, vers: node175, section_mm2: 6, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Liaison courte de la platine au disjoncteur, placé à côté de celui du guindeau (13/10) ; protégée seulement par le MEGA de 300 A : la plus courte possible, gainée et bridée" }
+  - { id: wire173, de: node176, vers: node177, section_mm2: 6, couleur: rouge, longueur_m: 3, statut: propose, questions: [Q57], note: "Disjoncteur → ballon, par le bord bâbord et les coffres de la cabine de poupe (13/10) ; longueur estimée, sans doute plus de 3 m (Q57). À 5 m, chute de tension d'environ 4 %" }
+  - { id: wire161, de: node178, vers: node023, section_mm2: 6, couleur: noir, longueur_m: 3, statut: propose, questions: [Q57], note: "Côté « bord » du shunt : la consommation du ballon est comptée" }
 

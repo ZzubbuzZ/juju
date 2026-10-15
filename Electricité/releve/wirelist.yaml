@@ -1,98 +1,101 @@
 # yaml-language-server: $schema=../outils/schema/donnees.schema.json
 #
 # Fils relevés à bord. Longueurs en m, sections en mm².
-# Numéros : wire001-099 relevé, wire100 et suivants réservés aux propositions.
+# Numérotation par section (15/10), commune aux nœuds et aux fils : 001-049 batteries, coupe-circuits
+# et shunt ; 050-099 charge ; 100-149 moteur et guindeau ; 150-199 distribution 12 V (départs, Scheiber,
+# frigo, ballon) ; 200-249 tableau de servitude et ses circuits ; 300-399 réseau 230 V. Un fil prend la
+# section de son bout le plus en aval. Relevé et propositions partagent les sections (champ statut).
 
 fils:
   # --- Batterie moteur -----------------------------------------------------------
-  - { id: wire001, de: node001, vers: node003, section_mm2: 35, couleur: rouge, longueur_m: 2 }
-  - { id: wire002, de: node003, vers: node013, section_mm2: 6, couleur: rouge, longueur_m: 0.5, note: "Sans fusible (A4)" }
-  - { id: wire003, de: node003, vers: node016, section_mm2: 6, couleur: rouge, longueur_m: 2, note: "Sans fusible (A4)" }
-  - { id: wire004, de: node002, vers: node008, section_mm2: 35, couleur: noir, questions: [Q62], note: "Relie les négatifs des deux batteries : la batterie moteur rejoint le coupe-circuit des négatifs par wire009 (relevé du 11/10). Trajet : coffre de cockpit tribord, compartiment moteur, cloison de la cabine arrière" }
-  - { id: wire005, de: node018, vers: node005, section_mm2: 35, couleur: noir, longueur_m: 2 }
+  - { id: wire001, de: node001, vers: node005, section_mm2: 35, couleur: rouge, longueur_m: 2 }
+  - { id: wire004, de: node005, vers: node026, section_mm2: 6, couleur: rouge, longueur_m: 0.5, note: "Sans fusible (A4)" }
+  - { id: wire051, de: node005, vers: node050, section_mm2: 6, couleur: rouge, longueur_m: 2, note: "Sans fusible (A4)" }
+  - { id: wire003, de: node002, vers: node008, section_mm2: 35, couleur: noir, questions: [Q62], note: "Relie les négatifs des deux batteries : la batterie moteur rejoint le coupe-circuit des négatifs par wire010 (relevé du 11/10). Trajet : coffre de cockpit tribord, compartiment moteur, cloison de la cabine arrière" }
+  - { id: wire060, de: node052, vers: node022, section_mm2: 35, couleur: noir, longueur_m: 2 }
 
   # --- Batterie de servitude -----------------------------------------------------
-  - { id: wire006, de: node007, vers: node009, section_mm2: 35, couleur: rouge, longueur_m: 1 }
-  - { id: wire007, de: node009, vers: node014, section_mm2: 6, couleur: rouge, longueur_m: 0.5, note: "Sans fusible (A4)" }
-  - { id: wire008, de: node009, vers: node017, section_mm2: 6, couleur: rouge, longueur_m: 2, note: "Sans fusible (A4)" }
-  - { id: wire009, de: node008, vers: node005, section_mm2: 35, couleur: noir, longueur_m: 1 }
+  - { id: wire008, de: node007, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 1 }
+  - { id: wire016, de: node020, vers: node027, section_mm2: 6, couleur: rouge, longueur_m: 0.5, note: "Sans fusible (A4)" }
+  - { id: wire055, de: node020, vers: node051, section_mm2: 6, couleur: rouge, longueur_m: 2, note: "Sans fusible (A4)" }
+  - { id: wire010, de: node008, vers: node022, section_mm2: 35, couleur: noir, longueur_m: 1 }
 
   # --- Couplage et moteur --------------------------------------------------------
-  - { id: wire010, de: node004, vers: node012, section_mm2: 35, couleur: rouge, longueur_m: 0.2 }
-  - { id: wire011, de: node009, vers: node011, section_mm2: 35, couleur: rouge, longueur_m: 0.2 }
-  - { id: wire012, de: node004, vers: node031, section_mm2: 35, couleur: rouge, longueur_m: 1 }
-  - { id: wire013, de: node006, vers: node032, section_mm2: 35, couleur: noir, longueur_m: 1 }
-  - { id: wire072, de: node031, vers: node038, questions: [Q65], note: "Faisceau d'origine Yanmar, du + démarreur au porte-fusible de 30 A (Q1, 13/10) ; section et couleur à relever" }
-  - { id: wire073, de: node039, vers: node019, questions: [Q65], note: "Faisceau d'origine, du porte-fusible au tableau moteur ; section et couleur à relever" }
-  - { id: wire014, de: node006, vers: node015, section_mm2: 6, couleur: noir, longueur_m: 1, note: "Masse du coupleur côté charges" }
+  - { id: wire007, de: node006, vers: node025, section_mm2: 35, couleur: rouge, longueur_m: 0.2 }
+  - { id: wire015, de: node020, vers: node024, section_mm2: 35, couleur: rouge, longueur_m: 0.2 }
+  - { id: wire100, de: node006, vers: node100, section_mm2: 35, couleur: rouge, longueur_m: 1 }
+  - { id: wire104, de: node023, vers: node101, section_mm2: 35, couleur: noir, longueur_m: 1 }
+  - { id: wire106, de: node100, vers: node102, questions: [Q65], note: "Faisceau d'origine Yanmar, du + démarreur au porte-fusible de 30 A (Q1, 13/10) ; section et couleur à relever" }
+  - { id: wire107, de: node103, vers: node104, questions: [Q65], note: "Faisceau d'origine, du porte-fusible au tableau moteur ; section et couleur à relever" }
+  - { id: wire018, de: node023, vers: node028, section_mm2: 6, couleur: noir, longueur_m: 1, note: "Masse du coupleur côté charges" }
 
   # --- Guindeau et tableau de servitude ------------------------------------------
-  - { id: wire015, de: node006, vers: node023, section_mm2: 50, couleur: noir, longueur_m: 10 }
-  - { id: wire016, de: node006, vers: node101, section_mm2: 6, couleur: noir, longueur_m: 3 }
-  - { id: wire017, de: node010, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 0.5 }
-  - { id: wire018, de: node021, vers: node022, section_mm2: 50, couleur: rouge, longueur_m: 10 }
-  - { id: wire019, de: node010, vers: node100, section_mm2: 6, couleur: rouge, longueur_m: 3, note: "Aucune protection (A1). Part de la sortie du coupe-circuit de servitude, et non de l'entrée du disjoncteur du guindeau (correction du 01/10)" }
-  - { id: wire020, de: node024, vers: node029, section_mm2: 10, couleur: rouge, longueur_m: 0.5 }
-  - { id: wire021, de: node025, vers: node030, section_mm2: 10, couleur: noir, longueur_m: 0.5 }
+  - { id: wire105, de: node023, vers: node111, section_mm2: 50, couleur: noir, longueur_m: 10 }
+  - { id: wire201, de: node023, vers: node201, section_mm2: 6, couleur: noir, longueur_m: 3 }
+  - { id: wire102, de: node021, vers: node108, section_mm2: 35, couleur: rouge, longueur_m: 0.5 }
+  - { id: wire109, de: node109, vers: node110, section_mm2: 50, couleur: rouge, longueur_m: 10 }
+  - { id: wire200, de: node021, vers: node200, section_mm2: 6, couleur: rouge, longueur_m: 3, note: "Aucune protection (A1). Part de la sortie du coupe-circuit de servitude, et non de l'entrée du disjoncteur du guindeau (correction du 01/10)" }
+  - { id: wire111, de: node112, vers: node117, section_mm2: 10, couleur: rouge, longueur_m: 0.5 }
+  - { id: wire112, de: node113, vers: node118, section_mm2: 10, couleur: noir, longueur_m: 0.5 }
 
   # --- Télécommande du guindeau (Q2) ----------------------------------------------
-  - { id: wire061, de: node022, vers: node033, note: "Pris sur le + d'entrée du relais" }
-  - { id: wire062, de: node034, vers: node035 }
-  - { id: wire063, de: node036, vers: node026 }
-  - { id: wire064, de: node037, vers: node027 }
+  - { id: wire110, de: node110, vers: node119, note: "Pris sur le + d'entrée du relais" }
+  - { id: wire115, de: node120, vers: node121 }
+  - { id: wire113, de: node122, vers: node114 }
+  - { id: wire114, de: node123, vers: node115 }
 
   # --- Tableau Scheiber 2 voies (Q3, Q25, Q29)
-  - { id: wire022, de: node010, vers: node050, section_mm2: 6, note: "Sans fusible (A6)" }
-  - { id: wire023, de: node006, vers: node051, section_mm2: 6 }
-  - { id: wire024, de: node052, vers: node042, section_mm2: 3.5, section_indicative: true }
-  - { id: wire025, de: node051, vers: node043, section_mm2: 3.5, section_indicative: true, note: "Retour de l'EPS 100 sur la barrette de masse du tableau" }
-  - { id: wire026, de: node053, vers: node056, section_mm2: 2.5 }
-  - { id: wire036, de: node057, vers: node051, section_mm2: 2.5, note: "Masse de la pompe sur la barrette du tableau Scheiber" }
+  - { id: wire158, de: node021, vers: node159, section_mm2: 6, note: "Sans fusible (A6)" }
+  - { id: wire162, de: node023, vers: node160, section_mm2: 6 }
+  - { id: wire165, de: node161, vers: node169, section_mm2: 3.5, section_indicative: true }
+  - { id: wire166, de: node160, vers: node170, section_mm2: 3.5, section_indicative: true, note: "Retour de l'EPS 100 sur la barrette de masse du tableau" }
+  - { id: wire167, de: node162, vers: node167, section_mm2: 2.5 }
+  - { id: wire168, de: node168, vers: node160, section_mm2: 2.5, note: "Masse de la pompe sur la barrette du tableau Scheiber" }
 
   # --- Frigo : EPS 100 vers groupe froid (Q16) -----------------------------------
-  - { id: wire027, de: node044, vers: node040, section_mm2: 3.5, section_indicative: true, longueur_m: 3, note: "Longueur estimée. Câble étamé vissé sans cosse dans les bornes de l'EPS 100 (A7)" }
-  - { id: wire028, de: node045, vers: node041, section_mm2: 3.5, section_indicative: true, longueur_m: 3, note: "Longueur estimée. Câble étamé vissé sans cosse dans les bornes de l'EPS 100 (A7)" }
+  - { id: wire171, de: node171, vers: node173, section_mm2: 3.5, section_indicative: true, longueur_m: 3, note: "Longueur estimée. Câble étamé vissé sans cosse dans les bornes de l'EPS 100 (A7)" }
+  - { id: wire172, de: node172, vers: node174, section_mm2: 3.5, section_indicative: true, longueur_m: 3, note: "Longueur estimée. Câble étamé vissé sans cosse dans les bornes de l'EPS 100 (A7)" }
 
   # --- 230 V : boîtier d'arrivée et chargeur (Q23, Q26) ---------------------------
-  - { id: wire029, de: node203, vers: node206, section_mm2: 2.5 }
-  - { id: wire030, de: node204, vers: node207, section_mm2: 2.5 }
-  - { id: wire031, de: node208, vers: node210, section_mm2: 2.5 }
-  - { id: wire032, de: node211, vers: node200, section_mm2: 2.5 }
-  - { id: wire033, de: node209, vers: node201, section_mm2: 2.5 }
-  - { id: wire034, de: node205, vers: node212, section_mm2: 2.5 }
-  - { id: wire035, de: node212, vers: node202, section_mm2: 2.5 }
+  - { id: wire300, de: node300, vers: node305, section_mm2: 2.5 }
+  - { id: wire301, de: node301, vers: node306, section_mm2: 2.5 }
+  - { id: wire314, de: node308, vers: node310, section_mm2: 2.5 }
+  - { id: wire305, de: node311, vers: node312, section_mm2: 2.5 }
+  - { id: wire306, de: node309, vers: node313, section_mm2: 2.5 }
+  - { id: wire302, de: node302, vers: node307, section_mm2: 2.5 }
+  - { id: wire307, de: node307, vers: node314, section_mm2: 2.5 }
 
   # --- 230 V : distribution (description du 28/09, photo Circuit-electrique-230v)
-  - { id: wire038, de: node208, vers: node220, section_mm2: 2.5, statut: a_verifier, note: "Depuis la sortie phase du différentiel, sans disjoncteur (15/10, A12 ; partait d'un disjoncteur 16 A inexistant, relevé par erreur). Chemin exact non relevé, jugé secondaire" }
-  - { id: wire039, de: node209, vers: node221, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
-  - { id: wire040, de: node212, vers: node222, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
-  - { id: wire041, de: node237, vers: node240, section_mm2: 2.5, statut: a_verifier, note: "Depuis le disjoncteur 16 A bâbord du boîtier tribord (30/09) ; chemin exact non relevé" }
-  - { id: wire042, de: node221, vers: node241, section_mm2: 2.5, statut: a_verifier, note: "Depuis le boîtier tribord (30/09) ; chemin exact non relevé" }
-  - { id: wire043, de: node222, vers: node242, section_mm2: 2.5, statut: a_verifier, note: "Depuis le boîtier tribord (30/09) ; chemin exact non relevé" }
-  - { id: wire044, de: node226, vers: node227, section_mm2: 2.5 }
-  - { id: wire045, de: node221, vers: node228, section_mm2: 2.5 }
-  - { id: wire046, de: node222, vers: node229, section_mm2: 2.5 }
-  - { id: wire047, de: node226, vers: node230, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
-  - { id: wire048, de: node221, vers: node231, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
-  - { id: wire049, de: node222, vers: node232, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
-  - { id: wire050, de: node224, vers: node233, section_mm2: 1.5 }
-  - { id: wire051, de: node221, vers: node234, section_mm2: 1.5 }
-  - { id: wire068, de: node222, vers: node235, section_mm2: 1.5, statut: a_verifier, note: "Terre du circuit d'éclairage ; notée raccordée le 30/09 sur un plafonnier qui était une erreur (13/10) : à vérifier (Q60)", questions: [Q60] }
-  - { id: wire074, de: node216, vers: node217, section_mm2: 1.5, statut: estime, questions: [Q42], note: "Câble de l'éclairage bâbord, seul câble du C10 n°2 (12/10) ; affectation supposée (15/10)" }
-  - { id: wire075, de: node221, vers: node218, section_mm2: 1.5, statut: estime }
-  - { id: wire076, de: node222, vers: node219, section_mm2: 1.5, statut: a_verifier, note: "Terre du circuit d'éclairage bâbord, comme wire068 : à vérifier" }
-  - { id: wire052, de: node047, vers: node227, note: "Cordon de l'EPS 100, branché sur sa prise ; fiche à deux contacts, sans terre (29/09)" }
-  - { id: wire053, de: node048, vers: node228 }
-  # wire054 (terre du cordon de l'EPS 100) supprimé le 29/09 : le cordon n'a pas de terre. Numéro à ne pas réutiliser.
-  - { id: wire055, de: node240, vers: node247, section_mm2: 2.5 }
-  - { id: wire056, de: node241, vers: node248, section_mm2: 2.5 }
-  - { id: wire057, de: node242, vers: node249, section_mm2: 2.5 }
-  - { id: wire058, de: node240, vers: node250, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
-  - { id: wire059, de: node241, vers: node251, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
-  - { id: wire060, de: node242, vers: node252, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
-  - { id: wire065, de: node226, vers: node253, section_mm2: 2.5, statut: a_verifier, note: "Prise du cabinet de toilette (30/09) ; raccordement en étoile supposé, non relevé" }
-  - { id: wire066, de: node221, vers: node254, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé" }
-  - { id: wire067, de: node222, vers: node255, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé" }
-  - { id: wire069, de: node240, vers: node243, section_mm2: 2.5, statut: a_verifier, note: "Prise de la cabine de proue, sur la boîte de dérivation bâbord (13/10) ; raccordement en étoile supposé, section prise comme celle des autres prises" }
-  - { id: wire070, de: node241, vers: node244, section_mm2: 2.5, statut: a_verifier }
-  - { id: wire071, de: node242, vers: node245, section_mm2: 2.5, statut: a_verifier }
+  - { id: wire308, de: node308, vers: node320, section_mm2: 2.5, statut: a_verifier, note: "Depuis la sortie phase du différentiel, sans disjoncteur (15/10, A12 ; partait d'un disjoncteur 16 A inexistant, relevé par erreur). Chemin exact non relevé, jugé secondaire" }
+  - { id: wire309, de: node309, vers: node321, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
+  - { id: wire310, de: node307, vers: node322, section_mm2: 2.5, statut: a_verifier, note: "Chemin exact non relevé (boîte de dérivation ?), jugé secondaire" }
+  - { id: wire316, de: node353, vers: node354, section_mm2: 2.5, statut: a_verifier, note: "Depuis le disjoncteur 16 A bâbord du boîtier tribord (30/09) ; chemin exact non relevé" }
+  - { id: wire317, de: node321, vers: node355, section_mm2: 2.5, statut: a_verifier, note: "Depuis le boîtier tribord (30/09) ; chemin exact non relevé" }
+  - { id: wire318, de: node322, vers: node356, section_mm2: 2.5, statut: a_verifier, note: "Depuis le boîtier tribord (30/09) ; chemin exact non relevé" }
+  - { id: wire319, de: node340, vers: node341, section_mm2: 2.5 }
+  - { id: wire320, de: node321, vers: node342, section_mm2: 2.5 }
+  - { id: wire321, de: node322, vers: node343, section_mm2: 2.5 }
+  - { id: wire322, de: node340, vers: node346, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire323, de: node321, vers: node347, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire324, de: node322, vers: node348, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire325, de: node324, vers: node325, section_mm2: 1.5 }
+  - { id: wire326, de: node321, vers: node326, section_mm2: 1.5 }
+  - { id: wire327, de: node322, vers: node327, section_mm2: 1.5, statut: a_verifier, note: "Terre du circuit d'éclairage ; notée raccordée le 30/09 sur un plafonnier qui était une erreur (13/10) : à vérifier (Q60)", questions: [Q60] }
+  - { id: wire331, de: node329, vers: node330, section_mm2: 1.5, statut: estime, questions: [Q42], note: "Câble de l'éclairage bâbord, seul câble du C10 n°2 (12/10) ; affectation supposée (15/10)" }
+  - { id: wire332, de: node321, vers: node331, section_mm2: 1.5, statut: estime }
+  - { id: wire333, de: node322, vers: node332, section_mm2: 1.5, statut: a_verifier, note: "Terre du circuit d'éclairage bâbord, comme wire327 : à vérifier" }
+  - { id: wire340, de: node344, vers: node341, note: "Cordon de l'EPS 100, branché sur sa prise ; fiche à deux contacts, sans terre (29/09)" }
+  - { id: wire341, de: node345, vers: node342 }
+  # La terre du cordon de l'EPS 100, notée au début, a été supprimée le 29/09 : le cordon n'a pas de terre.
+  - { id: wire342, de: node354, vers: node357, section_mm2: 2.5 }
+  - { id: wire343, de: node355, vers: node358, section_mm2: 2.5 }
+  - { id: wire344, de: node356, vers: node359, section_mm2: 2.5 }
+  - { id: wire345, de: node354, vers: node360, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire346, de: node355, vers: node361, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire347, de: node356, vers: node362, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé (jugé secondaire)" }
+  - { id: wire328, de: node340, vers: node349, section_mm2: 2.5, statut: a_verifier, note: "Prise du cabinet de toilette (30/09) ; raccordement en étoile supposé, non relevé" }
+  - { id: wire329, de: node321, vers: node350, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé" }
+  - { id: wire330, de: node322, vers: node351, section_mm2: 2.5, statut: a_verifier, note: "Raccordement en étoile supposé, non relevé" }
+  - { id: wire348, de: node354, vers: node363, section_mm2: 2.5, statut: a_verifier, note: "Prise de la cabine de proue, sur la boîte de dérivation bâbord (13/10) ; raccordement en étoile supposé, section prise comme celle des autres prises" }
+  - { id: wire349, de: node355, vers: node364, section_mm2: 2.5, statut: a_verifier }
+  - { id: wire350, de: node356, vers: node365, section_mm2: 2.5, statut: a_verifier }

@@ -1,6 +1,6 @@
 # Mise en page du folio 2m (B-H1), lue par outils/folio.py qui produit le SVG voisin.
 # Unifilaire comme le folio 3 : un câble = un trait (cables:), ses conducteurs cités dans l'étiquette.
-# Neutre (node221) et terre (node222) partent des barrettes du boîtier tribord avec la phase du second C10 :
+# Neutre (node321) et terre (node322) partent des barrettes du boîtier tribord avec la phase du second C10 :
 # une barre de longueur nulle les porte au départ du câble ; de même pour la fiche du ballon dans sa prise.
 folio: 2m
 titre: Chauffe-eau CozyWater 10C, alimentation
@@ -22,17 +22,17 @@ appareils:
     titre: Boîtier d'arrivée
     lignes: [différentiel 30 mA, sans disjoncteur (A12)]
     nodes:
-      node208: {cote: droite, a: 125, fonction: "P / N / PE"}
-      node209: [droite, 125]
-      node212: [droite, 125]
+      node308: {cote: droite, a: 125, fonction: "P / N / PE"}
+      node309: [droite, 125]
+      node307: [droite, 125]
 
   # --- Boîtier tribord ---------------------------------------------------------------------
   - id: boitier-230-tribord
     forme: barre      # barres de phase, de neutre et de terre (barres: ci-dessous)
     nodes:
-      node220: {cote: point, xy: [440, 200], etiquette: [-6, 18, end], fonction: "P / N / PE"}
-      node221: {cote: point, xy: [440, 200]}
-      node222: {cote: point, xy: [440, 200]}
+      node320: {cote: point, xy: [440, 200], etiquette: [-6, 18, end], fonction: "P / N / PE"}
+      node321: {cote: point, xy: [440, 200]}
+      node322: {cote: point, xy: [440, 200]}
   - id: disj-trib-eclairage
     forme: fusible
     calibre: 10 A
@@ -41,8 +41,8 @@ appareils:
     titre_xy: [152, 219]
     titre_ancre: ""
     nodes:
-      node223: {cote: point, xy: [140, 200], etiquette: [5, -6]}
-      node224: {cote: point, xy: [140, 230], etiquette: [6, 14]}
+      node323: {cote: point, xy: [140, 200], etiquette: [5, -6]}
+      node324: {cote: point, xy: [140, 230], etiquette: [6, 14]}
   - id: disj-trib-10a-2
     forme: fusible
     calibre: 10 A
@@ -50,8 +50,8 @@ appareils:
     titre_xy: [298, 219]
     titre_ancre: ""
     nodes:
-      node215: {cote: point, xy: [260, 200], etiquette: [5, -6]}
-      node216: {cote: point, xy: [260, 230], etiquette: [6, 14]}
+      node328: {cote: point, xy: [260, 200], etiquette: [5, -6]}
+      node329: {cote: point, xy: [260, 230], etiquette: [6, 14]}
   - id: disj-trib-prises
     forme: fusible
     calibre: 16 A
@@ -60,8 +60,8 @@ appareils:
     titre_xy: [542, 219]
     titre_ancre: ""
     nodes:
-      node225: {cote: point, xy: [530, 200], etiquette: [5, -6]}
-      node226: {cote: point, xy: [530, 230], etiquette: [6, 14]}
+      node339: {cote: point, xy: [530, 200], etiquette: [5, -6]}
+      node340: {cote: point, xy: [530, 230], etiquette: [6, 14]}
   - id: disj-babord-prises
     forme: fusible
     calibre: 16 A
@@ -70,8 +70,8 @@ appareils:
     titre_xy: [672, 219]
     titre_ancre: ""
     nodes:
-      node236: {cote: point, xy: [660, 200], etiquette: [5, -6]}
-      node237: {cote: point, xy: [660, 230], etiquette: [6, 14]}
+      node352: {cote: point, xy: [660, 200], etiquette: [5, -6]}
+      node353: {cote: point, xy: [660, 230], etiquette: [6, 14]}
 
   # --- Prise dédiée et ballon ---------------------------------------------------------------
   - id: prise-230-ballon
@@ -83,9 +83,9 @@ appareils:
     titre_y: 18
     lignes: [PC 16 A · Schuko]
     nodes:
-      node300: {cote: gauche, a: 490, fonction: "P / N / PE"}
-      node301: [gauche, 490]
-      node302: [gauche, 490]
+      node333: {cote: gauche, a: 490, fonction: "P / N / PE"}
+      node334: [gauche, 490]
+      node335: [gauche, 490]
   - id: chauffe-eau
     x: 720
     y: 390
@@ -95,9 +95,9 @@ appareils:
     titre: CozyWater 10C
     lignes: ["230 V · 800 W · 3,5 A", "12 V · 200 W (B-H3)", "circuit d'eau : folio 2l"]
     nodes:
-      node303: {cote: gauche, a: 490, fonction: "P / N / PE"}
-      node304: [gauche, 490]
-      node305: [gauche, 490]
+      node336: {cote: gauche, a: 490, fonction: "P / N / PE"}
+      node337: [gauche, 490]
+      node338: [gauche, 490]
   - id: panneau-commande
     nouveau: true
     x: 745
@@ -108,40 +108,40 @@ appareils:
     lignes: [fourni · minuterie]
 
 barres:
-  - {node: node220, de: [100, 200], a: [690, 200], classe: n}
-  - {node: node221, de: [100, 200], a: [690, 200], classe: n}
-  - {node: node222, de: [100, 200], a: [690, 200], classe: n}
+  - {node: node320, de: [100, 200], a: [690, 200], classe: n}
+  - {node: node321, de: [100, 200], a: [690, 200], classe: n}
+  - {node: node322, de: [100, 200], a: [690, 200], classe: n}
   # neutre et terre au départ du câble de l'éclairage bâbord, transféré sur le C10 n°1 (longueur nulle)
-  - {node: node221, de: [140, 230], a: [140, 230], classe: n, epaisseur: w2}
-  - {node: node222, de: [140, 230], a: [140, 230], classe: n, epaisseur: w2}
+  - {node: node321, de: [140, 230], a: [140, 230], classe: n, epaisseur: w2}
+  - {node: node322, de: [140, 230], a: [140, 230], classe: n, epaisseur: w2}
   # neutre et terre au départ du câble du second C10 (longueur nulle)
-  - {node: node221, de: [260, 230], a: [260, 230], classe: n, epaisseur: w2}
-  - {node: node222, de: [260, 230], a: [260, 230], classe: n, epaisseur: w2}
+  - {node: node321, de: [260, 230], a: [260, 230], classe: n, epaisseur: w2}
+  - {node: node322, de: [260, 230], a: [260, 230], classe: n, epaisseur: w2}
   # fiche Schuko du ballon dans la prise dédiée
-  - {node: node300, de: [560, 490], a: [560, 490], classe: n, epaisseur: w2}
-  - {node: node301, de: [560, 490], a: [560, 490], classe: n, epaisseur: w2}
-  - {node: node302, de: [560, 490], a: [560, 490], classe: n, epaisseur: w2}
+  - {node: node333, de: [560, 490], a: [560, 490], classe: n, epaisseur: w2}
+  - {node: node334, de: [560, 490], a: [560, 490], classe: n, epaisseur: w2}
+  - {node: node335, de: [560, 490], a: [560, 490], classe: n, epaisseur: w2}
 
 cables:
   eclairage-babord:
-    fils: [wire074, wire075, wire076]
+    fils: [wire331, wire332, wire333]
     trace: [[140, 230], [140, 330]]
     etiquette: [134, 290, end]
-    texte: "w074-6"
+    texte: "w331-3"
     obliques_xy: [140, 270]
   arrivee:
-    fils: [wire038, wire039, wire040]
+    fils: [wire308, wire309, wire310]
     trace: [[230, 125], [440, 125], [440, 200]]
     etiquette: [300, 117, mid]
     obliques_xy: [380, 125]
   prise-dediee:
-    fils: [wire300, wire301, wire302]
+    fils: [wire334, wire335, wire336]
     trace: [[260, 230], [260, 490], [420, 490]]
     etiquette: [252, 380, end]
-    texte: "w300-2 · 3 × 1,5"
+    texte: "w334-6 · 3 × 1,5"
     obliques_xy: [260, 420]
   cordon:
-    fils: [wire303, wire304, wire305]
+    fils: [wire337, wire338, wire339]
     trace: [[560, 490], [720, 490]]
     etiquette: [640, 482, mid]
 
@@ -151,7 +151,7 @@ traits:
   - {classe: p w3, points: [[940, 450], [1000, 450]]}
 
 renvois:
-  - {x: 30, y: 330, w: 205, nouveau: true, texte: "→ n217-9 : folio 3"}
+  - {x: 30, y: 330, w: 205, nouveau: true, texte: "→ n330-2 : folio 3"}
   - {x: 1000, y: 410, w: 180, h: 80, nouveau: true, texte: "Entrée 12 V · 200 W"}
 
 pastilles:
@@ -162,7 +162,7 @@ textes:
   - {x: 30, y: 38, texte: "Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau"}
   - {x: 252, y: 395, classe: ts end, texte: "H07RN-F 3G1,5 · ≈ 5 m"}
   - {x: 300, y: 345, classe: tb tn, texte: "Transfert à faire avant de poser le ballon :"}
-  - {x: 300, y: 361, classe: ts, texte: "le câble de l'éclairage bâbord (w074) passe"}
+  - {x: 300, y: 361, classe: ts, texte: "le câble de l'éclairage bâbord (w331) passe"}
   - {x: 300, y: 376, classe: ts, texte: "du C10 n°2 au C10 n°1, qui alimente alors"}
   - {x: 300, y: 391, classe: ts, texte: "tout l'éclairage (≈ 0,4 A) ; le C10 n°2 libéré"}
   - {x: 300, y: 406, classe: ts, texte: "alimente le ballon. Affectation supposée (Q42)."}
@@ -172,4 +172,4 @@ textes:
   - {x: 830, y: 240, classe: ts mid, texte: "sur le tableau de servitude · câble 3 m"}
   - {x: 1090, y: 442, classe: ts mid, texte: "câblée en permanence"}
   - {x: 1090, y: 458, classe: ts mid, texte: "disjoncteur CC 30 A (B-H3)"}
-  - {x: 1090, y: 476, classe: id mid, texte: "n318 · n319 : folio 2n"}
+  - {x: 1090, y: 476, classe: id mid, texte: "n177 · n178 : folio 2n"}

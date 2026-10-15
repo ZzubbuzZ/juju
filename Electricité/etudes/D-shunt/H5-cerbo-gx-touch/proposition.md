@@ -32,14 +32,14 @@ Tout ce que décrit [D-H1](../H1-shunt-connecte/proposition.md#câblage), plus :
 
 | Fil | De → vers | Rôle |
 |---|---|---|
-| wire186 → wire187 | côté charges du coupe-circuit de servitude (node010) → fusible 3 A → Cerbo GX + (node342) | Alimentation du Cerbo GX, 0,75 mm² |
-| wire188 | Cerbo GX − (node343) → coupe-circuit des négatifs, côté charges (node006) | Masse du Cerbo GX, comptée par le shunt |
-| wire189 | port VE.Direct du SmartShunt (node094) → Cerbo GX (node344) | Câble VE.Direct de 1,8 m |
-| wire190 | Cerbo GX (node345) → GX Touch 50 (node346) | Câble de l'écran (2 m fourni, plus une rallonge de 2 m), sur le trajet de wire019 |
+| wire155 → wire174 | côté charges du coupe-circuit de servitude (node021) → fusible 3 A → Cerbo GX + (node182) | Alimentation du Cerbo GX, 0,75 mm² |
+| wire160 | Cerbo GX − (node183) → coupe-circuit des négatifs, côté charges (node023) | Masse du Cerbo GX, comptée par le shunt |
+| wire151 | port VE.Direct du SmartShunt (node015) → Cerbo GX (node184) | Câble VE.Direct de 1,8 m |
+| wire175 | Cerbo GX (node185) → GX Touch 50 (node186) | Câble de l'écran (2 m fourni, plus une rallonge de 2 m), sur le trajet de wire200 |
 
 Points de câblage :
 
-- **Cerbo GX alimenté après le coupe-circuit de servitude** : il s'éteint quand on coupe le bateau, ce qui supprime sa consommation au port. Le SmartShunt, alimenté avant le coupe-circuit (node009), continue de compter : l'historique reste complet.
+- **Cerbo GX alimenté après le coupe-circuit de servitude** : il s'éteint quand on coupe le bateau, ce qui supprime sa consommation au port. Le SmartShunt, alimenté avant le coupe-circuit (node020), continue de compter : l'historique reste complet.
 - **Fusible de 3 A à la source**, contre la borne, comme les autres départs. Le Cerbo GX consomme environ 0,3 A.
 - **Cerbo GX près de la platine des coupe-circuits** : câble VE.Direct court jusqu'au shunt, et place pour les futurs appareils (régulateur solaire, chargeur). Si la place manque, il peut aller à la table à carte, avec un câble VE.Direct de 5 m et sans rallonge d'écran (Q43).
 

@@ -14,8 +14,8 @@ lots:
 articles:
   - { lot: mesure, designation: "Victron SmartShunt IP65 500 A/50 mV (Bluetooth, entrée auxiliaire)", reference: SHU065150050, quantite: 1, unite: pièce, prix_unitaire: 86, statut: catalogue, source: "Prix trouvé par l'utilisateur", date_prix: "2026-10-05", note: "Version étanche IP65, même fonctions que le SmartShunt standard ; référence à vérifier à la commande" }
   - { lot: mesure, designation: "Fusibles 1 A de rechange", quantite: 2, unite: pièce, prix_unitaire: 0.5, statut: estimation }
-  - { lot: mesure, designation: "Câble étamé 0,75 mm² rouge (fils de mesure)", quantite: 2, unite: m, prix_unitaire: 1, statut: estimation, fils: [wire181, wire182, wire183, wire184] }
-  - { lot: mesure, designation: "Câble étamé 35 mm² noir (shunt → coupe-circuit des négatifs)", quantite: 0.5, unite: m, prix_unitaire: 14, statut: estimation, fils: [wire180] }
-  - { lot: mesure, designation: "Cosses tubulaires étamées 35 mm² (wire180, et reprise de wire009 sur le shunt)", quantite: 3, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire180, wire009] }
-  - { lot: mesure, designation: "Reprise de wire004 (− batterie moteur) sur le coupe-circuit des négatifs : câble 35 mm² noir et cosses", quantite: 1, unite: lot, statut: a_chiffrer, fils: [wire004], note: "Rallonge ou câble refait : dépend du trajet et de la longueur (Q62)" }
-  - { lot: mesure, designation: "Cosses à œillet 0,75 mm² et gaine thermorétractable", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire181, wire182, wire183, wire184] }
+  - { lot: mesure, designation: "Câble étamé 0,75 mm² rouge (fils de mesure)", quantite: 2, unite: m, prix_unitaire: 1, statut: estimation, fils: [wire014, wire012, wire006, wire013] }
+  - { lot: mesure, designation: "Câble étamé 35 mm² noir (shunt → coupe-circuit des négatifs)", quantite: 0.5, unite: m, prix_unitaire: 14, statut: estimation, fils: [wire011] }
+  - { lot: mesure, designation: "Cosses tubulaires étamées 35 mm² (wire011, et reprise de wire010 sur le shunt)", quantite: 3, unite: pièce, prix_unitaire: 3, statut: estimation, fils: [wire011, wire010] }
+  - { lot: mesure, designation: "Reprise de wire003 (− batterie moteur) sur le coupe-circuit des négatifs : câble 35 mm² noir et cosses", quantite: 1, unite: lot, statut: a_chiffrer, fils: [wire003], note: "Rallonge ou câble refait : dépend du trajet et de la longueur (Q62)" }
+  - { lot: mesure, designation: "Cosses à œillet 0,75 mm² et gaine thermorétractable", quantite: 1, unite: lot, prix_unitaire: 5, statut: estimation, fils: [wire014, wire012, wire006, wire013] }

@@ -1,7 +1,7 @@
 # Mise en page du folio 3 (réseau 230 V du relevé), lue par outils/folio.py qui produit le SVG voisin.
 # Unifilaire : un câble = un trait (cables:), ses trois conducteurs cités dans l'étiquette.
 # Les nœuds d'un même câble sont au même point de l'appareil (une seule étiquette).
-# Le neutre (node209, node221) et la terre (node212, node222) partent des barrettes avec la phase
+# Le neutre (node309, node321) et la terre (node307, node322) partent des barrettes avec la phase
 # de chaque disjoncteur : au départ de chaque câble, une barre de longueur nulle (« point de
 # raccordement ») porte ces nœuds, sous le rond du disjoncteur.
 folio: 3
@@ -12,7 +12,7 @@ modele: releve
 taille: [1200, 760]
 
 zones:
-  - {x: 320, y: 70, w: 380, h: 210, texte: "Boîtier d'arrivée · coffre de cockpit tribord · terre : barrette n212"}
+  - {x: 320, y: 70, w: 380, h: 210, texte: "Boîtier d'arrivée · coffre de cockpit tribord · terre : barrette n307"}
   - {x: 40, y: 322, w: 640, h: 118, texte: "Boîtier de distribution tribord · cabinet de toilette · Legrand DNX3"}
   - {x: 830, y: 330, w: 340, h: 110, texte: "Boîte de dérivation bâbord · table à carte"}
 
@@ -26,9 +26,9 @@ appareils:
     titre: Prise de quai
     lignes: [EU · banc tribord]
     nodes:
-      node203: {cote: droite, a: 165, fonction: "P / N / PE"}
-      node204: [droite, 165]
-      node205: [droite, 165]
+      node300: {cote: droite, a: 165, fonction: "P / N / PE"}
+      node301: [droite, 165]
+      node302: [droite, 165]
   - id: ddr-230v
     x: 340
     y: 110
@@ -37,18 +37,18 @@ appareils:
     titre: Différentiel
     lignes: [30 mA · 25 A]
     nodes:
-      node206: {cote: gauche, a: 165, fonction: "entrée P / N · PE"}
-      node207: [gauche, 165]
-      node212: [gauche, 165]
-      node208: {cote: droite, a: 190, fonction: "sortie P / N"}
-      node209: [droite, 190]
+      node305: {cote: gauche, a: 165, fonction: "entrée P / N · PE"}
+      node306: [gauche, 165]
+      node307: [gauche, 165]
+      node308: {cote: droite, a: 190, fonction: "sortie P / N"}
+      node309: [droite, 190]
   - id: disj-chargeur
     forme: fusible
     calibre: 10 A
     titre: chargeur
     nodes:
-      node210: {cote: point, xy: [600, 155], etiquette: [-2, 22, end]}
-      node211: {cote: point, xy: [660, 155], etiquette: [2, 22]}
+      node310: {cote: point, xy: [600, 155], etiquette: [-2, 22, end]}
+      node311: {cote: point, xy: [660, 155], etiquette: [2, 22]}
   - id: chargeur-quai
     x: 900
     y: 80
@@ -57,17 +57,17 @@ appareils:
     titre: Chargeur de quai
     lignes: [Dolphin 12 V · 20 A, "sorties 12 V : folio 1"]
     nodes:
-      node200: {cote: gauche, a: 155, fonction: "P / N / PE"}
-      node201: [gauche, 155]
-      node202: [gauche, 155]
+      node312: {cote: gauche, a: 155, fonction: "P / N / PE"}
+      node313: [gauche, 155]
+      node314: [gauche, 155]
 
   # --- Boîtier de distribution tribord -------------------------------------------------
   - id: boitier-230-tribord
     forme: barre      # barres de phase, de neutre et de terre (barres: ci-dessous)
     nodes:
-      node220: {cote: point, xy: [420, 370], etiquette: [-6, -16, end], fonction: "P / N / PE"}
-      node221: {cote: point, xy: [420, 370]}
-      node222: {cote: point, xy: [420, 370]}
+      node320: {cote: point, xy: [420, 370], etiquette: [-6, -16, end], fonction: "P / N / PE"}
+      node321: {cote: point, xy: [420, 370]}
+      node322: {cote: point, xy: [420, 370]}
   - id: disj-trib-eclairage
     forme: fusible
     calibre: 10 A
@@ -76,8 +76,8 @@ appareils:
     titre_xy: [122, 389]
     titre_ancre: ""
     nodes:
-      node223: {cote: point, xy: [110, 370], etiquette: [5, -6]}
-      node224: {cote: point, xy: [110, 400], etiquette: [6, 14]}
+      node323: {cote: point, xy: [110, 370], etiquette: [5, -6]}
+      node324: {cote: point, xy: [110, 400], etiquette: [6, 14]}
   - id: disj-trib-10a-2
     forme: fusible
     calibre: 10 A
@@ -85,8 +85,8 @@ appareils:
     titre_xy: [272, 389]
     titre_ancre: ""
     nodes:
-      node215: {cote: point, xy: [230, 370], etiquette: [5, -6]}
-      node216: {cote: point, xy: [230, 400], etiquette: [-6, 14, end]}
+      node328: {cote: point, xy: [230, 370], etiquette: [5, -6]}
+      node329: {cote: point, xy: [230, 400], etiquette: [-6, 14, end]}
   - id: disj-trib-prises
     forme: fusible
     calibre: 16 A
@@ -95,8 +95,8 @@ appareils:
     titre_xy: [482, 389]
     titre_ancre: ""
     nodes:
-      node225: {cote: point, xy: [470, 370], etiquette: [5, -6]}
-      node226: {cote: point, xy: [470, 400], etiquette: [6, 14]}
+      node339: {cote: point, xy: [470, 370], etiquette: [5, -6]}
+      node340: {cote: point, xy: [470, 400], etiquette: [6, 14]}
   - id: disj-babord-prises
     forme: fusible
     calibre: 16 A
@@ -105,8 +105,8 @@ appareils:
     titre_xy: [632, 389]
     titre_ancre: ""
     nodes:
-      node236: {cote: point, xy: [620, 370], etiquette: [5, -6]}
-      node237: {cote: point, xy: [620, 400], etiquette: [-6, 14, end]}
+      node352: {cote: point, xy: [620, 370], etiquette: [5, -6]}
+      node353: {cote: point, xy: [620, 400], etiquette: [-6, 14, end]}
 
   # --- Récepteurs tribord ---------------------------------------------------------------
   - id: plafonnier-230
@@ -117,9 +117,9 @@ appareils:
     symbole: "×"
     lignes: [Éclairage tribord, "terre à vérifier"]
     nodes:
-      node233: {angle: 90, cote: point, etiquette: [8, -12], fonction: "P / N / PE"}
-      node234: {angle: 90, cote: point}
-      node235: {angle: 90, cote: point}
+      node325: {angle: 90, cote: point, etiquette: [8, -12], fonction: "P / N / PE"}
+      node326: {angle: 90, cote: point}
+      node327: {angle: 90, cote: point}
   - id: eclairage-230-babord
     forme: cercle
     cx: 200
@@ -128,9 +128,9 @@ appareils:
     symbole: "×"
     lignes: [Éclairage, bâbord (Q42)]
     nodes:
-      node217: {angle: 90, cote: point, etiquette: [-8, -12, end], fonction: "P / N / PE"}
-      node218: {angle: 90, cote: point}
-      node219: {angle: 90, cote: point}
+      node330: {angle: 90, cote: point, etiquette: [-8, -12, end], fonction: "P / N / PE"}
+      node331: {angle: 90, cote: point}
+      node332: {angle: 90, cote: point}
   - id: prise-230-eps100
     x: 235
     y: 500
@@ -140,9 +140,9 @@ appareils:
     titre_y: 44
     lignes: [PC 16 A]
     nodes:
-      node227: {cote: haut, etiquette: [0, 16, mid]}
-      node228: [haut]
-      node229: [haut]
+      node341: {cote: haut, etiquette: [0, 16, mid]}
+      node342: [haut]
+      node343: [haut]
   - id: eps100
     x: 235
     y: 610
@@ -152,8 +152,8 @@ appareils:
     titre_y: 42
     lignes: [frigo · folio 1]
     nodes:
-      node047: {cote: haut, etiquette: [0, 16, mid], fonction: "P / N"}
-      node048: [haut]
+      node344: {cote: haut, etiquette: [0, 16, mid], fonction: "P / N"}
+      node345: [haut]
   - id: prise-230-cuisine
     x: 405
     y: 500
@@ -163,9 +163,9 @@ appareils:
     titre_y: 44
     lignes: [PC 16 A]
     nodes:
-      node230: {cote: haut, etiquette: [0, 16, mid]}
-      node231: [haut]
-      node232: [haut]
+      node346: {cote: haut, etiquette: [0, 16, mid]}
+      node347: [haut]
+      node348: [haut]
   - id: prise-230-toilette
     x: 575
     y: 500
@@ -175,17 +175,17 @@ appareils:
     titre_y: 44
     lignes: [PC 16 A]
     nodes:
-      node253: {cote: haut, etiquette: [0, 16, mid]}
-      node254: [haut]
-      node255: [haut]
+      node349: {cote: haut, etiquette: [0, 16, mid]}
+      node350: [haut]
+      node351: [haut]
 
   # --- Boîte de dérivation bâbord -----------------------------------------------------
   - id: boitier-230-babord
     forme: barre
     nodes:
-      node240: {cote: point, xy: [870, 370], etiquette: [6, 18], fonction: "P / N / PE"}
-      node241: {cote: point, xy: [870, 370]}
-      node242: {cote: point, xy: [870, 370]}
+      node354: {cote: point, xy: [870, 370], etiquette: [6, 18], fonction: "P / N / PE"}
+      node355: {cote: point, xy: [870, 370]}
+      node356: {cote: point, xy: [870, 370]}
   - id: prise-230-table-a-carte
     x: 850
     y: 500
@@ -195,9 +195,9 @@ appareils:
     titre_y: 44
     lignes: [PC 16 A]
     nodes:
-      node247: {cote: haut, etiquette: [0, 16, mid]}
-      node248: [haut]
-      node249: [haut]
+      node357: {cote: haut, etiquette: [0, 16, mid]}
+      node358: [haut]
+      node359: [haut]
   - id: prise-230-armoire
     x: 1030
     y: 500
@@ -207,9 +207,9 @@ appareils:
     titre_y: 44
     lignes: [PC 16 A]
     nodes:
-      node250: {cote: haut, etiquette: [0, 16, mid]}
-      node251: [haut]
-      node252: [haut]
+      node360: {cote: haut, etiquette: [0, 16, mid]}
+      node361: [haut]
+      node362: [haut]
   - id: prise-230-proue
     x: 940
     y: 610
@@ -219,104 +219,104 @@ appareils:
     titre_y: 44
     lignes: [PC 16 A]
     nodes:
-      node243: {cote: droite, a: 642, etiquette: [-6, -18, end]}
-      node244: [droite, 642]
-      node245: [droite, 642]
+      node363: {cote: droite, a: 642, etiquette: [-6, -18, end]}
+      node364: [droite, 642]
+      node365: [droite, 642]
 
 barres:
   # barres du boîtier tribord et de la boîte bâbord (phase, neutre, terre : un seul trait en unifilaire)
-  - {node: node220, de: [70, 370], a: [650, 370], classe: n}
-  - {node: node221, de: [70, 370], a: [650, 370], classe: n}
-  - {node: node222, de: [70, 370], a: [650, 370], classe: n}
-  - {node: node240, de: [870, 370], a: [1140, 370], classe: n}
-  - {node: node241, de: [870, 370], a: [1140, 370], classe: n}
-  - {node: node242, de: [870, 370], a: [1140, 370], classe: n}
+  - {node: node320, de: [70, 370], a: [650, 370], classe: n}
+  - {node: node321, de: [70, 370], a: [650, 370], classe: n}
+  - {node: node322, de: [70, 370], a: [650, 370], classe: n}
+  - {node: node354, de: [870, 370], a: [1140, 370], classe: n}
+  - {node: node355, de: [870, 370], a: [1140, 370], classe: n}
+  - {node: node356, de: [870, 370], a: [1140, 370], classe: n}
   # points de raccordement du neutre et de la terre au départ des câbles (longueur nulle)
-  - {node: node209, de: [660, 155], a: [660, 155], classe: n, epaisseur: w2}
-  - {node: node212, de: [660, 155], a: [660, 155], classe: n, epaisseur: w2}
-  - {node: node212, de: [490, 190], a: [490, 190], classe: n, epaisseur: w2}
-  - {node: node221, de: [110, 400], a: [110, 400], classe: n, epaisseur: w2}
-  - {node: node222, de: [110, 400], a: [110, 400], classe: n, epaisseur: w2}
-  - {node: node221, de: [230, 400], a: [230, 400], classe: n, epaisseur: w2}
-  - {node: node222, de: [230, 400], a: [230, 400], classe: n, epaisseur: w2}
-  - {node: node221, de: [470, 400], a: [470, 400], classe: n, epaisseur: w2}
-  - {node: node222, de: [470, 400], a: [470, 400], classe: n, epaisseur: w2}
-  - {node: node221, de: [620, 400], a: [620, 400], classe: n, epaisseur: w2}
-  - {node: node222, de: [620, 400], a: [620, 400], classe: n, epaisseur: w2}
+  - {node: node309, de: [660, 155], a: [660, 155], classe: n, epaisseur: w2}
+  - {node: node307, de: [660, 155], a: [660, 155], classe: n, epaisseur: w2}
+  - {node: node307, de: [490, 190], a: [490, 190], classe: n, epaisseur: w2}
+  - {node: node321, de: [110, 400], a: [110, 400], classe: n, epaisseur: w2}
+  - {node: node322, de: [110, 400], a: [110, 400], classe: n, epaisseur: w2}
+  - {node: node321, de: [230, 400], a: [230, 400], classe: n, epaisseur: w2}
+  - {node: node322, de: [230, 400], a: [230, 400], classe: n, epaisseur: w2}
+  - {node: node321, de: [470, 400], a: [470, 400], classe: n, epaisseur: w2}
+  - {node: node322, de: [470, 400], a: [470, 400], classe: n, epaisseur: w2}
+  - {node: node321, de: [620, 400], a: [620, 400], classe: n, epaisseur: w2}
+  - {node: node322, de: [620, 400], a: [620, 400], classe: n, epaisseur: w2}
   # fiche de l'EPS 100 dans sa prise (sans terre)
-  - {node: node227, de: [300, 564], a: [300, 564], classe: n, epaisseur: w2}
-  - {node: node228, de: [300, 564], a: [300, 564], classe: n, epaisseur: w2}
+  - {node: node341, de: [300, 564], a: [300, 564], classe: n, epaisseur: w2}
+  - {node: node342, de: [300, 564], a: [300, 564], classe: n, epaisseur: w2}
 
 fils:
   # câblage interne du boîtier d'arrivée (phase seule)
-  wire031:
+  wire314:
     trace: [[490, 190], [525, 155], [600, 155]]
     etiquette: [570, 147, mid]
-    texte: w031
+    texte: w314
     classe: n w2
 
 cables:
   quai:
-    fils: [wire029, wire030, wire034]
+    fils: [wire300, wire301, wire302]
     trace: [[180, 165], [340, 165]]
     etiquette: [260, 157, mid]
   chargeur:
-    fils: [wire032, wire033, wire035]
+    fils: [wire305, wire306, wire307]
     trace: [[660, 155], [900, 155]]
     etiquette: [712, 147]
-    texte: "w032-3 / w035 · 3 × 2,5"
+    texte: "w305-7 · 3 × 2,5"
     obliques_xy: [860, 155]
   tribord:
-    fils: [wire038, wire039, wire040]
+    fils: [wire308, wire309, wire310]
     trace: [[490, 190], [540, 240], [720, 240], [720, 300], [420, 300], [420, 370]]
     etiquette: [560, 292, mid]
-    texte: "w038-40 · 3 × 2,5"
+    texte: "w308-10 · 3 × 2,5"
     obliques_xy: [660, 300]
   eclairage-babord:
-    fils: [wire074, wire075, wire076]
+    fils: [wire331, wire332, wire333]
     trace: [[230, 400], [230, 594], [200, 624]]
     etiquette: [251, 452, mid, v]
     obliques_xy: [230, 560]
   plafonnier:
-    fils: [wire050, wire051, wire068]
+    fils: [wire325, wire326, wire327]
     trace: [[110, 400], [110, 524]]
     etiquette: [118, 470]
     obliques_xy: [110, 495]
   frigo:
-    fils: [wire044, wire045, wire046]
+    fils: [wire319, wire320, wire321]
     trace: [[470, 400], [470, 465], [300, 465], [300, 500]]
     etiquette: [385, 457, mid]
     obliques_xy: [300, 484]
   cuisine:
-    fils: [wire047, wire048, wire049]
+    fils: [wire322, wire323, wire324]
     trace: [[470, 400], [470, 465], [470, 500]]
     etiquette: [476, 484]
   toilette:
-    fils: [wire065, wire066, wire067]
+    fils: [wire328, wire329, wire330]
     trace: [[470, 400], [470, 465], [640, 465], [640, 500]]
     etiquette: [555, 457, mid]
     obliques_xy: [640, 484]
   eps100:
-    fils: [wire052, wire053]
+    fils: [wire340, wire341]
     trace: [[300, 610], [300, 564]]
     etiquette: [306, 590]
-    texte: "w052-3 · cordon 2 fils, fiche sans terre"
+    texte: "w340-1 · cordon 2 fils, fiche sans terre"
   babord:
-    fils: [wire041, wire042, wire043]
+    fils: [wire316, wire317, wire318]
     trace: [[620, 400], [620, 420], [820, 420], [820, 370], [870, 370]]
     etiquette: [688, 412]
-    texte: "w041-3"
+    texte: "w316-8"
     obliques_xy: [790, 420]
   table-a-carte:
-    fils: [wire055, wire056, wire057]
+    fils: [wire342, wire343, wire344]
     trace: [[1005, 370], [1005, 455], [915, 455], [915, 500]]
     etiquette: [909, 484, end]
   proue:
-    fils: [wire069, wire070, wire071]
+    fils: [wire348, wire349, wire350]
     trace: [[1130, 370], [1130, 440], [1180, 440], [1180, 642]]
     etiquette: [1174, 600, end]
   armoire:
-    fils: [wire058, wire059, wire060]
+    fils: [wire345, wire346, wire347]
     trace: [[1005, 370], [1005, 455], [1095, 455], [1095, 500]]
     etiquette: [1089, 484, end]
 
@@ -340,4 +340,4 @@ textes:
   - {x: 836, y: 431, texte: "par le 16 A bâbord"}
   - {x: 40, y: 712, texte: "Schéma unifilaire : un trait par câble, les barres obliques donnent le nombre de conducteurs (3 : phase, neutre, terre). Câbles des prises : 3 × 2,5 mm²."}
   - {x: 560, y: 262, classe: ts end, texte: "sans disjoncteur (A12)"}
-  - {x: 40, y: 730, texte: "Tous les disjoncteurs coupent la phase et le neutre. Neutre et terre de chaque câble partent des barrettes du boîtier (n209 et n212 à l'arrivée, n221 et n222 au boîtier tribord)."}
+  - {x: 40, y: 730, texte: "Tous les disjoncteurs coupent la phase et le neutre. Neutre et terre de chaque câble partent des barrettes du boîtier (n309 et n307 à l'arrivée, n321 et n322 au boîtier tribord)."}

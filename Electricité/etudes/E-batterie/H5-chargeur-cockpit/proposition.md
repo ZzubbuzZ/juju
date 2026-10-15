@@ -23,15 +23,15 @@ Variante de [E-H1](../H1-lifepo4/proposition.md). Base : **E-H1**. Câblage : [c
 | Élément | E-H1 | E-H5 |
 |---|---|---|
 | Blue Smart IP67 12/17 | Niche de la contremarche, en bas du fond | Coffre de cockpit tribord, près du boîtier d'arrivée 230 V |
-| Fusible de 25 A (node377, node378) | Côté batterie du coupe-circuit de servitude (node009) | Inchangé : il reste à la source du câble, dans la niche |
-| Sortie + (wire211) | 4 mm², 0,5 m | **10 mm²**, environ 5 m (Q64) |
-| Retour − (wire212) | 4 mm², 0,5 m, sur node005 | **10 mm²**, environ 5 m, sur node005 (côté « bord » du shunt) |
-| 230 V (wire213 à wire215) | 3 × 1,5 mm², environ 4 m | 3 × 1,5 mm², environ 1 m |
+| Fusible de 25 A (node059, node060) | Côté batterie du coupe-circuit de servitude (node020) | Inchangé : il reste à la source du câble, dans la niche |
+| Sortie + (wire064) | 4 mm², 0,5 m | **10 mm²**, environ 5 m (Q64) |
+| Retour − (wire059) | 4 mm², 0,5 m, sur node022 | **10 mm²**, environ 5 m, sur node022 (côté « bord » du shunt) |
+| 230 V (wire311 à wire313) | 3 × 1,5 mm², environ 4 m | 3 × 1,5 mm², environ 1 m |
 | Orion XS, shunt, autres fusibles | Niche de la contremarche | Inchangés |
 
 ## Section de la sortie 12 V
 
-S = 2 × L × I × 0,0175 / ΔU = 2 × 5 × 17 × 0,0175 / 0,36 ≈ 8,3 mm², soit **10 mm²** (ΔU = 3 %). Avec 10 mm², la chute est d'environ 0,31 V à 17 A, fusible et wire210 compris (2,6 %). Le fusible de 25 A, à la source dans la niche, protège le 10 mm² comme les câbles fournis du chargeur.
+S = 2 × L × I × 0,0175 / ΔU = 2 × 5 × 17 × 0,0175 / 0,36 ≈ 8,3 mm², soit **10 mm²** (ΔU = 3 %). Avec 10 mm², la chute est d'environ 0,31 V à 17 A, fusible et wire056 compris (2,6 %). Le fusible de 25 A, à la source dans la niche, protège le 10 mm² comme les câbles fournis du chargeur.
 
 La longueur de 5 m vient de Q50 (coffre de cockpit → coffre de la batterie) ; le trajet jusqu'à la niche est à mesurer (Q64). Au-delà de 6 m environ, il faudrait passer en 16 mm².
 
@@ -39,7 +39,7 @@ La longueur de 5 m vient de Q50 (coffre de cockpit → coffre de la batterie) ; 
 
 Le chargeur règle sa tension à ses bornes : sans correction, il verrait la batterie 0,3 V plus haut qu'elle n'est et passerait trop tôt en fin de charge. Le SmartShunt mesure la tension à la batterie et la transmet au Blue Smart par le réseau **VE.Smart** (VictronConnect), qui compense la chute de ses câbles. Compatibilité à vérifier dans VictronConnect, à la mise en service.
 
-La chute dans wire009 (shunt → − de la batterie, 1 m de 35 mm², environ 0,5 mΩ) ne fausse que la tension lue par le shunt, de moins de 10 mV en charge, et pas l'état de charge, compté en ampères-heures : elle ne justifie pas de rapprocher le shunt de la batterie (question de l'utilisateur, 14/10).
+La chute dans wire010 (shunt → − de la batterie, 1 m de 35 mm², environ 0,5 mΩ) ne fausse que la tension lue par le shunt, de moins de 10 mV en charge, et pas l'état de charge, compté en ampères-heures : elle ne justifie pas de rapprocher le shunt de la batterie (question de l'utilisateur, 14/10).
 
 ## Niche de la contremarche
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-label="Afficheur du moniteur de batterie encastré au tableau de servitude à la place de l&#x27;indicateur à aiguille, relié au shunt par un câble de données.">
   <title>Folio 2f · Afficheur du moniteur de batterie</title>
-  <desc>Le shunt du folio 2e est celui d&#x27;un moniteur à afficheur. Le câble de données w185 relie le shunt à l&#x27;afficheur, encastré au tableau de servitude à la place de l&#x27;indicateur à aiguille, dont le branchement sera vu à la pose ; la place suffit (Q41).</desc>
+  <desc>Le shunt du folio 2e est celui d&#x27;un moniteur à afficheur. Le câble de données w150 relie le shunt à l&#x27;afficheur, encastré au tableau de servitude à la place de l&#x27;indicateur à aiguille, dont le branchement sera vu à la pose ; la place suffit (Q41).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -56,14 +56,14 @@
   <text class="ts mid" x="1040" y="155">déposé, ses fils retirés</text>
   <text class="ts mid" x="1040" y="170">branchement vu à la pose</text>
   <path class="n w2" d="M260 185 L730 185"/>
-  <text class="idn mid" x="495" y="177">w185 · câble de données RJ12, environ 4 m</text>
+  <text class="idn mid" x="495" y="177">w150 · câble de données RJ12, environ 4 m</text>
   <circle class="term" cx="260" cy="185" r="3.5"/>
   <circle class="term" cx="730" cy="185" r="3.5"/>
-  <text class="idn end" x="253" y="184">n094</text>
+  <text class="idn end" x="253" y="184">n015</text>
   <text class="pin end" x="253" y="194">données</text>
-  <text class="idn" x="737" y="184">n095</text>
+  <text class="idn" x="737" y="184">n179</text>
   <text class="pin" x="737" y="194">données</text>
-  <text class="ts mid" x="495" y="203">même trajet que w019 (n083 → n100), de la descente à la table à carte</text>
+  <text class="ts mid" x="495" y="203">même trajet que w200 (n152 → n200), de la descente à la table à carte</text>
   <text class="ts" x="716" y="236">L&#x27;afficheur prend la place de l&#x27;indicateur (Q28) : découpe à adapter</text>
   <text class="ts" x="716" y="254">au besoin selon le diamètre du trou ; la place suffit (Q41, 03/10).</text>
   <text class="tb" x="40" y="300">Différence avec D-H1</text>

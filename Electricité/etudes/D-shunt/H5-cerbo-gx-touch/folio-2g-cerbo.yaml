@@ -16,14 +16,14 @@ appareils:
     titre: CC servitude
     titre_xy: [454, 94]
     nodes:
-      node009: {cote: point, xy: [424, 120], etiquette: [-8, 30, end]}
-      node010: {cote: point, xy: [484, 120], etiquette: [-6, 30]}
+      node020: {cote: point, xy: [424, 120], etiquette: [-8, 30, end]}
+      node021: {cote: point, xy: [484, 120], etiquette: [-6, 30]}
   - id: fus-cerbo
     forme: fusible
     calibre: 3 A
     nodes:
-      node340: {cote: point, xy: [560, 120], etiquette: [-3, 22, end]}
-      node341: {cote: point, xy: [606, 120], etiquette: [3, 22]}
+      node180: {cote: point, xy: [560, 120], etiquette: [-3, 22, end]}
+      node181: {cote: point, xy: [606, 120], etiquette: [3, 22]}
   - id: cerbo-gx
     x: 700
     y: 90
@@ -33,10 +33,10 @@ appareils:
     titre_y: 28
     lignes: ["centrale Victron · descente", "≈ 0,3 A allumé"]
     nodes:
-      node342: {cote: gauche, a: 120, fonction: "+"}
-      node343: {cote: bas, a: 740, fonction: "−"}
-      node344: [bas, 840]
-      node345: {cote: droite, a: 195, fonction: écran}
+      node182: {cote: gauche, a: 120, fonction: "+"}
+      node183: {cote: bas, a: 740, fonction: "−"}
+      node184: [bas, 840]
+      node185: {cote: droite, a: 195, fonction: écran}
   - id: gx-touch-50
     x: 980
     y: 120
@@ -46,7 +46,7 @@ appareils:
     titre_y: 22
     lignes: ["écran tactile 5 pouces", "alimenté par le Cerbo GX"]
     nodes:
-      node346: {cote: gauche, a: 195, fonction: "HDMI/USB"}
+      node186: {cote: gauche, a: 195, fonction: "HDMI/USB"}
   - id: shunt-servitude
     x: 80
     y: 330
@@ -55,26 +55,26 @@ appareils:
     titre: SmartShunt 500 A
     lignes: ["pose et fils de mesure : folio 2e"]
     nodes:
-      node094: [droite, 385]
+      node015: [droite, 385]
 
 
 fils:
-  wire006: {trace: [[300, 120]], etiquette: [362, 112, mid]}
-  wire186: {etiquette: [526, 110, mid]}
-  wire187: {etiquette: [653, 112, mid]}
-  wire188: {trace: [[740, 280], [540, 280]], etiquette: [748, 252]}
+  wire008: {trace: [[300, 120]], etiquette: [362, 112, mid]}
+  wire155: {etiquette: [526, 110, mid]}
+  wire174: {etiquette: [653, 112, mid]}
+  wire160: {trace: [[740, 280], [540, 280]], etiquette: [748, 252]}
   # câbles de données de type connu (VE.Direct, câble de l'écran) : trait plein, sans section
-  wire189: {classe: "n w2", trace: [[840, 385]], etiquette: [575, 377, mid], texte: "w189 · câble VE.Direct 1,8 m"}
-  wire190: {classe: "n w2", etiquette: [955, 187, mid], texte: w190}
+  wire151: {classe: "n w2", trace: [[840, 385]], etiquette: [575, 377, mid], texte: "w151 · câble VE.Direct 1,8 m"}
+  wire175: {classe: "n w2", etiquette: [955, 187, mid], texte: w175}
 
 renvois:
-  - {x: 100, y: 111, w: 200, texte: "← n073, fusible 400 A : folio 2c"}
-  - {x: 290, y: 271, w: 250, texte: "CC masse, côté charges · node006 · folio 1"}
+  - {x: 100, y: 111, w: 200, texte: "← n010, fusible 400 A : folio 2c"}
+  - {x: 290, y: 271, w: 250, texte: "CC masse, côté charges · node023 · folio 1"}
 
 textes:
-  - {x: 940, y: 238, texte: "w190 : câble de l'écran, 2 m fourni"}
-  - {x: 940, y: 254, texte: "et rallonge de 2 m, trajet de w019"}
-  - {x: 940, y: 270, texte: "(n083 → n100)"}
+  - {x: 940, y: 238, texte: "w175 : câble de l'écran, 2 m fourni"}
+  - {x: 940, y: 254, texte: "et rallonge de 2 m, trajet de w200"}
+  - {x: 940, y: 270, texte: "(n152 → n200)"}
   - {x: 40, y: 446, classe: tb, texte: "Différence avec D-H1"}
   - {x: 40, y: 466, classe: t, texte: "Même SmartShunt, même position, mêmes fils de mesure (folio 2e). Le Cerbo GX lit le shunt par VE.Direct et affiche le bord sur l'écran."}
   - {x: 40, y: 484, classe: t, texte: "Il est alimenté après le coupe-circuit de servitude : il s'éteint bateau coupé, alors que le shunt, alimenté avant, continue de compter."}

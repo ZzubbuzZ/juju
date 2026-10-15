@@ -23,10 +23,10 @@ Nomenclature : [nomenclature.yaml](nomenclature.yaml), environ **190 €**, pour
 
 Déplacer la batterie dans un coffre qui communique avec l'extérieur, comme le coffre de cockpit, où l'hydrogène s'évacue sans traverser une cabine. Elle reste au plomb : coupleur, couplage et chargeur sont conservés.
 
-Les câbles de la batterie de servitude jusqu'à la platine des coupe-circuits (wire161, wire006 et wire009) sont remplacés par des câbles plus longs. Leur section se calcule avec la distance réelle et le courant du guindeau (environ 60 A), qui passe par cette batterie : à 4 m aller, 35 mm² donnent environ 0,24 V de chute pour 60 A, soit 2 %, ce qui reste acceptable ; au-delà, passer en 50 mm².
+Les câbles de la batterie de servitude jusqu'à la platine des coupe-circuits (wire009, wire008 et wire010) sont remplacés par des câbles plus longs. Leur section se calcule avec la distance réelle et le courant du guindeau (environ 60 A), qui passe par cette batterie : à 4 m aller, 35 mm² donnent environ 0,24 V de chute pour 60 A, soit 2 %, ce qui reste acceptable ; au-delà, passer en 50 mm².
 
 ## À étudier
 
 - **Emplacement** (Q46) : place disponible, ventilation du coffre vers l'extérieur, fixation d'une batterie de 25 à 30 kg, distance aux coupe-circuits.
-- **Câblage** : nouveaux fils (wire006 et wire009 remplacés), fusible de 400 A de A-H2 à reporter près de la batterie.
+- **Câblage** : nouveaux fils (wire008 et wire010 remplacés), fusible de 400 A de A-H2 à reporter près de la batterie.
 - **Étude D** : le shunt reste sur le négatif de la batterie de servitude ; son emplacement b (près des coupe-circuits) reste valable.

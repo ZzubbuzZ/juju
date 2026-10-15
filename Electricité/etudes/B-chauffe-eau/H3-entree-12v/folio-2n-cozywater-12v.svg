@@ -63,15 +63,15 @@
   <path class="p w4" d="M104 90 L104 124 L120 140"/>
   <path class="n w3" d="M120 430 L60 430 L60 460"/>
   <path class="p w2" d="M180 140 L230 140"/>
-  <text class="idn mid" x="205" y="132">w313</text>
+  <text class="idn mid" x="205" y="132">w154</text>
   <path class="p w2" d="M276 140 L900 140 L920 120 L960 120"/>
-  <text class="idn mid" x="470" y="132">w306 · 6 mm² · ≈ 3 m</text>
+  <text class="idn mid" x="470" y="132">w173 · 6 mm² · ≈ 3 m</text>
   <path class="n w2" d="M960 230 L940 250 L940 430 L180 430"/>
-  <text class="idn mid" x="560" y="422">w308 · 6 mm² · ≈ 3 m</text>
+  <text class="idn mid" x="560" y="422">w161 · 6 mm² · ≈ 3 m</text>
   <rect class="flag" x="40" y="72" width="250" height="18"/>
-  <text class="ts mid" x="165" y="85">← n073, MEGA 300 A : folio 2o</text>
+  <text class="ts mid" x="165" y="85">← n010, MEGA 300 A : folio 2o</text>
   <rect class="flag" x="30" y="460" width="230" height="18"/>
-  <text class="ts mid" x="145" y="473">← n087, shunt côté « bord » : folio 2e</text>
+  <text class="ts mid" x="145" y="473">← n012, shunt côté « bord » : folio 2e</text>
   <circle class="term" cx="120" cy="140" r="3.5"/>
   <circle class="term" cx="180" cy="140" r="3.5"/>
   <circle class="term" cx="230" cy="140" r="3.5"/>
@@ -80,16 +80,16 @@
   <circle class="term" cx="960" cy="230" r="3.5"/>
   <circle class="term" cx="120" cy="430" r="3.5"/>
   <circle class="term" cx="180" cy="430" r="3.5"/>
-  <text class="id end" x="114" y="160">n009</text>
-  <text class="id" x="186" y="176">n010</text>
-  <text class="idn end" x="227" y="153">n308</text>
-  <text class="idn" x="279" y="153">n309</text>
-  <text class="idn" x="967" y="119">n318</text>
+  <text class="id end" x="114" y="160">n020</text>
+  <text class="id" x="186" y="176">n021</text>
+  <text class="idn end" x="227" y="153">n175</text>
+  <text class="idn" x="279" y="153">n176</text>
+  <text class="idn" x="967" y="119">n177</text>
   <text class="pin" x="967" y="129">+</text>
-  <text class="idn" x="967" y="229">n319</text>
+  <text class="idn" x="967" y="229">n178</text>
   <text class="pin" x="967" y="239">−</text>
-  <text class="id end" x="114" y="452">n005</text>
-  <text class="id" x="186" y="452">n006</text>
+  <text class="id end" x="114" y="452">n022</text>
+  <text class="id" x="186" y="452">n023</text>
   <text class="ts mid tn" x="253" y="166">à côté du disj. guindeau</text>
   <text class="ts mid" x="253" y="182">sert d&#x27;interrupteur</text>
   <text class="ts mid" x="253" y="196">« ballon sur batterie »</text>

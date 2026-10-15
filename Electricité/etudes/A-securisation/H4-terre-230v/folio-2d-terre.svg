@@ -52,28 +52,28 @@
   <text class="tb mid tn" x="390" y="282">Isolateur</text>
   <text class="ts mid" x="390" y="297">galvanique maison</text>
   <rect class="box-unk" x="760" y="350" width="170" height="40" rx="2"/>
-  <text class="tb mid" x="845" y="368">Masse 12 V (node005)</text>
+  <text class="tb mid" x="845" y="368">Masse 12 V (node022)</text>
   <text class="ts mid" x="845" y="383">non reliée à la terre</text>
   <rect class="box" x="40" y="350" width="640" height="132" rx="2"/>
   <path class="u" d="M720 294 L720 330 L845 330 L845 350"/>
   <path class="ph w2" d="M180 180 L440 180"/>
-  <text class="id mid" x="300" y="173">w029 · phase</text>
+  <text class="id mid" x="300" y="173">w300 · phase</text>
   <path class="ne w2" d="M180 210 L440 210"/>
-  <text class="id mid" x="300" y="203">w030 · neutre</text>
+  <text class="id mid" x="300" y="203">w301 · neutre</text>
   <path class="pe w2" d="M180 290 L270 290"/>
   <path class="pey w2" d="M180 290 L270 290"/>
-  <text class="idn mid" x="225" y="283">w170 · 2,5</text>
+  <text class="idn mid" x="225" y="283">w303 · 2,5</text>
   <path class="pe w2" d="M510 290 L720 290"/>
   <path class="pey w2" d="M510 290 L720 290"/>
-  <text class="idn mid" x="615" y="283">w171 · 2,5</text>
+  <text class="idn mid" x="615" y="283">w304 · 2,5</text>
   <path class="ph w2" d="M700 180 L800 180"/>
   <path class="ph w2" d="M700 180 L800 180"/>
-  <text class="id mid" x="750" y="173">w031 / w038</text>
+  <text class="id mid" x="750" y="173">w314 / w308</text>
   <path class="ne w2" d="M700 210 L800 210"/>
   <path class="ne w2" d="M700 210 L800 210"/>
-  <text class="id mid" x="750" y="203">w033 / w039</text>
+  <text class="id mid" x="750" y="203">w306 / w309</text>
   <rect class="flag" x="800" y="165" width="360" height="60"/>
-  <text class="ts mid" x="980" y="178">phases → disjoncteur 10 A (n210), boîtier tribord (n220)</text>
+  <text class="ts mid" x="980" y="178">phases → disjoncteur 10 A (n310), boîtier tribord (n320)</text>
   <circle class="term" cx="180" cy="180" r="3.5"/>
   <circle class="term" cx="180" cy="210" r="3.5"/>
   <circle class="term" cx="180" cy="290" r="3.5"/>
@@ -84,26 +84,26 @@
   <circle class="term" cx="270" cy="290" r="3.5"/>
   <circle class="term" cx="510" cy="290" r="3.5"/>
   <circle class="term" cx="720" cy="290" r="3.5"/>
-  <text class="id end" x="173" y="179">n203</text>
+  <text class="id end" x="173" y="179">n300</text>
   <text class="pin end" x="173" y="189">P</text>
-  <text class="id end" x="173" y="209">n204</text>
+  <text class="id end" x="173" y="209">n301</text>
   <text class="pin end" x="173" y="219">N</text>
-  <text class="id end" x="173" y="289">n205</text>
+  <text class="id end" x="173" y="289">n302</text>
   <text class="pin end" x="173" y="299">PE</text>
-  <text class="idn" x="447" y="179">n206</text>
+  <text class="idn" x="447" y="179">n305</text>
   <text class="pin" x="447" y="189">phase</text>
-  <text class="idn" x="447" y="209">n207</text>
+  <text class="idn" x="447" y="209">n306</text>
   <text class="pin" x="447" y="219">neutre</text>
-  <text class="idn end" x="693" y="179">n208</text>
+  <text class="idn end" x="693" y="179">n308</text>
   <text class="pin end" x="693" y="189">phase</text>
-  <text class="idn end" x="693" y="209">n209</text>
+  <text class="idn end" x="693" y="209">n309</text>
   <text class="pin end" x="693" y="219">neutre</text>
-  <text class="idn" x="277" y="289">n256</text>
+  <text class="idn" x="277" y="289">n303</text>
   <text class="pin" x="277" y="299">~ côté quai</text>
-  <text class="idn end" x="503" y="289">n257</text>
+  <text class="idn end" x="503" y="289">n304</text>
   <text class="pin end" x="503" y="299">~ côté bord</text>
-  <text class="id end" x="714" y="282">n212</text>
-  <text class="ts mid" x="980" y="213">neutres → chargeur (n201), boîtier tribord (n221) : folio 3</text>
+  <text class="id end" x="714" y="282">n307</text>
+  <text class="ts mid" x="980" y="213">neutres → chargeur (n313), boîtier tribord (n321) : folio 3</text>
   <text class="ts" x="730" y="294">barrette de terre du boîtier d&#x27;arrivée</text>
   <text class="ts" x="730" y="310">vers chargeur et prises : folio 3</text>
   <text class="tb" x="54" y="372">Isolateur maison : un pont redresseur monophasé en module</text>
@@ -113,6 +113,6 @@
   <text class="t" x="54" y="452">Contrôle chaque saison, câble de quai débranché : 0,9 à 1,2 V dans les deux sens.</text>
   <text class="t" x="54" y="468">« OL » = diode ouverte, la terre ne passe plus : ne plus brancher au quai.</text>
   <text class="ts" x="40" y="514">En vert : nouveau. Phase, neutre et terre sont dessinés conducteur par conducteur (multifilaire).</text>
-  <text class="ts" x="40" y="532">L&#x27;ancien fil de terre de la prise vers la barrette est remplacé par w170, l&#x27;isolateur et w171.</text>
+  <text class="ts" x="40" y="532">L&#x27;ancien fil de terre de la prise vers la barrette est remplacé par w303, l&#x27;isolateur et w304.</text>
   <g class="mk-a"><circle cx="510" cy="262" r="11"/><text class="mid" x="510" y="265.5">A8</text></g>
 </svg>

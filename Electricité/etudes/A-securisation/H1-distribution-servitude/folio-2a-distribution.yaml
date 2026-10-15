@@ -6,7 +6,7 @@ titre: Distribution de servitude et tableau Scheiber
 aria: "Distribution proposée : une barrette positive après le coupe-circuit de servitude alimente le guindeau, le tableau de la table à carte par un fusible de 50 A et le tableau Scheiber par un fusible de 30 A. La pompe de cale automatique est alimentée en direct depuis la batterie par un fusible de 10 A et renvoie sa masse côté batteries."
 desc: "Une seule barrette + remplace les deux départs sans protection (A1, A6). Chaque départ a son fusible, placé à la source du câble qu'il protège. La pompe de cale ne dépend plus d'aucun coupe-circuit : ni pour son positif, ni pour sa masse. Ses deux fusibles passent à 3 A, le calibre du fabricant (A10)."
 modele: A-H1
-archive: "hypothèse A-H1 différée le 30/09 (seul le fusible de 50 A de wire019 est retenu, dans A-H2) ; à reprendre sur la base de l'installation cible."
+archive: "hypothèse A-H1 différée le 30/09 (seul le fusible de 50 A de wire200 est retenu, dans A-H2) ; à reprendre sur la base de l'installation cible."
 taille: [1200, 720]
 
 appareils:
@@ -25,40 +25,40 @@ appareils:
     titre: CC servitude +
     titre_xy: [330, 102]
     nodes:
-      node009: {cote: point, xy: [300, 130], etiquette: [-4, -8, end]}
-      node010: {cote: point, xy: [360, 130], etiquette: [4, 20]}
+      node020: {cote: point, xy: [300, 130], etiquette: [-4, -8, end]}
+      node021: {cote: point, xy: [360, 130], etiquette: [4, 20]}
   - id: fus-pompe-cale
     forme: fusible
     calibre: 3 A
     nodes:
-      node065: {cote: point, xy: [284, 196], etiquette: [12, 4]}
-      node066: {cote: point, xy: [284, 236], etiquette: [12, 4]}
+      node163: {cote: point, xy: [284, 196], etiquette: [12, 4]}
+      node164: {cote: point, xy: [284, 236], etiquette: [12, 4]}
 
-  # Barrette + : une barre (node060) sur laquelle sont montés les fusibles des tableaux.
+  # Barrette + : une barre (node150) sur laquelle sont montés les fusibles des tableaux.
   - id: barrette-servitude
     forme: barre
     nodes:
-      node060: {cote: point, xy: [450, 460], etiquette: [0, 16, mid], fonction: ""}
+      node150: {cote: point, xy: [450, 460], etiquette: [0, 16, mid], fonction: ""}
   - id: disj-guindeau
     forme: fusible
     calibre: 70 A
     titre: Disjoncteur guindeau (existant)
     titre_xy: [570, 136]
     nodes:
-      node020: {cote: point, xy: [540, 160], etiquette: [-4, 22, end]}
-      node021: {cote: point, xy: [600, 160], etiquette: [4, 22]}
+      node108: {cote: point, xy: [540, 160], etiquette: [-4, 22, end]}
+      node109: {cote: point, xy: [600, 160], etiquette: [4, 22]}
   - id: fus-tableau-servitude
     forme: fusible
     calibre: 50 A
     nodes:
-      node061: {cote: point, xy: [450, 270], etiquette: [-4, 20, end]}
-      node062: {cote: point, xy: [496, 270], etiquette: [4, 20]}
+      node153: {cote: point, xy: [450, 270], etiquette: [-4, 20, end]}
+      node154: {cote: point, xy: [496, 270], etiquette: [4, 20]}
   - id: fus-tableau-scheiber
     forme: fusible
     calibre: 30 A
     nodes:
-      node063: {cote: point, xy: [450, 390], etiquette: [-4, 20, end]}
-      node064: {cote: point, xy: [496, 390], etiquette: [4, 20]}
+      node157: {cote: point, xy: [450, 390], etiquette: [-4, 20, end]}
+      node158: {cote: point, xy: [496, 390], etiquette: [4, 20]}
   - id: tableau-servitude
     x: 760
     y: 240
@@ -67,8 +67,8 @@ appareils:
     titre: Tableau table à carte
     lignes: ["détail : folio 2b"]
     nodes:
-      node100: {cote: gauche, a: 270, fonction: "+"}
-      node101: {cote: droite, a: 280, fonction: "−"}
+      node200: {cote: gauche, a: 270, fonction: "+"}
+      node201: {cote: droite, a: 280, fonction: "−"}
   - id: tableau-scheiber
     x: 640
     y: 350
@@ -77,10 +77,10 @@ appareils:
     titre: Tableau Scheiber 2 voies
     titre_y: 18
     nodes:
-      node050: {cote: gauche, a: 390, fonction: "+"}
-      node052: {cote: droite, a: 395, fonction: frigo}
-      node051: {cote: droite, a: 470, fonction: "−"}
-      node053: {cote: bas, a: 683, fonction: cale}
+      node159: {cote: gauche, a: 390, fonction: "+"}
+      node161: {cote: droite, a: 395, fonction: frigo}
+      node160: {cote: droite, a: 470, fonction: "−"}
+      node162: {cote: bas, a: 683, fonction: cale}
   - id: eps100
     x: 900
     y: 340
@@ -90,10 +90,10 @@ appareils:
     titre_y: 18
     lignes: [12 V / 230 V]
     nodes:
-      node042: {cote: gauche, a: 395, fonction: bat +}
-      node043: {cote: bas, a: 930, fonction: bat −}
-      node044: {cote: droite, a: 395, fonction: gf +}
-      node045: {cote: droite, a: 420, fonction: gf −}
+      node169: {cote: gauche, a: 395, fonction: bat +}
+      node170: {cote: bas, a: 930, fonction: bat −}
+      node171: {cote: droite, a: 395, fonction: gf +}
+      node172: {cote: droite, a: 420, fonction: gf −}
   - id: groupe-froid
     x: 1070
     y: 340
@@ -103,15 +103,15 @@ appareils:
     titre_y: 18
     lignes: [CU-55 · 40 W]
     nodes:
-      node040: {cote: gauche, a: 395, fonction: "+"}
-      node041: {cote: gauche, a: 420, fonction: "−"}
+      node173: {cote: gauche, a: 395, fonction: "+"}
+      node174: {cote: gauche, a: 420, fonction: "−"}
   - id: flotteur
     forme: interrupteur
     titre: Flotteur
     titre_xy: [510, 539]
     nodes:
-      node054: {cote: point, xy: [480, 563], etiquette: [-4, -8, end]}
-      node055: {cote: point, xy: [540, 563], etiquette: [4, -8]}
+      node165: {cote: point, xy: [480, 563], etiquette: [-4, -8, end]}
+      node166: {cote: point, xy: [540, 563], etiquette: [4, -8]}
   - id: pompe-cale
     forme: cercle
     cx: 700
@@ -119,42 +119,42 @@ appareils:
     r: 24
     symbole: P
     nodes:
-      node056: {angle: 135, cote: point, etiquette: [-4, -8, end]}
-      node057: {angle: 270, cote: point, etiquette: [6, 14]}
+      node167: {angle: 135, cote: point, etiquette: [-4, -8, end]}
+      node168: {angle: 270, cote: point, etiquette: [6, 14]}
   - id: cc-masse
     forme: interrupteur
     titre: CC masse (−)
     titre_xy: [110, 690]
     nodes:
-      node005: {cote: point, xy: [80, 640], etiquette: [-4, 20, end]}
-      node006: {cote: point, xy: [140, 640], etiquette: [4, 20]}
+      node022: {cote: point, xy: [80, 640], etiquette: [-4, 20, end]}
+      node023: {cote: point, xy: [140, 640], etiquette: [4, 20]}
 
 barres:
-  - {node: node060, de: [450, 100], a: [450, 460]}
-  - {node: node006, de: [140, 640], a: [1185, 640]}
+  - {node: node150, de: [450, 100], a: [450, 460]}
+  - {node: node023, de: [140, 640], a: [1185, 640]}
 
 fils:
-  wire006: {etiquette: [228, 122, mid]}
-  wire009: {trace: [[20, 130], [20, 640]], etiquette: [14, 400, mid, v]}
-  wire100: {trace: [[430, 130], [450, 150]], etiquette: [405, 122, mid]}
-  wire101: {trace: [[450, 180], [470, 160]], etiquette: [495, 152, mid]}
-  wire018: {trace: [[720, 160]], etiquette: [660, 152, mid]}
-  wire102: {etiquette: [628, 262, mid]}
-  wire103: {trace: [[1165, 640], [1185, 620], [1185, 280]], etiquette: [1072, 272, mid]}
-  wire104: {etiquette: [568, 382, mid]}
-  wire023: {trace: [[860, 640], [880, 620], [880, 470]], etiquette: [874, 570, mid, v], texte: "w023 · 6 · existant"}
-  wire024: {etiquette: [880, 387, mid], texte: w024}
-  wire025: {trace: [[900, 470], [930, 440]], etiquette: [926, 478], texte: w025}
-  wire027: {etiquette: [1055, 388, mid], texte: w027}
-  wire028: {etiquette: [1055, 436, mid], texte: w028}
-  wire026: {trace: [[683, 500]], etiquette: [690, 540], texte: "w026 · 2,5 · existant"}
-  wire106: {trace: [[284, 146]], etiquette: [278, 171, mid, v], texte: w106}
-  wire107: {trace: [[284, 563]], etiquette: [380, 555, mid]}
-  wire108: {etiquette: [610, 580, mid]}
-  wire110: {trace: [[700, 612], [52, 612]], etiquette: [400, 606, mid]}
+  wire008: {etiquette: [228, 122, mid]}
+  wire010: {trace: [[20, 130], [20, 640]], etiquette: [14, 400, mid, v]}
+  wire153: {trace: [[430, 130], [450, 150]], etiquette: [405, 122, mid]}
+  wire163: {trace: [[450, 180], [470, 160]], etiquette: [495, 152, mid]}
+  wire109: {trace: [[720, 160]], etiquette: [660, 152, mid]}
+  wire203: {etiquette: [628, 262, mid]}
+  wire202: {trace: [[1165, 640], [1185, 620], [1185, 280]], etiquette: [1072, 272, mid]}
+  wire164: {etiquette: [568, 382, mid]}
+  wire162: {trace: [[860, 640], [880, 620], [880, 470]], etiquette: [874, 570, mid, v], texte: "w162 · 6 · existant"}
+  wire165: {etiquette: [880, 387, mid], texte: w165}
+  wire166: {trace: [[900, 470], [930, 440]], etiquette: [926, 478], texte: w166}
+  wire171: {etiquette: [1055, 388, mid], texte: w171}
+  wire172: {etiquette: [1055, 436, mid], texte: w172}
+  wire167: {trace: [[683, 500]], etiquette: [690, 540], texte: "w167 · 2,5 · existant"}
+  wire152: {trace: [[284, 146]], etiquette: [278, 171, mid, v], texte: w152}
+  wire169: {trace: [[284, 563]], etiquette: [380, 555, mid]}
+  wire170: {etiquette: [610, 580, mid]}
+  wire159: {trace: [[700, 612], [52, 612]], etiquette: [400, 606, mid]}
 
 renvois:
-  - {x: 720, y: 151, w: 300, texte: "→ node022 · relais du guindeau (inchangé) · folio 1"}
+  - {x: 720, y: 151, w: 300, texte: "→ node110 · relais du guindeau (inchangé) · folio 1"}
 
 textes:
   - {x: 450, y: 88, classe: "tb mid tn", texte: "Barrette +"}
@@ -166,4 +166,4 @@ textes:
   - {x: 970, y: 330, classe: "ts mid", texte: "liaison existante · entrée 230 V : folio 3"}
   - {x: 734, y: 576, classe: tb, texte: "Pompe de cale"}
   - {x: 734, y: 592, classe: ts, texte: "Tsunami T500"}
-  - {x: 400, y: 700, classe: "ts tn", texte: "w110 : masse côté batteries, la pompe reste active coupe-circuits ouverts."}
+  - {x: 400, y: 700, classe: "ts tn", texte: "w159 : masse côté batteries, la pompe reste active coupe-circuits ouverts."}

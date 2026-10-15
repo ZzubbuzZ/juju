@@ -4,21 +4,18 @@
 # dédiée, posée près du boîtier de distribution tribord et alimentée seule par le second C10 du
 # boîtier. La notice du ballon interdit de couper sa fiche Schuko.
 # 12/10 : les deux C10 sont occupés (Q42). L'utilisateur regroupe leurs deux câbles sur un seul C10
-# et libère l'autre pour le ballon ; le câble neuf passe par une boîte de dérivation (sans nœud
-# propre : la plage node300-319 est pleine).
-# Nœuds 300 à 319 réservés à l'étude B ; fils wire300 et suivants.
+# et libère l'autre pour le ballon ; le câble neuf passe par une boîte de dérivation, sans nœud propre.
 # Ballon posé sous la table à carte (12/10) ; câble de 5 m estimé depuis le boîtier tribord (cabinet de toilette).
 # 15/10 : le relevé affecte (supposé) le C10 n°1 à l'éclairage tribord et le C10 n°2 à l'éclairage bâbord,
-# avec leurs nœuds (node215, node216). Le câble de l'éclairage bâbord (wire074) passe sur le C10 n°1 ;
-# le C10 n°2 libéré alimente le ballon. node306 et node307, qui tenaient lieu de bornes du C10 n°2 avant
-# que le relevé les numérote, sont retirés (jamais posés ni étiquetés) et ne seront pas réutilisés.
+# avec leurs nœuds (node328, node329). Le câble de l'éclairage bâbord (wire331) passe sur le C10 n°1 ;
+# le C10 n°2 libéré alimente le ballon.
 
 hypothese: B-H1
 titre: Ballon Carbest CozyWater 10C sur le 230 V, prise dédiée
 base: releve
 
 supprime:
-  fils: [wire074]
+  fils: [wire331]
 
 equipements:
   - { id: prise-230-ballon, type: prise, designation: "Prise 230 V dédiée au ballon, 16 A avec terre, compatible Schuko (fiche hybride)", zone: table-a-carte, emplacement: "Sous la table à carte, à moins de 2 m du ballon (longueur du cordon)", statut: propose }
@@ -26,25 +23,25 @@ equipements:
 
 nodes:
   # --- Prise dédiée -----------------------------------------------------------------
-  - { id: node300, equipement: prise-230-ballon, borne: "phase", polarite: 230V-phase }
-  - { id: node301, equipement: prise-230-ballon, borne: "neutre", polarite: 230V-neutre }
-  - { id: node302, equipement: prise-230-ballon, borne: "terre", polarite: 230V-terre }
+  - { id: node333, equipement: prise-230-ballon, borne: "phase", polarite: 230V-phase }
+  - { id: node334, equipement: prise-230-ballon, borne: "neutre", polarite: 230V-neutre }
+  - { id: node335, equipement: prise-230-ballon, borne: "terre", polarite: 230V-terre }
 
   # --- Ballon -----------------------------------------------------------------------
-  - { id: node303, equipement: chauffe-eau, borne: "230 V phase", polarite: 230V-phase }
-  - { id: node304, equipement: chauffe-eau, borne: "230 V neutre", polarite: 230V-neutre }
-  - { id: node305, equipement: chauffe-eau, borne: "230 V terre", polarite: 230V-terre }
+  - { id: node336, equipement: chauffe-eau, borne: "230 V phase", polarite: 230V-phase }
+  - { id: node337, equipement: chauffe-eau, borne: "230 V neutre", polarite: 230V-neutre }
+  - { id: node338, equipement: chauffe-eau, borne: "230 V terre", polarite: 230V-terre }
 
 fils:
   # --- Transfert de l'éclairage bâbord du C10 n°2 sur le C10 n°1 (libère le C10 n°2) -------
-  - { id: wire074, de: node224, vers: node217, section_mm2: 1.5, statut: propose, questions: [Q42], note: "Câble de l'éclairage bâbord, débranché du C10 n°2 (node216) et repris sur le C10 n°1 (node224), qui alimente alors tout l'éclairage 230 V (0,4 A environ). Affectation des C10 supposée (15/10)" }
+  - { id: wire331, de: node324, vers: node330, section_mm2: 1.5, statut: propose, questions: [Q42], note: "Câble de l'éclairage bâbord, débranché du C10 n°2 (node329) et repris sur le C10 n°1 (node324), qui alimente alors tout l'éclairage 230 V (0,4 A environ). Affectation des C10 supposée (15/10)" }
 
   # --- Câble 3 × 1,5 mm² du second C10 à la prise dédiée -----------------------------
-  - { id: wire300, de: node216, vers: node300, section_mm2: 1.5, couleur: marron, longueur_m: 5, statut: propose, note: "Câble H07RN-F 3G1,5 ; protégé par le C10. Passe par une boîte de dérivation (12/10). Longueur estimée", questions: [Q42] }
-  - { id: wire301, de: node221, vers: node301, section_mm2: 1.5, couleur: bleu, longueur_m: 5, statut: propose }
-  - { id: wire302, de: node222, vers: node302, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 5, statut: propose }
+  - { id: wire334, de: node329, vers: node333, section_mm2: 1.5, couleur: marron, longueur_m: 5, statut: propose, note: "Câble H07RN-F 3G1,5 ; protégé par le C10. Passe par une boîte de dérivation (12/10). Longueur estimée", questions: [Q42] }
+  - { id: wire335, de: node321, vers: node334, section_mm2: 1.5, couleur: bleu, longueur_m: 5, statut: propose }
+  - { id: wire336, de: node322, vers: node335, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 5, statut: propose }
 
   # --- Cordon du ballon, fourni, fiche Schuko (à ne pas modifier) -----------------------
-  - { id: wire303, de: node300, vers: node303, statut: propose, note: "Cordon du ballon, 2 m, fiche Schuko (13/10)" }
-  - { id: wire304, de: node301, vers: node304, statut: propose }
-  - { id: wire305, de: node302, vers: node305, statut: propose }
+  - { id: wire337, de: node333, vers: node336, statut: propose, note: "Cordon du ballon, 2 m, fiche Schuko (13/10)" }
+  - { id: wire338, de: node334, vers: node337, statut: propose }
+  - { id: wire339, de: node335, vers: node338, statut: propose }

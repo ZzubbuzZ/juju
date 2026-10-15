@@ -75,7 +75,7 @@ Sans H2, l'eau chaude en navigation et au mouillage ne peut venir que de l'élec
 | Vérifier que l'installation est correctement calibrée | B-H1 (230 V), B-H3 (12 V) | 230 V : prise dédiée sous la table à carte sur le C10 libéré (3,5 A, différentiel 30 mA), folio 2m. 12 V : disjoncteur 12 V CC 30 A à commande manuelle, 6 mm² |
 | Trouver l'emplacement du ballon | Q19 | sous la table à carte (12/10) ; réducteur et vase dans le coffre de cockpit tribord |
 | Éléments du circuit d'eau pressurisé : pompe, vase, chauffe-eau, vanne de sécurité, robinet | B-H1, folio 2l | pompe Seaflo conservée ; réducteur 1,5 bar à la sortie de la pompe, pour tout le circuit ; vase Seaflo 1 L (SFAT-100-125-01) ; soupape 3 bar fournie ; robinets selon Q54 |
-| Relais de commande, fusibles | B-H3, folio 2n | disjoncteur 12 V CC 30 A à commande manuelle à la platine (node010), qui sert d'interrupteur ; 6 mm² ; pas de relais (12/10) ; longueurs à mesurer (Q57) |
+| Relais de commande, fusibles | B-H3, folio 2n | disjoncteur 12 V CC 30 A à commande manuelle à la platine (node021), qui sert d'interrupteur ; 6 mm² ; pas de relais (12/10) ; longueurs à mesurer (Q57) |
 | Afficheur | B-H1 | fourni avec le ballon (panneau de commande, minuterie) |
 | Pression du vase pour perdre le moins d'eau par la soupape | B-H1 | restatué le 07/10 : la coupure de la pompe varie, et même réglable elle ne suffirait pas ; réducteur à 1,5 bar, vase à 1,4 bar, après mesure de la pompe (B-H1, « Les réglages, dans l'ordre ») |
 | Petit matériel | nomenclatures de B-H1 et B-H3 | raccords en 1/2" (13/10) ; raccords cannelés 12-13 mm pour le tuyau cristal du bord |

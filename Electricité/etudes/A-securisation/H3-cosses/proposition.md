@@ -19,7 +19,7 @@ Nomenclature : [nomenclature.yaml](nomenclature.yaml). Aucun fil n'est ajouté n
 
 ## Batterie moteur (A3)
 
-Couper la partie abîmée des câbles wire001 (+) et wire004 (−) côté batterie, puis sertir des cosses tubulaires étamées de 35 mm². Le diamètre du trou de cosse doit correspondre aux bornes de la batterie, à vérifier avant l'achat. Il faut soit une pince hydraulique, soit une sertisseuse à frapper ; une cosse de 35 mm² ne se sertit pas correctement à la pince universelle. Gaine thermorétractable à colle sur chaque cosse.
+Couper la partie abîmée des câbles wire001 (+) et wire003 (−) côté batterie, puis sertir des cosses tubulaires étamées de 35 mm². Le diamètre du trou de cosse doit correspondre aux bornes de la batterie, à vérifier avant l'achat. Il faut soit une pince hydraulique, soit une sertisseuse à frapper ; une cosse de 35 mm² ne se sertit pas correctement à la pince universelle. Gaine thermorétractable à colle sur chaque cosse.
 
 **Décision du 30/09** : les câbles sont conservés, seules les cosses sont serties. Ils ont assez de longueur pour que l'on coupe la partie abîmée.
 

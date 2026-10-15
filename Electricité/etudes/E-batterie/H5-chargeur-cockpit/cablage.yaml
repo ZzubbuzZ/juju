@@ -11,17 +11,17 @@ base: E-H1
 
 supprime:
   equipements: [chargeur-lifepo4]
-  fils: [wire211, wire212, wire213, wire214, wire215]
+  fils: [wire064, wire059, wire311, wire312, wire313]
 
 equipements:
   - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: cockpit-coffre-tribord, emplacement: "Coffre de cockpit tribord, sur une paroi, près du boîtier d'arrivée 230 V", statut: propose, note: "IP67 : convient à un coffre exposé. Câbles 12 V fournis, à prolonger en 10 mm² par une jonction dans le coffre (Q64)" }
 
 fils:
   # --- Sortie 12 V : du coffre de cockpit à la niche (S = 2 × 5 × 17 × 0,0175 / 0,36 ≈ 8,3 mm²) ---
-  - { id: wire211, de: node378, vers: node372, section_mm2: 10, couleur: rouge, longueur_m: 5, statut: propose, questions: [Q64], note: "Du fusible de 25 A (niche, node009) au coffre de cockpit ; longueur estimée d'après Q50, à mesurer (Q64). Jonction avec le câble fourni du chargeur dans le coffre" }
-  - { id: wire212, de: node373, vers: node005, section_mm2: 10, couleur: noir, longueur_m: 5, statut: propose, questions: [Q64], note: "Retour sur le côté « bord » du shunt (node005) : la charge est comptée. Longueur estimée, à mesurer (Q64)" }
+  - { id: wire064, de: node060, vers: node057, section_mm2: 10, couleur: rouge, longueur_m: 5, statut: propose, questions: [Q64], note: "Du fusible de 25 A (niche, node020) au coffre de cockpit ; longueur estimée d'après Q50, à mesurer (Q64). Jonction avec le câble fourni du chargeur dans le coffre" }
+  - { id: wire059, de: node058, vers: node022, section_mm2: 10, couleur: noir, longueur_m: 5, statut: propose, questions: [Q64], note: "Retour sur le côté « bord » du shunt (node022) : la charge est comptée. Longueur estimée, à mesurer (Q64)" }
 
   # --- 230 V : câble court, le C10 est dans le même coffre ---------------------------------
-  - { id: wire213, de: node382, vers: node374, section_mm2: 1.5, couleur: marron, longueur_m: 1, statut: propose, note: "Câble 3 × 1,5 mm² du C10 du Blue Smart à une prise ou un boîtier à bornes Wago dans le coffre (Q53) ; longueur estimée" }
-  - { id: wire214, de: node209, vers: node375, section_mm2: 1.5, couleur: bleu, longueur_m: 1, statut: propose }
-  - { id: wire215, de: node212, vers: node376, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 1, statut: propose }
+  - { id: wire311, de: node316, vers: node317, section_mm2: 1.5, couleur: marron, longueur_m: 1, statut: propose, note: "Câble 3 × 1,5 mm² du C10 du Blue Smart à une prise ou un boîtier à bornes Wago dans le coffre (Q53) ; longueur estimée" }
+  - { id: wire312, de: node309, vers: node318, section_mm2: 1.5, couleur: bleu, longueur_m: 1, statut: propose }
+  - { id: wire313, de: node307, vers: node319, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 1, statut: propose }

@@ -90,24 +90,24 @@
   <path class="n w1" d="M135 268 L145 262"/>
   <path class="n w1" d="M135 273 L145 267"/>
   <path class="n w1" d="M135 278 L145 272"/>
-  <text class="idn end" x="134" y="290">w074-6</text>
+  <text class="idn end" x="134" y="290">w331-3</text>
   <path class="n w2" d="M230 125 L440 125 L440 200"/>
   <path class="n w1" d="M372 130 L378 120"/>
   <path class="n w1" d="M377 130 L383 120"/>
   <path class="n w1" d="M382 130 L388 120"/>
-  <text class="id mid" x="300" y="117">w038-40</text>
+  <text class="id mid" x="300" y="117">w308-10</text>
   <path class="n w2" d="M260 230 L260 490 L420 490"/>
   <path class="n w1" d="M255 418 L265 412"/>
   <path class="n w1" d="M255 423 L265 417"/>
   <path class="n w1" d="M255 428 L265 422"/>
-  <text class="idn end" x="252" y="380">w300-2 · 3 × 1,5</text>
+  <text class="idn end" x="252" y="380">w334-6 · 3 × 1,5</text>
   <path class="u" d="M560 490 L720 490"/>
   <path class="n w1" d="M632 495 L638 485"/>
   <path class="n w1" d="M637 495 L643 485"/>
   <path class="n w1" d="M642 495 L648 485"/>
-  <text class="idn mid" x="640" y="482">w303-5</text>
+  <text class="idn mid" x="640" y="482">w337-9</text>
   <rect class="flag-new" x="30" y="330" width="205" height="18"/>
-  <text class="ts mid" x="132.5" y="343">→ n217-9 : folio 3</text>
+  <text class="ts mid" x="132.5" y="343">→ n330-2 : folio 3</text>
   <rect class="flag-new" x="1000" y="410" width="180" height="80"/>
   <text class="ts mid" x="1090" y="423">Entrée 12 V · 200 W</text>
   <circle class="term" cx="230" cy="125" r="3.5"/>
@@ -130,26 +130,26 @@
   <circle class="term" cx="720" cy="490" r="3.5"/>
   <circle class="term" cx="720" cy="490" r="3.5"/>
   <circle class="term" cx="720" cy="490" r="3.5"/>
-  <text class="id end" x="223" y="124">n208-9 / n212</text>
+  <text class="id end" x="223" y="124">n307-9</text>
   <text class="pin end" x="223" y="134">P / N / PE</text>
-  <text class="id end" x="434" y="218">n220-2</text>
+  <text class="id end" x="434" y="218">n320-2</text>
   <text class="pin end" x="434" y="228">P / N / PE</text>
-  <text class="id" x="145" y="194">n223</text>
-  <text class="id" x="146" y="244">n224</text>
-  <text class="id" x="265" y="194">n215</text>
-  <text class="id" x="266" y="244">n216</text>
-  <text class="id" x="535" y="194">n225</text>
-  <text class="id" x="536" y="244">n226</text>
-  <text class="id" x="665" y="194">n236</text>
-  <text class="id" x="666" y="244">n237</text>
-  <text class="idn" x="427" y="489">n300-2</text>
+  <text class="id" x="145" y="194">n323</text>
+  <text class="id" x="146" y="244">n324</text>
+  <text class="id" x="265" y="194">n328</text>
+  <text class="id" x="266" y="244">n329</text>
+  <text class="id" x="535" y="194">n339</text>
+  <text class="id" x="536" y="244">n340</text>
+  <text class="id" x="665" y="194">n352</text>
+  <text class="id" x="666" y="244">n353</text>
+  <text class="idn" x="427" y="489">n333-5</text>
   <text class="pin" x="427" y="499">P / N / PE</text>
-  <text class="idn" x="727" y="489">n303-5</text>
+  <text class="idn" x="727" y="489">n336-8</text>
   <text class="pin" x="727" y="499">P / N / PE</text>
   <text class="ts" x="30" y="38">Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau</text>
   <text class="ts end" x="252" y="395">H07RN-F 3G1,5 · ≈ 5 m</text>
   <text class="tb tn" x="300" y="345">Transfert à faire avant de poser le ballon :</text>
-  <text class="ts" x="300" y="361">le câble de l&#x27;éclairage bâbord (w074) passe</text>
+  <text class="ts" x="300" y="361">le câble de l&#x27;éclairage bâbord (w331) passe</text>
   <text class="ts" x="300" y="376">du C10 n°2 au C10 n°1, qui alimente alors</text>
   <text class="ts" x="300" y="391">tout l&#x27;éclairage (≈ 0,4 A) ; le C10 n°2 libéré</text>
   <text class="ts" x="300" y="406">alimente le ballon. Affectation supposée (Q42).</text>
@@ -159,7 +159,7 @@
   <text class="ts mid" x="830" y="240">sur le tableau de servitude · câble 3 m</text>
   <text class="ts mid" x="1090" y="442">câblée en permanence</text>
   <text class="ts mid" x="1090" y="458">disjoncteur CC 30 A (B-H3)</text>
-  <text class="id mid" x="1090" y="476">n318 · n319 : folio 2n</text>
+  <text class="id mid" x="1090" y="476">n177 · n178 : folio 2n</text>
   <g class="mk-q"><circle cx="236" cy="252" r="11"/><text class="mid" x="236" y="255.5">Q42</text></g>
   <g class="mk-a"><circle cx="240" cy="70" r="11"/><text class="mid" x="240" y="73.5">A12</text></g>
 </svg>

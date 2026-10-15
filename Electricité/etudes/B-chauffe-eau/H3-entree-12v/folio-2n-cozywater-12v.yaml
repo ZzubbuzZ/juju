@@ -18,15 +18,15 @@ appareils:
     titre: CC servitude
     titre_xy: [150, 168]
     nodes:
-      node009: {cote: point, xy: [120, 140], etiquette: [-6, 20, end]}
-      node010: {cote: point, xy: [180, 140], etiquette: [6, 36]}
+      node020: {cote: point, xy: [120, 140], etiquette: [-6, 20, end]}
+      node021: {cote: point, xy: [180, 140], etiquette: [6, 36]}
   - id: disj-ballon-12v
     forme: fusible
     calibre: 30 A
     titre: disj. CC
     nodes:
-      node308: {cote: point, xy: [230, 140], etiquette: [-3, 13, end]}
-      node309: {cote: point, xy: [276, 140], etiquette: [3, 13]}
+      node175: {cote: point, xy: [230, 140], etiquette: [-3, 13, end]}
+      node176: {cote: point, xy: [276, 140], etiquette: [3, 13]}
   - id: chauffe-eau
     x: 960
     y: 100
@@ -36,15 +36,15 @@ appareils:
     titre_y: 28
     lignes: ["entrée 12 V · 200 W · ≈ 17 A", "230 V prioritaire : folio 2m", "panneau : marche, minuterie"]
     nodes:
-      node318: [gauche, 120]
-      node319: [gauche, 230]
+      node177: [gauche, 120]
+      node178: [gauche, 230]
   - id: cc-masse
     forme: interrupteur
     titre: CC masse
     titre_xy: [150, 406]
     nodes:
-      node005: {cote: point, xy: [120, 430], etiquette: [-6, 22, end]}
-      node006: {cote: point, xy: [180, 430], etiquette: [6, 22]}
+      node022: {cote: point, xy: [120, 430], etiquette: [-6, 22, end]}
+      node023: {cote: point, xy: [180, 430], etiquette: [6, 22]}
 
 
 traits:   # liaisons vers les renvois
@@ -52,13 +52,13 @@ traits:   # liaisons vers les renvois
   - {classe: "n w3", points: [[120, 430], [60, 430], [60, 460]]}
 
 fils:
-  wire313: {etiquette: [205, 132, mid], texte: w313}
-  wire306: {trace: [[900, 140], [920, 120]], etiquette: [470, 132, mid], texte: "w306 · 6 mm² · ≈ 3 m"}
-  wire308: {trace: [[940, 250], [940, 430]], etiquette: [560, 422, mid], texte: "w308 · 6 mm² · ≈ 3 m"}
+  wire154: {etiquette: [205, 132, mid], texte: w154}
+  wire173: {trace: [[900, 140], [920, 120]], etiquette: [470, 132, mid], texte: "w173 · 6 mm² · ≈ 3 m"}
+  wire161: {trace: [[940, 250], [940, 430]], etiquette: [560, 422, mid], texte: "w161 · 6 mm² · ≈ 3 m"}
 
 renvois:
-  - {x: 40, y: 72, w: 250, texte: "← n073, MEGA 300 A : folio 2o"}
-  - {x: 30, y: 460, w: 230, texte: "← n087, shunt côté « bord » : folio 2e"}
+  - {x: 40, y: 72, w: 250, texte: "← n010, MEGA 300 A : folio 2o"}
+  - {x: 30, y: 460, w: 230, texte: "← n012, shunt côté « bord » : folio 2e"}
 
 pastilles:
   - {id: Q57, x: 1180, y: 40}

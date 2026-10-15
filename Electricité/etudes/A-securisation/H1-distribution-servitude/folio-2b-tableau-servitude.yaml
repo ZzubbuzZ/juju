@@ -1,6 +1,6 @@
 # Mise en page du folio 2b, lue par outils/folio.py qui produit le SVG voisin.
 # Le détail interne du tableau (barre +, fusibles et interrupteurs de chaque circuit) n'est pas dans les
-# données : il est dessiné par des traits libres ; les sorties node102-113 sont les bornes du tableau.
+# données : il est dessiné par des traits libres ; les sorties node202-213 sont les bornes du tableau.
 folio: 2b
 titre: Tableau de la table à carte, 12 circuits
 aria: "Schéma en échelle des 12 circuits du tableau de servitude : pour chaque circuit, fusible, interrupteur, fil positif, récepteur et fil de masse dédié vers la barre négative du tableau. Les trois feux du mât passent par un connecteur de pied de mât à six broches."
@@ -18,20 +18,20 @@ appareils:
     titre: Tableau de servitude
     lignes: [12 fusibles · 12 interrupteurs]
     nodes:
-      node100: {cote: haut, a: 60, fonction: "+"}
-      node101: {cote: bas, a: 300, fonction: "−"}
-      node102: {cote: droite, a: 130, etiquette: [-7, -14, end]}
-      node103: {cote: droite, a: 218, etiquette: [-7, -14, end]}
-      node109: {cote: droite, a: 262, etiquette: [-7, -14, end]}
-      node108: {cote: droite, a: 306, etiquette: [-7, -14, end]}
-      node104: {cote: droite, a: 350, etiquette: [-7, -14, end]}
-      node105: {cote: droite, a: 394, etiquette: [-7, -14, end]}
-      node106: {cote: droite, a: 438, etiquette: [-7, -14, end]}
-      node107: {cote: droite, a: 526, etiquette: [-7, -14, end]}
-      node110: {cote: droite, a: 570, etiquette: [-7, -14, end]}
-      node111: {cote: droite, a: 614, etiquette: [-7, -14, end]}
-      node112: {cote: droite, a: 658, etiquette: [-7, -14, end]}
-      node113: {cote: droite, a: 702, etiquette: [-7, -14, end]}
+      node200: {cote: haut, a: 60, fonction: "+"}
+      node201: {cote: bas, a: 300, fonction: "−"}
+      node202: {cote: droite, a: 130, etiquette: [-7, -14, end]}
+      node203: {cote: droite, a: 218, etiquette: [-7, -14, end]}
+      node209: {cote: droite, a: 262, etiquette: [-7, -14, end]}
+      node208: {cote: droite, a: 306, etiquette: [-7, -14, end]}
+      node204: {cote: droite, a: 350, etiquette: [-7, -14, end]}
+      node205: {cote: droite, a: 394, etiquette: [-7, -14, end]}
+      node206: {cote: droite, a: 438, etiquette: [-7, -14, end]}
+      node207: {cote: droite, a: 526, etiquette: [-7, -14, end]}
+      node210: {cote: droite, a: 570, etiquette: [-7, -14, end]}
+      node211: {cote: droite, a: 614, etiquette: [-7, -14, end]}
+      node212: {cote: droite, a: 658, etiquette: [-7, -14, end]}
+      node213: {cote: droite, a: 702, etiquette: [-7, -14, end]}
   - id: feu-bicolore
     x: 520
     y: 115
@@ -39,8 +39,8 @@ appareils:
     h: 30
     titre: Feu bicolore (proue)
     nodes:
-      node120: {cote: gauche, a: 130, fonction: "+"}
-      node121: {cote: droite, a: 130, fonction: "−"}
+      node214: {cote: gauche, a: 130, fonction: "+"}
+      node215: {cote: droite, a: 130, fonction: "−"}
   - id: feu-poupe
     x: 520
     y: 159
@@ -48,8 +48,8 @@ appareils:
     h: 30
     titre: Feu de poupe
     nodes:
-      node122: {cote: gauche, a: 174, fonction: "+"}
-      node123: {cote: droite, a: 174, fonction: "−"}
+      node216: {cote: gauche, a: 174, fonction: "+"}
+      node217: {cote: droite, a: 174, fonction: "−"}
   - id: feu-tete-mat
     x: 520
     y: 203
@@ -57,8 +57,8 @@ appareils:
     h: 30
     titre: Feu de tête de mât
     nodes:
-      node130: {cote: gauche, a: 218, fonction: "+"}
-      node131: {cote: droite, a: 218, fonction: "−"}
+      node224: {cote: gauche, a: 218, fonction: "+"}
+      node225: {cote: droite, a: 218, fonction: "−"}
   - id: feu-mouillage
     x: 520
     y: 247
@@ -66,8 +66,8 @@ appareils:
     h: 30
     titre: Feu de mouillage (LED)
     nodes:
-      node132: {cote: gauche, a: 262, fonction: "+"}
-      node133: {cote: droite, a: 262, fonction: "−"}
+      node226: {cote: gauche, a: 262, fonction: "+"}
+      node227: {cote: droite, a: 262, fonction: "−"}
   - id: projecteur
     x: 520
     y: 291
@@ -75,8 +75,8 @@ appareils:
     h: 30
     titre: Projecteur de pont
     nodes:
-      node134: {cote: gauche, a: 306, fonction: "+"}
-      node135: {cote: droite, a: 306, fonction: "−"}
+      node228: {cote: gauche, a: 306, fonction: "+"}
+      node229: {cote: droite, a: 306, fonction: "−"}
   - id: pompe-eau
     x: 520
     y: 335
@@ -84,8 +84,8 @@ appareils:
     h: 30
     titre: Pompe à eau Seaflo
     nodes:
-      node136: {cote: gauche, a: 350, fonction: "+"}
-      node137: {cote: droite, a: 350, fonction: "−"}
+      node230: {cote: gauche, a: 350, fonction: "+"}
+      node231: {cote: droite, a: 350, fonction: "−"}
   - id: autoradio
     x: 520
     y: 379
@@ -93,8 +93,8 @@ appareils:
     h: 30
     titre: Autoradio
     nodes:
-      node138: {cote: gauche, a: 394, fonction: "+"}
-      node139: {cote: droite, a: 394, fonction: "−"}
+      node232: {cote: gauche, a: 394, fonction: "+"}
+      node233: {cote: droite, a: 394, fonction: "−"}
   - id: prises-12v
     x: 520
     y: 423
@@ -102,8 +102,8 @@ appareils:
     h: 30
     titre: Prise 12 V n°1
     nodes:
-      node140: {cote: gauche, a: 438, fonction: "+"}
-      node141: {cote: droite, a: 438, fonction: "−"}
+      node234: {cote: gauche, a: 438, fonction: "+"}
+      node235: {cote: droite, a: 438, fonction: "−"}
   - id: prises-12v
     x: 520
     y: 467
@@ -111,8 +111,8 @@ appareils:
     h: 30
     titre: Prise 12 V n°2
     nodes:
-      node142: {cote: gauche, a: 482, fonction: "+"}
-      node143: {cote: droite, a: 482, fonction: "−"}
+      node236: {cote: gauche, a: 482, fonction: "+"}
+      node237: {cote: droite, a: 482, fonction: "−"}
   - id: bornier-eclairage
     x: 520
     y: 511
@@ -120,8 +120,8 @@ appareils:
     h: 30
     titre: Bornier éclairage
     nodes:
-      node144: {cote: gauche, a: 526, fonction: "+"}
-      node145: {cote: droite, a: 526, fonction: "−"}
+      node238: {cote: gauche, a: 526, fonction: "+"}
+      node239: {cote: droite, a: 526, fonction: "−"}
   - id: compas
     x: 520
     y: 555
@@ -129,8 +129,8 @@ appareils:
     h: 30
     titre: Compas
     nodes:
-      node146: {cote: gauche, a: 570, fonction: "+"}
-      node147: {cote: droite, a: 570, fonction: "−"}
+      node240: {cote: gauche, a: 570, fonction: "+"}
+      node241: {cote: droite, a: 570, fonction: "−"}
   - id: pilote
     x: 520
     y: 599
@@ -138,8 +138,8 @@ appareils:
     h: 30
     titre: Pilote ST2000+
     nodes:
-      node148: {cote: gauche, a: 614, fonction: "+"}
-      node149: {cote: droite, a: 614, fonction: "−"}
+      node242: {cote: gauche, a: 614, fonction: "+"}
+      node243: {cote: droite, a: 614, fonction: "−"}
   - id: vhf
     x: 520
     y: 643
@@ -147,8 +147,8 @@ appareils:
     h: 30
     titre: VHF GX2200 AIS
     nodes:
-      node150: {cote: gauche, a: 658, fonction: "+"}
-      node151: {cote: droite, a: 658, fonction: "−"}
+      node244: {cote: gauche, a: 658, fonction: "+"}
+      node245: {cote: droite, a: 658, fonction: "−"}
   - id: bornier-instruments
     x: 520
     y: 687
@@ -156,23 +156,23 @@ appareils:
     h: 30
     titre: Bornier instruments
     nodes:
-      node152: {cote: gauche, a: 702, fonction: "+"}
-      node153: {cote: droite, a: 702, fonction: "−"}
+      node246: {cote: gauche, a: 702, fonction: "+"}
+      node247: {cote: droite, a: 702, fonction: "−"}
   # Connecteur de pied de mât : chaque broche est un point de raccordement traversé par le fil.
   - id: connecteur-mat
     forme: broche
     nodes:
-      node124: {cote: point, xy: [430, 218], etiquette: [6, 14], fonction: b1}
-      node125: {cote: point, xy: [430, 262], etiquette: [6, 14], fonction: b2}
-      node126: {cote: point, xy: [430, 306], etiquette: [6, 14], fonction: b3}
-      node127: {cote: point, xy: [960, 218], etiquette: [6, 14], fonction: b4}
-      node128: {cote: point, xy: [960, 262], etiquette: [6, 14], fonction: b5}
-      node129: {cote: point, xy: [960, 306], etiquette: [6, 14], fonction: b6}
+      node218: {cote: point, xy: [430, 218], etiquette: [6, 14], fonction: b1}
+      node219: {cote: point, xy: [430, 262], etiquette: [6, 14], fonction: b2}
+      node220: {cote: point, xy: [430, 306], etiquette: [6, 14], fonction: b3}
+      node221: {cote: point, xy: [960, 218], etiquette: [6, 14], fonction: b4}
+      node222: {cote: point, xy: [960, 262], etiquette: [6, 14], fonction: b5}
+      node223: {cote: point, xy: [960, 306], etiquette: [6, 14], fonction: b6}
 
 barres:
-  - {node: node101, de: [300, 730], a: [300, 750], epaisseur: w3}
-  - {node: node101, de: [300, 750], a: [1150, 750], epaisseur: w3}
-  - {node: node101, de: [1150, 750], a: [1150, 70], epaisseur: w3}
+  - {node: node201, de: [300, 730], a: [300, 750], epaisseur: w3}
+  - {node: node201, de: [300, 750], a: [1150, 750], epaisseur: w3}
+  - {node: node201, de: [1150, 750], a: [1150, 70], epaisseur: w3}
 
 # Intérieur du tableau : barre +, puis pour chaque circuit fusible, interrupteur et sortie.
 traits:
@@ -241,46 +241,46 @@ traits:
   - {classe: bound, points: [[960, 196], [960, 336]]}
 
 fils:
-  wire102: {trace: [[60, 40]], etiquette: [66, 55]}
-  wire103: {trace: [[1130, 40], [1130, 50], [1150, 70]], etiquette: [1144, 58, end]}
-  wire120: {etiquette: [430, 124, mid]}
-  wire122: {trace: [[370, 130], [370, 174]], etiquette: [445, 168, mid]}
-  wire136: {etiquette: [430, 344, mid]}
-  wire138: {etiquette: [430, 388, mid]}
-  wire140: {etiquette: [430, 432, mid]}
-  wire144: {etiquette: [430, 520, mid]}
-  wire146: {etiquette: [430, 564, mid]}
-  wire148: {etiquette: [430, 608, mid]}
-  wire150: {etiquette: [430, 652, mid]}
-  wire152: {etiquette: [430, 696, mid]}
-  wire121: {trace: [[1150, 150], [1130, 130]], etiquette: [975, 124, mid]}
-  wire123: {trace: [[1150, 194], [1130, 174]], etiquette: [975, 168, mid]}
-  wire137: {trace: [[1150, 370], [1130, 350]], etiquette: [975, 344, mid]}
-  wire139: {trace: [[1150, 414], [1130, 394]], etiquette: [975, 388, mid]}
-  wire141: {trace: [[1150, 458], [1130, 438]], etiquette: [975, 432, mid]}
-  wire145: {trace: [[1150, 546], [1130, 526]], etiquette: [975, 520, mid]}
-  wire147: {trace: [[1150, 590], [1130, 570]], etiquette: [975, 564, mid]}
-  wire149: {trace: [[1150, 634], [1130, 614]], etiquette: [975, 608, mid]}
-  wire151: {trace: [[1150, 678], [1130, 658]], etiquette: [975, 652, mid]}
-  wire153: {trace: [[1150, 722], [1130, 702]], etiquette: [975, 696, mid]}
-  wire124: {etiquette: [385, 212, mid]}
-  wire130: {etiquette: [475, 212, mid]}
-  wire131: {etiquette: [880, 212, mid]}
-  wire125: {trace: [[1150, 238], [1130, 218]], etiquette: [1055, 212, mid]}
-  wire126: {etiquette: [385, 256, mid]}
-  wire132: {etiquette: [475, 256, mid]}
-  wire133: {etiquette: [880, 256, mid]}
-  wire127: {trace: [[1150, 282], [1130, 262]], etiquette: [1055, 256, mid]}
-  wire128: {etiquette: [385, 300, mid]}
-  wire134: {etiquette: [475, 300, mid]}
-  wire135: {etiquette: [880, 300, mid]}
-  wire129: {trace: [[1150, 326], [1130, 306]], etiquette: [1055, 300, mid]}
-  wire142: {trace: [[500, 438], [500, 482]], etiquette: [494, 472, end]}
-  wire143: {trace: [[820, 438], [820, 482]], etiquette: [826, 472]}
+  wire203: {trace: [[60, 40]], etiquette: [66, 55]}
+  wire202: {trace: [[1130, 40], [1130, 50], [1150, 70]], etiquette: [1144, 58, end]}
+  wire218: {etiquette: [430, 124, mid]}
+  wire220: {trace: [[370, 130], [370, 174]], etiquette: [445, 168, mid]}
+  wire224: {etiquette: [430, 344, mid]}
+  wire204: {etiquette: [430, 388, mid]}
+  wire226: {etiquette: [430, 432, mid]}
+  wire206: {etiquette: [430, 520, mid]}
+  wire210: {etiquette: [430, 564, mid]}
+  wire222: {etiquette: [430, 608, mid]}
+  wire228: {etiquette: [430, 652, mid]}
+  wire208: {etiquette: [430, 696, mid]}
+  wire219: {trace: [[1150, 150], [1130, 130]], etiquette: [975, 124, mid]}
+  wire221: {trace: [[1150, 194], [1130, 174]], etiquette: [975, 168, mid]}
+  wire225: {trace: [[1150, 370], [1130, 350]], etiquette: [975, 344, mid]}
+  wire205: {trace: [[1150, 414], [1130, 394]], etiquette: [975, 388, mid]}
+  wire227: {trace: [[1150, 458], [1130, 438]], etiquette: [975, 432, mid]}
+  wire207: {trace: [[1150, 546], [1130, 526]], etiquette: [975, 520, mid]}
+  wire211: {trace: [[1150, 590], [1130, 570]], etiquette: [975, 564, mid]}
+  wire223: {trace: [[1150, 634], [1130, 614]], etiquette: [975, 608, mid]}
+  wire229: {trace: [[1150, 678], [1130, 658]], etiquette: [975, 652, mid]}
+  wire209: {trace: [[1150, 722], [1130, 702]], etiquette: [975, 696, mid]}
+  wire212: {etiquette: [385, 212, mid]}
+  wire230: {etiquette: [475, 212, mid]}
+  wire231: {etiquette: [880, 212, mid]}
+  wire215: {trace: [[1150, 238], [1130, 218]], etiquette: [1055, 212, mid]}
+  wire213: {etiquette: [385, 256, mid]}
+  wire232: {etiquette: [475, 256, mid]}
+  wire233: {etiquette: [880, 256, mid]}
+  wire216: {trace: [[1150, 282], [1130, 262]], etiquette: [1055, 256, mid]}
+  wire214: {etiquette: [385, 300, mid]}
+  wire234: {etiquette: [475, 300, mid]}
+  wire235: {etiquette: [880, 300, mid]}
+  wire217: {trace: [[1150, 326], [1130, 306]], etiquette: [1055, 300, mid]}
+  wire236: {trace: [[500, 438], [500, 482]], etiquette: [494, 472, end]}
+  wire237: {trace: [[820, 438], [820, 482]], etiquette: [826, 472]}
 
 renvois:
-  - {x: 20, y: 22, w: 230, texte: "→ node062 · fusible 50 A · folio 2a"}
-  - {x: 990, y: 22, w: 200, texte: "→ node006 · CC masse · folio 2a"}
+  - {x: 20, y: 22, w: 230, texte: "→ node154 · fusible 50 A · folio 2a"}
+  - {x: 990, y: 22, w: 200, texte: "→ node023 · CC masse · folio 2a"}
 
 pastilles:
   - {id: Q8, x: 832, y: 380}

@@ -20,8 +20,8 @@ appareils:
     nouveau: true
     calibre: 10 A
     nodes:
-      node382: {cote: point, xy: [990, 64], etiquette: [-2, 22, end]}
-      node381: {cote: point, xy: [1036, 64], etiquette: [2, 22]}
+      node316: {cote: point, xy: [990, 64], etiquette: [-2, 22, end]}
+      node315: {cote: point, xy: [1036, 64], etiquette: [2, 22]}
   - id: bat-servitude
     x: 40
     y: 230
@@ -38,21 +38,21 @@ appareils:
     titre: MEGA
     titre_xy: [277, 268]
     nodes:
-      node072: {cote: point, xy: [254, 286], etiquette: [-2, -12, end]}
-      node073: {cote: point, xy: [300, 286], etiquette: [2, 20]}
+      node009: {cote: point, xy: [254, 286], etiquette: [-2, -12, end]}
+      node010: {cote: point, xy: [300, 286], etiquette: [2, 20]}
   - id: cc-servitude
     forme: interrupteur
     titre: CC servitude
     titre_xy: [474, 246]
     nodes:
-      node009: {cote: point, xy: [444, 270], etiquette: [6, 32]}
-      node010: {cote: point, xy: [504, 270], etiquette: [6, -8]}
+      node020: {cote: point, xy: [444, 270], etiquette: [6, 32]}
+      node021: {cote: point, xy: [504, 270], etiquette: [6, -8]}
   - id: fus-chargeur-lifepo4
     forme: fusible
     calibre: 25 A
     nodes:
-      node377: {cote: point, xy: [600, 140], etiquette: [-2, 20, end]}
-      node378: {cote: point, xy: [646, 140], etiquette: [2, 20]}
+      node059: {cote: point, xy: [600, 140], etiquette: [-2, 20, end]}
+      node060: {cote: point, xy: [646, 140], etiquette: [2, 20]}
   - id: chargeur-lifepo4
     x: 720
     y: 84
@@ -62,29 +62,29 @@ appareils:
     titre_y: 40
     lignes: [chargeur de quai LiFePO4]
     nodes:
-      node372: [gauche, 140]
-      node373: [droite, 150]
-      node374: {cote: haut, a: 760, fonction: "230 V"}
-      node375: {cote: haut, a: 760, fonction: "230 V"}
-      node376: {cote: haut, a: 760, fonction: "230 V"}
+      node057: [gauche, 140]
+      node058: [droite, 150]
+      node317: {cote: haut, a: 760, fonction: "230 V"}
+      node318: {cote: haut, a: 760, fonction: "230 V"}
+      node319: {cote: haut, a: 760, fonction: "230 V"}
   - id: fus-orion-sortie
     forme: fusible
     calibre: 70 A
     nodes:
-      node366: {cote: point, xy: [600, 200], etiquette: [-2, 20, end]}
-      node367: {cote: point, xy: [646, 200], etiquette: [2, 20]}
+      node067: {cote: point, xy: [600, 200], etiquette: [-2, 20, end]}
+      node068: {cote: point, xy: [646, 200], etiquette: [2, 20]}
   - id: fus-source-tableau-servitude
     forme: fusible
     calibre: 50 A
     nodes:
-      node082: {cote: point, xy: [610, 340], etiquette: [-2, 20, end]}
-      node083: {cote: point, xy: [656, 340], etiquette: [2, 20]}
+      node151: {cote: point, xy: [610, 340], etiquette: [-2, 20, end]}
+      node152: {cote: point, xy: [656, 340], etiquette: [2, 20]}
   - id: fus-source-tableau-scheiber
     forme: fusible
     calibre: 30 A
     nodes:
-      node084: {cote: point, xy: [610, 400], etiquette: [-2, 20, end]}
-      node085: {cote: point, xy: [656, 400], etiquette: [2, 20]}
+      node155: {cote: point, xy: [610, 400], etiquette: [-2, 20, end]}
+      node156: {cote: point, xy: [656, 400], etiquette: [2, 20]}
   - id: tableau-scheiber
     x: 730
     y: 380
@@ -93,8 +93,8 @@ appareils:
     titre: Tableau Scheiber 2 voies
     lignes: ["frigo, pompe de cale : folio 1"]
     nodes:
-      node050: {cote: gauche, a: 400, fonction: "+"}
-      node051: {cote: droite, a: 400, fonction: "−"}
+      node159: {cote: gauche, a: 400, fonction: "+"}
+      node160: {cote: droite, a: 400, fonction: "−"}
   - id: shunt-servitude
     x: 440
     y: 520
@@ -103,59 +103,59 @@ appareils:
     titre: Shunt 500 A
     lignes: [D-H1]
     nodes:
-      node086: [gauche, 544]
-      node087: [droite, 544]
+      node011: [gauche, 544]
+      node012: [droite, 544]
   - id: cc-masse
     forme: interrupteur
     titre: CC masse
     titre_xy: [1084, 594]
     titre_ancre: ""
     nodes:
-      node005: {cote: point, xy: [1060, 560], etiquette: [-20, 14, end]}
-      node006: {cote: point, xy: [1060, 620], etiquette: [-20, 0, end]}
+      node022: {cote: point, xy: [1060, 560], etiquette: [-20, 14, end]}
+      node023: {cote: point, xy: [1060, 620], etiquette: [-20, 0, end]}
 
 barres:
   # neutre et terre au départ du câble du Blue Smart (longueur nulle)
-  - {node: node209, de: [990, 64], a: [990, 64], classe: n, epaisseur: w2}
-  - {node: node212, de: [990, 64], a: [990, 64], classe: n, epaisseur: w2}
-  - {node: node006, de: [1060, 620], a: [1060, 640], epaisseur: w2}
+  - {node: node309, de: [990, 64], a: [990, 64], classe: n, epaisseur: w2}
+  - {node: node307, de: [990, 64], a: [990, 64], classe: n, epaisseur: w2}
+  - {node: node023, de: [1060, 620], a: [1060, 640], epaisseur: w2}
 
 pastilles:
   - {id: A11, x: 40, y: 230}
 
 fils:
-  wire161: {etiquette: [193, 303], texte: "w161 · 35"}
-  wire006: {trace: [[428, 286]], etiquette: [384, 278, mid]}
-  wire210: {trace: [[420, 270], [420, 140]], etiquette: [436, 132]}
-  wire211: {etiquette: [683, 132, mid]}
-  wire204: {trace: [[428, 254], [428, 200]], etiquette: [436, 192]}
-  wire205: {trace: [[720, 200]], etiquette: [683, 192, mid]}
-  wire166: {trace: [[540, 270], [540, 340]], etiquette: [548, 332]}
-  wire019: {trace: [[730, 340]], etiquette: [693, 332, mid]}
-  wire167: {trace: [[520, 286], [520, 400]], etiquette: [528, 392]}
-  wire022: {etiquette: [693, 392, mid]}
-  wire009: {trace: [[170, 544]], etiquette: [214, 536], texte: "w009 · 35 (D-H1)"}
-  wire180: {trace: [[1044, 544]], etiquette: [820, 536, mid]}
-  wire212: {trace: [[1100, 150], [1100, 520]], etiquette: [1106, 330]}
-  wire206: {trace: [[1040, 480], [1060, 480]], etiquette: [1054, 525, end]}
-  wire218: {trace: [[1085, 64]], etiquette: [1062, 56, mid], texte: w218, classe: n w2}
+  wire009: {etiquette: [193, 303], texte: "w009 · 35"}
+  wire008: {trace: [[428, 286]], etiquette: [384, 278, mid]}
+  wire056: {trace: [[420, 270], [420, 140]], etiquette: [436, 132]}
+  wire064: {etiquette: [683, 132, mid]}
+  wire058: {trace: [[428, 254], [428, 200]], etiquette: [436, 192]}
+  wire066: {trace: [[720, 200]], etiquette: [683, 192, mid]}
+  wire157: {trace: [[540, 270], [540, 340]], etiquette: [548, 332]}
+  wire200: {trace: [[730, 340]], etiquette: [693, 332, mid]}
+  wire156: {trace: [[520, 286], [520, 400]], etiquette: [528, 392]}
+  wire158: {etiquette: [693, 392, mid]}
+  wire010: {trace: [[170, 544]], etiquette: [214, 536], texte: "w010 · 35 (D-H1)"}
+  wire011: {trace: [[1044, 544]], etiquette: [820, 536, mid]}
+  wire059: {trace: [[1100, 150], [1100, 520]], etiquette: [1106, 330]}
+  wire062: {trace: [[1040, 480], [1060, 480]], etiquette: [1054, 525, end]}
+  wire315: {trace: [[1085, 64]], etiquette: [1062, 56, mid], texte: w315, classe: n w2}
 
 cables:
   C10:
-    fils: [wire213, wire214, wire215]
+    fils: [wire311, wire312, wire313]
     trace: [[990, 64], [760, 64]]
     etiquette: [840, 56, mid]
-    texte: "w213-5 · 3 × 1,5"
+    texte: "w311-3 · 3 × 1,5"
 
 renvois:
-  - {x: 1085, y: 55, w: 88, texte: "n208 · folio 3"}
-  - {x: 720, y: 191, w: 190, texte: "n361 · Orion XS sortie · folio 2h"}
-  - {x: 730, y: 331, w: 260, texte: "→ n100 · tableau de la table à carte : folio 2b"}
-  - {x: 830, y: 471, w: 210, texte: "n362 · Orion XS − · folio 2h"}
-  - {x: 985, y: 640, w: 150, texte: "node006 · charges : folio 1"}
+  - {x: 1085, y: 55, w: 88, texte: "n308 · folio 3"}
+  - {x: 720, y: 191, w: 190, texte: "n062 · Orion XS sortie · folio 2h"}
+  - {x: 730, y: 331, w: 260, texte: "→ n200 · tableau de la table à carte : folio 2b"}
+  - {x: 830, y: 471, w: 210, texte: "n063 · Orion XS − · folio 2h"}
+  - {x: 985, y: 640, w: 150, texte: "node023 · charges : folio 1"}
 
 textes:
   - {x: 440, y: 590, texte: "Fils de mesure du shunt : folio 2e."}
   - {x: 1068, y: 101, classe: "ts mid", texte: "C10 du Blue Smart · boîtier d'arrivée"}
-  - {x: 1068, y: 114, classe: "id mid", texte: "n209 / n212 : N et PE"}
+  - {x: 1068, y: 114, classe: "id mid", texte: "n309 / n307 : N et PE"}
   - {x: 20, y: 698, texte: "En vert : nouveau (étude E). Déposés : coupleur Scheiber, coupe-circuit de couplage et leurs câbles ; le guindeau est passé sur le circuit moteur (folio 2h)."}

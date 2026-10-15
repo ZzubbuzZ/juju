@@ -35,30 +35,30 @@ appareils:
     titre: CC moteur +
     titre_xy: [460, 96]
     nodes:
-      node003: {cote: point, xy: [430, 120], etiquette: [-6, -8, end]}
-      node004: {cote: point, xy: [490, 120], etiquette: [6, -8]}
+      node005: {cote: point, xy: [430, 120], etiquette: [-6, -8, end]}
+      node006: {cote: point, xy: [490, 120], etiquette: [6, -8]}
   - id: cc-servitude
     forme: interrupteur
     titre: CC servitude +
     titre_xy: [460, 456]
     nodes:
-      node009: {cote: point, xy: [430, 480], etiquette: [-6, 18, end]}
-      node010: {cote: point, xy: [490, 480], etiquette: [6, -8]}
+      node020: {cote: point, xy: [430, 480], etiquette: [-6, 18, end]}
+      node021: {cote: point, xy: [490, 480], etiquette: [6, -8]}
   - id: cc-couplage
     forme: interrupteur
     titre: CC couplage
     titre_xy: [584, 224]
     titre_ancre: ""
     nodes:
-      node012: {cote: point, xy: [560, 190], etiquette: [8, -2]}
-      node011: {cote: point, xy: [560, 250], etiquette: [8, 10]}
+      node025: {cote: point, xy: [560, 190], etiquette: [8, -2]}
+      node024: {cote: point, xy: [560, 250], etiquette: [8, 10]}
   - id: cc-masse
     forme: interrupteur
     titre: CC masse (−)
     titre_xy: [270, 856]
     nodes:
-      node005: {cote: point, xy: [240, 880], etiquette: [-6, 18, end]}
-      node006: {cote: point, xy: [300, 880], etiquette: [6, 18]}
+      node022: {cote: point, xy: [240, 880], etiquette: [-6, 18, end]}
+      node023: {cote: point, xy: [300, 880], etiquette: [6, 18]}
 
   # ---- charge et couplage
   - id: chargeur-quai
@@ -70,9 +70,9 @@ appareils:
     titre_y: 40
     lignes: [Dolphin 12 V · 20 A, 3 sorties · Pb, sortie 3 libre]
     nodes:
-      node016: {cote: haut, a: 300, fonction: s1}
-      node017: {cote: bas, a: 300, fonction: s2}
-      node018: {cote: bas, a: 215, fonction: "−"}
+      node050: {cote: haut, a: 300, fonction: s1}
+      node051: {cote: bas, a: 300, fonction: s2}
+      node052: {cote: bas, a: 215, fonction: "−"}
   - id: coupleur
     x: 335
     y: 230
@@ -82,9 +82,9 @@ appareils:
     titre_y: 40
     lignes: [Scheiber 38.14700, relais · Pb]
     nodes:
-      node013: {cote: haut, a: 400, fonction: bat mot}
-      node014: {cote: bas, a: 400, fonction: bat serv}
-      node015: {cote: bas, a: 360, fonction: "−"}
+      node026: {cote: haut, a: 400, fonction: bat mot}
+      node027: {cote: bas, a: 400, fonction: bat serv}
+      node028: {cote: bas, a: 360, fonction: "−"}
 
   # ---- moteur
   - id: moteur
@@ -95,8 +95,8 @@ appareils:
     titre: Yanmar 3GMD
     lignes: [démarreur + alternateur]
     nodes:
-      node031: {cote: gauche, a: 120, fonction: "+"}
-      node032: {cote: bas, a: 760, fonction: "−"}
+      node100: {cote: gauche, a: 120, fonction: "+"}
+      node101: {cote: bas, a: 760, fonction: "−"}
   - id: tableau-moteur
     x: 880
     y: 70
@@ -106,15 +106,15 @@ appareils:
     titre_y: 42
     lignes: [contact · jauges]
     nodes:
-      node019: {cote: haut, a: 980, fonction: "+"}
+      node104: {cote: haut, a: 980, fonction: "+"}
   - id: fus-tableau-moteur
     forme: fusible
     calibre: 30 A
     titre: faisceau d'origine (Q1)
     titre_xy: [730, 24]
     nodes:
-      node038: {cote: point, xy: [700, 40], etiquette: [-4, 4, end]}
-      node039: {cote: point, xy: [760, 40], etiquette: [4, 4]}
+      node102: {cote: point, xy: [700, 40], etiquette: [-4, 4, end]}
+      node103: {cote: point, xy: [760, 40], etiquette: [4, 4]}
 
   # ---- guindeau
   - id: disj-guindeau
@@ -123,8 +123,8 @@ appareils:
     titre: Disjoncteur guindeau
     titre_xy: [720, 458]
     nodes:
-      node020: {cote: point, xy: [690, 480], etiquette: [-4, 20, end]}
-      node021: {cote: point, xy: [750, 480], etiquette: [4, 20]}
+      node108: {cote: point, xy: [690, 480], etiquette: [-4, 20, end]}
+      node109: {cote: point, xy: [750, 480], etiquette: [4, 20]}
   - id: relais-guindeau
     x: 850
     y: 420
@@ -134,12 +134,12 @@ appareils:
     titre_y: 50
     lignes: [guindeau]
     nodes:
-      node022: [gauche, 480]
-      node024: [droite, 460]
-      node025: [droite, 500]
-      node023: [bas, 1010]
-      node026: [haut, 890]
-      node027: [haut, 970]
+      node110: [gauche, 480]
+      node112: [droite, 460]
+      node113: [droite, 500]
+      node111: [bas, 1010]
+      node114: [haut, 890]
+      node115: [haut, 970]
   - id: guindeau
     forme: cercle
     cx: 1100
@@ -147,15 +147,15 @@ appareils:
     r: 26
     symbole: M
     nodes:
-      node029: {angle: 129.7151372318262, cote: point, etiquette: [0, -20]}
-      node030: {angle: 230.2848627681738, cote: point, etiquette: [0, 16]}
+      node117: {angle: 129.7151372318262, cote: point, etiquette: [0, -20]}
+      node118: {angle: 230.2848627681738, cote: point, etiquette: [0, 16]}
   - id: fus-telecommande-guindeau
     forme: fusible
     calibre: 5 A
     calibre_cote: gauche
     nodes:
-      node034: {cote: point, xy: [830, 300], etiquette: [-10, -2, end]}
-      node033: {cote: point, xy: [830, 340], etiquette: [-10, 12, end]}
+      node120: {cote: point, xy: [830, 300], etiquette: [-10, -2, end]}
+      node119: {cote: point, xy: [830, 340], etiquette: [-10, 12, end]}
   - id: telecommande-guindeau
     x: 860
     y: 260
@@ -166,9 +166,9 @@ appareils:
     titre_y: 30
     lignes: [+ pris au relais]
     nodes:
-      node035: [gauche, 285]
-      node036: [bas, 890]
-      node037: [bas, 970]
+      node121: [gauche, 285]
+      node122: [bas, 890]
+      node123: [bas, 970]
 
   # ---- tableaux et consommateurs
   - id: tableau-servitude
@@ -180,8 +180,8 @@ appareils:
     titre_y: 40
     lignes: [table à carte, 12 circuits · folio 2b]
     nodes:
-      node100: {cote: haut, a: 510, fonction: "+"}
-      node101: {cote: bas, a: 410, fonction: "−"}
+      node200: {cote: haut, a: 510, fonction: "+"}
+      node201: {cote: bas, a: 410, fonction: "−"}
   - id: tableau-scheiber
     x: 560
     y: 580
@@ -191,10 +191,10 @@ appareils:
     titre_y: 40
     lignes: [2 voies · contremarche, cale 10 A · frigo 15 A]
     nodes:
-      node050: {cote: haut, a: 600, fonction: "+"}
-      node053: {cote: bas, a: 575, fonction: pompe}
-      node051: {cote: bas, a: 660, fonction: "−"}
-      node052: {cote: bas, a: 740, fonction: frigo}
+      node159: {cote: haut, a: 600, fonction: "+"}
+      node162: {cote: bas, a: 575, fonction: pompe}
+      node160: {cote: bas, a: 660, fonction: "−"}
+      node161: {cote: bas, a: 740, fonction: frigo}
   - id: pompe-cale
     forme: cercle
     cx: 575
@@ -202,8 +202,8 @@ appareils:
     r: 20
     symbole: P
     nodes:
-      node056: {angle: 90, cote: point, etiquette: [-6, -8, end]}
-      node057: {angle: 0, cote: point, etiquette: [4, -14]}
+      node167: {angle: 90, cote: point, etiquette: [-6, -8, end]}
+      node168: {angle: 0, cote: point, etiquette: [4, -14]}
   - id: eps100
     x: 730
     y: 750
@@ -213,10 +213,10 @@ appareils:
     titre_y: 40
     lignes: [12 V / 230 V]
     nodes:
-      node042: {cote: haut, a: 740, fonction: "+"}
-      node043: {cote: gauche, a: 830, fonction: "−"}
-      node044: {cote: droite, a: 770, fonction: GF +}
-      node045: {cote: droite, a: 830, fonction: GF −}
+      node169: {cote: haut, a: 740, fonction: "+"}
+      node170: {cote: gauche, a: 830, fonction: "−"}
+      node171: {cote: droite, a: 770, fonction: GF +}
+      node172: {cote: droite, a: 830, fonction: GF −}
   - id: groupe-froid
     x: 910
     y: 750
@@ -226,80 +226,80 @@ appareils:
     titre_y: 45
     lignes: [CU-55]
     nodes:
-      node040: {cote: gauche, a: 770, fonction: "+"}
-      node041: {cote: gauche, a: 830, fonction: "−"}
+      node173: {cote: gauche, a: 770, fonction: "+"}
+      node174: {cote: gauche, a: 830, fonction: "−"}
 
 barres:
-  # masse commune, sortie du coupe-circuit des négatifs : les fils la rejoignent à 45°, vers node006
-  - {node: node006, de: [300, 880], a: [1185, 880]}
+  # masse commune, sortie du coupe-circuit des négatifs : les fils la rejoignent à 45°, vers node023
+  - {node: node023, de: [300, 880], a: [1185, 880]}
 
 incertains:
   - {x: 785, y: 252, w: 255, h: 160, texte: "télécommande : sections à relever (Q59)", texte_xy: [788, 244]}
 
 croisements_admis:
   # Le coupleur est entre le chargeur et le coupe-circuit de couplage, qui relient tous deux le + moteur
-  # (node003 / node004) au + servitude (node009) : sa masse, prise côté charges (node006, en bas), doit
-  # franchir la ligne du + servitude. Elle ne peut pas passer par un renvoi, node006 étant sur le folio.
-  - [wire014, wire006]
-  # Pour la même raison, la sortie 2 du chargeur (wire008) franchit wire014 pour rejoindre node009.
-  - [wire014, wire008]
-  # Le chargeur, entre les deux batteries, rejoint node005 sous la batterie de servitude ; wire004 relie
+  # (node005 / node006) au + servitude (node020) : sa masse, prise côté charges (node023, en bas), doit
+  # franchir la ligne du + servitude. Elle ne peut pas passer par un renvoi, node023 étant sur le folio.
+  - [wire018, wire008]
+  # Pour la même raison, la sortie 2 du chargeur (wire055) franchit wire018 pour rejoindre node020.
+  - [wire018, wire055]
+  # Le chargeur, entre les deux batteries, rejoint node022 sous la batterie de servitude ; wire003 relie
   # les négatifs des deux batteries (node002 / node008) : l'un des deux doit franchir l'autre.
-  - [wire004, wire005]
+  - [wire003, wire060]
 
 fils:
   # + moteur
   wire001: {etiquette: [225, 112, mid]}
-  wire003: {trace: [[350, 120], [300, 170]], etiquette: [312, 197, mid, v]}
-  wire002: {trace: [[400, 150]], etiquette: [412, 192, mid, v]}
-  wire012: {etiquette: [552, 112, mid]}
-  wire010: {etiquette: [532, 152]}
+  wire051: {trace: [[350, 120], [300, 170]], etiquette: [312, 197, mid, v]}
+  wire004: {trace: [[400, 150]], etiquette: [412, 192, mid, v]}
+  wire100: {etiquette: [552, 112, mid]}
+  wire007: {etiquette: [532, 152]}
   # + servitude
-  wire006: {etiquette: [225, 472, mid]}
-  wire008: {trace: [[350, 480], [300, 430]], etiquette: [312, 390, mid, v]}
-  wire007: {trace: [[400, 450]], etiquette: [412, 390, mid, v]}
-  wire011: {trace: [[415, 465], [415, 430], [560, 430]], etiquette: [490, 422, mid]}
-  wire017: {etiquette: [655, 472, mid]}
-  wire018: {etiquette: [800, 472, mid]}
-  wire019: {trace: [[510, 500]], etiquette: [522, 555, mid, v]}
-  wire022: {trace: [[580, 480], [600, 500]], etiquette: [612, 555, mid, v]}
+  wire008: {etiquette: [225, 472, mid]}
+  wire055: {trace: [[350, 480], [300, 430]], etiquette: [312, 390, mid, v]}
+  wire016: {trace: [[400, 450]], etiquette: [412, 390, mid, v]}
+  wire015: {trace: [[415, 465], [415, 430], [560, 430]], etiquette: [490, 422, mid]}
+  wire102: {etiquette: [655, 472, mid]}
+  wire109: {etiquette: [800, 472, mid]}
+  wire200: {trace: [[510, 500]], etiquette: [522, 555, mid, v]}
+  wire158: {trace: [[580, 480], [600, 500]], etiquette: [612, 555, mid, v]}
   # guindeau et télécommande
-  wire020: {etiquette: [1051, 452, mid]}
-  wire021: {etiquette: [1051, 516, mid], classe: "n w3"}
-  wire061: {trace: [[830, 460]], etiquette: [822, 400, mid, v]}
-  wire062: {trace: [[830, 285]], etiquette: [845, 279, mid]}
-  wire063: {etiquette: [902, 385, mid, v]}
-  wire064: {etiquette: [982, 385, mid, v]}
+  wire111: {etiquette: [1051, 452, mid]}
+  wire112: {etiquette: [1051, 516, mid], classe: "n w3"}
+  wire110: {trace: [[830, 460]], etiquette: [822, 400, mid, v]}
+  wire115: {trace: [[830, 285]], etiquette: [845, 279, mid]}
+  wire113: {etiquette: [902, 385, mid, v]}
+  wire114: {etiquette: [982, 385, mid, v]}
   # tableau Scheiber, pompe de cale, frigo
-  wire026: {etiquette: [587, 712, mid, v]}
-  wire036: {trace: [[640, 770], [660, 750]], etiquette: [628, 786, mid]}
-  wire024: {etiquette: [752, 715, mid, v]}
-  wire025: {trace: [[660, 810], [680, 830]], etiquette: [705, 822, mid]}
-  wire027: {etiquette: [880, 744, mid], texte: "w027 / w028 · 3,5"}
-  wire028: {}
+  wire167: {etiquette: [587, 712, mid, v]}
+  wire168: {trace: [[640, 770], [660, 750]], etiquette: [628, 786, mid]}
+  wire165: {etiquette: [752, 715, mid, v]}
+  wire166: {trace: [[660, 810], [680, 830]], etiquette: [705, 822, mid]}
+  wire171: {etiquette: [880, 744, mid], texte: "w171 / w172 · 3,5"}
+  wire172: {}
   # masses
-  wire004: {trace: [[20, 120], [20, 560], [60, 560]], etiquette: [32, 300, mid, v]}
-  wire005: {trace: [[215, 390], [40, 390], [40, 880]], etiquette: [52, 640, mid, v]}
-  wire009: {trace: [[100, 880]], etiquette: [112, 700, mid, v]}
-  wire014: {trace: [[340, 880], [360, 860]], etiquette: [372, 620, mid, v]}
-  wire016: {trace: [[390, 880], [410, 860]], etiquette: [402, 790, mid, v]}
-  wire023: {trace: [[640, 880], [660, 860]], etiquette: [672, 718, mid, v]}
-  wire015: {trace: [[990, 880], [1010, 860]], etiquette: [1022, 700, mid, v]}
+  wire003: {trace: [[20, 120], [20, 560], [60, 560]], etiquette: [32, 300, mid, v]}
+  wire060: {trace: [[215, 390], [40, 390], [40, 880]], etiquette: [52, 640, mid, v]}
+  wire010: {trace: [[100, 880]], etiquette: [112, 700, mid, v]}
+  wire018: {trace: [[340, 880], [360, 860]], etiquette: [372, 620, mid, v]}
+  wire201: {trace: [[390, 880], [410, 860]], etiquette: [402, 790, mid, v]}
+  wire162: {trace: [[640, 880], [660, 860]], etiquette: [672, 718, mid, v]}
+  wire105: {trace: [[990, 880], [1010, 860]], etiquette: [1022, 700, mid, v]}
   # tableau moteur : faisceau d'origine (Q1, 13/10), sections à relever (Q65)
-  wire072: {trace: [[600, 100], [600, 40]], etiquette: [592, 70, mid, v]}
-  wire073: {trace: [[980, 40]], etiquette: [870, 34, mid]}
-  wire013: {trace: [[1165, 880], [1185, 860], [1185, 200], [760, 200]], etiquette: [1178, 700, mid, v]}
+  wire106: {trace: [[600, 100], [600, 40]], etiquette: [592, 70, mid, v]}
+  wire107: {trace: [[980, 40]], etiquette: [870, 34, mid]}
+  wire104: {trace: [[1165, 880], [1185, 860], [1185, 200], [760, 200]], etiquette: [1178, 700, mid, v]}
 
 textes:
   - {x: 190, y: 270, classe: "ts end", texte: "entrée 230 V : folio 3"}
-  - {x: 190, y: 285, classe: "id end", texte: "n200-2"}
+  - {x: 190, y: 285, classe: "id end", texte: "n312-4"}
   - {x: 1100, y: 545, classe: "tb mid", texte: "Guindeau Lewmar"}
   - {x: 1100, y: 560, classe: "ts mid", texte: "Pro-Series 1000 · 700 W"}
   - {x: 550, y: 765, classe: "tb end", texte: "Pompe de cale"}
   - {x: 550, y: 780, classe: "ts end", texte: "Attwood Tsunami T500"}
   - {x: 550, y: 795, classe: "ts end", texte: "sans flotteur,"}
   - {x: 550, y: 810, classe: "ts end", texte: "mise en route manuelle"}
-  - {x: 720, y: 905, classe: "ts mid", texte: "node006 · masse côté charges"}
+  - {x: 720, y: 905, classe: "ts mid", texte: "node023 · masse côté charges"}
 
 pastilles:
   - {id: A2, x: 205, y: 88}

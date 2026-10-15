@@ -29,9 +29,9 @@ Tout ce que décrit [D-H1](../H1-shunt-connecte/proposition.md#câblage), plus :
 
 | Fil | De → vers | Rôle |
 |---|---|---|
-| wire185 | shunt (node094) → afficheur (node095), environ 4 m | Câble de données, qui alimente aussi l'afficheur |
+| wire150 | shunt (node015) → afficheur (node179), environ 4 m | Câble de données, qui alimente aussi l'afficheur |
 
-Le câble de données suit le trajet de wire019, de la descente à la table à carte, avec des colliers et un passe-fil à chaque cloison (voir A-H5). Le câble fourni fait 10 m : la longueur en trop se love derrière le tableau.
+Le câble de données suit le trajet de wire200, de la descente à la table à carte, avec des colliers et un passe-fil à chaque cloison (voir A-H5). Le câble fourni fait 10 m : la longueur en trop se love derrière le tableau.
 
 L'indicateur à aiguille est déposé. La place suffit pour l'afficheur (**Q41**, 03/10). Son branchement et le diamètre du trou se verront à la pose : ses fils seront retirés jusqu'à leur source, ou isolés et étiquetés s'ils sont inaccessibles ; si le trou ne fait pas 52 mm, une platine ou une collerette d'adaptation suffit (article à chiffrer).
 
