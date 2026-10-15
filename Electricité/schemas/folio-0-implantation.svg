@@ -51,12 +51,12 @@
   <!-- Zones -->
   <rect class="zone" data-zone="cabine-poupe" x="100" y="232" width="225" height="96" rx="3"/>
   <text class="ts mid" x="160" y="318">Cabine de poupe</text>
-  <rect class="zone" data-zone="cockpit-coffre-tribord" x="100" y="392" width="215" height="100" rx="3"/>
+  <rect class="zone" data-zone="cockpit-coffre-tribord" x="100" y="392" width="180" height="100" rx="3"/>
   <text class="ts mid" x="160" y="410">Coffre de cockpit</text>
-  <rect class="zone" data-zone="compartiment-moteur" x="286" y="292" width="106" height="88" rx="3" style="fill-opacity:.85"/>
-  <text class="ts mid" x="339" y="372">Moteur</text>
-  <rect class="zone" data-zone="cabinet-toilette" x="330" y="388" width="62" height="100" rx="3"/>
-  <text class="ts mid" x="361" y="478">Toilette</text>
+  <rect class="zone" data-zone="compartiment-moteur" x="286" y="316" width="106" height="88" rx="3" style="fill-opacity:.85"/>
+  <text class="ts mid" x="339" y="396">Moteur</text>
+  <rect class="zone" data-zone="cabinet-toilette" x="330" y="410" width="62" height="100" rx="3"/>
+  <text class="ts mid" x="361" y="500">Toilette</text>
   <rect class="zone" data-zone="descente" x="398" y="300" width="42" height="110" rx="3"/>
   <text class="ts mid" x="424" y="372" transform="rotate(-90 424 372)">Descente</text>
   <rect class="zone" data-zone="table-a-carte" x="450" y="200" width="105" height="90" rx="3"/>
@@ -75,13 +75,13 @@
   <!-- Points d'ancrage -->
   <circle class="dn" cx="262" cy="300" r="4"/>
   <circle class="dn" cx="207" cy="440" r="4"/>
-  <circle class="dn" cx="339" cy="336" r="4"/>
+  <circle class="dn" cx="339" cy="346" r="4"/>
   <circle class="dn" cx="419" cy="316" r="4"/>
   <circle class="dn" cx="520" cy="262" r="4"/>
   <circle class="dn" cx="520" cy="470" r="4"/>
   <circle class="dn" cx="902" cy="360" r="4"/>
   <circle class="dn" cx="1056" cy="355" r="4"/>
-  <circle class="dn" cx="340" cy="440" r="4"/>
+  <circle class="dn" cx="361" cy="460" r="4"/>
   <circle class="dn" cx="700" cy="420" r="4"/>
 
   <!-- Bâbord : bulles du haut -->
@@ -130,10 +130,10 @@
   <text class="t" x="52" y="619" data-equipement="bat-moteur">Batterie moteur 110 Ah</text>
   <text class="t" x="52" y="638" data-equipement="chargeur-quai">Chargeur de quai (au-dessus)</text>
   <text class="t" x="52" y="657" data-equipement="prise-quai">Prise de quai (sous le banc)</text>
-  <text class="t" x="52" y="676"><tspan data-equipement="boitier-230v">Boîtier d'arrivée 230 V :</tspan> <tspan data-equipement="ddr-230v">diff. 30 mA,</tspan> <tspan data-equipement="disj-chargeur">10 A (chargeur)</tspan></text>
+  <text class="t" x="52" y="676"><tspan data-equipement="boitier-230v">Boîtier d'arrivée :</tspan> <tspan data-equipement="ddr-230v">diff. 30 mA,</tspan> <tspan data-equipement="disj-chargeur">10 A (chargeur)</tspan></text>
   <text class="t" x="52" y="695" data-equipement="pompe-eau">Pompe à eau douce Seaflo</text>
 
-  <path class="leader" d="M455 595 L339 336"/>
+  <path class="leader" d="M455 595 L339 346"/>
   <rect class="callout" x="350" y="595" width="210" height="70" rx="2"/>
   <text class="tb" x="362" y="615">Compartiment moteur</text>
   <text class="t" x="362" y="634" data-equipement="moteur">Moteur Yanmar 3GMD</text>
@@ -155,7 +155,7 @@
   <text class="t" x="852" y="653" data-equipement="eclairage-12v-veilleuse-carre">Veilleuse 12 V à LED</text>
   <text class="t" x="852" y="672" data-equipement="eclairage-230-carre">Réglette 230 V à 2 spots</text>
 
-  <path class="leader" d="M345 735 L340 440"/>
+  <path class="leader" d="M361 735 L361 460"/>
   <rect class="callout" x="340" y="735" width="480" height="47" rx="2"/>
   <text class="t" x="352" y="754"><tspan class="tb">Toilette · tribord :</tspan> <tspan data-equipement="boitier-230-tribord">boîtier de distribution 230 V (4 disjoncteurs),</tspan> <tspan data-equipement="prise-230-toilette">prise 230 V</tspan></text>
   <text class="t" x="352" y="773"><tspan data-equipement="eclairage-12v-toilette">Plafonnier 12 V à LED au-dessus de l'évier,</tspan> <tspan data-equipement="eclairage-230-toilette">spot 230 V GU10</tspan></text>
