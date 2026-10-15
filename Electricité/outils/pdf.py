@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-"""Imprime la page de consultation (build/juju.html) en PDF A4 paysage : build/juju.pdf.
+"""Imprime la page de consultation (build/juju.html) en PDF A4 paysage, livrable de la branche courante.
 
 Usage :
     python Electricité/outils/pdf.py              # régénère la page (page.py), puis le PDF
     python Electricité/outils/pdf.py --sans-page  # imprime build/juju.html tel quel
 
-Toutes les vues sont imprimées à la suite (Relevé, puis chaque étude en cours) : une page de garde
-avec la légende, puis un folio par page, réduit pour tenir dans la page ; comparaisons, cadrages,
-anomalies et questions suivent sur des pages à elles. Signets du PDF tirés des titres, numéro de
+Le PDF ne contient que la vue de la branche courante, et va dans son dossier de livrables (versionné) :
+- main : la vue « Relevé » -> livrables/juju-schemas.pdf ;
+- etude/<axe> : la vue de l'étude -> etudes/<X-axe>/livrables/juju-etude-<X>.pdf (la branche d'étude
+  ne modifie que son dossier) ;
+- toute autre branche : toutes les vues -> build/juju.pdf (non versionné).
+Une page de garde avec la légende, puis un folio par page, réduit pour tenir dans la page ; comparaisons,
+cadrages, anomalies et questions suivent sur des pages à elles. Signets du PDF tirés des titres, numéro de
 page en pied. Dépendance : playwright (pip install playwright, puis python -m playwright install chromium).
 Variable d'environnement CHROMIUM : chemin d'un Chromium déjà installé, à utiliser à la place.
 """
@@ -31,7 +35,7 @@ IMPRESSION = """
 html, body { background: #fff; }
 body { padding: 0; font-size: 12.5px; line-height: 1.45; }
 .wrap { max-width: none; gap: 0; display: block; }
-.menu, script { display: none !important; }
+.menu, script, .vue-renvoi { display: none !important; }
 header { gap: 14px; break-after: page; }
 h1 { font-size: 30px; }
 .vue, .vue[hidden] { display: block !important; }
@@ -71,13 +75,15 @@ PIED = ('<div style="width:100%;font-family:Arial,sans-serif;font-size:8px;color
         '<span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>')
 
 
-def imprimer(html: Path, sortie: Path) -> None:
+def imprimer(html: Path, sortie: Path, vues: list[str] | None = None) -> None:
     from playwright.sync_api import sync_playwright
     with sync_playwright() as pw:
         navigateur = pw.chromium.launch(executable_path=os.environ.get("CHROMIUM") or None)
         p = navigateur.new_page(color_scheme="light")
         p.goto(html.resolve().as_uri(), wait_until="networkidle")
         p.add_style_tag(content=IMPRESSION)
+        if vues is not None:  # seulement les vues de la branche courante
+            p.evaluate("ids => document.querySelectorAll('.vue').forEach(v => { if (!ids.includes(v.id)) v.remove(); })", vues)
         # un titre par vue (le menu disparaît à l'impression)
         p.evaluate("""() => document.querySelectorAll('.vue').forEach(v => {
             const h = document.createElement('h1'); h.className = 'vue-titre';
@@ -92,12 +98,26 @@ def imprimer(html: Path, sortie: Path) -> None:
         navigateur.close()
 
 
+def livrable() -> tuple[Path, list[str] | None]:
+    """Chemin du PDF et vues à imprimer, selon la branche courante."""
+    branche = page.git("rev-parse", "--abbrev-ref", "HEAD")
+    if branche == "main":
+        return page.RACINE / "livrables" / "juju-schemas.pdf", ["releve"]
+    if branche.startswith("etude/"):
+        dossier, _ = page.dossier_etude(page.RACINE, branche)
+        if dossier:
+            return (page.RACINE / "etudes" / dossier / "livrables" / f"juju-etude-{dossier[0]}.pdf",
+                    [f"etude-{dossier[0]}"])
+    return page.BUILD / "juju.pdf", None
+
+
 def main(args: list[str]) -> int:
     if "--sans-page" not in args:
         page.main()
     html = page.BUILD / "juju.html"
-    sortie = page.BUILD / "juju.pdf"
-    imprimer(html, sortie)
+    sortie, vues = livrable()
+    sortie.parent.mkdir(parents=True, exist_ok=True)
+    imprimer(html, sortie, vues)
     print(f"PDF A4 paysage -> {sortie.relative_to(page.RACINE.parent).as_posix()}")
     return 0
 

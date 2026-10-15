@@ -12,6 +12,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 | `cible/` | `cible.yaml` (hypothèses retenues, appliquées dans l'ordre sur le relevé) et le folio 4 de l'installation 12 V cible | Se modifie sur `main`. Le vérificateur exige que chaque fil 12 V du modèle cible figure sur le folio. Ajouter une hypothèse à `cible.yaml` quand elle est retenue et fusionnée, et redessiner le folio. |
 | `commun/` | `bilan-energetique.yaml` et `dimensionnement.md` (sections, protections et chutes de tension de l'installation cible), partagés par les études | `dimensionnement.md` se met à jour sur `main` à chaque étude fusionnée. |
 | `documentation-technique/` | Manuel du bord : installation, réglages et entretien de ce qui est installé ou décidé. Pour l'instant une liste de sections à écrire (`README.md`) | Se modifie sur `main`. Ne décrit pas les hypothèses à l'étude. |
+| `livrables/` | `juju-schemas.pdf` : PDF de la vue « Relevé », produit par `outils/pdf.py` sur `main` | Généré, ne pas modifier à la main. Une étude a son propre `etudes/<X-axe>/livrables/`. |
 | `outils/` | `verifier.py`, `page.py`, schémas JSON | |
 
 ## Règles de travail
@@ -59,7 +60,7 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 
 `python Electricité/outils/page.py` produit `Electricité/build/juju.html` (non versionné) : une seule page, avec un menu qui choisit la vue « Relevé » (branche `main` : folios de l'existant et des études fusionnées, anomalies, questions) ou une vue par branche d'étude (README de l'étude, folios et comparaison de ses hypothèses). Les branches sont lues par `git archive`, sans changer de branche ; la branche courante est lue sur le disque. Une étude fusionnée dans `main` n'a pas de vue propre.
 
-`python Electricité/outils/pdf.py` régénère la page puis l'imprime en PDF A4 paysage, `Electricité/build/juju.pdf` (non versionné) : page de garde et légende, un folio par page, puis comparaisons, cadrages, anomalies et questions, avec signets et numéros de page (dépendance : playwright).
+`python Electricité/outils/pdf.py` régénère la page puis imprime en PDF A4 paysage la vue de la branche courante seulement : page de garde et légende, un folio par page, puis comparaisons, cadrages, anomalies et questions, avec signets et numéros de page (dépendance : playwright ; variable `CHROMIUM` pour un Chromium déjà installé). C'est le livrable de la branche, versionné : sur `main`, `Electricité/livrables/juju-schemas.pdf` (vue « Relevé ») ; sur `etude/<axe>`, `etudes/<X-axe>/livrables/juju-etude-<X>.pdf` (vue de l'étude, dans le dossier de l'étude pour ne pas créer de conflit au rebase). Le régénérer et le committer quand les folios ou les données de la branche changent. Sur une autre branche, toutes les vues vont dans `build/juju.pdf`, non versionné. À la fusion d'une étude, supprimer son dossier `livrables/` : la vue « Relevé » de `main` la reprend.
 
 La page est publiée en artifact : https://claude.ai/artifact/Vj1VV9bWUtJjnwGRuP5a36 (republier sur la même URL après tout changement, sur n'importe quelle branche). Chaque vue a son ancre (`#releve`, `#etude-D`…).
 
