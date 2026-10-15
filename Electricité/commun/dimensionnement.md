@@ -21,16 +21,27 @@ Vérification des sections, des protections et des chutes de tension de l'instal
 | Guindeau en secours sur la LiFePO4 (sélecteur en position 2, 13/10) | wire103, wire108, wire109, wire111, wire112, wire105 | 35, 50 et 10 mm², trajet voisin du circuit moteur | 50 A normal, 60 A en charge | MEGA 300 A, puis disjoncteur 70 A | voisine du circuit moteur | Acceptable en secours ; 50 à 60 A sous les 250 A du BMS |
 | Dolphin → batterie moteur | wire063, wire050 | 6 mm², 0,5 + 0,5 m | 20 A | 30 A à la batterie | 0,5 % | Conforme |
 | Orion XS, entrée et sortie | wire053, wire058, wire062, wire065, wire066 | 16 mm², 0,65 + 0,5 m | réglé vers 15 A ; 50 A au plus | 70 A aux deux bouts (notice) | 0,2 % à 15 A ; 0,5 % à 50 A | Conforme |
-| Blue Smart IP67 12/17 (coffre de cockpit, E-H5) → servitude | wire056, wire059, wire064 | 4 mm² 0,15 m, puis 10 mm² 2 × 5 m (Q64) | 17 A | 25 A à la source | 2,6 % | Conforme sous 3 % ; fin de charge corrigée par la tension du shunt (VE.Smart) |
+| Blue Smart IP67 12/17 (coffre de cockpit, E-H5) → servitude | wire056, wire059, wire064 | pont de 4 mm² 0,1 m depuis le fusible de sortie de l'Orion XS (15/10), puis 10 mm² 2 × 5 m (Q64) | 17 A | 25 A à la source | 2,6 % | Conforme sous 3 % ; fin de charge corrigée par la tension du shunt (VE.Smart) |
 | Ballon, entrée 12 V (B-H3) | wire154, wire161, wire173 | 6 mm², 3,5 + 3 m (est. : trajet de wire200, ballon sous la table à carte, Q57) | 17 A | disjoncteur 12 V CC de 30 A à la platine (notice : 30 A ; 12/10) | 2,8 % | Conforme (confort, 10 %) |
 | Frigo : batterie → tableau Scheiber → EPS 100 → groupe froid | wire158, wire162, wire165, wire166, wire171, wire172 | 6 puis 3,5 mm², environ 6,5 m (est.) | 3,5 A ; 5 A au démarrage | 30 A (A-H2), puis 15 A (tableau Scheiber) | 1,8 % ; **2,6 %** au démarrage | Conforme ; longueurs de wire158, wire162, wire165, wire166 non relevées |
 | Pompe de cale | wire167, wire168 | 2,5 mm², 3 m (est.) | 3 A | 10 A (tableau Scheiber) | 1,1 % | Section conforme ; fusible : anomalie A10 (3 A demandés) |
 
 Les fils de mesure et de commande (shunt, Orion XS) sont en 0,75 mm² avec un fusible de 1 A à leur source : conforme.
 
+## Ponts entre porte-fusibles (15/10)
+
+Les porte-fusibles MIDI de la niche sont reliés par des ponts, un par potentiel, au lieu d'un câble chacun depuis les coupe-circuits (proposition de l'utilisateur) :
+
+| Pont | Câble d'alimentation (non protégé) | Pont | Somme des fusibles |
+|---|---|---|---|
+| Côté batterie de servitude (node020) : sortie de l'Orion XS, Blue Smart | wire058, 16 mm², 0,25 m | wire056, 4 mm², vers le fusible de 25 A | 70 + 25 A (au plus 50 + 17 A de charge) |
+| Côté charges (node021) : table à carte, Scheiber | wire157, 16 mm², 0,25 m | wire156, 6 mm², vers le fusible de 30 A | 50 + 30 A |
+
+Le câble d'alimentation porte la somme des fusibles qu'il dessert, d'où le 16 mm². Il n'est protégé que par le MEGA de 300 A, comme l'étaient les câbles qu'il remplace : longueur courte, porte-fusibles capotés. Un 35 mm², calibré pour le MEGA, ne se réalise pas en pont et n'apporterait rien de plus (décision de l'utilisateur, 15/10). Chaque pont ne porte que le courant du fusible qu'il alimente. Ponts en câble isolé, cosses serties sous gaine thermorétractable.
+
 ## Alimentation du tableau de la table à carte
 
-wire157 et wire200 (+), wire201 (−) : 6 mm², environ 3 m chacun, fusible de 50 A à la source (A-H2).
+wire200 (+) et wire201 (−) : 6 mm², environ 3 m chacun, fusible de 50 A à la source (A-H2). En amont du fusible, wire157 (16 mm², 0,25 m) alimente aussi, par le pont wire156, le fusible du Scheiber (15/10).
 
 | Courant du tableau | ΔU sur l'alimentation |
 |---|---|

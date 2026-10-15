@@ -25,7 +25,6 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 12/10 : décision de l'utilisateur, les deux câbles seront regroupés sur un seul C10, et l'autre alimentera le ballon par un câble neuf et une boîte de dérivation (B-H1). Suivre les deux câbles avant le regroupement reste utile au relevé.
   → 15/10 : hypothèse de l'utilisateur, à vérifier à bord : le C10 n°1 (à gauche) alimente l'éclairage tribord, le C10 n°2 (à droite) l'éclairage bâbord. Notée en « estimé » dans le relevé (folio 3).
 - **Q65** Faisceau du tableau moteur (réponse à Q1 du 13/10) : section et couleur de wire106 (+ démarreur → porte-fusible de 30 A) et de wire107 (porte-fusible → tableau moteur) ; emplacement du porte-fusible et type de fusible ; d'où vient la masse du tableau.
-- **Q59** Télécommande du guindeau : section et couleur des fils wire110 (+ du relais vers le fusible de 5 A), wire115 (fusible vers la télécommande), wire113 et wire114 (montée et descente vers le relais) ; la commande masse du relais (node116) est-elle raccordée ?
 - **Q62** Trajet et longueur de wire003 (− batterie moteur, coffre de cockpit tribord → − batterie de servitude, cabine de poupe). Le 11/10, wire003 a été relevé entre les deux bornes −, et non jusqu'au coupe-circuit des négatifs : la longueur de 2 m notée jusque-là correspondait à l'ancien trajet supposé.
   → 11/10 : wire003 part de la batterie moteur, traverse le compartiment moteur, puis passe la cloison de la cabine arrière jusqu'à la batterie de servitude. Reste à mesurer la longueur.
 - **Q12** Longueurs réelles des fils du tableau de servitude, circuit par circuit.
@@ -58,6 +57,8 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 
 ## Réponses
 
+- **Q59** Télécommande du guindeau : section et couleur des fils wire110 (+ du relais vers le fusible de 5 A), wire115 (fusible vers la télécommande), wire113 et wire114 (montée et descente vers le relais) ; la commande masse du relais (node116) est-elle raccordée ?
+  → 15/10 : tous les fils de la télécommande sont en 1 mm². wire110 rouge, wire115 rouge et marron, wire113 bleu, wire114 noir. La commande masse est raccordée : wire116, 1 mm² bleu, relie l'entrée − du relais (node111) au commun de la commande (node116).
 - **Q1** Tableau moteur (contact, jauges) : est-il branché sur le câble du démarreur (node100) ? Avec ou sans fusible ?
   → 29/09 : le faisceau d'origine Yanmar comporte un porte-fusible ; on ne sait pas encore si le motoriste de Juju l'a conservé.
   → 30/09 : sera vérifié, et traité si nécessaire, lors de la pose du compte-tours.

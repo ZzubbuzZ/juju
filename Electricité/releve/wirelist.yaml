@@ -39,10 +39,11 @@ fils:
   - { id: wire112, de: node113, vers: node118, section_mm2: 10, couleur: noir, longueur_m: 0.5 }
 
   # --- Télécommande du guindeau (Q2) ----------------------------------------------
-  - { id: wire110, de: node110, vers: node119, note: "Pris sur le + d'entrée du relais" }
-  - { id: wire115, de: node120, vers: node121 }
-  - { id: wire113, de: node122, vers: node114 }
-  - { id: wire114, de: node123, vers: node115 }
+  - { id: wire110, de: node110, vers: node119, section_mm2: 1, couleur: rouge, note: "Pris sur le + d'entrée du relais. Section et couleur relevées le 15/10 (Q59)" }
+  - { id: wire115, de: node120, vers: node121, section_mm2: 1, note: "Rouge et marron (relevé du 15/10, Q59)" }
+  - { id: wire113, de: node122, vers: node114, section_mm2: 1, couleur: bleu }
+  - { id: wire114, de: node123, vers: node115, section_mm2: 1, couleur: noir }
+  - { id: wire116, de: node111, vers: node116, section_mm2: 1, couleur: bleu, note: "Commun de la commande du relais, relié à son entrée − (relevé du 15/10, Q59)" }
 
   # --- Tableau Scheiber 2 voies (Q3, Q25, Q29)
   - { id: wire158, de: node021, vers: node159, section_mm2: 6, note: "Sans fusible (A6)" }

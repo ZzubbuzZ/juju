@@ -128,13 +128,13 @@ pastilles:
 fils:
   wire009: {etiquette: [193, 303], texte: "w009 · 35"}
   wire008: {trace: [[428, 286]], etiquette: [384, 278, mid]}
-  wire056: {trace: [[420, 270], [420, 140]], etiquette: [436, 132]}
+  wire056: {trace: [[580, 180], [580, 160]], etiquette: [574, 174, end]}
   wire064: {etiquette: [662, 124, mid]}
   wire058: {trace: [[428, 254], [428, 200]], etiquette: [436, 192]}
   wire066: {trace: [[720, 200]], etiquette: [683, 192, mid]}
   wire157: {trace: [[540, 270], [540, 340]], etiquette: [548, 332]}
   wire200: {trace: [[730, 340]], etiquette: [693, 332, mid]}
-  wire156: {trace: [[520, 286], [520, 400]], etiquette: [528, 392]}
+  wire156: {trace: [[590, 360], [590, 380]], etiquette: [584, 374, end]}
   wire158: {etiquette: [693, 392, mid]}
   wire010: {trace: [[170, 544]], etiquette: [214, 536], texte: "w010 · 35 (D-H1)"}
   wire011: {trace: [[1044, 544]], etiquette: [820, 536, mid]}

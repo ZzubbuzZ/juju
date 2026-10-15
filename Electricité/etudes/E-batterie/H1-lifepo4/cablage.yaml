@@ -15,7 +15,7 @@ base: D-H1
 supprime:
   equipements: [bat-servitude, fus-bat-servitude, fus-chargeur-moteur, cc-couplage, coupleur, fus-coupleur-moteur, fus-coupleur-servitude, fus-chargeur-servitude]
   nodes: [node024, node025, node026, node027, node028, node053, node055, node056, node029, node030, node031, node032]
-  fils: [wire004, wire051, wire060, wire016, wire055, wire007, wire015, wire018, wire102, wire052, wire057, wire005, wire017]
+  fils: [wire004, wire051, wire060, wire016, wire055, wire007, wire015, wire018, wire102, wire052, wire057, wire005, wire017, wire156, wire157]
 
 equipements:
   # --- Batterie et son fusible ---------------------------------------------------
@@ -79,7 +79,7 @@ fils:
   # --- Orion XS -------------------------------------------------------------------------
   - { id: wire053, de: node006, vers: node065, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Côté charges du coupe-circuit moteur (08/10). Aussi court que possible : non protégé" }
   - { id: wire065, de: node066, vers: node061, section_mm2: 16, couleur: rouge, longueur_m: 0.5, statut: propose, note: "16 mm² jusqu'à 5 m, d'après la notice (fusible de 60 à 70 A)" }
-  - { id: wire058, de: node020, vers: node067, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire058, de: node020, vers: node067, section_mm2: 16, couleur: rouge, longueur_m: 0.25, statut: propose, note: "Alimente aussi, par le pont wire056, le fusible du Blue Smart (15/10) : 70 A + 25 A, 16 mm² suffisent (au plus 50 + 17 A de charge). Aussi court que possible : non protégé" }
   - { id: wire066, de: node068, vers: node062, section_mm2: 16, couleur: rouge, longueur_m: 0.5, statut: propose }
   - { id: wire062, de: node063, vers: node022, section_mm2: 16, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge de la LiFePO4 est comptée" }
   - { id: wire054, de: node006, vers: node069, section_mm2: 0.75, couleur: rouge, longueur_m: 0.1, statut: propose, note: "+ de l'entrée de l'Orion XS, côté charges du coupe-circuit moteur (notice, 08/10)" }
@@ -93,7 +93,15 @@ fils:
   - { id: wire108, de: node107, vers: node108, section_mm2: 35, couleur: rouge, longueur_m: 0.3, statut: propose, note: "Commun du sélecteur vers le disjoncteur du guindeau" }
 
   # --- Chargeur de quai LiFePO4 : 12 V ---------------------------------------------------
-  - { id: wire056, de: node020, vers: node059, section_mm2: 4, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Aussi court que possible : non protégé" }
+  - { id: wire056, de: node067, vers: node059, section_mm2: 4, couleur: rouge, longueur_m: 0.1, statut: propose, note: "Pont entre les porte-fusibles (15/10) : part de l'entrée du fusible de sortie de l'Orion XS (node067), alimentée par wire058. Câble isolé, cosses serties sous gaine thermorétractable ; ne porte que le courant du fusible de 25 A" }
+
+  # --- Ponts entre porte-fusibles MIDI (15/10, proposition de l'utilisateur) -----------------
+  # Un pont par potentiel : côté batterie de servitude (node020 : sortie Orion XS, Blue Smart, par wire058
+  # et wire056) et côté charges (node021 : table à carte, Scheiber, par wire157 et wire156). Le câble qui
+  # alimente chaque pont porte la somme des fusibles qu'il dessert : 16 mm². Il n'est protégé que par le
+  # MEGA de 300 A, comme les câbles qu'il remplace ; porte-fusibles MIDI capotés.
+  - { id: wire157, de: node021, vers: node151, section_mm2: 16, couleur: rouge, longueur_m: 0.25, statut: propose, note: "Alimente le pont des départs (15/10) : 50 A (table à carte) + 30 A (Scheiber), d'où 16 mm² au lieu de 6. Aussi court que possible : non protégé" }
+  - { id: wire156, de: node151, vers: node155, section_mm2: 6, couleur: rouge, longueur_m: 0.1, statut: propose, note: "Pont entre les porte-fusibles de la table à carte et du Scheiber (15/10). Câble isolé, cosses serties sous gaine thermorétractable ; ne porte que le courant du fusible de 30 A" }
   - { id: wire064, de: node060, vers: node057, section_mm2: 4, couleur: rouge, longueur_m: 0.5, statut: propose }
   - { id: wire059, de: node058, vers: node022, section_mm2: 4, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge est comptée" }
 

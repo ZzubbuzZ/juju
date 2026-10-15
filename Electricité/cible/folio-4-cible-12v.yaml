@@ -10,9 +10,6 @@ desc: "Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3)
 modele: cible
 taille: [1200, 1080]
 
-incertains:
-  - {x: 804, y: 168, w: 214, h: 154, texte: "télécommande : sections à relever", texte_xy: [812, 318]}
-
 appareils:
   # ---------------------------------------------------------------- batterie moteur et Dolphin
   - id: chargeur-quai
@@ -98,6 +95,7 @@ appareils:
       node112: [droite, 65]
       node113: [droite, 90]
       node111: [droite, 125]
+      node116: [droite, 149]
       node114: {cote: bas, a: 900, etiquette: [-5, -16, end]}
       node115: {cote: bas, a: 950, etiquette: [-5, -16, end]}
   - id: guindeau
@@ -358,6 +356,7 @@ fils:
   wire115: {trace: [[824, 270]], etiquette: [818, 256, end]}
   wire113: {etiquette: [896, 198, mid, v]}
   wire114: {etiquette: [946, 198, mid, v]}
+  wire116: {trace: [[992, 137]], etiquette: [998, 152], texte: "w116 · 1"}
   # Orion XS
   wire053: {trace: [[496, 232]], etiquette: [488, 254, end], texte: "w053 · 16"}
   wire065: {etiquette: [488, 340, end]}
@@ -370,7 +369,7 @@ fils:
   wire062: {trace: [[18, 450], [18, 970], [38, 990]], etiquette: [190, 444, mid], texte: "w062 · 16"}
   # Blue Smart, LiFePO4, shunt
   wire064: {trace: [[290, 626], [290, 525]], etiquette: [265, 517, mid], texte: "w064 · 10"}
-  wire056: {trace: [[400, 646], [380, 626]], etiquette: [392, 660, end], texte: "w056 · 4"}
+  wire056: {trace: [[380, 556], [380, 606]], etiquette: [374, 580, end], texte: "w056 · 4"}
   wire059: {trace: [[28, 525], [28, 970], [48, 990]], etiquette: [37, 580, mid, v], texte: "w059 · 10"}
   wire009: {etiquette: [211, 662, mid], texte: w009}
   wire008: {etiquette: [300, 686, mid]}
@@ -387,7 +386,7 @@ fils:
   wire173: {trace: [[720, 670], [740, 690]], etiquette: [640, 662, mid]}
   wire161: {trace: [[1115, 690], [1115, 970], [1095, 990]], etiquette: [1111, 930, mid, v], texte: w161}
   wire201: {trace: [[1115, 990], [1135, 970], [1135, 610]], etiquette: [1131, 930, mid, v]}
-  wire156: {trace: [[514, 700], [514, 830]], etiquette: [520, 780]}
+  wire156: {trace: [[550, 620], [550, 640], [590, 680], [590, 760], [530, 820]], etiquette: [596, 730]}
   wire158: {etiquette: [618, 822, mid]}
   wire162: {trace: [[750, 990], [770, 970]], etiquette: [776, 960]}
   wire165: {etiquette: [850, 822, mid]}
@@ -397,6 +396,11 @@ fils:
   wire171: {etiquette: [995, 890, mid], texte: "w171 / w172 · 3,5"}
   wire172: {}
 
+croisements_admis:
+  # Le pont des départs (15/10) relie le fusible de la table à carte, au-dessus de la ligne du ballon,
+  # à celui du Scheiber, en dessous : il franchit le départ du ballon (wire173).
+  - [wire156, wire173]
+
 renvois:
   - {x: 515, y: 185, w: 97, texte: "→ n102 · folio 1"}
   - {x: 520, y: 132, w: 140, nouveau: true, texte: "n021 · servitude, plus bas"}
@@ -405,7 +409,6 @@ renvois:
 
 pastilles:
   - {id: Q58, x: 370, y: 196}
-  - {id: Q59, x: 1004, y: 182}
   - {id: Q58, x: 346, y: 696}
   - {id: Q58, x: 840, y: 610}
   - {id: Q57, x: 700, y: 670}

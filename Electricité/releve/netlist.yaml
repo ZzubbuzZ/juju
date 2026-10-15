@@ -42,7 +42,7 @@ nodes:
   - { id: node113, equipement: relais-guindeau, borne: "sortie moteur B", polarite: commute }
   - { id: node114, equipement: relais-guindeau, borne: "commande montée", polarite: commande }
   - { id: node115, equipement: relais-guindeau, borne: "commande descente", polarite: commande }
-  - { id: node116, equipement: relais-guindeau, borne: "commande masse", polarite: "-" }
+  - { id: node116, equipement: relais-guindeau, borne: "commun commande", polarite: "-" }
   - { id: node117, equipement: guindeau, borne: "A", polarite: commute }
   - { id: node118, equipement: guindeau, borne: "B", polarite: commute }
   - { id: node119, equipement: fus-telecommande-guindeau, borne: "1", polarite: "+" }

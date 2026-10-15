@@ -138,6 +138,7 @@ appareils:
       node112: [droite, 460]
       node113: [droite, 500]
       node111: [bas, 1010]
+      node116: [bas, 960]
       node114: [haut, 890]
       node115: [haut, 970]
   - id: guindeau
@@ -233,8 +234,6 @@ barres:
   # masse commune, sortie du coupe-circuit des négatifs : les fils la rejoignent à 45°, vers node023
   - {node: node023, de: [300, 880], a: [1185, 880]}
 
-incertains:
-  - {x: 785, y: 252, w: 255, h: 160, texte: "télécommande : sections à relever (Q59)", texte_xy: [788, 244]}
 
 croisements_admis:
   # Le coupleur est entre le chargeur et le coupe-circuit de couplage, qui relient tous deux le + moteur
@@ -270,6 +269,7 @@ fils:
   wire115: {trace: [[830, 285]], etiquette: [845, 279, mid]}
   wire113: {etiquette: [902, 385, mid, v]}
   wire114: {etiquette: [982, 385, mid, v]}
+  wire116: {trace: [[1000, 550], [970, 550]], etiquette: [966, 566, end], texte: "w116 · 1"}
   # tableau Scheiber, pompe de cale, frigo
   wire167: {etiquette: [587, 712, mid, v]}
   wire168: {trace: [[640, 770], [660, 750]], etiquette: [628, 786, mid]}
@@ -315,5 +315,4 @@ pastilles:
   - {id: Q58, x: 648, y: 512}
   - {id: A10, x: 553, y: 715}
   - {id: A7, x: 880, y: 800}
-  - {id: Q59, x: 1040, y: 252}
   - {id: Q65, x: 795, y: 62}

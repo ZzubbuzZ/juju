@@ -37,6 +37,8 @@ articles:
   - { lot: charge, designation: "Câble étamé 16 mm² rouge et noir pour l'entrée et la sortie du DC/DC, cosses et gaine", quantite: 1, unite: lot, prix_unitaire: 45, statut: estimation, note: "16 mm² jusqu'à 5 m d'après la notice (§ 3.3)", fils: [wire053, wire065, wire058, wire066, wire062] }
   - { lot: charge, designation: "Commande « remote » du DC/DC : interrupteur à voyant près du tableau Scheiber, fil fin, porte-fusible 1 A", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, fils: [wire054, wire068, wire067, wire061] }
 
+  - { lot: charge, designation: "Ponts entre porte-fusibles MIDI (15/10) : 16 mm² rouge du coupe-circuit de servitude au fusible de la table à carte, 6 mm² vers celui du Scheiber, 4 mm² de la sortie de l'Orion XS au fusible du Blue Smart ; cosses serties sous gaine thermorétractable", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, fils: [wire157, wire156, wire056] }
+
   # --- Lot quai ---------------------------------------------------------------------
   - { lot: quai, designation: "Victron Blue Smart IP67 12/17, profil LiFePO4, Bluetooth", reference: BPC121713006, quantite: 1, unite: pièce, prix_unitaire: 118, statut: devis, source: "Achat de l'utilisateur", date_prix: "2026-10-05" }
   - { lot: quai, designation: "Disjoncteur 1P+N C10 pour le Blue Smart, dans la place libre du boîtier d'arrivée, et pont de phase depuis le différentiel", quantite: 1, unite: pièce, prix_unitaire: 9, statut: catalogue, source: "Leroy Merlin, prix donné par l'utilisateur (page non ouverte)", date_prix: "2026-10-12", note: "Retenu le 12/10 (Q63) ; vérifier qu'il entre dans le boîtier (même rail, même hauteur que le C10 du Dolphin)", fils: [wire315] }

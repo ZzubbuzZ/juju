@@ -84,7 +84,7 @@ ABREGES = {
     "30 (entrée)": "30", "87 (sortie)": "87", "86 (bobine +)": "86", "85 (bobine −)": "85",
     "12 V +": "+", "12 V −": "−", "− batterie": "− bat", "− système": "− sys",
     "phase": "P", "neutre": "N", "terre": "PE",
-    "commande montée": "mont", "commande descente": "desc", "commande masse": "−", "montée": "mont", "descente": "desc",
+    "commande montée": "mont", "commande descente": "desc", "commande masse": "−", "commun commande": "com", "montée": "mont", "descente": "desc",
     "+ alimentation et mesure (Vbatt+)": "Vbat+", "entrée auxiliaire (tension batterie moteur)": "aux",
 }
 

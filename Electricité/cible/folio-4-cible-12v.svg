@@ -41,8 +41,6 @@
   </style>
   <rect class="bg" x="0" y="0" width="100%" height="100%"/>
   <!-- Généré par outils/folio.py depuis folio-4-cible-12v.yaml : ne pas modifier à la main. -->
-  <rect class="u" x="804" y="168" width="214" height="154" rx="4"/>
-  <text class="ts tu" x="812" y="318">télécommande : sections à relever</text>
   <rect class="box" x="40" y="40" width="200" height="70" rx="2"/>
   <text class="tb mid" x="140" y="60">Chargeur Dolphin 20 A</text>
   <text class="ts mid" x="140" y="75">batterie moteur seule</text>
@@ -178,14 +176,16 @@
   <text class="id mid" x="1169" y="420" transform="rotate(-90 1169 420)">w105 · 50</text>
   <path class="n w4" d="M1135 990 L1155 970 L1155 330 L760 330 L760 240"/>
   <text class="id mid" x="1149" y="420" transform="rotate(-90 1149 420)">w104 · 35</text>
-  <path class="u" d="M840 80 L824 96 L824 190"/>
-  <text class="id end" x="818" y="150">w110</text>
-  <path class="u" d="M824 226 L824 270 L850 270"/>
-  <text class="id end" x="818" y="256">w115</text>
-  <path class="u" d="M900 236 L900 160"/>
-  <text class="id mid" x="896" y="198" transform="rotate(-90 896 198)">w113</text>
-  <path class="u" d="M950 236 L950 160"/>
-  <text class="id mid" x="946" y="198" transform="rotate(-90 946 198)">w114</text>
+  <path class="p w1" d="M840 80 L824 96 L824 190"/>
+  <text class="id end" x="818" y="150">w110 · 1</text>
+  <path class="p w1" d="M824 226 L824 270 L850 270"/>
+  <text class="id end" x="818" y="256">w115 · 1</text>
+  <path class="p w1" d="M900 236 L900 160"/>
+  <text class="id mid" x="896" y="198" transform="rotate(-90 896 198)">w113 · 1</text>
+  <path class="p w1" d="M950 236 L950 160"/>
+  <text class="id mid" x="946" y="198" transform="rotate(-90 946 198)">w114 · 1</text>
+  <path class="n w1" d="M980 125 L992 137 L980 149"/>
+  <text class="id" x="998" y="152">w116 · 1</text>
   <path class="p w3" d="M484 220 L496 232 L496 262"/>
   <text class="idn end" x="488" y="254">w053 · 16</text>
   <path class="p w3" d="M496 298 L496 370"/>
@@ -206,8 +206,8 @@
   <text class="idn mid" x="190" y="444">w062 · 16</text>
   <path class="p w3" d="M314 626 L290 626 L290 525 L240 525"/>
   <text class="idn mid" x="265" y="517">w064 · 10</text>
-  <path class="p w2" d="M424 670 L400 646 L380 626 L360 626"/>
-  <text class="idn end" x="392" y="660">w056 · 4</text>
+  <path class="p w2" d="M400 536 L380 556 L380 606 L360 626"/>
+  <text class="idn end" x="374" y="580">w056 · 4</text>
   <path class="n w3" d="M40 525 L28 525 L28 970 L48 990"/>
   <text class="idn mid" x="37" y="580" transform="rotate(-90 37 580)">w059 · 10</text>
   <path class="p w4" d="M190 670 L232 670"/>
@@ -225,8 +225,8 @@
   <text class="idn mid" x="238" y="794">w013</text>
   <path class="p w1" d="M316 802 L296 802"/>
   <text class="idn mid" x="306" y="794">w006</text>
-  <path class="p w2" d="M484 670 L544 610 L560 610"/>
-  <text class="idn end" x="536" y="598">w157 · 6</text>
+  <path class="p w3" d="M484 670 L544 610 L560 610"/>
+  <text class="idn end" x="536" y="598">w157 · 16</text>
   <path class="p w2" d="M606 610 L880 610"/>
   <text class="idn mid" x="760" y="602">w200 · 6</text>
   <path class="p w2" d="M484 670 L520 670"/>
@@ -237,8 +237,8 @@
   <text class="idn mid" x="1111" y="930" transform="rotate(-90 1111 930)">w161</text>
   <path class="n w2" d="M1115 990 L1135 970 L1135 610 L1100 610"/>
   <text class="id mid" x="1131" y="930" transform="rotate(-90 1131 930)">w201 · 6</text>
-  <path class="p w2" d="M484 670 L514 700 L514 830 L540 830"/>
-  <text class="idn" x="520" y="780">w156 · 6</text>
+  <path class="p w2" d="M560 610 L550 620 L550 640 L590 680 L590 760 L530 820 L540 830"/>
+  <text class="idn" x="596" y="730">w156 · 6</text>
   <path class="p w2" d="M586 830 L650 830"/>
   <text class="idn mid" x="618" y="822">w158 · 6</text>
   <path class="n w2" d="M750 990 L770 970 L770 843"/>
@@ -284,6 +284,7 @@
   <circle class="term" cx="980" cy="65" r="3.5"/>
   <circle class="term" cx="980" cy="90" r="3.5"/>
   <circle class="term" cx="980" cy="125" r="3.5"/>
+  <circle class="term" cx="980" cy="149" r="3.5"/>
   <circle class="term" cx="900" cy="160" r="3.5"/>
   <circle class="term" cx="950" cy="160" r="3.5"/>
   <circle class="term" cx="1092.3" cy="65" r="3.5"/>
@@ -382,6 +383,8 @@
   <text class="pin end" x="973" y="99">B</text>
   <text class="id end" x="973" y="124">n111</text>
   <text class="pin end" x="973" y="134">e−</text>
+  <text class="id end" x="973" y="148">n116</text>
+  <text class="pin end" x="973" y="158">com</text>
   <text class="id end" x="895" y="144">n114</text>
   <text class="pin end" x="895" y="154">mont</text>
   <text class="id end" x="945" y="144">n115</text>
@@ -489,7 +492,6 @@
   <text class="ts" x="20" y="1044">En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue.</text>
   <text class="ts" x="20" y="1062">Détail : folios 2e (shunt), 2h et 2o (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md.</text>
   <g class="mk-q"><circle cx="370" cy="196" r="11"/><text class="mid" x="370" y="199.5">Q58</text></g>
-  <g class="mk-q"><circle cx="1004" cy="182" r="11"/><text class="mid" x="1004" y="185.5">Q59</text></g>
   <g class="mk-q"><circle cx="346" cy="696" r="11"/><text class="mid" x="346" y="699.5">Q58</text></g>
   <g class="mk-q"><circle cx="840" cy="610" r="11"/><text class="mid" x="840" y="613.5">Q58</text></g>
   <g class="mk-q"><circle cx="700" cy="670" r="11"/><text class="mid" x="700" y="673.5">Q57</text></g>

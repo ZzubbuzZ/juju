@@ -106,12 +106,12 @@
   <text class="idn mid" x="405" y="644">w012 · 0,75 · 1,2 m</text>
   <path class="p w1" d="M510 676 L200 676 L200 630"/>
   <text class="idn mid" x="405" y="668">w013 · 0,75 · 1,2 m</text>
-  <path class="p w2" d="M680 286 L716 286 L716 360 L780 360"/>
-  <text class="idn" x="724" y="352">w157 · 6</text>
+  <path class="p w3" d="M680 286 L716 286 L716 360 L780 360"/>
+  <text class="idn" x="724" y="352">w157 · 16</text>
   <path class="p w2" d="M826 360 L880 360"/>
   <text class="idn mid" x="853" y="352">w200 · 6</text>
-  <path class="p w2" d="M680 286 L696 302 L696 420 L780 420"/>
-  <text class="idn" x="704" y="412">w156 · 6</text>
+  <path class="p w2" d="M780 360 L760 380 L760 400 L780 420"/>
+  <text class="idn end" x="754" y="394">w156 · 6</text>
   <path class="p w2" d="M826 420 L880 420"/>
   <text class="idn mid" x="853" y="412">w158 · 6</text>
   <path class="n w2" d="M670 72 L240 72 L240 96"/>

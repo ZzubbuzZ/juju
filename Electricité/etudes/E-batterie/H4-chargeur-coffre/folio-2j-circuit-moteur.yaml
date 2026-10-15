@@ -97,10 +97,11 @@ appareils:
     nodes:
       node110: [gauche, 120]
       node111: [droite, 170]
+      node116: [droite, 194]
       node112: [droite, 110]
       node113: [droite, 140]
-      node114: [bas, 1030]
-      node115: [bas, 1066]
+      node114: {cote: bas, a: 1004, etiquette: [-4, -16, end]}
+      node115: {cote: bas, a: 1040, etiquette: [-4, -16, end]}
   - id: fus-telecommande-guindeau
     forme: fusible
     calibre: 5 A
@@ -117,8 +118,8 @@ appareils:
     titre_y: 50
     nodes:
       node121: [gauche, 365]
-      node122: {cote: haut, a: 1030, etiquette: [-5, 14, end]}
-      node123: {cote: haut, a: 1066, etiquette: [5, 14]}
+      node122: {cote: haut, a: 1004, etiquette: [-5, 14, end]}
+      node123: {cote: haut, a: 1040, etiquette: [5, 14]}
   - id: guindeau
     forme: cercle
     cx: 1140
@@ -181,11 +182,7 @@ appareils:
 barres:
   - {node: node023, de: [500, 640], a: [1170, 640]}
 
-incertains:
-  - {x: 935, y: 218, w: 223, h: 192}
-
 pastilles:
-  - {id: Q59, x: 1140, y: 238}
 
 liaisons:
   - [node053, node003]
@@ -202,12 +199,13 @@ fils:
   wire109: {etiquette: [906, 112, mid]}
   wire111: {etiquette: [1100, 104, mid], texte: w111}
   wire112: {etiquette: [1100, 156, mid], texte: w112}
+  wire116: {trace: [[1092, 182]], etiquette: [1098, 200], texte: w116}
   wire104: {trace: [[880, 640], [900, 620]], etiquette: [894, 300, end]}
   wire105: {trace: [[1150, 640], [1170, 620], [1170, 170]], etiquette: [1164, 470, end]}
   wire110: {trace: [[945, 135]], etiquette: [952, 228]}
   wire115: {trace: [[945, 365]], etiquette: [951, 322]}
-  wire113: {etiquette: [1024, 270, mid, v]}
-  wire114: {etiquette: [1060, 270, mid, v]}
+  wire113: {etiquette: [998, 270, mid, v]}
+  wire114: {etiquette: [1034, 270, mid, v]}
   wire003: {trace: [[30, 250], [30, 656], [424, 656]], etiquette: [36, 300]}
   wire053: {trace: [[496, 232]], etiquette: [488, 250, end]}
   wire065: {trace: [[496, 446], [220, 446]], etiquette: [420, 438, mid], texte: "w065 · 16 · 1,5 m"}
@@ -227,5 +225,4 @@ renvois:
 textes:
   - {x: 1150, y: 656, classe: "ts end", texte: "node023 · masse des charges : folio 1"}
   - {x: 1135, y: 70, classe: "ts mid", texte: "Guindeau 700 W"}
-  - {x: 1040, y: 426, classe: "ts tu mid", texte: "télécommande : sections à relever (Q59)"}
   - {x: 20, y: 710, texte: "En vert : nouveau. Orion XS : entrée et commande côté charges du CC moteur ; 70 A aux deux bouts, 16 mm² (notice)."}

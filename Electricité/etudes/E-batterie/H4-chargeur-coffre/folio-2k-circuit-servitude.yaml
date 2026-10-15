@@ -145,7 +145,7 @@ fils:
   wire013: {trace: [[510, 676], [200, 676]], etiquette: [405, 668, mid], texte: "w013 · 0,75 · 1,2 m"}
   wire157: {trace: [[716, 286], [716, 360]], etiquette: [724, 352]}
   wire200: {trace: [[880, 360]], etiquette: [853, 352, mid]}
-  wire156: {trace: [[696, 302], [696, 420]], etiquette: [704, 412]}
+  wire156: {trace: [[760, 380], [760, 400]], etiquette: [754, 394, end]}
   wire158: {etiquette: [853, 412, mid]}
 
 cables:
