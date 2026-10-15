@@ -130,6 +130,28 @@ def modeles() -> dict:
 
 
 # --------------------------------------------------------------------------- géométrie
+def compacter(fils) -> str:
+    """Fils d'un câble 230 V en notation compacte : les numéros consécutifs en plage, w038-40 (w038 à w040)
+    ou w300-2, avec le moins de chiffres possible après le tiret ; les autres séparés par « / »."""
+    nums = sorted(int(w[-3:]) for w in fils)
+    groupes, g = [], [nums[0]]
+    for n in nums[1:]:
+        if n == g[-1] + 1:
+            g.append(n)
+        else:
+            groupes.append(g); g = [n]
+    groupes.append(g)
+    out = []
+    for g in groupes:
+        a, b = f"{g[0]:03d}", f"{g[-1]:03d}"
+        if a == b:
+            out.append(f"w{a}")
+        else:
+            k = next(i for i in range(3) if a[i] != b[i])
+            out.append(f"w{a}-{b[k:]}")
+    return " / ".join(out)
+
+
 def angle_ok(a, b) -> bool:
     dx, dy = b[0] - a[0], b[1] - a[1]
     return dx == 0 or dy == 0 or abs(dx) == abs(dy)
@@ -435,7 +457,7 @@ class Folio:
                 self.out.append(f'<path class="n w1" d="M{x - 5:g} {y + o + 3:g} L{x + 5:g} {y + o - 3:g}"/>')
         et = spec.get("etiquette")
         if et:
-            texte = spec.get("texte") or " / ".join(court(w) for w in spec["fils"])
+            texte = spec.get("texte") or compacter(spec["fils"])
             neuf = any(self.M.fils[w].get("statut") == "propose" for w in fils)
             anc = f" {et[2]}" if len(et) > 2 and et[2] else ""
             rot = f' transform="rotate(-90 {et[0]:g} {et[1]:g})"' if len(et) > 3 and et[3] == "v" else ""

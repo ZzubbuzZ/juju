@@ -127,7 +127,7 @@ cables:
     fils: [wire074, wire075, wire076]
     trace: [[140, 230], [140, 330]]
     etiquette: [134, 290, end]
-    texte: "w074 / w075 / w076"
+    texte: "w074-6"
     obliques_xy: [140, 270]
   arrivee:
     fils: [wire038, wire039, wire040]
@@ -138,7 +138,7 @@ cables:
     fils: [wire300, wire301, wire302]
     trace: [[260, 230], [260, 490], [420, 490]]
     etiquette: [252, 380, end]
-    texte: "w300 / w301 / w302 · 3 × 1,5"
+    texte: "w300-2 · 3 × 1,5"
     obliques_xy: [260, 420]
   cordon:
     fils: [wire303, wire304, wire305]

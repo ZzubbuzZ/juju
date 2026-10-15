@@ -145,7 +145,7 @@ cables:
     fils: [wire213, wire214, wire215]
     trace: [[990, 64], [760, 64]]
     etiquette: [840, 56, mid]
-    texte: "w213 · w214 · w215 · 3 × 1,5"
+    texte: "w213-5 · 3 × 1,5"
 
 renvois:
   - {x: 1085, y: 55, w: 88, texte: "n208 · folio 3"}

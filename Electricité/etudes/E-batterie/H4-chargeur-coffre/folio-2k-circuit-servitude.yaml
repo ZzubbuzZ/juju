@@ -153,7 +153,7 @@ cables:
     fils: [wire213, wire214, wire215]
     trace: [[670, 72], [240, 72]]
     etiquette: [252, 88]
-    texte: "w213 · w214 · w215 · 3 × 1,5 · 6 m"
+    texte: "w213-5 · 3 × 1,5 · 6 m"
 
 renvois:
   - {x: 670, y: 63, w: 220, texte: "C10 n382 · n209 · n212 · folio 2i"}

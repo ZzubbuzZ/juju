@@ -134,66 +134,66 @@
   <path class="n w1" d="M252 170 L258 160"/>
   <path class="n w1" d="M257 170 L263 160"/>
   <path class="n w1" d="M262 170 L268 160"/>
-  <text class="id mid" x="260" y="157">w029 / w030 / w034</text>
+  <text class="id mid" x="260" y="157">w029-30 / w034</text>
   <path class="n w2" d="M660 155 L900 155"/>
   <path class="n w1" d="M852 160 L858 150"/>
   <path class="n w1" d="M857 160 L863 150"/>
   <path class="n w1" d="M862 160 L868 150"/>
-  <text class="id" x="712" y="147">w032 / w033 / w035 · 3 × 2,5</text>
+  <text class="id" x="712" y="147">w032-3 / w035 · 3 × 2,5</text>
   <path class="n w2" d="M490 190 L540 240 L720 240 L720 300 L420 300 L420 370"/>
   <path class="n w1" d="M652 305 L658 295"/>
   <path class="n w1" d="M657 305 L663 295"/>
   <path class="n w1" d="M662 305 L668 295"/>
-  <text class="id mid" x="560" y="292">w038 / w039 / w040 · 3 × 2,5</text>
+  <text class="id mid" x="560" y="292">w038-40 · 3 × 2,5</text>
   <path class="n w2" d="M230 400 L230 594 L200 624"/>
   <path class="n w1" d="M225 558 L235 552"/>
   <path class="n w1" d="M225 563 L235 557"/>
   <path class="n w1" d="M225 568 L235 562"/>
-  <text class="id mid" x="251" y="452" transform="rotate(-90 251 452)">w074 / w075 / w076</text>
+  <text class="id mid" x="251" y="452" transform="rotate(-90 251 452)">w074-6</text>
   <path class="n w2" d="M110 400 L110 524"/>
   <path class="n w1" d="M105 493 L115 487"/>
   <path class="n w1" d="M105 498 L115 492"/>
   <path class="n w1" d="M105 503 L115 497"/>
-  <text class="id" x="118" y="470">w050 / w051 / w068</text>
+  <text class="id" x="118" y="470">w050-1 / w068</text>
   <path class="n w2" d="M470 400 L470 465 L300 465 L300 500"/>
   <path class="n w1" d="M292 489 L298 479"/>
   <path class="n w1" d="M297 489 L303 479"/>
   <path class="n w1" d="M302 489 L308 479"/>
-  <text class="id mid" x="385" y="457">w044 / w045 / w046</text>
+  <text class="id mid" x="385" y="457">w044-6</text>
   <path class="n w2" d="M470 400 L470 465 L470 500"/>
   <path class="n w1" d="M465 430.5 L475 424.5"/>
   <path class="n w1" d="M465 435.5 L475 429.5"/>
   <path class="n w1" d="M465 440.5 L475 434.5"/>
-  <text class="id" x="476" y="484">w047 / w048 / w049</text>
+  <text class="id" x="476" y="484">w047-9</text>
   <path class="n w2" d="M470 400 L470 465 L640 465 L640 500"/>
   <path class="n w1" d="M632 489 L638 479"/>
   <path class="n w1" d="M637 489 L643 479"/>
   <path class="n w1" d="M642 489 L648 479"/>
-  <text class="id mid" x="555" y="457">w065 / w066 / w067</text>
+  <text class="id mid" x="555" y="457">w065-7</text>
   <path class="u" d="M300 610 L300 564"/>
   <path class="n w1" d="M295 587.5 L305 581.5"/>
   <path class="n w1" d="M295 592.5 L305 586.5"/>
-  <text class="id" x="306" y="590">w052 / w053 · cordon 2 fils, fiche sans terre</text>
+  <text class="id" x="306" y="590">w052-3 · cordon 2 fils, fiche sans terre</text>
   <path class="n w2" d="M620 400 L620 420 L820 420 L820 370 L870 370"/>
   <path class="n w1" d="M782 425 L788 415"/>
   <path class="n w1" d="M787 425 L793 415"/>
   <path class="n w1" d="M792 425 L798 415"/>
-  <text class="id" x="688" y="412">w041 / w042 / w043</text>
+  <text class="id" x="688" y="412">w041-3</text>
   <path class="n w2" d="M1005 370 L1005 455 L915 455 L915 500"/>
   <path class="n w1" d="M952 460 L958 450"/>
   <path class="n w1" d="M957 460 L963 450"/>
   <path class="n w1" d="M962 460 L968 450"/>
-  <text class="id end" x="909" y="484">w055 / w056 / w057</text>
+  <text class="id end" x="909" y="484">w055-7</text>
   <path class="n w2" d="M1130 370 L1130 440 L1180 440 L1180 642 L1070 642"/>
   <path class="n w1" d="M1175 539 L1185 533"/>
   <path class="n w1" d="M1175 544 L1185 538"/>
   <path class="n w1" d="M1175 549 L1185 543"/>
-  <text class="id end" x="1174" y="600">w069 / w070 / w071</text>
+  <text class="id end" x="1174" y="600">w069-71</text>
   <path class="n w2" d="M1005 370 L1005 455 L1095 455 L1095 500"/>
   <path class="n w1" d="M1042 460 L1048 450"/>
   <path class="n w1" d="M1047 460 L1053 450"/>
   <path class="n w1" d="M1052 460 L1058 450"/>
-  <text class="id end" x="1089" y="484">w058 / w059 / w060</text>
+  <text class="id end" x="1089" y="484">w058-60</text>
   <circle class="term" cx="180" cy="165" r="3.5"/>
   <circle class="term" cx="180" cy="165" r="3.5"/>
   <circle class="term" cx="180" cy="165" r="3.5"/>

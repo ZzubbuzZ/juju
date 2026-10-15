@@ -264,13 +264,13 @@ cables:
     fils: [wire032, wire033, wire035]
     trace: [[660, 155], [900, 155]]
     etiquette: [712, 147]
-    texte: "w032 / w033 / w035 · 3 × 2,5"
+    texte: "w032-3 / w035 · 3 × 2,5"
     obliques_xy: [860, 155]
   tribord:
     fils: [wire038, wire039, wire040]
     trace: [[490, 190], [540, 240], [720, 240], [720, 300], [420, 300], [420, 370]]
     etiquette: [560, 292, mid]
-    texte: "w038 / w039 / w040 · 3 × 2,5"
+    texte: "w038-40 · 3 × 2,5"
     obliques_xy: [660, 300]
   eclairage-babord:
     fils: [wire074, wire075, wire076]
@@ -300,12 +300,12 @@ cables:
     fils: [wire052, wire053]
     trace: [[300, 610], [300, 564]]
     etiquette: [306, 590]
-    texte: "w052 / w053 · cordon 2 fils, fiche sans terre"
+    texte: "w052-3 · cordon 2 fils, fiche sans terre"
   babord:
     fils: [wire041, wire042, wire043]
     trace: [[620, 400], [620, 420], [820, 420], [820, 370], [870, 370]]
     etiquette: [688, 412]
-    texte: "w041 / w042 / w043"
+    texte: "w041-3"
     obliques_xy: [790, 420]
   table-a-carte:
     fils: [wire055, wire056, wire057]

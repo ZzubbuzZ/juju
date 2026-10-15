@@ -148,8 +148,13 @@ def lire_ids_section(chemin: Path, prefixe: str, titre: str) -> set[str]:
 
 
 def fils_svg(txt: str) -> set[str]:
-    """Fils cités dans un folio, en entier (wire234) ou en abrégé (w234)."""
-    return {f"wire{n}" for n in re.findall(r"\b(?:wire|w)(\d{3})\b", txt)}
+    """Fils cités dans un folio, en entier (wire234) ou en abrégé (w234), ou par plage de fils consécutifs
+    d'un câble 230 V : w038-40 (w038 à w040), w300-2 (w300 à w302)."""
+    fils = {f"wire{n}" for n in re.findall(r"\b(?:wire|w)(\d{3})\b", txt)}
+    for debut, fin in re.findall(r"\bw(\d{3})-(\d{1,2})\b", txt):
+        a, b = int(debut), int(debut[:3 - len(fin)] + fin)
+        fils |= {f"wire{n:03d}" for n in range(a, b + 1)}
+    return fils
 
 
 def ids_svg(chemins: list[Path]) -> tuple[set[str], set[str], set[str]]:
