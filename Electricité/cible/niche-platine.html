@@ -1,0 +1,340 @@
+<!-- Annexe de l'installation cible : la niche de la platine des coupe-circuits (E-H1, E-H5).
+     Dessinée à la main ; outils/page.py l'insère après les folios de la vue Relevé, avant les folios archivés.
+     outils/verifier.py contrôle que les fils et les nœuds cités existent dans le modèle cible. -->
+<div class="niche">
+<style>
+/* Annexe dessinée à la main : classes préfixées nc-, pour ne pas hériter des styles des folios et des notes. */
+.niche{--win:#e58a00}
+.niche .nc-lede{max-width:95ch;color:var(--muted);margin:0}
+.niche .nc-sheet{background-color:var(--sheet);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:12px 12px;border:1px solid var(--line);overflow-x:auto}
+.niche .nc-sheet svg{display:block;width:100%;height:auto;min-width:360px}
+.niche .nc-sheet.nc-large svg{min-width:900px}
+.niche figure{margin:0;display:grid;gap:8px;min-width:0}
+.niche figcaption{font-size:14px;color:var(--muted);max-width:110ch}
+.niche .nc-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;border-bottom:1.5px solid var(--ink);padding-bottom:6px}
+.niche .nc-head h2{font-size:19px}
+.niche .nc-head span{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.niche .nc-vues{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}
+.niche svg text{font-family:var(--font);fill:var(--ink)}
+.niche .nc-t{font-size:12px}.niche .nc-tb{font-size:12.5px;font-weight:600}.niche .nc-ts{font-size:10.5px;fill:var(--muted)}
+.niche p.nc-ts{font-size:12.5px;color:var(--muted);margin:0}
+.niche .nc-c{font-family:var(--mono);font-size:9.5px;fill:var(--muted)}
+.niche .nc-fz{font-family:var(--mono);font-size:9px;fill:var(--ink);text-anchor:middle}
+.niche .nc-nid{font-family:var(--mono);font-size:9px;fill:var(--muted)}
+.niche .nc-wl{font-family:var(--mono);font-size:9.5px;fill:var(--ink);paint-order:stroke;stroke:var(--sheet);stroke-width:3.5px;stroke-linejoin:round}
+.niche .nc-flagt{font-family:var(--mono);font-size:9.5px;fill:var(--muted)}
+.niche .nc-mid{text-anchor:middle}.niche .nc-end{text-anchor:end}
+.niche .nc-wall{fill:none;stroke:var(--ink);stroke-width:2.2}
+.niche .nc-fold{stroke:var(--muted);stroke-width:1;stroke-dasharray:6 4}
+.niche .nc-floor{fill:var(--zone);stroke:none}
+.niche .nc-cc{fill:url(#nc-hach);stroke:var(--muted);stroke-width:1}
+.niche .nc-free{fill:none;stroke:var(--unk);stroke-width:1.2;stroke-dasharray:4 3}
+.niche .nc-freetxt{fill:var(--unk)}
+.niche .nc-win{stroke:var(--win);stroke-width:6;stroke-linecap:butt}
+.niche .nc-wintxt{fill:var(--win)}
+.niche .nc-box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+.niche .nc-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+.niche .nc-haut{fill:none;stroke:var(--new);stroke-width:1.4;stroke-dasharray:5 3}
+.niche .nc-fuse{fill:var(--new-soft);stroke:var(--new);stroke-width:1.3}
+.niche .nc-fx{stroke:var(--new);stroke-width:1.2}
+.niche .nc-node{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+.niche .nc-cab{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.niche .nc-cab.nc-p{stroke:var(--pos)}.niche .nc-cab.nc-n{stroke:var(--ink)}
+.niche .nc-cab.nc-ext{stroke-dasharray:7 3;opacity:.75}
+.niche .nc-dim{stroke:var(--muted);stroke-width:.8;fill:none}
+.niche .nc-legend{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13px;color:var(--muted)}
+.niche .nc-legend span{display:inline-flex;align-items:center;gap:8px}
+.niche .nc-legend svg{width:34px;height:12px;min-width:0}
+.niche .nc-notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:28px 40px}
+.niche .nc-notes section{display:grid;gap:10px;min-width:0;align-content:start}
+.niche .nc-notes h3{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+.niche .nc-notes ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.niche table{border-collapse:collapse;font-size:14px;background:var(--sheet);width:100%}
+.niche th,.niche td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+.niche th{font-weight:600}
+.niche td.nc-n{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.niche .nc-tablewrap{overflow-x:auto}
+</style>
+<section class="folio" id="niche-developpe">
+  <div class="folio-head">
+    <span class="folio-no">NICHE 1/3</span>
+    <h2>Niche de la platine : les trois faces mises à plat</h2>
+    <p>Installation cible · <code>cible/niche-platine.html</code> · dessiné à la main, à l'échelle (un carreau = 1 cm)</p>
+  </div>
+  <p class="nc-lede">Prisme droit de 26 cm de haut, à base trapézoïdale : face des coupe-circuits 30 cm, face opposée 19 cm, fond 45 cm dont 6 cm pris par les coupe-circuits ; fenêtre d'accès de 15 × 35 cm dans la face oblique, côté cabine de poupe. En haut du fond, le SmartShunt et l'Orion XS ; au milieu, les fusibles MIDI en rangée dans l'ordre des ponts ; en bas, le passage des câbles ; la face de 19 cm reste libre. Sur la platine, le sélecteur du guindeau prend la place du coupe-circuit de couplage (15/10).</p>
+  <figure>
+  <div class="nc-sheet nc-large">
+    <svg viewBox="0 0 1208 742" role="img" aria-label="Développé des trois faces de la niche avec les appareils et les câbles.">
+      <defs>
+        <pattern id="nc-hach2" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="8" style="stroke:var(--muted);stroke-width:1"/>
+        </pattern>
+      </defs>
+      <!-- parois : platine (0-30 cm), fond (30-75), face de 19 (75-94) ; 1 cm = 12 -->
+      <rect class="nc-floor" x="40" y="215" width="1128" height="312"/>
+      <rect x="400" y="215" width="72" height="312" style="fill:url(#nc-hach2);stroke:var(--muted);stroke-width:1"/>
+      <rect class="nc-wall" x="40" y="215" width="1128" height="312"/>
+      <line class="nc-fold" x1="400" y1="185" x2="400" y2="557"/>
+      <line class="nc-fold" x1="940" y1="185" x2="940" y2="557"/>
+      <text class="nc-tb" x="167" y="580">Dos de la platine · 30 cm</text>
+      <text class="nc-tb" x="640" y="580">Fond · 45 cm</text>
+      <text class="nc-tb" x="990" y="580">Face de 19 cm</text>
+      <text class="nc-ts" transform="translate(440.8,371) rotate(-90)" text-anchor="middle">corps des coupe-circuits · 6 cm</text>
+      <text class="nc-ts" transform="translate(30.4,371) rotate(-90)" text-anchor="middle">bord de la face oblique (fenêtre)</text>
+      <text class="nc-ts" transform="translate(1182.4,371) rotate(90)" text-anchor="middle">bord de la face oblique (fenêtre)</text>
+
+      <!-- platine : coupe-circuits et sélecteur -->
+      <circle class="nc-box" cx="130" cy="299" r="43.2"/><text class="nc-tb nc-mid" x="130" y="301.4">moteur</text>
+      <circle class="nc-box" cx="130" cy="449" r="43.2"/><text class="nc-tb nc-mid" x="130" y="451.4">servitude</text>
+      <circle class="nc-box" cx="310" cy="299" r="43.2"/><text class="nc-tb nc-mid" x="310" y="301.4">négatifs</text>
+      <circle class="nc-new" cx="310" cy="449" r="38.4"/><text class="nc-tb nc-mid" x="310" y="444.2">guindeau</text><text class="nc-c nc-mid" x="310" y="458.6">1 · OFF · 2</text>
+      <!-- fusibles de 1 A des fils du shunt et de la commande de l'Orion -->
+      <rect class="nc-fuse" x="64" y="248.6" width="14.4" height="24" rx="2"/><line class="nc-fx" x1="71.2" y1="272.6" x2="71.2" y2="248.6"/><text class="nc-c" x="82" y="264.2">1 A</text>
+      <rect class="nc-fuse" x="44.8" y="379.4" width="14.4" height="24" rx="2"/><line class="nc-fx" x1="52" y1="403.4" x2="52" y2="379.4"/><text class="nc-c" x="62.8" y="395">1 A</text>
+      <rect class="nc-fuse" x="179.2" y="251" width="14.4" height="24" rx="2"/><line class="nc-fx" x1="186.4" y1="275" x2="186.4" y2="251"/><text class="nc-c" x="197.2" y="266.6">1 A</text>
+
+      <!-- fond, en haut : SmartShunt près des négatifs, Orion XS à côté -->
+      <rect class="nc-new" x="484" y="239" width="144" height="55.2" rx="3"/>
+      <text class="nc-tb nc-mid" x="556" y="288">SmartShunt 500 A</text>
+      <rect class="nc-new" x="748" y="224" width="164.4" height="147.6" rx="3"/>
+      <text class="nc-tb nc-mid" x="830" y="290">Orion XS 12/12-50A</text>
+      <text class="nc-c nc-mid" x="830" y="305">réglé vers 15 A</text>
+      <!-- fond, au milieu : rangée de fusibles MIDI (3 × 6 cm) -->
+      <g>
+        <rect class="nc-fuse" x="484" y="395" width="36" height="72" rx="2"/><line class="nc-fx" x1="502" y1="399" x2="502" y2="463"/>
+        <rect class="nc-fuse" x="532" y="395" width="36" height="72" rx="2"/><line class="nc-fx" x1="550" y1="399" x2="550" y2="463"/>
+        <rect class="nc-fuse" x="580" y="395" width="36" height="72" rx="2"/><line class="nc-fx" x1="598" y1="399" x2="598" y2="463"/>
+        <rect class="nc-fuse" x="628" y="395" width="36" height="72" rx="2"/><line class="nc-fx" x1="646" y1="399" x2="646" y2="463"/>
+        <rect class="nc-fuse" x="676" y="395" width="36" height="72" rx="2"/><line class="nc-fx" x1="694" y1="399" x2="694" y2="463"/>
+        <text class="nc-fz" transform="translate(514,431) rotate(-90)">50 A table</text>
+        <text class="nc-fz" transform="translate(562,431) rotate(-90)">30 A Scheiber</text>
+        <text class="nc-fz" transform="translate(610,431) rotate(-90)">25 A B. Smart</text>
+        <text class="nc-fz" transform="translate(658,431) rotate(-90)">70 A sortie</text>
+        <text class="nc-fz" transform="translate(706,431) rotate(-90)">70 A entrée</text>
+      </g>
+      <!-- fond, en bas : passage des câbles ; face de 19 : libre -->
+      <rect class="nc-free" x="955" y="235" width="198" height="272" rx="3"/>
+      <text class="nc-ts nc-mid nc-freetxt" x="1054" y="368">libre</text>
+      <text class="nc-ts nc-mid nc-freetxt" x="1054" y="383">(au bord de la fenêtre)</text>
+
+      <!-- câbles qui sortent de la niche (destination en marge) -->
+      <path class="nc-cab nc-p nc-ext" style="stroke-width:3.8" d="M97.6,299 L97.6,203"/><text class="nc-flagt" transform="translate(101.1,199) rotate(-90)">w001 · bat. moteur (+)</text>
+      <path class="nc-cab nc-p nc-ext" style="stroke-width:3.8" d="M162.4,299 L162.4,203"/><text class="nc-flagt" transform="translate(165.9,199) rotate(-90)">w100 · démarreur</text>
+      <path class="nc-cab nc-p nc-ext" style="stroke-width:1.1" d="M186.4,251 L186.4,203"/><text class="nc-flagt" transform="translate(189.9,199) rotate(-90)">w068 · inter. de l'Orion</text>
+      <path class="nc-cab nc-n nc-ext" style="stroke-width:3.8" d="M277.6,299 L220,241.4 L220,203"/><text class="nc-flagt" transform="translate(223.5,199) rotate(-90)">w104 · masse moteur</text>
+      <path class="nc-cab nc-n nc-ext" style="stroke-width:3.8" d="M277.6,299 L233.2,254.6 L233.2,203"/><text class="nc-flagt" transform="translate(236.7,199) rotate(-90)">w105 · relais guindeau</text>
+      <path class="nc-cab nc-n nc-ext" style="stroke-width:1.8" d="M277.6,299 L246.4,267.8 L246.4,203"/><text class="nc-flagt" transform="translate(249.9,199) rotate(-90)">w201 · table à carte</text>
+      <path class="nc-cab nc-n nc-ext" style="stroke-width:1.8" d="M277.6,299 L259.6,281 L259.6,203"/><text class="nc-flagt" transform="translate(263.1,199) rotate(-90)">w162 · Scheiber</text>
+      <path class="nc-cab nc-n nc-ext" style="stroke-width:1.8" d="M277.6,299 L272.8,294.2 L272.8,203"/><text class="nc-flagt" transform="translate(276.3,199) rotate(-90)">w161 · ballon 12 V</text>
+      <path class="nc-cab nc-n nc-ext" style="stroke-width:1.1" d="M342.4,299 L316,272.6 L316,203"/><text class="nc-flagt" transform="translate(319.5,199) rotate(-90)">w061 · voyant inter. Orion</text>
+      <path class="nc-cab nc-n nc-ext" style="stroke-width:2.6" d="M342.4,299 L329.2,285.8 L329.2,203"/><text class="nc-flagt" transform="translate(332.7,199) rotate(-90)">w059 · Blue Smart (−)</text>
+      <path class="nc-cab nc-n nc-ext" style="stroke-width:3.8" d="M342.4,299 L342.4,203"/><text class="nc-flagt" transform="translate(345.9,199) rotate(-90)">w003 · bat. moteur (−)</text>
+      <path class="nc-cab nc-n nc-ext" style="stroke-width:3.8" d="M628,266.6 L646,266.6 L646,203"/><text class="nc-flagt" transform="translate(649.5,199) rotate(-90)">w010 · bat. servitude (−)</text>
+      <path class="nc-cab nc-p nc-ext" style="stroke-width:3.8" d="M97.6,449 L83.2,463.4 L83.2,539"/><text class="nc-flagt" transform="translate(86.7,543) rotate(90)">w008 · bat. servitude (+)</text>
+      <path class="nc-cab nc-p nc-ext" style="stroke-width:1.8" d="M162.4,449 L148,463.4 L148,539"/><text class="nc-flagt" transform="translate(151.5,543) rotate(90)">w154 · disj. ballon</text>
+      <path class="nc-cab nc-p nc-ext" style="stroke-width:3.8" d="M342.4,449 L342.4,539"/><text class="nc-flagt" transform="translate(345.9,543) rotate(90)">w108 · disj. guindeau</text>
+      <path class="nc-cab nc-p nc-ext" style="stroke-width:1.8" d="M502,467 L502,539"/><text class="nc-flagt" transform="translate(505.5,543) rotate(90)">w200 · table à carte</text>
+      <path class="nc-cab nc-p nc-ext" style="stroke-width:1.8" d="M550,467 L550,539"/><text class="nc-flagt" transform="translate(553.5,543) rotate(90)">w158 · Scheiber</text>
+      <path class="nc-cab nc-p nc-ext" style="stroke-width:2.6" d="M598,467 L598,539"/><text class="nc-flagt" transform="translate(601.5,543) rotate(90)">w064 · Blue Smart (+)</text>
+      <path class="nc-cab nc-p nc-ext" style="stroke-width:1.1" d="M880,371.6 L880,539"/><text class="nc-flagt" transform="translate(883.5,543) rotate(90)">w067 · inter. de l'Orion</text>
+
+      <!-- câbles entre appareils de la niche -->
+      <path class="nc-cab nc-p" style="stroke-width:1.1" d="M97.6,299 L71.2,272.6"/>
+      <path class="nc-cab nc-p" style="stroke-width:1.1" d="M71.2,248.6 L71.2,225.8 L532,225.8 L532,239"/>
+      <path class="nc-cab nc-p" style="stroke-width:1.1" d="M97.6,449 L52,403.4"/>
+      <path class="nc-cab nc-p" style="stroke-width:1.1" d="M52,379.4 L52,218.6 L580,218.6 L580,239"/>
+      <path class="nc-cab nc-p" style="stroke-width:1.1" d="M162.4,299 L186.4,275"/>
+      <path class="nc-cab nc-p" style="stroke-width:3.8" d="M162.4,299 L232,368.6 L232,407 L253.6,428.6 L277.6,428.6"/>
+      <path class="nc-cab nc-p" style="stroke-width:3.8" d="M162.4,449 L257.2,449 L277.6,469.4"/>
+      <path class="nc-cab nc-n" style="stroke-width:3.8" d="M342.4,299 L374.8,266.6 L484,266.6"/>
+      <path class="nc-cab nc-n" style="stroke-width:2.6" d="M772,371.6 L760,383.6 L730,383.6 L730,311 L354.4,311 L342.4,299"/>
+      <!-- alimentations des fusibles, chacune dans son couloir -->
+      <path class="nc-cab nc-p" style="stroke-width:2.6" d="M162.4,299 L203.2,299 L251.2,347 L694,347 L694,395"/>
+      <path class="nc-cab nc-p" style="stroke-width:2.6" d="M97.6,449 L97.6,513.8 L442,513.8 L442,359 L646,359 L646,395"/>
+      <path class="nc-cab nc-p" style="stroke-width:2.6" d="M162.4,449 L162.4,497 L454,497 L454,371 L502,371 L502,395"/>
+      <!-- ponts -->
+      <path class="nc-cab nc-p" style="stroke-width:1.8" d="M502,395 L514,383 L538,383 L550,395"/>
+      <path class="nc-cab nc-p" style="stroke-width:1.4" d="M646,395 L634,383 L610,383 L598,395"/>
+      <!-- fusibles de l'Orion → Orion -->
+      <path class="nc-cab nc-p" style="stroke-width:2.6" d="M694,467 L694,481 L808,481 L808,371.6"/>
+      <path class="nc-cab nc-p" style="stroke-width:2.6" d="M646,467 L646,493 L844,493 L844,371.6"/>
+
+      <!-- étiquettes des câbles internes -->
+      <text class="nc-wl" x="300" y="229.3" text-anchor="middle">w013 · 0,75</text>
+      <text class="nc-wl" x="440" y="222.1" text-anchor="middle">w012 · 0,75</text>
+      <text class="nc-wl" x="232" y="391.3" text-anchor="middle">w101 · 35</text>
+      <text class="nc-wl" x="209.8" y="452.5" text-anchor="middle">w103 · 35</text>
+      <text class="nc-wl" x="420" y="270.1" text-anchor="middle">w011 · 35</text>
+      <text class="nc-wl" x="600" y="314.5" text-anchor="middle">w062 · 16</text>
+      <text class="nc-wl" x="330" y="350.5" text-anchor="middle">w053 · 16</text>
+      <text class="nc-wl" x="300" y="517.3" text-anchor="middle">w058 · 16</text>
+      <text class="nc-wl" x="300" y="500.5" text-anchor="middle">w157 · 16</text>
+      <text class="nc-wl" x="526" y="380" text-anchor="middle">w156</text>
+      <text class="nc-wl" x="622" y="380" text-anchor="middle">w056</text>
+      <text class="nc-wl" x="751" y="484.5" text-anchor="middle">w065 · 16</text>
+      <text class="nc-wl" x="751" y="496.5" text-anchor="middle">w066 · 16</text>
+
+      <!-- nœuds -->
+      <g>
+        <circle class="nc-node" cx="97.6" cy="299" r="3.6"/><circle class="nc-node" cx="162.4" cy="299" r="3.6"/>
+        <circle class="nc-node" cx="97.6" cy="449" r="3.6"/><circle class="nc-node" cx="162.4" cy="449" r="3.6"/>
+        <circle class="nc-node" cx="277.6" cy="299" r="3.6"/><circle class="nc-node" cx="342.4" cy="299" r="3.6"/>
+        <circle class="nc-node" cx="277.6" cy="428.6" r="3.6"/><circle class="nc-node" cx="277.6" cy="469.4" r="3.6"/>
+        <circle class="nc-node" cx="342.4" cy="449" r="3.6"/>
+        <circle class="nc-node" cx="484" cy="266.6" r="3.6"/><circle class="nc-node" cx="628" cy="266.6" r="3.6"/>
+        <circle class="nc-node" cx="532" cy="239" r="3.6"/><circle class="nc-node" cx="580" cy="239" r="3.6"/>
+        <circle class="nc-node" cx="772" cy="371.6" r="3.6"/><circle class="nc-node" cx="808" cy="371.6" r="3.6"/>
+        <circle class="nc-node" cx="844" cy="371.6" r="3.6"/><circle class="nc-node" cx="880" cy="371.6" r="3.6"/>
+        <circle class="nc-node" cx="502" cy="395" r="3.6"/><circle class="nc-node" cx="550" cy="395" r="3.6"/>
+        <circle class="nc-node" cx="598" cy="395" r="3.6"/><circle class="nc-node" cx="646" cy="395" r="3.6"/>
+        <circle class="nc-node" cx="694" cy="395" r="3.6"/>
+        <circle class="nc-node" cx="502" cy="467" r="3.6"/><circle class="nc-node" cx="550" cy="467" r="3.6"/>
+        <circle class="nc-node" cx="598" cy="467" r="3.6"/><circle class="nc-node" cx="646" cy="467" r="3.6"/>
+        <circle class="nc-node" cx="694" cy="467" r="3.6"/>
+      </g>
+      <text class="nc-nid nc-end" x="91.6" y="318.2">n005 bat</text>
+      <text class="nc-nid" x="168.4" y="318.2">n006 ch</text>
+      <text class="nc-nid nc-end" x="91.6" y="468.2">n020 bat</text>
+      <text class="nc-nid" x="168.4" y="439.4">n021 ch</text>
+      <text class="nc-nid nc-end" x="272.8" y="319.4">n023 ch</text>
+      <text class="nc-nid" x="348.4" y="319.4">n022 bat</text>
+      <text class="nc-nid" x="284.8" y="423.8">n105 1</text>
+      <text class="nc-nid" x="284.8" y="486.2">n106 2</text>
+      <text class="nc-nid" x="349.6" y="463.4">n107 com</text>
+      <text class="nc-nid" x="490" y="262">n012 sys</text>
+      <text class="nc-nid nc-end" x="622" y="262">n011 bat</text>
+      <text class="nc-nid nc-mid" x="532" y="252.2">n014</text>
+      <text class="nc-nid nc-mid" x="580" y="252.2">n013</text>
+      <text class="nc-nid nc-mid" x="772" y="358">n063</text><text class="nc-nid nc-mid" x="772" y="366">−</text>
+      <text class="nc-nid nc-mid" x="808" y="358">n061</text><text class="nc-nid nc-mid" x="808" y="366">e+</text>
+      <text class="nc-nid nc-mid" x="844" y="358">n062</text><text class="nc-nid nc-mid" x="844" y="366">s+</text>
+      <text class="nc-nid nc-mid" x="880" y="358">n064</text><text class="nc-nid nc-mid" x="880" y="366">H</text>
+      <text class="nc-nid nc-end" x="496" y="410">n151</text><text class="nc-nid nc-end" x="496" y="462">n152</text>
+      <text class="nc-nid nc-end" x="544" y="410">n155</text><text class="nc-nid nc-end" x="544" y="462">n156</text>
+      <text class="nc-nid nc-end" x="592" y="410">n059</text><text class="nc-nid nc-end" x="592" y="462">n060</text>
+      <text class="nc-nid nc-end" x="640" y="410">n067</text><text class="nc-nid nc-end" x="640" y="462">n068</text>
+      <text class="nc-nid nc-end" x="688" y="410">n065</text><text class="nc-nid nc-end" x="688" y="462">n066</text>
+    </svg>
+  </div>
+  <div class="nc-legend">
+    <span><svg viewBox="0 0 34 12"><line x1="2" y1="6" x2="32" y2="6" style="stroke:var(--pos);stroke-width:3"/></svg>+ entre appareils de la niche</span>
+    <span><svg viewBox="0 0 34 12"><line x1="2" y1="6" x2="32" y2="6" style="stroke:var(--ink);stroke-width:3"/></svg>− entre appareils de la niche</span>
+    <span><svg viewBox="0 0 34 12"><line x1="2" y1="6" x2="32" y2="6" style="stroke:var(--muted);stroke-width:2;stroke-dasharray:7 3"/></svg>câble qui sort de la niche (destination en marge)</span>
+    <span>épaisseur du trait selon la section · étiquette : fil · mm²</span>
+  </div>
+  <figcaption>On a ouvert la niche le long de ses deux plis et rabattu la platine à gauche du fond, la face de 19 cm à droite : la platine est vue de dos. Les distances sont celles du développé ; en vrai, un câble qui passe de la platine au fond coupe l'angle. Chaque alimentation de fusible a son couloir (w053 en haut, w058 puis w157 dessous) et arrive par le haut du fusible ; les départs sortent par le bas. La position des bornes de l'Orion XS (dessinées en bas) et des goujons des coupe-circuits est à relever.</figcaption>
+</figure>
+</section>
+<section class="folio" id="niche-vues">
+  <div class="folio-head">
+    <span class="folio-no">NICHE 2/3</span>
+    <h2>Niche de la platine : vue de dessus et platine</h2>
+    <p>Installation cible · <code>cible/niche-platine.html</code> · dessiné à la main, à l'échelle (un carreau = 1 cm)</p>
+  </div>
+  <div class="nc-vues">
+  <figure>
+    <div class="nc-head"><h2>Vue de dessus</h2><span>plancher de la niche</span></div>
+    <div class="nc-sheet">
+      <svg viewBox="0 0 570 420" role="img" aria-label="Vue de dessus de la niche trapézoïdale avec l'emplacement des appareils.">
+        <defs>
+          <pattern id="nc-hach" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="8" style="stroke:var(--muted);stroke-width:1"/>
+          </pattern>
+        </defs>
+        <polygon class="nc-floor" points="60,50 510,50 510,240 60,350"/>
+        <polygon class="nc-cc" points="60,50 120,50 120,335.3 60,350"/>
+        <polyline class="nc-wall" points="60,350 60,50 510,50 510,240"/>
+        <line class="nc-wall" x1="60" y1="350" x2="510" y2="240"/>
+        <line class="nc-win" x1="115" y1="339.5" x2="455" y2="256.4"/>
+        <text class="nc-t nc-wintxt" x="300" y="326" transform="rotate(-13.7 300 326)" text-anchor="middle">fenêtre 35 × 15 (position supposée)</text>
+        <text class="nc-ts nc-mid" x="90" y="200" transform="rotate(-90 90 200)">dos de la platine</text>
+        <text class="nc-c" x="20" y="98" transform="rotate(-90 20 98)">négatifs · guindeau</text>
+        <text class="nc-c" x="20" y="330" transform="rotate(-90 20 330)">moteur · servitude</text>
+        <text class="nc-ts" x="64" y="372">platine · 30 · côté descente</text>
+        <text class="nc-ts nc-end" x="555" y="150" transform="rotate(90 548 150)">face 19 · libre</text>
+        <text class="nc-ts nc-mid" x="285" y="40">fond · 45 (39 libres)</text>
+        <rect class="nc-haut" x="130" y="50" width="120" height="54"/>
+        <text class="nc-c nc-mid" x="190" y="122">shunt (en haut)</text>
+        <rect class="nc-haut" x="350" y="50" width="137" height="40"/>
+        <text class="nc-c nc-mid" x="418" y="108">Orion XS (en haut)</text>
+        <rect class="nc-new" x="130" y="50" width="190" height="30"/>
+        <text class="nc-c nc-mid" x="225" y="69">5 fusibles (milieu)</text>
+        <line class="nc-dim" x1="300" y1="104" x2="300" y2="276"/>
+        <text class="nc-c" x="305" y="200">≥ 17 cm libres</text>
+        <text class="nc-ts" x="64" y="400">Pointillés : appareils fixés en haut du fond ; plein : à mi-hauteur.</text>
+      </svg>
+    </div>
+    <figcaption>Le fond est du côté des négatifs et du sélecteur, la fenêtre du côté du moteur et de la servitude : déduit de la fenêtre, côté cabine de poupe (bâbord), et de la platine qui regarde vers l'avant. À confirmer à bord.</figcaption>
+  </figure>
+
+  <figure>
+    <div class="nc-head"><h2>La platine vue de la descente</h2><span>pour retrouver le dos</span></div>
+    <div class="nc-sheet">
+      <svg viewBox="0 0 440 380" role="img" aria-label="Platine des coupe-circuits vue de face, avec le sélecteur du guindeau en bas à gauche.">
+        <rect class="nc-box" x="40" y="40" width="360" height="312" rx="4"/>
+        <circle class="nc-box" cx="130" cy="124" r="43"/><text class="nc-tb nc-mid" x="130" y="122">négatifs</text><text class="nc-c nc-mid" x="130" y="137">cc-masse</text>
+        <circle class="nc-new" cx="130" cy="274" r="38"/><text class="nc-tb nc-mid" x="130" y="272">guindeau</text><text class="nc-c nc-mid" x="130" y="287">1 · OFF · 2</text>
+        <circle class="nc-box" cx="310" cy="124" r="43"/><text class="nc-tb nc-mid" x="310" y="122">moteur</text><text class="nc-c nc-mid" x="310" y="137">cc-moteur</text>
+        <circle class="nc-box" cx="310" cy="274" r="43"/><text class="nc-tb nc-mid" x="310" y="272">servitude</text><text class="nc-c nc-mid" x="310" y="287">cc-servitude</text>
+        <text class="nc-ts nc-mid" x="130" y="334">à la place du couplage</text>
+        <line class="nc-dim" x1="40" y1="28" x2="400" y2="28"/><text class="nc-c nc-mid" x="220" y="22">30</text>
+        <line class="nc-dim" x1="414" y1="40" x2="414" y2="352"/><text class="nc-c" x="418" y="200">26</text>
+        <text class="nc-ts" x="44" y="370">← fond de la niche derrière ce bord</text>
+      </svg>
+    </div>
+    <figcaption>Disposition de la photo du 15/10. Le sélecteur commandé (300 A, goujons M10) doit entrer dans la découpe du coupe-circuit de couplage : diamètre et entraxe des vis à comparer.</figcaption>
+  </figure>
+</div>
+</section>
+<section class="folio" id="niche-cables">
+  <div class="folio-head">
+    <span class="folio-no">NICHE 3/3</span>
+    <h2>Niche de la platine : câbles et points à vérifier</h2>
+    <p>Installation cible · <code>cible/niche-platine.html</code> · dessiné à la main, à l'échelle (un carreau = 1 cm)</p>
+  </div>
+  <div class="nc-notes">
+  <section>
+    <h3>Câbles entre les appareils de la niche</h3>
+    <div class="nc-tablewrap"><table>
+      <thead><tr><th>Fil</th><th>De → vers</th><th>mm²</th></tr></thead>
+      <tbody>
+        <tr><td class="nc-n">w101</td><td>moteur, côté charges (n006) → sélecteur 1 (n105)</td><td class="nc-n">35</td></tr>
+        <tr><td class="nc-n">w103</td><td>servitude, côté charges (n021) → sélecteur 2 (n106)</td><td class="nc-n">35</td></tr>
+        <tr><td class="nc-n">w011</td><td>shunt, côté bord (n012) → négatifs, côté batteries (n022)</td><td class="nc-n">35</td></tr>
+        <tr><td class="nc-n">w053 / w065</td><td>n006 → fusible 70 A (n065-6) → entrée de l'Orion (n061)</td><td class="nc-n">16</td></tr>
+        <tr><td class="nc-n">w058 / w066</td><td>n020 → fusible 70 A (n067-8) → sortie de l'Orion (n062) ; w058 alimente aussi le pont w056</td><td class="nc-n">16</td></tr>
+        <tr><td class="nc-n">w062</td><td>− de l'Orion (n063) → n022</td><td class="nc-n">16</td></tr>
+        <tr><td class="nc-n">w157</td><td>n021 → fusible 50 A de la table (n151) ; alimente aussi le pont w156</td><td class="nc-n">16</td></tr>
+        <tr><td class="nc-n">w156</td><td>pont : n151 → fusible 30 A du Scheiber (n155)</td><td class="nc-n">6</td></tr>
+        <tr><td class="nc-n">w056</td><td>pont : n067 → fusible 25 A du Blue Smart (n059)</td><td class="nc-n">4</td></tr>
+        <tr><td class="nc-n">w006 / w013</td><td>n005 → 1 A → entrée aux. du shunt (n014)</td><td class="nc-n">0,75</td></tr>
+        <tr><td class="nc-n">w014 / w012</td><td>n020 → 1 A → alimentation du shunt (n013)</td><td class="nc-n">0,75</td></tr>
+        <tr><td class="nc-n">w054</td><td>n006 → fusible 1 A de la commande de l'Orion</td><td class="nc-n">0,75</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h3>Ce que montre le développé</h3>
+    <ul>
+      <li><strong>Orion XS en haut du fond</strong>, bornes vers le bas : ses deux fusibles de 70 A sont juste dessous, au bout de la rangée, et w065 et w066 restent courts. La face de 19 cm, au bord de la fenêtre, n'a plus rien à fixer.</li>
+      <li><strong>Rangée de fusibles dans l'ordre des ponts</strong> : table à carte et Scheiber (pont w156), puis Blue Smart et sortie de l'Orion (pont w056), puis entrée de l'Orion. Chaque pont relie deux fusibles voisins.</li>
+      <li>Les trois alimentations de 16 mm² (w053, w058, w157) arrivent par le haut des fusibles, chacune dans son couloir : aucun croisement. Les départs vers la table, le Scheiber et le Blue Smart sortent par le bas.</li>
+      <li><strong>Cinq cosses par goujon sur le coupe-circuit des négatifs</strong>, des deux côtés : n022 (w003, w011, w062, w059, w061) et n023 (w104, w105, w201, w162, w161). Une barre de masse côté charges, reliée à n023 par un seul câble, soulagerait le goujon.</li>
+      <li>Les 35 mm² du sélecteur (w101, w103) sont courts : le sélecteur est voisin des deux coupe-circuits.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>À vérifier sur place</h3>
+    <ul>
+      <li>Le côté du fond : derrière les négatifs et le sélecteur, comme dessiné, ou derrière le moteur et la servitude. Dans le second cas, le dessin se lit en miroir.</li>
+      <li>La place des bornes de l'Orion XS (dessinées en bas) et des goujons à l'arrière de chaque coupe-circuit.</li>
+      <li>Par où les câbles sortent de la niche (batteries, moteur, guindeau, tableaux).</li>
+      <li>La position exacte de la fenêtre et de son bord bas, supposée centrée.</li>
+    </ul>
+  </section>
+</div>
+  <p class="nc-ts">Câblage tiré du modèle de l'installation cible, numérotation par section du 15/10. Encombrements : fiches constructeur relevées par recherche le 14/10 ; porte-fusible MIDI estimé à 3 × 6 cm.</p>
+</section>
+</div>

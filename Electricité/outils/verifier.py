@@ -693,6 +693,12 @@ def main() -> int:
             controler_nodes_svg(sorted(CIBLE.glob("*.svg")), m, r)
             controler_renvois(sorted(CIBLE.glob("*.svg")), r)
             controler_implantation(m, r, IMPLANTATION_CIBLE)
+            for annexe in sorted(CIBLE.glob("*.html")):   # annexes dessinées à la main (niche de la platine)
+                txt = annexe.read_text(encoding="utf-8")
+                for i in sorted(fils_svg(txt) - set(m.fils)):
+                    r.erreur(rel(annexe), f"{i} cité mais absent du modèle cible")
+                for i in sorted(nodes_svg(txt) - set(m.nodes)):
+                    r.erreur(rel(annexe), f"{i} cité mais absent du modèle cible")
 
     # ---- Folios générés : règles de dessin et SVG à jour (outils/folio.py)
     dispositions = sorted(RACINE.rglob("folio-*.yaml"))

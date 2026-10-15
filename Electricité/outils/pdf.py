@@ -61,6 +61,12 @@ figcaption { font-size: 11.5px; margin-top: 6px; max-width: none; }
 .notes li { margin-bottom: 7px; }
 .notes.traitees { break-before: page; }
 .readme { max-width: none; }
+.niche .nc-sheet { overflow: visible; text-align: center; }
+.niche .nc-sheet svg, .niche .nc-sheet.nc-large svg { display: inline-block; width: 100%; min-width: 0; height: auto; max-height: 150mm; }
+.niche .nc-vues { grid-template-columns: 1fr 1fr; }
+.niche .nc-vues .nc-sheet svg { max-height: 120mm; }
+.niche .nc-notes { display: block; columns: 2; column-gap: 28px; }
+.niche .nc-notes section { break-inside: avoid; margin-bottom: 14px; }
 .archives { border: 0; padding: 0; background: none; }
 .archives summary { break-before: page; list-style: none; font-size: 18px; color: var(--ink); }
 .archives-corps { display: block; margin-top: 0; }

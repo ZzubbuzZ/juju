@@ -228,7 +228,7 @@ Réserve, consignée pour mémoire (voir « Conséquences » ci-dessous) : la pa
 
 La niche derrière la contremarche (relevé du 14/10, zone `descente`) est un prisme droit de 26 cm de haut à base trapézoïdale : face des coupe-circuits 30 cm, face opposée 19 cm, fond de 45 cm dont 6 cm occupés par les coupe-circuits, fenêtre d'accès de 15 × 35 cm dans la face oblique, côté cabine de poupe. Volume d'environ 29 L.
 
-Implantation proposée (plan à l'échelle : [artifact](https://claude.ai/artifact/2zAbUvVvrjaFc8BZUj71cU)). Le Blue Smart, d'abord prévu en bas du fond, va au coffre de cockpit (E-H5, 14/10) :
+Implantation proposée (plan à l'échelle : [annexe de l'installation cible](../../../cible/niche-platine.html), pages « Niche » de la page de consultation). Le Blue Smart, d'abord prévu en bas du fond, va au coffre de cockpit (E-H5, 14/10) :
 
 | Paroi | Appareils | Encombrement (fiches constructeur) |
 |---|---|---|
@@ -242,7 +242,7 @@ Implantation proposée (plan à l'échelle : [artifact](https://claude.ai/artifa
 - Le SmartShunt IP65 est livré avec ses deux fils de mesure de 1,5 m, protégés par un fusible de 1 A (fiche constructeur).
 - La chute de tension dans wire010 (1 m, 35 mm², environ 0,5 mΩ) ne fausse que la tension lue par le shunt : moins de 10 mV en charge, sans effet sur l'état de charge, compté en ampères-heures. Rien à compenser ni à rapprocher.
 - **Ponts entre porte-fusibles** (15/10, proposition de l'utilisateur) : un câble de 16 mm² depuis chaque borne du coupe-circuit de servitude alimente le premier porte-fusible, et un pont court en câble isolé, cosses serties sous gaine thermorétractable, alimente le suivant. Côté batterie (node020) : wire058 vers le fusible de sortie de l'Orion XS, pont wire056 (4 mm²) vers celui du Blue Smart. Côté charges (node021) : wire157 vers le fusible de la table à carte, pont wire156 (6 mm²) vers celui du Scheiber. Le fusible d'entrée de l'Orion XS, sur la batterie moteur, reste seul. Les goujons n020 et n021 passent de 4 à 3 cosses. Sections dans [dimensionnement.md](../../../commun/dimensionnement.md#ponts-entre-porte-fusibles-1510).
-- Le sélecteur du guindeau prend la place du coupe-circuit de couplage, déposé, en bas à gauche de la platine vue de la descente (15/10). Développé des trois faces de la niche avec les câbles : même [artifact](https://claude.ai/artifact/2zAbUvVvrjaFc8BZUj71cU).
+- Le sélecteur du guindeau prend la place du coupe-circuit de couplage, déposé, en bas à gauche de la platine vue de la descente (15/10). Développé des trois faces de la niche avec les câbles : même [annexe](../../../cible/niche-platine.html).
 
 À vérifier à la pose : place prise par les câbles existants (35 mm² des coupe-circuits, wire010, wire200, wire158 ; le coupleur déposé en libère), position de la fenêtre sur la face oblique (supposée centrée), position des bornes de l'Orion XS, plancher de la niche et voisinage du compartiment moteur.
 

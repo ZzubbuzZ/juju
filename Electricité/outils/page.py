@@ -67,12 +67,13 @@ def motif_archive(chemin: Path) -> str:
     return str((yaml.safe_load(disposition.read_text(encoding="utf-8")) or {}).get("archive") or "")
 
 
-def folios_et_archives(chemins: list[tuple[Path, str]], racine: Path) -> list[str]:
-    """Folios en service, puis une section repliée qui regroupe les folios archivés."""
+def folios_et_archives(chemins: list[tuple[Path, str]], racine: Path, annexes: list[str] = ()) -> list[str]:
+    """Folios en service, puis les annexes dessinées à la main, puis une section repliée des folios archivés."""
     actifs, archives = [], []
     for chemin, contexte in chemins:
         motif = motif_archive(chemin)
         (archives if motif else actifs).append(folio(chemin, contexte, racine, motif))
+    actifs.extend(annexes)
     if archives:
         actifs.append(f"""
 <details class="archives">
@@ -328,7 +329,9 @@ def vue_releve(racine: Path, branche: str, commit: str) -> str:
     chemins += [(c, "Installation cible") for c in sorted((racine / "cible").glob("*.svg"))]
     chemins += [(c, f"Étude {c.parent.parent.name} · hypothèse {c.parent.name}")
                 for c in sorted((racine / "etudes").glob("*/H*/*.svg"))]
-    folios = folios_et_archives(chemins, racine)
+    # annexes de l'installation cible (cible/*.html, dessinées à la main) : après les folios, avant les archives
+    annexes = [c.read_text(encoding="utf-8") for c in sorted((racine / "cible").glob("*.html"))]
+    folios = folios_et_archives(chemins, racine, annexes)
     return "\n".join([entete_vue(branche, commit), *folios, *comparaisons(racine), notes(racine)])
 
 
