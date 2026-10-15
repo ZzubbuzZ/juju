@@ -292,7 +292,7 @@ fils:
 
 textes:
   - {x: 190, y: 270, classe: "ts end", texte: "entrée 230 V : folio 3"}
-  - {x: 190, y: 285, classe: "id end", texte: "n200 · n201 · n202"}
+  - {x: 190, y: 285, classe: "id end", texte: "n200-2"}
   - {x: 1100, y: 545, classe: "tb mid", texte: "Guindeau Lewmar"}
   - {x: 1100, y: 560, classe: "ts mid", texte: "Pro-Series 1000 · 700 W"}
   - {x: 550, y: 765, classe: "tb end", texte: "Pompe de cale"}

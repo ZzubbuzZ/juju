@@ -107,7 +107,7 @@
   <path class="n w1" d="M642 495 L648 485"/>
   <text class="idn mid" x="640" y="482">w303-5</text>
   <rect class="flag-new" x="30" y="330" width="205" height="18"/>
-  <text class="ts mid" x="132.5" y="343">→ n217 / n218 / n219 : folio 3</text>
+  <text class="ts mid" x="132.5" y="343">→ n217-9 : folio 3</text>
   <rect class="flag-new" x="1000" y="410" width="180" height="80"/>
   <text class="ts mid" x="1090" y="423">Entrée 12 V · 200 W</text>
   <circle class="term" cx="230" cy="125" r="3.5"/>
@@ -130,9 +130,9 @@
   <circle class="term" cx="720" cy="490" r="3.5"/>
   <circle class="term" cx="720" cy="490" r="3.5"/>
   <circle class="term" cx="720" cy="490" r="3.5"/>
-  <text class="id end" x="223" y="124">n208 / n209 / n212</text>
+  <text class="id end" x="223" y="124">n208-9 / n212</text>
   <text class="pin end" x="223" y="134">P / N / PE</text>
-  <text class="id end" x="434" y="218">n220 / n221 / n222</text>
+  <text class="id end" x="434" y="218">n220-2</text>
   <text class="pin end" x="434" y="228">P / N / PE</text>
   <text class="id" x="145" y="194">n223</text>
   <text class="id" x="146" y="244">n224</text>
@@ -142,9 +142,9 @@
   <text class="id" x="536" y="244">n226</text>
   <text class="id" x="665" y="194">n236</text>
   <text class="id" x="666" y="244">n237</text>
-  <text class="idn" x="427" y="489">n300 / n301 / n302</text>
+  <text class="idn" x="427" y="489">n300-2</text>
   <text class="pin" x="427" y="499">P / N / PE</text>
-  <text class="idn" x="727" y="489">n303 / n304 / n305</text>
+  <text class="idn" x="727" y="489">n303-5</text>
   <text class="pin" x="727" y="499">P / N / PE</text>
   <text class="ts" x="30" y="38">Unifilaire : un trait par câble, barres obliques = nombre de conducteurs · en vert : nouveau</text>
   <text class="ts end" x="252" y="395">H07RN-F 3G1,5 · ≈ 5 m</text>

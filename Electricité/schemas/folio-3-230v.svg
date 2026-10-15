@@ -247,17 +247,17 @@
   <circle class="term" cx="1070" cy="642" r="3.5"/>
   <circle class="term" cx="1070" cy="642" r="3.5"/>
   <circle class="term" cx="1070" cy="642" r="3.5"/>
-  <text class="id end" x="173" y="164">n203 / n204 / n205</text>
+  <text class="id end" x="173" y="164">n203-5</text>
   <text class="pin end" x="173" y="174">P / N / PE</text>
-  <text class="id" x="347" y="164">n206 / n207 / n212</text>
+  <text class="id" x="347" y="164">n206-7 / n212</text>
   <text class="pin" x="347" y="174">entrée P / N · PE</text>
-  <text class="id end" x="483" y="189">n208 / n209</text>
+  <text class="id end" x="483" y="189">n208-9</text>
   <text class="pin end" x="483" y="199">sortie P / N</text>
   <text class="id end" x="598" y="177">n210</text>
   <text class="id" x="662" y="177">n211</text>
-  <text class="id" x="907" y="154">n200 / n201 / n202</text>
+  <text class="id" x="907" y="154">n200-2</text>
   <text class="pin" x="907" y="164">P / N / PE</text>
-  <text class="id end" x="414" y="354">n220 / n221 / n222</text>
+  <text class="id end" x="414" y="354">n220-2</text>
   <text class="pin end" x="414" y="364">P / N / PE</text>
   <text class="id" x="115" y="364">n223</text>
   <text class="id" x="116" y="414">n224</text>
@@ -267,25 +267,25 @@
   <text class="id" x="476" y="414">n226</text>
   <text class="id" x="625" y="364">n236</text>
   <text class="id end" x="614" y="414">n237</text>
-  <text class="id" x="118" y="512">n233 / n234 / n235</text>
+  <text class="id" x="118" y="512">n233-5</text>
   <text class="pin" x="118" y="522">P / N / PE</text>
-  <text class="id end" x="192" y="612">n217 / n218 / n219</text>
+  <text class="id end" x="192" y="612">n217-9</text>
   <text class="pin end" x="192" y="622">P / N / PE</text>
-  <text class="id mid" x="300" y="516">n227 / n228 / n229</text>
+  <text class="id mid" x="300" y="516">n227-9</text>
   <text class="pin mid" x="300" y="526">P/N/PE</text>
-  <text class="id mid" x="300" y="626">n047 / n048</text>
+  <text class="id mid" x="300" y="626">n047-8</text>
   <text class="pin mid" x="300" y="636">P / N</text>
-  <text class="id mid" x="470" y="516">n230 / n231 / n232</text>
+  <text class="id mid" x="470" y="516">n230-2</text>
   <text class="pin mid" x="470" y="526">P/N/PE</text>
-  <text class="id mid" x="640" y="516">n253 / n254 / n255</text>
+  <text class="id mid" x="640" y="516">n253-5</text>
   <text class="pin mid" x="640" y="526">P/N/PE</text>
-  <text class="id" x="876" y="388">n240 / n241 / n242</text>
+  <text class="id" x="876" y="388">n240-2</text>
   <text class="pin" x="876" y="398">P / N / PE</text>
-  <text class="id mid" x="915" y="516">n247 / n248 / n249</text>
+  <text class="id mid" x="915" y="516">n247-9</text>
   <text class="pin mid" x="915" y="526">P/N/PE</text>
-  <text class="id mid" x="1095" y="516">n250 / n251 / n252</text>
+  <text class="id mid" x="1095" y="516">n250-2</text>
   <text class="pin mid" x="1095" y="526">P/N/PE</text>
-  <text class="id end" x="1064" y="624">n243 / n244 / n245</text>
+  <text class="id end" x="1064" y="624">n243-5</text>
   <text class="pin end" x="1064" y="634">P/N/PE</text>
   <text class="id mid" x="260" y="183">3 × 2,5</text>
   <text class="tb mid" x="105" y="206">Bornes du port : 16 A</text>

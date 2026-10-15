@@ -148,14 +148,19 @@ def lire_ids_section(chemin: Path, prefixe: str, titre: str) -> set[str]:
     return set(re.findall(rf"^- \*\*({prefixe}\d+)\*\*", section, re.M))
 
 
-def fils_svg(txt: str) -> set[str]:
-    """Fils cités dans un folio, en entier (wire234) ou en abrégé (w234), ou par plage de fils consécutifs
-    d'un câble 230 V : w038-40 (w038 à w040), w300-2 (w300 à w302)."""
-    fils = {f"wire{n}" for n in re.findall(r"\b(?:wire|w)(\d{3})\b", txt)}
-    for debut, fin in re.findall(r"\bw(\d{3})-(\d{1,2})\b", txt):
+def deplier(txt: str) -> str:
+    """Remplace les plages de fils ou de nœuds consécutifs (w038-40, n203-5 : notation des câbles 230 V)
+    par la liste de leurs identifiants abrégés (w038 w039 w040)."""
+    def plage(m):
+        p, debut, fin = m.group(1), m.group(2), m.group(3)
         a, b = int(debut), int(debut[:3 - len(fin)] + fin)
-        fils |= {f"wire{n:03d}" for n in range(a, b + 1)}
-    return fils
+        return " ".join(f"{p}{n:03d}" for n in range(a, b + 1))
+    return re.sub(r"\b([wn])(\d{3})-(\d{1,2})\b", plage, txt)
+
+
+def fils_svg(txt: str) -> set[str]:
+    """Fils cités dans un folio, en entier (wire234) ou en abrégé (w234), ou par plage (w038-40)."""
+    return {f"wire{n}" for n in re.findall(r"\b(?:wire|w)(\d{3})\b", deplier(txt))}
 
 
 def ids_svg(chemins: list[Path]) -> tuple[set[str], set[str], set[str]]:
@@ -317,7 +322,8 @@ def controler_contournements(m: Modele, r: Rapport) -> None:
 
 
 def nodes_svg(txt: str) -> set[str]:
-    """Nœuds cités dans un folio, en entier (node006) ou en abrégé (n006)."""
+    """Nœuds cités dans un folio, en entier (node006) ou en abrégé (n006), ou par plage (n203-5)."""
+    txt = deplier(txt)
     return {f"node{n}" for n in re.findall(r"\b(?:node|n)(\d{3})\b", txt)}
 
 
@@ -390,7 +396,7 @@ def controler_renvois(svgs: list[Path], r: Rapport) -> None:
                 continue
             represente = set()
             for cible in cibles:
-                t = cible.read_text(encoding="utf-8")
+                t = deplier(cible.read_text(encoding="utf-8"))
                 dans_renvois = " ".join(contenu_r for contenu_r, _ in renvois_svg(t))
                 hors = [n for n in re.findall(r"\b(?:node|n)\d{3}\b", re.sub(r"<[^>]+>", " ", t))]
                 represente |= {f"node{n[-3:]}" for n in hors

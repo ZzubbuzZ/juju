@@ -130,10 +130,11 @@ def modeles() -> dict:
 
 
 # --------------------------------------------------------------------------- géométrie
-def compacter(fils) -> str:
-    """Fils d'un câble 230 V en notation compacte : les numéros consécutifs en plage, w038-40 (w038 à w040)
-    ou w300-2, avec le moins de chiffres possible après le tiret ; les autres séparés par « / »."""
-    nums = sorted(int(w[-3:]) for w in fils)
+def compacter(ids, prefixe="w") -> str:
+    """Fils d'un câble 230 V (ou nœuds d'un même point, prefixe « n ») en notation compacte : les numéros
+    consécutifs en plage, w038-40 (w038 à w040) ou n203-5, avec le moins de chiffres possible après le tiret ;
+    les autres séparés par « / »."""
+    nums = sorted(int(w[-3:]) for w in ids)
     groupes, g = [], [nums[0]]
     for n in nums[1:]:
         if n == g[-1] + 1:
@@ -145,10 +146,10 @@ def compacter(fils) -> str:
     for g in groupes:
         a, b = f"{g[0]:03d}", f"{g[-1]:03d}"
         if a == b:
-            out.append(f"w{a}")
+            out.append(f"{prefixe}{a}")
         else:
             k = next(i for i in range(3) if a[i] != b[i])
-            out.append(f"w{a}-{b[k:]}")
+            out.append(f"{prefixe}{a}-{b[k:]}")
     return " / ".join(out)
 
 
@@ -382,7 +383,7 @@ class Folio:
         neuf = nd.get("statut") == "propose" or self.nouveau(nd.get("equipement", ""))
         cls = "idn" if neuf else "id"
         a = f" {anc}" if anc else ""
-        ident = " / ".join(court(g) for g in groupe) if groupe else court(n)
+        ident = compacter(groupe, "n") if groupe else court(n)
         self.out.append(f'<text class="{cls}{a}" x="{x + dx:g}" y="{y + dy:g}">{ident}</text>')
         if n in self.rect:
             x0, y0, x1, y1 = self.rect[n]

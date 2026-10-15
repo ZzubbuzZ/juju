@@ -151,7 +151,7 @@ traits:
   - {classe: p w3, points: [[940, 450], [1000, 450]]}
 
 renvois:
-  - {x: 30, y: 330, w: 205, nouveau: true, texte: "→ n217 / n218 / n219 : folio 3"}
+  - {x: 30, y: 330, w: 205, nouveau: true, texte: "→ n217-9 : folio 3"}
   - {x: 1000, y: 410, w: 180, h: 80, nouveau: true, texte: "Entrée 12 V · 200 W"}
 
 pastilles:
