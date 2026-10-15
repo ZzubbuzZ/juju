@@ -61,12 +61,18 @@ figcaption { font-size: 11.5px; margin-top: 6px; max-width: none; }
 .notes li { margin-bottom: 7px; }
 .notes.traitees { break-before: page; }
 .readme { max-width: none; }
-.niche .nc-sheet { overflow: visible; text-align: center; }
-.niche .nc-sheet svg, .niche .nc-sheet.nc-large svg { display: inline-block; width: 100%; min-width: 0; height: auto; max-height: 150mm; }
-.niche .nc-vues { grid-template-columns: 1fr 1fr; }
-.niche .nc-vues .nc-sheet svg { max-height: 120mm; }
-.niche .nc-notes { display: block; columns: 2; column-gap: 28px; }
-.niche .nc-notes section { break-inside: avoid; margin-bottom: 14px; }
+html .niche .nc-sheet { overflow: visible; text-align: center; }
+html .niche .nc-lede { font-size: 11px; line-height: 1.35; margin-bottom: 4px; }
+html .niche .nc-sheet svg, html .niche .nc-sheet.nc-large svg { display: inline-block; width: 100%; min-width: 0; height: 126mm; }
+html .niche .nc-legend { font-size: 10px; gap: 2px 14px; }
+html .niche figcaption { font-size: 10.5px; line-height: 1.35; }
+html .niche .nc-vues { grid-template-columns: 1fr 1fr; }
+html .niche .nc-vues .nc-sheet svg { height: 105mm; }
+html .niche .nc-notes { display: grid; grid-template-columns: 1.15fr 1fr 0.85fr; gap: 10px 18px; font-size: 10.5px; line-height: 1.35; }
+html .niche .nc-notes table { font-size: 10px; }
+html .niche .nc-notes th, html .niche .nc-notes td { padding: 2px 5px; }
+html .niche td.nc-n { font-size: 9.5px; }
+html .niche .nc-notes ul { gap: 3px; }
 .archives { border: 0; padding: 0; background: none; }
 .archives summary { break-before: page; list-style: none; font-size: 18px; color: var(--ink); }
 .archives-corps { display: block; margin-top: 0; }
