@@ -103,7 +103,7 @@
   <text class="t tn" x="338" y="91"><tspan data-equipement="fus-orion-entree">Fusibles MIDI (départs, Orion XS)</tspan><tspan data-equipement="fus-orion-sortie"/><tspan data-equipement="fus-chargeur-lifepo4"/><tspan data-equipement="fus-source-tableau-servitude"/><tspan data-equipement="fus-source-tableau-scheiber"/></text>
   <text class="t tn" x="338" y="110" data-equipement="inter-orion">Interrupteur à voyant de l'Orion XS</text>
   <text class="t" x="338" y="129" data-equipement="tableau-scheiber">Tableau Scheiber 2 voies</text>
-  <text class="t tn" x="338" y="148" data-equipement="selecteur-guindeau">Sélecteur du guindeau 1 / OFF / 2</text>
+  <text class="t tn" x="338" y="148" data-equipement="selecteur-guindeau">Platine : sélecteur du guindeau (ex-couplage)</text>
 
   <path class="leader" d="M640 168 L520 262"/>
   <rect class="callout" x="582" y="6" width="244" height="162" rx="2"/>
