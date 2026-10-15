@@ -43,7 +43,7 @@ La chute dans wire010 (shunt → − de la batterie, 1 m de 35 mm², environ 0,5
 
 ## Niche de la contremarche
 
-Sans le Blue Smart, la niche reçoit l'Orion XS (face de 19 cm), le shunt et les fusibles (haut du fond) : voir [Implantation dans la niche](../H1-lifepo4/proposition.md#implantation-dans-la-niche-1410) dans E-H1. Le bas du fond reste libre pour le passage des câbles, dont les deux 10 mm² qui arrivent du coffre de cockpit.
+Sans le Blue Smart, la niche reçoit le shunt et l'Orion XS (haut du fond) et les fusibles (milieu du fond) : voir [Implantation dans la niche](../H1-lifepo4/proposition.md#implantation-dans-la-niche-1410) dans E-H1. Le bas du fond reste libre pour le passage des câbles, dont les deux 10 mm² qui arrivent du coffre de cockpit.
 
 ## Décision
 

@@ -232,9 +232,10 @@ Implantation proposée (plan à l'échelle : [artifact](https://claude.ai/artifa
 
 | Paroi | Appareils | Encombrement (fiches constructeur) |
 |---|---|---|
-| Fond, en bas | Libre : passage des câbles, dont les deux 10 mm² du Blue Smart qui arrivent du coffre de cockpit (E-H5) | |
-| Fond, en haut | Fusible de 70 A de l'entrée de l'Orion XS (côté coupe-circuits), SmartShunt, puis les fusibles MIDI de 70 A (sortie Orion XS), 25 A (Blue Smart), 50 A (wire200) et 30 A (wire158) | shunt 120 × 46 × 54 mm ; porte-fusible MIDI ≈ 60 × 30 × 30 mm (estimé) |
-| Face de 19 cm | Orion XS, câbles de 16 mm² courbés dessous (environ 11 cm) | 137 × 123 × 40 mm |
+| Fond, en haut | SmartShunt, côté platine (près des négatifs), puis Orion XS, bornes vers le bas (15/10) | shunt 120 × 46 × 54 mm ; Orion XS 137 × 123 × 40 mm |
+| Fond, au milieu | Rangée de fusibles MIDI dans l'ordre des ponts : 50 A (table à carte) et 30 A (Scheiber), 25 A (Blue Smart) et 70 A (sortie de l'Orion XS), puis 70 A (entrée de l'Orion XS), sous l'Orion | porte-fusible MIDI ≈ 30 × 60 mm (estimé) |
+| Fond, en bas | Passage des câbles, dont les deux 10 mm² du Blue Smart qui arrivent du coffre de cockpit (E-H5) | |
+| Face de 19 cm | Libre : au bord de la fenêtre, difficile d'accès | |
 
 - Il reste au moins 13 cm devant les appareils pour passer la main.
 - Victron conseille 10 cm libres autour de l'Orion XS ; il n'y en aura qu'environ 3 sur les côtés. Réglé vers 15 A, il dissipe quelques watts ; au pire, il réduit son courant plus tôt.
@@ -243,7 +244,7 @@ Implantation proposée (plan à l'échelle : [artifact](https://claude.ai/artifa
 - **Ponts entre porte-fusibles** (15/10, proposition de l'utilisateur) : un câble de 16 mm² depuis chaque borne du coupe-circuit de servitude alimente le premier porte-fusible, et un pont court en câble isolé, cosses serties sous gaine thermorétractable, alimente le suivant. Côté batterie (node020) : wire058 vers le fusible de sortie de l'Orion XS, pont wire056 (4 mm²) vers celui du Blue Smart. Côté charges (node021) : wire157 vers le fusible de la table à carte, pont wire156 (6 mm²) vers celui du Scheiber. Le fusible d'entrée de l'Orion XS, sur la batterie moteur, reste seul. Les goujons n020 et n021 passent de 4 à 3 cosses. Sections dans [dimensionnement.md](../../../commun/dimensionnement.md#ponts-entre-porte-fusibles-1510).
 - Le sélecteur du guindeau prend la place du coupe-circuit de couplage, déposé, en bas à gauche de la platine vue de la descente (15/10). Développé des trois faces de la niche avec les câbles : même [artifact](https://claude.ai/artifact/2zAbUvVvrjaFc8BZUj71cU).
 
-À vérifier à la pose : place prise par les câbles existants (35 mm² des coupe-circuits, wire010, wire200, wire158 ; le coupleur déposé en libère), position de la fenêtre sur la face oblique (supposée centrée : l'Orion XS sur la face de 19 cm serait alors au bord de la fenêtre), plancher de la niche et voisinage du compartiment moteur.
+À vérifier à la pose : place prise par les câbles existants (35 mm² des coupe-circuits, wire010, wire200, wire158 ; le coupleur déposé en libère), position de la fenêtre sur la face oblique (supposée centrée), position des bornes de l'Orion XS, plancher de la niche et voisinage du compartiment moteur.
 
 ## Changements de câblage (à écrire dans `cablage.yaml`)
 
