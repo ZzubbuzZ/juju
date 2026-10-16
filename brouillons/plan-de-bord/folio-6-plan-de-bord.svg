@@ -74,8 +74,8 @@
   <path class="amg" d="M440.0 280.2 L500.0 280.2"/>
   <path class="amg" d="M500.0 325.2 L553.9 356.4"/><path class="amg-l" d="M500.0 387.5 A62.2 62.2 0 0 0 553.9 356.4"/>
   <!-- Table à carte et son siège -->
-  <rect class="amg" x="503.8" y="237.5" width="56.2" height="82.5"/>
-  <rect class="amg-f" x="560.0" y="248.8" width="86.2" height="120.0"/>
+  <rect class="amg-f" x="503.8" y="237.5" width="56.2" height="82.5"/>
+  <rect class="amg" x="560.0" y="248.8" width="86.2" height="120.0"/>
   <path class="amg" d="M646.2 233.8 L646.2 368.8"/>
   <!-- Descente et sa partie amovible (accès au moteur) -->
   <rect class="amg" x="432.5" y="395.0" width="56.2" height="93.8"/>
