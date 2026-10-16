@@ -233,9 +233,7 @@ A(path("mat", *lit, close=True))
 # un sommet à l'angle du meuble du lavabo, un autre au niveau de la paroi arrière du cabinet de toilette
 la, lc = (480, 165), (480, 265)
 ld = (400, 265 + 80 * 80 / 305)              # sur le bord tribord de la couchette
-ux, uy = ld[0]-la[0], ld[1]-la[1]
-t = ((lc[0]-la[0])*ux + (lc[1]-la[1])*uy) / (ux*ux + uy*uy)
-lb = (2*(la[0] + t*ux) - lc[0], 2*(la[1] + t*uy) - lc[1])   # symétrique du coin par rapport à la diagonale
+lb = (la[0] + ld[0] - lc[0], la[1] + ld[1] - lc[1])   # côtés opposés parallèles
 A(path("amg", la, lc, ld, lb, close=True))
 A('</g>')
 A(f'<path class="arr" d="{d_arr}"/>')
