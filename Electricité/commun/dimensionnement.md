@@ -21,12 +21,35 @@ Vérification des sections, des protections et des chutes de tension de l'instal
 | Guindeau en secours sur la LiFePO4 (sélecteur en position 2, 13/10) | wire103, wire108, wire109, wire111, wire112, wire105 | 35, 50 et 10 mm², trajet voisin du circuit moteur | 50 A normal, 60 A en charge | MEGA 300 A, puis disjoncteur 70 A | voisine du circuit moteur | Acceptable en secours ; 50 à 60 A sous les 250 A du BMS |
 | Dolphin → batterie moteur | wire063, wire050 | 6 mm², 0,5 + 0,5 m | 20 A | 30 A à la batterie | 0,5 % | Conforme |
 | Orion XS, entrée et sortie | wire053, wire058, wire062, wire065, wire066 | 16 mm², 0,65 + 0,5 m | réglé vers 15 A ; 50 A au plus | 70 A aux deux bouts (notice) | 0,2 % à 15 A ; 0,5 % à 50 A | Conforme |
-| Blue Smart IP67 12/17 (coffre de cockpit, E-H5) → servitude | wire056, wire059, wire064 | pont de 4 mm² 0,1 m depuis le fusible de sortie de l'Orion XS (15/10), puis 10 mm² 2 × 5 m (Q64) | 17 A | 25 A à la source | 2,6 % | Conforme sous 3 % ; fin de charge corrigée par la tension du shunt (VE.Smart) |
+| Blue Smart IP67 12/17 (coffre de cockpit, E-H5) → servitude | wire056, wire059, wire064, et les câbles fournis du chargeur | pont de 4 mm² 0,1 m depuis le fusible de sortie de l'Orion XS (15/10), puis 10 mm² 2 × 5 m (Q64), puis les câbles fournis, 12 AWG 2 × 1,40 m (16/10) | 17 A | 25 A à la source ; 30 A sur le câble fourni (inversion de polarité) | **4,7 %** (2,6 % sans les câbles fournis) | Au-dessus de 3 %, sans compensation : le Blue Smart IP67 ne reçoit pas la tension du shunt (VE.Smart non pris en charge, 16/10). Voir ci-dessous |
 | Ballon, entrée 12 V (B-H3) | wire154, wire161, wire173 | 6 mm², 3,5 + 3 m (est. : trajet de wire200, ballon sous la table à carte, Q57) | 17 A | disjoncteur 12 V CC de 30 A à la platine (notice : 30 A ; 12/10) | 2,8 % | Conforme (confort, 10 %) |
 | Frigo : batterie → tableau Scheiber → EPS 100 → groupe froid | wire158, wire162, wire165, wire166, wire171, wire172 | 6 puis 3,5 mm², environ 6,5 m (est.) | 3,5 A ; 5 A au démarrage | 30 A (A-H2), puis 15 A (tableau Scheiber) | 1,8 % ; **2,6 %** au démarrage | Conforme ; longueurs de wire158, wire162, wire165, wire166 non relevées |
 | Pompe de cale | wire167, wire168 | 2,5 mm², 3 m (est.) | 3 A | 10 A (tableau Scheiber) | 1,1 % | Section conforme ; fusible : anomalie A10 (3 A demandés) |
 
 Les fils de mesure et de commande (shunt, Orion XS) sont en 0,75 mm² avec un fusible de 1 A à leur source : conforme.
+
+## Chute de tension du chargeur de quai (16/10)
+
+Les câbles livrés avec le Blue Smart (12 AWG, environ 3,3 mm², 1,40 m, rouge et noir) s'ajoutent au trajet en 10 mm², ce que la revue du 08/10 ne comptait pas. À 17 A :
+
+| Tronçon | Chute |
+|---|---|
+| Câbles fournis, 12 AWG, 2 × 1,40 m | 0,25 V |
+| wire064 et wire059, 10 mm², 2 × 5 m | 0,30 V |
+| Pont wire056, 4 mm², 0,1 m, et fusible | 0,02 V |
+| **Total** | **0,57 V, soit 4,7 %** |
+
+La revue du 08/10 comptait sur le réseau VE.Smart pour compenser cette chute : le SmartShunt aurait transmis au chargeur la tension mesurée à la batterie. **Le Blue Smart IP67 ne le prend pas en charge** : la liste de compatibilité de Victron range les Blue Smart IP65 et IP67 en « pas encore pris en charge », et un utilisateur le confirme en mai 2026 avec le firmware v3.65. Seul l'Orion XS l'utilise.
+
+Conséquences :
+
+- **Aucun risque pour la batterie.** La chute diminue avec le courant, et la batterie ne reçoit jamais plus que la tension réglée sur le chargeur.
+- **La fin de charge au quai est plus lente.** Tant que 17 A passent, la batterie voit 0,57 V de moins que la tension réglée. Elle ne l'atteint qu'en fin d'absorption, quand le courant a baissé (0,13 V de chute à 4 A).
+- **Le shunt doit pouvoir se recaler à 100 %.** Ses seuils de batterie chargée en tiennent compte : voir [reglages-charge-et-shunt.md](../documentation-technique/reglages-charge-et-shunt.md).
+
+Pour réduire la chute, la jonction entre les câbles fournis et le 10 mm² peut se faire au plus près du chargeur : avec 0,3 m de câble fourni, la chute tombe à 0,36 V (3,0 %). Le porte-fusible de 30 A, qui protège le chargeur contre une inversion de polarité, reste alors sur le câble rouge (sa position est à relever, Q64). Sinon, une rallonge en 16 mm² ramène la chute à 3,7 %.
+
+**Le fusible de 30 A livré ne remplace pas le fusible de 25 A de la niche.** Un fusible protège le câble contre le courant que lui envoie sa source, ici la batterie. Celui du câble fourni est au coffre de cockpit, au bout du câble, et ne protège pas les 5 m de 10 mm² d'un court-circuit côté batterie. Le chargeur, lui, limite son courant de sortie et se protège seul contre le court-circuit (fiche Victron). Les deux fusibles restent : 25 A à la source, dans la niche, pour le câble ; 30 A sur le câble fourni, pour le chargeur.
 
 ## Ponts entre porte-fusibles (15/10)
 

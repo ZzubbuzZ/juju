@@ -6,6 +6,10 @@ Pour l'instant, une liste des sections à écrire.
 
 Le livret d'utilisation et de dépannage (fonctionnement normal, conduite en cas de problème) est rédigé à part, dans [livret/](../livret/README.md).
 
+## Sections
+
+- [Réglages de la charge et du shunt](reglages-charge-et-shunt.md) : profil du Blue Smart, Orion XS, paramètres et alarmes du SmartShunt, choix entre shunt et BMS (16/10 ; à confirmer par Q68 et Q69).
+
 ## À faire
 
 - [ ] **Ajouter une section installation/réglage du circuit d'eau** (source : [B-H1](../etudes/B-chauffe-eau/H1-cozywater-10c/proposition.md), folios 2l et 2m).

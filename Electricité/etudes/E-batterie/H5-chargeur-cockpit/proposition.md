@@ -9,7 +9,7 @@ points_forts:
   - Boîtier IP67, fait pour un coffre exposé ; plus de chaleur du chargeur dans la niche.
 points_faibles:
   - Deux câbles de 10 mm² d'environ 5 m à passer entre le coffre et la niche (Q64), environ 75 € de plus.
-  - Chute d'environ 0,31 V (2,6 %) à 17 A, à compenser par la tension mesurée du shunt (réseau VE.Smart) pour une fin de charge juste.
+  - Chute d'environ 0,57 V (4,7 %) à 17 A, câbles fournis du chargeur compris, non compensée (le Blue Smart IP67 ne prend pas en charge VE.Smart, 16/10) ; fin de charge au quai plus lente.
   - Jonction des câbles 12 V fournis du chargeur sur le 10 mm², dans le coffre.
 decision: "14/10/2026 : retenue par l'utilisateur. L'Orion XS et le shunt restent dans la niche de la contremarche (E-H1), le Blue Smart va au coffre de cockpit. E-H4 écartée."
 ---
@@ -38,6 +38,8 @@ La longueur de 5 m vient de Q50 (coffre de cockpit → coffre de la batterie) ; 
 ## Chute de tension et fin de charge
 
 Le chargeur règle sa tension à ses bornes : sans correction, il verrait la batterie 0,3 V plus haut qu'elle n'est et passerait trop tôt en fin de charge. Le SmartShunt mesure la tension à la batterie et la transmet au Blue Smart par le réseau **VE.Smart** (VictronConnect), qui compense la chute de ses câbles. Compatibilité à vérifier dans VictronConnect, à la mise en service.
+
+**Correction du 16/10** : le Blue Smart IP67 ne prend pas en charge le réseau VE.Smart (liste de compatibilité de Victron), et la chute n'est donc pas compensée. Avec les câbles fournis du chargeur (12 AWG, 1,40 m), elle atteint environ 0,57 V (4,7 %) à 17 A. Elle ralentit la fin de charge sans risque pour la batterie ; les réglages du chargeur et du shunt en tiennent compte. Détail dans [dimensionnement.md](../../../commun/dimensionnement.md#chute-de-tension-du-chargeur-de-quai-1610) et [reglages-charge-et-shunt.md](../../../documentation-technique/reglages-charge-et-shunt.md).
 
 La chute dans wire010 (shunt → − de la batterie, 1 m de 35 mm², environ 0,5 mΩ) ne fausse que la tension lue par le shunt, de moins de 10 mV en charge, et pas l'état de charge, compté en ampères-heures : elle ne justifie pas de rapprocher le shunt de la batterie (question de l'utilisateur, 14/10).
 

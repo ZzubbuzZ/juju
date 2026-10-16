@@ -49,6 +49,9 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 ### Pour l'étude E (batterie de servitude)
 
 - **Q64** Blue Smart au coffre de cockpit tribord (E-H5, retenue le 14/10) : longueur du trajet d'un câble 12 V entre le coffre de cockpit (près du boîtier d'arrivée 230 V) et la niche de la contremarche des coupe-circuits, par où il passe et quelles cloisons il traverse. Longueur et section des câbles 12 V fournis avec le chargeur (sortie + et −), et diamètre de leurs cosses. Q50 donne environ 5 m jusqu'au coffre de la batterie de servitude : la section de 10 mm² en dépend.
+  → 16/10 : câbles fournis en 12 AWG (environ 3,3 mm²), longs de 1,40 m, avec un fusible de 30 A monté sur le câble. La fiche Victron annonce un câble rouge et un câble noir de 1,5 m, et un fusible de protection contre l'inversion de polarité. Reste à relever : le trajet et la longueur jusqu'à la niche, la position du porte-fusible sur le câble rouge (côté chargeur ou côté cosse) et le diamètre des cosses.
+- **Q68** Batterie Humsienk 12 V 200 Ah Plus : que donnent la notice livrée et l'application Bluetooth pour la tension de floating (ou de maintien) recommandée, la tension de coupure du BMS en surcharge (par cellule et pour la batterie) et sa tension de rétablissement, la tension de coupure en décharge, et le seuil d'équilibrage des cellules ? Sert à confirmer le profil de charge du Blue Smart et les alarmes du SmartShunt (documentation-technique/reglages-charge-et-shunt.md).
+- **Q69** Profil « HumsienkLiFePO4 » créé le 16/10 sur le Blue Smart : relever les valeurs saisies dans VictronConnect (absorption, durée d'absorption fixe ou adaptative, courant de fin d'absorption, floating, stockage, absorption répétée, reconditionnement, compensation de température, courant maximal), pour les consigner dans la documentation technique.
 
 ### Pour le livret de bord
 
