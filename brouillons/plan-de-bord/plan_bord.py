@@ -189,7 +189,7 @@ A('<!-- Cabine de proue : couchette en V entre les dossiers, qui se rejoignent d
 dp = dossier(1150, 1700)
 A(path("amg-f", (1150, dp[0][1]), *dp, *[(x, M(y)) for x, y in reversed(dp[:-1])],
        (1150, M(dp[0][1])), close=True))
-A(path("amg", (1165, 287), (1225, 302), (1225, 342), (1165, 357), close=True))  # trapèze
+A(path("amg", (1150, 287), (1210, 302), (1210, 342), (1150, 357), close=True))  # trapèze, sur le bord de la couchette
 A(path("amg", (1535, 150), (1535, 494)))     # cloison du puits à chaîne
 
 A('</g>')
