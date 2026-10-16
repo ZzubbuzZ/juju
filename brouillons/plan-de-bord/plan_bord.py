@@ -86,6 +86,8 @@ def dossier(x0, x1, d=60):
     for (xa, ya), (xb, yb) in zip(bord, bord[1:]):
         L = ((xb-xa)**2 + (yb-ya)**2) ** .5
         x, y = xa - d*(yb-ya)/L, ya + d*(xb-xa)/L   # normale vers l'intérieur
+        if x > x1:
+            break
         if y >= CY:
             out.append((out[-1][0] + (CY-out[-1][1]) * (x-out[-1][0]) / (y-out[-1][1]), CY))
             break
@@ -105,10 +107,11 @@ def porte(gond, ferme, ouvert):
 el = []
 A = el.append
 
-A('<!-- Coque -->')
+A('<!-- Coque et axe du bateau -->')
 A(f'<clipPath id="pb-coque"><path d="{coque}"/></clipPath>')
 A(f'<path class="hull" d="{coque}"/>')
 A('<g clip-path="url(#pb-coque)">')
+A(path("bound", (0, CY), (1700, CY)))
 
 A('<!-- Cockpit : bancs à lattes, coffre tribord, winches, safran -->')
 A(rect("amg", 75, 185, 400, 460))
@@ -168,12 +171,12 @@ A(rect("amg", 698, 415, 748, 468, rx=6))
 A(rect("amg", 665, 318, 775, 338))           # plan de travail
 A(path("amg", (760, 340), (760, 598)))
 
-A('<!-- Carré : banquettes (le trait côté bord est le dossier), table repliée, mât -->')
+A('<!-- Carré : banquettes (le trait côté bord est le dossier), table repliée, pied de mât -->')
 db = dossier(760, 1090)
-A(path("amg-f", *db, (1090, 265), (760, 225), close=True))
-A(path("amg-f", *[(x, M(y)) for x, y in db], (1090, 385), (760, 435), close=True))
+A(path("amg-f", *db, (1090, 275), (760, 250), close=True))
+A(path("amg-f", *[(x, M(y)) for x, y in db], (1090, M(275)), (760, M(250)), close=True))
 A(rect("amg-f", 825, CY-25, 985, CY+25))     # table repliée, sur l'axe
-A(ellipse("amg-f", 1003, CY, 14, 9))         # mât, au bout de la table
+A(circle("amg", 965, CY, 11))                # pied de mât, dans la table, à son bout avant
 
 A('<!-- Cloison avant du carré, penderies, porte de la cabine de proue -->')
 A(path("amg", (1090, 40), (1090, 277)))
@@ -186,6 +189,7 @@ A('<!-- Cabine de proue : couchette en V entre les dossiers, qui se rejoignent d
 dp = dossier(1150, 1700)
 A(path("amg-f", (1150, dp[0][1]), *dp, *[(x, M(y)) for x, y in reversed(dp[:-1])],
        (1150, M(dp[0][1])), close=True))
+A(path("amg", (1165, 287), (1225, 302), (1225, 342), (1165, 357), close=True))  # trapèze
 A(path("amg", (1535, 150), (1535, 494)))     # cloison du puits à chaîne
 
 A('</g>')
@@ -197,7 +201,7 @@ LBL = [
     ("Descente", 512, 328, -90),
     ("Toilette", 520, 480),
     ("Cuisine", 640, 478),
-    ("Carré", 905, 395),
+    ("Carré", 1040, 348),
     ("Cabine de proue", 1330, 300),
 ]
 el.append('<!-- Noms de zones (provisoires) -->')
@@ -206,8 +210,8 @@ for s, x, y, *r in LBL:
 el.append(text("pin mid halo", 520, 87, "placard"))
 el.append(text("pin mid halo", 584, 328, "amovible", -90))
 el.append(text("pin mid halo", 264, 430, "coffre"))
-el.append(text("pin mid halo", 905, 328, "table repliée"))
-el.append(text("pin mid halo", 1003, 300, "mât"))
+el.append(text("pin mid halo", 890, 328, "table repliée"))
+el.append(text("pin mid halo", 965, 292, "pied de mât"))
 el.append(text("pin mid halo", 1580, 410, "puits à chaîne"))
 el.append(path("leader", (1580, 395), (1580, 340)))
 
