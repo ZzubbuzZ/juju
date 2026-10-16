@@ -58,7 +58,7 @@ Plan proposé le 13/10/2026, rédaction commencée le 16/10. La conduite en cas 
 | Fiche | État |
 |---|---|
 | [2.1 Mise sous tension, à l'arrivée à bord](fiches/2-1-mise-sous-tension.md) | Rédigée le 16/10 |
-| [2.3 Démarrer le moteur, partir au moteur](fiches/2-3-demarrage-moteur.md) | Rédigée le 16/10, batterie moteur faible au verso ; attend Q70 (tableau moteur, procédure de démarrage), Q71 (booster) et le point à trancher sur le booster |
+| [2.3 Démarrer le moteur, partir au moteur](fiches/2-3-demarrage-moteur.md) | Rédigée le 16/10, batterie moteur faible au verso ; procédure de démarrage intégrée le 17/10 (Q70) ; attend la fin de Q70 (vannes, voyants, arrêt), Q71 (booster) et le point à trancher sur le booster |
 | [2.7 Vérifier le fonctionnement des organes](fiches/2-7-verification-organes.md) | Rédigée le 16/10 ; seuils du BMS : Q68 |
 | [3.1 Odeur de brûlé, fumée](fiches/3-1-brule-fumee.md) | Rédigée le 16/10 ; attend Q66 (extincteurs) et Q67 (coupure du BMS par l'application) |
 | [3.2 Plus rien sur la servitude](fiches/3-2-panne-servitude.md) | Rédigée le 16/10 ; attend Q72 (réarmement du BMS) et Q73 (matériel de secours) |

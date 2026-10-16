@@ -98,7 +98,7 @@
   <path class="leader" d="M440 159 L419 316"/>
   <rect class="callout" x="326" y="14" width="246" height="145" rx="2"/>
   <text class="tb" x="338" y="34">Descente · contremarche et niche</text>
-  <text class="t" x="338" y="53"><tspan data-equipement="cc-moteur">Platine : 3 coupe-circuits</tspan><tspan data-equipement="cc-servitude"/><tspan data-equipement="cc-masse"/></text>
+  <text class="t" x="338" y="53"><tspan data-equipement="cc-moteur">Platine : 3 coupe-circuits,</tspan><tspan data-equipement="cc-servitude"/><tspan data-equipement="cc-masse"/> <tspan data-equipement="tableau-moteur">tableau moteur</tspan></text>
   <text class="t tn" x="338" y="72"><tspan data-equipement="orion-xs">Niche : Orion XS,</tspan> <tspan data-equipement="shunt-servitude">SmartShunt 500 A</tspan></text>
   <text class="t tn" x="338" y="91"><tspan data-equipement="fus-orion-entree">Fusibles MIDI (départs, Orion XS)</tspan><tspan data-equipement="fus-orion-sortie"/><tspan data-equipement="fus-chargeur-lifepo4"/><tspan data-equipement="fus-source-tableau-servitude"/><tspan data-equipement="fus-source-tableau-scheiber"/></text>
   <text class="t tn" x="338" y="110" data-equipement="inter-orion">Interrupteur à voyant de l'Orion XS</text>

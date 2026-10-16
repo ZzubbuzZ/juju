@@ -15,7 +15,7 @@ Une odeur de plastique chaud ou de vernis, une fumée, un câble ou un appareil 
 
 ### 2. Arrêter le moteur
 
-Clé du tableau moteur sur arrêt. *Le coupe-circuit moteur ne s'ouvre pas moteur tournant : cela abîme l'alternateur.*
+Au tableau moteur (contremarche de la descente, à gauche de la platine) : arrêter le moteur *(étouffoir, clé : procédure à confirmer, Q70)*. *Le coupe-circuit moteur ne s'ouvre pas moteur tournant : cela abîme l'alternateur.*
 
 ### 3. Couper le 230 V
 

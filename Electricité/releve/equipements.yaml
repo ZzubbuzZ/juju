@@ -77,8 +77,10 @@ equipements:
   - id: tableau-moteur
     type: tableau
     designation: Tableau moteur (contact, jauges)
+    zone: descente
+    emplacement: "Contremarche de la descente, à gauche de la platine des coupe-circuits (Q70, 17/10)"
     questions: [Q65]
-    note: "Alimenté par le faisceau d'origine Yanmar depuis le + du démarreur (node100), à travers un fusible de 30 A (Q1, 13/10). Masse et emplacement non relevés (Q65)."
+    note: "Alimenté par le faisceau d'origine Yanmar depuis le + du démarreur (node100), à travers un fusible de 30 A (Q1, 13/10). Commutateur à clé (tourner dans le sens horaire jusqu'au buzzer), poussoir de démarrage ; étouffoir à tirette marquée d'un S rouge (Q70, 17/10). Masse non relevée (Q65)."
 
   - id: fus-tableau-moteur
     type: fusible

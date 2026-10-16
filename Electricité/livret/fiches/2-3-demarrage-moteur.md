@@ -8,16 +8,22 @@ Le moteur démarre sur sa propre batterie, au plomb, dans le coffre de cockpit t
 
 ### 1. Avant de lancer
 
-- Platine des coupe-circuits (contremarche de la descente) : **négatifs** et **moteur** sur ON (fiche 2.1).
+- **Vannes d'eau de mer et de gasoil ouvertes** *(emplacements : Q70)*.
+- Platine des coupe-circuits (contremarche de la descente) : **négatifs** (en haut à gauche) et **moteur** (en haut à droite) sur ON.
+- **Étouffoir** poussé à fond : tirette marquée d'un **S rouge**.
 - Téléphone, VictronConnect, SmartShunt : **tension du démarreur** (« Starter ») 12,2 V au moins. En dessous, passer directement au verso.
 - **Orion XS coupé** : interrupteur à voyant dans la descente, près du tableau Scheiber, voyant éteint.
 
 ### 2. Lancer
 
-Au tableau moteur, selon la notice Yanmar et les habitudes du bord : *emplacement du tableau, préchauffage, manette des gaz, voyants à surveiller (Q70)*.
+Au **tableau moteur**, sur la contremarche de la descente, à gauche de la platine des coupe-circuits :
 
-- Lancer **10 secondes au plus**. S'il ne part pas, attendre 30 secondes avant de recommencer.
+1. Insérer la clé dans le commutateur et la tourner dans le **sens horaire** jusqu'à entendre le **buzzer**.
+2. Enfoncer le **poussoir de démarrage** jusqu'à ce que le moteur parte, **moins de 10 secondes**.
+
+- S'il ne part pas, attendre 30 secondes avant de recommencer.
 - Après trois essais sans succès, ne pas insister : batterie qui s'épuise, démarreur qui chauffe. Voir le verso.
+- *Manette des gaz au lancement, buzzer et voyants une fois le moteur parti : Q70.*
 
 ### 3. Moteur tourné
 
@@ -28,7 +34,7 @@ Au tableau moteur, selon la notice Yanmar et les habitudes du bord : *emplacemen
 ### 4. Arrêter
 
 - **Orion XS d'abord** : interrupteur sur arrêt.
-- Puis arrêter le moteur au tableau moteur.
+- Puis arrêter le moteur *(étouffoir, clé : procédure à confirmer, Q70)*.
 - Le coupe-circuit moteur ne s'ouvre **jamais moteur tournant** : cela abîme l'alternateur. Au port, on l'ouvre après l'arrêt du moteur.
 
 ## Verso : batterie moteur faible
