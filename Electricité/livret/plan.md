@@ -50,7 +50,7 @@ Plan proposé le 13/10/2026, rédaction commencée le 16/10. La conduite en cas 
 
 ## Points à trancher
 
-- **Booster sur une batterie moteur défectueuse** (16/10) : la procédure prévue le 13/10 (E-H1 : coupe-circuit moteur ouvert, pinces côté charges du coupe-circuit moteur et sur la masse moteur) laisse l'alternateur tourner sans batterie dès qu'on retire le booster, ce qui peut l'abîmer. À arrêter avant de l'écrire dans la fiche 2.3 : garder le booster branché le temps de la manœuvre, remplacer la batterie avant de repartir, ou autre.
+- **Booster sur une batterie moteur défectueuse** (16/10 ; aucun booster acheté au 17/10) : la procédure prévue le 13/10 (E-H1 : coupe-circuit moteur ouvert, pinces côté charges du coupe-circuit moteur et sur la masse moteur) laisse l'alternateur tourner sans batterie dès qu'on retire le booster, ce qui peut l'abîmer. À arrêter avant de l'écrire dans la fiche 2.3 : garder le booster branché le temps de la manœuvre, remplacer la batterie avant de repartir, ou autre.
 - **Rechanges** : fusibles MEGA de 300 A et MIDI de la niche à prévoir dans la fiche 4.2.
 
 ## Avancement
@@ -58,7 +58,7 @@ Plan proposé le 13/10/2026, rédaction commencée le 16/10. La conduite en cas 
 | Fiche | État |
 |---|---|
 | [2.1 Mise sous tension, à l'arrivée à bord](fiches/2-1-mise-sous-tension.md) | Rédigée le 16/10 |
-| [2.3 Démarrer le moteur, partir au moteur](fiches/2-3-demarrage-moteur.md) | Rédigée le 16/10, batterie moteur faible au verso ; procédure de démarrage intégrée le 17/10 (Q70) ; attend la fin de Q70 (vannes, voyants, arrêt), Q71 (booster) et le point à trancher sur le booster |
+| [2.3 Démarrer le moteur, partir au moteur](fiches/2-3-demarrage-moteur.md) | Rédigée le 16/10, batterie moteur faible au verso ; procédure de démarrage intégrée le 17/10 (Q70) ; attend la fin de Q70 (vannes, voyants, arrêt) et le point à trancher sur le booster (aucun acheté, Q71) |
 | [2.7 Vérifier le fonctionnement des organes](fiches/2-7-verification-organes.md) | Rédigée le 16/10 ; seuils du BMS : Q68 |
 | [3.1 Odeur de brûlé, fumée](fiches/3-1-brule-fumee.md) | Rédigée le 16/10 ; attend Q66 (extincteurs) et Q67 (coupure du BMS par l'application) |
-| [3.2 Plus rien sur la servitude](fiches/3-2-panne-servitude.md) | Rédigée le 16/10 ; attend Q72 (réarmement du BMS) et Q73 (matériel de secours) |
+| [3.2 Plus rien sur la servitude](fiches/3-2-panne-servitude.md) | Rédigée le 16/10 ; réarmement du BMS intégré le 17/10 (Q72) ; attend Q73 (matériel de secours, inventaire du plan de bord) |

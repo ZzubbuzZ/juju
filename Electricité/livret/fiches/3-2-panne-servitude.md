@@ -39,20 +39,31 @@ Ouvrir l'**application de la batterie** (Humsienk, Bluetooth, téléphone près 
 | L'application… | Cause probable | Que faire |
 |---|---|---|
 | indique une protection **décharge** (sous-tension) | batterie vide | **recharger**, étape 6 |
-| indique une protection **surintensité** ou **court-circuit** | un appareil ou un câble en défaut | ouvrir le coupe-circuit servitude, chercher la cause (odeur, chaleur : fiche 3.1), puis réarmer le BMS *(procédure : Q72)* |
+| indique une protection **surintensité** ou **court-circuit** | un appareil ou un câble en défaut | ouvrir le coupe-circuit servitude, chercher la cause (odeur, chaleur : fiche 3.1), puis **réarmer le BMS** (étape 8) |
 | indique une protection **température** | batterie trop chaude ou sous 0 °C | laisser revenir à température ; aérer le coffre |
 | répond, sans protection, batterie pleine | le courant ne sort pas : **fusible MEGA de 300 A** | étape 7 |
 | ne répond pas | BMS éteint (batterie très vide) ou application hors de portée | se rapprocher du coffre ; sinon étape 6 |
 
 ### 6. Recharger une batterie vidée
 
-- **Au moteur** : démarrer (fiche 2.3), allumer l'**Orion XS** (interrupteur à voyant dans la descente). Sur le shunt, le courant doit entrer dans la servitude. *Reprise de la charge par l'Orion XS sur une batterie coupée par son BMS : à vérifier (Q72).*
+- **Au moteur** : démarrer (fiche 2.3), allumer l'**Orion XS** (interrupteur à voyant dans la descente). Sur le shunt, le courant doit entrer dans la servitude : le BMS garde sa voie de charge ouverte et se réveille dès qu'il voit la tension du chargeur (forum Victron, à confirmer à l'usage). Rien ne se passe au bout de quelques minutes : réarmer le BMS (étape 8), puis recommencer.
 - **Au quai** : 230 V et C10 du Blue Smart (coffre de cockpit tribord). Le Blue Smart sait reprendre la charge d'une batterie lithium coupée par son BMS (fiche Victron).
 - Ne rallumer les circuits qu'une fois la batterie au-dessus de 20 % ; d'abord feux et VHF.
 
 ### 7. Fusible MEGA de 300 A fondu
 
 Il est vissé à côté de la batterie de servitude, dans le coffre sous la couchette de la cabine de poupe. Un MEGA de 300 A ne fond que sur un **court-circuit franc** : avant tout remplacement, ouvrir tous les coupe-circuits, chercher le câble ou l'appareil brûlé (fiche 3.1, verso), et ne remplacer le fusible qu'après réparation. *Fusible de rechange à bord : voir la fiche 4.2.*
+
+### 8. Réarmer le BMS
+
+Le BMS se réarme quand on **ouvre le circuit de la batterie** (Q72, 17/10) :
+
+1. Ouvrir tous les coupe-circuits (platine) et couper l'Orion XS ; débrancher le câble de quai côté borne.
+2. Dans le coffre sous la couchette de la cabine de poupe, **retirer le fusible MEGA de 300 A**, à côté de la batterie, avec un outil isolé.
+3. Attendre quelques instants, puis remettre le fusible et le serrer.
+4. Vérifier dans l'application de la batterie que la protection est levée, puis remettre sous tension (fiche 2.1).
+
+Après une coupure pour surintensité ou court-circuit, ne réarmer qu'une fois la cause trouvée et réparée : sinon le BMS recoupera, ou le défaut chauffera.
 
 ## Verso : comprendre
 

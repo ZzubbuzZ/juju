@@ -57,7 +57,7 @@ Cela suffit pour une batterie **déchargée** (feux oubliés, longue absence, gu
 
 ### Niveau 2 : booster de démarrage
 
-Booster lithium autonome, rangé à bord et tenu chargé : *modèle, emplacement et recharge à relever (Q71)*.
+**Pas de booster à bord pour l'instant (17/10).** S'il est acheté : booster lithium autonome, rangé à bord et tenu chargé ; noter ici son emplacement et sa recharge.
 
 - **Batterie déchargée** : coupe-circuit moteur sur ON ; pince rouge sur la borne + de la batterie moteur (coffre de cockpit tribord), pince noire sur sa borne −, ou suivre la notice du booster. Démarrer, puis retirer les pinces, noire d'abord. L'alternateur recharge ensuite la batterie.
 - **Batterie défectueuse** : la procédure prévue au 13/10 (coupe-circuit moteur ouvert, pinces côté charges du coupe-circuit moteur et sur la masse moteur) fait tourner l'alternateur sans batterie dès que l'on retire le booster, ce qui peut l'abîmer. *Procédure à arrêter avant de l'écrire ici (voir plan, points à trancher).*
