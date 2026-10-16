@@ -16,13 +16,13 @@ STYLE = STYLE.replace("  </style>", """    .amg{fill:none;stroke:var(--ink);stro
     .amg-l{fill:none;stroke:var(--muted);stroke-width:.8}
     .halo{paint-order:stroke;stroke:var(--sheet);stroke-width:4px;stroke-linejoin:round}
     .amg-b{fill:var(--sheet);stroke:var(--ink);stroke-width:1.1;stroke-linejoin:round}
-    svg{--sol-b:#d3d7db;--sol-b-l:#a2a9b0;--sol-h:#e9eaea;--sol-h-l:#c3c6c9;--mat:#f3eee4;--mat-l:#b9b2a5;--mat-b:#8f887c;--vaig:#e6d3b3;--vaig-l:#c4a97f;--teck:#d8bd8a;--teck-l:#bb9b66;--teck-j:#7a5c35}
-    @media (prefers-color-scheme: dark){svg{--sol-b:#2b333b;--sol-b-l:#3f4952;--sol-h:#363d44;--sol-h-l:#4b545d;--mat:#3a3631;--mat-l:#59534a;--mat-b:#736b5f;--vaig:#4b3e2c;--vaig-l:#6b583d;--teck:#5a4630;--teck-l:#6e5739;--teck-j:#2b2015}}
+    svg{--sol-b:#d3d7db;--sol-b-l:#a2a9b0;--sol-h:#e9eaea;--sol-h-l:#c3c6c9;--mat:#f3eee4;--mat-l:#b9b2a5;--mat-b:#8f887c;--vaig:#e6d3b3;--teck:#d8bd8a;--teck-l:#bb9b66;--teck-j:#7a5c35}
+    @media (prefers-color-scheme: dark){svg{--sol-b:#2b333b;--sol-b-l:#3f4952;--sol-h:#363d44;--sol-h-l:#4b545d;--mat:#3a3631;--mat-l:#59534a;--mat-b:#736b5f;--vaig:#4b3e2c;--teck:#5a4630;--teck-l:#6e5739;--teck-j:#2b2015}}
     .sol-b{fill:url(#pb-sol-b)}.sol-h{fill:url(#pb-sol-h)}
     .mat{fill:url(#pb-mat);stroke:var(--ink);stroke-width:1.1;stroke-linejoin:round}
     .teck{fill:url(#pb-teck);stroke:var(--ink);stroke-width:1.1;stroke-linejoin:round}
     .teck-j{fill:none;stroke:var(--teck-j);stroke-width:.9}
-    .vaig{fill:none;stroke:var(--vaig)}.vaig-l{fill:none;stroke:var(--vaig-l)}
+    .vaig{fill:none;stroke:var(--vaig)}
   </style>""")
 # textures (motifs en px)
 DEFS = """  <defs>
@@ -142,20 +142,15 @@ A(f'<clipPath id="pb-coque"><path d="{coque}"/></clipPath>')
 A(f'<path class="hull" d="{coque}"/>')
 A('<g clip-path="url(#pb-coque)">')
 
-A('<!-- Vaigrages latéraux : lattes parallèles au bord, du bord au dossier (carré, cabine de proue) -->')
+A('<!-- Vaigrages latéraux, du bord au dossier (carré, cabine de proue) -->')
 A(f'<clipPath id="pb-vaig">{rect("", 760, 0, 1090, 700)}{rect("", 1150, 0, 1535, 700)}</clipPath>')
 A('<g clip-path="url(#pb-vaig)">')
-ep = 2 * K * 60                              # trait centré sur le bord : moitié visible
-for i in range(4):
-    w = ep * (4 - i) / 4
-    if i:
-        A(f'<path class="vaig-l" d="{coque}" stroke-width="{w + 1:.1f}"/>')
-    A(f'<path class="vaig" d="{coque}" stroke-width="{w - (1 if i else 0):.1f}"/>')
+A(f'<path class="vaig" d="{coque}" stroke-width="{2 * K * 60:.1f}"/>')   # trait centré sur le bord : moitié visible
 A('</g>')
 
 A('<!-- Planchers, jusqu’au milieu des assises. Niveau bas : carré, cuisine ; '
   'niveau haut : cabine de poupe, table à carte, cabinet de toilette -->')
-A(path("sol-h", (480, 112), (560, 112), (560, 110), (640, 110), (640, 70), (755, 70), (755, 230),
+A(path("sol-h", (480, 112), (560, 112), (560, 110), (640, 110), (640, 100), (755, 100), (755, 230),
        (640, 230), (640, 265), (430, 265), (430, 165), (480, 165), close=True))
 A(path("sol-h", (400, 390), (580, 390), (580, 500), (480, 500), (480, 598), (400, 598), close=True))
 db = dossier(760, 1090)
@@ -175,7 +170,7 @@ for y0, y1 in ((185, 265), (390, 460)):    # lattes dans la longueur des bancs
     for i in range(1, 5):
         y = y0 + i * (y1 - y0) / 5
         A(path("teck-j", (90, y), (392, y)))
-A(rect("amg", 187, 390, 341, 460))         # couvercle du coffre tribord
+A(rect("amg", 187, 390, 341, 480))         # couvercle du coffre tribord, au-delà du banc
 for y in (130, M(130)):                      # winches, symétriques par rapport à l'axe
     A(circle("amg", 360, y, 15))
 # safran : axe de rotation à l'arrière, plus large à l'axe que vers l'avant
@@ -192,8 +187,8 @@ A(path("amg", (480, 112), (560, 112)))       # placard
 A(porte((560, 172), (560, 255), (631.9, 213.5)))
 
 A('<!-- Table à carte et son siège -->')
-A(rect("mat", 565, 55, 640, 165))            # siège
-A(rect("amg-b", 640, 70, 755, 230))            # table à carte
+A(rect("mat", 575, 70, 635, 150))            # siège
+A(rect("amg-b", 640, 100, 755, 230))           # table à carte, écartée du bord
 A(path("amg", (755, 50), (755, 230)))
 
 A('<!-- Descente et sa partie amovible (accès au moteur) -->')
@@ -252,7 +247,7 @@ A('</g>')
 LBL = [
     ("Cockpit", 300, 350),
     ("Cabine de poupe (sous le cockpit)", 300, 300),
-    ("Table à carte", 698, 150),
+    ("Table à carte", 698, 170),
     ("Descente", 512, 328, -90),
     ("Toilette", 520, 480),
     ("Cuisine", 640, 478),
