@@ -138,8 +138,8 @@ A(path("amg", (480, 112), (560, 112)))       # placard
 A(porte((560, 172), (560, 255), (631.9, 213.5)))
 
 A('<!-- Table à carte et son siège -->')
-A(rect("amg", 565, 55, 640, 165))
-A(rect("amg-f", 640, 70, 755, 230))
+A(rect("amg-f", 565, 55, 640, 165))          # siège
+A(rect("amg", 640, 70, 755, 230))            # table à carte
 A(path("amg", (755, 50), (755, 230)))
 
 A('<!-- Descente et sa partie amovible (accès au moteur) -->')
