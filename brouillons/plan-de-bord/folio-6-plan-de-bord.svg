@@ -54,32 +54,14 @@
   <rect class="amg" x="147.5" y="335.0" width="226.5" height="60.0"/>
   <rect class="amg-f" x="220.2" y="488.8" width="115.5" height="52.5"/>
   <rect class="amg" x="147.5" y="488.8" width="226.5" height="52.5"/>
-  <path class="amg-l" d="M162.5 338.8 L162.5 391.2"/>
-  <path class="amg-l" d="M162.5 492.5 L162.5 537.5"/>
-  <path class="amg-l" d="M179.0 338.8 L179.0 391.2"/>
-  <path class="amg-l" d="M179.0 492.5 L179.0 537.5"/>
-  <path class="amg-l" d="M195.5 338.8 L195.5 391.2"/>
-  <path class="amg-l" d="M195.5 492.5 L195.5 537.5"/>
-  <path class="amg-l" d="M212.0 338.8 L212.0 391.2"/>
-  <path class="amg-l" d="M212.0 492.5 L212.0 537.5"/>
-  <path class="amg-l" d="M228.5 338.8 L228.5 391.2"/>
-  <path class="amg-l" d="M228.5 492.5 L228.5 537.5"/>
-  <path class="amg-l" d="M245.0 338.8 L245.0 391.2"/>
-  <path class="amg-l" d="M245.0 492.5 L245.0 537.5"/>
-  <path class="amg-l" d="M261.5 338.8 L261.5 391.2"/>
-  <path class="amg-l" d="M261.5 492.5 L261.5 537.5"/>
-  <path class="amg-l" d="M278.0 338.8 L278.0 391.2"/>
-  <path class="amg-l" d="M278.0 492.5 L278.0 537.5"/>
-  <path class="amg-l" d="M294.5 338.8 L294.5 391.2"/>
-  <path class="amg-l" d="M294.5 492.5 L294.5 537.5"/>
-  <path class="amg-l" d="M311.0 338.8 L311.0 391.2"/>
-  <path class="amg-l" d="M311.0 492.5 L311.0 537.5"/>
-  <path class="amg-l" d="M327.5 338.8 L327.5 391.2"/>
-  <path class="amg-l" d="M327.5 492.5 L327.5 537.5"/>
-  <path class="amg-l" d="M344.0 338.8 L344.0 391.2"/>
-  <path class="amg-l" d="M344.0 492.5 L344.0 537.5"/>
-  <path class="amg-l" d="M360.5 338.8 L360.5 391.2"/>
-  <path class="amg-l" d="M360.5 492.5 L360.5 537.5"/>
+  <path class="amg-l" d="M147.5 347.0 L374.0 347.0"/>
+  <path class="amg-l" d="M147.5 359.0 L374.0 359.0"/>
+  <path class="amg-l" d="M147.5 371.0 L374.0 371.0"/>
+  <path class="amg-l" d="M147.5 383.0 L374.0 383.0"/>
+  <path class="amg-l" d="M147.5 499.2 L374.0 499.2"/>
+  <path class="amg-l" d="M147.5 509.8 L374.0 509.8"/>
+  <path class="amg-l" d="M147.5 520.2 L374.0 520.2"/>
+  <path class="amg-l" d="M147.5 530.8 L374.0 530.8"/>
   <circle class="amg" cx="350.0" cy="293.8" r="11.2"/>
   <circle class="amg" cx="350.0" cy="581.8" r="11.2"/>
   <path class="amg" d="M136.2 430.2 L241.2 435.5 Q246.5 437.8 241.2 440.0 L136.2 445.2 A7.5 7.5 0 0 1 136.2 430.2 Z"/>

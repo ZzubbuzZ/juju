@@ -118,9 +118,10 @@ A(rect("amg", 75, 185, 400, 460))
 A(rect("amg", 90, 185, 392, 265))          # banc bâbord
 A(rect("amg-f", 187, 390, 341, 460))       # couvercle du coffre tribord
 A(rect("amg", 90, 390, 392, 460))          # banc tribord
-for x in range(110, 390, 22):
-    A(path("amg-l", (x, 190), (x, 260)))
-    A(path("amg-l", (x, 395), (x, 455)))
+for y0, y1 in ((185, 265), (390, 460)):    # lattes dans la longueur des bancs
+    for i in range(1, 5):
+        y = y0 + i * (y1 - y0) / 5
+        A(path("amg-l", (90, y), (392, y)))
 for y in (130, M(130)):                      # winches, symétriques par rapport à l'axe
     A(circle("amg", 360, y, 15))
 # safran : axe de rotation à l'arrière, plus large à l'axe que vers l'avant
