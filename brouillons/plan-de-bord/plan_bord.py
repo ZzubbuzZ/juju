@@ -147,6 +147,7 @@ A(rect("amg", 470, 265, 545, 390))
 for x in (495, 520):
     A(path("amg-l", (x, 265), (x, 390)))
 A(rect("amg", 548, 285, 612, 372))
+A(path("amg-l", (580, 285), (580, 372)))     # marche de la partie amovible
 
 A('<!-- Cabinet de toilette (tribord) -->')
 A(path("amg", (400, 598), (400, 390), (580, 390)))
@@ -209,7 +210,7 @@ el.append('<!-- Noms de zones (provisoires) -->')
 for s, x, y, *r in LBL:
     el.append(text("ts mid halo", x, y, s, *r))
 el.append(text("pin mid halo", 520, 87, "placard"))
-el.append(text("pin mid halo", 584, 328, "amovible", -90))
+el.append(text("pin mid halo", 600, 328, "amovible", -90))
 el.append(text("pin mid halo", 264, 430, "coffre"))
 el.append(text("pin mid halo", 890, 328, "table repliée"))
 el.append(text("pin mid halo", 965, 292, "pied de mât"))

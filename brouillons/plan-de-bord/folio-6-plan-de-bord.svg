@@ -82,6 +82,7 @@
   <path class="amg-l" d="M451.2 395.0 L451.2 488.8"/>
   <path class="amg-l" d="M470.0 395.0 L470.0 488.8"/>
   <rect class="amg" x="491.0" y="410.0" width="48.0" height="65.2"/>
+  <path class="amg-l" d="M515.0 410.0 L515.0 475.2"/>
   <!-- Cabinet de toilette (tribord) -->
   <path class="amg" d="M380.0 644.8 L380.0 488.8 L515.0 488.8"/>
   <path class="amg" d="M515.0 550.2 L515.0 644.8"/>
@@ -135,7 +136,7 @@
   <text class="ts mid halo" x="860.0" y="457.2">Carré</text>
   <text class="ts mid halo" x="1077.5" y="421.2">Cabine de proue</text>
   <text class="pin mid halo" x="470.0" y="261.5">placard</text>
-  <text class="pin mid halo" x="518.0" y="442.2" transform="rotate(-90 518.0 442.2)">amovible</text>
+  <text class="pin mid halo" x="530.0" y="442.2" transform="rotate(-90 530.0 442.2)">amovible</text>
   <text class="pin mid halo" x="278.0" y="518.8">coffre</text>
   <text class="pin mid halo" x="747.5" y="442.2">table repliée</text>
   <text class="pin mid halo" x="803.8" y="415.2">pied de mât</text>
