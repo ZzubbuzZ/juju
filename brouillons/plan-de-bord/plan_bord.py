@@ -22,9 +22,9 @@ STYLE = STYLE.replace("  </style>", """    .amg{fill:none;stroke:var(--ink);stro
     .mat{fill:url(#pb-mat);stroke:var(--ink);stroke-width:1.1;stroke-linejoin:round}
     .teck{fill:url(#pb-teck);stroke:var(--ink);stroke-width:1.1;stroke-linejoin:round}
     .teck-j{fill:none;stroke:var(--teck-j);stroke-width:.9}
-    .vaig{fill:none;stroke:var(--vaig)}
+    .vaig{fill:none;stroke:var(--vaig)}.vaig-f{fill:var(--vaig)}
     .amg-d{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3}
-    .arr{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-dasharray:12 3 2 3;stroke-linejoin:round}
+    .arr{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round}
   </style>""")
 # textures (motifs en px)
 DEFS = """  <defs>
@@ -128,6 +128,41 @@ def dossier(x0, x1, d=60):
     return out
 
 
+def arc_pts(p0, p1, fleche, n=40):
+    """Arc de cercle de p0 à p1, de flèche donnée (positive : bombé à gauche de p0→p1)."""
+    import math
+    (x0, y0), (x1, y1) = p0, p1
+    c = math.hypot(x1-x0, y1-y0)
+    R = (c*c/4 + fleche*fleche) / (2*fleche)
+    nx, ny = (y1-y0)/c, -(x1-x0)/c                 # normale à gauche
+    mx, my = (x0+x1)/2, (y0+y1)/2
+    cx, cy = mx - nx*(R-fleche), my - ny*(R-fleche)
+    a0, a1 = math.atan2(y0-cy, x0-cx), math.atan2(y1-cy, x1-cx)
+    a1 = a0 + (a1 - a0 + math.pi) % (2*math.pi) - math.pi   # petit arc
+    return [(cx + R*math.cos(a0 + (a1-a0)*i/n), cy + R*math.sin(a0 + (a1-a0)*i/n)) for i in range(n+1)]
+
+
+def main_levee(pts, pas=10, amp=1.8):
+    """Trait ouvert à main levée passant près des points : légère ondulation, courbes lissées."""
+    import math
+    ech = []
+    for (xa, ya), (xb, yb) in zip(pts, pts[1:]):
+        L = math.hypot(xb-xa, yb-ya)
+        for i in range(max(1, round(L/pas))):
+            t = i / max(1, round(L/pas))
+            ech.append((xa + (xb-xa)*t, ya + (yb-ya)*t, (yb-ya)/L, -(xb-xa)/L))
+    q = [(x + nx*amp*math.sin(k*1.7)*math.cos(k*.45), y + ny*amp*math.sin(k*1.7)*math.cos(k*.45))
+         for k, (x, y, nx, ny) in enumerate(ech)] + [pts[-1]]
+    q[0] = pts[0]
+    n, d = len(q), f"M{P(*q[0])}"
+    for i in range(n - 1):                          # Catmull-Rom → Bézier
+        p0, p1, p2, p3 = q[max(i-1, 0)], q[i], q[i+1], q[min(i+2, n-1)]
+        c1 = (p1[0] + (p2[0]-p0[0])/6, p1[1] + (p2[1]-p0[1])/6)
+        c2 = (p2[0] - (p3[0]-p1[0])/6, p2[1] - (p3[1]-p1[1])/6)
+        d += f" C{P(*c1)}, {P(*c2)}, {P(*p2)}"
+    return d
+
+
 def porte(gond, ferme, ouvert):
     """Vantail (gond → position ouverte) et arc de son ouverture (fermée → ouverte)."""
     r = K * ((ferme[0]-gond[0])**2 + (ferme[1]-gond[1])**2) ** .5
@@ -179,24 +214,37 @@ for y in (130, M(130)):                      # winches, symétriques par rapport
 A(f'<path class="amg" d="M{P(75, CY-10)} L{P(215, CY-3)} Q{P(222, CY)} {P(215, CY+3)} '
   f'L{P(75, CY+10)} A{K*10:.1f} {K*10:.1f} 0 0 1 {P(75, CY-10)} Z"/>')
 A(circle("amg", 75, CY, 4))                  # mèche
-A(path("bound", (175, 190), (430, 125), (430, 280), (175, 345), close=True))  # couchette sous cockpit
+# couchette de la cabine de poupe : bord bâbord en arc jusqu'au placard, vaigrage entre le matelas et le bord
+bord_lit = arc_pts((175, 190), (480, 95), 22)
+lit = [*bord_lit, (480, 265), (175, 345)]
+A(path("bound", *lit, close=True))           # couchette, sous le cockpit
 
-A('<!-- Arrachement du cockpit : couchette de la cabine de poupe, côté bâbord jusqu’à l’axe, sans toucher la barre -->')
-arr = [(175, 190), (430, 125), (430, 280), (265, CY), (232, CY), (232, CY-15), (175, CY-15)]
-A(f'<clipPath id="pb-arr">{path("", *arr, close=True)}</clipPath>')
-A(path("bg", *arr, close=True))
-A('<g clip-path="url(#pb-arr)">')
-A(path("mat", (175, 190), (430, 125), (430, 280), (175, 345), close=True))
+A('<!-- Arrachement du cockpit (trait à main levée, fermé par le bord du pont) : couchette de la '
+  'cabine de poupe, côté bâbord jusqu’à l’axe, sans toucher la barre -->')
+arr = [(430, 79), (400, 82), (320, 93), (230, 112), (160, 150), (162, 200), (158, 250), (163, 303),
+       (200, 307), (236, 306), (250, 318), (290, 319), (330, 314), (390, 300), (430, 290)]
+d_arr = main_levee(arr)
+A(f'<clipPath id="pb-dessous"><path d="{d_arr} Z"/>{rect("", 430, 0, 481, 279)}</clipPath>')
+A('<g clip-path="url(#pb-dessous)">')
+A(rect("bg", 175, 0, 480, 400))
+A(path("vaig-f", *bord_lit, (480, 0), (175, 0), close=True))
+A(path("mat", *lit, close=True))
+# pièce amovible (accès batterie) : deux côtés forment le coin avant tribord de la couchette,
+# un sommet à l'angle du meuble du lavabo, un autre au niveau de la paroi arrière du cabinet de toilette
+la, lc = (480, 165), (480, 265)
+ld = (400, 265 + 80 * 80 / 305)              # sur le bord tribord de la couchette
+ux, uy = ld[0]-la[0], ld[1]-la[1]
+t = ((lc[0]-la[0])*ux + (lc[1]-la[1])*uy) / (ux*ux + uy*uy)
+lb = (2*(la[0] + t*ux) - lc[0], 2*(la[1] + t*uy) - lc[1])   # symétrique du coin par rapport à la diagonale
+A(path("amg", la, lc, ld, lb, close=True))
 A('</g>')
-A(path("arr", *arr, close=True))
+A(f'<path class="arr" d="{d_arr}"/>')
+A(path("amg", (430, 40), (430, 79)))         # bord du pont, au-dessus de la cabine
 
-A('<!-- Cabine de poupe : literie prolongée jusqu’au meuble, trappe en losange (batterie), '
-  'meuble bas du lavabo déposé, placard, porte -->')
-A(rect("mat", 430, 40, 480, 265))
-A(path("amg", (455, 105), (478, 180), (455, 255), (432, 180), close=True))   # pièce amovible, accès batterie
+A('<!-- Cabine de poupe : meuble bas du lavabo déposé, placard, porte -->')
 A(rect("amg-b", 480, 112, 560, 165))         # meuble bas
 A(ellipse("amg-d", 520, 138, 28, 16))        # emplacement du lavabo déposé
-A(path("amg", (560, 255), (560, 265), (430, 265), (430, 52)))
+A(path("amg", (560, 255), (560, 265), (480, 265)))
 A(path("amg", (560, 172), (560, 47)))
 A(path("amg", (480, 52), (480, 165)))
 A(path("amg", (480, 112), (560, 112)))       # placard
@@ -264,7 +312,7 @@ A('</g>')
 # repères d'orientation et zones (provisoires)
 LBL = [
     ("Cockpit", 300, 350),
-    ("Cabine de poupe", 300, 240),
+    ("Cabine de poupe", 310, 220),
     ("Table à carte", 698, 170),
     ("Descente", 512, 328, -90),
     ("Toilette", 520, 480),
@@ -277,7 +325,7 @@ for s, x, y, *r in LBL:
     el.append(text("ts mid halo", x, y, s, *r))
 el.append(text("pin mid halo", 520, 87, "placard"))
 el.append(text("pin mid halo", 520, 141, "lavabo"))
-el.append(text("pin mid halo", 458, 180, "batterie", -90))
+el.append(text("pin mid halo", (la[0]+lb[0]+lc[0]+ld[0])/4, (la[1]+lb[1]+lc[1]+ld[1])/4 + 3, "batterie"))
 el.append(text("pin mid halo", 658, 84, "tableau de servitude"))
 el.append(text("pin mid halo", 600, 328, "amovible", -90))
 el.append(text("pin mid halo", 264, 430, "coffre"))
