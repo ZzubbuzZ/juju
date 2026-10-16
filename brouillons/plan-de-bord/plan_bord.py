@@ -23,6 +23,8 @@ STYLE = STYLE.replace("  </style>", """    .amg{fill:none;stroke:var(--ink);stro
     .teck{fill:url(#pb-teck);stroke:var(--ink);stroke-width:1.1;stroke-linejoin:round}
     .teck-j{fill:none;stroke:var(--teck-j);stroke-width:.9}
     .vaig{fill:none;stroke:var(--vaig)}
+    .amg-d{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3}
+    .arr{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-dasharray:12 3 2 3;stroke-linejoin:round}
   </style>""")
 # textures (motifs en px)
 DEFS = """  <defs>
@@ -143,15 +145,15 @@ A(f'<path class="hull" d="{coque}"/>')
 A('<g clip-path="url(#pb-coque)">')
 
 A('<!-- Vaigrages latéraux, du bord au dossier (carré, cabine de proue) -->')
-A(f'<clipPath id="pb-vaig">{rect("", 760, 0, 1090, 700)}{rect("", 1090, 0, 1150, CY)}{rect("", 1150, 0, 1535, 700)}</clipPath>')
+A(f'<clipPath id="pb-vaig">{rect("", 760, 0, 1090, 700)}{rect("", 1090, CY, 1150, 700)}{rect("", 1150, 0, 1535, 700)}</clipPath>')
 A('<g clip-path="url(#pb-vaig)">')
 A(f'<path class="vaig" d="{coque}" stroke-width="{2 * K * 60:.1f}"/>')   # trait centré sur le bord : moitié visible
 A('</g>')
 
 A('<!-- Planchers, jusqu’au milieu des assises. Niveau bas : carré, cuisine ; '
   'niveau haut : cabine de poupe, table à carte, cabinet de toilette -->')
-A(path("sol-h", (480, 112), (560, 112), (560, 100), (755, 100), (755, 230),
-       (640, 230), (640, 265), (430, 265), (430, 165), (480, 165), close=True))
+A(path("sol-h", (480, 165), (560, 165), (560, 100), (755, 100), (755, 230),
+       (640, 230), (640, 265), (480, 265), close=True))
 A(path("sol-h", (400, 390), (580, 390), (580, 500), (480, 500), (480, 598), (400, 598), close=True))
 db = dossier(760, 1090)
 mi = [(x, (y + 226 + (x - 760) * 49 / 330) / 2) for x, y in db]   # milieu entre dossier et bord d'assise
@@ -179,7 +181,21 @@ A(f'<path class="amg" d="M{P(75, CY-10)} L{P(215, CY-3)} Q{P(222, CY)} {P(215, C
 A(circle("amg", 75, CY, 4))                  # mèche
 A(path("bound", (175, 190), (430, 125), (430, 280), (175, 345), close=True))  # couchette sous cockpit
 
-A('<!-- Accès à la cabine de poupe : passage, placard, porte -->')
+A('<!-- Arrachement du cockpit : couchette de la cabine de poupe, côté bâbord jusqu’à l’axe, sans toucher la barre -->')
+arr = [(175, 190), (430, 125), (430, 280), (265, CY), (232, CY), (232, CY-15), (175, CY-15)]
+A(f'<clipPath id="pb-arr">{path("", *arr, close=True)}</clipPath>')
+A(path("bg", *arr, close=True))
+A('<g clip-path="url(#pb-arr)">')
+A(path("mat", (175, 190), (430, 125), (430, 280), (175, 345), close=True))
+A('</g>')
+A(path("arr", *arr, close=True))
+
+A('<!-- Cabine de poupe : literie prolongée jusqu’au meuble, trappe en losange (batterie), '
+  'meuble bas du lavabo déposé, placard, porte -->')
+A(rect("mat", 430, 40, 480, 265))
+A(path("amg", (455, 105), (478, 180), (455, 255), (432, 180), close=True))   # pièce amovible, accès batterie
+A(rect("amg-b", 480, 112, 560, 165))         # meuble bas
+A(ellipse("amg-d", 520, 138, 28, 16))        # emplacement du lavabo déposé
 A(path("amg", (560, 255), (560, 265), (430, 265), (430, 52)))
 A(path("amg", (560, 172), (560, 47)))
 A(path("amg", (480, 52), (480, 165)))
@@ -229,18 +245,18 @@ A(path("mat", *[(x, M(y)) for x, y in db], (1090, M(275)), (760, M(226)), close=
 A(rect("amg-f", 825, CY-25, 985, CY+25))     # table repliée, sur l'axe
 A(circle("amg", 965, CY, 11))                # pied de mât, dans la table, à son bout avant
 
-A('<!-- Cloison avant du carré, penderie tribord, porte de la cabine de proue -->')
+A('<!-- Cloison avant du carré, penderie bâbord, porte de la cabine de proue -->')
 A(path("amg", (1090, 40), (1090, 277)))
 A(path("amg", (1090, 357), (1090, 604)))
-A(path("amg", (1150, 604), (1150, 395), (1090, 395)))
+A(path("amg", (1150, 40), (1150, 250), (1090, 250)))
 A(porte((1090, 357), (1090, 277), (1146.6, 300.4)))
 
 A('<!-- Cabine de proue : couchette en V entre les dossiers, qui se rejoignent derrière le puits à chaîne ; '
-  'à bâbord, elle se prolonge jusqu’au carré -->')
-dpb = dossier(1090, 1700)
+  'à tribord, elle se prolonge jusqu’au carré -->')
 dp = dossier(1150, 1700)
-A(path("mat", (1090, dpb[0][1]), *dpb, *[(x, M(y)) for x, y in reversed(dp[:-1])],
-       (1150, M(dp[0][1])), (1150, 250), (1090, 250), close=True))
+dpt = dossier(1090, 1700)
+A(path("mat", (1150, dp[0][1]), *dp, *[(x, M(y)) for x, y in reversed(dpt[:-1])],
+       (1090, M(dpt[0][1])), (1090, 395), (1150, 395), close=True))
 A(path("amg", (1150, 287), (1210, 302), (1210, 342), (1150, 357), close=True))  # trapèze, sur le bord de la couchette
 A(path("amg", (1535, 150), (1535, 494)))     # cloison du puits à chaîne
 
@@ -248,7 +264,7 @@ A('</g>')
 # repères d'orientation et zones (provisoires)
 LBL = [
     ("Cockpit", 300, 350),
-    ("Cabine de poupe (sous le cockpit)", 300, 300),
+    ("Cabine de poupe", 300, 240),
     ("Table à carte", 698, 170),
     ("Descente", 512, 328, -90),
     ("Toilette", 520, 480),
@@ -260,6 +276,8 @@ el.append('<!-- Noms de zones (provisoires) -->')
 for s, x, y, *r in LBL:
     el.append(text("ts mid halo", x, y, s, *r))
 el.append(text("pin mid halo", 520, 87, "placard"))
+el.append(text("pin mid halo", 520, 141, "lavabo"))
+el.append(text("pin mid halo", 458, 180, "batterie", -90))
 el.append(text("pin mid halo", 658, 84, "tableau de servitude"))
 el.append(text("pin mid halo", 600, 328, "amovible", -90))
 el.append(text("pin mid halo", 264, 430, "coffre"))
