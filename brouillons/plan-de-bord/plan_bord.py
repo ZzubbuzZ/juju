@@ -216,7 +216,8 @@ A(f'<path class="amg" d="M{P(75, CY-10)} L{P(215, CY-3)} Q{P(222, CY)} {P(215, C
 A(circle("amg", 75, CY, 4))                  # mèche
 # couchette de la cabine de poupe : bord bâbord en arc jusqu'au placard, vaigrage entre le matelas et le bord
 bord_lit = arc_pts((175, 190), (480, 95), 22)
-lit = [*bord_lit, (480, 265), (175, 345)]
+YC = 260                                     # coin avant tribord, en retrait de la descente (y = 265)
+lit = [*bord_lit, (480, YC), (175, YC + 80)]
 A(path("bound", *lit, close=True))           # couchette, sous le cockpit
 
 A('<!-- Arrachement du cockpit (trait à main levée, fermé par le bord du pont) : couchette de la '
@@ -231,8 +232,8 @@ A(path("vaig-f", *bord_lit, (480, 0), (175, 0), close=True))
 A(path("mat", *lit, close=True))
 # pièce amovible (accès batterie) : deux côtés forment le coin avant tribord de la couchette,
 # un sommet à l'angle du meuble du lavabo, un autre au niveau de la paroi arrière du cabinet de toilette
-la, lc = (480, 165), (480, 265)
-ld = (400, 265 + 80 * 80 / 305)              # sur le bord tribord de la couchette
+la, lc = (480, 165), (480, YC)
+ld = (400, YC + 80 * 80 / 305)               # sur le bord tribord de la couchette
 lb = (la[0] + ld[0] - lc[0], la[1] + ld[1] - lc[1])   # côtés opposés parallèles
 A(path("amg", la, lc, ld, lb, close=True))
 A('</g>')
