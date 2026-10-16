@@ -54,6 +54,10 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
 ### Pour le livret de bord
 
 - **Q66** Lutte contre le feu : combien d'extincteurs à bord, de quel type (poudre, CO2, eau, mousse), de quelle capacité, où sont-ils fixés, et quelle est leur date de contrôle ? Y a-t-il une couverture anti-feu, et où ? Sert à la fiche « Odeur de brûlé, fumée » du livret.
+- **Q70** Démarrage du moteur, tel qu'il se pratique à bord : où est le tableau moteur (clé, voyants, alarme) ? Y a-t-il un préchauffage ou un levier de décompression, et où ? Position de la manette des gaz au lancement ; voyants qui doivent s'éteindre une fois le moteur parti ; arrêt par la clé ou par une tirette ? Vanne d'eau de mer à ouvrir avant ? Sert à la fiche 2.3 du livret.
+- **Q71** Booster de démarrage (décision du 13/10) : est-il acheté ? Modèle et capacité, où il est rangé, comment et à quelle fréquence on le recharge. Sert à la fiche 2.3 du livret.
+- **Q72** Batterie LiFePO4 Humsienk, après une coupure par son BMS : comment se réarme-t-il (tout seul à la remise en charge, par l'application, par un bouton) selon la cause (décharge, surintensité, température) ? Que montre l'application pendant la coupure ? À vérifier aussi dans la notice de l'Orion XS : reprend-il la charge d'une batterie coupée par son BMS ? Sert à la fiche 3.2 du livret.
+- **Q73** Matériel de secours à bord : feux de navigation de secours (à piles), VHF portable, pompe de cale manuelle ? Pour chacun, où il est rangé. Sert à la fiche 3.2 du livret.
 - **Q67** Batterie LiFePO4 Humsienk : son application Bluetooth permet-elle de couper la décharge et la charge du BMS (interrupteurs « charge » et « décharge » dans l'application), et la coupure tient-elle jusqu'à ce qu'on la rétablisse ? Ce serait le seul moyen de couper la batterie de servitude sans retirer son fusible MEGA (livret, fiche « Odeur de brûlé, fumée »).
 
 ### Pour l'étude D (shunt)

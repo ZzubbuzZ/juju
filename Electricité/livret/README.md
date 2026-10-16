@@ -8,4 +8,8 @@ Plan, décisions et avancement : [plan.md](plan.md).
 
 ## Fiches rédigées
 
+- [2.1 Mise sous tension, à l'arrivée à bord](fiches/2-1-mise-sous-tension.md)
+- [2.3 Démarrer le moteur, partir au moteur](fiches/2-3-demarrage-moteur.md)
+- [2.7 Vérifier le fonctionnement des organes](fiches/2-7-verification-organes.md)
 - [3.1 Odeur de brûlé, fumée](fiches/3-1-brule-fumee.md)
+- [3.2 Plus rien sur la servitude](fiches/3-2-panne-servitude.md)
