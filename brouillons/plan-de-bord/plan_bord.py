@@ -175,8 +175,8 @@ A(path("amg", (760, 340), (760, 598)))
 
 A('<!-- Carré : banquettes (le trait côté bord est le dossier), table repliée, pied de mât -->')
 db = dossier(760, 1090)
-A(path("amg-f", *db, (1090, 275), (760, 250), close=True))
-A(path("amg-f", *[(x, M(y)) for x, y in db], (1090, M(275)), (760, M(250)), close=True))
+A(path("amg-f", *db, (1090, 275), (760, 238), close=True))
+A(path("amg-f", *[(x, M(y)) for x, y in db], (1090, M(275)), (760, M(238)), close=True))
 A(rect("amg-f", 825, CY-25, 985, CY+25))     # table repliée, sur l'axe
 A(circle("amg", 965, CY, 11))                # pied de mât, dans la table, à son bout avant
 
