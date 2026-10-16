@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 710" role="img" aria-label="Circuit servitude cible : LiFePO4, Orion XS, départs et shunt dans la contremarche, Blue Smart dans le coffre de cockpit.">
   <title>Folio 2o · Circuit servitude cible (Orion XS et shunt dans la contremarche, chargeur de quai au coffre de cockpit)</title>
-  <desc>Batterie de servitude LiFePO4 et ses chargeurs : sortie de l&#x27;Orion XS dans la niche de la contremarche, Blue Smart dans le coffre de cockpit, relié à la niche en 10 mm² ; chacun a son fusible à la source, et les deux négatifs reviennent côté « bord » du shunt. La commande de l&#x27;Orion XS est prise côté moteur (folio 2h).</desc>
+  <desc>Batterie de servitude LiFePO4 et ses chargeurs : sortie de l&#x27;Orion XS dans la niche de la contremarche, Blue Smart dans le coffre de cockpit, relié à la niche par ses câbles fournis (12 AWG, 1,4 m) ; chacun a son fusible à la source, et les deux négatifs reviennent côté « bord » du shunt. La commande de l&#x27;Orion XS est prise côté moteur (folio 2h).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -97,8 +97,8 @@
   <text class="idn mid" x="384" y="278">w008 · 35</text>
   <path class="p w2" d="M600 200 L580 180 L580 160 L600 140"/>
   <text class="idn end" x="574" y="174">w056 · 4</text>
-  <path class="p w3" d="M646 140 L720 140"/>
-  <text class="idn mid" x="662" y="124">w064 · 10</text>
+  <path class="p w2" d="M646 140 L720 140"/>
+  <text class="idn mid" x="662" y="124">w064 · 3,3</text>
   <path class="p w3" d="M444 270 L428 254 L428 200 L600 200"/>
   <text class="idn" x="436" y="192">w058 · 16</text>
   <path class="p w3" d="M646 200 L720 200"/>
@@ -115,8 +115,8 @@
   <text class="idn" x="214" y="536">w010 · 35 (D-H1)</text>
   <path class="n w4" d="M600 544 L1044 544 L1060 560"/>
   <text class="idn mid" x="820" y="536">w011 · 35</text>
-  <path class="n w3" d="M950 150 L1100 150 L1100 520 L1060 560"/>
-  <text class="idn" x="1106" y="330">w059 · 10</text>
+  <path class="n w2" d="M950 150 L1100 150 L1100 520 L1060 560"/>
+  <text class="idn" x="1106" y="330">w059 · 3,3</text>
   <path class="n w3" d="M1040 480 L1060 480 L1060 560"/>
   <text class="idn end" x="1054" y="525">w062 · 16</text>
   <path class="n w2" d="M1085 64 L1036 64"/>
@@ -200,10 +200,9 @@
   <text class="ts" x="440" y="590">Fils de mesure du shunt : folio 2e.</text>
   <text class="ts mid" x="1068" y="101">C10 du Blue Smart · boîtier d&#x27;arrivée</text>
   <text class="id mid" x="1068" y="114">n309 / n307 : N et PE</text>
-  <text class="ts end" x="1092" y="352">10 mm², ≈ 5 m</text>
-  <text class="ts end" x="1092" y="366">du coffre de</text>
-  <text class="ts end" x="1092" y="380">cockpit (Q64)</text>
+  <text class="ts end" x="1092" y="352">câbles fournis</text>
+  <text class="ts end" x="1092" y="366">12 AWG, 1,4 m</text>
+  <text class="ts end" x="1092" y="380">(Q64, 16/10)</text>
   <text class="ts" x="20" y="698">En vert : nouveau (études E, E-H5). Déposés : coupleur Scheiber, coupe-circuit de couplage et leurs câbles ; le guindeau est passé sur le circuit moteur (folio 2h).</text>
   <g class="mk-a"><circle cx="40" cy="230" r="11"/><text class="mid" x="40" y="233.5">A11</text></g>
-  <g class="mk-q"><circle cx="1140" cy="410" r="11"/><text class="mid" x="1140" y="413.5">Q64</text></g>
 </svg>

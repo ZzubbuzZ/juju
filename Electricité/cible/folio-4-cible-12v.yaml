@@ -6,7 +6,7 @@
 folio: 4
 titre: Installation 12 V cible
 aria: "Installation 12 volts cible : batterie moteur et guindeau, batterie LiFePO4 avec son shunt, chargeur DC/DC Orion XS, chargeur de quai Blue Smart, départs protégés vers les tableaux et l'entrée 12 volts du chauffe-eau."
-desc: "Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Le Blue Smart est au coffre de cockpit (E-H5), relié à la niche de la contremarche en 10 mm²."
+desc: "Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Le Blue Smart est au coffre de cockpit (E-H5), relié à la niche de la contremarche par ses câbles fournis (12 AWG, 1,4 m)."
 modele: cible
 taille: [1200, 1080]
 
@@ -368,9 +368,9 @@ fils:
   wire058: {trace: [[400, 646]], etiquette: [406, 590], texte: "w058 · 16"}
   wire062: {trace: [[18, 450], [18, 970], [38, 990]], etiquette: [190, 444, mid], texte: "w062 · 16"}
   # Blue Smart, LiFePO4, shunt
-  wire064: {trace: [[290, 626], [290, 525]], etiquette: [265, 517, mid], texte: "w064 · 10"}
+  wire064: {trace: [[290, 626], [290, 525]], etiquette: [265, 517, mid], texte: "w064 · 3,3"}
   wire056: {trace: [[380, 556], [380, 606]], etiquette: [374, 580, end], texte: "w056 · 4"}
-  wire059: {trace: [[28, 525], [28, 970], [48, 990]], etiquette: [37, 580, mid, v], texte: "w059 · 10"}
+  wire059: {trace: [[28, 525], [28, 970], [48, 990]], etiquette: [37, 580, mid, v], texte: "w059 · 3,3"}
   wire009: {etiquette: [211, 662, mid], texte: w009}
   wire008: {etiquette: [300, 686, mid]}
   wire010: {etiquette: [56, 728]}

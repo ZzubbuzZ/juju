@@ -49,7 +49,7 @@ Les coupe-circuits isolent les circuits du bord, **pas les batteries ni leurs ch
 
 | Depuis | Par | Jusqu'à |
 |---|---|---|
-| Batterie de servitude (coffre sous la couchette de la cabine de poupe) | fusible MEGA de 300 A, câble de 35 mm² (wire009, wire008) | borne côté batterie du coupe-circuit servitude, puis dans la niche derrière la platine : shunt (fusible de 1 A), **sortie de l'Orion XS** (fusible de 70 A), **câble du Blue Smart** jusqu'au coffre de cockpit (fusible de 25 A, 10 mm², environ 5 m) |
+| Batterie de servitude (coffre sous la couchette de la cabine de poupe) | fusible MEGA de 300 A, câble de 35 mm² (wire009, wire008) | borne côté batterie du coupe-circuit servitude, puis dans la niche derrière la platine : shunt (fusible de 1 A), **sortie de l'Orion XS** (fusible de 70 A), **câble du Blue Smart** jusqu'au coffre de cockpit (fusible de 25 A, câble fourni du chargeur, environ 1,4 m) |
 | Batterie moteur (coffre de cockpit tribord) | fusible MEGA de 400 A, câble de 35 mm² (wire002, wire001) | borne côté batterie du coupe-circuit moteur ; entrée auxiliaire du shunt (fusible de 1 A) ; sortie du chargeur Dolphin (fusible de 30 A) |
 
 Les négatifs des deux batteries, de l'Orion XS et du Blue Smart arrivent sur la borne côté batteries du coupe-circuit des négatifs : l'ouvrir ne les isole pas.

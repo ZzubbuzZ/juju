@@ -2,33 +2,33 @@
 
 Réglages de la batterie de servitude LiFePO4 (Humsienk 12 V 200 Ah Plus), du chargeur de quai Blue Smart IP67 12/17 et du SmartShunt. Décidés par les études [E](../etudes/E-batterie/README.md) (E-H1, E-H5) et [D](../etudes/D-shunt/README.md) (D-H1). Tous se règlent dans l'application VictronConnect.
 
-**Rédigé le 16/10, avant la mise en service.** Les valeurs viennent de la fiche Humsienk (relevée le 05/10 dans [E-H1](../etudes/E-batterie/H1-lifepo4/proposition.md)) et des notices Victron. Elles sont à confirmer avec la notice de la batterie (Q68) et le profil créé sur le chargeur (Q69).
+**Rédigé le 16/10, avant la mise en service.** Les valeurs viennent de la fiche Humsienk (relevée le 05/10 dans [E-H1](../etudes/E-batterie/H1-lifepo4/proposition.md)) et des notices Victron. Le profil du chargeur a été saisi le 16/10 avec les valeurs ci-dessous (Q69). Les seuils du BMS restent à lire dans son application Bluetooth (Q68).
 
 ## Ce qu'il faut savoir avant de régler
 
-- **La batterie demande** une charge à 14,4 V ± 0,2 V, sous 40 A au plus, entre 0 et 55 °C. Sa fiche ne donne ni floating ni seuils du BMS (Q68).
-- **Le Blue Smart ne reçoit pas la tension du shunt.** Le réseau VE.Smart n'est pas pris en charge par les Blue Smart IP65 et IP67 (liste de compatibilité de Victron). Le chargeur règle donc la tension à ses bornes, et la batterie, au bout de 5 m de câble, voit jusqu'à 0,57 V de moins à 17 A ([dimensionnement](../commun/dimensionnement.md#chute-de-tension-du-chargeur-de-quai-1610)). Cette chute diminue avec le courant : environ 0,13 V à 4 A.
+- **La batterie demande** une charge à 14,4 V ± 0,2 V d'après la fiche en ligne, 14,6 V ± 0,2 V d'après la notice papier (Q68, 16/10), sous 40 A au plus, entre 0 et 55 °C. 14,4 V est dans les deux plages. Ni la fiche ni la notice ne donnent de floating ou de seuils du BMS : à lire dans l'application Bluetooth (Q68).
+- **Le Blue Smart ne reçoit pas la tension du shunt.** Le réseau VE.Smart n'est pas pris en charge par les Blue Smart IP65 et IP67 (liste de compatibilité de Victron). Le chargeur règle donc la tension à ses bornes, et la batterie, au bout des 1,40 m de câble fourni (Q64, 16/10), voit environ 0,27 V de moins à 17 A ([dimensionnement](../commun/dimensionnement.md#chute-de-tension-du-chargeur-de-quai-1610)). Cette chute diminue avec le courant : environ 0,06 V à 4 A.
 - **L'Orion XS, lui, est compatible VE.Smart.** Ses câbles sont courts : la compensation est un plus, pas une nécessité.
 - **Le shunt se recale à 100 %** quand trois conditions durent ensemble : tension au-dessus de la « tension chargée », courant de charge sous le « courant de queue », pendant la « durée de détection ». Si le chargeur termine sa charge avant, le shunt ne se recale pas, et son état de charge dérive d'une charge à l'autre. **Le courant de queue du shunt doit donc être plus élevé que le courant auquel le chargeur arrête l'absorption.**
 
 ## Blue Smart IP67 12/17 : profil « HumsienkLiFePO4 »
 
-Réglages → Préréglage batterie → « User defined » (défini par l'utilisateur), puis paramètres avancés. Profil créé par l'utilisateur le 16/10 ; valeurs saisies à relever (Q69).
+Réglages → Préréglage batterie → « User defined » (défini par l'utilisateur), puis paramètres avancés. Profil créé par l'utilisateur le 16/10 avec ces valeurs (Q69).
 
-| Paramètre | Valeur proposée | Pourquoi |
+| Paramètre | Valeur saisie | Pourquoi |
 |---|---|---|
-| Absorption | **14,4 V** | Milieu de la plage Humsienk (le mode Li-ion de Victron est à 14,2 V). À 17 A, la batterie ne voit qu'environ 13,8 V ; elle ne voit 14,4 V qu'en fin de charge, quand le courant a baissé. Ne pas monter plus haut : à faible courant la batterie reçoit vraiment la tension réglée, et une cellule déséquilibrée ferait couper le BMS. Si la notice donne une coupure du BMS en charge sous 14,6 V, revenir à 14,2 V (Q68). |
+| Absorption | **14,4 V** | Dans la plage de la fiche en ligne comme dans celle de la notice papier (le mode Li-ion de Victron est à 14,2 V). À 17 A, la batterie ne voit qu'environ 14,1 V ; elle ne voit 14,4 V qu'en fin de charge, quand le courant a baissé. Ne pas monter plus haut : à faible courant la batterie reçoit vraiment la tension réglée, et une cellule déséquilibrée ferait couper le BMS. Si l'application du BMS donne une coupure en charge sous 14,6 V, revenir à 14,2 V (Q68). |
 | Durée d'absorption | **Fixe, 2 h** au plus | Le mode adaptatif calcule la durée d'après la durée de la charge principale, une logique prévue pour le plomb. |
 | Courant de fin d'absorption | **2 %, 4 A** (si le réglage est proposé) | La batterie est pleine dès que le courant tombe sous ce seuil. Il doit rester sous le courant de queue du shunt (8 A, voir plus bas). |
 | Floating | **13,5 V** | Valeur de Victron pour le lithium : la batterie reste pleine sans être poussée. |
-| Stockage | **13,5 V** ; **13,3 V** pour de longues semaines au quai | Plus bas, la batterie reste un peu sous 100 %, ce qui ralentit son vieillissement. |
+| Stockage | **13,5 V** ; passer à **13,3 V** pour de longues semaines au quai | Plus bas, la batterie reste un peu sous 100 %, ce qui ralentit son vieillissement. |
 | Absorption répétée | **Désactivée** | Utile au plomb seulement. |
 | Reconditionnement | **Désactivé** | **Impératif** : la surtension d'égalisation ferait couper le BMS et abîmerait les cellules. |
 | Compensation de température | **Désactivée (0 mV/°C)** | Prévue pour le plomb (−16 mV/°C par défaut). Ne s'applique pas au lithium. |
 | Courant maximal | **17 A** (mode normal) | Bien sous les 40 A recommandés. Le mode « faible courant » donne 6 A. |
 | Charge par temps froid | sans réglage | L'IP67 n'a pas de sonde. Le BMS coupe la charge sous 0 °C, ce qui suffit en Méditerranée (Q47). |
 
-**Contrôle à la mise en service** : en fin de charge, comparer la tension affichée par le chargeur et celle du shunt, au même moment. L'écart doit suivre la chute calculée (environ 0,034 V par ampère).
+**Contrôle à la mise en service** : en fin de charge, comparer la tension affichée par le chargeur et celle du shunt, au même moment. L'écart doit suivre la chute calculée (environ 0,016 V par ampère).
 
 ## Orion XS 12/12-50 A
 
@@ -43,7 +43,7 @@ Réglages → Batterie, puis Alarmes et Divers. Les valeurs d'usine conviennent 
 | Paramètre | Usine | Valeur pour Juju | Pourquoi |
 |---|---|---|---|
 | Capacité de la batterie | 200 Ah | **200 Ah** | Capacité nominale de la Humsienk. |
-| Tension chargée | 13,2 V | **14,0 V** | Victron conseille 0,2 à 0,3 V sous le floating, soit 13,2 V ici. Mais une LiFePO4 en charge dépasse 13,3 V bien avant d'être pleine, et le shunt se recalerait à 100 % sur une charge lente, au moteur ou plus tard au soleil. 14,0 V n'est atteint qu'en absorption : avec le Blue Smart, la batterie voit 14,1 V quand le courant tombe à 8 A. |
+| Tension chargée | 13,2 V | **14,0 V** | Victron conseille 0,2 à 0,3 V sous le floating, soit 13,2 V ici. Mais une LiFePO4 en charge dépasse 13,3 V bien avant d'être pleine, et le shunt se recalerait à 100 % sur une charge lente, au moteur ou plus tard au soleil. 14,0 V n'est atteint qu'en absorption : avec le Blue Smart, la batterie voit environ 14,3 V quand le courant tombe à 8 A. |
 | Courant de queue | 4 % | **4 %, 8 A** | Garder la valeur d'usine. Elle reste au-dessus des 4 A où le chargeur arrête l'absorption : le shunt a le temps de se recaler avant que la tension retombe au floating. |
 | Durée de détection de la charge | 3 min | **3 min** | Valeur d'usine. |
 | Exposant de Peukert | 1,25 | **1,05** | Valeur de Victron pour le lithium. |

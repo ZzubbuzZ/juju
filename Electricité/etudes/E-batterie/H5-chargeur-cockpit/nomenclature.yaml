@@ -1,17 +1,16 @@
 # yaml-language-server: $schema=../../../outils/schema/nomenclature.schema.json
 #
 # E-H5 : différence avec E-H1 seulement (câbles du Blue Smart). Le reste du matériel, Blue
-# Smart compris, est dans la nomenclature de E-H1. Prix estimés le 14/10/2026.
+# Smart compris, est dans la nomenclature de E-H1. Prix estimés le 14/10/2026 ; sortie 12 V par les câbles fournis du chargeur le 16/10 (Q64).
 
 hypothese: E-H5
 devise: EUR
 
 lots:
   quai:
-    titre: Blue Smart au coffre de cockpit, sortie 12 V prolongée jusqu'à la niche
+    titre: Blue Smart au coffre de cockpit, câbles fournis menés jusqu'à la niche
     note: Remplace les câbles courts du lot « quai » de E-H1 (wire059, wire064, wire311, wire312, wire313).
 
 articles:
-  - { lot: quai, designation: "Câble étamé 10 mm² rouge et noir, coffre de cockpit → niche de la contremarche", quantite: 10, unite: m, prix_unitaire: 6, statut: estimation, note: "2 × 5 m estimés (Q64)", fils: [wire064, wire059] }
-  - { lot: quai, designation: "Jonction des câbles 12 V fournis du chargeur sur le 10 mm² (cosses M8 et goujons isolés, ou bornier sous capot), cosses 10 mm², gaine", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, fils: [wire064, wire059] }
+  - { lot: quai, designation: "Raccordement des câbles fournis du chargeur dans la niche : cosses 12 AWG (4 mm²) au diamètre des goujons du porte-fusible de 25 A et du coupe-circuit des négatifs, gaine thermorétractable, passe-fil", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation, note: "Sans rallonge ni jonction : trajet d'environ 1,2 m pour 1,40 m de câble (Q64, 16/10). Cosses d'origine à remplacer si leur diamètre ne convient pas", fils: [wire064, wire059] }
   - { lot: quai, designation: "Câble 230 V H07RN-F 3 × 1,5 mm² court (≈ 1 m) du C10 à une prise ou un boîtier à bornes Wago dans le coffre", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Q53", fils: [wire311, wire312, wire313] }

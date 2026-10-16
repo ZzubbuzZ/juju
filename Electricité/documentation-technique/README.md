@@ -8,7 +8,7 @@ Le livret d'utilisation et de dépannage (fonctionnement normal, conduite en cas
 
 ## Sections
 
-- [Réglages de la charge et du shunt](reglages-charge-et-shunt.md) : profil du Blue Smart, Orion XS, paramètres et alarmes du SmartShunt, choix entre shunt et BMS (16/10 ; à confirmer par Q68 et Q69).
+- [Réglages de la charge et du shunt](reglages-charge-et-shunt.md) : profil du Blue Smart, Orion XS, paramètres et alarmes du SmartShunt, choix entre shunt et BMS (16/10 ; seuils du BMS à confirmer, Q68).
 
 ## À faire
 

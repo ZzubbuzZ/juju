@@ -2,8 +2,8 @@
 #
 # E-H5 : variante de E-H1 retenue le 14/10. L'Orion XS et le shunt de l'étude D restent dans
 # la niche de la contremarche ; le chargeur de quai LiFePO4 (Blue Smart) va dans le coffre de
-# cockpit tribord, près du boîtier d'arrivée 230 V. Sa sortie 12 V fait le trajet jusqu'à la
-# niche (environ 5 m, Q64) en 10 mm². Les numéros des fils et des nœuds sont ceux de E-H1.
+# cockpit tribord, près du boîtier d'arrivée 230 V. Sa sortie 12 V va jusqu'à la niche par
+# les câbles fournis du chargeur (12 AWG, 1,40 m), sans rallonge : le trajet fait environ 1,2 m (Q64, 16/10). Les numéros des fils et des nœuds sont ceux de E-H1.
 
 hypothese: E-H5
 titre: Variante de E-H1, chargeur de quai au coffre de cockpit
@@ -14,12 +14,12 @@ supprime:
   fils: [wire064, wire059, wire311, wire312, wire313]
 
 equipements:
-  - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: cockpit-coffre-tribord, emplacement: "Coffre de cockpit tribord, sur une paroi, près du boîtier d'arrivée 230 V", statut: propose, note: "IP67 : convient à un coffre exposé. Câbles 12 V fournis, à prolonger en 10 mm² par une jonction dans le coffre (Q64)" }
+  - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: cockpit-coffre-tribord, emplacement: "Coffre de cockpit tribord, sur une paroi, près du boîtier d'arrivée 230 V", statut: propose, note: "IP67 : convient à un coffre exposé. Câbles 12 V fournis (rouge et noir, 12 AWG, 1,40 m) menés directement jusqu'à la niche ; porte-fusible de 30 A sur le câble rouge, côté chargeur (protection contre l'inversion de polarité, fiche Victron ; Q64, 16/10)" }
 
 fils:
-  # --- Sortie 12 V : du coffre de cockpit à la niche (S = 2 × 5 × 17 × 0,0175 / 0,36 ≈ 8,3 mm²) ---
-  - { id: wire064, de: node060, vers: node057, section_mm2: 10, couleur: rouge, longueur_m: 5, statut: propose, questions: [Q64], note: "Du fusible de 25 A (niche, node020) au coffre de cockpit ; longueur estimée d'après Q50, à mesurer (Q64). Jonction avec le câble fourni du chargeur dans le coffre" }
-  - { id: wire059, de: node058, vers: node022, section_mm2: 10, couleur: noir, longueur_m: 5, statut: propose, questions: [Q64], note: "Retour sur le côté « bord » du shunt (node022) : la charge est comptée. Longueur estimée, à mesurer (Q64)" }
+  # --- Sortie 12 V : câbles fournis du chargeur, du coffre de cockpit à la niche (16/10) --------
+  - { id: wire064, de: node060, vers: node057, section_mm2: 3.3, section_indicative: true, couleur: rouge, longueur_m: 1.4, statut: propose, note: "Câble rouge fourni avec le chargeur (12 AWG), du fusible de 25 A (niche, à la source) au chargeur ; son porte-fusible de 30 A reste côté chargeur. Trajet d'environ 1,2 m (Q64, 16/10) : 20 cm de marge, à vérifier à la pose" }
+  - { id: wire059, de: node058, vers: node022, section_mm2: 3.3, section_indicative: true, couleur: noir, longueur_m: 1.4, statut: propose, note: "Câble noir fourni avec le chargeur (12 AWG), retour sur le côté « bord » du shunt (node022) : la charge est comptée" }
 
   # --- 230 V : câble court, le C10 est dans le même coffre ---------------------------------
   - { id: wire311, de: node316, vers: node317, section_mm2: 1.5, couleur: marron, longueur_m: 1, statut: propose, note: "Câble 3 × 1,5 mm² du C10 du Blue Smart à une prise ou un boîtier à bornes Wago dans le coffre (Q53) ; longueur estimée" }

@@ -234,7 +234,7 @@ Implantation proposée (plan à l'échelle : [annexe de l'installation cible](..
 |---|---|---|
 | Fond, en haut | SmartShunt, côté platine (près des négatifs), puis Orion XS, bornes vers le bas (15/10) | shunt 120 × 46 × 54 mm ; Orion XS 137 × 123 × 40 mm |
 | Fond, au milieu | Rangée de fusibles MIDI dans l'ordre des ponts : 50 A (table à carte) et 30 A (Scheiber), 25 A (Blue Smart) et 70 A (sortie de l'Orion XS), puis 70 A (entrée de l'Orion XS), sous l'Orion | porte-fusible MIDI ≈ 30 × 60 mm (estimé) |
-| Fond, en bas | Passage des câbles, dont les deux 10 mm² du Blue Smart qui arrivent du coffre de cockpit (E-H5) | |
+| Fond, en bas | Passage des câbles, dont les deux câbles fournis du Blue Smart (12 AWG) qui arrivent du coffre de cockpit (E-H5, 16/10) | |
 | Face de 19 cm | Libre : au bord de la fenêtre, difficile d'accès | |
 
 - Il reste au moins 13 cm devant les appareils pour passer la main.

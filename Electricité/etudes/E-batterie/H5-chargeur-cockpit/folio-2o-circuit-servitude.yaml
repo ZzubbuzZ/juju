@@ -4,7 +4,7 @@
 folio: 2o
 titre: Circuit servitude cible (Orion XS et shunt dans la contremarche, chargeur de quai au coffre de cockpit)
 aria: "Circuit servitude cible : LiFePO4, Orion XS, départs et shunt dans la contremarche, Blue Smart dans le coffre de cockpit."
-desc: "Batterie de servitude LiFePO4 et ses chargeurs : sortie de l'Orion XS dans la niche de la contremarche, Blue Smart dans le coffre de cockpit, relié à la niche en 10 mm² ; chacun a son fusible à la source, et les deux négatifs reviennent côté « bord » du shunt. La commande de l'Orion XS est prise côté moteur (folio 2h)."
+desc: "Batterie de servitude LiFePO4 et ses chargeurs : sortie de l'Orion XS dans la niche de la contremarche, Blue Smart dans le coffre de cockpit, relié à la niche par ses câbles fournis (12 AWG, 1,4 m) ; chacun a son fusible à la source, et les deux négatifs reviennent côté « bord » du shunt. La commande de l'Orion XS est prise côté moteur (folio 2h)."
 modele: E-H5
 taille: [1200, 710]
 
@@ -123,7 +123,6 @@ barres:
 
 pastilles:
   - {id: A11, x: 40, y: 230}
-  - {id: Q64, x: 1140, y: 410}
 
 fils:
   wire009: {etiquette: [193, 303], texte: "w009 · 35"}
@@ -160,7 +159,7 @@ textes:
   - {x: 440, y: 590, texte: "Fils de mesure du shunt : folio 2e."}
   - {x: 1068, y: 101, classe: "ts mid", texte: "C10 du Blue Smart · boîtier d'arrivée"}
   - {x: 1068, y: 114, classe: "id mid", texte: "n309 / n307 : N et PE"}
-  - {x: 1092, y: 352, classe: "ts end", texte: "10 mm², ≈ 5 m"}
-  - {x: 1092, y: 366, classe: "ts end", texte: "du coffre de"}
-  - {x: 1092, y: 380, classe: "ts end", texte: "cockpit (Q64)"}
+  - {x: 1092, y: 352, classe: "ts end", texte: "câbles fournis"}
+  - {x: 1092, y: 366, classe: "ts end", texte: "12 AWG, 1,4 m"}
+  - {x: 1092, y: 380, classe: "ts end", texte: "(Q64, 16/10)"}
   - {x: 20, y: 698, texte: "En vert : nouveau (études E, E-H5). Déposés : coupleur Scheiber, coupe-circuit de couplage et leurs câbles ; le guindeau est passé sur le circuit moteur (folio 2h)."}
