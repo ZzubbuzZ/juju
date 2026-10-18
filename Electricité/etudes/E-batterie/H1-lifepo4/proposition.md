@@ -148,11 +148,11 @@ Question de l'utilisateur (02/10) : peut-on démarrer le moteur sur la LiFePO4 s
 
 ### Niveau 1 : recharge de secours de la batterie moteur par le DC/DC (sans matériel)
 
-L'Orion XS a une fonction **« emergency reverse charge »** : lancée depuis l'application VictronConnect, elle fait passer le courant **dans l'autre sens**, de la LiFePO4 vers la batterie moteur, pendant 15 minutes, puis annonce « Battery ready » après 5 minutes de repos (notice Victron). Le courant est la moitié du courant nominal, soit **25 A pour le modèle de 50 A**, environ 6 Ah transférés. La batterie de servitude n'est pas descendue sous 12 V.
+L'Orion XS a une fonction **« emergency reverse charge »** : lancée depuis l'application VictronConnect, elle fait passer le courant **dans l'autre sens**, de la LiFePO4 vers la batterie moteur, pendant 15 minutes, puis affiche « Batterie prête » pendant 5 minutes de repos, période pendant laquelle on démarre (notice Victron, `releve/documentation/VICTRON-Notice-Orion-XS-12-12-50A.pdf`, § 4.2). Le courant est la moitié du courant nominal, soit **25 A pour le modèle de 50 A**, environ 6 Ah transférés. La batterie de servitude n'est pas descendue sous 12 V.
 
 - Un démarrage de diesel consomme peu d'énergie (quelques secondes à 200-300 A, moins de 1 Ah) : 6 Ah suffisent à une batterie moteur **déchargée** (feux oubliés, longue immobilisation).
 - La LiFePO4 ne fournit que 25 A : **aucune exigence de courant de pointe** sur son BMS.
-- Limite, écrite dans la notice : « Battery ready » ne garantit pas que la batterie lance le moteur. Une batterie moteur **défectueuse** (élément en court-circuit, sulfatée) ne reprendra pas.
+- Limite, écrite dans la notice : « Batterie prête » ne garantit pas que la batterie lance le moteur. Une batterie moteur **défectueuse** (élément en court-circuit, sulfatée) ne reprendra pas.
 
 Ce niveau est acquis avec H1 telle qu'elle est chiffrée : il suffit de connaître la manœuvre, coupe-circuit moteur fermé (l'entrée de l'Orion XS est de son côté charges).
 
