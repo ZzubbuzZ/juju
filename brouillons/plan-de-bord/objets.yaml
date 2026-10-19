@@ -143,13 +143,13 @@ objets:
     positions: [[300, 525]]
 
   - n: 22
-    nom: Nable de remplissage de la réserve d'eau
+    nom: Nable de remplissage de la vache à eau
     categorie: fluides
     emplacement: cockpit tribord, à la poupe
     positions: [[85, 478]]
 
   - n: 23
-    nom: Réserve d'eau souple (90 l)
+    nom: Vache à eau (90 l)
     categorie: fluides
     emplacement: au-dessus du moteur
     positions: [[438, 352]]
