@@ -343,6 +343,7 @@ el.append(text("pin mid halo", 520, 141, "lavabo"))
 el.append(text("pin mid halo", (la[0]+lb[0]+lc[0]+ld[0])/4, (la[1]+lb[1]+lc[1]+ld[1])/4 + 3, "batterie"))
 el.append(text("pin mid halo", 658, 84, "tableau de servitude"))
 el.append(text("pin mid halo", 264, 430, "coffre"))
+el.append(text("pin mid halo", 600, 328, "amovible", -90))
 el.append(text("pin mid halo", 890, 328, "table repliée"))
 el.append(text("pin mid halo", 965, 292, "pied de mât"))
 el.append(text("pin mid halo", 1580, 410, "puits à chaîne"))
@@ -377,7 +378,7 @@ def icone_moteur(X, Y):
 
 
 el.append('<!-- Objets du bord : pastilles (tirets : à confirmer), trappes d’accès, icône du moteur -->')
-el.append(icone_moteur(OX + K * 580, OY + K * 310))
+el.append(icone_moteur(OX + K * 445, OY + K * CY))   # au niveau des WC, dans l'axe
 for o in OBJ:
     for x, y in o["positions"]:
         el.append(pastille(o, OX + K * x, OY + K * y))

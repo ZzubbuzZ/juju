@@ -8,12 +8,7 @@ Phases :
 2. Données des objets : premier essai le 19/10 dans `objets.yaml`, d'après la feuille Google « Emplacement trucs bateau » (lue sans la modifier), repris le même jour avec la feuille complétée (38 lignes) et les réponses de l'utilisateur. Chaque objet a un numéro, une catégorie (couleur de la pastille), son emplacement en clair et ses positions sur le plan, toutes estimées. À reporter dans le relevé quand les emplacements seront confirmés.
 3. Légendes : premier essai, pastilles numérotées sur le plan (cerclées de tirets quand la feuille dit « à confirmer »), repères carrés pour les trappes d'accès, pictogramme du moteur et liste par bord dans les cadres du haut et du bas, avec la clé des couleurs.
 
-Questions ouvertes (phase 2). PB1 à PB7 ont reçu réponse le 19/10 (coffre du cockpit en pointillés, coffres des banquettes du carré coupés en partie avant et arrière, étouffoir, marche, hiloire, feuille complétée) :
-
-- **PB8** Pompe de cale manuelle, « hiloire tribord du cockpit » : à quelle hauteur de l'hiloire (placée vers l'avant, près de la descente) ?
-- **PB9** Trappes d'accès au moteur : celle de la descente est-elle la partie amovible (placée là) ? Où est celle du cabinet de toilette (placée sur la cloison commune avec la descente, près de la porte) ?
-- **PB10** Commande du groupe froid, « sous le moteur, commande sous la 1re marche (tribord) » : la ligne reprend celle de la pompe de cale ; le groupe froid est relevé dans la cuisine. Où est sa commande ?
-- **PB11** Tableau de distribution 12 V, « équipet au-dessus de la batterie de servitude » : est-ce le tableau Scheiber (relevé dans la descente) ou le tableau de servitude (table à carte) ?
+Questions de la phase 2 : PB1 à PB11, toutes répondues le 19/10. Restent à faire : vérifier les emplacements « à confirmer avec Julie » (vanne de gaz), puis reporter les objets dans le relevé.
 
 `python brouillons/plan-de-bord/plan_bord.py` régénère le SVG ; il reprend le bloc `<style>` du folio 0 et y ajoute les classes `amg`, `amg-f`, `amg-b`, `amg-d`, `amg-l`, `arr`, `halo`, `sol-b`, `sol-h`, `mat`, `teck`, `teck-j`, `vaig`, `vaig-f`, `obj`, `conf`, `tr`, `leg`, `ico-mot` et les classes de catégorie, les variables de couleur des textures et leurs motifs (`<defs>`), à reporter dans tous les folios et dans `page.py` à l'intégration.
 
