@@ -31,9 +31,11 @@ STYLE = STYLE.replace("  </style>", """    .amg{fill:none;stroke:var(--ink);stro
     @media (prefers-color-scheme: dark){svg{--c-securite:#e5483f;--c-gaz:#f59e0b;--c-fluides:#22a6ad;--c-moteur:#7b8794;--c-electricite:#a46be0;--c-rangement:#b07a45}}
     .obj circle{stroke:var(--sheet);stroke-width:1.2}
     .obj text{fill:#fff;font-family:"IBM Plex Mono",Consolas,monospace;font-size:8.5px;font-weight:600;text-anchor:middle}
+    .obj .tr{stroke:var(--sheet);stroke-width:1.2}.leg{font-size:10.5px}
+    .ico-mot rect{fill:var(--c-moteur)}
     .obj .conf{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:2.5 2}
     .securite circle{fill:var(--c-securite)}.gaz circle{fill:var(--c-gaz)}.fluides circle{fill:var(--c-fluides)}
-    .moteur circle{fill:var(--c-moteur)}.electricite circle{fill:var(--c-electricite)}.rangement circle{fill:var(--c-rangement)}
+    .moteur circle,.moteur .tr{fill:var(--c-moteur)}.electricite circle{fill:var(--c-electricite)}.rangement circle{fill:var(--c-rangement)}
   </style>""")
 # textures (motifs en px)
 DEFS = """  <defs>
@@ -217,6 +219,7 @@ for y0, y1 in ((185, 265), (390, 460)):    # lattes dans la longueur des bancs
         y = y0 + i * (y1 - y0) / 5
         A(path("teck-j", (90, y), (392, y)))
 A(rect("amg", 187, 390, 341, 480))         # couvercle du coffre tribord, au-delà du banc
+A(path("amg-d", (100, 390), (100, 700)))     # coffre : du bord à la cloison du cabinet de toilette, presque jusqu'à la poupe
 for y in (130, M(130)):                      # winches, symétriques par rapport à l'axe
     A(circle("amg", 360, y, 15))
 # safran : axe de rotation à l'arrière, plus large à l'axe que vers l'avant
@@ -298,6 +301,10 @@ A(path("amg", (760, 340), (760, 598)))
 A('<!-- Carré : banquettes (le trait côté bord est le dossier), table repliée, pied de mât -->')
 A(path("mat", *db, (1090, 275), (760, 226), close=True))
 A(path("mat", *[(x, M(y)) for x, y in db], (1090, M(275)), (760, M(226)), close=True))
+XC = 925                                     # coffres sous les banquettes : partie arrière et partie avant
+yd = next(y for x, y in db if x >= XC)
+for f in (lambda y: y, M):
+    A(path("amg-d", (XC, f(yd)), (XC, f(226 + (XC - 760) * 49 / 330))))
 A(rect("amg-f", 825, CY-25, 985, CY+25))     # table repliée, sur l'axe
 A(circle("amg", 965, CY, 11))                # pied de mât, dans la table, à son bout avant
 
@@ -322,7 +329,7 @@ LBL = [
     ("Cockpit", 300, 350),
     ("Cabine de poupe", 310, 220),
     ("Table à carte", 698, 170),
-    ("Descente", 512, 328, -90),
+    ("Descente", 483, 328, -90),
     ("Toilette", 520, 480),
     ("Cuisine", 640, 478),
     ("Carré", 1040, 348),
@@ -335,7 +342,6 @@ el.append(text("pin mid halo", 520, 87, "placard"))
 el.append(text("pin mid halo", 520, 141, "lavabo"))
 el.append(text("pin mid halo", (la[0]+lb[0]+lc[0]+ld[0])/4, (la[1]+lb[1]+lc[1]+ld[1])/4 + 3, "batterie"))
 el.append(text("pin mid halo", 658, 84, "tableau de servitude"))
-el.append(text("pin mid halo", 600, 328, "amovible", -90))
 el.append(text("pin mid halo", 264, 430, "coffre"))
 el.append(text("pin mid halo", 890, 328, "table repliée"))
 el.append(text("pin mid halo", 965, 292, "pied de mât"))
@@ -358,27 +364,43 @@ def esc(t):
     return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-el.append('<!-- Objets du bord : pastilles (tirets : à confirmer) -->')
+def trappe(o, X, Y):
+    return (f'<g class="obj {o["categorie"]}" transform="translate({X:.1f} {Y:.1f})">'
+            f'<rect class="tr" x="-7.5" y="-6.5" width="15" height="13" rx="2"/><text y="3">{o["n"]}</text></g>')
+
+
+def icone_moteur(X, Y):
+    """Pictogramme du moteur : bloc, culasse, accessoire et échappement."""
+    r = lambda x0, y0, w, h: f'<rect x="{X + x0:.1f}" y="{Y + y0:.1f}" width="{w}" height="{h}"/>'
+    return ('<g class="ico-mot">' + r(-10, -5, 20, 12) + r(-6, -9, 12, 4) + r(-14, -2, 4, 6)
+            + r(10, -3, 4, 4) + '</g>')
+
+
+el.append('<!-- Objets du bord : pastilles (tirets : à confirmer), trappes d’accès, icône du moteur -->')
+el.append(icone_moteur(OX + K * 580, OY + K * 310))
 for o in OBJ:
     for x, y in o["positions"]:
         el.append(pastille(o, OX + K * x, OY + K * y))
+    for x, y in o.get("trappes", []):
+        el.append(trappe(o, OX + K * x, OY + K * y))
 leg = []
-for cote, y0, objs in (("bâbord", 52, [o for o in OBJ if o["positions"][0][1] < CY]),
-                       ("tribord", 732, [o for o in OBJ if o["positions"][0][1] >= CY])):
+for cote, y0, objs in (("bâbord", 50, [o for o in OBJ if o["positions"][0][1] < CY]),
+                       ("tribord", 730, [o for o in OBJ if o["positions"][0][1] >= CY])):
     rangs = (len(objs) + 1) // 2
     for i, o in enumerate(objs):
-        X, Y = (40 if i < rangs else 710), y0 + 17 * (i % rangs)
-        txt = f'<tspan class="tb" style="font-size:11.5px">{esc(o["nom"])}</tspan> : {esc(o["emplacement"])}'
+        X, Y = (40 if i < rangs else 710), y0 + 13.5 * (i % rangs)
+        txt = f'<tspan font-weight="600">{esc(o["nom"])}</tspan> : {esc(o["emplacement"])}'
         if o.get("question"):
             txt += f' <tspan class="tu">({o["question"]})</tspan>'
-        leg.append(pastille(o, X, Y - 4) + f'<text class="t" style="font-size:11.5px" x="{X + 14}" y="{Y}">{txt}</text>')
+        leg.append(pastille(o, X, Y - 4) + f'<text class="t leg" x="{X + 14}" y="{Y}">{txt}</text>')
 x = 40
-leg.append('<text class="pin" x="1380" y="886" text-anchor="end">pastille cerclée de tirets : à confirmer · (PBn) : question</text>')
+leg.append('<text class="pin" x="1376" y="896" text-anchor="end">pastille cerclée de tirets : à confirmer · (PBn) : question</text>')
 for c, nom in CAT:
-    leg.append(pastille({"categorie": c, "n": ""}, x, 878) + f'<text class="ts" x="{x + 12}" y="882">{nom}</text>')
+    leg.append(pastille({"categorie": c, "n": ""}, x, 892) + f'<text class="ts" x="{x + 12}" y="896">{nom}</text>')
     x += 24 + 6.2 * len(nom)
+leg.append(trappe({"categorie": "moteur", "n": ""}, x, 892) + f'<text class="ts" x="{x + 12}" y="896">trappe d’accès</text>')
 
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 905" role="img" aria-label="Plan de bord vu de dessus : aménagement intérieur, pont et objets du bord du Gib'Sea 31.">
+svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" role="img" aria-label="Plan de bord vu de dessus : aménagement intérieur, pont et objets du bord du Gib'Sea 31.">
   <title>Folio 6 · Plan de bord</title>
   <desc>Vue de dessus, avant à droite, bâbord en haut, redessinée d'après le plan d'emménagement du constructeur. Objets du bord (sécurité, gaz, fluides, moteur, électricité) repérés par des pastilles numérotées, légendées par bord ; premier essai d'après la feuille « Emplacement trucs bateau ».</desc>
 {STYLE}{DEFS}  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
@@ -390,7 +412,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 905" role="i
   <!-- Légendes des objets -->
   <rect class="bound" x="20" y="20" width="1360" height="150"/>
   <text class="pin" x="28" y="34">objets du bord · bâbord</text>
-  <rect class="bound" x="20" y="700" width="1360" height="196"/>
+  <rect class="bound" x="20" y="700" width="1360" height="204"/>
   <text class="pin" x="28" y="714">objets du bord · tribord</text>
   ''' + "\n  ".join(leg) + '''
 </svg>
