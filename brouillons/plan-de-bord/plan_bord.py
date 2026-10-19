@@ -6,6 +6,8 @@ puis converties en coordonnées SVG par P(). Avant à droite, bâbord en haut.
 import re
 from pathlib import Path
 
+import yaml
+
 ICI = Path(__file__).parent
 # même bloc <style> que le folio 0
 FOLIO0 = ICI.parent.parent / "Electricité" / "schemas" / "folio-0-implantation.svg"
@@ -25,6 +27,13 @@ STYLE = STYLE.replace("  </style>", """    .amg{fill:none;stroke:var(--ink);stro
     .vaig{fill:none;stroke:var(--vaig)}.vaig-f{fill:var(--vaig)}
     .amg-d{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3}
     .arr{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round}
+    svg{--c-securite:#c8231c;--c-gaz:#d97706;--c-fluides:#0f7f86;--c-moteur:#4b5563;--c-electricite:#7b3fb0;--c-rangement:#8a5a2b}
+    @media (prefers-color-scheme: dark){svg{--c-securite:#e5483f;--c-gaz:#f59e0b;--c-fluides:#22a6ad;--c-moteur:#7b8794;--c-electricite:#a46be0;--c-rangement:#b07a45}}
+    .obj circle{stroke:var(--sheet);stroke-width:1.2}
+    .obj text{fill:#fff;font-family:"IBM Plex Mono",Consolas,monospace;font-size:8.5px;font-weight:600;text-anchor:middle}
+    .obj .conf{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:2.5 2}
+    .securite circle{fill:var(--c-securite)}.gaz circle{fill:var(--c-gaz)}.fluides circle{fill:var(--c-fluides)}
+    .moteur circle{fill:var(--c-moteur)}.electricite circle{fill:var(--c-electricite)}.rangement circle{fill:var(--c-rangement)}
   </style>""")
 # textures (motifs en px)
 DEFS = """  <defs>
@@ -333,20 +342,57 @@ el.append(text("pin mid halo", 965, 292, "pied de mât"))
 el.append(text("pin mid halo", 1580, 410, "puits à chaîne"))
 el.append(path("leader", (1580, 395), (1580, 340)))
 
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-label="Plan de bord vu de dessus : aménagement intérieur et pont du Gib'Sea 31, fond de plan vierge.">
+# --- Objets du bord (phase 2) : pastilles numérotées et légendes ---
+OBJ = yaml.safe_load((ICI / "objets.yaml").read_text(encoding="utf-8"))["objets"]
+CAT = [("securite", "sécurité"), ("gaz", "gaz"), ("fluides", "gazole et eau"), ("moteur", "moteur"),
+       ("electricite", "électricité"), ("rangement", "rangement")]
+
+
+def pastille(o, X, Y):
+    conf = '<circle class="conf" r="10"/>' if o.get("a_confirmer") else ""
+    return (f'<g class="obj {o["categorie"]}" transform="translate({X:.1f} {Y:.1f})">{conf}'
+            f'<circle r="7.5"/><text y="3">{o["n"]}</text></g>')
+
+
+def esc(t):
+    return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+el.append('<!-- Objets du bord : pastilles (tirets : à confirmer) -->')
+for o in OBJ:
+    for x, y in o["positions"]:
+        el.append(pastille(o, OX + K * x, OY + K * y))
+leg = []
+for cote, y0, objs in (("bâbord", 52, [o for o in OBJ if o["positions"][0][1] < CY]),
+                       ("tribord", 732, [o for o in OBJ if o["positions"][0][1] >= CY])):
+    rangs = (len(objs) + 1) // 2
+    for i, o in enumerate(objs):
+        X, Y = (40 if i < rangs else 710), y0 + 17 * (i % rangs)
+        txt = f'<tspan class="tb" style="font-size:11.5px">{esc(o["nom"])}</tspan> : {esc(o["emplacement"])}'
+        if o.get("question"):
+            txt += f' <tspan class="tu">({o["question"]})</tspan>'
+        leg.append(pastille(o, X, Y - 4) + f'<text class="t" style="font-size:11.5px" x="{X + 14}" y="{Y}">{txt}</text>')
+x = 40
+leg.append('<text class="pin" x="1380" y="886" text-anchor="end">pastille cerclée de tirets : à confirmer · (PBn) : question</text>')
+for c, nom in CAT:
+    leg.append(pastille({"categorie": c, "n": ""}, x, 878) + f'<text class="ts" x="{x + 12}" y="882">{nom}</text>')
+    x += 24 + 6.2 * len(nom)
+
+svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 905" role="img" aria-label="Plan de bord vu de dessus : aménagement intérieur, pont et objets du bord du Gib'Sea 31.">
   <title>Folio 6 · Plan de bord</title>
-  <desc>Vue de dessus, avant à droite, bâbord en haut, redessinée d'après le plan d'emménagement du constructeur. Fond de plan vierge : les objets du bord (sécurité, armement) y seront placés avec leurs légendes.</desc>
+  <desc>Vue de dessus, avant à droite, bâbord en haut, redessinée d'après le plan d'emménagement du constructeur. Objets du bord (sécurité, gaz, fluides, moteur, électricité) repérés par des pastilles numérotées, légendées par bord ; premier essai d'après la feuille « Emplacement trucs bateau ».</desc>
 {STYLE}{DEFS}  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
   ''' + "\n  ".join(el) + f'''
   <text class="ts mid" x="{OX+K*700:.0f}" y="{OY+K*20:.0f}">BÂBORD</text>
   <text class="ts mid" x="{OX+K*700:.0f}" y="{OY+K*635:.0f}">TRIBORD</text>
   <text class="tb" x="{OX+K*1665:.0f}" y="{OY+K*CY+5:.0f}">AV</text>
   <text class="tb end" x="{OX-8:.0f}" y="{OY+K*CY+5:.0f}">AR</text>
-  <!-- Zones de légende réservées (phase 3) -->
+  <!-- Légendes des objets -->
   <rect class="bound" x="20" y="20" width="1360" height="150"/>
-  <text class="pin" x="28" y="34">légendes (bâbord)</text>
-  <rect class="bound" x="20" y="700" width="1360" height="180"/>
-  <text class="pin" x="28" y="714">légendes (tribord)</text>
+  <text class="pin" x="28" y="34">objets du bord · bâbord</text>
+  <rect class="bound" x="20" y="700" width="1360" height="196"/>
+  <text class="pin" x="28" y="714">objets du bord · tribord</text>
+  ''' + "\n  ".join(leg) + '''
 </svg>
 '''
 (ICI / "folio-6-plan-de-bord.svg").write_text(svg, encoding="utf-8")

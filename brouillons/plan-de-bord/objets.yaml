@@ -1,0 +1,184 @@
+# Objets du bord placés sur le plan de bord (folio 6), phase 2 : premier essai.
+#
+# Source : feuille Google « Emplacement trucs bateau » (Drive, modifiée le 18/10),
+# reprise dans l'ordre de la feuille ; la ligne « rajouter partie électrique importante »
+# est une note de travail, pas un objet.
+#
+# positions : coordonnées du plan (repère de plan_bord.py, avant à droite, bâbord en haut,
+# axe à y = 322), une par emplacement. Toutes sont estimées d'après le texte de la feuille ;
+# celles qui posent question renvoient à une question PBn (README.md).
+# categorie : securite, gaz, fluides (gazole, eau), moteur, electricite, rangement.
+# a_confirmer : repris de la colonne « Commentaires » de la feuille.
+
+objets:
+  - n: 1
+    nom: Vanne de coupure de gaz
+    categorie: gaz
+    emplacement: coffre du cockpit, près de la bouteille ; placard sous l'évier, cabinet de toilette
+    a_confirmer: true
+    positions: [[205, 462], [552, 586]]
+    question: PB1
+
+  - n: 2
+    nom: Extincteurs (2)
+    categorie: securite
+    emplacement: coffre du cockpit ; sous la table à carte
+    a_confirmer: true
+    positions: [[265, 406], [655, 210]]
+
+  - n: 3
+    nom: Coupe-câble (pince monseigneur)
+    categorie: securite
+    emplacement: coffre avant tribord « outillage »
+    positions: [[1300, 395]]
+    question: PB2
+
+  - n: 4
+    nom: Pyrotechnie (fumigènes, fusées…)
+    categorie: securite
+    emplacement: logettes marquées sous la table à carte
+    positions: [[680, 210]]
+
+  - n: 5
+    nom: Bouteille de gaz
+    categorie: gaz
+    emplacement: coffre du cockpit, au plus près de la poupe
+    positions: [[205, 406]]
+
+  - n: 6
+    nom: Réservoir de gazole (80 l)
+    categorie: fluides
+    emplacement: derrière la cabine de poupe, accessible depuis la cabine
+    positions: [[192, 245]]
+    question: PB3
+
+  - n: 7
+    nom: Manette des gaz
+    categorie: moteur
+    emplacement: cockpit tribord, près de la cabine
+    positions: [[383, 372]]
+
+  - n: 8
+    nom: Coupe-circuits (étouffoir)
+    categorie: moteur
+    emplacement: tableau de commande du moteur, descente
+    positions: [[482, 372]]
+    question: PB4
+
+  - n: 9
+    nom: Nable de gazole
+    categorie: fluides
+    emplacement: pont bâbord, à la poupe
+    positions: [[100, 160]]
+
+  - n: 10
+    nom: Pompe de cale électrique
+    categorie: securite
+    emplacement: sous le moteur
+    positions: [[565, 360]]
+
+  - n: 11
+    nom: Pompe de cale manuelle
+    categorie: securite
+    emplacement: cockpit bâbord (équipier de descente)
+    positions: [[112, 285]]
+    question: PB5
+
+  - n: 12
+    nom: Tableau de commande du moteur
+    categorie: moteur
+    emplacement: sous la première marche de la descente
+    positions: [[482, 285]]
+    question: PB4
+
+  - n: 13
+    nom: Moteur
+    categorie: moteur
+    emplacement: sous la descente, accessible depuis la descente et depuis les WC
+    positions: [[565, 300]]
+
+  - n: 14
+    nom: Gilets de sauvetage
+    categorie: securite
+    emplacement: coffre arrière bâbord
+    positions: [[112, 205]]
+    question: PB6
+
+  - n: 15
+    nom: Grab bag
+    categorie: securite
+    emplacement: WC
+    positions: [[520, 412]]
+
+  - n: 16
+    nom: Spi
+    categorie: rangement
+    emplacement: coffre du cockpit
+    positions: [[325, 406]]
+
+  - n: 17
+    nom: Pinoches
+    categorie: securite
+    emplacement: logettes marquées sous la table à carte
+    positions: [[705, 210]]
+
+  - n: 18
+    nom: Boîtier de dérivation du guindeau (et fusible de commande)
+    categorie: electricite
+    emplacement: au fond de la cabine de proue, au plus près de l'étrave
+    positions: [[1505, 300]]
+    equipement: relais-guindeau
+
+  - n: 19
+    nom: Batterie moteur
+    categorie: electricite
+    emplacement: coffre du cockpit
+    positions: [[235, 406]]
+    equipement: bat-moteur
+
+  - n: 20
+    nom: Batterie de servitude
+    categorie: electricite
+    emplacement: cabine de poupe, sous la pièce amovible de la couchette
+    positions: [[440, 250]]
+    equipement: bat-servitude
+
+  - n: 21
+    nom: Bidons de carburant
+    categorie: fluides
+    emplacement: coffre du cockpit
+    positions: [[295, 406]]
+
+  - n: 22
+    nom: Nable de remplissage de la réserve d'eau
+    categorie: fluides
+    emplacement: cockpit tribord, à la poupe
+    a_confirmer: true
+    positions: [[100, 485]]
+
+  - n: 23
+    nom: Réserve d'eau souple (90 l)
+    categorie: fluides
+    emplacement: au-dessus du moteur
+    positions: [[565, 330]]
+
+  - n: 24
+    nom: Disjoncteurs (3)
+    categorie: electricite
+    emplacement: WC ; cabine de poupe ; coffre du cockpit
+    a_confirmer: true
+    positions: [[555, 412], [500, 240], [235, 462]]
+    equipement: [boitier-230-tribord, disj-guindeau, disj-chargeur]
+
+  - n: 25
+    nom: Fusibles de rechange
+    categorie: electricite
+    emplacement: coffre arrière bâbord
+    positions: [[140, 205]]
+    question: PB6
+
+  - n: 26
+    nom: Couverture anti-feu
+    categorie: securite
+    emplacement: sous la table à carte, près de l'extincteur ; une seconde au cockpit, à définir
+    positions: [[730, 210]]

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-label="Plan de bord vu de dessus : aménagement intérieur et pont du Gib'Sea 31, fond de plan vierge.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 905" role="img" aria-label="Plan de bord vu de dessus : aménagement intérieur, pont et objets du bord du Gib'Sea 31.">
   <title>Folio 6 · Plan de bord</title>
-  <desc>Vue de dessus, avant à droite, bâbord en haut, redessinée d'après le plan d'emménagement du constructeur. Fond de plan vierge : les objets du bord (sécurité, armement) y seront placés avec leurs légendes.</desc>
+  <desc>Vue de dessus, avant à droite, bâbord en haut, redessinée d'après le plan d'emménagement du constructeur. Objets du bord (sécurité, gaz, fluides, moteur, électricité) repérés par des pastilles numérotées, légendées par bord ; premier essai d'après la feuille « Emplacement trucs bateau ».</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -52,6 +52,13 @@
     .vaig{fill:none;stroke:var(--vaig)}.vaig-f{fill:var(--vaig)}
     .amg-d{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3}
     .arr{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round}
+    svg{--c-securite:#c8231c;--c-gaz:#d97706;--c-fluides:#0f7f86;--c-moteur:#4b5563;--c-electricite:#7b3fb0;--c-rangement:#8a5a2b}
+    @media (prefers-color-scheme: dark){svg{--c-securite:#e5483f;--c-gaz:#f59e0b;--c-fluides:#22a6ad;--c-moteur:#7b8794;--c-electricite:#a46be0;--c-rangement:#b07a45}}
+    .obj circle{stroke:var(--sheet);stroke-width:1.2}
+    .obj text{fill:#fff;font-family:"IBM Plex Mono",Consolas,monospace;font-size:8.5px;font-weight:600;text-anchor:middle}
+    .obj .conf{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:2.5 2}
+    .securite circle{fill:var(--c-securite)}.gaz circle{fill:var(--c-gaz)}.fluides circle{fill:var(--c-fluides)}
+    .moteur circle{fill:var(--c-moteur)}.electricite circle{fill:var(--c-electricite)}.rangement circle{fill:var(--c-rangement)}
   </style>
   <defs>
     <pattern id="pb-sol-b" width="60" height="18" patternUnits="userSpaceOnUse">
@@ -196,13 +203,77 @@
   <text class="pin mid halo" x="803.8" y="415.2">pied de mât</text>
   <text class="pin mid halo" x="1265.0" y="503.8">puits à chaîne</text>
   <path class="leader" d="M1265.0 492.5 L1265.0 451.2"/>
+  <!-- Objets du bord : pastilles (tirets : à confirmer) -->
+  <g class="obj gaz" transform="translate(233.8 542.8)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">1</text></g>
+  <g class="obj gaz" transform="translate(494.0 635.8)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">1</text></g>
+  <g class="obj securite" transform="translate(278.8 500.8)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">2</text></g>
+  <g class="obj securite" transform="translate(571.2 353.8)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">2</text></g>
+  <g class="obj securite" transform="translate(1055.0 492.5)"><circle r="7.5"/><text y="3">3</text></g>
+  <g class="obj securite" transform="translate(590.0 353.8)"><circle r="7.5"/><text y="3">4</text></g>
+  <g class="obj gaz" transform="translate(233.8 500.8)"><circle r="7.5"/><text y="3">5</text></g>
+  <g class="obj fluides" transform="translate(224.0 380.0)"><circle r="7.5"/><text y="3">6</text></g>
+  <g class="obj moteur" transform="translate(367.2 475.2)"><circle r="7.5"/><text y="3">7</text></g>
+  <g class="obj moteur" transform="translate(441.5 475.2)"><circle r="7.5"/><text y="3">8</text></g>
+  <g class="obj fluides" transform="translate(155.0 316.2)"><circle r="7.5"/><text y="3">9</text></g>
+  <g class="obj securite" transform="translate(503.8 466.2)"><circle r="7.5"/><text y="3">10</text></g>
+  <g class="obj securite" transform="translate(164.0 410.0)"><circle r="7.5"/><text y="3">11</text></g>
+  <g class="obj moteur" transform="translate(441.5 410.0)"><circle r="7.5"/><text y="3">12</text></g>
+  <g class="obj moteur" transform="translate(503.8 421.2)"><circle r="7.5"/><text y="3">13</text></g>
+  <g class="obj securite" transform="translate(164.0 350.0)"><circle r="7.5"/><text y="3">14</text></g>
+  <g class="obj securite" transform="translate(470.0 505.2)"><circle r="7.5"/><text y="3">15</text></g>
+  <g class="obj rangement" transform="translate(323.8 500.8)"><circle r="7.5"/><text y="3">16</text></g>
+  <g class="obj securite" transform="translate(608.8 353.8)"><circle r="7.5"/><text y="3">17</text></g>
+  <g class="obj electricite" transform="translate(1208.8 421.2)"><circle r="7.5"/><text y="3">18</text></g>
+  <g class="obj electricite" transform="translate(256.2 500.8)"><circle r="7.5"/><text y="3">19</text></g>
+  <g class="obj electricite" transform="translate(410.0 383.8)"><circle r="7.5"/><text y="3">20</text></g>
+  <g class="obj fluides" transform="translate(301.2 500.8)"><circle r="7.5"/><text y="3">21</text></g>
+  <g class="obj fluides" transform="translate(155.0 560.0)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">22</text></g>
+  <g class="obj fluides" transform="translate(503.8 443.8)"><circle r="7.5"/><text y="3">23</text></g>
+  <g class="obj electricite" transform="translate(496.2 505.2)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">24</text></g>
+  <g class="obj electricite" transform="translate(455.0 376.2)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">24</text></g>
+  <g class="obj electricite" transform="translate(256.2 542.8)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">24</text></g>
+  <g class="obj electricite" transform="translate(185.0 350.0)"><circle r="7.5"/><text y="3">25</text></g>
+  <g class="obj securite" transform="translate(627.5 353.8)"><circle r="7.5"/><text y="3">26</text></g>
   <text class="ts mid" x="605" y="211">BÂBORD</text>
   <text class="ts mid" x="605" y="672">TRIBORD</text>
   <text class="tb" x="1329" y="443">AV</text>
   <text class="tb end" x="72" y="443">AR</text>
-  <!-- Zones de légende réservées (phase 3) -->
+  <!-- Légendes des objets -->
   <rect class="bound" x="20" y="20" width="1360" height="150"/>
-  <text class="pin" x="28" y="34">légendes (bâbord)</text>
-  <rect class="bound" x="20" y="700" width="1360" height="180"/>
-  <text class="pin" x="28" y="714">légendes (tribord)</text>
+  <text class="pin" x="28" y="34">objets du bord · bâbord</text>
+  <rect class="bound" x="20" y="700" width="1360" height="196"/>
+  <text class="pin" x="28" y="714">objets du bord · tribord</text>
+  <g class="obj securite" transform="translate(40.0 48.0)"><circle r="7.5"/><text y="3">4</text></g><text class="t" style="font-size:11.5px" x="54" y="52"><tspan class="tb" style="font-size:11.5px">Pyrotechnie (fumigènes, fusées…)</tspan> : logettes marquées sous la table à carte</text>
+  <g class="obj fluides" transform="translate(40.0 65.0)"><circle r="7.5"/><text y="3">6</text></g><text class="t" style="font-size:11.5px" x="54" y="69"><tspan class="tb" style="font-size:11.5px">Réservoir de gazole (80 l)</tspan> : derrière la cabine de poupe, accessible depuis la cabine <tspan class="tu">(PB3)</tspan></text>
+  <g class="obj fluides" transform="translate(40.0 82.0)"><circle r="7.5"/><text y="3">9</text></g><text class="t" style="font-size:11.5px" x="54" y="86"><tspan class="tb" style="font-size:11.5px">Nable de gazole</tspan> : pont bâbord, à la poupe</text>
+  <g class="obj securite" transform="translate(40.0 99.0)"><circle r="7.5"/><text y="3">11</text></g><text class="t" style="font-size:11.5px" x="54" y="103"><tspan class="tb" style="font-size:11.5px">Pompe de cale manuelle</tspan> : cockpit bâbord (équipier de descente) <tspan class="tu">(PB5)</tspan></text>
+  <g class="obj moteur" transform="translate(40.0 116.0)"><circle r="7.5"/><text y="3">12</text></g><text class="t" style="font-size:11.5px" x="54" y="120"><tspan class="tb" style="font-size:11.5px">Tableau de commande du moteur</tspan> : sous la première marche de la descente <tspan class="tu">(PB4)</tspan></text>
+  <g class="obj moteur" transform="translate(40.0 133.0)"><circle r="7.5"/><text y="3">13</text></g><text class="t" style="font-size:11.5px" x="54" y="137"><tspan class="tb" style="font-size:11.5px">Moteur</tspan> : sous la descente, accessible depuis la descente et depuis les WC</text>
+  <g class="obj securite" transform="translate(710.0 48.0)"><circle r="7.5"/><text y="3">14</text></g><text class="t" style="font-size:11.5px" x="724" y="52"><tspan class="tb" style="font-size:11.5px">Gilets de sauvetage</tspan> : coffre arrière bâbord <tspan class="tu">(PB6)</tspan></text>
+  <g class="obj securite" transform="translate(710.0 65.0)"><circle r="7.5"/><text y="3">17</text></g><text class="t" style="font-size:11.5px" x="724" y="69"><tspan class="tb" style="font-size:11.5px">Pinoches</tspan> : logettes marquées sous la table à carte</text>
+  <g class="obj electricite" transform="translate(710.0 82.0)"><circle r="7.5"/><text y="3">18</text></g><text class="t" style="font-size:11.5px" x="724" y="86"><tspan class="tb" style="font-size:11.5px">Boîtier de dérivation du guindeau (et fusible de commande)</tspan> : au fond de la cabine de proue, au plus près de l'étrave</text>
+  <g class="obj electricite" transform="translate(710.0 99.0)"><circle r="7.5"/><text y="3">20</text></g><text class="t" style="font-size:11.5px" x="724" y="103"><tspan class="tb" style="font-size:11.5px">Batterie de servitude</tspan> : cabine de poupe, sous la pièce amovible de la couchette</text>
+  <g class="obj electricite" transform="translate(710.0 116.0)"><circle r="7.5"/><text y="3">25</text></g><text class="t" style="font-size:11.5px" x="724" y="120"><tspan class="tb" style="font-size:11.5px">Fusibles de rechange</tspan> : coffre arrière bâbord <tspan class="tu">(PB6)</tspan></text>
+  <g class="obj securite" transform="translate(710.0 133.0)"><circle r="7.5"/><text y="3">26</text></g><text class="t" style="font-size:11.5px" x="724" y="137"><tspan class="tb" style="font-size:11.5px">Couverture anti-feu</tspan> : sous la table à carte, près de l'extincteur ; une seconde au cockpit, à définir</text>
+  <g class="obj gaz" transform="translate(40.0 728.0)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">1</text></g><text class="t" style="font-size:11.5px" x="54" y="732"><tspan class="tb" style="font-size:11.5px">Vanne de coupure de gaz</tspan> : coffre du cockpit, près de la bouteille ; placard sous l'évier, cabinet de toilette <tspan class="tu">(PB1)</tspan></text>
+  <g class="obj securite" transform="translate(40.0 745.0)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">2</text></g><text class="t" style="font-size:11.5px" x="54" y="749"><tspan class="tb" style="font-size:11.5px">Extincteurs (2)</tspan> : coffre du cockpit ; sous la table à carte</text>
+  <g class="obj securite" transform="translate(40.0 762.0)"><circle r="7.5"/><text y="3">3</text></g><text class="t" style="font-size:11.5px" x="54" y="766"><tspan class="tb" style="font-size:11.5px">Coupe-câble (pince monseigneur)</tspan> : coffre avant tribord « outillage » <tspan class="tu">(PB2)</tspan></text>
+  <g class="obj gaz" transform="translate(40.0 779.0)"><circle r="7.5"/><text y="3">5</text></g><text class="t" style="font-size:11.5px" x="54" y="783"><tspan class="tb" style="font-size:11.5px">Bouteille de gaz</tspan> : coffre du cockpit, au plus près de la poupe</text>
+  <g class="obj moteur" transform="translate(40.0 796.0)"><circle r="7.5"/><text y="3">7</text></g><text class="t" style="font-size:11.5px" x="54" y="800"><tspan class="tb" style="font-size:11.5px">Manette des gaz</tspan> : cockpit tribord, près de la cabine</text>
+  <g class="obj moteur" transform="translate(40.0 813.0)"><circle r="7.5"/><text y="3">8</text></g><text class="t" style="font-size:11.5px" x="54" y="817"><tspan class="tb" style="font-size:11.5px">Coupe-circuits (étouffoir)</tspan> : tableau de commande du moteur, descente <tspan class="tu">(PB4)</tspan></text>
+  <g class="obj securite" transform="translate(40.0 830.0)"><circle r="7.5"/><text y="3">10</text></g><text class="t" style="font-size:11.5px" x="54" y="834"><tspan class="tb" style="font-size:11.5px">Pompe de cale électrique</tspan> : sous le moteur</text>
+  <g class="obj securite" transform="translate(710.0 728.0)"><circle r="7.5"/><text y="3">15</text></g><text class="t" style="font-size:11.5px" x="724" y="732"><tspan class="tb" style="font-size:11.5px">Grab bag</tspan> : WC</text>
+  <g class="obj rangement" transform="translate(710.0 745.0)"><circle r="7.5"/><text y="3">16</text></g><text class="t" style="font-size:11.5px" x="724" y="749"><tspan class="tb" style="font-size:11.5px">Spi</tspan> : coffre du cockpit</text>
+  <g class="obj electricite" transform="translate(710.0 762.0)"><circle r="7.5"/><text y="3">19</text></g><text class="t" style="font-size:11.5px" x="724" y="766"><tspan class="tb" style="font-size:11.5px">Batterie moteur</tspan> : coffre du cockpit</text>
+  <g class="obj fluides" transform="translate(710.0 779.0)"><circle r="7.5"/><text y="3">21</text></g><text class="t" style="font-size:11.5px" x="724" y="783"><tspan class="tb" style="font-size:11.5px">Bidons de carburant</tspan> : coffre du cockpit</text>
+  <g class="obj fluides" transform="translate(710.0 796.0)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">22</text></g><text class="t" style="font-size:11.5px" x="724" y="800"><tspan class="tb" style="font-size:11.5px">Nable de remplissage de la réserve d'eau</tspan> : cockpit tribord, à la poupe</text>
+  <g class="obj fluides" transform="translate(710.0 813.0)"><circle r="7.5"/><text y="3">23</text></g><text class="t" style="font-size:11.5px" x="724" y="817"><tspan class="tb" style="font-size:11.5px">Réserve d'eau souple (90 l)</tspan> : au-dessus du moteur</text>
+  <g class="obj electricite" transform="translate(710.0 830.0)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">24</text></g><text class="t" style="font-size:11.5px" x="724" y="834"><tspan class="tb" style="font-size:11.5px">Disjoncteurs (3)</tspan> : WC ; cabine de poupe ; coffre du cockpit</text>
+  <text class="pin" x="1380" y="886" text-anchor="end">pastille cerclée de tirets : à confirmer · (PBn) : question</text>
+  <g class="obj securite" transform="translate(40.0 878.0)"><circle r="7.5"/><text y="3"></text></g><text class="ts" x="52" y="882">sécurité</text>
+  <g class="obj gaz" transform="translate(113.6 878.0)"><circle r="7.5"/><text y="3"></text></g><text class="ts" x="125.6" y="882">gaz</text>
+  <g class="obj fluides" transform="translate(156.2 878.0)"><circle r="7.5"/><text y="3"></text></g><text class="ts" x="168.2" y="882">gazole et eau</text>
+  <g class="obj moteur" transform="translate(260.8 878.0)"><circle r="7.5"/><text y="3"></text></g><text class="ts" x="272.8" y="882">moteur</text>
+  <g class="obj electricite" transform="translate(322.0 878.0)"><circle r="7.5"/><text y="3"></text></g><text class="ts" x="334.0" y="882">électricité</text>
+  <g class="obj rangement" transform="translate(414.2 878.0)"><circle r="7.5"/><text y="3"></text></g><text class="ts" x="426.2" y="882">rangement</text>
 </svg>
