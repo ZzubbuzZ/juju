@@ -420,6 +420,34 @@ for i, (lib, val) in enumerate(lignes):
 if B.get("statut") == "estime":
     cart.append(f'<text class="pin" x="{cx + 12}" y="{cy + 40 + 17 * len(lignes) + 2}">d’après des fiches en ligne, à vérifier</text>')
 
+# Profil tribord miniature (avant à droite), silhouette indicative : seules la longueur et le tirant
+# d'eau sont des données ; franc-bord, roof, quille, safran sur aileron et gréement fractionné sont dessinés
+# à vue, et la hauteur du mât, inconnue (PB12), est figurée en tirets au-dessus de la tête de foc.
+KP, PX, PW = 13, 1170, 332          # px par mètre, x de l'arrière, y de la flottaison
+def pp(x, z):                       # x en m depuis l'arrière, z en m au-dessus de la flottaison
+    return f"{PX + KP * x:.1f} {PW - KP * z:.1f}"
+def ppath(cls, *pts, close=True):
+    return f'<path class="{cls}" d="M' + " L".join(pp(*p) for p in pts) + (' Z"' if close else '"') + "/>"
+L, T = B["longueur_hors_tout_m"], B["tirant_eau_m"]
+MAT, HF = 6.0, 9.5                  # pied de mât (m depuis l'arrière), hauteur de la tête de foc (à vue)
+prof = [
+    '<g class="profil">',
+    ppath("amg-b", (0.15, 1.0), (L - 0.05, 1.25), (L, 1.2), (L - 0.7, 0), (L - 1.6, -0.45),
+          (1.2, -0.45), (0.3, 0), (0, 0.9)),                                     # coque
+    ppath("amg-f", (3.4, 1.07), (3.7, 1.55), (6.6, 1.55), (7.2, 1.17)),           # roof
+    ppath("dn", (4.3, -0.42), (5.5, -0.42), (5.25, -T), (4.55, -T)),               # quille
+    ppath("dn", (0.55, -0.1), (1.15, -0.42), (1.0, -1.35), (0.65, -1.35)),         # aileron et safran
+    f'<path class="n w2" d="M{pp(MAT, 1.55)} L{pp(MAT, HF)}"/>',                  # mât jusqu'à la tête de foc
+    f'<path class="u" d="M{pp(MAT, HF)} L{pp(MAT, HF + 2.2)}"/>',                 # haut du mât : hauteur inconnue
+    f'<path class="amg-l" d="M{pp(MAT, HF)} L{pp(L - 0.1, 1.22)} M{pp(MAT, HF + 2.2)} L{pp(0.2, 1.0)}"/>',  # étai, pataras
+    f'<path class="bound" d="M{PX - 12} {PW} H{PX + KP * L + 14}"/>',              # flottaison
+    f'<text class="pin" x="{PX + KP * (MAT + 0.4):.0f}" y="{PW - KP * (HF + 1.6):.0f}">tirant d’air ?</text>',
+    f'<text class="pin tu" x="{PX + KP * (MAT + 0.4):.0f}" y="{PW - KP * (HF + 0.8):.0f}">({B["question_tirant_air"]})</text>',
+    f'<text class="pin end" x="{PX - 16}" y="{PW + 3}">flottaison</text>',
+    f'<text class="pin" x="{PX + KP * 5.6:.0f}" y="{PW + KP * T - 2:.0f}">{m(T)}</text>',
+    f'<text class="ts mid" x="{PX + KP * L / 2:.0f}" y="{PW + KP * T + 16:.0f}">profil tribord · {m(L)}</text>',
+    '</g>']
+
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" role="img" aria-label="Plan de bord vu de dessus : aménagement intérieur, pont et objets du bord du Gib'Sea 31.">
   <title>Folio 6 · Plan de bord</title>
   <desc>Vue de dessus, avant à droite, bâbord en haut, redessinée d'après le plan d'emménagement du constructeur. Objets du bord (sécurité, gaz, fluides, moteur, électricité) repérés par des pastilles numérotées, légendées par bord ; premier essai d'après la feuille « Emplacement trucs bateau ».</desc>
@@ -437,6 +465,8 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" role="i
   ''' + "\n  ".join(leg) + '''
   <!-- Caractéristiques du bateau -->
   ''' + "\n  ".join(cart) + '''
+  <!-- Profil tribord miniature -->
+  ''' + "\n  ".join(prof) + '''
 </svg>
 '''
 (ICI / "folio-6-plan-de-bord.svg").write_text(svg, encoding="utf-8")

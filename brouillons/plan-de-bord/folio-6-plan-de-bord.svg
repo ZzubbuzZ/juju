@@ -327,4 +327,20 @@
   <text class="t" x="1147" y="645">Tirant d’air</text>
   <text class="t tu end" x="1363" y="645">? (PB12)</text>
   <text class="pin" x="1147" y="664">d’après des fiches en ligne, à vérifier</text>
+  <!-- Profil tribord miniature -->
+  <g class="profil">
+  <path class="amg-b" d="M1172.0 319.0 L1293.5 315.8 L1294.2 316.4 L1285.0 332.0 L1273.3 337.9 L1185.6 337.9 L1173.9 332.0 L1170.0 320.3 Z"/>
+  <path class="amg-f" d="M1214.2 318.1 L1218.1 311.9 L1255.8 311.9 L1263.6 316.8 Z"/>
+  <path class="dn" d="M1225.9 337.5 L1241.5 337.5 L1238.2 354.8 L1229.2 354.8 Z"/>
+  <path class="dn" d="M1177.2 333.3 L1185.0 337.5 L1183.0 349.6 L1178.5 349.6 Z"/>
+  <path class="n w2" d="M1248.0 311.9 L1248.0 208.5"/>
+  <path class="u" d="M1248.0 208.5 L1248.0 179.9"/>
+  <path class="amg-l" d="M1248.0 208.5 L1292.8 316.1 M1248.0 179.9 L1172.6 319.0"/>
+  <path class="bound" d="M1158 332 H1308.15"/>
+  <text class="pin" x="1253" y="188">tirant d’air ?</text>
+  <text class="pin tu" x="1253" y="198">(PB12)</text>
+  <text class="pin end" x="1154" y="335">flottaison</text>
+  <text class="pin" x="1243" y="353">1,75 m</text>
+  <text class="ts mid" x="1232" y="371">profil tribord · 9,55 m</text>
+  </g>
 </svg>
