@@ -259,7 +259,7 @@ A(path("amg", (560, 255), (560, 265), (480, 265)))
 A(path("amg", (560, 172), (560, 47)))
 A(path("amg", (480, 52), (480, 165)))
 A(path("amg", (480, 112), (560, 112)))       # placard
-A(porte((560, 172), (560, 255), (631.9, 213.5)))
+A(porte((560, 172), (560, 255), (488.1, 213.5)))   # s'ouvre vers la cabine
 
 A('<!-- Table à carte et son siège ; contre le bord, le tableau de servitude -->')
 A(rect("mat", 575, 100, 635, 180))           # siège, aligné sur la table côté bâbord
@@ -285,7 +285,7 @@ A(ellipse("amg", 530, 545, 38, 26))          # lavabo
 A(rect("amg-b", 405, 545, 475, 590))           # caillebotis
 for x in range(412, 475, 9):
     A(path("amg-l", (x, 548), (x, 587)))
-A(porte((580, 472), (580, 390), (652, 430)))
+A(porte((580, 472), (580, 390), (508, 430)))   # s'ouvre vers le cabinet
 
 A('<!-- Cuisine (tribord) -->')
 A(rect("amg-b", 585, 485, 665, 548))           # réchaud deux feux
