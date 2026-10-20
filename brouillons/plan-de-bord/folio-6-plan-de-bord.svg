@@ -279,7 +279,7 @@
   <g class="obj electricite" transform="translate(710.0 100.0)"><circle r="7.5"/><text y="3">34</text></g><text class="t leg" x="724" y="104.0"><tspan font-weight="600">Coupe-circuits 12 V</tspan> : sous la 1re marche fixe de la descente (bâbord)</text>
   <g class="obj fluides" transform="translate(710.0 113.5)"><circle r="7.5"/><text y="3">35</text></g><text class="t leg" x="724" y="117.5"><tspan font-weight="600">Ballon d'eau chaude</tspan> : sous la table à carte</text>
   <g class="obj securite" transform="translate(710.0 127.0)"><circle r="7.5"/><text y="3">37</text></g><text class="t leg" x="724" y="131.0"><tspan font-weight="600">Couvertures anti-feu (2)</tspan> : sous la table à carte, près de l'extincteur ; coffre du cockpit, près de l'extincteur</text>
-  <g class="obj gaz" transform="translate(40.0 726.0)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">1</text></g><text class="t leg" x="54" y="730.0"><tspan font-weight="600">Vanne de coupure de gaz</tspan> : coffre du cockpit, près de la bouteille ; placard sous le lavabo du cabinet de toilette</text>
+  <g class="obj gaz" transform="translate(40.0 726.0)"><circle class="conf" r="10"/><circle r="7.5"/><text y="3">1</text></g><text class="t leg" x="54" y="730.0"><tspan font-weight="600">Vanne de coupure de gaz</tspan> : coffre du cockpit, près de la bouteille ; placard sous le lavabo, à gauche, dans le cabinet de toilette</text>
   <g class="obj securite" transform="translate(40.0 739.5)"><circle r="7.5"/><text y="3">2</text></g><text class="t leg" x="54" y="743.5"><tspan font-weight="600">Extincteurs (2)</tspan> : coffre du cockpit ; sous la table à carte</text>
   <g class="obj securite" transform="translate(40.0 753.0)"><circle r="7.5"/><text y="3">3</text></g><text class="t leg" x="54" y="757.0"><tspan font-weight="600">Coupe-câble (pince monseigneur)</tspan> : coffre avant tribord du carré, « outillage »</text>
   <g class="obj gaz" transform="translate(40.0 766.5)"><circle r="7.5"/><text y="3">5</text></g><text class="t leg" x="54" y="770.5"><tspan font-weight="600">Bouteille de gaz</tspan> : coffre du cockpit, au plus près de la poupe</text>
@@ -288,7 +288,7 @@
   <g class="obj securite" transform="translate(40.0 807.0)"><circle r="7.5"/><text y="3">10</text></g><text class="t leg" x="54" y="811.0"><tspan font-weight="600">Pompe de cale électrique</tspan> : sous le moteur ; commande sous la 1re marche fixe de la descente (tribord)</text>
   <g class="obj securite" transform="translate(40.0 820.5)"><circle r="7.5"/><text y="3">11</text></g><text class="t leg" x="54" y="824.5"><tspan font-weight="600">Pompe de cale manuelle</tspan> : hiloire tribord du cockpit, à la poupe ; poignée dans l'équipet de la descente</text>
   <g class="obj moteur" transform="translate(40.0 834.0)"><circle r="7.5"/><text y="3">12</text></g><text class="t leg" x="54" y="838.0"><tspan font-weight="600">Tableau de commande du moteur</tspan> : sous la 1re marche fixe de la descente (tribord)</text>
-  <g class="obj moteur" transform="translate(40.0 847.5)"><circle r="7.5"/><text y="3">13</text></g><text class="t leg" x="54" y="851.5"><tspan font-weight="600">Moteur</tspan> : derrière la partie amovible de la descente, au niveau des WC, dans l'axe ; trappes d'accès par la partie amovible de la descente et par le cabinet de toilette</text>
+  <g class="obj moteur" transform="translate(40.0 847.5)"><circle r="7.5"/><text y="3">13</text></g><text class="t leg" x="54" y="851.5"><tspan font-weight="600">Moteur</tspan> : derrière la partie amovible de la descente, dans l'axe ; trappes par la descente et par le cabinet de toilette</text>
   <g class="obj securite" transform="translate(40.0 861.0)"><circle r="7.5"/><text y="3">15</text></g><text class="t leg" x="54" y="865.0"><tspan font-weight="600">Grab bag</tspan> : WC</text>
   <g class="obj rangement" transform="translate(40.0 874.5)"><circle r="7.5"/><text y="3">16</text></g><text class="t leg" x="54" y="878.5"><tspan font-weight="600">Spi</tspan> : coffre du cockpit</text>
   <g class="obj electricite" transform="translate(710.0 726.0)"><circle r="7.5"/><text y="3">19</text></g><text class="t leg" x="724" y="730.0"><tspan font-weight="600">Batterie moteur</tspan> : coffre du cockpit, contre la cloison du cabinet de toilette</text>
@@ -311,4 +311,20 @@
   <g class="obj electricite" transform="translate(322.0 892.0)"><circle r="7.5"/><text y="3"></text></g><text class="ts" x="334.0" y="896">électricité</text>
   <g class="obj rangement" transform="translate(414.2 892.0)"><circle r="7.5"/><text y="3"></text></g><text class="ts" x="426.2" y="896">rangement</text>
   <g class="obj moteur" transform="translate(494.0 892.0)"><rect class="tr" x="-7.5" y="-6.5" width="15" height="13" rx="2"/><text y="3"></text></g><text class="ts" x="506.0" y="896">trappe d’accès</text>
+  <!-- Caractéristiques du bateau -->
+  <rect class="callout" x="1135" y="520" width="240" height="152" rx="2"/>
+  <text class="tb" x="1147" y="540">Gib'Sea 31 · caractéristiques</text>
+  <text class="t" x="1147" y="560">Longueur hors tout</text>
+  <text class="t end" x="1363" y="560">9,55 m</text>
+  <text class="t" x="1147" y="577">Longueur à la flottaison</text>
+  <text class="t end" x="1363" y="577">8,10 m</text>
+  <text class="t" x="1147" y="594">Largeur</text>
+  <text class="t end" x="1363" y="594">3,11 m</text>
+  <text class="t" x="1147" y="611">Tirant d’eau</text>
+  <text class="t end" x="1363" y="611">1,75 m</text>
+  <text class="t" x="1147" y="628">Déplacement (lège)</text>
+  <text class="t end" x="1363" y="628">≈ 3 990 kg</text>
+  <text class="t" x="1147" y="645">Tirant d’air</text>
+  <text class="t tu end" x="1363" y="645">? (PB12)</text>
+  <text class="pin" x="1147" y="664">d’après des fiches en ligne, à vérifier</text>
 </svg>

@@ -350,7 +350,8 @@ el.append(text("pin mid halo", 1580, 410, "puits à chaîne"))
 el.append(path("leader", (1580, 395), (1580, 340)))
 
 # --- Objets du bord (phase 2) : pastilles numérotées et légendes ---
-OBJ = yaml.safe_load((ICI / "objets.yaml").read_text(encoding="utf-8"))["objets"]
+DONNEES = yaml.safe_load((ICI / "objets.yaml").read_text(encoding="utf-8"))
+OBJ, BATEAU = DONNEES["objets"], DONNEES["bateau"]
 CAT = [("securite", "sécurité"), ("gaz", "gaz"), ("fluides", "gazole et eau"), ("moteur", "moteur"),
        ("electricite", "électricité"), ("rangement", "rangement")]
 
@@ -401,6 +402,24 @@ for c, nom in CAT:
     x += 24 + 6.2 * len(nom)
 leg.append(trappe({"categorie": "moteur", "n": ""}, x, 892) + f'<text class="ts" x="{x + 12}" y="896">trappe d’accès</text>')
 
+def m(v, u="m"):
+    return f"{v:.2f}".replace(".", ",") + f" {u}"
+B = BATEAU
+lignes = [("Longueur hors tout", m(B["longueur_hors_tout_m"])), ("Longueur à la flottaison", m(B["longueur_flottaison_m"])),
+          ("Largeur", m(B["largeur_m"])), ("Tirant d’eau", m(B["tirant_eau_m"])),
+          ("Déplacement (lège)", f"≈ {B['deplacement_kg']:,} kg".replace(",", " ")),
+          ("Tirant d’air", m(B["tirant_air_m"]) if B.get("tirant_air_m") else None)]
+cx, cy = 1135, 520
+cart = [f'<rect class="callout" x="{cx}" y="{cy}" width="240" height="{34 + 17 * len(lignes) + 16}" rx="2"/>',
+        f'<text class="tb" x="{cx + 12}" y="{cy + 20}">{B["modele"]} · caractéristiques</text>']
+for i, (lib, val) in enumerate(lignes):
+    y = cy + 40 + 17 * i
+    cart.append(f'<text class="t" x="{cx + 12}" y="{y}">{lib}</text>')
+    cart.append(f'<text class="t end" x="{cx + 228}" y="{y}">{val}</text>' if val else
+                f'<text class="t tu end" x="{cx + 228}" y="{y}">? ({B["question_tirant_air"]})</text>')
+if B.get("statut") == "estime":
+    cart.append(f'<text class="pin" x="{cx + 12}" y="{cy + 40 + 17 * len(lignes) + 2}">d’après des fiches en ligne, à vérifier</text>')
+
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" role="img" aria-label="Plan de bord vu de dessus : aménagement intérieur, pont et objets du bord du Gib'Sea 31.">
   <title>Folio 6 · Plan de bord</title>
   <desc>Vue de dessus, avant à droite, bâbord en haut, redessinée d'après le plan d'emménagement du constructeur. Objets du bord (sécurité, gaz, fluides, moteur, électricité) repérés par des pastilles numérotées, légendées par bord ; premier essai d'après la feuille « Emplacement trucs bateau ».</desc>
@@ -416,7 +435,41 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" role="i
   <rect class="bound" x="20" y="700" width="1360" height="204"/>
   <text class="pin" x="28" y="714">objets du bord · tribord</text>
   ''' + "\n  ".join(leg) + '''
+  <!-- Caractéristiques du bateau -->
+  ''' + "\n  ".join(cart) + '''
 </svg>
 '''
 (ICI / "folio-6-plan-de-bord.svg").write_text(svg, encoding="utf-8")
+
+
+def pour_inkscape(svg):
+    """Copie à styles explicites : couleurs du thème clair écrites en dur (sans var()), fond verrouillé,
+    pastilles et trappes du plan dans un calque à part, identifiées pN-i / tN-i (objet N, emplacement i)."""
+    sans_media = re.sub(r"@media[^{]*\{svg\{[^}]*\}\}", "", svg)
+    V = dict(kv for bloc in re.findall(r"svg\{(--[^}]*)\}", sans_media)
+             for kv in re.findall(r"(--[\w-]+):([^;}]+)", bloc))
+    svg = re.sub(r"\n\s*@media[^{]*\{svg\{[^}]*\}\}", "", svg)
+    svg = re.sub(r"\n\s*svg\{--[^}]*\}", "", svg)
+    svg = re.sub(r"var\((--[\w-]+)\)", lambda m: V[m.group(1)].strip(), svg)
+    ids = []
+    for o in OBJ:
+        ids += [f"p{o['n']}-{i}" for i in range(len(o["positions"]))]
+        ids += [f"t{o['n']}-{i}" for i in range(len(o.get("trappes", [])))]
+    lg = svg.split("\n")
+    i0 = next(i for i, l in enumerate(lg) if l.lstrip().startswith('<g class="obj'))
+    plan = [l.replace('<g class="obj', f'<g id="{k}" class="obj', 1) for k, l in zip(ids, lg[i0:i0 + len(ids)])]
+    reste = lg[:i0] + lg[i0 + len(ids):]
+    deb = next(i for i, l in enumerate(reste) if "</style>" in l) + 1
+    fin = max(i for i, l in enumerate(reste) if l.strip() == "</svg>")
+    svg = "\n".join(reste[:deb]
+        + ['  <g id="fond" inkscape:groupmode="layer" inkscape:label="Fond (verrouillé)" sodipodi:insensitive="true">']
+        + reste[deb:fin]
+        + ['  </g>', '  <g id="pastilles" inkscape:groupmode="layer" inkscape:label="Pastilles à placer">']
+        + plan + ['  </g>'] + reste[fin:])
+    return svg.replace('<svg xmlns="http://www.w3.org/2000/svg"',
+        '<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"'
+        ' xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"', 1)
+
+
+(ICI / "folio-6-plan-de-bord-inkscape.svg").write_text(pour_inkscape(svg), encoding="utf-8")
 print("ok")
