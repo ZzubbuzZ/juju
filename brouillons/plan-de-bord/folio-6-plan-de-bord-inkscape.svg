@@ -128,7 +128,7 @@
   <path class="amg" d="M500.0 325.2 L500.0 231.5"/>
   <path class="amg" d="M440.0 235.2 L440.0 320.0"/>
   <path class="amg" d="M440.0 280.2 L500.0 280.2"/>
-  <path class="amg" d="M500.0 325.2 L553.9 356.4"/><path class="amg-l" d="M500.0 387.5 A62.2 62.2 0 0 0 553.9 356.4"/>
+  <path class="amg" d="M500.0 325.2 L446.1 356.4"/><path class="amg-l" d="M500.0 387.5 A62.2 62.2 0 0 1 446.1 356.4"/>
   <!-- Table à carte et son siège ; contre le bord, le tableau de servitude -->
   <rect class="mat" x="511.2" y="271.2" width="45.0" height="60.0"/>
   <path class="amg" d="M500.0 271.2 L646.2 271.2"/>
@@ -156,7 +156,7 @@
   <path class="amg-l" d="M416.0 607.2 L416.0 636.5"/>
   <path class="amg-l" d="M422.8 607.2 L422.8 636.5"/>
   <path class="amg-l" d="M429.5 607.2 L429.5 636.5"/>
-  <path class="amg" d="M515.0 550.2 L569.0 518.8"/><path class="amg-l" d="M515.0 488.8 A61.5 61.5 0 0 1 569.0 518.8"/>
+  <path class="amg" d="M515.0 550.2 L461.0 518.8"/><path class="amg-l" d="M515.0 488.8 A61.5 61.5 0 0 0 461.0 518.8"/>
   <!-- Cuisine (tribord) -->
   <rect class="amg-b" x="518.8" y="560.0" width="60.0" height="47.2"/>
   <rect class="amg" x="526.2" y="567.5" width="20.2" height="32.2"/>
