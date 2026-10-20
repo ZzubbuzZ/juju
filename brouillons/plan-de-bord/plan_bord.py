@@ -464,12 +464,12 @@ else:
     prof += [f'<text class="pin tu" x="{PX + KP * 6.5:.0f}" y="{PW - KP * HM:.0f}">tirant d’air ? ({B["question_tirant_air"]})</text>']
 prof.append('</g>')
 
-# Cote de la largeur sur le plan, au maître-bau du dessin (bord le plus écarté de l'axe)
+# Cote de la largeur, hors du navire derrière le tableau arrière ; lignes de rappel
+# tangentes à la coque au maître-bau du dessin (bord le plus écarté de l'axe)
 xb, yb = min(bord_babord(), key=lambda q: q[1])
-xb += 190                                      # décalée vers l'avant, hors des pastilles de la table à carte
-yb = min(q[1] for q in bord_babord() if abs(q[0] - xb) < 3)
-Xb, Yh, Yt = OX + K * xb, OY + K * yb, OY + K * M(yb)
-prof += [f'<path class="arr" d="M{Xb:.1f} {Yh:.1f} V{Yt:.1f} M{Xb - 3:.1f} {Yh + 6:.1f} L{Xb:.1f} {Yh:.1f} L{Xb + 3:.1f} {Yh + 6:.1f}'
+Xb, Xm, Yh, Yt = OX + K * -55, OX + K * xb, OY + K * yb, OY + K * M(yb)
+prof += [f'<path class="amg-l" d="M{Xm:.1f} {Yh:.1f} H{Xb - 4:.1f} M{Xm:.1f} {Yt:.1f} H{Xb - 4:.1f}"/>',
+         f'<path class="arr" d="M{Xb:.1f} {Yh:.1f} V{Yt:.1f} M{Xb - 3:.1f} {Yh + 6:.1f} L{Xb:.1f} {Yh:.1f} L{Xb + 3:.1f} {Yh + 6:.1f}'
          f' M{Xb - 3:.1f} {Yt - 6:.1f} L{Xb:.1f} {Yt:.1f} L{Xb + 3:.1f} {Yt - 6:.1f}"/>',
          f'<text class="ts mid halo" x="{Xb - 5:.1f}" y="{OY + K * (CY + 95):.1f}" transform="rotate(-90 {Xb - 5:.1f} {OY + K * (CY + 95):.1f})">largeur {m(B["largeur_m"])}</text>']
 

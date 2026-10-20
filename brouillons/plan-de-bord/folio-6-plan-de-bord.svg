@@ -348,6 +348,7 @@
   <text class="pin" x="1315" y="268">tirant</text>
   <text class="pin" x="1315" y="278">d’air</text>
   </g>
-  <path class="arr" d="M748.1 246.6 V628.9 M745.1 252.6 L748.1 246.6 L751.1 252.6 M745.1 622.9 L748.1 628.9 L751.1 622.9"/>
-  <text class="ts mid halo" x="743.1" y="509.0" transform="rotate(-90 743.1 509.0)">largeur 3,11 m</text>
+  <path class="amg-l" d="M605.6 234.4 H34.8 M605.6 641.1 H34.8"/>
+  <path class="arr" d="M38.8 234.4 V641.1 M35.8 240.4 L38.8 234.4 L41.8 240.4 M35.8 635.1 L38.8 641.1 L41.8 635.1"/>
+  <text class="ts mid halo" x="33.8" y="509.0" transform="rotate(-90 33.8 509.0)">largeur 3,11 m</text>
 </svg>
