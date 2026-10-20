@@ -10,11 +10,27 @@
 # categorie : securite, gaz, fluides (gazole, eau), moteur, electricite, rangement.
 # a_confirmer : la feuille dit « à confirmer avec Julie ».
 
+# bateau : caractéristiques du Gib'Sea 31 (plan Joubert-Nivelt, Gibert Marine), relevées le 20/10
+# sur des fiches en ligne (sailboatdata.com, sailingtheweb.com, yachtdatabase.com), non vérifiées
+# sur les papiers du bord ; d'où statut: estime. Le tirant d'air n'est donné par aucune fiche (PB12) :
+# 12,50 m girouette comprise, donné par l'utilisateur le 20/10, à faire vérifier par Julie.
+bateau:
+  modele: Gib'Sea 31
+  statut: estime
+  longueur_hors_tout_m: 9.55
+  longueur_flottaison_m: 8.10
+  largeur_m: 3.11
+  tirant_eau_m: 1.75
+  deplacement_kg: 3990
+  tirant_air_m: 12.50
+  tirant_air_a_confirmer: true     # girouette comprise ; à faire vérifier par Julie
+  question_tirant_air: PB12
+
 objets:
   - n: 1
     nom: Vanne de coupure de gaz
     categorie: gaz
-    emplacement: coffre du cockpit, près de la bouteille ; placard sous le lavabo du cabinet de toilette
+    emplacement: coffre du cockpit, près de la bouteille ; placard sous le lavabo, à gauche, dans le cabinet de toilette
     a_confirmer: true
     positions: [[150, 522], [553, 579]]
 
@@ -87,7 +103,7 @@ objets:
   - n: 13
     nom: Moteur
     categorie: moteur
-    emplacement: derrière la partie amovible de la descente, au niveau des WC, dans l'axe ; trappes d'accès par la partie amovible de la descente et par le cabinet de toilette
+    emplacement: derrière la partie amovible de la descente, dans l'axe ; trappes par la descente et par le cabinet de toilette
     positions: [[418, 352]]
     trappes: [[580, 378], [507, 400]]
 
