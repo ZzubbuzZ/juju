@@ -12,7 +12,8 @@
 
 # bateau : caractéristiques du Gib'Sea 31 (plan Joubert-Nivelt, Gibert Marine), relevées le 20/10
 # sur des fiches en ligne (sailboatdata.com, sailingtheweb.com, yachtdatabase.com), non vérifiées
-# sur les papiers du bord ; d'où statut: estime. Le tirant d'air n'est donné nulle part (PB12).
+# sur les papiers du bord ; d'où statut: estime. Le tirant d'air n'est donné par aucune fiche (PB12) :
+# 12,50 m girouette comprise, donné par l'utilisateur le 20/10, à faire vérifier par Julie.
 bateau:
   modele: Gib'Sea 31
   statut: estime
@@ -21,7 +22,8 @@ bateau:
   largeur_m: 3.11
   tirant_eau_m: 1.75
   deplacement_kg: 3990
-  tirant_air_m:
+  tirant_air_m: 12.50
+  tirant_air_a_confirmer: true     # girouette comprise ; à faire vérifier par Julie
   question_tirant_air: PB12
 
 objets:

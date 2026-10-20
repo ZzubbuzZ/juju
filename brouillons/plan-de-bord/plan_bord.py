@@ -406,47 +406,72 @@ def m(v, u="m"):
     return f"{v:.2f}".replace(".", ",") + f" {u}"
 B = BATEAU
 lignes = [("Longueur hors tout", m(B["longueur_hors_tout_m"])), ("Longueur à la flottaison", m(B["longueur_flottaison_m"])),
-          ("Largeur", m(B["largeur_m"])), ("Tirant d’eau", m(B["tirant_eau_m"])),
+          ("Largeur", m(B["largeur_m"])), ("Tirant d’eau (dérive basse)", m(B["tirant_eau_m"])),
           ("Déplacement (lège)", f"≈ {B['deplacement_kg']:,} kg".replace(",", " ")),
-          ("Tirant d’air", m(B["tirant_air_m"]) if B.get("tirant_air_m") else None)]
+          ("Tirant d’air (girouette)", m(B["tirant_air_m"]) + (" ?" if B.get("tirant_air_a_confirmer") else "")
+           if B.get("tirant_air_m") else None)]
 cx, cy = 1135, 520
 cart = [f'<rect class="callout" x="{cx}" y="{cy}" width="240" height="{34 + 17 * len(lignes) + 16}" rx="2"/>',
         f'<text class="tb" x="{cx + 12}" y="{cy + 20}">{B["modele"]} · caractéristiques</text>']
 for i, (lib, val) in enumerate(lignes):
     y = cy + 40 + 17 * i
     cart.append(f'<text class="t" x="{cx + 12}" y="{y}">{lib}</text>')
-    cart.append(f'<text class="t end" x="{cx + 228}" y="{y}">{val}</text>' if val else
+    cart.append(f'<text class="t end{" tu" if val.endswith("?") else ""}" x="{cx + 228}" y="{y}">{val}</text>' if val else
                 f'<text class="t tu end" x="{cx + 228}" y="{y}">? ({B["question_tirant_air"]})</text>')
 if B.get("statut") == "estime":
     cart.append(f'<text class="pin" x="{cx + 12}" y="{cy + 40 + 17 * len(lignes) + 2}">d’après des fiches en ligne, à vérifier</text>')
 
-# Profil tribord miniature (avant à droite), silhouette indicative : seules la longueur et le tirant
-# d'eau sont des données ; franc-bord, roof, quille, safran sur aileron et gréement fractionné sont dessinés
-# à vue, et la hauteur du mât, inconnue (PB12), est figurée en tirets au-dessus de la tête de foc.
-KP, PX, PW = 13, 1170, 332          # px par mètre, x de l'arrière, y de la flottaison
-def pp(x, z):                       # x en m depuis l'arrière, z en m au-dessus de la flottaison
-    return f"{PX + KP * x:.1f} {PW - KP * z:.1f}"
-def ppath(cls, *pts, close=True):
-    return f'<path class="{cls}" d="M' + " L".join(pp(*p) for p in pts) + (' Z"' if close else '"') + "/>"
-L, T = B["longueur_hors_tout_m"], B["tirant_eau_m"]
-MAT, HF = 6.0, 9.5                  # pied de mât (m depuis l'arrière), hauteur de la tête de foc (à vue)
-prof = [
-    '<g class="profil">',
-    ppath("amg-b", (0.15, 1.0), (L - 0.05, 1.25), (L, 1.2), (L - 0.7, 0), (L - 1.6, -0.45),
-          (1.2, -0.45), (0.3, 0), (0, 0.9)),                                     # coque
-    ppath("amg-f", (3.4, 1.07), (3.7, 1.55), (6.6, 1.55), (7.2, 1.17)),           # roof
-    ppath("dn", (4.3, -0.42), (5.5, -0.42), (5.25, -T), (4.55, -T)),               # quille
-    ppath("dn", (0.55, -0.1), (1.15, -0.42), (1.0, -1.35), (0.65, -1.35)),         # aileron et safran
-    f'<path class="n w2" d="M{pp(MAT, 1.55)} L{pp(MAT, HF)}"/>',                  # mât jusqu'à la tête de foc
-    f'<path class="u" d="M{pp(MAT, HF)} L{pp(MAT, HF + 2.2)}"/>',                 # haut du mât : hauteur inconnue
-    f'<path class="amg-l" d="M{pp(MAT, HF)} L{pp(L - 0.1, 1.22)} M{pp(MAT, HF + 2.2)} L{pp(0.2, 1.0)}"/>',  # étai, pataras
-    f'<path class="bound" d="M{PX - 12} {PW} H{PX + KP * L + 14}"/>',              # flottaison
-    f'<text class="pin" x="{PX + KP * (MAT + 0.4):.0f}" y="{PW - KP * (HF + 1.6):.0f}">tirant d’air ?</text>',
-    f'<text class="pin tu" x="{PX + KP * (MAT + 0.4):.0f}" y="{PW - KP * (HF + 0.8):.0f}">({B["question_tirant_air"]})</text>',
-    f'<text class="pin end" x="{PX - 16}" y="{PW + 3}">flottaison</text>',
-    f'<text class="pin" x="{PX + KP * 5.6:.0f}" y="{PW + KP * T - 2:.0f}">{m(T)}</text>',
-    f'<text class="ts mid" x="{PX + KP * L / 2:.0f}" y="{PW + KP * T + 16:.0f}">profil tribord · {m(L)}</text>',
-    '</g>']
+# Profil tribord miniature (avant à droite), redessiné d'après le plan de voilure du constructeur
+# (profil-constructeur.jpeg, points relevés en pixels de l'image) : mis à l'échelle sur la longueur hors tout
+# (horizontalement) et sur le tirant d'air (verticalement) ; sans tirant d'air, haut du mât en tirets (PB12).
+L, T, TA = B["longueur_hors_tout_m"], B["tirant_eau_m"], B.get("tirant_air_m")
+IX0, IX1, IWL, ITOP = 81.7, 428.3, 533.3, 38     # image : arrière, étrave, flottaison, tête de mât (girouette)
+KP, PX, PW = 12, 1185, 332                         # px par mètre, x de l'arrière, y de la flottaison
+SX, SZ = L / (IX1 - IX0), (TA or 12.5) / (IWL - ITOP)
+def pi(X, Y):                                      # point de l'image → point du folio
+    return f"{PX + KP * SX * (X - IX0):.1f} {PW - KP * SZ * (IWL - Y):.1f}"
+def ipath(cls, *pts, close=True):
+    return f'<path class="{cls}" d="M' + " L".join(pi(*q) for q in pts) + (' Z"' if close else '"') + "/>"
+COQUE = [(88.3, 498.3), (428.3, 492.7), (393.3, 536), (360, 546), (306.7, 551.7), (206.7, 551.7),
+         (160, 548.3), (113.3, 541.7), (96.7, 533.3), (81.7, 528.3)]
+ROOF = [(175, 487), (180, 481.7), (290, 481.7), (295, 487)]
+LEST = [(206.7, 551.7), (208.3, 576), (270, 573.3), (305, 553.3)]          # aileron de quille
+DERIVE = [(220, 576), (241.7, 606.7), (270, 574)]                         # dérive basse
+SAFRAN = [(81.7, 528.3), (100, 530), (105, 571.7), (81.7, 570)]
+GV = [(276.7, 44.7), (283.3, 440), (154.7, 444.7)]                        # grand-voile : tête, point d'amure, point d'écoute
+GENOIS = [(288, 86.7), (426.7, 490), (294.7, 488.7)]
+xd = PX + KP * SX * (241.7 - IX0)
+prof = ['<g class="profil">',
+        ipath("amg-f", *GV), ipath("amg-f", *GENOIS),
+        f'<path class="amg-l" d="M{pi(276.7, 38)} L{pi(88.3, 498.3)}"/>',      # pataras
+        ipath("amg-b", *COQUE), ipath("amg-f", *ROOF),
+        ipath("dn", *LEST), ipath("amg-b", *DERIVE), ipath("dn", *SAFRAN),
+        f'<path class="n w2" d="M{pi(285.3, 490)} L{pi(276.7, 38)}"/>',       # mât
+        f'<path class="bound" d="M{PX - 12} {PW} H{PX + KP * L + 14}"/>',      # flottaison
+        f'<text class="pin end" x="{PX - 16}" y="{PW + 3}">flottaison</text>',
+        f'<text class="pin" x="{xd + 12:.0f}" y="{PW + KP * SZ * (606.7 - IWL):.0f}">{m(T)}</text>',
+        f'<text class="ts mid" x="{PX + KP * L / 2:.0f}" y="{PW + KP * SZ * (606.7 - IWL) + 16:.0f}">profil tribord · {m(L)}</text>']
+HM = SZ * (IWL - ITOP)
+if TA:   # cote du tirant d'air, à droite de l'étrave
+    xc, conf = PX + KP * (L + 0.9), B.get("tirant_air_a_confirmer")
+    prof += [f'<path class="amg-l" d="M{pi(281, 38)} H{xc + 4}"/>',
+             f'<path class="arr" d="M{xc} {PW} V{PW - KP * HM:.1f} M{xc - 3} {PW - KP * HM + 6:.1f} L{xc} {PW - KP * HM:.1f} L{xc + 3} {PW - KP * HM + 6:.1f}'
+             f' M{xc - 3} {PW - 6} L{xc} {PW} L{xc + 3} {PW - 6}"/>',
+             f'<text class="pin{" tu" if conf else ""}" x="{xc + 5:.0f}" y="{PW - KP * HM / 2:.0f}">{m(TA)}{" ?" if conf else ""}</text>',
+             f'<text class="pin" x="{xc + 5:.0f}" y="{PW - KP * HM / 2 + 11:.0f}">tirant</text>',
+             f'<text class="pin" x="{xc + 5:.0f}" y="{PW - KP * HM / 2 + 21:.0f}">d’air</text>']
+else:
+    prof += [f'<text class="pin tu" x="{PX + KP * 6.5:.0f}" y="{PW - KP * HM:.0f}">tirant d’air ? ({B["question_tirant_air"]})</text>']
+prof.append('</g>')
+
+# Cote de la largeur sur le plan, au maître-bau du dessin (bord le plus écarté de l'axe)
+xb, yb = min(bord_babord(), key=lambda q: q[1])
+xb += 190                                      # décalée vers l'avant, hors des pastilles de la table à carte
+yb = min(q[1] for q in bord_babord() if abs(q[0] - xb) < 3)
+Xb, Yh, Yt = OX + K * xb, OY + K * yb, OY + K * M(yb)
+prof += [f'<path class="arr" d="M{Xb:.1f} {Yh:.1f} V{Yt:.1f} M{Xb - 3:.1f} {Yh + 6:.1f} L{Xb:.1f} {Yh:.1f} L{Xb + 3:.1f} {Yh + 6:.1f}'
+         f' M{Xb - 3:.1f} {Yt - 6:.1f} L{Xb:.1f} {Yt:.1f} L{Xb + 3:.1f} {Yt - 6:.1f}"/>',
+         f'<text class="ts mid halo" x="{Xb - 5:.1f}" y="{OY + K * (CY + 95):.1f}" transform="rotate(-90 {Xb - 5:.1f} {OY + K * (CY + 95):.1f})">largeur {m(B["largeur_m"])}</text>']
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" role="img" aria-label="Plan de bord vu de dessus : aménagement intérieur, pont et objets du bord du Gib'Sea 31.">
   <title>Folio 6 · Plan de bord</title>
