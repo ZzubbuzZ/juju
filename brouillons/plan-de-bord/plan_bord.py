@@ -386,11 +386,12 @@ for o in OBJ:
     for x, y in o.get("trappes", []):
         el.append(trappe(o, OX + K * x, OY + K * y))
 leg = []
-for cote, y0, objs in (("bâbord", 50, [o for o in OBJ if o["positions"][0][1] < CY]),
-                       ("tribord", 730, [o for o in OBJ if o["positions"][0][1] >= CY])):
+for cote, y0, ymax, objs in (("bâbord", 50, 160, [o for o in OBJ if o["positions"][0][1] < CY]),
+                             ("tribord", 730, 880, [o for o in OBJ if o["positions"][0][1] >= CY])):
     rangs = (len(objs) + 1) // 2
+    pas = min(13.5, (ymax - y0) / max(rangs - 1, 1))   # interligne resserré si le cadre est plein
     for i, o in enumerate(objs):
-        X, Y = (40 if i < rangs else 710), y0 + 13.5 * (i % rangs)
+        X, Y = (40 if i < rangs else 710), y0 + pas * (i % rangs)
         txt = f'<tspan font-weight="600">{esc(o["nom"])}</tspan> : {esc(o["emplacement"])}'
         if o.get("question"):
             txt += f' <tspan class="tu">({o["question"]})</tspan>'
