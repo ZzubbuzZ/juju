@@ -192,7 +192,7 @@ objets:
   - n: 27
     nom: Fusibles de rechange
     categorie: electricite
-    emplacement: coffre arrière tribord
+    emplacement: coffre avant tribord du carré
     positions: [[1034, 447]]
 
   - n: 28
