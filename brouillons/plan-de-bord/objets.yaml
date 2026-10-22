@@ -38,7 +38,7 @@ objets:
     nom: Extincteurs (2)
     categorie: securite
     emplacement: coffre du cockpit ; sous la table à carte
-    positions: [[179, 525], [679, 210]]
+    positions: [[179, 525], [712, 196]]
 
   - n: 3
     nom: Coupe-câble (pince monseigneur)
@@ -50,7 +50,7 @@ objets:
     nom: Pyrotechnie (fumigènes, fusées…)
     categorie: securite
     emplacement: logettes marquées sous la table à carte
-    positions: [[700, 210]]
+    positions: [[740, 196]]
 
   - n: 5
     nom: Bouteille de gaz
@@ -129,7 +129,7 @@ objets:
     nom: Pinoches
     categorie: securite
     emplacement: logettes marquées sous la table à carte
-    positions: [[720, 210]]
+    positions: [[726, 216]]
 
   - n: 18
     nom: Boîtier de dérivation du guindeau (et fusible de commande)
@@ -255,8 +255,8 @@ objets:
   - n: 37
     nom: Couvertures anti-feu (2)
     categorie: securite
-    emplacement: équipet de la descente, au-dessus de la première marche ; coffre du cockpit, près de l'extincteur
-    positions: [[532, 280], [179, 501]]
+    emplacement: équipet de la descente, au-dessus de la marche la plus haute ; coffre du cockpit, près de l'extincteur
+    positions: [[482, 280], [179, 501]]
 
   - n: 38
     nom: Vannes et passe-coques (4)
