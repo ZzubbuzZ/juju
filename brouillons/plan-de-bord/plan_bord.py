@@ -290,7 +290,7 @@ A(path("amg", (400, 598), (400, 390), (580, 390)))
 A(path("amg", (580, 472), (580, 598)))
 A(path("amg", (480, 500), (580, 500)))
 A(path("amg", (480, 500), (480, 598)))
-A(circle("amg-b", 445, 445, 26))               # WC
+A(circle("amg-b", 445, 445, 26))               # WC (légende avec les noms de zones)
 A(circle("amg-b", 455, 412, 8))                # pompe
 A(ellipse("amg", 530, 545, 38, 26))          # lavabo
 A(rect("amg-b", 405, 545, 475, 590))           # caillebotis
@@ -332,6 +332,7 @@ dpt = dossier(1090, 1700)
 A(path("mat", (1150, dp[0][1]), *dp, *[(x, M(y)) for x, y in reversed(dpt[:-1])],
        (1090, M(dpt[0][1])), (1090, 395), (1150, 395), close=True))
 A(path("amg", (1150, 287), (1210, 302), (1210, 342), (1150, 357), close=True))  # trapèze, sur le bord de la couchette
+A(path("axe", (1150, CY), (XT, CY)))            # l'axe traverse le trapèze, par-dessus le matelas
 
 
 def y_dossier(x):
@@ -363,6 +364,8 @@ LBL = [
 el.append('<!-- Noms de zones (provisoires) -->')
 for s, x, y, *r in LBL:
     el.append(text("ts mid halo", x, y, s, *r))
+el.append(text("pin mid", 445, 449, "WC"))
+el.append(text("pin mid", 713.5, 547, "glacière"))
 el.append(text("pin mid halo", 520, 87, "placard"))
 el.append(text("pin mid halo", 520, 141, "lavabo"))
 el.append(text("pin mid halo", (la[0]+lb[0]+lc[0]+ld[0])/4, (la[1]+lb[1]+lc[1]+ld[1])/4 + 3, "batterie"))
@@ -451,26 +454,32 @@ if B.get("statut") == "estime":
 # (profil-constructeur.jpeg, points relevés en pixels de l'image) : mis à l'échelle sur la longueur hors tout
 # (horizontalement) et sur le tirant d'air (verticalement) ; sans tirant d'air, haut du mât en tirets (PB12).
 L, T, TA = B["longueur_hors_tout_m"], B["tirant_eau_m"], B.get("tirant_air_m")
-IX0, IX1, IWL, ITOP = 81.7, 428.3, 533.3, 38     # image : arrière, étrave, flottaison, tête de mât (girouette)
+IX0, IX1, IWL, ITOP = 80, 430, 533.3, 38     # image : arrière, étrave, flottaison, tête de mât (girouette)
 KP, PX, PW = 12, 1185, 332                         # px par mètre, x de l'arrière, y de la flottaison
 SX, SZ = L / (IX1 - IX0), (TA or 12.5) / (IWL - ITOP)
 def pi(X, Y):                                      # point de l'image → point du folio
     return f"{PX + KP * SX * (X - IX0):.1f} {PW - KP * SZ * (IWL - Y):.1f}"
 def ipath(cls, *pts, close=True):
     return f'<path class="{cls}" d="M' + " L".join(pi(*q) for q in pts) + (' Z"' if close else '"') + "/>"
-COQUE = [(88.3, 498.3), (428.3, 492.7), (393.3, 536), (360, 546), (306.7, 551.7), (206.7, 551.7),
-         (160, 548.3), (113.3, 541.7), (96.7, 533.3), (81.7, 528.3)]
-ROOF = [(175, 487), (180, 481.7), (290, 481.7), (295, 487)]
-LEST = [(206.7, 551.7), (208.3, 576), (270, 573.3), (305, 553.3)]          # aileron de quille
-DERIVE = [(220, 576), (241.7, 606.7), (270, 574)]                         # dérive basse
-SAFRAN = [(81.7, 528.3), (100, 530), (105, 571.7), (81.7, 570)]
+COQUE = [(89.3, 499.3), (430, 493.7), (400, 530), (390, 540), (350, 547.5), (310, 551.3), (300, 552.5),
+         (198.6, 551.4), (150, 547), (118.6, 543),                         # œuvres vives, jusqu'au skeg
+         (113, 545), (110, 550), (107, 568.6), (105.7, 571.4), (100, 571.5),  # skeg devant le safran
+         (100, 530), (80, 527.1)]                                          # tableau arrière incliné
+BORDE = [(95.7, 508), (250, 506), (380, 503), (424.8, 500), (400, 530), (250, 531), (120, 530),
+         (82.9, 528.6), (91.4, 520)]                                       # bordé foncé, entre le liston et la flottaison
+ROOF = [(177, 496), (179, 481.5), (287, 481), (296, 493)]                 # rouf, son avant en pente
+HUBLOTS = [(185, 212), (227, 280)]                                        # vitrages du rouf
+LEST = [(207.5, 551.3), (207.5, 575.5), (270, 573.7), (305, 552.5)]        # aileron de quille
+DERIVE = [(220, 575.5), (241.7, 606.7), (270, 573.7)]                     # dérive basse
+SAFRAN = [(80, 527.1), (100, 530), (100, 571.5), (82, 569)]
 GV = [(276.7, 44.7), (283.3, 440), (154.7, 444.7)]                        # grand-voile : tête, point d'amure, point d'écoute
-GENOIS = [(288, 86.7), (426.7, 490), (294.7, 488.7)]
+GENOIS = [(288, 86.7), (427, 491), (208, 478)]                            # génois : point d'écoute en arrière du mât
 xd = PX + KP * SX * (241.7 - IX0)
 prof = ['<g class="profil">',
-        ipath("amg-f", *GV), ipath("amg-f", *GENOIS),
-        f'<path class="amg-l" d="M{pi(276.7, 38)} L{pi(88.3, 498.3)}"/>',      # pataras
-        ipath("amg-b", *COQUE), ipath("amg-f", *ROOF),
+        ipath("amg-f", *GENOIS), ipath("amg-f", *GV),                       # le génois passe derrière la grand-voile
+        f'<path class="amg-l" d="M{pi(276.7, 38)} L{pi(89.3, 499.3)}"/>',      # pataras
+        ipath("amg-b", *COQUE), ipath("amg-f", *BORDE), ipath("amg-b", *ROOF),
+        *[f'<path class="amg-l" d="M{pi(a, 490)} L{pi(b, 490)}"/>' for a, b in HUBLOTS],
         ipath("dn", *LEST), ipath("amg-b", *DERIVE), ipath("dn", *SAFRAN),
         f'<path class="n w2" d="M{pi(285.3, 490)} L{pi(276.7, 38)}"/>',       # mât
         f'<path class="flot" d="M{PX - 12} {PW} H{PX + KP * L + 14}"/>',       # flottaison, trait mixte fort
