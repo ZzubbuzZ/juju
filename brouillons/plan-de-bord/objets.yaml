@@ -15,7 +15,9 @@
 # sur les papiers du bord ; d'où statut: estime. Le tirant d'air n'est donné par aucune fiche (PB12) :
 # 12,50 m girouette comprise, donné par l'utilisateur le 20/10, à faire vérifier par Julie.
 bateau:
+  nom: Juju
   modele: Gib'Sea 31
+  annee: 1984
   statut: estime
   longueur_hors_tout_m: 9.55
   longueur_flottaison_m: 8.10
