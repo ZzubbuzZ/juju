@@ -441,7 +441,7 @@ lignes = [("Longueur hors tout", m(B["longueur_hors_tout_m"])), ("Longueur à la
            if B.get("tirant_air_m") else None)]
 cx, cy = 1135, 520
 cart = [f'<rect class="callout" x="{cx}" y="{cy}" width="240" height="{34 + 17 * len(lignes) + 16}" rx="2"/>',
-        f'<text class="tb" x="{cx + 12}" y="{cy + 20}">{B["nom"]} · {B["modele"]} de {B["annee"]}</text>']
+        f'<text class="tb" x="{cx + 12}" y="{cy + 20}">{B["nom"].upper()} · {B["modele"]} de {B["annee"]}</text>']
 for i, (lib, val) in enumerate(lignes):
     y = cy + 40 + 17 * i
     cart.append(f'<text class="t" x="{cx + 12}" y="{y}">{lib}</text>')
@@ -476,35 +476,53 @@ GV = [(276.7, 44.7), (283.3, 440), (154.7, 444.7)]                        # gran
 GENOIS = [(288, 86.7), (427, 491), (208, 478)]                            # génois : point d'écoute en arrière du mât
 
 
-def coutures(tete, ecoute, guindant, pas):
-    """Coutures d'une voile à laizes horizontales : perpendiculaires à la chute (tête → point d'écoute),
-    de la chute au guindant (droite par la tête et le point d'amure `guindant`), espacées de `pas`."""
-    (hx, hy), (ex, ey) = tete, ecoute
+def coutures(depart, fin, bords, pas, debut=None):
+    """Coutures perpendiculaires au bord `depart` → `fin`, tous les `pas` à partir de `debut` (défaut : un pas),
+    tracées vers l'intérieur de la voile jusqu'au premier des segments `bords` rencontré."""
+    (hx, hy), (ex, ey) = depart, fin
     lx, ly = ex - hx, ey - hy
     n = (lx * lx + ly * ly) ** .5
     ux, uy = lx / n, ly / n
-    px, py = -uy, ux                                   # perpendiculaire à la chute, vers le guindant
-    if px * (guindant[0] - hx) + py * (guindant[1] - hy) < 0:
+    px, py = -uy, ux
+    cx = sum(q[0] for b in bords for q in b) / (2 * len(bords))
+    cy = sum(q[1] for b in bords for q in b) / (2 * len(bords))
+    if px * (cx - hx) + py * (cy - hy) < 0:            # vers l'intérieur de la voile
         px, py = -px, -py
-    gx, gy = guindant[0] - hx, guindant[1] - hy
-    traits = []
-    for i in range(1, int(n / pas)):
-        ax, ay = hx + ux * pas * i, hy + uy * pas * i
-        # intersection de a + s·p avec la droite tête + r·g
-        det = px * -gy + gx * py
-        s_ = ((hx - ax) * -gy + gx * (hy - ay)) / det
-        traits.append(f'M{pi(ax, ay)} L{pi(ax + px * s_, ay + py * s_)}')
+    traits, d = [], debut or pas
+    while d < n - 1:
+        ax, ay = hx + ux * d, hy + uy * d
+        best = None
+        for (bx, by), (b2x, b2y) in bords:             # a + s·p = b + r·(b2 - b), 0 ≤ r ≤ 1, s > 0
+            gx, gy = b2x - bx, b2y - by
+            det = px * -gy + gx * py
+            if abs(det) < 1e-9:
+                continue
+            s_ = ((bx - ax) * -gy + gx * (by - ay)) / det
+            r = (px * (by - ay) - py * (bx - ax)) / det
+            if s_ > 1e-6 and -1e-6 <= r <= 1 + 1e-6 and (best is None or s_ < best):
+                best = s_
+        if best:
+            traits.append(f'M{pi(ax, ay)} L{pi(ax + px * best, ay + py * best)}')
+        d += pas
     return f'<path class="amg-l" style="stroke-width:.45" d="{" ".join(traits)}"/>'
+
+
+# génois coupé à onglet, comme sur le plan de voilure : couture d'onglet du guindant au point d'écoute ;
+# au-dessus, laizes perpendiculaires à la chute ; au-dessous, perpendiculaires à la bordure
+(GT, GA, GE), ONGLET = GENOIS, (378.5, 350)
+COUT_GENOIS = (coutures(GT, GE, [(GT, ONGLET), (ONGLET, GE)], 30)
+               + coutures(GA, GE, [(ONGLET, GE), (GA, ONGLET)], 29, debut=22)
+               + f'<path class="amg-l" style="stroke-width:.45" d="M{pi(*ONGLET)} L{pi(*GE)}"/>')
 
 
 xd = PX + KP * SX * (241.7 - IX0)
 prof = ['<g class="profil">',
-        ipath("amg-f", *GENOIS), coutures(GENOIS[0], GENOIS[2], GENOIS[1], 28),   # le génois passe derrière la grand-voile
-        ipath("amg-f", *GV), coutures(GV[0], GV[2], GV[1], 30),
+        ipath("amg-f", *GENOIS), COUT_GENOIS,   # le génois passe derrière la grand-voile
+        ipath("amg-f", *GV), coutures(GV[0], GV[2], [(GV[0], GV[1]), (GV[1], GV[2])], 30),
         f'<path class="amg-l" d="M{pi(276.7, 38)} L{pi(89.3, 499.3)}"/>',      # pataras
         ipath("amg-b", *COQUE), ipath("amg-f", *BORDE), ipath("amg-b", *ROOF),
         *[f'<path class="amg-l" d="M{pi(a, 490)} L{pi(b, 490)}"/>' for a, b in HUBLOTS],
-        f'<text class="tb" style="font-size:6.5px;font-style:italic" x="{pi(112, 525).split()[0]}" y="{pi(112, 525).split()[1]}">{B["nom"]}</text>',
+        f'<text class="tb" style="font-family:Arial,Helvetica,sans-serif;font-size:6.5px;font-weight:700" x="{pi(112, 525).split()[0]}" y="{pi(112, 525).split()[1]}">{B["nom"].upper()}</text>',
         ipath("dn", *LEST), ipath("amg-b", *DERIVE), ipath("dn", *SAFRAN),
         f'<path class="n w2" d="M{pi(285.3, 490)} L{pi(276.7, 38)}"/>',       # mât
         f'<path class="flot" d="M{PX - 12} {PW} H{PX + KP * L + 14}"/>',       # flottaison, trait mixte fort
