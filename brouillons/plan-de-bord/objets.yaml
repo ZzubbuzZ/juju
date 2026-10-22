@@ -32,7 +32,7 @@ objets:
     categorie: gaz
     emplacement: coffre du cockpit, près de la bouteille ; placard sous le lavabo, à gauche, dans le cabinet de toilette
     a_confirmer: true
-    positions: [[150, 522], [462, 558]]
+    positions: [[150, 522], [566, 514]]
 
   - n: 2
     nom: Extincteurs (2)
@@ -44,7 +44,7 @@ objets:
     nom: Coupe-câble (pince monseigneur)
     categorie: securite
     emplacement: coffre avant tribord du carré, « outillage »
-    positions: [[1010, 450]]
+    positions: [[1022, 450]]
 
   - n: 4
     nom: Pyrotechnie (fumigènes, fusées…)
@@ -111,7 +111,7 @@ objets:
     nom: Gilets de sauvetage
     categorie: securite
     emplacement: coffre arrière bâbord du carré
-    positions: [[835, 185]]
+    positions: [[815, 190]]
 
   - n: 15
     nom: Grab bag
@@ -168,7 +168,7 @@ objets:
     nom: Vache à eau (90 l)
     categorie: fluides
     emplacement: au-dessus du moteur
-    positions: [[142, 341]]
+    positions: [[162, 341]]
 
   - n: 24
     nom: Disjoncteurs 230 V du bord (4)
@@ -193,7 +193,7 @@ objets:
     nom: Fusibles de rechange
     categorie: electricite
     emplacement: coffre avant tribord du carré
-    positions: [[1034, 447]]
+    positions: [[1048, 447]]
 
   - n: 28
     nom: Différentiel
@@ -255,8 +255,8 @@ objets:
   - n: 37
     nom: Couvertures anti-feu (2)
     categorie: securite
-    emplacement: sous la table à carte, près de l'extincteur ; coffre du cockpit, près de l'extincteur
-    positions: [[740, 210], [179, 501]]
+    emplacement: équipet de la descente, au-dessus de la première marche ; coffre du cockpit, près de l'extincteur
+    positions: [[532, 280], [179, 501]]
 
   - n: 38
     nom: Vannes et passe-coques (4)
