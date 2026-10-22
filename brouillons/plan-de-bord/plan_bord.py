@@ -26,6 +26,8 @@ STYLE = STYLE.replace("  </style>", """    .amg{fill:none;stroke:var(--ink);stro
     .teck-j{fill:none;stroke:var(--teck-j);stroke-width:.9}
     .vaig{fill:none;stroke:var(--vaig)}.vaig-f{fill:var(--vaig)}
     .amg-d{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3}
+    .axe{fill:none;stroke:var(--muted);stroke-width:.6;stroke-dasharray:18 3 2 3}
+    .flot{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-dasharray:18 3 2 3}
     .arr{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round}
     svg{--c-securite:#c8231c;--c-gaz:#d97706;--c-fluides:#0f7f86;--c-moteur:#4b5563;--c-electricite:#7b3fb0;--c-rangement:#8a5a2b}
     @media (prefers-color-scheme: dark){svg{--c-securite:#e5483f;--c-gaz:#f59e0b;--c-fluides:#22a6ad;--c-moteur:#7b8794;--c-electricite:#a46be0;--c-rangement:#b07a45}}
@@ -208,7 +210,11 @@ A(path("sol-b", (640, 265), (640, 230), (760, 230), *mi, (1090, 250), (1150, 250
        (1090, 395), *[(x, M(y)) for x, y in reversed(mi)], (690, M(mi[0][1])), (690, 485),
        (580, 485), (580, 390), (612, 390), (612, 265), close=True))
 
-A(path("bound", (0, CY), (1700, CY)))
+# axe du navire en trait mixte fin (ISO 128), interrompu dans le coffre triangulaire de la cabine de proue,
+# séparé en deux le long de l'axe (arête cachée, prioritaire sur l'axe)
+XT, XV = 1210, dossier(1150, 1700)[-1][0]    # sommet du trapèze, pointe du V des dossiers
+A(path("axe", (0, CY), (XT, CY)))
+A(path("axe", (XV, CY), (1700, CY)))
 
 A('<!-- Cockpit : bancs à lattes, coffre tribord, winches, safran -->')
 A(rect("amg", 75, 185, 400, 460))
@@ -248,6 +254,10 @@ la, lc = (480, 165), (480, YC)
 ld = (400, YC + 80 * 80 / 305)               # sur le bord tribord de la couchette
 lb = (la[0] + ld[0] - lc[0], la[1] + ld[1] - lc[1])   # côtés opposés parallèles
 A(path("amg", la, lc, ld, lb, close=True))
+# coffres sous la couchette : côtés de la pièce amovible prolongés vers la poupe et vers bâbord
+A(path("amg-d", lb, (175, la[1] + (175 - la[0]) * (lb[1] - la[1]) / (lb[0] - la[0]))))
+A(path("amg-d", lb, (lb[0], next(ya + (yb-ya) * (lb[0]-xa) / (xb-xa)
+                                  for (xa, ya), (xb, yb) in zip(bord_lit, bord_lit[1:]) if xa <= lb[0] <= xb))))
 A('</g>')
 A(f'<path class="arr" d="{d_arr}"/>')
 A(path("amg", (430, 40), (430, 79)))         # bord du pont, au-dessus de la cabine
@@ -265,6 +275,7 @@ A('<!-- Table à carte et son siège ; contre le bord, le tableau de servitude -
 A(rect("mat", 575, 100, 635, 180))           # siège, aligné sur la table côté bâbord
 A(path("amg", (560, 100), (755, 100)))       # séparation du tableau de servitude
 A(rect("amg-b", 640, 100, 755, 230))           # table à carte, écartée du bord
+A(rect("amg-d", 697.5, 180, 755, 230))       # équipet sous la table, contre la banquette, ouvert côté puits de dérive
 A(path("amg", (755, 50), (755, 230)))
 
 A('<!-- Descente et sa partie amovible (accès au moteur) -->')
@@ -301,10 +312,10 @@ A(path("amg", (760, 340), (760, 598)))
 A('<!-- Carré : banquettes (le trait côté bord est le dossier), table repliée, pied de mât -->')
 A(path("mat", *db, (1090, 275), (760, 226), close=True))
 A(path("mat", *[(x, M(y)) for x, y in db], (1090, M(275)), (760, M(226)), close=True))
-XC = 925                                     # coffres sous les banquettes : partie arrière et partie avant
-yd = next(y for x, y in db if x >= XC)
-for f in (lambda y: y, M):
-    A(path("amg-d", (XC, f(yd)), (XC, f(226 + (XC - 760) * 49 / 330))))
+for XC in (870, 980):                        # coffres sous les banquettes : trois parties
+    yd = next(y for x, y in db if x >= XC)
+    for f in (lambda y: y, M):
+        A(path("amg-d", (XC, f(yd)), (XC, f(226 + (XC - 760) * 49 / 330))))
 A(rect("amg-f", 825, CY-25, 985, CY+25))     # table repliée, sur l'axe
 A(circle("amg", 965, CY, 11))                # pied de mât, dans la table, à son bout avant
 
@@ -321,6 +332,20 @@ dpt = dossier(1090, 1700)
 A(path("mat", (1150, dp[0][1]), *dp, *[(x, M(y)) for x, y in reversed(dpt[:-1])],
        (1090, M(dpt[0][1])), (1090, 395), (1150, 395), close=True))
 A(path("amg", (1150, 287), (1210, 302), (1210, 342), (1150, 357), close=True))  # trapèze, sur le bord de la couchette
+
+
+def y_dossier(x):
+    """Ordonnée du dossier bâbord à l'abscisse x (interpolée)."""
+    q = dossier(760, 1700)
+    return next(ya + (yb-ya) * (x-xa) / (xb-xa) for (xa, ya), (xb, yb) in zip(q, q[1:]) if xa <= x <= xb)
+
+
+# coffres sous la couchette : base du trapèze prolongée jusqu'au dossier tribord, sommet jusqu'aux
+# deux dossiers ; le coffre triangulaire à l'avant est séparé en deux le long de l'axe
+A(path("amg-d", (1150, 357), (1150, M(y_dossier(1150)))))
+A(path("amg-d", (XT, y_dossier(XT)), (XT, 302)))
+A(path("amg-d", (XT, 342), (XT, M(y_dossier(XT)))))
+A(path("amg-d", (XT, CY), (XV, CY)))
 A(path("amg", (1535, 150), (1535, 494)))     # cloison du puits à chaîne
 
 A('</g>')
@@ -448,7 +473,7 @@ prof = ['<g class="profil">',
         ipath("amg-b", *COQUE), ipath("amg-f", *ROOF),
         ipath("dn", *LEST), ipath("amg-b", *DERIVE), ipath("dn", *SAFRAN),
         f'<path class="n w2" d="M{pi(285.3, 490)} L{pi(276.7, 38)}"/>',       # mât
-        f'<path class="bound" d="M{PX - 12} {PW} H{PX + KP * L + 14}"/>',      # flottaison
+        f'<path class="flot" d="M{PX - 12} {PW} H{PX + KP * L + 14}"/>',       # flottaison, trait mixte fort
         f'<text class="pin end" x="{PX - 16}" y="{PW + 3}">flottaison</text>',
         f'<text class="pin" x="{xd + 12:.0f}" y="{PW + KP * SZ * (606.7 - IWL):.0f}">{m(T)}</text>',
         f'<text class="ts mid" x="{PX + KP * L / 2:.0f}" y="{PW + KP * SZ * (606.7 - IWL) + 16:.0f}">profil tribord · {m(L)}</text>']
