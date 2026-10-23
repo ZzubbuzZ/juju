@@ -26,6 +26,8 @@ STYLE = STYLE.replace("  </style>", """    .amg{fill:none;stroke:var(--ink);stro
     .teck-j{fill:none;stroke:var(--teck-j);stroke-width:.9}
     .vaig{fill:none;stroke:var(--vaig)}.vaig-f{fill:var(--vaig)}
     .amg-d{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3}
+    .amg-p{fill:none;stroke:var(--ink);stroke-width:.8;stroke-dasharray:1.5 2}
+    svg{--ts:#36404b}@media (prefers-color-scheme: dark){svg{--ts:#bcc7d2}}.ts{fill:var(--ts)}
     .axe{fill:none;stroke:var(--muted);stroke-width:.6;stroke-dasharray:18 3 2 3}
     .flot{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-dasharray:18 3 2 3}
     .arr{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round}
@@ -200,15 +202,15 @@ A('</g>')
 
 A('<!-- Planchers, jusqu’au milieu des assises. Niveau bas : carré, cuisine ; '
   'niveau haut : cabine de poupe, table à carte, cabinet de toilette -->')
-A(path("sol-h", (480, 165), (560, 165), (560, 100), (755, 100), (755, 230),
+A(path("sol-h", (480, 165), (560, 165), (560, 100), (760, 100), (760, 230),
        (640, 230), (640, 265), (480, 265), close=True))
 A(path("sol-h", (400, 390), (580, 390), (580, 500), (480, 500), (480, 598), (400, 598), close=True))
 db = dossier(760, 1090)
 mi = [(x, (y + 226 + (x - 760) * 49 / 330) / 2) for x, y in db]   # milieu entre dossier et bord d'assise
 mi = [(760, mi[0][1])] + mi + [(1090, (db[-1][1] + 275) / 2)]
-A(path("sol-b", (640, 265), (640, 230), (760, 230), *mi, (1090, 250), (1150, 250), (1150, 395),
-       (1090, 395), *[(x, M(y)) for x, y in reversed(mi)], (690, M(mi[0][1])), (690, 485),
-       (580, 485), (580, 390), (612, 390), (612, 265), close=True))
+A(path("sol-b", (640, 265), (640, 230), (760, 230), *mi, (1090, 250), (1150, 250), (1150, 357),
+       (1090, 372), *[(x, M(y)) for x, y in reversed(mi)], (690, M(mi[0][1])), (690, 485),
+       (580, 485), (580, 390), (545, 390), (545, 265), close=True))   # de part et d'autre de la partie amovible
 
 # axe du navire en trait mixte fin (ISO 128), interrompu dans le coffre triangulaire de la cabine de proue,
 # séparé en deux le long de l'axe (arête cachée, prioritaire sur l'axe)
@@ -248,6 +250,7 @@ A('<g clip-path="url(#pb-dessous)">')
 A(rect("bg", 175, 0, 480, 400))
 A(path("vaig-f", *bord_lit, (480, 0), (175, 0), close=True))
 A(path("mat", *lit, close=True))
+A(path("amg-p", (75, 265), (400, 265), (400, 460)))   # cloison du cockpit au-dessus de la couchette
 # pièce amovible (accès batterie) : deux côtés forment le coin avant tribord de la couchette,
 # un sommet à l'angle du meuble du lavabo, un autre au niveau de la paroi arrière du cabinet de toilette
 la, lc = (480, 165), (480, YC)
@@ -272,18 +275,18 @@ A(path("amg", (480, 112), (560, 112)))       # placard
 A(porte((560, 255), (560, 172), (488.1, 213.5)))   # s'ouvre vers la cabine
 
 A('<!-- Table à carte et son siège ; contre le bord, le tableau de servitude -->')
-A(rect("mat", 575, 100, 635, 180))           # siège, aligné sur la table côté bâbord
-A(path("amg", (560, 100), (755, 100)))       # séparation du tableau de servitude
-A(rect("amg-b", 640, 100, 755, 230))           # table à carte, écartée du bord
-A(rect("amg-d", 697.5, 180, 755, 230))       # équipet sous la table, contre la banquette, ouvert côté puits de dérive
-A(path("amg", (755, 50), (755, 230)))
+A(rect("mat", 560, 100, 620, 180))           # siège, contre la paroi de la cabine de poupe
+A(path("amg", (560, 100), (760, 100)))       # séparation du tableau de servitude
+A(rect("amg-b", 640, 100, 760, 230))           # table à carte, écartée du bord, contre la cloison du carré
+A(rect("amg-d", 700, 180, 760, 230))         # équipet sous la table, contre la banquette, ouvert côté puits de dérive
+A(path("amg", (760, 50), (760, 230)))        # cloison alignée sur celle de la cuisine
 
 A('<!-- Descente et sa partie amovible (accès au moteur) -->')
 A(rect("amg", 470, 265, 545, 390))
 for x in (495, 520):
     A(path("amg-l", (x, 265), (x, 390)))
-A(rect("amg", 548, 285, 612, 372))
-A(path("amg-l", (580, 285), (580, 372)))     # marche de la partie amovible
+A(rect("amg-b", 548, 285, 596, 372))         # partie amovible, marches peu profondes, plancher de part et d'autre
+A(path("amg-l", (572, 285), (572, 372)))     # marche de la partie amovible
 
 A('<!-- Cabinet de toilette (tribord) -->')
 A(path("amg", (400, 598), (400, 390), (580, 390)))
@@ -303,7 +306,7 @@ A(rect("amg-b", 585, 485, 665, 548))           # réchaud deux feux
 A(rect("amg", 595, 495, 622, 538))
 A(rect("amg", 628, 495, 655, 538))
 A(rect("amg-b", 675, 505, 752, 582))           # glacière
-A(rect("amg-b", 690, 345, 755, 475))           # bloc évier
+A(rect("amg-b", 690, 345, 760, 475))           # bloc évier, contre la cloison du carré
 A(rect("amg", 698, 352, 748, 405, rx=6))
 A(rect("amg", 698, 415, 748, 468, rx=6))
 A(rect("amg-b", 665, 318, 775, 338))           # plan de travail
@@ -330,7 +333,7 @@ A('<!-- Cabine de proue : couchette en V entre les dossiers, qui se rejoignent d
 dp = dossier(1150, 1700)
 dpt = dossier(1090, 1700)
 A(path("mat", (1150, dp[0][1]), *dp, *[(x, M(y)) for x, y in reversed(dpt[:-1])],
-       (1090, M(dpt[0][1])), (1090, 395), (1150, 395), close=True))
+       (1090, M(dpt[0][1])), (1090, 372), (1150, 357), close=True))   # côté tribord du trapèze prolongé jusqu'au carré
 A(path("amg", (1150, 287), (1210, 302), (1210, 342), (1150, 357), close=True))  # trapèze, sur le bord de la couchette
 A(path("axe", (1150, CY), (XT, CY)))            # l'axe traverse le trapèze, par-dessus le matelas
 
@@ -364,17 +367,18 @@ LBL = [
 el.append('<!-- Noms de zones (provisoires) -->')
 for s, x, y, *r in LBL:
     el.append(text("ts mid halo", x, y, s, *r))
-el.append(text("pin mid", 445, 449, "WC"))
-el.append(text("pin mid", 713.5, 547, "glacière"))
-el.append(text("pin mid halo", 520, 87, "placard"))
-el.append(text("pin mid halo", 520, 141, "lavabo"))
-el.append(text("pin mid halo", (la[0]+lb[0]+lc[0]+ld[0])/4, (la[1]+lb[1]+lc[1]+ld[1])/4 + 3, "batterie"))
-el.append(text("pin mid halo", 658, 84, "tableau de servitude"))
-el.append(text("pin mid halo", 264, 430, "coffre"))
-el.append(text("pin mid halo", 600, 328, "amovible", -90))
-el.append(text("pin mid halo", 890, 328, "table repliée"))
-el.append(text("pin mid halo", 965, 292, "pied de mât"))
-el.append(text("pin mid halo", 1580, 410, "puits à chaîne"))
+el.append(text("ts mid", 445, 449, "WC"))
+el.append(text("ts mid", 713.5, 547, "glacière"))
+el.append(text("ts mid halo", 520, 87, "placard"))
+el.append(text("ts mid halo", 520, 141, "lavabo"))
+el.append(text("ts mid halo", (la[0]+lb[0]+lc[0]+ld[0])/4, (la[1]+lb[1]+lc[1]+ld[1])/4 + 3, "batterie"))
+el.append(text("ts mid halo", 658, 84, "tableau de servitude"))
+el.append(text("ts mid halo", 264, 430, "coffre"))
+el.append(text("ts mid halo", 589, 328, "amovible", -90))
+el.append(text("ts mid", 1125, 185, "placard", -90))
+el.append(text("ts mid halo", 890, 328, "table repliée"))
+el.append(text("ts mid halo", 965, 292, "pied de mât"))
+el.append(text("ts mid halo", 1580, 410, "puits à chaîne"))
 el.append(path("leader", (1580, 395), (1580, 340)))
 
 # --- Objets du bord (phase 2) : pastilles numérotées et légendes ---
@@ -425,11 +429,15 @@ for cote, y0, ymax, objs in (("bâbord", 50, 160, [o for o in OBJ if o["position
             txt += f' <tspan class="tu">({o["question"]})</tspan>'
         leg.append(pastille(o, X, Y - 4) + f'<text class="t leg" x="{X + 14}" y="{Y}">{txt}</text>')
 x = 40
-leg.append('<text class="pin" x="1376" y="896" text-anchor="end">pastille cerclée de tirets : à confirmer · (PBn) : question</text>')
+leg.append('<text class="ts" x="1376" y="896" text-anchor="end">pastille cerclée de tirets : à confirmer · (PBn) : question</text>')
 for c, nom in CAT:
     leg.append(pastille({"categorie": c, "n": ""}, x, 892) + f'<text class="ts" x="{x + 12}" y="896">{nom}</text>')
-    x += 24 + 6.2 * len(nom)
+    x += 28 + 5.6 * len(nom)
 leg.append(trappe({"categorie": "moteur", "n": ""}, x, 892) + f'<text class="ts" x="{x + 12}" y="896">trappe d’accès</text>')
+
+# nom du bateau en Arial, aussi en attribut pour les visionneuses qui ignorent le bloc <style>
+SANS = 'font-family="Arial, Helvetica, sans-serif"'
+
 
 def m(v, u="m"):
     return f"{v:.2f}".replace(".", ",") + f" {u}"
@@ -441,14 +449,14 @@ lignes = [("Longueur hors tout", m(B["longueur_hors_tout_m"])), ("Longueur à la
            if B.get("tirant_air_m") else None)]
 cx, cy = 1135, 520
 cart = [f'<rect class="callout" x="{cx}" y="{cy}" width="240" height="{34 + 17 * len(lignes) + 16}" rx="2"/>',
-        f'<text class="tb" x="{cx + 12}" y="{cy + 20}">{B["nom"].upper()} · {B["modele"]} de {B["annee"]}</text>']
+        f'<text class="tb" x="{cx + 12}" y="{cy + 20}"><tspan {SANS}>{B["nom"].upper()}</tspan> · {B["modele"]} de {B["annee"]}</text>']
 for i, (lib, val) in enumerate(lignes):
     y = cy + 40 + 17 * i
     cart.append(f'<text class="t" x="{cx + 12}" y="{y}">{lib}</text>')
     cart.append(f'<text class="t end{" tu" if val.endswith("?") else ""}" x="{cx + 228}" y="{y}">{val}</text>' if val else
                 f'<text class="t tu end" x="{cx + 228}" y="{y}">? ({B["question_tirant_air"]})</text>')
 if B.get("statut") == "estime":
-    cart.append(f'<text class="pin" x="{cx + 12}" y="{cy + 40 + 17 * len(lignes) + 2}">d’après des fiches en ligne, à vérifier</text>')
+    cart.append(f'<text class="ts" x="{cx + 12}" y="{cy + 40 + 17 * len(lignes) + 2}">d’après des fiches en ligne, à vérifier</text>')
 
 # Profil tribord miniature (avant à droite), redessiné d'après le plan de voilure du constructeur
 # (profil-constructeur.jpeg, points relevés en pixels de l'image) : mis à l'échelle sur la longueur hors tout
@@ -522,12 +530,12 @@ prof = ['<g class="profil">',
         f'<path class="amg-l" d="M{pi(276.7, 38)} L{pi(89.3, 499.3)}"/>',      # pataras
         ipath("amg-b", *COQUE), ipath("amg-f", *BORDE), ipath("amg-b", *ROOF),
         *[f'<path class="amg-l" d="M{pi(a, 490)} L{pi(b, 490)}"/>' for a, b in HUBLOTS],
-        f'<text class="tb" style="font-family:Arial,Helvetica,sans-serif;font-size:6.5px;font-weight:700" x="{pi(112, 525).split()[0]}" y="{pi(112, 525).split()[1]}">{B["nom"].upper()}</text>',
+        f'<text class="tb" {SANS} style="font-family:Arial,Helvetica,sans-serif;font-size:6.5px;font-weight:700" x="{pi(112, 525).split()[0]}" y="{pi(112, 525).split()[1]}">{B["nom"].upper()}</text>',
         ipath("dn", *LEST), ipath("amg-b", *DERIVE), ipath("dn", *SAFRAN),
         f'<path class="n w2" d="M{pi(285.3, 490)} L{pi(276.7, 38)}"/>',       # mât
         f'<path class="flot" d="M{PX - 12} {PW} H{PX + KP * L + 14}"/>',       # flottaison, trait mixte fort
-        f'<text class="pin end" x="{PX - 16}" y="{PW + 3}">flottaison</text>',
-        f'<text class="pin" x="{xd + 12:.0f}" y="{PW + KP * SZ * (606.7 - IWL):.0f}">{m(T)}</text>',
+        f'<text class="ts end" x="{PX - 16}" y="{PW + 3}">flottaison</text>',
+        f'<text class="ts" x="{xd + 12:.0f}" y="{PW + KP * SZ * (606.7 - IWL):.0f}">{m(T)}</text>',
         f'<text class="ts mid" x="{PX + KP * L / 2:.0f}" y="{PW + KP * SZ * (606.7 - IWL) + 16:.0f}">profil tribord · {m(L)}</text>']
 HM = SZ * (IWL - ITOP)
 if TA:   # cote du tirant d'air, à droite de l'étrave
@@ -535,11 +543,11 @@ if TA:   # cote du tirant d'air, à droite de l'étrave
     prof += [f'<path class="amg-l" d="M{pi(281, 38)} H{xc + 4}"/>',
              f'<path class="arr" d="M{xc} {PW} V{PW - KP * HM:.1f} M{xc - 3} {PW - KP * HM + 6:.1f} L{xc} {PW - KP * HM:.1f} L{xc + 3} {PW - KP * HM + 6:.1f}'
              f' M{xc - 3} {PW - 6} L{xc} {PW} L{xc + 3} {PW - 6}"/>',
-             f'<text class="pin{" tu" if conf else ""}" x="{xc + 5:.0f}" y="{PW - KP * HM / 2:.0f}">{m(TA)}{" ?" if conf else ""}</text>',
-             f'<text class="pin" x="{xc + 5:.0f}" y="{PW - KP * HM / 2 + 11:.0f}">tirant</text>',
-             f'<text class="pin" x="{xc + 5:.0f}" y="{PW - KP * HM / 2 + 21:.0f}">d’air</text>']
+             f'<text class="ts{" tu" if conf else ""}" x="{xc + 5:.0f}" y="{PW - KP * HM / 2:.0f}">{m(TA)}{" ?" if conf else ""}</text>',
+             f'<text class="ts" x="{xc + 5:.0f}" y="{PW - KP * HM / 2 + 13:.0f}">tirant</text>',
+             f'<text class="ts" x="{xc + 5:.0f}" y="{PW - KP * HM / 2 + 26:.0f}">d’air</text>']
 else:
-    prof += [f'<text class="pin tu" x="{PX + KP * 6.5:.0f}" y="{PW - KP * HM:.0f}">tirant d’air ? ({B["question_tirant_air"]})</text>']
+    prof += [f'<text class="ts tu" x="{PX + KP * 6.5:.0f}" y="{PW - KP * HM:.0f}">tirant d’air ? ({B["question_tirant_air"]})</text>']
 prof.append('</g>')
 
 # Cote de la largeur, hors du navire derrière le tableau arrière ; lignes de rappel
@@ -562,9 +570,9 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" role="i
   <text class="tb end" x="{OX-8:.0f}" y="{OY+K*CY+5:.0f}">AR</text>
   <!-- Légendes des objets -->
   <rect class="bound" x="20" y="20" width="1360" height="150"/>
-  <text class="pin" x="28" y="34">objets du bord · bâbord</text>
+  <text class="ts" x="28" y="34">objets du bord · bâbord</text>
   <rect class="bound" x="20" y="700" width="1360" height="204"/>
-  <text class="pin" x="28" y="714">objets du bord · tribord</text>
+  <text class="ts" x="28" y="714">objets du bord · tribord</text>
   ''' + "\n  ".join(leg) + '''
   <!-- Caractéristiques du bateau -->
   ''' + "\n  ".join(cart) + '''
