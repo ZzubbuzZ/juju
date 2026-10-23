@@ -250,7 +250,7 @@ objets:
   - n: 36
     nom: Vache à eau (90 l)
     categorie: fluides
-    emplacement: au-dessus du moteur
+    emplacement: en arrière du moteur
     positions: [[162, 341]]
 
   - n: 37
