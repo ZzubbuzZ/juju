@@ -1,14 +1,14 @@
 # Objets du bord placés sur le plan de bord (folio 6), phase 2.
 #
 # Source : feuille Google « Emplacement trucs bateau » (Drive, version lue le 19/10,
-# 38 lignes), reprise dans l'ordre de la feuille, et réponses de l'utilisateur aux
-# questions PB1 à PB11 du 19/10.
+# 38 lignes), et réponses de l'utilisateur aux questions PB1 à PB11 du 19/10. Objets rangés et
+# numérotés dans l'ordre alphabétique de leur nom (renumérotation du 23/10).
 #
 # positions : coordonnées du plan (repère de plan_bord.py, avant à droite, bâbord en haut,
 # axe à y = 322), une par emplacement, estimées d'après le texte de la feuille.
 # trappes : trappes d'accès (repères carrés).
 # categorie : securite, gaz, fluides (gazole, eau), moteur, electricite, rangement.
-# a_confirmer : la feuille dit « à confirmer avec Julie ».
+# a_confirmer : la feuille dit « à confirmer avec Julie » (plus aucun depuis le 23/10).
 
 # bateau : caractéristiques du Gib'Sea 31 (plan Joubert-Nivelt, Gibert Marine), relevées le 20/10
 # sur des fiches en ligne (sailboatdata.com, sailingtheweb.com, yachtdatabase.com), non vérifiées
@@ -21,7 +21,7 @@ bateau:
   statut: estime
   longueur_hors_tout_m: 9.55
   longueur_flottaison_m: 8.10
-  largeur_m: 3.11
+  largeur_m: 3.30                  # donnée par l'utilisateur le 23/10
   tirant_eau_m: 1.75
   deplacement_kg: 3990
   tirant_air_m: 12.50
@@ -30,235 +30,234 @@ bateau:
 
 objets:
   - n: 1
-    nom: Vanne de coupure de gaz
-    categorie: gaz
-    emplacement: coffre du cockpit, près de la bouteille ; placard sous le lavabo, à gauche, dans le cabinet de toilette
-    a_confirmer: true
-    positions: [[150, 522], [566, 514]]
+    nom: Ballon d'eau chaude
+    categorie: fluides
+    emplacement: sous la table à carte
+    positions: [[734, 138]]
 
   - n: 2
-    nom: Extincteurs (2)
-    categorie: securite
-    emplacement: coffre du cockpit ; sous la table à carte
-    positions: [[179, 525], [712, 196]]
-
-  - n: 3
-    nom: Coupe-câble (pince monseigneur)
-    categorie: securite
-    emplacement: coffre avant tribord du carré, « outillage »
-    positions: [[1022, 450]]
-
-  - n: 4
-    nom: Pyrotechnie (fumigènes, fusées…)
-    categorie: securite
-    emplacement: logettes marquées sous la table à carte
-    positions: [[740, 196]]
-
-  - n: 5
-    nom: Bouteille de gaz
-    categorie: gaz
-    emplacement: coffre du cockpit, au plus près de la poupe
-    positions: [[122, 505]]
-
-  - n: 6
-    nom: Réservoir de gazole (80 l)
-    categorie: fluides
-    emplacement: sous le banc bâbord du cockpit, à l'arrière de la cabine de poupe ; accès depuis la cabine
-    positions: [[130, 228]]
-
-  - n: 7
-    nom: Manette des gaz
-    categorie: moteur
-    emplacement: cockpit tribord, près de la cabine
-    positions: [[351, 379]]
-
-  - n: 8
-    nom: Étouffoir (tirette d'arrêt du moteur)
-    categorie: moteur
-    emplacement: tableau de commande du moteur, descente
-    positions: [[507, 355]]
-
-  - n: 9
-    nom: Nable de gazole
-    categorie: fluides
-    emplacement: pont bâbord, à la poupe
-    positions: [[90, 155]]
-
-  - n: 10
-    nom: Pompe de cale électrique
-    categorie: securite
-    emplacement: sous le moteur ; commande sous la 1re marche fixe de la descente (tribord)
-    positions: [[458, 341]]
-
-  - n: 11
-    nom: Pompe de cale manuelle
-    categorie: securite
-    emplacement: hiloire tribord du cockpit, à la poupe ; poignée dans l'équipet de la descente
-    positions: [[136, 466]]
-
-  - n: 12
-    nom: Tableau de commande du moteur
-    categorie: moteur
-    emplacement: sous la 1re marche fixe de la descente (tribord)
-    positions: [[507, 378]]
-
-  - n: 13
-    nom: Moteur
-    categorie: moteur
-    emplacement: derrière la partie amovible de la descente, dans l'axe ; trappes par la descente et par le cabinet de toilette
-    positions: [[418, 341]]
-    trappes: [[564, 335], [507, 400]]
-
-  - n: 14
-    nom: Gilets de sauvetage
-    categorie: securite
-    emplacement: coffre arrière bâbord du carré
-    positions: [[815, 190]]
-
-  - n: 15
-    nom: Grab bag
-    categorie: securite
-    emplacement: WC
-    positions: [[437, 529]]
-
-  - n: 16
-    nom: Spi
-    categorie: rangement
-    emplacement: coffre du cockpit
-    positions: [[266, 504]]
-
-  - n: 17
-    nom: Pinoches
-    categorie: securite
-    emplacement: logettes marquées sous la table à carte
-    positions: [[726, 216]]
-
-  - n: 18
-    nom: Boîtier de dérivation du guindeau (et fusible de commande)
-    categorie: electricite
-    emplacement: fond de la cabine de proue, au plus près de l'étrave
-    positions: [[1505, 300]]
-    equipement: relais-guindeau
-
-  - n: 19
-    nom: Batterie moteur
-    categorie: electricite
-    emplacement: coffre du cockpit, contre la cloison du cabinet de toilette
-    positions: [[389, 489]]
-    equipement: bat-moteur
-
-  - n: 20
     nom: Batterie de servitude
     categorie: electricite
     emplacement: cabine de poupe, sous la pièce amovible de la couchette
     positions: [[413, 263]]
     equipement: bat-servitude
 
-  - n: 21
+  - n: 3
+    nom: Batterie moteur
+    categorie: electricite
+    emplacement: coffre du cockpit, contre la cloison du cabinet de toilette
+    positions: [[389, 489]]
+    equipement: bat-moteur
+
+  - n: 4
     nom: Bidons de carburant
     categorie: fluides
     emplacement: coffre du cockpit
     positions: [[321, 536]]
 
-  - n: 22
-    nom: Nable de remplissage de la vache à eau
-    categorie: fluides
-    emplacement: cockpit tribord, à la poupe
-    positions: [[89, 486]]
-
-  - n: 23
-    nom: Vache à eau (90 l)
-    categorie: fluides
-    emplacement: au-dessus du moteur
-    positions: [[162, 341]]
-
-  - n: 24
-    nom: Disjoncteurs 230 V du bord (4)
+  - n: 5
+    nom: Boîtier de dérivation du guindeau (et fusible de commande)
     categorie: electricite
-    emplacement: WC (prises et éclairage)
-    positions: [[412, 556]]
-    equipement: boitier-230-tribord
+    emplacement: fond de la cabine de proue, au plus près de l'étrave
+    positions: [[1505, 300]]
+    equipement: relais-guindeau
 
-  - n: 25
-    nom: Disjoncteurs 230 V des chargeurs (2)
+  - n: 6
+    nom: Bouteille de gaz
+    categorie: gaz
+    emplacement: coffre du cockpit, au plus près de la poupe
+    positions: [[122, 505]]
+
+  - n: 7
+    nom: Commande du groupe froid
     categorie: electricite
-    emplacement: coffre du cockpit, contre la cloison du cabinet de toilette
-    positions: [[389, 538]]
+    emplacement: sous la 1re marche fixe de la descente (tribord)
+    positions: [[507, 333]]
 
-  - n: 26
-    nom: Disjoncteurs 12 V (2)
+  - n: 8
+    nom: Coupe-câble (pince monseigneur)
+    categorie: securite
+    emplacement: coffre avant tribord du carré, « outillage »
+    positions: [[1022, 450]]
+
+  - n: 9
+    nom: Coupe-circuits 12 V
     categorie: electricite
-    emplacement: cabine de poupe, côté descente
-    positions: [[500, 240]]
+    emplacement: sous la 1re marche fixe de la descente (bâbord)
+    positions: [[507, 288]]
 
-  - n: 27
-    nom: Fusibles de rechange
-    categorie: electricite
-    emplacement: coffre avant tribord du carré
-    positions: [[1048, 447]]
+  - n: 10
+    nom: Couvertures anti-feu (2)
+    categorie: securite
+    emplacement: équipet de la descente, au-dessus de la marche la plus haute ; coffre du cockpit, près de l'extincteur
+    positions: [[482, 280], [179, 501]]
 
-  - n: 28
+  - n: 11
     nom: Différentiel
     categorie: electricite
     emplacement: coffre du cockpit, contre la cloison du cabinet de toilette
     positions: [[389, 518]]
     equipement: ddr-230v
 
-  - n: 29
-    nom: Prise de quai 230 V
+  - n: 12
+    nom: Disjoncteurs 12 V (2)
     categorie: electricite
-    emplacement: sous le banc tribord, près de la manette des gaz
-    positions: [[378, 412]]
-    equipement: prise-quai
+    emplacement: cabine de poupe, côté descente
+    positions: [[500, 240]]
 
-  - n: 30
-    nom: Fusible de la batterie moteur
+  - n: 13
+    nom: Disjoncteurs 230 V des chargeurs (2)
     categorie: electricite
     emplacement: coffre du cockpit, contre la cloison du cabinet de toilette
-    positions: [[389, 471]]
+    positions: [[389, 538]]
 
-  - n: 31
+  - n: 14
+    nom: Disjoncteurs 230 V du bord (4)
+    categorie: electricite
+    emplacement: WC (prises et éclairage)
+    positions: [[412, 556]]
+    equipement: boitier-230-tribord
+
+  - n: 15
+    nom: Étouffoir (tirette d'arrêt du moteur)
+    categorie: moteur
+    emplacement: tableau de commande du moteur, descente
+    positions: [[507, 355]]
+
+  - n: 16
+    nom: Extincteurs (2)
+    categorie: securite
+    emplacement: coffre du cockpit ; sous la table à carte
+    positions: [[179, 525], [712, 196]]
+
+  - n: 17
     nom: Fusible de la batterie de servitude
     categorie: electricite
     emplacement: cabine de poupe
     positions: [[434, 255]]
 
-  - n: 32
-    nom: Commande du groupe froid
+  - n: 18
+    nom: Fusible de la batterie moteur
     categorie: electricite
-    emplacement: sous la 1re marche fixe de la descente (tribord)
-    positions: [[507, 333]]
+    emplacement: coffre du cockpit, contre la cloison du cabinet de toilette
+    positions: [[389, 471]]
 
-  - n: 33
-    nom: Tableau de distribution 12 V
+  - n: 19
+    nom: Fusibles de rechange
     categorie: electricite
-    emplacement: équipet au-dessus de la batterie de servitude, contre la cloison du compartiment moteur
-    positions: [[448, 273]]
+    emplacement: coffre avant tribord du carré
+    positions: [[1048, 447]]
 
-  - n: 34
-    nom: Coupe-circuits 12 V
-    categorie: electricite
-    emplacement: sous la 1re marche fixe de la descente (bâbord)
-    positions: [[507, 288]]
+  - n: 20
+    nom: Gilets de sauvetage
+    categorie: securite
+    emplacement: coffre arrière bâbord du carré
+    positions: [[815, 190]]
 
-  - n: 35
-    nom: Ballon d'eau chaude
+  - n: 21
+    nom: Grab bag
+    categorie: securite
+    emplacement: WC
+    positions: [[437, 529]]
+
+  - n: 22
+    nom: Manette des gaz
+    categorie: moteur
+    emplacement: cockpit tribord, près de la cabine
+    positions: [[351, 379]]
+
+  - n: 23
+    nom: Moteur
+    categorie: moteur
+    emplacement: derrière la partie amovible de la descente, dans l'axe ; trappes par la descente et par le cabinet de toilette
+    positions: [[418, 341]]
+    trappes: [[564, 335], [507, 400]]
+
+  - n: 24
+    nom: Nable de gazole
     categorie: fluides
-    emplacement: sous la table à carte
-    positions: [[734, 138]]
+    emplacement: pont bâbord, à la poupe
+    positions: [[90, 155]]
 
-  - n: 36
+  - n: 25
+    nom: Nable de remplissage de la vache à eau
+    categorie: fluides
+    emplacement: cockpit tribord, à la poupe
+    positions: [[89, 486]]
+
+  - n: 26
+    nom: Pinoches
+    categorie: securite
+    emplacement: logettes marquées sous la table à carte
+    positions: [[726, 216]]
+
+  - n: 27
     nom: Pompe à eau
     categorie: fluides
     emplacement: coffre du cockpit, contre la cloison du cabinet de toilette
     positions: [[389, 558]]
     equipement: pompe-eau
 
-  - n: 37
-    nom: Couvertures anti-feu (2)
+  - n: 28
+    nom: Pompe de cale électrique
     categorie: securite
-    emplacement: équipet de la descente, au-dessus de la marche la plus haute ; coffre du cockpit, près de l'extincteur
-    positions: [[482, 280], [179, 501]]
+    emplacement: sous le moteur ; commande sous la 1re marche fixe de la descente (tribord)
+    positions: [[458, 341]]
+
+  - n: 29
+    nom: Pompe de cale manuelle
+    categorie: securite
+    emplacement: hiloire tribord du cockpit, à la poupe ; poignée dans l'équipet de la descente
+    positions: [[136, 466]]
+
+  - n: 30
+    nom: Prise de quai 230 V
+    categorie: electricite
+    emplacement: sous le banc tribord, près de la manette des gaz
+    positions: [[378, 412]]
+    equipement: prise-quai
+
+  - n: 31
+    nom: Pyrotechnie (fumigènes, fusées…)
+    categorie: securite
+    emplacement: logettes marquées sous la table à carte
+    positions: [[740, 196]]
+
+  - n: 32
+    nom: Réservoir de gazole (80 l)
+    categorie: fluides
+    emplacement: sous le banc bâbord du cockpit, à l'arrière de la cabine de poupe ; accès depuis la cabine
+    positions: [[130, 228]]
+
+  - n: 33
+    nom: Spi
+    categorie: rangement
+    emplacement: coffre du cockpit
+    positions: [[266, 504]]
+
+  - n: 34
+    nom: Tableau de commande du moteur
+    categorie: moteur
+    emplacement: sous la 1re marche fixe de la descente (tribord)
+    positions: [[507, 378]]
+
+  - n: 35
+    nom: Tableau de distribution 12 V
+    categorie: electricite
+    emplacement: équipet au-dessus de la batterie de servitude, contre la cloison du compartiment moteur
+    positions: [[448, 273]]
+
+  - n: 36
+    nom: Vache à eau (90 l)
+    categorie: fluides
+    emplacement: au-dessus du moteur
+    positions: [[162, 341]]
+
+  - n: 37
+    nom: Vanne de coupure de gaz
+    categorie: gaz
+    emplacement: coffre du cockpit, près de la bouteille ; placard sous le lavabo, à gauche, dans le cabinet de toilette
+    positions: [[150, 522], [566, 514]]
 
   - n: 38
     nom: Vannes et passe-coques (4)

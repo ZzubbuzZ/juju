@@ -64,7 +64,8 @@ DEFS = """  <defs>
   </defs>
 """
 
-K, OX, OY, CY = 0.75, 80, 196.25, 322   # X = OX + K·zx ; Y = OY + K·zy ; axe à zy = 322
+DY = 23   # plan remonté le 23/10 (cadre des objets bâbord réduit), pour laisser de la place aux objets tribord
+K, OX, OY, CY = 0.75, 80, 196.25 - DY, 322   # X = OX + K·zx ; Y = OY + K·zy ; axe à zy = 322
 
 
 def P(x, y):
@@ -441,10 +442,11 @@ for o in OBJ:
     for x, y in o.get("trappes", []):
         el.append(trappe(o, OX + K * x, OY + K * y))
 leg = []
-for cote, y0, ymax, objs in (("bâbord", 50, 160, [o for o in OBJ if o["positions"][0][1] < CY]),
-                             ("tribord", 730, 880, [o for o in OBJ if o["positions"][0][1] >= CY])):
+YB, YT = 147, 700 - DY            # bas du cadre bâbord, haut du cadre tribord
+for cote, y0, ymax, objs in (("bâbord", 50, YB - 10, [o for o in OBJ if o["positions"][0][1] < CY]),
+                             ("tribord", YT + 31, 880, [o for o in OBJ if o["positions"][0][1] >= CY])):
     rangs = (len(objs) + 1) // 2
-    pas = min(13.5, (ymax - y0) / max(rangs - 1, 1))   # interligne resserré si le cadre est plein
+    pas = min(14.5, (ymax - y0) / max(rangs - 1, 1))   # interligne resserré si le cadre est plein
     for i, o in enumerate(objs):
         X, Y = (40 if i < rangs else 710), y0 + pas * (i % rangs)
         txt = f'<tspan font-weight="600">{esc(o["nom"])}</tspan> : {esc(o["emplacement"])}'
@@ -452,7 +454,9 @@ for cote, y0, ymax, objs in (("bâbord", 50, 160, [o for o in OBJ if o["position
             txt += f' <tspan class="tu">({o["question"]})</tspan>'
         leg.append(pastille(o, X, Y - 4) + f'<text class="t leg" x="{X + 14}" y="{Y}">{txt}</text>')
 x = 40
-leg.append('<text class="ts" x="1376" y="896" text-anchor="end">pastille cerclée de tirets : à confirmer · (PBn) : question</text>')
+notes = (["pastille cerclée de tirets : à confirmer"] if any(o.get("a_confirmer") for o in OBJ) else []) +         (["(PBn) : question"] if any(o.get("question") for o in OBJ) else [])
+if notes:
+    leg.append(f'<text class="ts" x="1376" y="896" text-anchor="end">{" · ".join(notes)}</text>')
 for c, nom in CAT:
     leg.append(pastille({"categorie": c, "n": ""}, x, 892) + f'<text class="ts" x="{x + 12}" y="896">{nom}</text>')
     x += 28 + 5.6 * len(nom)
@@ -470,7 +474,7 @@ lignes = [("Longueur hors tout", m(B["longueur_hors_tout_m"])), ("Longueur à la
           ("Déplacement (lège)", f"≈ {B['deplacement_kg']:,} kg".replace(",", " ")),
           ("Tirant d’air (girouette)", m(B["tirant_air_m"]) + (" ?" if B.get("tirant_air_a_confirmer") else "")
            if B.get("tirant_air_m") else None)]
-cx, cy = 1135, 520
+cx, cy = 1135, 520 - DY
 cart = [f'<rect class="callout" x="{cx}" y="{cy}" width="240" height="{34 + 17 * len(lignes) + 16}" rx="2"/>',
         f'<text class="tb" x="{cx + 12}" y="{cy + 20}"><tspan {SANS}>{B["nom"].upper()}</tspan> · {B["modele"]} de {B["annee"]}</text>']
 for i, (lib, val) in enumerate(lignes):
@@ -486,7 +490,7 @@ if B.get("statut") == "estime":
 # (horizontalement) et sur le tirant d'air (verticalement) ; sans tirant d'air, haut du mât en tirets (PB12).
 L, T, TA = B["longueur_hors_tout_m"], B["tirant_eau_m"], B.get("tirant_air_m")
 IX0, IX1, IWL, ITOP = 80, 430, 533.3, 38     # image : arrière, étrave, flottaison, tête de mât (girouette)
-KP, PX, PW = 12, 1185, 332                         # px par mètre, x de l'arrière, y de la flottaison
+KP, PX, PW = 12, 1185, 332 - DY                        # px par mètre, x de l'arrière, y de la flottaison
 SX, SZ = L / (IX1 - IX0), (TA or 12.5) / (IWL - ITOP)
 def pi(X, Y):                                      # point de l'image → point du folio
     return f"{PX + KP * SX * (X - IX0):.1f} {PW - KP * SZ * (IWL - Y):.1f}"
@@ -592,10 +596,10 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" role="i
   <text class="tb" x="{OX+K*1665:.0f}" y="{OY+K*CY+5:.0f}">AV</text>
   <text class="tb end" x="{OX-8:.0f}" y="{OY+K*CY+5:.0f}">AR</text>
   <!-- Légendes des objets -->
-  <rect class="bound" x="20" y="20" width="1360" height="150"/>
+  <rect class="bound" x="20" y="20" width="1360" height="{YB - 20}"/>
   <text class="ts" x="28" y="34">objets du bord · bâbord</text>
-  <rect class="bound" x="20" y="700" width="1360" height="204"/>
-  <text class="ts" x="28" y="714">objets du bord · tribord</text>
+  <rect class="bound" x="20" y="{YT}" width="1360" height="{904 - YT}"/>
+  <text class="ts" x="28" y="{YT + 14}">objets du bord · tribord</text>
   ''' + "\n  ".join(leg) + '''
   <!-- Caractéristiques du bateau -->
   ''' + "\n  ".join(cart) + '''
