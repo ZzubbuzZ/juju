@@ -26,7 +26,7 @@ STYLE = STYLE.replace("  </style>", """    .amg{fill:none;stroke:var(--ink);stro
     .teck-j{fill:none;stroke:var(--teck-j);stroke-width:.9}
     .vaig{fill:none;stroke:var(--vaig)}.vaig-f{fill:var(--vaig)}
     .amg-d{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3}
-    .amg-p{fill:none;stroke:var(--ink);stroke-width:.8;stroke-dasharray:1.5 2}
+    .amg-p{fill:none;stroke:var(--ink);stroke-width:1.1;stroke-dasharray:2 2.5}
     svg{--ts:#36404b}@media (prefers-color-scheme: dark){svg{--ts:#bcc7d2}}.ts{fill:var(--ts)}
     .axe{fill:none;stroke:var(--muted);stroke-width:.6;stroke-dasharray:18 3 2 3}
     .flot{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-dasharray:18 3 2 3}
@@ -206,8 +206,9 @@ A(path("sol-h", (480, 165), (560, 165), (560, 100), (760, 100), (760, 230),
        (640, 230), (640, 265), (480, 265), close=True))
 A(path("sol-h", (400, 390), (580, 390), (580, 500), (480, 500), (480, 598), (400, 598), close=True))
 db = dossier(760, 1090)
-mi = [(x, (y + 226 + (x - 760) * 49 / 330) / 2) for x, y in db]   # milieu entre dossier et bord d'assise
-mi = [(760, mi[0][1])] + mi + [(1090, (db[-1][1] + 275) / 2)]
+YA = 272   # bord des assises du carré à la cloison avant : dans le prolongement des côtés du trapèze de la cabine de proue
+mi = [(x, (y + 226 + (x - 760) * 46 / 330) / 2) for x, y in db]   # milieu entre dossier et bord d'assise
+mi = [(760, mi[0][1])] + mi + [(1090, (db[-1][1] + YA) / 2)]
 A(path("sol-b", (640, 265), (640, 230), (760, 230), *mi, (1090, 250), (1150, 250), (1150, 357),
        (1090, 372), *[(x, M(y)) for x, y in reversed(mi)], (690, M(mi[0][1])), (690, 485),
        (580, 485), (580, 390), (545, 390), (545, 265), close=True))   # de part et d'autre de la partie amovible
@@ -247,9 +248,10 @@ arr = [(430, 79), (400, 82), (320, 93), (230, 112), (160, 150), (162, 200), (158
 d_arr = main_levee(arr)
 A(f'<clipPath id="pb-dessous"><path d="{d_arr} Z"/>{rect("", 430, 0, 481, 279)}</clipPath>')
 A('<g clip-path="url(#pb-dessous)">')
-A(rect("bg", 175, 0, 480, 400))
+A(rect("bg", 0, 0, 480, 400))            # le banc du cockpit s'arrête à la ligne de coupe
 A(path("vaig-f", *bord_lit, (480, 0), (175, 0), close=True))
 A(path("mat", *lit, close=True))
+A(path("amg", (175, 0), (175, 200)))         # cloison arrière de la cabine, à travers le vaigrage
 A(path("amg-p", (75, 265), (400, 265), (400, 460)))   # cloison du cockpit au-dessus de la couchette
 # pièce amovible (accès batterie) : deux côtés forment le coin avant tribord de la couchette,
 # un sommet à l'angle du meuble du lavabo, un autre au niveau de la paroi arrière du cabinet de toilette
@@ -313,12 +315,12 @@ A(rect("amg-b", 665, 318, 775, 338))           # plan de travail
 A(path("amg", (760, 340), (760, 598)))
 
 A('<!-- Carré : banquettes (le trait côté bord est le dossier), table repliée, pied de mât -->')
-A(path("mat", *db, (1090, 275), (760, 226), close=True))
-A(path("mat", *[(x, M(y)) for x, y in db], (1090, M(275)), (760, M(226)), close=True))
+A(path("mat", *db, (1090, YA), (760, 226), close=True))
+A(path("mat", *[(x, M(y)) for x, y in db], (1090, M(YA)), (760, M(226)), close=True))
 for XC in (870, 980):                        # coffres sous les banquettes : trois parties
     yd = next(y for x, y in db if x >= XC)
     for f in (lambda y: y, M):
-        A(path("amg-d", (XC, f(yd)), (XC, f(226 + (XC - 760) * 49 / 330))))
+        A(path("amg-d", (XC, f(yd)), (XC, f(226 + (XC - 760) * 46 / 330))))
 A(rect("amg-f", 825, CY-25, 985, CY+25))     # table repliée, sur l'axe
 A(circle("amg", 965, CY, 11))                # pied de mât, dans la table, à son bout avant
 
@@ -326,7 +328,7 @@ A('<!-- Cloison avant du carré, penderie bâbord, porte de la cabine de proue -
 A(path("amg", (1090, 40), (1090, 277)))
 A(path("amg", (1090, 357), (1090, 604)))
 A(path("amg", (1150, 40), (1150, 250), (1090, 250)))
-A(porte((1090, 277), (1090, 357), (1146.6, 333.6)))
+A(porte((1090, 357), (1090, 277), (1146.6, 300.4)))   # gonds côté tribord
 
 A('<!-- Cabine de proue : couchette en V entre les dossiers, qui se rejoignent derrière le puits à chaîne ; '
   'à tribord, elle se prolonge jusqu’au carré -->')
