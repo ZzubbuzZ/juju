@@ -36,7 +36,7 @@ STYLE = STYLE.replace("  </style>", """    .amg{fill:none;stroke:var(--ink);stro
     .obj circle{stroke:var(--sheet);stroke-width:1.2}
     .obj text{fill:#fff;font-family:"IBM Plex Mono",Consolas,monospace;font-size:8.5px;font-weight:600;text-anchor:middle}
     .obj .tr{stroke:var(--sheet);stroke-width:1.2}.leg{font-size:10.5px}
-    .ico-mot rect{fill:var(--c-moteur)}
+    .ico-mot *{fill:none;stroke:var(--c-moteur);stroke-width:1.3;stroke-linejoin:round;stroke-linecap:round}.ico-mot .f{fill:var(--sheet)}
     .obj .conf{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:2.5 2}
     .securite circle{fill:var(--c-securite)}.gaz circle{fill:var(--c-gaz)}.fluides circle{fill:var(--c-fluides)}
     .moteur circle,.moteur .tr{fill:var(--c-moteur)}.electricite circle{fill:var(--c-electricite)}.rangement circle{fill:var(--c-rangement)}
@@ -206,11 +206,17 @@ A(path("sol-h", (480, 165), (560, 165), (560, 100), (760, 100), (760, 230),
        (640, 230), (640, 265), (480, 265), close=True))
 A(path("sol-h", (400, 390), (580, 390), (580, 500), (480, 500), (480, 598), (400, 598), close=True))
 db = dossier(760, 1090)
-YA = 272   # bord des assises du carré à la cloison avant : dans le prolongement des côtés du trapèze de la cabine de proue
-mi = [(x, (y + 226 + (x - 760) * 46 / 330) / 2) for x, y in db]   # milieu entre dossier et bord d'assise
+# bord des assises du carré et côtés du trapèze de la cabine de proue sur une même droite,
+# de l'arrière des banquettes (760, 226) au sommet du trapèze (1210, 302)
+def y_assise(x):
+    return 226 + (x - 760) * 76 / 450
+
+
+YA, YT = y_assise(1090), y_assise(1150)   # à la cloison du carré, à la base du trapèze
+mi = [(x, (y + y_assise(x)) / 2) for x, y in db]   # milieu entre dossier et bord d'assise
 mi = [(760, mi[0][1])] + mi + [(1090, (db[-1][1] + YA) / 2)]
-A(path("sol-b", (640, 265), (640, 230), (760, 230), *mi, (1090, 250), (1150, 250), (1150, 357),
-       (1090, 372), *[(x, M(y)) for x, y in reversed(mi)], (690, M(mi[0][1])), (690, 485),
+A(path("sol-b", (640, 265), (640, 230), (760, 230), *mi, (1090, 250), (1150, 250), (1150, M(YT)),
+       (1090, M(YA)), *[(x, M(y)) for x, y in reversed(mi)], (690, M(mi[0][1])), (690, 485),
        (580, 485), (580, 390), (545, 390), (545, 265), close=True))   # de part et d'autre de la partie amovible
 
 # axe du navire en trait mixte fin (ISO 128), interrompu dans le coffre triangulaire de la cabine de proue,
@@ -246,13 +252,12 @@ A('<!-- Arrachement du cockpit (trait à main levée, fermé par le bord du pont
 arr = [(430, 79), (400, 82), (320, 93), (230, 112), (160, 150), (162, 200), (158, 250), (163, 303),
        (200, 307), (236, 306), (250, 318), (290, 319), (330, 314), (390, 300), (430, 290)]
 d_arr = main_levee(arr)
-A(f'<clipPath id="pb-dessous"><path d="{d_arr} Z"/>{rect("", 430, 0, 481, 279)}</clipPath>')
+A(f'<clipPath id="pb-dessous"><path d="{d_arr} Z"/>{rect("", 430, 0, 481, 290)}</clipPath>')
 A('<g clip-path="url(#pb-dessous)">')
 A(rect("bg", 0, 0, 480, 400))            # le banc du cockpit s'arrête à la ligne de coupe
 A(path("vaig-f", *bord_lit, (480, 0), (175, 0), close=True))
 A(path("mat", *lit, close=True))
 A(path("amg", (175, 0), (175, 200)))         # cloison arrière de la cabine, à travers le vaigrage
-A(path("amg-p", (75, 265), (400, 265), (400, 460)))   # cloison du cockpit au-dessus de la couchette
 # pièce amovible (accès batterie) : deux côtés forment le coin avant tribord de la couchette,
 # un sommet à l'angle du meuble du lavabo, un autre au niveau de la paroi arrière du cabinet de toilette
 la, lc = (480, 165), (480, YC)
@@ -266,6 +271,7 @@ A(path("amg-d", lb, (lb[0], next(ya + (yb-ya) * (lb[0]-xa) / (xb-xa)
 A('</g>')
 A(f'<path class="arr" d="{d_arr}"/>')
 A(path("amg", (430, 40), (430, 79)))         # bord du pont, au-dessus de la cabine
+A(path("amg-p", (430, 290), (470, 290)))    # cloison du cockpit, de la ligne de coupe à la descente
 
 A('<!-- Cabine de poupe : meuble bas du lavabo déposé, placard, porte -->')
 A(rect("amg-b", 480, 112, 560, 165))         # meuble bas
@@ -320,23 +326,23 @@ A(path("mat", *[(x, M(y)) for x, y in db], (1090, M(YA)), (760, M(226)), close=T
 for XC in (870, 980):                        # coffres sous les banquettes : trois parties
     yd = next(y for x, y in db if x >= XC)
     for f in (lambda y: y, M):
-        A(path("amg-d", (XC, f(yd)), (XC, f(226 + (XC - 760) * 46 / 330))))
+        A(path("amg-d", (XC, f(yd)), (XC, f(y_assise(XC)))))
 A(rect("amg-f", 825, CY-25, 985, CY+25))     # table repliée, sur l'axe
 A(circle("amg", 965, CY, 11))                # pied de mât, dans la table, à son bout avant
 
 A('<!-- Cloison avant du carré, penderie bâbord, porte de la cabine de proue -->')
-A(path("amg", (1090, 40), (1090, 277)))
+A(path("amg", (1090, 40), (1090, 282)))
 A(path("amg", (1090, 357), (1090, 604)))
 A(path("amg", (1150, 40), (1150, 250), (1090, 250)))
-A(porte((1090, 357), (1090, 277), (1146.6, 300.4)))   # gonds côté tribord
+A(porte((1090, 357), (1090, 282), (1143, 304)))   # gonds côté tribord
 
 A('<!-- Cabine de proue : couchette en V entre les dossiers, qui se rejoignent derrière le puits à chaîne ; '
   'à tribord, elle se prolonge jusqu’au carré -->')
 dp = dossier(1150, 1700)
 dpt = dossier(1090, 1700)
 A(path("mat", (1150, dp[0][1]), *dp, *[(x, M(y)) for x, y in reversed(dpt[:-1])],
-       (1090, M(dpt[0][1])), (1090, 372), (1150, 357), close=True))   # côté tribord du trapèze prolongé jusqu'au carré
-A(path("amg", (1150, 287), (1210, 302), (1210, 342), (1150, 357), close=True))  # trapèze, sur le bord de la couchette
+       (1090, M(dpt[0][1])), (1090, M(YA)), (1150, M(YT)), close=True))   # côté tribord du trapèze prolongé jusqu'au carré
+A(path("amg", (1150, YT), (1210, 302), (1210, 342), (1150, M(YT)), close=True))  # trapèze, sur le bord de la couchette
 A(path("axe", (1150, CY), (XT, CY)))            # l'axe traverse le trapèze, par-dessus le matelas
 
 
@@ -348,7 +354,7 @@ def y_dossier(x):
 
 # coffres sous la couchette : base du trapèze prolongée jusqu'au dossier tribord, sommet jusqu'aux
 # deux dossiers ; le coffre triangulaire à l'avant est séparé en deux le long de l'axe
-A(path("amg-d", (1150, 357), (1150, M(y_dossier(1150)))))
+A(path("amg-d", (1150, M(YT)), (1150, M(y_dossier(1150)))))
 A(path("amg-d", (XT, y_dossier(XT)), (XT, 302)))
 A(path("amg-d", (XT, 342), (XT, M(y_dossier(XT)))))
 A(path("amg-d", (XT, CY), (XV, CY)))
@@ -406,14 +412,33 @@ def trappe(o, X, Y):
 
 
 def icone_moteur(X, Y):
-    """Pictogramme du moteur : bloc, culasse, accessoire et échappement."""
-    r = lambda x0, y0, w, h: f'<rect x="{X + x0:.1f}" y="{Y + y0:.1f}" width="{w}" height="{h}"/>'
-    return ('<g class="ico-mot">' + r(-10, -5, 20, 12) + r(-6, -9, 12, 4) + r(-14, -2, 4, 6)
-            + r(10, -3, 4, 4) + '</g>')
+    """Pictogramme du moteur : bloc, bouchon de remplissage, courroie sur trois poulies, arbre et volant."""
+    import math
+    r = lambda x0, y0, w, h, rx=0, c="": (f'<rect{c} x="{X + x0:.1f}" y="{Y + y0:.1f}" width="{w}" height="{h}"'
+                                          + (f' rx="{rx}"' if rx else "") + "/>")
+    c = lambda x, y, rr: f'<circle cx="{X + x:.1f}" cy="{Y + y:.1f}" r="{rr}"/>'
+    l = lambda x0, y0, x1, y1: f'<path d="M{X + x0:.1f} {Y + y0:.1f} L{X + x1:.1f} {Y + y1:.1f}"/>'
+    poulies, R = [(-4.5, -2.5), (3.5, -1.5), (-0.5, 5.5)], 3.3
+    d = ""                                  # courroie : enveloppe des poulies (côtés décalés, arcs autour)
+    for i, (ax, ay) in enumerate(poulies):
+        bx, by = poulies[(i + 1) % 3]
+        n = math.hypot(bx - ax, by - ay)
+        nx, ny = (by - ay) / n, -(bx - ax) / n          # normale extérieure (sommets dans le sens horaire)
+        p0, p1 = (ax + R * nx, ay + R * ny), (bx + R * nx, by + R * ny)
+        d += (f"M{X + p0[0]:.2f} {Y + p0[1]:.2f}" if not d else f" A{R} {R} 0 0 1 {X + p0[0]:.2f} {Y + p0[1]:.2f}")
+        d += f" L{X + p1[0]:.2f} {Y + p1[1]:.2f}"
+    d += f" A{R} {R} 0 0 1 {d[1:].split()[0]} {d.split()[1]} Z"
+    return ('<g class="ico-mot">'
+            + r(-6, -13.5, 11, 3.5, 1.5, ' class="f"') + l(-0.5, -10, -0.5, -7.5)        # bouchon et sa tige
+            + r(-10, -7.5, 18, 18, 2.5, ' class="f"')                                     # bloc
+            + l(-14, 0, -10, 0) + l(-14, -3.5, -14, 3.5)                                  # arbre côté gauche
+            + l(8, 4, 11, 4) + r(11, 0, 3, 8, 1.2, ' class="f"')                          # volant côté droit
+            + f'<path d="{d}"/>' + "".join(c(x, y, 1.9) for x, y in poulies)
+            + l(-8, 7, -6, 9) + '</g>')
 
 
 el.append('<!-- Objets du bord : pastilles (tirets : à confirmer), trappes d’accès, icône du moteur -->')
-el.append(icone_moteur(OX + K * 445, OY + K * CY))   # au niveau des WC, dans l'axe
+el.append(icone_moteur(OX + K * 445, OY + K * 312))   # au niveau des WC, près de l'axe, entre la cloison du cockpit et les repères
 for o in OBJ:
     for x, y in o["positions"]:
         el.append(pastille(o, OX + K * x, OY + K * y))
