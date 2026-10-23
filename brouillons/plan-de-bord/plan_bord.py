@@ -133,7 +133,9 @@ def dossier(x0, x1, d=60):
     for (xa, ya), (xb, yb) in zip(bord, bord[1:]):
         L = ((xb-xa)**2 + (yb-ya)**2) ** .5
         x, y = xa - d*(yb-ya)/L, ya + d*(xb-xa)/L   # normale vers l'intérieur
-        if x > x1:
+        if x > x1:                                   # dernier point exactement sur x1 (cloison)
+            if out:
+                out.append((x1, out[-1][1] + (y - out[-1][1]) * (x1 - out[-1][0]) / (x - out[-1][0])))
             break
         if y >= CY:
             out.append((out[-1][0] + (CY-out[-1][1]) * (x-out[-1][0]) / (y-out[-1][1]), CY))
@@ -265,6 +267,7 @@ A(path("amg-d", lb, (lb[0], next(ya + (yb-ya) * (lb[0]-xa) / (xb-xa)
 A('</g>')
 A(f'<path class="arr" d="{d_arr}"/>')
 A(path("amg", (430, 40), (430, 79)))         # bord du pont, au-dessus de la cabine
+A(path("amg-p", (430, 79), (430, 290)))     # cloison du cockpit, entre les deux extrémités de la ligne de coupe
 
 A('<!-- Cabine de poupe : meuble bas du lavabo déposé, placard, porte -->')
 A(rect("amg-b", 480, 112, 560, 165))         # meuble bas
