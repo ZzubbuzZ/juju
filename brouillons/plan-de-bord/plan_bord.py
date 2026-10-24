@@ -235,7 +235,7 @@ A(path("amg-d", (100, 390), (100, 700)))     # coffre : du bord à la cloison du
 for y in (130, M(130)):                      # winches, symétriques par rapport à l'axe
     A(circle("amg", 360, y, 15))
 # safran : axe de rotation à l'arrière, plus large à l'axe que vers l'avant
-A(f'<path class="amg" d="M{P(75, CY-10)} L{P(215, CY-3)} Q{P(222, CY)} {P(215, CY+3)} '
+A(f'<path class="teck" d="M{P(75, CY-10)} L{P(215, CY-3)} Q{P(222, CY)} {P(215, CY+3)} '
   f'L{P(75, CY+10)} A{K*10:.1f} {K*10:.1f} 0 0 1 {P(75, CY-10)} Z"/>')
 A(circle("amg", 75, CY, 4))                  # mèche
 # couchette de la cabine de poupe : bord bâbord en arc jusqu'au placard, vaigrage entre le matelas et le bord
@@ -442,9 +442,9 @@ for o in OBJ:
     for x, y in o.get("trappes", []):
         el.append(trappe(o, OX + K * x, OY + K * y))
 leg = []
-YB, YT = 147, 700 - DY            # bas du cadre bâbord, haut du cadre tribord
-for cote, y0, ymax, objs in (("bâbord", 50, YB - 10, [o for o in OBJ if o["positions"][0][1] < CY]),
-                             ("tribord", YT + 31, 880, [o for o in OBJ if o["positions"][0][1] >= CY])):
+YB, YT = 152, 700 - DY            # bas du cadre bâbord, haut du cadre tribord
+for cote, y0, ymax, objs in (("bâbord", 55, YB - 10, [o for o in OBJ if o["positions"][0][1] < CY]),
+                             ("tribord", YT + 35, 895, [o for o in OBJ if o["positions"][0][1] >= CY])):
     rangs = (len(objs) + 1) // 2
     pas = min(14.5, (ymax - y0) / max(rangs - 1, 1))   # interligne resserré si le cadre est plein
     for i, o in enumerate(objs):
@@ -453,14 +453,17 @@ for cote, y0, ymax, objs in (("bâbord", 50, YB - 10, [o for o in OBJ if o["posi
         if o.get("question"):
             txt += f' <tspan class="tu">({o["question"]})</tspan>'
         leg.append(pastille(o, X, Y - 4) + f'<text class="t leg" x="{X + 14}" y="{Y}">{txt}</text>')
-x = 40
+# clé des couleurs, hors du cadre tribord : deux lignes au-dessus, à gauche de TRIBORD
+x, yk = 40, YT - 34
 notes = (["pastille cerclée de tirets : à confirmer"] if any(o.get("a_confirmer") for o in OBJ) else []) +         (["(PBn) : question"] if any(o.get("question") for o in OBJ) else [])
 if notes:
-    leg.append(f'<text class="ts" x="1376" y="896" text-anchor="end">{" · ".join(notes)}</text>')
+    leg.append(f'<text class="ts" x="1376" y="{YT - 8}" text-anchor="end">{" · ".join(notes)}</text>')
 for c, nom in CAT:
-    leg.append(pastille({"categorie": c, "n": ""}, x, 892) + f'<text class="ts" x="{x + 12}" y="896">{nom}</text>')
+    if c == "electricite":                       # deuxième ligne
+        x, yk = 40, yk + 17
+    leg.append(pastille({"categorie": c, "n": ""}, x, yk - 4) + f'<text class="ts" x="{x + 12}" y="{yk}">{nom}</text>')
     x += 28 + 5.6 * len(nom)
-leg.append(trappe({"categorie": "moteur", "n": ""}, x, 892) + f'<text class="ts" x="{x + 12}" y="896">trappe d’accès</text>')
+leg.append(trappe({"categorie": "moteur", "n": ""}, x, yk - 4) + f'<text class="ts" x="{x + 12}" y="{yk}">trappe d’accès</text>')
 
 # nom du bateau en Arial, aussi en attribut pour les visionneuses qui ignorent le bloc <style>
 SANS = 'font-family="Arial, Helvetica, sans-serif"'
@@ -471,6 +474,7 @@ def m(v, u="m"):
 B = BATEAU
 lignes = [("Longueur hors tout", m(B["longueur_hors_tout_m"])), ("Longueur à la flottaison", m(B["longueur_flottaison_m"])),
           ("Largeur", m(B["largeur_m"])), ("Tirant d’eau (dérive basse)", m(B["tirant_eau_m"])),
+          ("Tirant d’eau (dérive haute)", m(B["tirant_eau_derive_haute_m"])),
           ("Déplacement (lège)", f"≈ {B['deplacement_kg']:,} kg".replace(",", " ")),
           ("Tirant d’air (girouette)", m(B["tirant_air_m"]) + (" ?" if B.get("tirant_air_a_confirmer") else "")
            if B.get("tirant_air_m") else None)]
@@ -488,7 +492,7 @@ if B.get("statut") == "estime":
 # Profil tribord miniature (avant à droite), redessiné d'après le plan de voilure du constructeur
 # (profil-constructeur.jpeg, points relevés en pixels de l'image) : mis à l'échelle sur la longueur hors tout
 # (horizontalement) et sur le tirant d'air (verticalement) ; sans tirant d'air, haut du mât en tirets (PB12).
-L, T, TA = B["longueur_hors_tout_m"], B["tirant_eau_m"], B.get("tirant_air_m")
+L, T, TH, TA = B["longueur_hors_tout_m"], B["tirant_eau_m"], B["tirant_eau_derive_haute_m"], B.get("tirant_air_m")
 IX0, IX1, IWL, ITOP = 80, 430, 533.3, 38     # image : arrière, étrave, flottaison, tête de mât (girouette)
 KP, PX, PW = 12, 1185, 332 - DY                        # px par mètre, x de l'arrière, y de la flottaison
 SX, SZ = L / (IX1 - IX0), (TA or 12.5) / (IWL - ITOP)
@@ -504,8 +508,9 @@ BORDE = [(95.7, 508), (250, 506), (380, 503), (424.8, 500), (400, 530), (250, 53
          (82.9, 528.6), (91.4, 520)]                                       # bordé foncé, entre le liston et la flottaison
 ROOF = [(177, 496), (179, 481.5), (287, 481), (296, 493)]                 # rouf, son avant en pente
 HUBLOTS = [(185, 212), (227, 280)]                                        # vitrages du rouf
-LEST = [(207.5, 551.3), (207.5, 575.5), (270, 573.7), (305, 552.5)]        # aileron de quille
-DERIVE = [(220, 575.5), (241.7, 606.7), (270, 573.7)]                     # dérive basse
+ZH, ZB = IWL + TH / SZ, IWL + T / SZ                                    # bas de l'aileron (dérive haute), pointe de la dérive basse
+LEST = [(207.5, 551.3), (207.5, ZH), (270, ZH - 1.8), (305, 552.5)]       # aileron de quille, à l'échelle du tirant d'eau dérive haute
+DERIVE = [(220, ZH), (241.7, ZB), (270, ZH - 1.8)]                        # dérive basse, à l'échelle du tirant d'eau
 SAFRAN = [(80, 527.1), (100, 530), (100, 571.5), (82, 569)]
 GV = [(276.7, 44.7), (283.3, 440), (154.7, 444.7)]                        # grand-voile : tête, point d'amure, point d'écoute
 GENOIS = [(288, 86.7), (427, 491), (208, 478)]                            # génois : point d'écoute en arrière du mât
@@ -562,8 +567,9 @@ prof = ['<g class="profil">',
         f'<path class="n w2" d="M{pi(285.3, 490)} L{pi(276.7, 38)}"/>',       # mât
         f'<path class="flot" d="M{PX - 12} {PW} H{PX + KP * L + 14}"/>',       # flottaison, trait mixte fort
         f'<text class="ts end" x="{PX - 16}" y="{PW + 3}">flottaison</text>',
-        f'<text class="ts" x="{xd + 12:.0f}" y="{PW + KP * SZ * (606.7 - IWL):.0f}">{m(T)}</text>',
-        f'<text class="ts mid" x="{PX + KP * L / 2:.0f}" y="{PW + KP * SZ * (606.7 - IWL) + 16:.0f}">profil tribord · {m(L)}</text>']
+        f'<text class="ts halo" x="{pi(305, 0).split()[0]}" y="{PW + KP * TH + 3:.0f}">{m(TH)} dérive haute</text>',
+        f'<text class="ts" x="{xd + 12:.0f}" y="{PW + KP * T + 3:.0f}">{m(T)} dérive basse</text>',
+        f'<text class="ts mid" x="{PX + KP * L / 2:.0f}" y="{PW + KP * T + 19:.0f}">profil tribord · {m(L)}</text>']
 HM = SZ * (IWL - ITOP)
 if TA:   # cote du tirant d'air, à droite de l'étrave
     xc, conf = PX + KP * (L + 0.9), B.get("tirant_air_a_confirmer")
@@ -597,9 +603,9 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" role="i
   <text class="tb end" x="{OX-8:.0f}" y="{OY+K*CY+5:.0f}">AR</text>
   <!-- Légendes des objets -->
   <rect class="bound" x="20" y="20" width="1360" height="{YB - 20}"/>
-  <text class="ts" x="28" y="34">objets du bord · bâbord</text>
+  <text class="ts" x="28" y="33">objets du bord · bâbord</text>
   <rect class="bound" x="20" y="{YT}" width="1360" height="{904 - YT}"/>
-  <text class="ts" x="28" y="{YT + 14}">objets du bord · tribord</text>
+  <text class="ts" x="28" y="{YT + 13}">objets du bord · tribord</text>
   ''' + "\n  ".join(leg) + '''
   <!-- Caractéristiques du bateau -->
   ''' + "\n  ".join(cart) + '''

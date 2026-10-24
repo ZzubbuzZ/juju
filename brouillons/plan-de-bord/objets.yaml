@@ -22,7 +22,8 @@ bateau:
   longueur_hors_tout_m: 9.55
   longueur_flottaison_m: 8.10
   largeur_m: 3.30                  # donnée par l'utilisateur le 23/10
-  tirant_eau_m: 1.75
+  tirant_eau_m: 2.05                # dérive basse ; vérifié par l'utilisateur le 24/10
+  tirant_eau_derive_haute_m: 1.10   # idem
   deplacement_kg: 3990
   tirant_air_m: 12.50
   tirant_air_a_confirmer: true     # girouette comprise ; à faire vérifier par Julie
