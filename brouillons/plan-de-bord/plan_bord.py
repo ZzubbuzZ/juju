@@ -547,6 +547,17 @@ def coutures(depart, fin, bords, pas, debut=None):
     return f'<path class="amg-l" style="stroke-width:.45" d="{" ".join(traits)}"/>'
 
 
+def coutures_horizontales(voile, pas):
+    """Coutures horizontales de la grand-voile, tous les `pas` depuis la tête, entre guindant et chute."""
+    (tx, ty), (ax, ay), (ex, ey) = voile                # tête, point d'amure, point d'écoute
+    x_sur = lambda x0, y0, x1, y1, y: x0 + (x1 - x0) * (y - y0) / (y1 - y0)
+    traits, y = [], ty + pas
+    while y < ey - 2:                                   # au-dessus de la bordure
+        traits.append(f"M{pi(x_sur(tx, ty, ax, ay, y), y)} L{pi(x_sur(tx, ty, ex, ey, y), y)}")
+        y += pas
+    return f'<path class="amg-l" style="stroke-width:.45" d="{" ".join(traits)}"/>'
+
+
 # génois coupé à onglet, comme sur le plan de voilure : couture d'onglet du guindant au point d'écoute ;
 # au-dessus, laizes perpendiculaires à la chute ; au-dessous, perpendiculaires à la bordure
 (GT, GA, GE), ONGLET = GENOIS, (378.5, 350)
@@ -558,7 +569,7 @@ COUT_GENOIS = (coutures(GT, GE, [(GT, ONGLET), (ONGLET, GE)], 30)
 xd = PX + KP * SX * (241.7 - IX0)
 prof = ['<g class="profil">',
         ipath("amg-f", *GENOIS), COUT_GENOIS,   # le génois passe derrière la grand-voile
-        ipath("amg-f", *GV), coutures(GV[0], GV[2], [(GV[0], GV[1]), (GV[1], GV[2])], 30),
+        ipath("amg-f", *GV), coutures_horizontales(GV, 30),
         f'<path class="amg-l" d="M{pi(276.7, 38)} L{pi(89.3, 499.3)}"/>',      # pataras
         ipath("amg-b", *COQUE), ipath("amg-f", *BORDE), ipath("amg-b", *ROOF),
         *[f'<path class="amg-l" d="M{pi(a, 490)} L{pi(b, 490)}"/>' for a, b in HUBLOTS],
