@@ -8,7 +8,7 @@
 
 Le bilan estimé donne environ **60 Ah par jour au mouillage** et 87 Ah par jour en navigation (moteur non compté ; feu de mouillage à LED, Q7). Or une batterie de servitude de 110 Ah au plomb ne fournit qu'environ 55 Ah sans être abîmée (décharge à 50 %). Elle ne tient donc même pas une journée au mouillage. Une LiFePO4 de 100 Ah, proposée par l'étude E (H1), en fournirait 80 à 90.
 
-Le moteur n'y suffit pas non plus : l'alternateur donne environ **20 A au plus** (Q14), et moins en pratique une fois la batterie à moitié chargée. Récupérer 50 Ah demande donc plusieurs heures de moteur. Le solaire est le seul moyen réaliste de tenir au mouillage.
+Le moteur n'y suffit pas non plus : l'alternateur donne **35 A au plus** (Q14, correction du 12/11 ; 20 A notés auparavant), et la LiFePO4 n'en reçoit qu'environ 15 A, le courant réglé sur le chargeur DC/DC de l'étude E. Récupérer 50 Ah demande donc plus de trois heures de moteur. Le solaire est le seul moyen réaliste de tenir au mouillage.
 
 Trois leviers sont à combiner :
 
