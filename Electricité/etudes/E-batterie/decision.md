@@ -15,7 +15,7 @@
 | Élément | Modèle | Remarque |
 |---|---|---|
 | Batterie de servitude | **Humsienk 12 V 200 Ah Plus**, LiFePO4, BMS 250 A, Bluetooth | 259,99 € (prix remisé, fiche du site Humsienk). 521 × 238 × 221 mm, 26,4 kg, bornes M8, IP65 |
-| Chargeur DC/DC | **Victron Orion XS 12/12-50A** | Acheté 259 € ; courant à régler vers 15 A (alternateur de 20 A) ; commande manuelle (Q48) |
+| Chargeur DC/DC | **Victron Orion XS 12/12-50A** | Acheté 259 € ; courant à régler vers 15 A (choisi pour un alternateur de 20 A ; 35 A en réalité, correction du 12/11) ; commande manuelle (Q48) |
 | Chargeur de quai LiFePO4 | **Victron Blue Smart IP67 12/17** | À la place du Blue Smart IP65 12/15 prévu ; référence BPC121713006, 118 € (Q52) |
 | Fusible de la batterie de servitude | **MEGA 300 A** (décision de l'utilisateur ; calibre confirmé le 08/10), pas de classe T | Voir « Fusible de batterie » dans [H1](H1-lifepo4/proposition.md#fusible-de-batterie--décision-du-0510) |
 

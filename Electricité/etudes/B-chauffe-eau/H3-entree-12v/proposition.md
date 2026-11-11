@@ -10,7 +10,7 @@ points_forts:
 points_faibles:
   - "Chauffe lente : environ 2 h 40 pour 10 L de 15 à 60 °C."
   - "Environ 45 Ah par chauffe : au mouillage, la consommation passe d'environ 60 à environ 105 Ah par jour, et l'autonomie de la LiFePO4 d'environ trois jours à un jour et demi."
-  - "Au moteur, l'alternateur de 20 A, bridé à 15 A par le DC/DC, ne couvre pas les 17 A du ballon."
+  - "Au moteur, l'alternateur de 35 A, bridé à 15 A par le DC/DC, ne couvre pas les 17 A du ballon (réglage du DC/DC à revoir : correction du 12/11)."
   - "Commande manuelle à la platine ; l'état de chauffe se lit sur le panneau de commande du ballon. Un oubli vide la batterie jusqu'à la coupure du BMS."
   - "Écart à la notice, qui demande un relais et un interrupteur ; mais elle est commune au CozyWater 10 (sans panneau) et au 10C. Une commande automatique (étude C) demandera d'ajouter un organe commandé."
   - Trajet et longueur du câble de 6 mm² à relever à bord (Q57).
@@ -53,7 +53,7 @@ Chauffer 10 L de 15 à 60 °C demande environ 0,52 kWh, soit environ **45 Ah** s
 | Mouillage ([bilan](../../../commun/bilan-energetique.yaml)) | environ 60 Ah/jour | environ 105 Ah/jour |
 | Autonomie de la LiFePO4 (160 à 180 Ah utiles) | environ 3 jours | environ 1,5 jour |
 
-Au moteur, le DC/DC de l'étude E charge la LiFePO4 à 15 A environ (alternateur de 20 A) : le ballon consomme plus que la charge. L'entrée 12 V n'est donc rentable qu'avec un **surplus solaire** : environ 200 W de panneaux en plein soleil, en plus de la consommation du bord. C'est l'étude C qui dira si ce surplus existe.
+Au moteur, le DC/DC de l'étude E charge la LiFePO4 à 15 A environ (alternateur de 35 A, correction du 12/11 ; réglage choisi pour les 20 A notés auparavant) : le ballon consomme plus que la charge. Un réglage relevé vers 25 A couvrirait le ballon moteur tournant, sans changer la conclusion au mouillage. L'entrée 12 V n'est donc rentable qu'avec un **surplus solaire** : environ 200 W de panneaux en plein soleil, en plus de la consommation du bord. C'est l'étude C qui dira si ce surplus existe.
 
 En attendant, l'entrée 12 V reste utile pour une chauffe ponctuelle, batterie pleine, la veille d'un retour au port.
 

@@ -161,4 +161,4 @@ Toutes les sections prévues conviennent. **Pompe à eau** : sa notice demande u
 - **Q57** : longueur du câble 12 V du ballon (3 m estimés, trajet de wire200 ; jusqu'à 12 m, le 6 mm² reste sous 10 %).
 - **Q12** : longueurs réelles des départs du tableau de la table à carte.
 - Longueurs de wire158, wire162, wire165, wire166, wire167 (tableau Scheiber, frigo, pompe de cale) : non relevées, estimées ici.
-- Alternateur de 20 A, sans borne W (Q14, 13/10) : réglage de l'Orion XS à 15 A confirmé.
+- Alternateur de 35 A (Q14, correction du 12/11 ; 20 A notés le 13/10), sans borne W : le réglage de l'Orion XS à 15 A, choisi pour un alternateur de 20 A, laisse désormais une marge de 20 A ; il pourrait être relevé (à décider).

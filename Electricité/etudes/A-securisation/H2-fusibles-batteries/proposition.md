@@ -80,7 +80,7 @@ Quatre fils de 6 mm² partent directement des bornes côté batterie des coupe-c
 |---|---|---|---|
 | wire051 | chargeur, sortie batterie moteur | 30 A | le chargeur débite 20 A au plus |
 | wire055 | chargeur, sortie batterie servitude | 30 A | idem |
-| wire004 | coupleur, côté batterie moteur | 40 A | le relais du coupleur est donné pour 40 A. Il transmet le courant de l'alternateur (environ 20 A), mais, à sa fermeture, deux batteries très inégales peuvent échanger davantage : le fusible protège alors le câble et le relais |
+| wire004 | coupleur, côté batterie moteur | 40 A | le relais du coupleur est donné pour 40 A. Il transmet le courant de l'alternateur (35 A au plus, Q14, correction du 12/11), mais, à sa fermeture, deux batteries très inégales peuvent échanger davantage : le fusible protège alors le câble et le relais |
 | wire016 | coupleur, côté batterie servitude | 40 A | idem |
 
 Les porte-fusibles se fixent près de la platine des coupe-circuits, dans la zone accessible par l'ouverture côté cabine de poupe.

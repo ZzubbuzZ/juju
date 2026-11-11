@@ -90,6 +90,7 @@ Format d'une question (lu par `outils/verifier.py`) : `- **Qn** texte`.
   → 27/09 : à demander à Julie.
   → 28/09 : d'après les spécifications et les photos, l'alternateur d'origine donne 20 A au plus ; celui de Juju semble plus récent mais semblable. Plaque et bornes à relever.
   → 13/10 : 20 A, pas de borne W. Un compte-tours ne pourra pas se brancher sur l'alternateur (prise de mesure à trouver lors de sa pose, Q1).
+  → 12/11 : correction de l'utilisateur : l'alternateur délivre **35 A**, et non 20 A.
 - **Q40** Pièces immergées reliées au moteur, donc à la masse 12 V (vérifiable depuis le bord) : l'accouplement entre l'arbre de l'inverseur et l'arbre d'hélice est-il métallique, ou comporte-t-il un manchon isolant (flector) ? Un câble de mise à la masse arrive-t-il sur le tube d'étambot ? Conditionne la coupure du différentiel sans liaison terre / masse 12 V (A-H4).
   → 13/10 : accouplement métallique, pas de câble de masse sur le tube d'étambot. L'arbre et l'hélice sont donc reliés au moteur, donc à la masse 12 V : la condition de A-H4 est remplie.
 - **Q54** Circuit d'eau douce existant : volume et position du réservoir ; type et diamètre du tuyau ; trajet de la pompe Seaflo jusqu'aux robinets (cuisine, cabinet de toilette) ; modèle des robinets (eau froide seule ou mitigeur) ; présence d'un vase ou d'un accumulateur. Avec un manomètre sur un robinet : pression à laquelle la pompe redémarre (la coupure est annoncée à 2,8 bar). Conditionne le réglage du réducteur et du vase (B-H1).

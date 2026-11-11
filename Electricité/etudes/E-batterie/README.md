@@ -12,7 +12,7 @@ Deux voies : **remplacer la batterie par une LiFePO4**, qui ne dégage pas de ga
 - Batterie moteur : Varta 110 Ah, plomb, dans le coffre de cockpit tribord. Elle n'est pas concernée par l'étude.
 - Coupleur Scheiber 38.14700 à relais, prévu pour le plomb uniquement. Le coupe-circuit de couplage (node024, node025) met les deux batteries en parallèle à la main.
 - Chargeur de quai Dolphin 12 V 20 A, trois sorties, prévu pour le plomb uniquement. Sa notice ne prévoit pas de mélanger les technologies.
-- Alternateur d'environ 20 A (spécification d'origine, Q14).
+- Alternateur de 35 A (Q14, correction du 12/11 ; la spécification d'origine donnait 20 A).
 - Bilan énergétique (estimations) : environ 60 Ah par jour au mouillage et 87 Ah par jour en navigation.
 
 ## Hypothèses
