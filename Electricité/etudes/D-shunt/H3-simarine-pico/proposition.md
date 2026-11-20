@@ -9,7 +9,7 @@ points_forts:
 points_faibles:
   - Plus du double du prix de H2.
   - Le kit standard est livré avec un shunt de 300 A ; il faut le SC503 de 500 A pour le démarrage couplé.
-  - Juju n'a pas de jauge à relier, l'objectif ne demande qu'une tension pour la batterie moteur.
+  - La lecture de la sonde de gasoil fait double emploi avec la jauge du tableau moteur ; l'objectif ne demande qu'une tension pour la batterie moteur.
 decision: "14/10/2026 : écartée, l'utilisateur retient D-H1."
 ---
 

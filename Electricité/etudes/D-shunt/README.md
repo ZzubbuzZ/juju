@@ -86,7 +86,7 @@ H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire010 repris
 
 **Pourquoi H3 et H4 n'ont pas été développées** (écartées le 14/10) :
 
-- **H3** : son intérêt est de lire aussi les jauges de réservoir et plusieurs batteries. Juju n'a pas de jauge à relier, et l'objectif ne demande qu'une tension pour la batterie moteur. Elle coûte plus du double de H2 sans répondre à un besoin listé, et son kit standard n'a qu'un shunt de 300 A.
+- **H3** : elle coûte plus du double de H2. Elle pourrait en plus lire la sonde du réservoir de gasoil et plusieurs batteries, mais ce besoin est secondaire : le tableau moteur a déjà sa jauge, et l'objectif ne demande qu'une tension pour la batterie moteur. Son kit standard n'a en outre qu'un shunt de 300 A.
 - **H4** : l'état de charge se calcule en additionnant le courant pendant des jours. Une petite erreur à faible courant (veille, pompe de cale) ou une dérive du zéro fausse le résultat, et c'est justement la consommation de veille que l'étude doit surveiller (détection du court-circuit résistif de A-H2). Sa tenue en milieu marin et sa consommation propre sont inconnues. Son shunt de 400 A est en outre sous les 500 A visés. L'économie, environ 75 €, ne compense pas une mesure à laquelle on ne peut pas se fier.
 
 ## Critères de comparaison
