@@ -58,6 +58,11 @@ nodes:
   - { id: node202, equipement: fus-tableau-moteur, borne: "1 (côté démarreur)", polarite: "+" }
   - { id: node203, equipement: fus-tableau-moteur, borne: "2 (côté tableau)", polarite: "+" }
   - { id: node204, equipement: tableau-moteur, borne: "+", polarite: "+" }
+  - { id: node224, equipement: tableau-moteur, borne: "+ après contact", polarite: "+", questions: [Q76] }
+
+  # --- Horamètre (20/11) ---------------------------------------------------------
+  - { id: node225, equipement: horametre, borne: "+", polarite: "+" }
+  - { id: node226, equipement: horametre, borne: "-", polarite: "-" }
 
   # --- Frigo ---------------------------------------------------------------------
   - { id: node323, equipement: groupe-froid, borne: "+ 12/24 V", polarite: "+" }
@@ -75,6 +80,25 @@ nodes:
   - { id: node310, equipement: tableau-scheiber, borne: "- masse", polarite: "-" }
   - { id: node311, equipement: tableau-scheiber, borne: "sortie frigo (15 A)", polarite: "+" }
   - { id: node312, equipement: tableau-scheiber, borne: "sortie pompe de cale (10 A)", polarite: "+" }
+
+  # --- Jauge à gasoil (20/11) : + du tableau Scheiber, fusible, poussoir, résistance ----
+  - { id: node337, equipement: fus-jauge-gasoil, borne: "1 (côté Scheiber)", polarite: "+" }
+  - { id: node338, equipement: fus-jauge-gasoil, borne: "2", polarite: "+" }
+  - { id: node339, equipement: wago-jauge-1, borne: "jonction", polarite: "+" }
+  - { id: node340, equipement: poussoir-jauge, borne: "1", polarite: "+" }
+  - { id: node341, equipement: poussoir-jauge, borne: "2", polarite: "+" }
+  - { id: node342, equipement: wago-jauge-2, borne: "jonction", polarite: "+" }
+  - { id: node343, equipement: resistance-jauge, borne: "1", polarite: "+", monte_sur: node342 }
+  - { id: node344, equipement: resistance-jauge, borne: "2", polarite: "+", monte_sur: node345 }
+  - { id: node345, equipement: wago-jauge-3, borne: "jonction", polarite: "+" }
+  - { id: node346, equipement: jauge-gasoil, borne: "+ (fil rouge)", polarite: "+" }
+  - { id: node347, equipement: jauge-gasoil, borne: "- (fil bleu)", polarite: "-" }
+  - { id: node348, equipement: jauge-gasoil, borne: "sonde (fil noir)", polarite: commande }
+  - { id: node349, equipement: jauge-gasoil, borne: "éclairage (fil orange)", polarite: "+" }
+  - { id: node350, equipement: wago-jauge-4, borne: "jonction", polarite: "-" }
+  - { id: node351, equipement: sonde-gasoil, borne: "signal", polarite: commande }
+  - { id: node352, equipement: sonde-gasoil, borne: "masse", polarite: "-" }
+  - { id: node353, equipement: wago-jauge-5, borne: "jonction", polarite: commande }
   - { id: node317, equipement: pompe-cale, borne: "+", polarite: "+" }
   - { id: node318, equipement: pompe-cale, borne: "-", polarite: "-" }
 

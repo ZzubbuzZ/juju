@@ -498,3 +498,64 @@ equipements:
     zone: table-a-carte
     emplacement: Au tableau de servitude, entre les deux prises 12 V
     note: Emplacement prévu pour l'afficheur du moniteur de batterie (étude D, Q28) ; place suffisante (Q41, 03/10).
+
+  # --- Jauge à gasoil (relevé du 20/11) -----------------------------------------
+  # Le + passe par un poussoir : jauge et éclairage ne sont alimentés que poussoir enfoncé.
+  - id: fus-jauge-gasoil
+    type: fusible
+    designation: Fusible de la jauge à gasoil
+    calibre_A: 2
+    questions: [Q74]
+    note: "Porte-fusible en ligne pour fusible de 5 mm de diamètre (20/11)."
+
+  - id: wago-jauge-1
+    type: connecteur
+    designation: Borne Wago entre le fusible et le poussoir de la jauge
+
+  - id: poussoir-jauge
+    type: interrupteur
+    designation: Poussoir de lecture de la jauge à gasoil (contact NO)
+    questions: [Q74]
+
+  - id: wago-jauge-2
+    type: connecteur
+    designation: Borne Wago triple après le poussoir (éclairage et résistance de la jauge)
+
+  - id: resistance-jauge
+    type: resistance
+    designation: Résistance de 150 Ω ±1 % en série dans le + de la jauge
+    note: "Couche métallique, 5 bagues (marron, vert, noir, noir, marron). Pattes enfichées directement dans les Wago, sans fil (20/11). À retirer (A13)."
+
+  - id: wago-jauge-3
+    type: connecteur
+    designation: Borne Wago entre la résistance et le fil + de la jauge
+
+  - id: jauge-gasoil
+    type: recepteur
+    designation: Jauge à gasoil
+    modele: "Osculati 27.320.0X (dernier chiffre à relever, Q74)"
+    questions: [Q74]
+    note: "Cadran noir, logo à barre à roue, graduations blanches, cerclage chromé. À l'arrière, un connecteur à fils de couleur : rouge (+), bleu (−), noir (sonde), orange et jaune (éclairage). Seul l'orange est branché ; le jaune est libre (20/11). La gamme 27.320 est donnée pour 12/24 V, avec un éclairage rouge et jaune pour les versions .00 et .01."
+
+  - id: wago-jauge-4
+    type: connecteur
+    designation: Borne Wago de masse de la jauge et de la sonde
+    note: "Wago triple a priori (20/11)."
+
+  - id: sonde-gasoil
+    type: capteur
+    designation: Sonde de niveau du réservoir de gasoil
+    questions: [Q74]
+    note: "Reliée par un câble R2V 3G1,5 mm² : bleu à la masse, marron au signal (20/11). Conducteur vert-jaune et standard de la sonde (10-180 ou 240-33 Ω) à relever (Q74, Q75)."
+
+  - id: wago-jauge-5
+    type: connecteur
+    designation: Borne Wago entre le câble de la sonde et le fil noir de la jauge
+
+  # --- Horamètre (relevé du 20/11) ------------------------------------------------
+  - id: horametre
+    type: recepteur
+    designation: Horamètre moteur
+    modele: GH-521S
+    questions: [Q76]
+    note: "Alimenté par le + après contact du tableau moteur ; masse prise sur la masse moteur par un fil bleu (20/11)."

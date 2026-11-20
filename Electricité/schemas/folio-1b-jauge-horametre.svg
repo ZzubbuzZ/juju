@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Jauge à gasoil et horamètre actuels : la jauge est alimentée depuis le tableau Scheiber par un fusible de 2 ampères, un poussoir et une résistance de 150 ohms, sa masse et celle de la sonde vont au coupe-circuit des négatifs ; l&#x27;horamètre est branché sur le plus après contact du tableau moteur et sur la masse moteur.">
+  <title>Folio 1b · Jauge à gasoil et horamètre</title>
+  <desc>La jauge à gasoil Osculati n&#x27;est alimentée que poussoir enfoncé, à travers un fusible de 2 A et une résistance de 150 Ω qui est à retirer (A13). Le câblage est en marron et bleu, les couleurs du 230 V. L&#x27;horamètre GH-521S est branché sur le + après contact du tableau moteur et sur la masse moteur (relevé du 20/11).</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .fx{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round}.fx-new{fill:none;stroke:var(--new);stroke-width:1.4;stroke-linecap:round}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .sw{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:5 3}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+  <!-- Généré par outils/folio.py depuis folio-1b-jauge-horametre.yaml : ne pas modifier à la main. -->
+  <rect class="box" x="30" y="140" width="140" height="100" rx="2"/>
+  <text class="tb mid" x="100" y="162">Tableau Scheiber</text>
+  <text class="ts mid" x="100" y="177">frigo, pompe de cale :</text>
+  <text class="ts mid" x="100" y="192">folio 1</text>
+  <rect class="fuse" x="220" y="191" width="50" height="18"/>
+  <path class="fx" d="M224 200 H266"/>
+  <text class="id mid" x="245" y="222">2 A</text>
+  <text class="ts mid" x="245" y="178">porte-fusible</text>
+  <rect class="box" x="296" y="220" width="56" height="26" rx="2"/>
+  <rect class="sw" x="390" y="184" width="50" height="32" rx="2"/>
+  <path class="lever" d="M390 200 L437 187"/>
+  <text class="ts mid" x="415" y="176">poussoir NO</text>
+  <rect class="box" x="476" y="220" width="56" height="26" rx="2"/>
+  <rect class="box" x="520" y="150" width="90" height="60" rx="2"/>
+  <text class="tb mid" x="565" y="170">150 Ω ±1 %</text>
+  <rect class="box" x="626" y="220" width="56" height="26" rx="2"/>
+  <rect class="box" x="880" y="60" width="240" height="240" rx="2"/>
+  <text class="tb mid" x="1000" y="170">Jauge à gasoil</text>
+  <text class="ts mid" x="1000" y="185">Osculati 27.320.0X (Q74)</text>
+  <text class="ts mid" x="1000" y="200">12/24 V</text>
+  <text class="ts mid" x="1000" y="215">fil jaune (éclairage) libre</text>
+  <rect class="box" x="906" y="380" width="56" height="26" rx="2"/>
+  <rect class="box" x="1066" y="380" width="50" height="26" rx="2"/>
+  <rect class="box" x="940" y="480" width="230" height="80" rx="2"/>
+  <text class="tb mid" x="1055" y="524">Sonde de niveau</text>
+  <text class="ts mid" x="1055" y="539">réservoir de gasoil</text>
+  <rect class="sw" x="44" y="400" width="32" height="60" rx="2"/>
+  <path class="lever" d="M60 400 L71 457"/>
+  <text class="ts mid" x="60" y="492">CC masse</text>
+  <rect class="box" x="200" y="430" width="180" height="80" rx="2"/>
+  <text class="tb mid" x="290" y="452">Tableau moteur</text>
+  <text class="ts mid" x="290" y="467">contact, démarrage :</text>
+  <text class="ts mid" x="290" y="482">folio 1</text>
+  <rect class="box" x="200" y="560" width="180" height="70" rx="2"/>
+  <text class="tb mid" x="290" y="582">Moteur Yanmar 3GMD</text>
+  <rect class="box" x="520" y="430" width="160" height="150" rx="2"/>
+  <text class="tb mid" x="600" y="486">Horamètre</text>
+  <text class="ts mid" x="600" y="501">GH-521S</text>
+  <path class="u" d="M170 200 L220 200"/>
+  <text class="id mid" x="195" y="192">w326</text>
+  <path class="u" d="M270 200 L290 200 L310 220"/>
+  <text class="id mid" x="280" y="192">w327</text>
+  <path class="u" d="M310 220 L330 200 L390 200"/>
+  <text class="id mid" x="360" y="192">w328</text>
+  <path class="u" d="M440 200 L470 200 L490 220"/>
+  <text class="id mid" x="455" y="192">w329</text>
+  <path class="u" d="M490 220 L490 100 L880 100"/>
+  <text class="id mid" x="685" y="92">w330 · orange (éclairage)</text>
+  <path class="u" d="M640 220 L660 200 L700 160 L880 160"/>
+  <text class="id mid" x="790" y="152">w331 · rouge (+)</text>
+  <path class="u" d="M920 300 L920 380"/>
+  <text class="id" x="928" y="345">w332 · bleu</text>
+  <path class="u" d="M920 380 L900 360 L60 360 L60 400"/>
+  <text class="id mid" x="480" y="352">w333 · masse de la jauge et de la sonde</text>
+  <path class="n w1" d="M920 380 L940 360 L980 360 L980 480"/>
+  <text class="id end" x="972" y="450">w334 · 1,5 · bleu</text>
+  <path class="p w1" d="M1140 480 L1140 400 L1100 360 L1080 380"/>
+  <text class="id end" x="1132" y="455">w335 · 1,5 · marron</text>
+  <path class="u" d="M1080 380 L1080 300"/>
+  <text class="id" x="1088" y="345">w336 · noir</text>
+  <path class="u" d="M380 495 L520 495"/>
+  <text class="id mid" x="450" y="487">w217 · + après contact</text>
+  <path class="u" d="M380 610 L445 610 L520 535"/>
+  <text class="id mid" x="412" y="602">w218 · bleu</text>
+  <path class="p w2" d="M490 220 L520 190"/>
+  <path class="p w2" d="M610 190 L640 220"/>
+  <circle class="term" cx="170" cy="200" r="3.5"/>
+  <circle class="term" cx="220" cy="200" r="3.5"/>
+  <circle class="term" cx="270" cy="200" r="3.5"/>
+  <circle class="term" cx="310" cy="220" r="3.5"/>
+  <circle class="term" cx="390" cy="200" r="3.5"/>
+  <circle class="term" cx="440" cy="200" r="3.5"/>
+  <circle class="term" cx="490" cy="220" r="3.5"/>
+  <circle class="term" cx="520" cy="190" r="3.5"/>
+  <circle class="term" cx="610" cy="190" r="3.5"/>
+  <circle class="term" cx="640" cy="220" r="3.5"/>
+  <circle class="term" cx="880" cy="100" r="3.5"/>
+  <circle class="term" cx="880" cy="160" r="3.5"/>
+  <circle class="term" cx="920" cy="300" r="3.5"/>
+  <circle class="term" cx="1080" cy="300" r="3.5"/>
+  <circle class="term" cx="920" cy="380" r="3.5"/>
+  <circle class="term" cx="1080" cy="380" r="3.5"/>
+  <circle class="term" cx="980" cy="480" r="3.5"/>
+  <circle class="term" cx="1140" cy="480" r="3.5"/>
+  <circle class="term" cx="60" cy="400" r="3.5"/>
+  <circle class="term" cx="60" cy="460" r="3.5"/>
+  <circle class="term" cx="380" cy="495" r="3.5"/>
+  <circle class="term" cx="380" cy="610" r="3.5"/>
+  <circle class="term" cx="520" cy="495" r="3.5"/>
+  <circle class="term" cx="520" cy="535" r="3.5"/>
+  <text class="id end" x="163" y="199">n309</text>
+  <text class="pin end" x="163" y="209">+</text>
+  <text class="id end" x="217" y="213">n337</text>
+  <text class="id" x="273" y="213">n338</text>
+  <text class="id" x="315" y="234">n339</text>
+  <text class="id end" x="386" y="230">n340</text>
+  <text class="id" x="444" y="230">n341</text>
+  <text class="id" x="495" y="234">n342</text>
+  <text class="id" x="527" y="194">n343</text>
+  <text class="id end" x="603" y="194">n344</text>
+  <text class="id" x="645" y="234">n345</text>
+  <text class="id" x="887" y="99">n349</text>
+  <text class="pin" x="887" y="109">écl. orange</text>
+  <text class="id" x="887" y="159">n346</text>
+  <text class="pin" x="887" y="169">+ rouge</text>
+  <text class="id" x="925" y="284">n347</text>
+  <text class="pin" x="925" y="294">− bleu</text>
+  <text class="id end" x="1075" y="284">n348</text>
+  <text class="pin end" x="1075" y="294">sonde noir</text>
+  <text class="id" x="925" y="394">n350</text>
+  <text class="id" x="1085" y="394">n353</text>
+  <text class="id" x="985" y="494">n352</text>
+  <text class="pin" x="985" y="504">−</text>
+  <text class="id end" x="1135" y="494">n351</text>
+  <text class="pin end" x="1135" y="504">signal</text>
+  <text class="id" x="82" y="404">n023</text>
+  <text class="id" x="82" y="464">n022</text>
+  <text class="id end" x="373" y="494">n224</text>
+  <text class="pin end" x="373" y="504">+ contact</text>
+  <text class="id end" x="373" y="609">n201</text>
+  <text class="pin end" x="373" y="619">−</text>
+  <text class="id" x="527" y="494">n225</text>
+  <text class="pin" x="527" y="504">+</text>
+  <text class="id" x="527" y="534">n226</text>
+  <text class="pin" x="527" y="544">−</text>
+  <text class="ts mid" x="324" y="262">Wago</text>
+  <text class="ts mid" x="504" y="262">Wago triple</text>
+  <text class="ts mid" x="654" y="262">Wago</text>
+  <text class="ts mid" x="565" y="290">pattes de la résistance dans les Wago</text>
+  <text class="ts mid" x="934" y="422">Wago</text>
+  <text class="ts mid" x="1091" y="422">Wago</text>
+  <text class="ts mid" x="1050" y="475">câble R2V 3G1,5 mm²</text>
+  <text class="ts" x="20" y="664">La jauge et son éclairage ne sont alimentés que poussoir enfoncé. La résistance de 150 Ω est à retirer, le fil rouge à relier au Wago triple et l&#x27;éclairage à passer sur le fil jaune (A13).</text>
+  <text class="ts" x="20" y="682">Pointillés bleus : section non relevée (Q75, Q76). Marron (+) et bleu (−) : couleurs relevées à bord. Emplacements à relever (Q74, Q76).</text>
+  <g class="mk-q"><circle cx="1150" cy="70" r="11"/><text class="mid" x="1150" y="73.5">Q74</text></g>
+  <g class="mk-q"><circle cx="250" cy="150" r="11"/><text class="mid" x="250" y="153.5">Q75</text></g>
+  <g class="mk-q"><circle cx="700" cy="430" r="11"/><text class="mid" x="700" y="433.5">Q76</text></g>
+  <g class="mk-a"><circle cx="565" cy="130" r="11"/><text class="mid" x="565" y="133.5">A13</text></g>
+</svg>

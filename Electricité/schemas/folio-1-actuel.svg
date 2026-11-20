@@ -73,7 +73,7 @@
   <text class="ts mid" x="705" y="105">démarreur + alternateur</text>
   <rect class="box" x="880" y="70" width="200" height="60" rx="2"/>
   <text class="tb mid" x="980" y="112">Tableau moteur</text>
-  <text class="ts mid" x="980" y="127">contact · jauges</text>
+  <text class="ts mid" x="980" y="127">contact · horamètre : folio 1b</text>
   <rect class="fuse" x="700" y="31" width="60" height="18"/>
   <path class="fx" d="M704 40 H756"/>
   <text class="id mid" x="730" y="62">30 A</text>
@@ -99,8 +99,8 @@
   <text class="ts mid" x="460" y="660">12 circuits · folio 2b</text>
   <rect class="box" x="560" y="580" width="200" height="100" rx="2"/>
   <text class="tb mid" x="660" y="620">Tableau Scheiber</text>
-  <text class="ts mid" x="660" y="635">2 voies · contremarche</text>
-  <text class="ts mid" x="660" y="650">cale 10 A · frigo 15 A</text>
+  <text class="ts mid" x="660" y="635">cale 10 A · frigo 15 A</text>
+  <text class="ts mid" x="660" y="650">jauge à gasoil : folio 1b</text>
   <circle class="box" cx="575" cy="770" r="20"/>
   <text class="tb mid" x="575" y="775">P</text>
   <rect class="box" x="730" y="750" width="120" height="100" rx="2"/>

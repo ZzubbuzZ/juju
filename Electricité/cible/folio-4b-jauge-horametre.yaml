@@ -1,0 +1,185 @@
+# Mise en page du folio 4b, lue par outils/folio.py qui produit le SVG voisin.
+# Modèle « cible » : chaque fil 12 V du modèle doit figurer sur un folio de cible/ (outils/verifier.py).
+# Même dessin que le folio 1b tant qu'aucune hypothèse retenue ne touche ces circuits.
+# Nœuds : [côté, coordonnée le long du côté] ; un fil va d'un nœud à l'autre par « trace »
+# (points intermédiaires), en segments à 0, 45 ou 90°.
+folio: 4b
+titre: Jauge à gasoil et horamètre (cible)
+aria: "Jauge à gasoil et horamètre actuels : la jauge est alimentée depuis le tableau Scheiber par un fusible de 2 ampères, un poussoir et une résistance de 150 ohms, sa masse et celle de la sonde vont au coupe-circuit des négatifs ; l'horamètre est branché sur le plus après contact du tableau moteur et sur la masse moteur."
+desc: "Aucune hypothèse retenue ne modifie la jauge à gasoil ni l'horamètre : ils restent tels que relevés (folio 1b). La résistance de 150 Ω sera retirée et l'éclairage passé sur le fil jaune (A13) ; le relevé, puis ce folio, seront mis à jour une fois la modification faite à bord."
+modele: cible
+taille: [1200, 700]
+
+appareils:
+  # ---- alimentation de la jauge
+  - id: tableau-scheiber
+    x: 30
+    y: 140
+    w: 140
+    h: 100
+    titre: Tableau Scheiber
+    titre_y: 22
+    lignes: ["frigo, pompe de cale :", "folio 4"]
+    nodes:
+      node309: {cote: droite, a: 200, fonction: "+"}
+  - id: fus-jauge-gasoil
+    forme: fusible
+    calibre: 2 A
+    titre: porte-fusible
+    titre_xy: [245, 178]
+    nodes:
+      node337: {cote: point, xy: [220, 200], etiquette: [-3, 13, end]}
+      node338: {cote: point, xy: [270, 200], etiquette: [3, 13]}
+  - id: wago-jauge-1
+    x: 296
+    y: 220
+    w: 56
+    h: 26
+    nodes:
+      node339: {cote: haut, a: 310, fonction: ""}
+  - id: poussoir-jauge
+    forme: interrupteur
+    titre: poussoir NO
+    titre_xy: [415, 176]
+    nodes:
+      node340: {cote: point, xy: [390, 200], etiquette: [-4, 30, end]}
+      node341: {cote: point, xy: [440, 200], etiquette: [4, 30]}
+  - id: wago-jauge-2
+    x: 476
+    y: 220
+    w: 56
+    h: 26
+    nodes:
+      node342: {cote: haut, a: 490, fonction: ""}
+  - id: resistance-jauge
+    x: 520
+    y: 150
+    w: 90
+    h: 60
+    titre: "150 Ω ±1 %"
+    titre_y: 20
+    nodes:
+      node343: {cote: gauche, a: 190, fonction: ""}
+      node344: {cote: droite, a: 190, fonction: ""}
+  - id: wago-jauge-3
+    x: 626
+    y: 220
+    w: 56
+    h: 26
+    nodes:
+      node345: {cote: haut, a: 640, fonction: ""}
+
+  # ---- jauge, sonde et masse
+  - id: jauge-gasoil
+    x: 880
+    y: 60
+    w: 240
+    h: 240
+    titre: Jauge à gasoil
+    titre_y: 110
+    lignes: ["Osculati 27.320.0X (Q74)", "12/24 V", "fil jaune (éclairage) libre"]
+    nodes:
+      node349: {cote: gauche, a: 100, fonction: "écl. orange"}
+      node346: {cote: gauche, a: 160, fonction: "+ rouge"}
+      node347: {cote: bas, a: 920, fonction: "− bleu"}
+      node348: {cote: bas, a: 1080, fonction: "sonde noir"}
+  - id: wago-jauge-4
+    x: 906
+    y: 380
+    w: 56
+    h: 26
+    nodes:
+      node350: {cote: haut, a: 920, fonction: ""}
+  - id: wago-jauge-5
+    x: 1066
+    y: 380
+    w: 50
+    h: 26
+    nodes:
+      node353: {cote: haut, a: 1080, fonction: ""}
+  - id: sonde-gasoil
+    x: 940
+    y: 480
+    w: 230
+    h: 80
+    titre: Sonde de niveau
+    titre_y: 44
+    lignes: ["réservoir de gasoil"]
+    nodes:
+      node352: {cote: haut, a: 980}
+      node351: {cote: haut, a: 1140}
+  - id: cc-masse
+    forme: interrupteur
+    titre: CC masse
+    titre_xy: [60, 492]
+    nodes:
+      node023: {cote: point, xy: [60, 400], etiquette: [22, 4]}
+      node022: {cote: point, xy: [60, 460], etiquette: [22, 4]}
+
+  # ---- horamètre
+  - id: tableau-moteur
+    x: 200
+    y: 430
+    w: 180
+    h: 80
+    titre: Tableau moteur
+    titre_y: 22
+    lignes: ["contact, démarrage :", "folio 1"]
+    nodes:
+      node224: {cote: droite, a: 495, fonction: "+ contact"}
+  - id: moteur
+    x: 200
+    y: 560
+    w: 180
+    h: 70
+    titre: Moteur Yanmar 3GMD
+    titre_y: 22
+    nodes:
+      node201: [droite, 610]
+  - id: horametre
+    x: 520
+    y: 430
+    w: 160
+    h: 150
+    titre: Horamètre
+    titre_y: 56
+    lignes: ["GH-521S"]
+    nodes:
+      node225: [gauche, 495]
+      node226: [gauche, 535]
+
+fils:
+  wire326: {etiquette: [195, 192, mid]}
+  wire327: {trace: [[290, 200]], etiquette: [280, 192, mid]}
+  wire328: {trace: [[330, 200]], etiquette: [360, 192, mid]}
+  wire329: {trace: [[470, 200]], etiquette: [455, 192, mid]}
+  wire330: {trace: [[490, 100]], etiquette: [685, 92, mid], texte: "w330 · orange (éclairage)"}
+  wire331: {trace: [[660, 200], [700, 160]], etiquette: [790, 152, mid], texte: "w331 · rouge (+)"}
+  wire332: {etiquette: [928, 345], texte: "w332 · bleu"}
+  wire333: {trace: [[900, 360], [60, 360]], etiquette: [480, 352, mid], texte: "w333 · masse de la jauge et de la sonde"}
+  wire334: {trace: [[940, 360], [980, 360]], etiquette: [972, 450, end], texte: "w334 · 1,5 · bleu"}
+  wire335: {trace: [[1140, 400], [1100, 360]], etiquette: [1132, 455, end], texte: "w335 · 1,5 · marron"}
+  wire336: {etiquette: [1088, 345], texte: "w336 · noir"}
+  wire217: {etiquette: [450, 487, mid], texte: "w217 · + après contact"}
+  wire218: {trace: [[445, 610]], etiquette: [412, 602, mid], texte: "w218 · bleu"}
+
+liaisons:   # pattes de la résistance enfichées dans les Wago
+  - [node342, node343]
+  - [node344, node345]
+
+pastilles:
+  - {id: Q74, x: 1150, y: 70}
+  - {id: Q75, x: 250, y: 150}
+  - {id: Q76, x: 700, y: 430}
+  - {id: A13, x: 565, y: 130}
+
+textes:
+  - {x: 324, y: 262, classe: "ts mid", texte: "Wago"}
+  - {x: 504, y: 262, classe: "ts mid", texte: "Wago triple"}
+  - {x: 654, y: 262, classe: "ts mid", texte: "Wago"}
+  - {x: 565, y: 290, classe: "ts mid", texte: "pattes de la résistance dans les Wago"}
+  - {x: 934, y: 422, classe: "ts mid", texte: "Wago"}
+  - {x: 1091, y: 422, classe: "ts mid", texte: "Wago"}
+  - {x: 1050, y: 475, classe: "ts mid", texte: "câble R2V 3G1,5 mm²"}
+  - {x: 20, y: 664, texte: "La jauge et son éclairage ne sont alimentés que poussoir enfoncé. La résistance de 150 Ω est à retirer, le fil rouge à relier au Wago triple et l'éclairage à passer sur le fil jaune (A13)."}
+  - {x: 20, y: 682, texte: "Pointillés bleus : section non relevée (Q75, Q76). Marron (+) et bleu (−) : couleurs relevées à bord. Emplacements à relever (Q74, Q76)."}

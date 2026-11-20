@@ -104,7 +104,7 @@ appareils:
     h: 60
     titre: Tableau moteur
     titre_y: 42
-    lignes: [contact · jauges]
+    lignes: ["contact · horamètre : folio 1b"]
     nodes:
       node204: {cote: haut, a: 980, fonction: "+"}
   - id: fus-tableau-moteur
@@ -190,7 +190,7 @@ appareils:
     h: 100
     titre: Tableau Scheiber
     titre_y: 40
-    lignes: [2 voies · contremarche, cale 10 A · frigo 15 A]
+    lignes: [cale 10 A · frigo 15 A, "jauge à gasoil : folio 1b"]
     nodes:
       node309: {cote: haut, a: 600, fonction: "+"}
       node312: {cote: bas, a: 575, fonction: pompe}

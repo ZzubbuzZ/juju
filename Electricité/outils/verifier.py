@@ -266,7 +266,9 @@ def controler(m: Modele, questions: set[str], traitees: set[str], r: Rapport) ->
                 r.erreur(ou, f"{f['id']} relie le 230 V au circuit 12 V")
             if len(pols & POLARITES_230V) > 1:
                 r.erreur(ou, f"{f['id']} relie deux conducteurs 230 V différents ({' / '.join(sorted(pols))})")
-            couleur = f.get("couleur")
+            # couleur : signalée là où le fil est défini (relevé, ou hypothèse qui le propose), pas dans chaque
+            # modèle qui en hérite
+            couleur = f.get("couleur") if m.nom == "releve" or f.get("statut") == "propose" else None
             if couleur and pols == {"+"} and couleur != "rouge":
                 r.avert(ou, f"{f['id']} : fil positif de couleur {couleur} (rouge attendu)")
             if couleur and pols == {"-"} and couleur not in ("noir", "jaune"):

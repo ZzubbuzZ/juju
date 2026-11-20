@@ -30,6 +30,10 @@ fils:
   - { id: wire207, de: node203, vers: node204, questions: [Q65], note: "Faisceau d'origine, du porte-fusible au tableau moteur ; section et couleur à relever" }
   - { id: wire018, de: node023, vers: node028, section_mm2: 6, couleur: noir, longueur_m: 1, note: "Masse du coupleur côté charges" }
 
+  # --- Horamètre (20/11, Q76) ------------------------------------------------------
+  - { id: wire217, de: node224, vers: node225, questions: [Q76], note: "+ après contact du tableau moteur ; couleur et section à relever" }
+  - { id: wire218, de: node201, vers: node226, couleur: bleu, questions: [Q76], note: "Dérivé de la masse moteur ; section à relever" }
+
   # --- Guindeau et tableau de servitude ------------------------------------------
   - { id: wire205, de: node023, vers: node211, section_mm2: 50, couleur: noir, longueur_m: 10 }
   - { id: wire401, de: node023, vers: node401, section_mm2: 6, couleur: noir, longueur_m: 3 }
@@ -53,6 +57,19 @@ fils:
   - { id: wire316, de: node310, vers: node320, section_mm2: 3.5, section_indicative: true, note: "Retour de l'EPS 100 sur la barrette de masse du tableau" }
   - { id: wire317, de: node312, vers: node317, section_mm2: 2.5 }
   - { id: wire318, de: node318, vers: node310, section_mm2: 2.5, note: "Masse de la pompe sur la barrette du tableau Scheiber" }
+
+  # --- Jauge à gasoil (20/11, Q74, Q75) ---------------------------------------------
+  - { id: wire326, de: node309, vers: node337, couleur: marron, questions: [Q75], note: "Depuis le + du tableau Scheiber ; section à relever" }
+  - { id: wire327, de: node338, vers: node339, couleur: marron, questions: [Q75] }
+  - { id: wire328, de: node339, vers: node340, couleur: marron, questions: [Q75] }
+  - { id: wire329, de: node341, vers: node342, couleur: marron, questions: [Q75] }
+  - { id: wire330, de: node342, vers: node349, couleur: orange, questions: [Q75], note: "Fil d'éclairage de la jauge ; le fil jaune, libre, sera branché à sa place (A13)" }
+  - { id: wire331, de: node345, vers: node346, couleur: rouge, questions: [Q75], note: "Fil + de la jauge" }
+  - { id: wire332, de: node347, vers: node350, couleur: bleu, questions: [Q75], note: "Fil − de la jauge" }
+  - { id: wire333, de: node350, vers: node023, questions: [Q75], note: "Vers la borne côté charges du coupe-circuit des négatifs (20/11) ; couleur et section à relever" }
+  - { id: wire334, de: node350, vers: node352, section_mm2: 1.5, couleur: bleu, questions: [Q75], note: "Câble R2V 3G1,5 mm² de la sonde, conducteur bleu" }
+  - { id: wire335, de: node351, vers: node353, section_mm2: 1.5, couleur: marron, questions: [Q75], note: "Câble R2V 3G1,5 mm² de la sonde, conducteur marron" }
+  - { id: wire336, de: node353, vers: node348, couleur: noir, questions: [Q75], note: "Fil sonde de la jauge" }
 
   # --- Frigo : EPS 100 vers groupe froid (Q16) -----------------------------------
   - { id: wire321, de: node321, vers: node323, section_mm2: 3.5, section_indicative: true, longueur_m: 3, note: "Longueur estimée. Câble étamé vissé sans cosse dans les bornes de l'EPS 100 (A7)" }

@@ -179,7 +179,9 @@
             "shunt",
             "source",
             "prise",
-            "isolateur"
+            "isolateur",
+            "resistance",
+            "capteur"
           ]
         },
         "designation": {
