@@ -21,8 +21,8 @@ appareils:
     titre: Chargeur Dolphin 20 A
     lignes: ["batterie moteur seule · 230 V : folio 3"]
     nodes:
-      node052: [gauche, 112]
-      node050: [bas, 216]
+      node102: [gauche, 112]
+      node100: [bas, 216]
   - id: bat-moteur
     x: 40
     y: 180
@@ -46,8 +46,8 @@ appareils:
     calibre: 30 A
     calibre_cote: gauche
     nodes:
-      node054: {cote: point, xy: [216, 168], etiquette: [12, 4]}
-      node053: {cote: point, xy: [216, 204], etiquette: [12, 2]}
+      node104: {cote: point, xy: [216, 168], etiquette: [12, 4]}
+      node103: {cote: point, xy: [216, 204], etiquette: [12, 2]}
   - id: cc-moteur
     forme: interrupteur
     titre: CC moteur
@@ -63,8 +63,8 @@ appareils:
     titre: Yanmar 3GMD
     lignes: [démarreur + alternateur]
     nodes:
-      node100: [gauche, 220]
-      node101: [bas, 900]
+      node200: [gauche, 220]
+      node201: [bas, 900]
   - id: selecteur-guindeau
     nouveau: true
     x: 600
@@ -74,17 +74,17 @@ appareils:
     titre: Sélecteur
     titre_y: 17
     nodes:
-      node105: [gauche, 120]
-      node107: [droite, 120]
-      node106: [bas, 675]
+      node205: [gauche, 120]
+      node207: [droite, 120]
+      node206: [bas, 675]
   - id: disj-guindeau
     forme: fusible
     calibre: 70 A
     titre: disjoncteur du guindeau
     titre_xy: [850, 100]
     nodes:
-      node108: {cote: point, xy: [820, 120], etiquette: [-4, 20, end]}
-      node109: {cote: point, xy: [880, 120], etiquette: [4, 20]}
+      node208: {cote: point, xy: [820, 120], etiquette: [-4, 20, end]}
+      node209: {cote: point, xy: [880, 120], etiquette: [4, 20]}
   - id: relais-guindeau
     x: 960
     y: 80
@@ -93,19 +93,19 @@ appareils:
     titre: Relais
     lignes: [guindeau]
     nodes:
-      node110: [gauche, 120]
-      node111: [droite, 170]
-      node116: [droite, 194]
-      node112: [droite, 110]
-      node113: [droite, 140]
-      node114: {cote: bas, a: 1004, etiquette: [-4, -16, end]}
-      node115: {cote: bas, a: 1040, etiquette: [-4, -16, end]}
+      node210: [gauche, 120]
+      node211: [droite, 170]
+      node216: [droite, 194]
+      node212: [droite, 110]
+      node213: [droite, 140]
+      node214: {cote: bas, a: 1004, etiquette: [-4, -16, end]}
+      node215: {cote: bas, a: 1040, etiquette: [-4, -16, end]}
   - id: fus-telecommande-guindeau
     forme: fusible
     calibre: 5 A
     nodes:
-      node119: {cote: point, xy: [945, 250], etiquette: [8, -6]}
-      node120: {cote: point, xy: [945, 290], etiquette: [8, 14]}
+      node219: {cote: point, xy: [945, 250], etiquette: [8, -6]}
+      node220: {cote: point, xy: [945, 290], etiquette: [8, 14]}
   - id: telecommande-guindeau
     x: 980
     y: 330
@@ -115,9 +115,9 @@ appareils:
     titre: Télécommande
     titre_y: 50
     nodes:
-      node121: [gauche, 365]
-      node122: {cote: haut, a: 1004, etiquette: [-5, 14, end]}
-      node123: {cote: haut, a: 1040, etiquette: [5, 14]}
+      node221: [gauche, 365]
+      node222: {cote: haut, a: 1004, etiquette: [-5, 14, end]}
+      node223: {cote: haut, a: 1040, etiquette: [5, 14]}
   - id: guindeau
     forme: cercle
     cx: 1140
@@ -125,8 +125,8 @@ appareils:
     r: 20
     symbole: M
     nodes:
-      node117: {angle: 131.41, cote: point, etiquette: [2, -20]}
-      node118: {angle: 228.59, cote: point, etiquette: [2, 16]}
+      node217: {angle: 131.41, cote: point, etiquette: [2, -20]}
+      node218: {angle: 228.59, cote: point, etiquette: [2, 16]}
   - id: cc-masse
     forme: interrupteur
     titre: CC masse
@@ -139,8 +139,8 @@ appareils:
     calibre: 70 A
     calibre_cote: gauche
     nodes:
-      node065: {cote: point, xy: [496, 262], etiquette: [-12, 2, end]}
-      node066: {cote: point, xy: [496, 302], etiquette: [-12, 8, end]}
+      node115: {cote: point, xy: [496, 262], etiquette: [-12, 2, end]}
+      node116: {cote: point, xy: [496, 302], etiquette: [-12, 8, end]}
   - id: orion-xs
     x: 370
     y: 380
@@ -150,31 +150,31 @@ appareils:
     titre_y: 40
     lignes: ["réglé vers 15 A"]
     nodes:
-      node061: [haut, 496]
-      node062: [droite, 450]
-      node063: [bas, 400]
-      node064: [bas, 540]
+      node111: [haut, 496]
+      node112: [droite, 450]
+      node113: [bas, 400]
+      node114: [bas, 540]
   - id: fus-orion-sortie
     forme: fusible
     calibre: 70 A
     nodes:
-      node068: {cote: point, xy: [640, 450], etiquette: [-4, 20, end]}
-      node067: {cote: point, xy: [680, 450], etiquette: [4, 20]}
+      node118: {cote: point, xy: [640, 450], etiquette: [-4, 20, end]}
+      node117: {cote: point, xy: [680, 450], etiquette: [4, 20]}
   - id: inter-orion
     forme: interrupteur
     titre: interrupteur à voyant (Q48)
     titre_xy: [564, 546]
     titre_ancre: ""
     nodes:
-      node072: {cote: point, xy: [540, 520], etiquette: [8, -3]}
-      node071: {cote: point, xy: [540, 564], etiquette: [-8, 12, end]}
-      node073: {cote: point, xy: [524, 542], etiquette: [-8, -6, end]}
+      node122: {cote: point, xy: [540, 520], etiquette: [8, -3]}
+      node121: {cote: point, xy: [540, 564], etiquette: [-8, 12, end]}
+      node123: {cote: point, xy: [524, 542], etiquette: [-8, -6, end]}
   - id: fus-orion-remote
     forme: fusible
     calibre: 1 A
     nodes:
-      node070: {cote: point, xy: [620, 580], etiquette: [-4, 20, end]}
-      node069: {cote: point, xy: [666, 580], etiquette: [4, 20]}
+      node120: {cote: point, xy: [620, 580], etiquette: [-4, 20, end]}
+      node119: {cote: point, xy: [666, 580], etiquette: [4, 20]}
 
 barres:
   - {node: node023, de: [500, 640], a: [1170, 640]}
@@ -182,37 +182,37 @@ barres:
 pastilles:
 
 liaisons:
-  - [node053, node003]
+  - [node103, node003]
 
 fils:
-  wire050: {trace: [[30, 112], [30, 230]], etiquette: [36, 160]}
+  wire100: {trace: [[30, 112], [30, 230]], etiquette: [36, 160]}
   wire002: {etiquette: [201, 236, mid]}
-  wire063: {etiquette: [210, 152, end]}
+  wire113: {etiquette: [210, 152, end]}
   wire001: {etiquette: [388, 212, mid]}
-  wire100: {etiquette: [620, 212, mid]}
-  wire101: {trace: [[500, 204], [500, 120]], etiquette: [530, 112, mid], texte: "w101 · 35 · pos. 1"}
-  wire108: {etiquette: [775, 112, mid], texte: "w108 · 35"}
-  wire103: {trace: [[675, 176]], etiquette: [681, 170], texte: "w103 · pos. 2"}
-  wire109: {etiquette: [906, 112, mid]}
-  wire111: {etiquette: [1100, 104, mid], texte: w111}
-  wire112: {etiquette: [1100, 156, mid], texte: w112}
-  wire116: {trace: [[1092, 182]], etiquette: [1098, 200], texte: w116}
-  wire104: {trace: [[880, 640], [900, 620]], etiquette: [894, 300, end]}
-  wire105: {trace: [[1150, 640], [1170, 620], [1170, 170]], etiquette: [1164, 470, end]}
-  wire110: {trace: [[945, 135]], etiquette: [952, 228]}
-  wire115: {trace: [[945, 365]], etiquette: [951, 322]}
-  wire113: {etiquette: [998, 270, mid, v]}
-  wire114: {etiquette: [1034, 270, mid, v]}
+  wire200: {etiquette: [620, 212, mid]}
+  wire201: {trace: [[500, 204], [500, 120]], etiquette: [530, 112, mid], texte: "w201 · 35 · pos. 1"}
+  wire208: {etiquette: [775, 112, mid], texte: "w208 · 35"}
+  wire203: {trace: [[675, 176]], etiquette: [681, 170], texte: "w203 · pos. 2"}
+  wire209: {etiquette: [906, 112, mid]}
+  wire211: {etiquette: [1100, 104, mid], texte: w211}
+  wire212: {etiquette: [1100, 156, mid], texte: w212}
+  wire216: {trace: [[1092, 182]], etiquette: [1098, 200], texte: w216}
+  wire204: {trace: [[880, 640], [900, 620]], etiquette: [894, 300, end]}
+  wire205: {trace: [[1150, 640], [1170, 620], [1170, 170]], etiquette: [1164, 470, end]}
+  wire210: {trace: [[945, 135]], etiquette: [952, 228]}
+  wire215: {trace: [[945, 365]], etiquette: [951, 322]}
+  wire213: {etiquette: [998, 270, mid, v]}
+  wire214: {etiquette: [1034, 270, mid, v]}
   wire003: {trace: [[30, 250], [30, 656], [424, 656]], etiquette: [36, 300]}
-  wire053: {trace: [[496, 232]], etiquette: [488, 250, end]}
-  wire065: {etiquette: [488, 344, end]}
-  wire066: {etiquette: [610, 442, mid]}
-  wire058: {trace: [[730, 450]], etiquette: [705, 438, mid]}
-  wire062: {trace: [[400, 640]], etiquette: [394, 575, end]}
-  wire067: {etiquette: [532, 506, end]}
-  wire061: {trace: [[424, 542], [424, 624]], etiquette: [430, 600], texte: "w061 · voyant"}
-  wire068: {trace: [[540, 580]], etiquette: [580, 574, mid]}
-  wire054: {trace: [[520, 256], [520, 350], [870, 350], [870, 580]], etiquette: [680, 344, mid], texte: "w054 · + de l'entrée (notice)"}
+  wire103: {trace: [[496, 232]], etiquette: [488, 250, end]}
+  wire115: {etiquette: [488, 344, end]}
+  wire116: {etiquette: [610, 442, mid]}
+  wire108: {trace: [[730, 450]], etiquette: [705, 438, mid]}
+  wire112: {trace: [[400, 640]], etiquette: [394, 575, end]}
+  wire117: {etiquette: [532, 506, end]}
+  wire111: {trace: [[424, 542], [424, 624]], etiquette: [430, 600], texte: "w111 · voyant"}
+  wire118: {trace: [[540, 580]], etiquette: [580, 574, mid]}
+  wire104: {trace: [[520, 256], [520, 350], [870, 350], [870, 580]], etiquette: [680, 344, mid], texte: "w104 · + de l'entrée (notice)"}
 
 renvois:
   - {x: 600, y: 176, w: 150, nouveau: true, texte: "n021 · servitude : folio 2i"}

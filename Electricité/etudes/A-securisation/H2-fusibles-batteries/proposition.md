@@ -9,7 +9,7 @@ points_forts:
 points_faibles:
   - wire001 et wire008 restent en 35 mm² sous 400 A (écart accepté, à surveiller par l'historique du shunt).
   - Tronçons courts non protégés entre batterie et fusible (w002, w009).
-decision: "30/09/2026 : retenue, option A à 400 A sur les deux batteries ; chargeur 30 A, coupleur 40 A ; 01/10 : fusibles de 50 A (wire200) et de 30 A (wire158) ajoutés. Côté servitude, l'étude E (05/10) remplace le plomb, le coupleur et le couplage : MEGA de 300 A sur la LiFePO4."
+decision: "30/09/2026 : retenue, option A à 400 A sur les deux batteries ; chargeur 30 A, coupleur 40 A ; 01/10 : fusibles de 50 A (wire400) et de 30 A (wire308) ajoutés. Côté servitude, l'étude E (05/10) remplace le plomb, le coupleur et le couplage : MEGA de 300 A sur la LiFePO4."
 ---
 
 # A-H2 · Fusibles de batterie
@@ -26,8 +26,8 @@ Les câbles existants gardent leur numéro : seule leur extrémité côté sourc
 
 - **Option A, avec un calibre de 400 A** sur les deux batteries (au lieu des 300 A étudiés d'abord) : même fusible des deux côtés, démarrage de secours couplé possible. **wire008 est conservé en 35 mm²** (décision du 30/09), comme wire001 : voir l'écart accepté plus bas.
 - **Départs** : 30 A pour le chargeur, **40 A pour le coupleur**, dont le relais est donné pour 40 A.
-- **Tableau de la table à carte (A1)** : fusible de 50 A à la source de wire200, repris de A-H1 le 01/10 (voir plus bas).
-- **Tableau Scheiber (A6)** : fusible de 30 A à la source de wire158, ajouté le 01/10 (voir plus bas).
+- **Tableau de la table à carte (A1)** : fusible de 50 A à la source de wire400, repris de A-H1 le 01/10 (voir plus bas).
+- **Tableau Scheiber (A6)** : fusible de 30 A à la source de wire308, ajouté le 01/10 (voir plus bas).
 
 Le choix de 400 A et ses conséquences sont détaillés dans [Calibre retenu : 400 A](#calibre-retenu--400-a).
 
@@ -43,7 +43,7 @@ D'après le manuel d'atelier Yanmar : **60 A à vide, 200 à 275 A en démarrage
 
 Les normes nautiques dispensent le circuit du démarreur de fusible. Mais wire001 fait 2 m, et s'il frotte contre une masse, rien ne coupe. **Fusible sur la borne +**, de 300 A dans l'étude initiale, **400 A retenus** (voir plus bas). Il ne gêne pas le démarrage et coupe un court-circuit franc.
 
-C'est d'ailleurs la pratique de l'automobile récente : sur un Ford Transit Custom, le démarreur et l'alternateur sont raccordés à la batterie à travers un fusible de 470 A, pour un démarreur de diesel plus puissant que celui du 3GMD. À bord, l'alternateur est lui aussi derrière ce fusible, puisqu'il charge la batterie moteur par le même câble que le démarreur (node100) : ses 20 A environ ne sollicitent pas un calibre de 300 A.
+C'est d'ailleurs la pratique de l'automobile récente : sur un Ford Transit Custom, le démarreur et l'alternateur sont raccordés à la batterie à travers un fusible de 470 A, pour un démarreur de diesel plus puissant que celui du 3GMD. À bord, l'alternateur est lui aussi derrière ce fusible, puisqu'il charge la batterie moteur par le même câble que le démarreur (node200) : ses 20 A environ ne sollicitent pas un calibre de 300 A.
 
 ### Batterie de servitude
 
@@ -78,8 +78,8 @@ Quatre fils de 6 mm² partent directement des bornes côté batterie des coupe-c
 
 | Fil | Départ | Fusible proposé | Pourquoi |
 |---|---|---|---|
-| wire051 | chargeur, sortie batterie moteur | 30 A | le chargeur débite 20 A au plus |
-| wire055 | chargeur, sortie batterie servitude | 30 A | idem |
+| wire101 | chargeur, sortie batterie moteur | 30 A | le chargeur débite 20 A au plus |
+| wire105 | chargeur, sortie batterie servitude | 30 A | idem |
 | wire004 | coupleur, côté batterie moteur | 40 A | le relais du coupleur est donné pour 40 A. Il transmet le courant de l'alternateur (35 A au plus, Q14, correction du 12/11), mais, à sa fermeture, deux batteries très inégales peuvent échanger davantage : le fusible protège alors le câble et le relais |
 | wire016 | coupleur, côté batterie servitude | 40 A | idem |
 
@@ -87,19 +87,19 @@ Les porte-fusibles se fixent près de la platine des coupe-circuits, dans la zon
 
 #### Le fusible de 25 A de la notice du chargeur
 
-La notice du Dolphin indique un « fusible de sortie F25A » : c'est le fusible **interne** du chargeur, côté batteries (rapide, 32 V), à remplacer à l'identique. Il protège le chargeur, notamment en cas d'inversion de polarité, mais pas les câbles : un court-circuit sur wire051 ou wire055 est alimenté par la batterie, de l'autre côté, et ce fusible interne ne le voit pas. D'où le fusible externe, à la batterie.
+La notice du Dolphin indique un « fusible de sortie F25A » : c'est le fusible **interne** du chargeur, côté batteries (rapide, 32 V), à remplacer à l'identique. Il protège le chargeur, notamment en cas d'inversion de polarité, mais pas les câbles : un court-circuit sur wire101 ou wire105 est alimenté par la batterie, de l'autre côté, et ce fusible interne ne le voit pas. D'où le fusible externe, à la batterie.
 
 Son calibre doit rester au-dessus du courant du chargeur (20 A ± 5 %, pendant des heures) et en dessous de la tenue du 6 mm². **30 A** laisse une marge pour un fusible qui travaille en continu dans un coffre chaud ; 25 A conviendrait aussi, mais tournerait à plus de 80 % de son calibre en début de charge.
 
-La notice préconise aussi des câbles batterie de 6 mm² sur **1,5 m au plus**. wire051 et wire055 font 2 m : la chute de tension, un peu plus forte que prévu, abaisse légèrement la tension de charge. Ce n'est pas un problème de sécurité ; à reprendre si ces fils sont refaits pour la pose des porte-fusibles.
+La notice préconise aussi des câbles batterie de 6 mm² sur **1,5 m au plus**. wire101 et wire105 font 2 m : la chute de tension, un peu plus forte que prévu, abaisse légèrement la tension de charge. Ce n'est pas un problème de sécurité ; à reprendre si ces fils sont refaits pour la pose des porte-fusibles.
 
 ### Tableau de la table à carte (A1)
 
-wire200 (6 mm², 3 m) part de la sortie du coupe-circuit de servitude (node021, relevé corrigé le 01/10) sans aucune protection. Un **fusible MIDI de 50 A** se place à sa source, près de la platine des coupe-circuits, avec les fusibles des départs : un tronçon court (wire157) va de node021 au porte-fusible, et wire200 est repris sur sa sortie. 50 A reste dans la tenue du 6 mm² et laisse passer la consommation du tableau (Q12 pour les longueurs exactes). C'est la seule partie de A-H1 retenue le 30/09.
+wire400 (6 mm², 3 m) part de la sortie du coupe-circuit de servitude (node021, relevé corrigé le 01/10) sans aucune protection. Un **fusible MIDI de 50 A** se place à sa source, près de la platine des coupe-circuits, avec les fusibles des départs : un tronçon court (wire307) va de node021 au porte-fusible, et wire400 est repris sur sa sortie. 50 A reste dans la tenue du 6 mm² et laisse passer la consommation du tableau (Q12 pour les longueurs exactes). C'est la seule partie de A-H1 retenue le 30/09.
 
 ### Tableau Scheiber (A6)
 
-wire158 (6 mm²) part lui aussi de node021, sans fusible, vers le tableau Scheiber 2 voies (frigo 15 A, pompe de cale). Même traitement que wire200 : un **fusible MIDI de 30 A** à côté du premier, près de la platine ; un tronçon court (wire156) va de node021 au porte-fusible, et wire158 est repris sur sa sortie. 30 A couvre les deux voies du tableau et reste dans la tenue du 6 mm². C'était le lot « distribution » de A-H1 ; la barrette de A-H1 reste différée.
+wire308 (6 mm²) part lui aussi de node021, sans fusible, vers le tableau Scheiber 2 voies (frigo 15 A, pompe de cale). Même traitement que wire400 : un **fusible MIDI de 30 A** à côté du premier, près de la platine ; un tronçon court (wire306) va de node021 au porte-fusible, et wire308 est repris sur sa sortie. 30 A couvre les deux voies du tableau et reste dans la tenue du 6 mm². C'était le lot « distribution » de A-H1 ; la barrette de A-H1 reste différée.
 
 ### Numéros
 
@@ -107,12 +107,12 @@ wire158 (6 mm²) part lui aussi de node021, sans fusible, vers le tableau Scheib
 |---|---|---|---|
 | batterie moteur | 400 A | wire002 (35 mm²) | wire001 |
 | batterie de servitude | 400 A | wire009 (35 mm²) | wire008 |
-| chargeur, sortie moteur | 30 A | wire052 (6 mm²) | wire051 |
-| chargeur, sortie servitude | 30 A | wire057 (6 mm²) | wire055 |
+| chargeur, sortie moteur | 30 A | wire102 (6 mm²) | wire101 |
+| chargeur, sortie servitude | 30 A | wire107 (6 mm²) | wire105 |
 | coupleur, côté moteur | 40 A | wire005 (6 mm²) | wire004 |
 | coupleur, côté servitude | 40 A | wire017 (6 mm²) | wire016 |
-| tableau de la table à carte | 50 A | wire157 (6 mm²) | wire200 |
-| tableau Scheiber | 30 A | wire156 (6 mm²) | wire158 |
+| tableau de la table à carte | 50 A | wire307 (6 mm²) | wire400 |
+| tableau Scheiber | 30 A | wire306 (6 mm²) | wire308 |
 
 ## Questions liées
 

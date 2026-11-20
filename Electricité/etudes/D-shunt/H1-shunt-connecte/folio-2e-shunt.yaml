@@ -83,13 +83,13 @@ fils:
   wire010: {etiquette: [325, 347, mid], texte: "w010 · 35 (repris)"}
   wire011: {trace: [[724, 355]], etiquette: [694, 345, mid]}
   wire003: {trace: [[860, 490], [730, 490], [730, 395]], etiquette: [795, 482, mid]}
-  wire060: {trace: [[860, 455], [750, 455], [750, 409]], etiquette: [805, 447, mid]}
+  wire110: {trace: [[860, 455], [750, 455], [750, 409]], etiquette: [805, 447, mid]}
 
 renvois:
   - {x: 540, y: 151, w: 210, texte: "node021 · charges : folios 1 et 2c"}
   - {x: 680, y: 60, w: 270, texte: "CC moteur, côté batterie · node005 · folio 1"}
   - {x: 900, y: 386, w: 230, texte: "node023 · masse des charges : folio 1"}
-  - {x: 860, y: 446, w: 130, texte: "→ node052 · folio 1"}
+  - {x: 860, y: 446, w: 130, texte: "→ node102 · folio 1"}
   - {x: 860, y: 481, w: 130, texte: "→ node002 · folio 1"}
 
 textes:

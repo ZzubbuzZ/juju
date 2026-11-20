@@ -63,15 +63,15 @@
   <path class="p w4" d="M300 120 L424 120"/>
   <text class="idn mid" x="362" y="112">w008 · 35</text>
   <path class="p w1" d="M484 120 L560 120"/>
-  <text class="idn mid" x="526" y="110">w155 · 0,75</text>
+  <text class="idn mid" x="526" y="110">w305 · 0,75</text>
   <path class="p w1" d="M606 120 L700 120"/>
-  <text class="idn mid" x="653" y="112">w174 · 0,75</text>
+  <text class="idn mid" x="653" y="112">w324 · 0,75</text>
   <path class="n w1" d="M740 210 L740 280 L540 280"/>
-  <text class="idn" x="748" y="252">w160 · 0,75</text>
+  <text class="idn" x="748" y="252">w310 · 0,75</text>
   <path class="n w2" d="M310 385 L840 385 L840 210"/>
-  <text class="idn mid" x="575" y="377">w151 · câble VE.Direct 1,8 m</text>
+  <text class="idn mid" x="575" y="377">w301 · câble VE.Direct 1,8 m</text>
   <path class="n w2" d="M900 195 L980 195"/>
-  <text class="idn mid" x="955" y="187">w175</text>
+  <text class="idn mid" x="955" y="187">w325</text>
   <rect class="flag" x="100" y="111" width="200" height="18"/>
   <text class="ts mid" x="200" y="124">← n010, fusible 400 A : folio 2c</text>
   <rect class="flag" x="290" y="271" width="250" height="18"/>
@@ -88,23 +88,23 @@
   <circle class="term" cx="310" cy="385" r="3.5"/>
   <text class="id end" x="416" y="150">n020</text>
   <text class="id" x="478" y="150">n021</text>
-  <text class="idn end" x="557" y="142">n180</text>
-  <text class="idn" x="609" y="142">n181</text>
-  <text class="idn" x="707" y="119">n182</text>
+  <text class="idn end" x="557" y="142">n330</text>
+  <text class="idn" x="609" y="142">n331</text>
+  <text class="idn" x="707" y="119">n332</text>
   <text class="pin" x="707" y="129">+</text>
-  <text class="idn" x="745" y="194">n183</text>
+  <text class="idn" x="745" y="194">n333</text>
   <text class="pin" x="745" y="204">−</text>
-  <text class="idn end" x="835" y="194">n184</text>
+  <text class="idn end" x="835" y="194">n334</text>
   <text class="pin end" x="835" y="204">VE.Direct</text>
-  <text class="idn end" x="893" y="194">n185</text>
+  <text class="idn end" x="893" y="194">n335</text>
   <text class="pin end" x="893" y="204">écran</text>
-  <text class="idn" x="987" y="194">n186</text>
+  <text class="idn" x="987" y="194">n336</text>
   <text class="pin" x="987" y="204">HDMI/USB</text>
   <text class="idn end" x="303" y="384">n015</text>
   <text class="pin end" x="303" y="394">données</text>
-  <text class="ts" x="940" y="238">w175 : câble de l&#x27;écran, 2 m fourni</text>
-  <text class="ts" x="940" y="254">et rallonge de 2 m, trajet de w200</text>
-  <text class="ts" x="940" y="270">(n152 → n200)</text>
+  <text class="ts" x="940" y="238">w325 : câble de l&#x27;écran, 2 m fourni</text>
+  <text class="ts" x="940" y="254">et rallonge de 2 m, trajet de w400</text>
+  <text class="ts" x="940" y="270">(n302 → n400)</text>
   <text class="tb" x="40" y="446">Différence avec D-H1</text>
   <text class="t" x="40" y="466">Même SmartShunt, même position, mêmes fils de mesure (folio 2e). Le Cerbo GX lit le shunt par VE.Direct et affiche le bord sur l&#x27;écran.</text>
   <text class="t" x="40" y="484">Il est alimenté après le coupe-circuit de servitude : il s&#x27;éteint bateau coupé, alors que le shunt, alimenté avant, continue de compter.</text>

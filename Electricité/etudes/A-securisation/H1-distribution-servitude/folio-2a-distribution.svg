@@ -86,39 +86,39 @@
   <path class="n w4" d="M40 130 L20 130 L20 640 L80 640"/>
   <text class="id mid" x="14" y="400" transform="rotate(-90 14 400)">w010 · 35</text>
   <path class="p w4" d="M360 130 L430 130 L450 150"/>
-  <text class="idn mid" x="405" y="122">w153 · 35</text>
+  <text class="idn mid" x="405" y="122">w303 · 35</text>
   <path class="p w4" d="M450 180 L470 160 L540 160"/>
-  <text class="idn mid" x="495" y="152">w163 · 35</text>
+  <text class="idn mid" x="495" y="152">w313 · 35</text>
   <path class="p w5" d="M600 160 L720 160"/>
-  <text class="id mid" x="660" y="152">w109 · 50</text>
+  <text class="id mid" x="660" y="152">w209 · 50</text>
   <path class="p w3" d="M496 270 L760 270"/>
-  <text class="idn mid" x="628" y="262">w203 · 10</text>
+  <text class="idn mid" x="628" y="262">w403 · 10</text>
   <path class="n w3" d="M1165 640 L1185 620 L1185 280 L960 280"/>
-  <text class="idn mid" x="1072" y="272">w202 · 10</text>
+  <text class="idn mid" x="1072" y="272">w402 · 10</text>
   <path class="p w2" d="M496 390 L640 390"/>
-  <text class="idn mid" x="568" y="382">w164 · 6</text>
+  <text class="idn mid" x="568" y="382">w314 · 6</text>
   <path class="n w2" d="M860 640 L880 620 L880 470 L860 470"/>
-  <text class="id mid" x="874" y="570" transform="rotate(-90 874 570)">w162 · 6 · existant</text>
+  <text class="id mid" x="874" y="570" transform="rotate(-90 874 570)">w312 · 6 · existant</text>
   <path class="p w2" d="M860 395 L900 395"/>
-  <text class="id mid" x="880" y="387">w165</text>
+  <text class="id mid" x="880" y="387">w315</text>
   <path class="n w2" d="M860 470 L900 470 L930 440"/>
-  <text class="id" x="926" y="478">w166</text>
+  <text class="id" x="926" y="478">w316</text>
   <path class="p w2" d="M1040 395 L1070 395"/>
-  <text class="id mid" x="1055" y="388">w171</text>
+  <text class="id mid" x="1055" y="388">w321</text>
   <path class="n w2" d="M1040 420 L1070 420"/>
-  <text class="id mid" x="1055" y="436">w172</text>
+  <text class="id mid" x="1055" y="436">w322</text>
   <path class="p w2" d="M683 500 L683 563"/>
-  <text class="id" x="690" y="540">w167 · 2,5 · existant</text>
+  <text class="id" x="690" y="540">w317 · 2,5 · existant</text>
   <path class="p w2" d="M300 130 L284 146 L284 196"/>
-  <text class="idn mid" x="278" y="171" transform="rotate(-90 278 171)">w152</text>
+  <text class="idn mid" x="278" y="171" transform="rotate(-90 278 171)">w302</text>
   <path class="p w2" d="M284 236 L284 563 L480 563"/>
-  <text class="idn mid" x="380" y="555">w169 · 2,5</text>
+  <text class="idn mid" x="380" y="555">w319 · 2,5</text>
   <path class="p w2" d="M540 563 L683 563"/>
-  <text class="idn mid" x="610" y="580">w170 · 2,5</text>
+  <text class="idn mid" x="610" y="580">w320 · 2,5</text>
   <path class="n w2" d="M700 604 L700 612 L52 612 L80 640"/>
-  <text class="idn mid" x="400" y="606">w159 · 2,5</text>
+  <text class="idn mid" x="400" y="606">w309 · 2,5</text>
   <rect class="flag" x="720" y="151" width="300" height="18"/>
-  <text class="ts mid" x="870" y="164">→ node110 · relais du guindeau (inchangé) · folio 1</text>
+  <text class="ts mid" x="870" y="164">→ node210 · relais du guindeau (inchangé) · folio 1</text>
   <circle class="term" cx="190" cy="130" r="3.5"/>
   <circle class="term" cx="40" cy="130" r="3.5"/>
   <circle class="term" cx="300" cy="130" r="3.5"/>
@@ -156,44 +156,44 @@
   <text class="pin" x="47" y="139">−</text>
   <text class="id end" x="296" y="122">n020</text>
   <text class="id" x="364" y="150">n021</text>
-  <text class="idn" x="296" y="200">n163</text>
-  <text class="idn" x="296" y="240">n164</text>
-  <text class="idn mid" x="450" y="476">n150</text>
-  <text class="id end" x="536" y="182">n108</text>
-  <text class="id" x="604" y="182">n109</text>
-  <text class="idn end" x="446" y="290">n153</text>
-  <text class="idn" x="500" y="290">n154</text>
-  <text class="idn end" x="446" y="410">n157</text>
-  <text class="idn" x="500" y="410">n158</text>
-  <text class="id" x="767" y="269">n200</text>
+  <text class="idn" x="296" y="200">n313</text>
+  <text class="idn" x="296" y="240">n314</text>
+  <text class="idn mid" x="450" y="476">n300</text>
+  <text class="id end" x="536" y="182">n208</text>
+  <text class="id" x="604" y="182">n209</text>
+  <text class="idn end" x="446" y="290">n303</text>
+  <text class="idn" x="500" y="290">n304</text>
+  <text class="idn end" x="446" y="410">n307</text>
+  <text class="idn" x="500" y="410">n308</text>
+  <text class="id" x="767" y="269">n400</text>
   <text class="pin" x="767" y="279">+</text>
-  <text class="id end" x="953" y="279">n201</text>
+  <text class="id end" x="953" y="279">n401</text>
   <text class="pin end" x="953" y="289">−</text>
-  <text class="id" x="647" y="389">n159</text>
+  <text class="id" x="647" y="389">n309</text>
   <text class="pin" x="647" y="399">+</text>
-  <text class="id end" x="853" y="394">n161</text>
+  <text class="id end" x="853" y="394">n311</text>
   <text class="pin end" x="853" y="404">frigo</text>
-  <text class="id end" x="853" y="469">n160</text>
+  <text class="id end" x="853" y="469">n310</text>
   <text class="pin end" x="853" y="479">−</text>
-  <text class="id" x="688" y="484">n162</text>
+  <text class="id" x="688" y="484">n312</text>
   <text class="pin" x="688" y="494">cale</text>
-  <text class="id" x="907" y="394">n169</text>
+  <text class="id" x="907" y="394">n319</text>
   <text class="pin" x="907" y="404">bat +</text>
-  <text class="id" x="935" y="424">n170</text>
+  <text class="id" x="935" y="424">n320</text>
   <text class="pin" x="935" y="434">bat −</text>
-  <text class="id end" x="1033" y="394">n171</text>
+  <text class="id end" x="1033" y="394">n321</text>
   <text class="pin end" x="1033" y="404">gf +</text>
-  <text class="id end" x="1033" y="419">n172</text>
+  <text class="id end" x="1033" y="419">n322</text>
   <text class="pin end" x="1033" y="429">gf −</text>
-  <text class="id" x="1077" y="394">n173</text>
+  <text class="id" x="1077" y="394">n323</text>
   <text class="pin" x="1077" y="404">+</text>
-  <text class="id" x="1077" y="419">n174</text>
+  <text class="id" x="1077" y="419">n324</text>
   <text class="pin" x="1077" y="429">−</text>
-  <text class="idn end" x="476" y="555">n165</text>
-  <text class="idn" x="544" y="555">n166</text>
-  <text class="id end" x="679" y="555">n167</text>
+  <text class="idn end" x="476" y="555">n315</text>
+  <text class="idn" x="544" y="555">n316</text>
+  <text class="id end" x="679" y="555">n317</text>
   <text class="pin end" x="679" y="565">+</text>
-  <text class="id" x="706" y="618">n168</text>
+  <text class="id" x="706" y="618">n318</text>
   <text class="pin" x="706" y="628">−</text>
   <text class="id end" x="76" y="660">n022</text>
   <text class="id" x="144" y="660">n023</text>
@@ -206,5 +206,5 @@
   <text class="ts mid" x="970" y="330">liaison existante · entrée 230 V : folio 3</text>
   <text class="tb" x="734" y="576">Pompe de cale</text>
   <text class="ts" x="734" y="592">Tsunami T500</text>
-  <text class="ts tn" x="400" y="700">w159 : masse côté batteries, la pompe reste active coupe-circuits ouverts.</text>
+  <text class="ts tn" x="400" y="700">w309 : masse côté batteries, la pompe reste active coupe-circuits ouverts.</text>
 </svg>

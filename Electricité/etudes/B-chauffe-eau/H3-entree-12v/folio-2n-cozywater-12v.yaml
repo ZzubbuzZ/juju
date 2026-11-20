@@ -25,8 +25,8 @@ appareils:
     calibre: 30 A
     titre: disj. CC
     nodes:
-      node175: {cote: point, xy: [230, 140], etiquette: [-3, 13, end]}
-      node176: {cote: point, xy: [276, 140], etiquette: [3, 13]}
+      node325: {cote: point, xy: [230, 140], etiquette: [-3, 13, end]}
+      node326: {cote: point, xy: [276, 140], etiquette: [3, 13]}
   - id: chauffe-eau
     x: 960
     y: 100
@@ -36,8 +36,8 @@ appareils:
     titre_y: 28
     lignes: ["entrée 12 V · 200 W · ≈ 17 A", "230 V prioritaire : folio 2m", "panneau : marche, minuterie"]
     nodes:
-      node177: [gauche, 120]
-      node178: [gauche, 230]
+      node327: [gauche, 120]
+      node328: [gauche, 230]
   - id: cc-masse
     forme: interrupteur
     titre: CC masse
@@ -52,9 +52,9 @@ traits:   # liaisons vers les renvois
   - {classe: "n w3", points: [[120, 430], [60, 430], [60, 460]]}
 
 fils:
-  wire154: {etiquette: [205, 132, mid], texte: w154}
-  wire173: {trace: [[900, 140], [920, 120]], etiquette: [470, 132, mid], texte: "w173 · 6 mm² · ≈ 3 m"}
-  wire161: {trace: [[940, 250], [940, 430]], etiquette: [560, 422, mid], texte: "w161 · 6 mm² · ≈ 3 m"}
+  wire304: {etiquette: [205, 132, mid], texte: w304}
+  wire323: {trace: [[900, 140], [920, 120]], etiquette: [470, 132, mid], texte: "w323 · 6 mm² · ≈ 3 m"}
+  wire311: {trace: [[940, 250], [940, 430]], etiquette: [560, 422, mid], texte: "w311 · 6 mm² · ≈ 3 m"}
 
 renvois:
   - {x: 40, y: 72, w: 250, texte: "← n010, MEGA 300 A : folio 2o"}

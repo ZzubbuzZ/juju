@@ -22,17 +22,17 @@ Variante de [E-H1](../H1-lifepo4/proposition.md). Base : **E-H1**. Câblage : [c
 | Élément | E-H1 | E-H5 |
 |---|---|---|
 | Blue Smart IP67 12/17 | Niche de la contremarche, en bas du fond | Coffre de cockpit tribord, près du boîtier d'arrivée 230 V |
-| Fusible de 25 A (node059, node060) | Côté batterie du coupe-circuit de servitude (node020) | Inchangé : il reste à la source du câble, dans la niche |
-| Sortie + (wire064) | 4 mm², 0,5 m | **Câble rouge fourni**, 12 AWG, 1,40 m (16/10) |
-| Retour − (wire059) | 4 mm², 0,5 m, sur node022 | **Câble noir fourni**, 12 AWG, 1,40 m, sur node022 (côté « bord » du shunt) |
-| 230 V (wire311 à wire313) | 3 × 1,5 mm², environ 4 m | 3 × 1,5 mm², environ 1 m |
+| Fusible de 25 A (node109, node110) | Côté batterie du coupe-circuit de servitude (node020) | Inchangé : il reste à la source du câble, dans la niche |
+| Sortie + (wire114) | 4 mm², 0,5 m | **Câble rouge fourni**, 12 AWG, 1,40 m (16/10) |
+| Retour − (wire109) | 4 mm², 0,5 m, sur node022 | **Câble noir fourni**, 12 AWG, 1,40 m, sur node022 (côté « bord » du shunt) |
+| 230 V (wire511 à wire513) | 3 × 1,5 mm², environ 4 m | 3 × 1,5 mm², environ 1 m |
 | Orion XS, shunt, autres fusibles | Niche de la contremarche | Inchangés |
 
 ## Section de la sortie 12 V
 
 **16/10 : les câbles fournis suffisent.** Le trajet du coffre de cockpit à la niche fait environ 1,2 m : 60 cm dans le coffre, puis 60 cm à travers le compartiment moteur (Q64). Les câbles livrés avec le chargeur (rouge et noir, 12 AWG, soit environ 3,3 mm², 1,40 m) y arrivent seuls ; la rallonge de 10 mm² et sa jonction dans le coffre, prévues pour les 5 m de Q50, sont abandonnées (choix de l'utilisateur). La marge n'est que de 20 cm : si le câble ne suffit pas à la pose, une courte rallonge reste possible.
 
-Chute à 17 A : 2 × 1,4 × 17 × 0,0175 / 3,3 ≈ 0,25 V, plus environ 0,02 V pour le pont wire056 et le fusible, soit **0,27 V (2,2 %)**, sous les 3 %. Le fusible de 25 A, à la source dans la niche, protège le câble fourni, que Victron équipe lui-même d'un fusible de 30 A. Ce fusible de 30 A reste en place côté chargeur : il protège le chargeur contre une inversion de polarité. Détail : [dimensionnement.md](../../../commun/dimensionnement.md#chute-de-tension-du-chargeur-de-quai-1610).
+Chute à 17 A : 2 × 1,4 × 17 × 0,0175 / 3,3 ≈ 0,25 V, plus environ 0,02 V pour le pont wire106 et le fusible, soit **0,27 V (2,2 %)**, sous les 3 %. Le fusible de 25 A, à la source dans la niche, protège le câble fourni, que Victron équipe lui-même d'un fusible de 30 A. Ce fusible de 30 A reste en place côté chargeur : il protège le chargeur contre une inversion de polarité. Détail : [dimensionnement.md](../../../commun/dimensionnement.md#chute-de-tension-du-chargeur-de-quai-1610).
 
 *Calcul du 14/10, dépassé : pour 5 m, S = 2 × 5 × 17 × 0,0175 / 0,36 ≈ 8,3 mm², soit 10 mm².*
 

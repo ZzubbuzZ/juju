@@ -1,9 +1,10 @@
 # yaml-language-server: $schema=../outils/schema/donnees.schema.json
 #
 # Nœuds du circuit : une borne d'un équipement = un nœud.
-# Numérotation par section (15/10), commune aux nœuds et aux fils : 001-049 batteries, coupe-circuits
-# et shunt ; 050-099 charge ; 100-149 moteur et guindeau ; 150-199 distribution 12 V (départs, Scheiber,
-# frigo, ballon) ; 200-249 tableau de servitude et ses circuits ; 300-399 réseau 230 V. Un fil prend la
+# Numérotation par section (20/11, sections de 100 numéros), commune aux nœuds et aux fils : 001-099
+# batteries, coupe-circuits et shunt ; 100-199 charge ; 200-299 moteur et guindeau ; 300-399 distribution
+# 12 V (départs, Scheiber, frigo, ballon, jauge) ; 400-499 tableau de servitude et ses circuits ; 500-599
+# réseau 230 V ; 600-999 libres. Un fil prend la
 # section de son bout le plus en aval. Relevé et propositions partagent les sections (champ statut).
 
 nodes:
@@ -29,119 +30,119 @@ nodes:
   - { id: node026, equipement: coupleur, borne: "batterie moteur", polarite: "+" }
   - { id: node027, equipement: coupleur, borne: "batterie servitude", polarite: "+" }
   - { id: node028, equipement: coupleur, borne: "masse", polarite: "-" }
-  - { id: node050, equipement: chargeur-quai, borne: "sortie 1 (moteur)", polarite: "+" }
-  - { id: node051, equipement: chargeur-quai, borne: "sortie 2 (servitude)", polarite: "+" }
-  - { id: node052, equipement: chargeur-quai, borne: "masse", polarite: "-" }
+  - { id: node100, equipement: chargeur-quai, borne: "sortie 1 (moteur)", polarite: "+" }
+  - { id: node101, equipement: chargeur-quai, borne: "sortie 2 (servitude)", polarite: "+" }
+  - { id: node102, equipement: chargeur-quai, borne: "masse", polarite: "-" }
 
   # --- Guindeau ------------------------------------------------------------------
-  - { id: node108, equipement: disj-guindeau, borne: "1 (primaire)", polarite: "+" }
-  - { id: node109, equipement: disj-guindeau, borne: "2 (secondaire)", polarite: "+" }
-  - { id: node110, equipement: relais-guindeau, borne: "entrée +", polarite: "+" }
-  - { id: node111, equipement: relais-guindeau, borne: "entrée -", polarite: "-" }
-  - { id: node112, equipement: relais-guindeau, borne: "sortie moteur A", polarite: commute }
-  - { id: node113, equipement: relais-guindeau, borne: "sortie moteur B", polarite: commute }
-  - { id: node114, equipement: relais-guindeau, borne: "commande montée", polarite: commande }
-  - { id: node115, equipement: relais-guindeau, borne: "commande descente", polarite: commande }
-  - { id: node116, equipement: relais-guindeau, borne: "commun commande", polarite: "-" }
-  - { id: node117, equipement: guindeau, borne: "A", polarite: commute }
-  - { id: node118, equipement: guindeau, borne: "B", polarite: commute }
-  - { id: node119, equipement: fus-telecommande-guindeau, borne: "1", polarite: "+" }
-  - { id: node120, equipement: fus-telecommande-guindeau, borne: "2", polarite: "+" }
-  - { id: node121, equipement: telecommande-guindeau, borne: "+", polarite: "+" }
-  - { id: node122, equipement: telecommande-guindeau, borne: "montée", polarite: commande }
-  - { id: node123, equipement: telecommande-guindeau, borne: "descente", polarite: commande }
+  - { id: node208, equipement: disj-guindeau, borne: "1 (primaire)", polarite: "+" }
+  - { id: node209, equipement: disj-guindeau, borne: "2 (secondaire)", polarite: "+" }
+  - { id: node210, equipement: relais-guindeau, borne: "entrée +", polarite: "+" }
+  - { id: node211, equipement: relais-guindeau, borne: "entrée -", polarite: "-" }
+  - { id: node212, equipement: relais-guindeau, borne: "sortie moteur A", polarite: commute }
+  - { id: node213, equipement: relais-guindeau, borne: "sortie moteur B", polarite: commute }
+  - { id: node214, equipement: relais-guindeau, borne: "commande montée", polarite: commande }
+  - { id: node215, equipement: relais-guindeau, borne: "commande descente", polarite: commande }
+  - { id: node216, equipement: relais-guindeau, borne: "commun commande", polarite: "-" }
+  - { id: node217, equipement: guindeau, borne: "A", polarite: commute }
+  - { id: node218, equipement: guindeau, borne: "B", polarite: commute }
+  - { id: node219, equipement: fus-telecommande-guindeau, borne: "1", polarite: "+" }
+  - { id: node220, equipement: fus-telecommande-guindeau, borne: "2", polarite: "+" }
+  - { id: node221, equipement: telecommande-guindeau, borne: "+", polarite: "+" }
+  - { id: node222, equipement: telecommande-guindeau, borne: "montée", polarite: commande }
+  - { id: node223, equipement: telecommande-guindeau, borne: "descente", polarite: commande }
 
   # --- Moteur --------------------------------------------------------------------
-  - { id: node100, equipement: moteur, borne: "+ démarreur / alternateur", polarite: "+" }
-  - { id: node101, equipement: moteur, borne: "masse moteur", polarite: "-" }
-  - { id: node102, equipement: fus-tableau-moteur, borne: "1 (côté démarreur)", polarite: "+" }
-  - { id: node103, equipement: fus-tableau-moteur, borne: "2 (côté tableau)", polarite: "+" }
-  - { id: node104, equipement: tableau-moteur, borne: "+", polarite: "+" }
+  - { id: node200, equipement: moteur, borne: "+ démarreur / alternateur", polarite: "+" }
+  - { id: node201, equipement: moteur, borne: "masse moteur", polarite: "-" }
+  - { id: node202, equipement: fus-tableau-moteur, borne: "1 (côté démarreur)", polarite: "+" }
+  - { id: node203, equipement: fus-tableau-moteur, borne: "2 (côté tableau)", polarite: "+" }
+  - { id: node204, equipement: tableau-moteur, borne: "+", polarite: "+" }
 
   # --- Frigo ---------------------------------------------------------------------
-  - { id: node173, equipement: groupe-froid, borne: "+ 12/24 V", polarite: "+" }
-  - { id: node174, equipement: groupe-froid, borne: "-", polarite: "-" }
-  - { id: node169, equipement: eps100, borne: "batterie +", polarite: "+" }
-  - { id: node170, equipement: eps100, borne: "batterie -", polarite: "-" }
-  - { id: node171, equipement: eps100, borne: "sortie groupe froid +", polarite: "+" }
-  - { id: node172, equipement: eps100, borne: "sortie groupe froid -", polarite: "-" }
+  - { id: node323, equipement: groupe-froid, borne: "+ 12/24 V", polarite: "+" }
+  - { id: node324, equipement: groupe-froid, borne: "-", polarite: "-" }
+  - { id: node319, equipement: eps100, borne: "batterie +", polarite: "+" }
+  - { id: node320, equipement: eps100, borne: "batterie -", polarite: "-" }
+  - { id: node321, equipement: eps100, borne: "sortie groupe froid +", polarite: "+" }
+  - { id: node322, equipement: eps100, borne: "sortie groupe froid -", polarite: "-" }
   # La borne de terre 230 V de l'EPS 100, notée au début, a été supprimée le 29/09 : l'EPS 100 n'a pas de terre.
-  - { id: node344, equipement: eps100, borne: "230 V phase", polarite: 230V-phase }
-  - { id: node345, equipement: eps100, borne: "230 V neutre", polarite: 230V-neutre }
+  - { id: node544, equipement: eps100, borne: "230 V phase", polarite: 230V-phase }
+  - { id: node545, equipement: eps100, borne: "230 V neutre", polarite: 230V-neutre }
 
   # --- Tableau Scheiber 2 voies et pompe de cale ---------------------------------
-  - { id: node159, equipement: tableau-scheiber, borne: "+ alimentation", polarite: "+" }
-  - { id: node160, equipement: tableau-scheiber, borne: "- masse", polarite: "-" }
-  - { id: node161, equipement: tableau-scheiber, borne: "sortie frigo (15 A)", polarite: "+" }
-  - { id: node162, equipement: tableau-scheiber, borne: "sortie pompe de cale (10 A)", polarite: "+" }
-  - { id: node167, equipement: pompe-cale, borne: "+", polarite: "+" }
-  - { id: node168, equipement: pompe-cale, borne: "-", polarite: "-" }
+  - { id: node309, equipement: tableau-scheiber, borne: "+ alimentation", polarite: "+" }
+  - { id: node310, equipement: tableau-scheiber, borne: "- masse", polarite: "-" }
+  - { id: node311, equipement: tableau-scheiber, borne: "sortie frigo (15 A)", polarite: "+" }
+  - { id: node312, equipement: tableau-scheiber, borne: "sortie pompe de cale (10 A)", polarite: "+" }
+  - { id: node317, equipement: pompe-cale, borne: "+", polarite: "+" }
+  - { id: node318, equipement: pompe-cale, borne: "-", polarite: "-" }
 
   # --- Tableau de servitude (table à carte) --------------------------------------
-  - { id: node200, equipement: tableau-servitude, borne: "+ alimentation", polarite: "+" }
-  - { id: node201, equipement: tableau-servitude, borne: "- barre de masse", polarite: "-" }
-  - { id: node202, equipement: tableau-servitude, borne: "feu route (10 A)", polarite: "+" }
-  - { id: node203, equipement: tableau-servitude, borne: "feu moteur (10 A)", polarite: "+" }
-  - { id: node204, equipement: tableau-servitude, borne: "pompe à eau (15 A)", polarite: "+" }
-  - { id: node205, equipement: tableau-servitude, borne: "radio (10 A)", polarite: "+" }
-  - { id: node206, equipement: tableau-servitude, borne: "prises 12 V (10 A)", polarite: "+" }
-  - { id: node207, equipement: tableau-servitude, borne: "éclairage (10 A)", polarite: "+" }
-  - { id: node208, equipement: tableau-servitude, borne: "projecteur (10 A)", polarite: "+" }
-  - { id: node209, equipement: tableau-servitude, borne: "mouillage (10 A)", polarite: "+" }
-  - { id: node210, equipement: tableau-servitude, borne: "compas (5 A)", polarite: "+" }
-  - { id: node211, equipement: tableau-servitude, borne: "pilote (10 A)", polarite: "+" }
-  - { id: node212, equipement: tableau-servitude, borne: "VHF (10 A)", polarite: "+" }
-  - { id: node213, equipement: tableau-servitude, borne: "GPS loch (10 A)", polarite: "+" }
+  - { id: node400, equipement: tableau-servitude, borne: "+ alimentation", polarite: "+" }
+  - { id: node401, equipement: tableau-servitude, borne: "- barre de masse", polarite: "-" }
+  - { id: node402, equipement: tableau-servitude, borne: "feu route (10 A)", polarite: "+" }
+  - { id: node403, equipement: tableau-servitude, borne: "feu moteur (10 A)", polarite: "+" }
+  - { id: node404, equipement: tableau-servitude, borne: "pompe à eau (15 A)", polarite: "+" }
+  - { id: node405, equipement: tableau-servitude, borne: "radio (10 A)", polarite: "+" }
+  - { id: node406, equipement: tableau-servitude, borne: "prises 12 V (10 A)", polarite: "+" }
+  - { id: node407, equipement: tableau-servitude, borne: "éclairage (10 A)", polarite: "+" }
+  - { id: node408, equipement: tableau-servitude, borne: "projecteur (10 A)", polarite: "+" }
+  - { id: node409, equipement: tableau-servitude, borne: "mouillage (10 A)", polarite: "+" }
+  - { id: node410, equipement: tableau-servitude, borne: "compas (5 A)", polarite: "+" }
+  - { id: node411, equipement: tableau-servitude, borne: "pilote (10 A)", polarite: "+" }
+  - { id: node412, equipement: tableau-servitude, borne: "VHF (10 A)", polarite: "+" }
+  - { id: node413, equipement: tableau-servitude, borne: "GPS loch (10 A)", polarite: "+" }
 
   # --- Réseau 230 V --------------------------------------------------------------
-  - { id: node312, equipement: chargeur-quai, borne: "230 V phase", polarite: 230V-phase }
-  - { id: node313, equipement: chargeur-quai, borne: "230 V neutre", polarite: 230V-neutre }
-  - { id: node314, equipement: chargeur-quai, borne: "230 V terre", polarite: 230V-terre }
-  - { id: node300, equipement: prise-quai, borne: "phase", polarite: 230V-phase }
-  - { id: node301, equipement: prise-quai, borne: "neutre", polarite: 230V-neutre }
-  - { id: node302, equipement: prise-quai, borne: "terre", polarite: 230V-terre }
-  - { id: node305, equipement: ddr-230v, borne: "entrée phase", polarite: 230V-phase }
-  - { id: node306, equipement: ddr-230v, borne: "entrée neutre", polarite: 230V-neutre }
-  - { id: node308, equipement: ddr-230v, borne: "sortie phase", polarite: 230V-phase }
-  - { id: node309, equipement: ddr-230v, borne: "sortie neutre", polarite: 230V-neutre }
-  - { id: node310, equipement: disj-chargeur, borne: "entrée", polarite: 230V-phase }
-  - { id: node311, equipement: disj-chargeur, borne: "sortie", polarite: 230V-phase }
-  - { id: node307, equipement: boitier-230v, borne: "barrette de terre", polarite: 230V-terre }
-  - { id: node320, equipement: boitier-230-tribord, borne: "barre de phase", polarite: 230V-phase }
-  - { id: node321, equipement: boitier-230-tribord, borne: "barrette de neutre", polarite: 230V-neutre }
-  - { id: node322, equipement: boitier-230-tribord, borne: "barrette de terre", polarite: 230V-terre }
-  - { id: node323, equipement: disj-trib-eclairage, borne: "entrée", polarite: 230V-phase, monte_sur: node320 }
-  - { id: node324, equipement: disj-trib-eclairage, borne: "sortie", polarite: 230V-phase }
-  - { id: node339, equipement: disj-trib-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node320 }
-  - { id: node340, equipement: disj-trib-prises, borne: "sortie", polarite: 230V-phase }
-  - { id: node328, equipement: disj-trib-10a-2, borne: "entrée", polarite: 230V-phase, monte_sur: node320 }
-  - { id: node329, equipement: disj-trib-10a-2, borne: "sortie", polarite: 230V-phase }
-  - { id: node352, equipement: disj-babord-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node320 }
-  - { id: node353, equipement: disj-babord-prises, borne: "sortie", polarite: 230V-phase }
-  - { id: node354, equipement: boitier-230-babord, borne: "phase", polarite: 230V-phase }
-  - { id: node355, equipement: boitier-230-babord, borne: "neutre", polarite: 230V-neutre }
-  - { id: node356, equipement: boitier-230-babord, borne: "terre", polarite: 230V-terre }
-  - { id: node341, equipement: prise-230-eps100, borne: "phase", polarite: 230V-phase }
-  - { id: node342, equipement: prise-230-eps100, borne: "neutre", polarite: 230V-neutre }
-  - { id: node343, equipement: prise-230-eps100, borne: "terre", polarite: 230V-terre }
-  - { id: node346, equipement: prise-230-cuisine, borne: "phase", polarite: 230V-phase }
-  - { id: node347, equipement: prise-230-cuisine, borne: "neutre", polarite: 230V-neutre }
-  - { id: node348, equipement: prise-230-cuisine, borne: "terre", polarite: 230V-terre }
-  - { id: node357, equipement: prise-230-table-a-carte, borne: "phase", polarite: 230V-phase }
-  - { id: node358, equipement: prise-230-table-a-carte, borne: "neutre", polarite: 230V-neutre }
-  - { id: node359, equipement: prise-230-table-a-carte, borne: "terre", polarite: 230V-terre }
-  - { id: node360, equipement: prise-230-armoire, borne: "phase", polarite: 230V-phase }
-  - { id: node361, equipement: prise-230-armoire, borne: "neutre", polarite: 230V-neutre }
-  - { id: node362, equipement: prise-230-armoire, borne: "terre", polarite: 230V-terre }
-  - { id: node349, equipement: prise-230-toilette, borne: "phase", polarite: 230V-phase }
-  - { id: node350, equipement: prise-230-toilette, borne: "neutre", polarite: 230V-neutre }
-  - { id: node351, equipement: prise-230-toilette, borne: "terre", polarite: 230V-terre }
-  - { id: node363, equipement: prise-230-proue, borne: "phase", polarite: 230V-phase }
-  - { id: node364, equipement: prise-230-proue, borne: "neutre", polarite: 230V-neutre }
-  - { id: node365, equipement: prise-230-proue, borne: "terre", polarite: 230V-terre }
-  - { id: node330, equipement: eclairage-230-babord, borne: "phase", polarite: 230V-phase, statut: estime }
-  - { id: node331, equipement: eclairage-230-babord, borne: "neutre", polarite: 230V-neutre, statut: estime }
-  - { id: node332, equipement: eclairage-230-babord, borne: "terre", polarite: 230V-terre, statut: estime }
-  - { id: node325, equipement: plafonnier-230, borne: "phase", polarite: 230V-phase }
-  - { id: node326, equipement: plafonnier-230, borne: "neutre", polarite: 230V-neutre }
-  - { id: node327, equipement: plafonnier-230, borne: "terre", polarite: 230V-terre }
+  - { id: node512, equipement: chargeur-quai, borne: "230 V phase", polarite: 230V-phase }
+  - { id: node513, equipement: chargeur-quai, borne: "230 V neutre", polarite: 230V-neutre }
+  - { id: node514, equipement: chargeur-quai, borne: "230 V terre", polarite: 230V-terre }
+  - { id: node500, equipement: prise-quai, borne: "phase", polarite: 230V-phase }
+  - { id: node501, equipement: prise-quai, borne: "neutre", polarite: 230V-neutre }
+  - { id: node502, equipement: prise-quai, borne: "terre", polarite: 230V-terre }
+  - { id: node505, equipement: ddr-230v, borne: "entrée phase", polarite: 230V-phase }
+  - { id: node506, equipement: ddr-230v, borne: "entrée neutre", polarite: 230V-neutre }
+  - { id: node508, equipement: ddr-230v, borne: "sortie phase", polarite: 230V-phase }
+  - { id: node509, equipement: ddr-230v, borne: "sortie neutre", polarite: 230V-neutre }
+  - { id: node510, equipement: disj-chargeur, borne: "entrée", polarite: 230V-phase }
+  - { id: node511, equipement: disj-chargeur, borne: "sortie", polarite: 230V-phase }
+  - { id: node507, equipement: boitier-230v, borne: "barrette de terre", polarite: 230V-terre }
+  - { id: node520, equipement: boitier-230-tribord, borne: "barre de phase", polarite: 230V-phase }
+  - { id: node521, equipement: boitier-230-tribord, borne: "barrette de neutre", polarite: 230V-neutre }
+  - { id: node522, equipement: boitier-230-tribord, borne: "barrette de terre", polarite: 230V-terre }
+  - { id: node523, equipement: disj-trib-eclairage, borne: "entrée", polarite: 230V-phase, monte_sur: node520 }
+  - { id: node524, equipement: disj-trib-eclairage, borne: "sortie", polarite: 230V-phase }
+  - { id: node539, equipement: disj-trib-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node520 }
+  - { id: node540, equipement: disj-trib-prises, borne: "sortie", polarite: 230V-phase }
+  - { id: node528, equipement: disj-trib-10a-2, borne: "entrée", polarite: 230V-phase, monte_sur: node520 }
+  - { id: node529, equipement: disj-trib-10a-2, borne: "sortie", polarite: 230V-phase }
+  - { id: node552, equipement: disj-babord-prises, borne: "entrée", polarite: 230V-phase, monte_sur: node520 }
+  - { id: node553, equipement: disj-babord-prises, borne: "sortie", polarite: 230V-phase }
+  - { id: node554, equipement: boitier-230-babord, borne: "phase", polarite: 230V-phase }
+  - { id: node555, equipement: boitier-230-babord, borne: "neutre", polarite: 230V-neutre }
+  - { id: node556, equipement: boitier-230-babord, borne: "terre", polarite: 230V-terre }
+  - { id: node541, equipement: prise-230-eps100, borne: "phase", polarite: 230V-phase }
+  - { id: node542, equipement: prise-230-eps100, borne: "neutre", polarite: 230V-neutre }
+  - { id: node543, equipement: prise-230-eps100, borne: "terre", polarite: 230V-terre }
+  - { id: node546, equipement: prise-230-cuisine, borne: "phase", polarite: 230V-phase }
+  - { id: node547, equipement: prise-230-cuisine, borne: "neutre", polarite: 230V-neutre }
+  - { id: node548, equipement: prise-230-cuisine, borne: "terre", polarite: 230V-terre }
+  - { id: node557, equipement: prise-230-table-a-carte, borne: "phase", polarite: 230V-phase }
+  - { id: node558, equipement: prise-230-table-a-carte, borne: "neutre", polarite: 230V-neutre }
+  - { id: node559, equipement: prise-230-table-a-carte, borne: "terre", polarite: 230V-terre }
+  - { id: node560, equipement: prise-230-armoire, borne: "phase", polarite: 230V-phase }
+  - { id: node561, equipement: prise-230-armoire, borne: "neutre", polarite: 230V-neutre }
+  - { id: node562, equipement: prise-230-armoire, borne: "terre", polarite: 230V-terre }
+  - { id: node549, equipement: prise-230-toilette, borne: "phase", polarite: 230V-phase }
+  - { id: node550, equipement: prise-230-toilette, borne: "neutre", polarite: 230V-neutre }
+  - { id: node551, equipement: prise-230-toilette, borne: "terre", polarite: 230V-terre }
+  - { id: node563, equipement: prise-230-proue, borne: "phase", polarite: 230V-phase }
+  - { id: node564, equipement: prise-230-proue, borne: "neutre", polarite: 230V-neutre }
+  - { id: node565, equipement: prise-230-proue, borne: "terre", polarite: 230V-terre }
+  - { id: node530, equipement: eclairage-230-babord, borne: "phase", polarite: 230V-phase, statut: estime }
+  - { id: node531, equipement: eclairage-230-babord, borne: "neutre", polarite: 230V-neutre, statut: estime }
+  - { id: node532, equipement: eclairage-230-babord, borne: "terre", polarite: 230V-terre, statut: estime }
+  - { id: node525, equipement: plafonnier-230, borne: "phase", polarite: 230V-phase }
+  - { id: node526, equipement: plafonnier-230, borne: "neutre", polarite: 230V-neutre }
+  - { id: node527, equipement: plafonnier-230, borne: "terre", polarite: 230V-terre }

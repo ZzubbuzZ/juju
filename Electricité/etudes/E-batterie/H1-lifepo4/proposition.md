@@ -17,7 +17,7 @@ points_faibles:
   - Guindeau utilisé moteur arrêté ; il entame la batterie de démarrage (environ 2 à 3 Ah par mouillage).
   - Commande manuelle du DC/DC (Q48) ; un oubli au port le laisse démarrer sur la charge du Dolphin.
   - Fusible MEGA (décision du 05/10) ; un MRBF aurait un meilleur pouvoir de coupure, pour le même prix.
-decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node006), masse du voyant sur node022. 12/10 : le Blue Smart a son propre C10, posé dans la place libre du boîtier d'arrivée (Q63) ; le Dolphin garde le sien. 13/10 : couplage définitivement déposé ; secours d'une batterie moteur défectueuse par un booster de démarrage autonome. 13/10 : sélecteur 3 positions (moteur / off / servitude) pour le guindeau, en secours d'une batterie moteur défectueuse. 14/10 : emplacement tranché, l'Orion XS et le shunt dans la niche de la contremarche (implantation dans « Implantation dans la niche ») ; le Blue Smart va au coffre de cockpit (E-H5, retenue) ; E-H4 écartée. 15/10 : sélecteur du guindeau à la place du coupe-circuit de couplage, sur la platine ; porte-fusibles MIDI reliés par deux ponts, un par potentiel de la servitude (wire058 et wire157 en 16 mm²)."
+decision: "02/10/2026 : retenue par Julie (batterie de servitude LiFePO4). 05/10 : batterie Humsienk 12 V 200 Ah Plus (BMS 250 A), Orion XS 12/12-50A (259 €) et Blue Smart IP67 12/17 (BPC121713006, 118 €) achetés ; fusible MEGA de 300 A ; commande manuelle de l'Orion XS (Q48). Câblage écrit ; emplacement de l'Orion XS, du chargeur de quai et du shunt à choisir sur place (E-H1 ou E-H4). 05/10, suite : guindeau sur le circuit moteur, couplage déposé sans retour (démarrage direct abandonné), fusibles de 70 A et câbles de 16 mm² pour l'Orion XS, commande sur la broche H avec interrupteur à voyant ; folios cibles 2h et 2i. 08/10 : calibre du MEGA confirmé à 300 A ; étude fusionnée dans main. 08/10, suite : entrée et commande de l'Orion XS côté charges du coupe-circuit moteur (node006), masse du voyant sur node022. 12/10 : le Blue Smart a son propre C10, posé dans la place libre du boîtier d'arrivée (Q63) ; le Dolphin garde le sien. 13/10 : couplage définitivement déposé ; secours d'une batterie moteur défectueuse par un booster de démarrage autonome. 13/10 : sélecteur 3 positions (moteur / off / servitude) pour le guindeau, en secours d'une batterie moteur défectueuse. 14/10 : emplacement tranché, l'Orion XS et le shunt dans la niche de la contremarche (implantation dans « Implantation dans la niche ») ; le Blue Smart va au coffre de cockpit (E-H5, retenue) ; E-H4 écartée. 15/10 : sélecteur du guindeau à la place du coupe-circuit de couplage, sur la platine ; porte-fusibles MIDI reliés par deux ponts, un par potentiel de la servitude (wire108 et wire307 en 16 mm²)."
 ---
 
 # E-H1 · Batterie LiFePO4, chargeur DC/DC et chargeur de quai dédié
@@ -40,23 +40,23 @@ Il est donc **déposé avec ses deux câbles de 35 mm²** (wire007, wire015), **
 
 ### 1 bis. Guindeau sur le circuit moteur (décision du 05/10)
 
-Le guindeau était alimenté par la servitude : wire102, de node021 (côté charges du coupe-circuit de servitude) à son disjoncteur de 70 A (node108). **Il passe sur la batterie moteur** : wire102 est remplacé par **wire101**, 35 mm², de node006 (côté charges du coupe-circuit moteur, la borne du démarreur) au disjoncteur. Le disjoncteur, le relais et wire109 ne changent pas.
+Le guindeau était alimenté par la servitude : wire202, de node021 (côté charges du coupe-circuit de servitude) à son disjoncteur de 70 A (node208). **Il passe sur la batterie moteur** : wire202 est remplacé par **wire201**, 35 mm², de node006 (côté charges du coupe-circuit moteur, la borne du démarreur) au disjoncteur. Le disjoncteur, le relais et wire209 ne changent pas.
 
 - **Manœuvre moteur tournant** : c'est le cas normal au mouillage. L'alternateur (35 A) et la batterie moteur fournissent les 50 à 60 A du guindeau directement, sans passer par l'Orion XS.
 - **La LiFePO4 et son BMS ne voient plus le guindeau** : plus de pointe de courant à surveiller sur le BMS. Le départ le plus chargé de la servitude devient celui du tableau de la table à carte.
 - **Le shunt de l'étude D ne compte plus le guindeau** : son bilan ne mesure que la vie à bord.
-- **Protection** : wire101 est protégé, comme wire100, par le fusible de 400 A de la batterie moteur (A-H2) ; le disjoncteur de 70 A protège ensuite wire109. Ouvrir le coupe-circuit moteur coupe aussi le guindeau.
+- **Protection** : wire201 est protégé, comme wire200, par le fusible de 400 A de la batterie moteur (A-H2) ; le disjoncteur de 70 A protège ensuite wire209. Ouvrir le coupe-circuit moteur coupe aussi le guindeau.
 - **Revers** : guindeau utilisé moteur arrêté, il entame la batterie de démarrage, environ 2 à 3 Ah par mouillage (50 A pendant 2 à 3 minutes), sur 110 Ah. Sans conséquence pour le démarrage, mais la règle reste de relever l'ancre moteur tournant.
 
 ### 1 ter. Sélecteur de batterie du guindeau (décision du 13/10)
 
 Avec le guindeau sur la batterie moteur, une batterie moteur défectueuse priverait aussi de l'ancre. Le booster (voir « Démarrage de secours ») démarre le moteur mais ne fait pas tourner le guindeau. Un **sélecteur 3 positions** choisit la source du guindeau :
 
-- **1, batterie moteur** (position normale) : wire101, de node006, arrive au sélecteur (node105) ;
+- **1, batterie moteur** (position normale) : wire201, de node006, arrive au sélecteur (node205) ;
 - **off** ;
-- **2, batterie de servitude** (secours) : wire103, 35 mm², de node021 (côté charges du coupe-circuit de servitude, protégé par le MEGA de 300 A) au sélecteur (node106).
+- **2, batterie de servitude** (secours) : wire203, 35 mm², de node021 (côté charges du coupe-circuit de servitude, protégé par le MEGA de 300 A) au sélecteur (node206).
 
-Le commun (node107) rejoint le disjoncteur de 70 A par wire108. Le guindeau tire 50 à 60 A, bien sous les 250 A du BMS. Le retour passe par la masse commune ; en position 2, le shunt compte le courant du guindeau.
+Le commun (node207) rejoint le disjoncteur de 70 A par wire208. Le guindeau tire 50 à 60 A, bien sous les 250 A du BMS. Le retour passe par la masse commune ; en position 2, le shunt compte le courant du guindeau.
 
 Conditions :
 - **aucune position commune** (« BOTH ») : les deux batteries ne sont jamais reliées. Les sélecteurs courants « 1-2-BOTH-OFF » ne conviennent pas ;
@@ -70,7 +70,7 @@ Conditions :
 
 Précaution d'usage, conservée : basculer guindeau à l'arrêt, et de préférence coupe-circuit moteur ouvert quand on passe en secours (batterie moteur défectueuse).
 
-Numéros : node105 à node107, wire103 et wire108.
+Numéros : node205 à node207, wire203 et wire208.
 
 ### 2. Remplacer le coupleur Scheiber par un chargeur DC/DC
 
@@ -104,7 +104,7 @@ Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de 
 - **Pas de coupure de charge par temps froid** : seul le BMS protège la batterie sous 0 °C.
 - **Ses trois sorties partagent la même régulation** (« tolérance tensions ± 2 % ») : les deux batteries reçoivent le même profil. C'est la vraie raison pour laquelle il ne permet pas de traiter différemment deux technologies : sur « Norm », un plomb ouvert et une LiFePO4 se partageraient un profil acceptable pour les deux, mais optimal pour aucune.
 
-**Conclusion** : le Dolphin pourrait charger la LiFePO4 en dépannage, sur « Norm », mais pas dans de bonnes conditions au quai, à cause du floating permanent. **Sa sortie 2 (wire055, avec son fusible wire057 de A-H2) est donc débranchée** : il ne charge plus que la batterie moteur.
+**Conclusion** : le Dolphin pourrait charger la LiFePO4 en dépannage, sur « Norm », mais pas dans de bonnes conditions au quai, à cause du floating permanent. **Sa sortie 2 (wire105, avec son fusible wire107 de A-H2) est donc débranchée** : il ne charge plus que la batterie moteur.
 
 **Pourquoi un chargeur dédié, et pas le DC/DC derrière le Dolphin.** Une première version de cette hypothèse faisait charger la LiFePO4, au quai, par le DC/DC branché sur la batterie moteur, elle-même chargée par le Dolphin. C'est une erreur (remarque de l'utilisateur, 01/10) :
 
@@ -115,7 +115,7 @@ Elle ne parle pas du lithium ; elle renvoie aux préconisations du fabricant de 
 
 - Profil adapté : absorption vers 14,2 V, puis floating bas ou mode stockage ; coupure de la charge par temps froid si le modèle a une sonde.
 - 15 A suffisent pour recharger 100 Ah en une nuit de quai ; le Dolphin reste à 20 A pour la seule batterie moteur.
-- **230 V** : le chargeur consomme environ 1,5 A ; avec le Dolphin (2,5 A au plus), un départ de 10 A suffirait. Retenu le 12/10 : un **C10 par chargeur**, le second dans la place libre du boîtier d'arrivée (Q63, node315, node316, wire315), pour couper un chargeur sans l'autre (borne de 6 A pendant la chauffe du ballon, intervention) et qu'un défaut sur l'un ne coupe pas l'autre. Avec 16 A aux bornes du port, la puissance de quai n'est pas une contrainte.
+- **230 V** : le chargeur consomme environ 1,5 A ; avec le Dolphin (2,5 A au plus), un départ de 10 A suffirait. Retenu le 12/10 : un **C10 par chargeur**, le second dans la place libre du boîtier d'arrivée (Q63, node515, node516, wire515), pour couper un chargeur sans l'autre (borne de 6 A pendant la chauffe du ballon, intervention) et qu'un défaut sur l'un ne coupe pas l'autre. Avec 16 A aux bornes du port, la puissance de quai n'est pas une contrainte.
 - **Emplacement** : envisagé d'abord avec le shunt de l'étude D (05/10) ; **14/10 : au coffre de cockpit tribord**, près du boîtier d'arrivée ([E-H5](../H5-chargeur-cockpit/proposition.md)), sortie 12 V en 10 mm² jusqu'à la niche. Voir « Chargeur de quai : Blue Smart IP67 12/17 » ci-dessous.
 
 **Le DC/DC ne doit alors tourner qu'au moteur.** Sinon, l'absorption du Dolphin à 14,4 V le ferait démarrer (seuil d'usine 14,0 V) et l'on retrouverait le problème ci-dessus. La tension seule ne permet pas de distinguer l'alternateur (environ 14,2 à 14,4 V) du Dolphin (14,4 V). On commande donc le DC/DC par son **entrée « remote »**, par un fil fin protégé à sa source (Q48, ci-dessous). Sa détection de tension reste active avec les réglages d'usine : clé tournée mais moteur arrêté, il ne tire rien sur la batterie moteur.
@@ -140,7 +140,7 @@ Proposition : **a**, qui ne demande aucune manœuvre et ne dépend pas d'un oubl
 | c | L mis à la masse | Actif sous environ 6 V |
 | d | Sortie d'un BMS sur H | Variante de b |
 
-**Option b retenue** : le **cavalier H-L est retiré**, L reste libre, et l'interrupteur relie le + de l'entrée (node006, fusible de 1 A à la source, wire054 et wire068) à la broche H (wire067). **Un interrupteur à voyant convient** : son voyant est branché entre sa borne de sortie et la masse (wire061, sur le coupe-circuit des négatifs côté batteries, node022, 08/10 ; d'abord prévu sur la barrette de masse du tableau Scheiber, node160), et l'entrée H ne demande qu'une tension, pas un courant. En option a, au contraire, le voyant n'aurait pas de masse et laisserait passer un courant de fuite entre H et L : un interrupteur à voyant serait à proscrire.
+**Option b retenue** : le **cavalier H-L est retiré**, L reste libre, et l'interrupteur relie le + de l'entrée (node006, fusible de 1 A à la source, wire104 et wire118) à la broche H (wire117). **Un interrupteur à voyant convient** : son voyant est branché entre sa borne de sortie et la masse (wire111, sur le coupe-circuit des négatifs côté batteries, node022, 08/10 ; d'abord prévu sur la barrette de masse du tableau Scheiber, node310), et l'entrée H ne demande qu'une tension, pas un courant. En option a, au contraire, le voyant n'aurait pas de masse et laisserait passer un courant de fuite entre H et L : un interrupteur à voyant serait à proscrire.
 
 ## Démarrage de secours sur la LiFePO4
 
@@ -209,10 +209,10 @@ Ce que ce choix change par rapport à la batterie de 100 Ah étudiée :
 
 ### Dolphin : sortie moteur au plus près de la batterie moteur (décision du 05/10)
 
-Le Dolphin ne charge plus que la batterie moteur, et il est fixé juste au-dessus d'elle. Sa sortie 1 passe aujourd'hui par la platine des coupe-circuits : wire051 (2 m) jusqu'à son fusible de 30 A (A-H2, wire052 sur node005). Elle est raccordée **directement à la batterie moteur** :
+Le Dolphin ne charge plus que la batterie moteur, et il est fixé juste au-dessus d'elle. Sa sortie 1 passe aujourd'hui par la platine des coupe-circuits : wire101 (2 m) jusqu'à son fusible de 30 A (A-H2, wire102 sur node005). Elle est raccordée **directement à la batterie moteur** :
 
-- **+** : un câble court de la sortie 1 jusqu'à un **fusible de 30 A à la batterie**, monté sur le même goujon d'entrée que le fusible de 400 A (ou dans un bloc qui porte les deux), pour ne pas empiler les cosses sur la borne. wire051 et wire052, avec le fusible de 30 A de la platine, sont déposés.
-- **−** : le négatif du Dolphin (wire060, 35 mm², 2 m jusqu'au coupe-circuit des négatifs) peut lui aussi aller au plus court, sur la borne − de la batterie moteur (node002). Il ne charge plus la servitude : son retour n'a pas à passer près du shunt.
+- **+** : un câble court de la sortie 1 jusqu'à un **fusible de 30 A à la batterie**, monté sur le même goujon d'entrée que le fusible de 400 A (ou dans un bloc qui porte les deux), pour ne pas empiler les cosses sur la borne. wire101 et wire102, avec le fusible de 30 A de la platine, sont déposés.
+- **−** : le négatif du Dolphin (wire110, 35 mm², 2 m jusqu'au coupe-circuit des négatifs) peut lui aussi aller au plus court, sur la borne − de la batterie moteur (node002). Il ne charge plus la servitude : son retour n'a pas à passer près du shunt.
 - **Gains** : câble sous les 1,5 m demandés par la notice du Dolphin, deux câbles et un passage de cloison en moins, tension de charge mesurée au plus près de la batterie.
 - **Revers** : le chargeur charge la batterie moteur même coupe-circuit moteur ouvert, ce qui est voulu au quai.
 
@@ -241,22 +241,22 @@ Implantation proposée (plan à l'échelle : [annexe de l'installation cible](..
 - Victron conseille 10 cm libres autour de l'Orion XS ; il n'y en aura qu'environ 3 sur les côtés. Réglé vers 15 A, il dissipe quelques watts ; au pire, il réduit son courant plus tôt.
 - Le SmartShunt IP65 est livré avec ses deux fils de mesure de 1,5 m, protégés par un fusible de 1 A (fiche constructeur).
 - La chute de tension dans wire010 (1 m, 35 mm², environ 0,5 mΩ) ne fausse que la tension lue par le shunt : moins de 10 mV en charge, sans effet sur l'état de charge, compté en ampères-heures. Rien à compenser ni à rapprocher.
-- **Ponts entre porte-fusibles** (15/10, proposition de l'utilisateur) : un câble de 16 mm² depuis chaque borne du coupe-circuit de servitude alimente le premier porte-fusible, et un pont court en câble isolé, cosses serties sous gaine thermorétractable, alimente le suivant. Côté batterie (node020) : wire058 vers le fusible de sortie de l'Orion XS, pont wire056 (4 mm²) vers celui du Blue Smart. Côté charges (node021) : wire157 vers le fusible de la table à carte, pont wire156 (6 mm²) vers celui du Scheiber. Le fusible d'entrée de l'Orion XS, sur la batterie moteur, reste seul. Les goujons n020 et n021 passent de 4 à 3 cosses. Sections dans [dimensionnement.md](../../../commun/dimensionnement.md#ponts-entre-porte-fusibles-1510).
+- **Ponts entre porte-fusibles** (15/10, proposition de l'utilisateur) : un câble de 16 mm² depuis chaque borne du coupe-circuit de servitude alimente le premier porte-fusible, et un pont court en câble isolé, cosses serties sous gaine thermorétractable, alimente le suivant. Côté batterie (node020) : wire108 vers le fusible de sortie de l'Orion XS, pont wire106 (4 mm²) vers celui du Blue Smart. Côté charges (node021) : wire307 vers le fusible de la table à carte, pont wire306 (6 mm²) vers celui du Scheiber. Le fusible d'entrée de l'Orion XS, sur la batterie moteur, reste seul. Les goujons n020 et n021 passent de 4 à 3 cosses. Sections dans [dimensionnement.md](../../../commun/dimensionnement.md#ponts-entre-porte-fusibles-1510).
 - Le sélecteur du guindeau prend la place du coupe-circuit de couplage, déposé, en bas à gauche de la platine vue de la descente (15/10). Développé des trois faces de la niche avec les câbles : même [annexe](../../../cible/niche-platine.html).
 
-À vérifier à la pose : place prise par les câbles existants (35 mm² des coupe-circuits, wire010, wire200, wire158 ; le coupleur déposé en libère), position de la fenêtre sur la face oblique (supposée centrée), position des bornes de l'Orion XS, plancher de la niche et voisinage du compartiment moteur.
+À vérifier à la pose : place prise par les câbles existants (35 mm² des coupe-circuits, wire010, wire400, wire308 ; le coupleur déposé en libère), position de la fenêtre sur la face oblique (supposée centrée), position des bornes de l'Orion XS, plancher de la niche et voisinage du compartiment moteur.
 
 ## Changements de câblage (à écrire dans `cablage.yaml`)
 
 | Action | Éléments |
 |---|---|
 | Dépose | Coupe-circuit de couplage (node024, node025) ; wire007, wire015 |
-| Remplacement | Guindeau : wire102 (node021, servitude) remplacé par wire101 (node006, côté charges du coupe-circuit moteur), 35 mm² |
+| Remplacement | Guindeau : wire202 (node021, servitude) remplacé par wire201 (node006, côté charges du coupe-circuit moteur), 35 mm² |
 | Dépose | Coupleur Scheiber (node026 à node028) ; wire004, wire016, wire018 ; wire005, wire017 et leurs fusibles de 40 A (A-H2) |
-| Débranchement | Sortie 2 du chargeur de quai : wire055, wire057 et son fusible de 30 A (A-H2) |
-| Remplacement | Sortie 1 du Dolphin : wire051, wire052 et leur fusible de 30 A (A-H2) déposés ; câble court jusqu'à un fusible de 30 A à la batterie moteur (node001). Négatif du Dolphin (wire060) ramené sur la borne − de la batterie moteur (node002) |
+| Débranchement | Sortie 2 du chargeur de quai : wire105, wire107 et son fusible de 30 A (A-H2) |
+| Remplacement | Sortie 1 du Dolphin : wire101, wire102 et leur fusible de 30 A (A-H2) déposés ; câble court jusqu'à un fusible de 30 A à la batterie moteur (node001). Négatif du Dolphin (wire110) ramené sur la borne − de la batterie moteur (node002) |
 | Remplacement | Batterie de servitude : mêmes bornes (node007, node008), wire009 et wire010 repris |
-| Ajout | Orion XS : entrée côté charges du coupe-circuit moteur (node006, 08/10), sortie sur la batterie de servitude (node020, ou node007 dans le coffre), masse côté « bord » du shunt ; fusibles MIDI de 70 A aux deux extrémités, câbles de 16 mm² (wire053, wire058, wire062, wire065, wire066). Commande : interrupteur à voyant entre le + de l'entrée (fusible de 1 A sur node006) et la broche H, voyant au coupe-circuit des négatifs (node022) (wire054, wire067, wire068, wire061) ; cavalier H-L retiré |
+| Ajout | Orion XS : entrée côté charges du coupe-circuit moteur (node006, 08/10), sortie sur la batterie de servitude (node020, ou node007 dans le coffre), masse côté « bord » du shunt ; fusibles MIDI de 70 A aux deux extrémités, câbles de 16 mm² (wire103, wire108, wire112, wire115, wire116). Commande : interrupteur à voyant entre le + de l'entrée (fusible de 1 A sur node006) et la broche H, voyant au coupe-circuit des négatifs (node022) (wire104, wire117, wire118, wire111) ; cavalier H-L retiré |
 | Ajout | Chargeur de quai LiFePO4, avec le shunt dans la contremarche (14/10 : au coffre de cockpit, E-H5) : 230 V par un câble dédié depuis le disjoncteur du chargeur (C10) jusqu'à une prise ou un boîtier à bornes Wago (Q53), sortie 12 V courte avec fusible à sa source (node020, côté batterie du coupe-circuit de servitude), négatif côté « bord » du shunt |
 
 ## Conséquences

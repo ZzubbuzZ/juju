@@ -16,9 +16,9 @@ appareils:
     titre: Prise de quai
     lignes: [EU · banc tribord]
     nodes:
-      node300: [droite, 180]
-      node301: [droite, 210]
-      node302: [droite, 290]
+      node500: [droite, 180]
+      node501: [droite, 210]
+      node502: [droite, 290]
   - id: ddr-230v
     x: 440
     y: 150
@@ -27,10 +27,10 @@ appareils:
     titre: Interrupteur différentiel
     lignes: [30 mA · type A · 40 A, remplace le Power Safe (Q36)]
     nodes:
-      node305: {cote: gauche, a: 180, fonction: phase}
-      node306: {cote: gauche, a: 210, fonction: neutre}
-      node308: {cote: droite, a: 180, fonction: phase}
-      node309: {cote: droite, a: 210, fonction: neutre}
+      node505: {cote: gauche, a: 180, fonction: phase}
+      node506: {cote: gauche, a: 210, fonction: neutre}
+      node508: {cote: droite, a: 180, fonction: phase}
+      node509: {cote: droite, a: 210, fonction: neutre}
   - id: isolateur-galvanique
     x: 270
     y: 262
@@ -39,12 +39,12 @@ appareils:
     titre: Isolateur
     lignes: [galvanique maison]
     nodes:
-      node303: [gauche, 290]
-      node304: [droite, 290]
+      node503: [gauche, 290]
+      node504: [droite, 290]
   - id: barrette-terre
     forme: barre     # barrette de terre du boîtier d'arrivée : un point de raccordement
     nodes:
-      node307: {cote: point, xy: [720, 290], etiquette: [-6, -8, end], fonction: ""}
+      node507: {cote: point, xy: [720, 290], etiquette: [-6, -8, end], fonction: ""}
   - id: masse-12v
     x: 760
     y: 350
@@ -61,32 +61,32 @@ appareils:
     h: 132
 
 fils:
-  wire300:
+  wire500:
     etiquette: [300, 173, mid]
-    texte: "w300 · phase"
-  wire301:
+    texte: "w500 · phase"
+  wire501:
     etiquette: [300, 203, mid]
-    texte: "w301 · neutre"
-  wire303:
+    texte: "w501 · neutre"
+  wire503:
     etiquette: [225, 283, mid]
-  wire304:
+  wire504:
     etiquette: [615, 283, mid]
   # départs vers le folio 3 : deux phases (même trait), deux neutres (même trait)
-  wire308:
+  wire508:
     trace: [[700, 180], [800, 180]]
-  wire314:
+  wire514:
     trace: [[700, 180], [800, 180]]
     etiquette: [750, 173, mid]
-    texte: "w314 / w308"
-  wire306:
+    texte: "w514 / w508"
+  wire506:
     trace: [[700, 210], [800, 210]]
-  wire309:
+  wire509:
     trace: [[700, 210], [800, 210]]
     etiquette: [750, 203, mid]
-    texte: "w306 / w309"
+    texte: "w506 / w509"
 
 renvois:
-  - {x: 800, y: 165, w: 360, h: 60, texte: "phases → disjoncteur 10 A (n310), boîtier tribord (n320)"}
+  - {x: 800, y: 165, w: 360, h: 60, texte: "phases → disjoncteur 10 A (n510), boîtier tribord (n520)"}
 
 traits:
   # pas de liaison entre la terre et la masse 12 V ; masse 12 V à la mer par l'arbre (accouplement métallique, 13/10)
@@ -96,7 +96,7 @@ pastilles:
   - {id: A8, x: 510, y: 262}
 
 textes:
-  - {x: 980, y: 213, classe: ts mid, texte: "neutres → chargeur (n313), boîtier tribord (n321) : folio 3"}
+  - {x: 980, y: 213, classe: ts mid, texte: "neutres → chargeur (n513), boîtier tribord (n521) : folio 3"}
   - {x: 730, y: 294, texte: "barrette de terre du boîtier d'arrivée"}
   - {x: 730, y: 310, texte: "vers chargeur et prises : folio 3"}
   - {x: 54, y: 372, classe: tb, texte: "Isolateur maison : un pont redresseur monophasé en module"}
@@ -106,4 +106,4 @@ textes:
   - {x: 54, y: 452, classe: t, texte: "Contrôle chaque saison, câble de quai débranché : 0,9 à 1,2 V dans les deux sens."}
   - {x: 54, y: 468, classe: t, texte: "« OL » = diode ouverte, la terre ne passe plus : ne plus brancher au quai."}
   - {x: 40, y: 514, texte: "En vert : nouveau. Phase, neutre et terre sont dessinés conducteur par conducteur (multifilaire)."}
-  - {x: 40, y: 532, texte: "L'ancien fil de terre de la prise vers la barrette est remplacé par w303, l'isolateur et w304."}
+  - {x: 40, y: 532, texte: "L'ancien fil de terre de la prise vers la barrette est remplacé par w503, l'isolateur et w504."}

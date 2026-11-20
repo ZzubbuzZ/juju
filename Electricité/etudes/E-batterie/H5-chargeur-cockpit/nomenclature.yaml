@@ -9,8 +9,8 @@ devise: EUR
 lots:
   quai:
     titre: Blue Smart au coffre de cockpit, câbles fournis menés jusqu'à la niche
-    note: Remplace les câbles courts du lot « quai » de E-H1 (wire059, wire064, wire311, wire312, wire313).
+    note: Remplace les câbles courts du lot « quai » de E-H1 (wire109, wire114, wire511, wire512, wire513).
 
 articles:
-  - { lot: quai, designation: "Raccordement des câbles fournis du chargeur dans la niche : cosses 12 AWG (4 mm²) au diamètre des goujons du porte-fusible de 25 A et du coupe-circuit des négatifs, gaine thermorétractable, passe-fil", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation, note: "Sans rallonge ni jonction : trajet d'environ 1,2 m pour 1,40 m de câble (Q64, 16/10). Cosses d'origine à remplacer si leur diamètre ne convient pas", fils: [wire064, wire059] }
-  - { lot: quai, designation: "Câble 230 V H07RN-F 3 × 1,5 mm² court (≈ 1 m) du C10 à une prise ou un boîtier à bornes Wago dans le coffre", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Q53", fils: [wire311, wire312, wire313] }
+  - { lot: quai, designation: "Raccordement des câbles fournis du chargeur dans la niche : cosses 12 AWG (4 mm²) au diamètre des goujons du porte-fusible de 25 A et du coupe-circuit des négatifs, gaine thermorétractable, passe-fil", quantite: 1, unite: lot, prix_unitaire: 8, statut: estimation, note: "Sans rallonge ni jonction : trajet d'environ 1,2 m pour 1,40 m de câble (Q64, 16/10). Cosses d'origine à remplacer si leur diamètre ne convient pas", fils: [wire114, wire109] }
+  - { lot: quai, designation: "Câble 230 V H07RN-F 3 × 1,5 mm² court (≈ 1 m) du C10 à une prise ou un boîtier à bornes Wago dans le coffre", quantite: 1, unite: lot, prix_unitaire: 15, statut: estimation, note: "Q53", fils: [wire511, wire512, wire513] }

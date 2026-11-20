@@ -35,7 +35,7 @@ après :  node008 ── câble court ──► [SHUNT] ── câble court ─�
 Ce que cette position mesure correctement :
 
 - **Toutes les charges de servitude**, y compris la pompe de cale automatique prévue par A-H1, dont la masse revient sur node022.
-- **Le chargeur de quai** : sa masse (wire060) arrive sur node022, donc du côté charges du shunt. Sa charge de la batterie de servitude est comptée.
+- **Le chargeur de quai** : sa masse (wire110) arrive sur node022, donc du côté charges du shunt. Sa charge de la batterie de servitude est comptée.
 - **L'alternateur, via le coupleur** : le courant de charge revient par la masse commune, puis traverse le shunt vers la batterie de servitude.
 - **Le démarreur, quand le coupe-circuit de couplage est fermé** : la batterie de servitude participe alors au démarrage, et ce courant de plusieurs centaines d'ampères traverse le shunt. Il faut donc un shunt dimensionné en conséquence (500 A).
 
@@ -82,7 +82,7 @@ Les modèles cités sont des exemples de familles de produits. Leurs caractéris
 | [H5](H5-cerbo-gx-touch/proposition.md) | SmartShunt de H1, centrale Victron Cerbo GX et écran tactile GX Touch 50 | Écran 5 pouces à la table à carte, application, portail VRM | Tension par l'entrée auxiliaire du shunt | environ 635 € | Écartée le 05/10 (place incertaine, Q43 ; prix), folio 2g archivé |
 | [H6](H6-cerbo-traceur-garmin/proposition.md) | SmartShunt de H1 et centrale Victron Cerbo-S GX sans écran, données transmises au traceur Garmin par NMEA 2000 | Traceur GPSMAP 7407 quand il est allumé, application, portail VRM | Tension par l'entrée auxiliaire du shunt (affichage sur le traceur à vérifier) | environ 560 €, 440 € si le traceur est déjà sur un réseau NMEA 2000 | Rédigée sans câblage, en attente de Q44 |
 
-H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire010 repris sur le shunt, wire011 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire006, wire012, wire013, wire014). H2 ajoute le câble de données wire150 et l'afficheur. Nouveaux numéros : node011, node012, node013, node014, node015, node016, node017, node018, node019, node179, wire006, wire011, wire012, wire013, wire014, wire150. H5 reprend H1 et ajoute un Cerbo GX alimenté après le coupe-circuit de servitude (fusible 3 A), relié au shunt par VE.Direct et à l'écran : node180 à node186, wire151, wire155, wire160, wire174, wire175.
+H1 et H2 se posent de la même façon : shunt à l'emplacement b, wire010 repris sur le shunt, wire011 (35 mm²) vers le coupe-circuit des négatifs, et deux fils de mesure de 0,75 mm² protégés à leur source par un fusible de 1 A (wire006, wire012, wire013, wire014). H2 ajoute le câble de données wire300 et l'afficheur. Nouveaux numéros : node011, node012, node013, node014, node015, node016, node017, node018, node019, node329, wire006, wire011, wire012, wire013, wire014, wire300. H5 reprend H1 et ajoute un Cerbo GX alimenté après le coupe-circuit de servitude (fusible 3 A), relié au shunt par VE.Direct et à l'écran : node330 à node336, wire301, wire305, wire310, wire324, wire325.
 
 **Pourquoi H3 et H4 n'ont pas été développées** (écartées le 14/10) :
 

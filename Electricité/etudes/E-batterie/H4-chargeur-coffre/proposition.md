@@ -24,19 +24,19 @@ Variante de [E-H1](../H1-lifepo4/proposition.md). Base : **E-H1**. Câblage : [c
 | Élément | E-H1 (contremarche) | E-H4 (coffre de la batterie) |
 |---|---|---|
 | Orion XS | Contremarche, près de la platine | Coffre de la batterie |
-| Entrée de l'Orion XS (wire065, 16 mm²) | 0,5 m | Environ 1,5 m, du fusible de 70 A de la platine (node006) jusqu'au coffre |
-| Sortie de l'Orion XS (wire058, wire066) | Sur node020, fusible de 70 A à la platine | Sur la borne + de la batterie (node007), fusible de 70 A dans le coffre, avant le fusible de 300 A |
-| Négatif de l'Orion XS (wire062) | Sur node022 | Côté « bord » du shunt (node012), dans le coffre |
-| Commande de l'Orion XS (wire067) | 0,5 m | Environ 2 m, de l'interrupteur (contremarche) jusqu'au coffre |
+| Entrée de l'Orion XS (wire115, 16 mm²) | 0,5 m | Environ 1,5 m, du fusible de 70 A de la platine (node006) jusqu'au coffre |
+| Sortie de l'Orion XS (wire108, wire116) | Sur node020, fusible de 70 A à la platine | Sur la borne + de la batterie (node007), fusible de 70 A dans le coffre, avant le fusible de 300 A |
+| Négatif de l'Orion XS (wire112) | Sur node022 | Côté « bord » du shunt (node012), dans le coffre |
+| Commande de l'Orion XS (wire117) | 0,5 m | Environ 2 m, de l'interrupteur (contremarche) jusqu'au coffre |
 | Shunt (étude D) | Près du coupe-circuit des négatifs | Dans le coffre, contre la batterie |
 | wire010 (− batterie → shunt) | 1 m | 0,2 m |
 | wire011 (shunt → node022) | 0,2 m | 1 m, sur le trajet de l'ancien wire010 |
 | Fils de mesure du shunt (wire012, wire013) | 0,5 m | 1,2 m |
 | Blue Smart | Contremarche, + sur node020 par un fusible de 25 A | Coffre, + sur la borne + de la batterie (node007) par un fusible de 25 A, avant le fusible de 300 A |
-| Négatif du Blue Smart (wire059) | Sur node022 | Côté « bord » du shunt (node012), dans le coffre |
-| 230 V du Blue Smart (wire311 à wire313) | Environ 4 m | Environ 6 m (Q50) |
+| Négatif du Blue Smart (wire109) | Sur node022 | Côté « bord » du shunt (node012), dans le coffre |
+| 230 V du Blue Smart (wire511 à wire513) | Environ 4 m | Environ 6 m (Q50) |
 
-Le fusible de l'entrée de l'Orion XS reste à la platine, à la source de wire065, et l'interrupteur à voyant reste près du tableau Scheiber. Dans les deux cas, les négatifs de l'Orion XS et du Blue Smart reviennent côté « bord » du shunt : toute la charge de la LiFePO4 est comptée.
+Le fusible de l'entrée de l'Orion XS reste à la platine, à la source de wire115, et l'interrupteur à voyant reste près du tableau Scheiber. Dans les deux cas, les négatifs de l'Orion XS et du Blue Smart reviennent côté « bord » du shunt : toute la charge de la LiFePO4 est comptée.
 
 **Entrée de l'Orion XS sur 1,5 m** : la notice demande 16 mm² jusqu'à 5 m, la section de E-H1 suffit.
 

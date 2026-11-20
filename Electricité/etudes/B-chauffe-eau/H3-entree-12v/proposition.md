@@ -72,13 +72,13 @@ Folio 2n. Tout en 6 mm² :
 
 | Fil | De → vers | Rôle |
 |---|---|---|
-| wire154 | node021 → disjoncteur 30 A (node175) | liaison courte, environ 0,5 m |
-| wire173 | disjoncteur 30 A (node176) → ballon 12 V + (node177) | +, du disjoncteur au ballon, par le bord bâbord et les coffres de la cabine de poupe |
-| wire161 | ballon 12 V − (node178) → node023 | −, côté « bord » du shunt, environ 3 m |
+| wire304 | node021 → disjoncteur 30 A (node325) | liaison courte, environ 0,5 m |
+| wire323 | disjoncteur 30 A (node326) → ballon 12 V + (node327) | +, du disjoncteur au ballon, par le bord bâbord et les coffres de la cabine de poupe |
+| wire311 | ballon 12 V − (node328) → node023 | −, côté « bord » du shunt, environ 3 m |
 
 Les fils et les nœuds du relais, du fusible de 1 A et de l'interrupteur à voyant sont supprimés le 12/10 ; ils n'avaient pas été posés.
 
-- **Départ à node021**, côté charges du coupe-circuit de servitude, comme les autres départs de la platine : ouvrir le coupe-circuit coupe aussi le ballon. Le disjoncteur de 30 A (node175, node176) est placé à côté du disjoncteur du guindeau, sous l'ouverture d'accès aux coupe-circuits (13/10), relié au goujon par une liaison courte de 6 mm² (wire154). Cette liaison n'est protégée que par le MEGA de 300 A : la garder la plus courte possible, gainée et bridée.
+- **Départ à node021**, côté charges du coupe-circuit de servitude, comme les autres départs de la platine : ouvrir le coupe-circuit coupe aussi le ballon. Le disjoncteur de 30 A (node325, node326) est placé à côté du disjoncteur du guindeau, sous l'ouverture d'accès aux coupe-circuits (13/10), relié au goujon par une liaison courte de 6 mm² (wire304). Cette liaison n'est protégée que par le MEGA de 300 A : la garder la plus courte possible, gainée et bridée.
 - **Disjoncteur à la place du fusible** (décision du 12/10). Il remplit le rôle que la notice demande au fusible de 30 A, il se réarme sans pièce de rechange et sert d'interrupteur du 12 V du ballon. Quatre points pour le choisir :
   - **prévu pour le courant continu** : marqué « DC », 12/24 V CC ou plus. Un disjoncteur modulaire de tableau 230 V, sans marquage DC, ne convient pas : un arc en courant continu ne s'éteint pas de lui-même au passage par zéro, et l'appareil peut ne pas couper. Conviennent : un disjoncteur de bateau à levier ou à bascule, ou un modulaire marqué DC (gamme photovoltaïque) ;
   - **manœuvrable** : il sert d'interrupteur, donc un modèle à levier ou à bascule, pas à simple bouton de réarmement ;
@@ -87,7 +87,7 @@ Les fils et les nœuds du relais, du fusible de 1 A et de l'interrupteur à voya
 - **Ballon sous la table à carte** (posé le 12/10) : un seul câble de 6 mm² fait le trajet depuis la platine, avec son retour.
 - **Retour sur node023** : le shunt (étude D) compte la consommation du ballon.
 - Chute de tension sur 3 m de 6 mm² à 17 A : environ 0,3 V, soit 2,5 %.
-- Numéros : node175, node176, node177, node178 ; wire173 et wire161.
+- Numéros : node325, node326, node327, node328 ; wire323 et wire311.
 
 ## Reste à faire
 

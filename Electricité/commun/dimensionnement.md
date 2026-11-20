@@ -17,14 +17,14 @@ Vérification des sections, des protections et des chutes de tension de l'instal
 |---|---|---|---|---|---|---|
 | Batterie de servitude → coupe-circuit | wire009, wire008 ; retour wire010, wire011 | 35 mm², 1,2 m + 1,2 m | 100 A (pointe des départs) ; BMS 250 A | MEGA 300 A (E-H1) | 1,0 % à 100 A | Conforme si l'isolant est à 105 °C (Q58) |
 | Batterie moteur → coupe-circuit | wire002, wire001 | 35 mm², 2,2 m | démarreur 200 à 275 A | MEGA 400 A (A-H2) | sans objet | Écart accepté le 30/09 (démarreur) ; isolant : Q58 |
-| Guindeau (sur le circuit moteur, E-H1) | wire101, wire109, wire111, wire112, wire105, wire003 | 35, 50 et 10 mm², environ 26 m de trajet | 50 A normal, 60 A en charge | disjoncteur 70 A (notice Lewmar) | **4,6 %** à 50 A, **5,6 %** à 60 A | Acceptable pour un moteur (< 10 %) |
-| Guindeau en secours sur la LiFePO4 (sélecteur en position 2, 13/10) | wire103, wire108, wire109, wire111, wire112, wire105 | 35, 50 et 10 mm², trajet voisin du circuit moteur | 50 A normal, 60 A en charge | MEGA 300 A, puis disjoncteur 70 A | voisine du circuit moteur | Acceptable en secours ; 50 à 60 A sous les 250 A du BMS |
-| Dolphin → batterie moteur | wire063, wire050 | 6 mm², 0,5 + 0,5 m | 20 A | 30 A à la batterie | 0,5 % | Conforme |
-| Orion XS, entrée et sortie | wire053, wire058, wire062, wire065, wire066 | 16 mm², 0,65 + 0,5 m | réglé vers 15 A ; 50 A au plus | 70 A aux deux bouts (notice) | 0,2 % à 15 A ; 0,5 % à 50 A | Conforme |
-| Blue Smart IP67 12/17 (coffre de cockpit, E-H5) → servitude | wire056, wire064, wire059 | pont de 4 mm² 0,1 m depuis le fusible de sortie de l'Orion XS (15/10), puis les câbles fournis du chargeur, 12 AWG 2 × 1,40 m, sans rallonge (Q64, 16/10) | 17 A | 25 A à la source ; 30 A sur le câble fourni, côté chargeur (inversion de polarité) | 2,2 % | Conforme sous 3 %, sans compensation : le Blue Smart IP67 ne reçoit pas la tension du shunt (VE.Smart non pris en charge, 16/10). Voir ci-dessous |
-| Ballon, entrée 12 V (B-H3) | wire154, wire161, wire173 | 6 mm², 3,5 + 3 m (est. : trajet de wire200, ballon sous la table à carte, Q57) | 17 A | disjoncteur 12 V CC de 30 A à la platine (notice : 30 A ; 12/10) | 2,8 % | Conforme (confort, 10 %) |
-| Frigo : batterie → tableau Scheiber → EPS 100 → groupe froid | wire158, wire162, wire165, wire166, wire171, wire172 | 6 puis 3,5 mm², environ 6,5 m (est.) | 3,5 A ; 5 A au démarrage | 30 A (A-H2), puis 15 A (tableau Scheiber) | 1,8 % ; **2,6 %** au démarrage | Conforme ; longueurs de wire158, wire162, wire165, wire166 non relevées |
-| Pompe de cale | wire167, wire168 | 2,5 mm², 3 m (est.) | 3 A | 10 A (tableau Scheiber) | 1,1 % | Section conforme ; fusible : anomalie A10 (3 A demandés) |
+| Guindeau (sur le circuit moteur, E-H1) | wire201, wire209, wire211, wire212, wire205, wire003 | 35, 50 et 10 mm², environ 26 m de trajet | 50 A normal, 60 A en charge | disjoncteur 70 A (notice Lewmar) | **4,6 %** à 50 A, **5,6 %** à 60 A | Acceptable pour un moteur (< 10 %) |
+| Guindeau en secours sur la LiFePO4 (sélecteur en position 2, 13/10) | wire203, wire208, wire209, wire211, wire212, wire205 | 35, 50 et 10 mm², trajet voisin du circuit moteur | 50 A normal, 60 A en charge | MEGA 300 A, puis disjoncteur 70 A | voisine du circuit moteur | Acceptable en secours ; 50 à 60 A sous les 250 A du BMS |
+| Dolphin → batterie moteur | wire113, wire100 | 6 mm², 0,5 + 0,5 m | 20 A | 30 A à la batterie | 0,5 % | Conforme |
+| Orion XS, entrée et sortie | wire103, wire108, wire112, wire115, wire116 | 16 mm², 0,65 + 0,5 m | réglé vers 15 A ; 50 A au plus | 70 A aux deux bouts (notice) | 0,2 % à 15 A ; 0,5 % à 50 A | Conforme |
+| Blue Smart IP67 12/17 (coffre de cockpit, E-H5) → servitude | wire106, wire114, wire109 | pont de 4 mm² 0,1 m depuis le fusible de sortie de l'Orion XS (15/10), puis les câbles fournis du chargeur, 12 AWG 2 × 1,40 m, sans rallonge (Q64, 16/10) | 17 A | 25 A à la source ; 30 A sur le câble fourni, côté chargeur (inversion de polarité) | 2,2 % | Conforme sous 3 %, sans compensation : le Blue Smart IP67 ne reçoit pas la tension du shunt (VE.Smart non pris en charge, 16/10). Voir ci-dessous |
+| Ballon, entrée 12 V (B-H3) | wire304, wire311, wire323 | 6 mm², 3,5 + 3 m (est. : trajet de wire400, ballon sous la table à carte, Q57) | 17 A | disjoncteur 12 V CC de 30 A à la platine (notice : 30 A ; 12/10) | 2,8 % | Conforme (confort, 10 %) |
+| Frigo : batterie → tableau Scheiber → EPS 100 → groupe froid | wire308, wire312, wire315, wire316, wire321, wire322 | 6 puis 3,5 mm², environ 6,5 m (est.) | 3,5 A ; 5 A au démarrage | 30 A (A-H2), puis 15 A (tableau Scheiber) | 1,8 % ; **2,6 %** au démarrage | Conforme ; longueurs de wire308, wire312, wire315, wire316 non relevées |
+| Pompe de cale | wire317, wire318 | 2,5 mm², 3 m (est.) | 3 A | 10 A (tableau Scheiber) | 1,1 % | Section conforme ; fusible : anomalie A10 (3 A demandés) |
 
 Les fils de mesure et de commande (shunt, Orion XS) sont en 0,75 mm² avec un fusible de 1 A à leur source : conforme.
 
@@ -34,8 +34,8 @@ Le trajet du coffre de cockpit à la niche fait environ 1,2 m (Q64), et non 5 m 
 
 | Tronçon | Chute |
 |---|---|
-| wire064 et wire059, câbles fournis, 12 AWG, 2 × 1,40 m | 0,25 V |
-| Pont wire056, 4 mm², 0,1 m, et fusible | 0,02 V |
+| wire114 et wire109, câbles fournis, 12 AWG, 2 × 1,40 m | 0,25 V |
+| Pont wire106, 4 mm², 0,1 m, et fusible | 0,02 V |
 | **Total** | **0,27 V, soit 2,2 %** |
 
 Pour mémoire, la solution du 14/10 (rallonge de 10 mm² sur 5 m, plus les câbles fournis) aurait donné 0,57 V, soit 4,7 %.
@@ -50,14 +50,14 @@ Les porte-fusibles MIDI de la niche sont reliés par des ponts, un par potentiel
 
 | Pont | Câble d'alimentation (non protégé) | Pont | Somme des fusibles |
 |---|---|---|---|
-| Côté batterie de servitude (node020) : sortie de l'Orion XS, Blue Smart | wire058, 16 mm², 0,25 m | wire056, 4 mm², vers le fusible de 25 A | 70 + 25 A (au plus 50 + 17 A de charge) |
-| Côté charges (node021) : table à carte, Scheiber | wire157, 16 mm², 0,25 m | wire156, 6 mm², vers le fusible de 30 A | 50 + 30 A |
+| Côté batterie de servitude (node020) : sortie de l'Orion XS, Blue Smart | wire108, 16 mm², 0,25 m | wire106, 4 mm², vers le fusible de 25 A | 70 + 25 A (au plus 50 + 17 A de charge) |
+| Côté charges (node021) : table à carte, Scheiber | wire307, 16 mm², 0,25 m | wire306, 6 mm², vers le fusible de 30 A | 50 + 30 A |
 
 Le câble d'alimentation porte la somme des fusibles qu'il dessert, d'où le 16 mm². Il n'est protégé que par le MEGA de 300 A, comme l'étaient les câbles qu'il remplace : longueur courte, porte-fusibles capotés. Un 35 mm², calibré pour le MEGA, ne se réalise pas en pont et n'apporterait rien de plus (décision de l'utilisateur, 15/10). Chaque pont ne porte que le courant du fusible qu'il alimente. Ponts en câble isolé, cosses serties sous gaine thermorétractable.
 
 ## Alimentation du tableau de la table à carte
 
-wire200 (+) et wire201 (−) : 6 mm², environ 3 m chacun, fusible de 50 A à la source (A-H2). En amont du fusible, wire157 (16 mm², 0,25 m) alimente aussi, par le pont wire156, le fusible du Scheiber (15/10).
+wire400 (+) et wire401 (−) : 6 mm², environ 3 m chacun, fusible de 50 A à la source (A-H2). En amont du fusible, wire307 (16 mm², 0,25 m) alimente aussi, par le pont wire306, le fusible du Scheiber (15/10).
 
 | Courant du tableau | ΔU sur l'alimentation |
 |---|---|
@@ -78,8 +78,8 @@ Le courant qu'un câble supporte dépend de la température admise par son isola
 
 | Calibre retenu | Câble | Condition |
 |---|---|---|
-| 50 A (A-H2) | wire200, 6 mm² | isolant de 75 °C au moins ; sinon **40 A** suffisent au tableau |
-| 30 A (A-H2) | wire158, 6 mm² | conforme dans tous les cas |
+| 50 A (A-H2) | wire400, 6 mm² | isolant de 75 °C au moins ; sinon **40 A** suffisent au tableau |
+| 30 A (A-H2) | wire308, 6 mm² | conforme dans tous les cas |
 | 300 A (E-H1) | wire008, 35 mm² | isolant à 105 °C (règle des 150 %) |
 | 400 A (A-H2) | wire001, 35 mm² | écart accepté le 30/09, câble du démarreur |
 
@@ -89,13 +89,13 @@ Le courant qu'un câble supporte dépend de la température admise par son isola
 |---|---|---|
 | Borne de Saint-Chamas | 16 A, environ 3 700 W | |
 | Consommation à bord, ballon compris | environ 1 450 W, soit 6,5 A | Sans contrainte ; en escale à 6 A, couper un chargeur pendant la chauffe |
-| Disjoncteurs des chargeurs : un C10 pour le Dolphin, un C10 pour le Blue Smart (12/10) | 2,5 A et 1,5 A environ | Conforme ; wire311 à wire313 en 1,5 mm² sur le C10 du Blue Smart (node316) |
-| C10 libéré du boîtier tribord : prise du ballon, sous la table à carte | 3,5 A ; wire334 à wire336 en 1,5 mm², environ 5 m (est.), par une boîte de dérivation ; ΔU 0,2 % | Conforme ; câbles des deux C10 regroupés sur l'autre C10 (décision du 12/10, voir ci-dessous) |
+| Disjoncteurs des chargeurs : un C10 pour le Dolphin, un C10 pour le Blue Smart (12/10) | 2,5 A et 1,5 A environ | Conforme ; wire511 à wire513 en 1,5 mm² sur le C10 du Blue Smart (node516) |
+| C10 libéré du boîtier tribord : prise du ballon, sous la table à carte | 3,5 A ; wire534 à wire536 en 1,5 mm², environ 5 m (est.), par une boîte de dérivation ; ΔU 0,2 % | Conforme ; câbles des deux C10 regroupés sur l'autre C10 (décision du 12/10, voir ci-dessous) |
 | Différentiel d'arrivée | 30 mA type A, 40 A (A-H4) | Calibre supérieur à la borne : conforme |
 
 ### Les deux C10 du boîtier tribord (Q42)
 
-**15/10** : affectation supposée par l'utilisateur, C10 n°1 éclairage tribord, C10 n°2 éclairage bâbord (hypothèse 1 ci-dessous). Le câble bâbord (wire331) passe sur le C10 n°1, le C10 n°2 alimente le ballon (B-H1). Le câble d'alimentation du boîtier tribord (wire308 à wire310, 2,5 mm²) n'a pas de disjoncteur à l'arrivée (A12) : il n'est protégé que par la borne du port.
+**15/10** : affectation supposée par l'utilisateur, C10 n°1 éclairage tribord, C10 n°2 éclairage bâbord (hypothèse 1 ci-dessous). Le câble bâbord (wire531) passe sur le C10 n°1, le C10 n°2 alimente le ballon (B-H1). Le câble d'alimentation du boîtier tribord (wire508 à wire510, 2,5 mm²) n'a pas de disjoncteur à l'arrivée (A12) : il n'est protégé que par la borne du port.
 
 Le 12/10, les deux C10 sont trouvés occupés, chacun par un seul câble de 1,5 mm², sans que leurs circuits aient été vérifiés. Deux hypothèses sont à vérifier à bord. Dans les deux cas, la question est de savoir si l'on peut regrouper ces circuits sur un seul C10 pour libérer l'autre au profit du ballon. Puissances estimées, à confirmer sur les appareils :
 
@@ -128,10 +128,10 @@ Aujourd'hui, l'étude E prévoit les deux chargeurs de quai sur le même C10 du 
 | Charge | environ 4 A sur 10 A | 2,5 A et 1,5 A |
 | Défaut sur un chargeur | coupe les deux | coupe celui-là seul : l'autre batterie continue de charger |
 | Couper un chargeur à la main (borne de 6 A pendant la chauffe du ballon, B-H1 ; hivernage ; intervention) | débrancher sa fiche, si Q53 retient une prise ; sinon impossible sans couper l'autre | au disjoncteur |
-| Coût et travaux | rien | disjoncteur 1P+N C10 (Merlin Gerin DT40 ou équivalent, environ 20 à 30 €) ; le câble wire311 à wire313 part de ce disjoncteur au lieu de node311 |
+| Coût et travaux | rien | disjoncteur 1P+N C10 (Merlin Gerin DT40 ou équivalent, environ 20 à 30 €) ; le câble wire511 à wire513 part de ce disjoncteur au lieu de node511 |
 | Condition | | une place libre sur le rail du boîtier d'arrivée : il y en a une (Q63, 12/10) |
 
-Le câble 3 × 1,5 mm² du Blue Smart reste protégé : un C10 le protège comme aujourd'hui. **Verdict** : utile, pas nécessaire. **Retenu le 12/10** (disjoncteur à 9 €, place libre confirmée) : câblé dans E-H1 (node315, node316, wire315, folio 2i). La place existe (Q63, 12/10) : l'option est réalisable. Elle vaut surtout si le Blue Smart est raccordé par un boîtier à bornes (sans fiche à débrancher, Q53). Sinon, une prise dédiée au Blue Smart (Q53) donne déjà le moyen de le couper seul.
+Le câble 3 × 1,5 mm² du Blue Smart reste protégé : un C10 le protège comme aujourd'hui. **Verdict** : utile, pas nécessaire. **Retenu le 12/10** (disjoncteur à 9 €, place libre confirmée) : câblé dans E-H1 (node515, node516, wire515, folio 2i). La place existe (Q63, 12/10) : l'option est réalisable. Elle vaut surtout si le Blue Smart est raccordé par un boîtier à bornes (sans fiche à débrancher, Q53). Sinon, une prise dédiée au Blue Smart (Q53) donne déjà le moyen de le couper seul.
 
 ## Tableau de la table à carte (A-H1, différé)
 
@@ -158,7 +158,7 @@ Toutes les sections prévues conviennent. **Pompe à eau** : sa notice demande u
 ## Points ouverts
 
 - **Q58** : isolant des câbles de 6 et 35 mm² ; conditionne les calibres de 50 A et 300 A.
-- **Q57** : longueur du câble 12 V du ballon (3 m estimés, trajet de wire200 ; jusqu'à 12 m, le 6 mm² reste sous 10 %).
+- **Q57** : longueur du câble 12 V du ballon (3 m estimés, trajet de wire400 ; jusqu'à 12 m, le 6 mm² reste sous 10 %).
 - **Q12** : longueurs réelles des départs du tableau de la table à carte.
-- Longueurs de wire158, wire162, wire165, wire166, wire167 (tableau Scheiber, frigo, pompe de cale) : non relevées, estimées ici.
+- Longueurs de wire308, wire312, wire315, wire316, wire317 (tableau Scheiber, frigo, pompe de cale) : non relevées, estimées ici.
 - Alternateur de 35 A (Q14, correction du 12/11 ; 20 A notés le 13/10), sans borne W : le réglage de l'Orion XS à 15 A, choisi pour un alternateur de 20 A, laisse désormais une marge de 20 A ; il pourrait être relevé (à décider).

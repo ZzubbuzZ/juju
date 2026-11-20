@@ -11,7 +11,7 @@ base: E-H1
 
 supprime:
   equipements: [shunt-servitude, chargeur-lifepo4, fus-chargeur-lifepo4, orion-xs, fus-orion-sortie]
-  fils: [wire010, wire011, wire012, wire013, wire065, wire058, wire062, wire067, wire056, wire059, wire311, wire312, wire313]
+  fils: [wire010, wire011, wire012, wire013, wire115, wire108, wire112, wire117, wire106, wire109, wire511, wire512, wire513]
 
 equipements:
   - { id: shunt-servitude, type: shunt, designation: "Shunt connecté 500 A de la batterie de servitude (type Victron SmartShunt)", zone: cabine-poupe, emplacement: "Dans le coffre de la batterie de servitude, contre la paroi", statut: propose }
@@ -28,14 +28,14 @@ fils:
   - { id: wire013, de: node019, vers: node014, section_mm2: 0.75, couleur: rouge, longueur_m: 1.2, statut: propose }
 
   # --- Chargeur de quai dans le coffre ------------------------------------------------------
-  - { id: wire056, de: node007, vers: node059, section_mm2: 4, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Sur la borne + de la batterie : la charge reste possible coupe-circuit ouvert" }
-  - { id: wire059, de: node058, vers: node012, section_mm2: 4, couleur: noir, longueur_m: 0.3, statut: propose, note: "Côté « bord » du shunt, dans le coffre" }
-  - { id: wire311, de: node316, vers: node317, section_mm2: 1.5, couleur: marron, longueur_m: 6, statut: propose, note: "Câble 3 × 1,5 mm² dédié jusqu'au coffre de la batterie (environ 5 m, Q50), prise ou boîtier à bornes Wago (Q53)" }
-  - { id: wire312, de: node309, vers: node318, section_mm2: 1.5, couleur: bleu, longueur_m: 6, statut: propose }
-  - { id: wire313, de: node307, vers: node319, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 6, statut: propose }
+  - { id: wire106, de: node007, vers: node109, section_mm2: 4, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Sur la borne + de la batterie : la charge reste possible coupe-circuit ouvert" }
+  - { id: wire109, de: node108, vers: node012, section_mm2: 4, couleur: noir, longueur_m: 0.3, statut: propose, note: "Côté « bord » du shunt, dans le coffre" }
+  - { id: wire511, de: node516, vers: node517, section_mm2: 1.5, couleur: marron, longueur_m: 6, statut: propose, note: "Câble 3 × 1,5 mm² dédié jusqu'au coffre de la batterie (environ 5 m, Q50), prise ou boîtier à bornes Wago (Q53)" }
+  - { id: wire512, de: node509, vers: node518, section_mm2: 1.5, couleur: bleu, longueur_m: 6, statut: propose }
+  - { id: wire513, de: node507, vers: node519, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 6, statut: propose }
 
   # --- Orion XS dans le coffre -----------------------------------------------------------------
-  - { id: wire065, de: node066, vers: node061, section_mm2: 16, couleur: rouge, longueur_m: 1.5, statut: propose, note: "Du fusible de 70 A de la platine (côté moteur) jusqu'au coffre" }
-  - { id: wire058, de: node007, vers: node067, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Sur la borne + de la batterie de servitude" }
-  - { id: wire062, de: node063, vers: node012, section_mm2: 16, couleur: noir, longueur_m: 0.3, statut: propose, note: "Côté « bord » du shunt, dans le coffre" }
-  - { id: wire067, de: node072, vers: node064, section_mm2: 0.75, couleur: rouge, longueur_m: 2, statut: propose, note: "Commande « remote » : de l'interrupteur, près du tableau Scheiber, jusqu'au coffre" }
+  - { id: wire115, de: node116, vers: node111, section_mm2: 16, couleur: rouge, longueur_m: 1.5, statut: propose, note: "Du fusible de 70 A de la platine (côté moteur) jusqu'au coffre" }
+  - { id: wire108, de: node007, vers: node117, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Sur la borne + de la batterie de servitude" }
+  - { id: wire112, de: node113, vers: node012, section_mm2: 16, couleur: noir, longueur_m: 0.3, statut: propose, note: "Côté « bord » du shunt, dans le coffre" }
+  - { id: wire117, de: node122, vers: node114, section_mm2: 0.75, couleur: rouge, longueur_m: 2, statut: propose, note: "Commande « remote » : de l'interrupteur, près du tableau Scheiber, jusqu'au coffre" }

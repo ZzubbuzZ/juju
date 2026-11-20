@@ -211,14 +211,15 @@ def appliquer_delta(base: Modele, delta: dict, nom: str, source: str, r: Rapport
     return m
 
 
-# Sections de numérotation (15/10), communes aux nœuds et aux fils ; un fil prend la section de son bout le
-# plus en aval. Le 230 V occupe seul 300-399 ; 250-299 et 400+ sont libres.
-SECTIONS = ((1, 49, "batteries, coupe-circuits, shunt"), (50, 99, "charge"), (100, 149, "moteur et guindeau"),
-            (150, 199, "distribution 12 V"), (200, 249, "tableau de servitude"), (300, 399, "230 V"))
+# Sections de numérotation (renumérotation du 20/11, sections de 100 numéros), communes aux nœuds et aux
+# fils ; un fil prend la section de son bout le plus en aval. Le 230 V occupe seul 500-599 ; 600+ est libre.
+SECTIONS = ((1, 99, "batteries, coupe-circuits, shunt"), (100, 199, "charge"), (200, 299, "moteur et guindeau"),
+            (300, 399, "distribution 12 V"), (400, 499, "tableau de servitude"), (500, 599, "230 V"))
+AC_MIN, AC_MAX = 500, 599
 
 
 def controler_sections(m: Modele, r: Rapport) -> None:
-    """Chaque numéro tombe dans une section ; le 230 V, et lui seul, dans 300-399."""
+    """Chaque numéro tombe dans une section ; le 230 V, et lui seul, dans 500-599."""
     for genre, elems in (("nœud", m.nodes), ("fil", m.fils)):
         for i, e in elems.items():
             num = int(i[4:])
@@ -229,8 +230,8 @@ def controler_sections(m: Modele, r: Rapport) -> None:
                 ac = e.get("polarite", "").startswith("230V")
             else:
                 ac = all(m.nodes.get(e[k], {}).get("polarite", "").startswith("230V") for k in ("de", "vers"))
-            if ac != (300 <= num <= 399):
-                r.avert(m.nom, f"{i} : {'230 V hors' if ac else '12 V dans'} la section 300-399 du 230 V")
+            if ac != (AC_MIN <= num <= AC_MAX):
+                r.avert(m.nom, f"{i} : {'230 V hors' if ac else '12 V dans'} la section {AC_MIN}-{AC_MAX} du 230 V")
 
 
 def controler(m: Modele, questions: set[str], traitees: set[str], r: Rapport) -> None:

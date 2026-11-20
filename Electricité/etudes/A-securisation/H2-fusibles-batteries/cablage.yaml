@@ -12,7 +12,7 @@ titre: Fusibles de batterie et des départs
 base: releve
 
 supprime:
-  fils: [wire001, wire004, wire051, wire008, wire016, wire055, wire200, wire158]
+  fils: [wire001, wire004, wire101, wire008, wire016, wire105, wire400, wire308]
 
 equipements:
   - { id: fus-bat-moteur, type: fusible, designation: "Fusible de la batterie moteur (MEGA)", calibre_A: 400, emplacement: "Porte-fusible vissé à côté de la batterie moteur", statut: propose }
@@ -29,18 +29,18 @@ nodes:
   - { id: node004, equipement: fus-bat-moteur, borne: "2", polarite: "+" }
   - { id: node009, equipement: fus-bat-servitude, borne: "1 (côté batterie)", polarite: "+" }
   - { id: node010, equipement: fus-bat-servitude, borne: "2", polarite: "+" }
-  - { id: node053, equipement: fus-chargeur-moteur, borne: "1 (côté batterie)", polarite: "+" }
-  - { id: node054, equipement: fus-chargeur-moteur, borne: "2", polarite: "+" }
-  - { id: node055, equipement: fus-chargeur-servitude, borne: "1 (côté batterie)", polarite: "+" }
-  - { id: node056, equipement: fus-chargeur-servitude, borne: "2", polarite: "+" }
+  - { id: node103, equipement: fus-chargeur-moteur, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node104, equipement: fus-chargeur-moteur, borne: "2", polarite: "+" }
+  - { id: node105, equipement: fus-chargeur-servitude, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node106, equipement: fus-chargeur-servitude, borne: "2", polarite: "+" }
   - { id: node029, equipement: fus-coupleur-moteur, borne: "1 (côté batterie)", polarite: "+" }
   - { id: node030, equipement: fus-coupleur-moteur, borne: "2", polarite: "+" }
   - { id: node031, equipement: fus-coupleur-servitude, borne: "1 (côté batterie)", polarite: "+" }
   - { id: node032, equipement: fus-coupleur-servitude, borne: "2", polarite: "+" }
-  - { id: node151, equipement: fus-source-tableau-servitude, borne: "1 (côté source)", polarite: "+" }
-  - { id: node152, equipement: fus-source-tableau-servitude, borne: "2", polarite: "+" }
-  - { id: node155, equipement: fus-source-tableau-scheiber, borne: "1 (côté source)", polarite: "+" }
-  - { id: node156, equipement: fus-source-tableau-scheiber, borne: "2", polarite: "+" }
+  - { id: node301, equipement: fus-source-tableau-servitude, borne: "1 (côté source)", polarite: "+" }
+  - { id: node302, equipement: fus-source-tableau-servitude, borne: "2", polarite: "+" }
+  - { id: node305, equipement: fus-source-tableau-scheiber, borne: "1 (côté source)", polarite: "+" }
+  - { id: node306, equipement: fus-source-tableau-scheiber, borne: "2", polarite: "+" }
 
 fils:
   # --- Batteries (A2) : tronçon court borne → porte-fusible, puis câble existant repris
@@ -50,19 +50,19 @@ fils:
   - { id: wire008, de: node010, vers: node020, section_mm2: 35, couleur: rouge, longueur_m: 1, statut: propose, note: "Câble existant, extrémité batterie reprise sur le fusible. 35 mm² sous 400 A : écart accepté le 30/09, 50 mm² à long terme" }
 
   # --- Départs (A4) : fusible à la source, sur la borne côté batterie du coupe-circuit
-  - { id: wire052, de: node005, vers: node053, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
-  - { id: wire051, de: node054, vers: node050, section_mm2: 6, couleur: rouge, longueur_m: 2, statut: propose, note: "Câble existant, repris sur le fusible" }
-  - { id: wire057, de: node020, vers: node055, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
-  - { id: wire055, de: node056, vers: node051, section_mm2: 6, couleur: rouge, longueur_m: 2, statut: propose, note: "Câble existant, repris sur le fusible" }
+  - { id: wire102, de: node005, vers: node103, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire101, de: node104, vers: node100, section_mm2: 6, couleur: rouge, longueur_m: 2, statut: propose, note: "Câble existant, repris sur le fusible" }
+  - { id: wire107, de: node020, vers: node105, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire105, de: node106, vers: node101, section_mm2: 6, couleur: rouge, longueur_m: 2, statut: propose, note: "Câble existant, repris sur le fusible" }
   - { id: wire005, de: node005, vers: node029, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
   - { id: wire004, de: node030, vers: node026, section_mm2: 6, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Câble existant, repris sur le fusible" }
   - { id: wire017, de: node020, vers: node031, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
   - { id: wire016, de: node032, vers: node027, section_mm2: 6, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Câble existant, repris sur le fusible" }
 
   # --- Tableau de la table à carte (A1)
-  - { id: wire157, de: node021, vers: node151, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
-  - { id: wire200, de: node152, vers: node200, section_mm2: 6, couleur: rouge, longueur_m: 3, statut: propose, note: "Câble existant, repris sur le fusible" }
+  - { id: wire307, de: node021, vers: node301, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire400, de: node302, vers: node400, section_mm2: 6, couleur: rouge, longueur_m: 3, statut: propose, note: "Câble existant, repris sur le fusible" }
 
   # --- Tableau Scheiber (A6)
-  - { id: wire156, de: node021, vers: node155, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
-  - { id: wire158, de: node156, vers: node159, section_mm2: 6, statut: propose, note: "Câble existant, repris sur le fusible (couleur non relevée)" }
+  - { id: wire306, de: node021, vers: node305, section_mm2: 6, couleur: rouge, longueur_m: 0.15, statut: propose }
+  - { id: wire308, de: node306, vers: node309, section_mm2: 6, statut: propose, note: "Câble existant, repris sur le fusible (couleur non relevée)" }

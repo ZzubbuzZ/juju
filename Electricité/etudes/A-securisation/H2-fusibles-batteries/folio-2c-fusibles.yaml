@@ -39,8 +39,8 @@ appareils:
     forme: fusible
     calibre: 30 A
     nodes:
-      node053: {cote: point, xy: [500, 210], etiquette: [-4, 20, end]}
-      node054: {cote: point, xy: [546, 210], etiquette: [4, 20]}
+      node103: {cote: point, xy: [500, 210], etiquette: [-4, 20, end]}
+      node104: {cote: point, xy: [546, 210], etiquette: [4, 20]}
   - id: fus-coupleur-moteur
     forme: fusible
     calibre: 40 A
@@ -78,8 +78,8 @@ appareils:
     forme: fusible
     calibre: 30 A
     nodes:
-      node055: {cote: point, xy: [500, 510], etiquette: [-4, 20, end]}
-      node056: {cote: point, xy: [546, 510], etiquette: [4, 20]}
+      node105: {cote: point, xy: [500, 510], etiquette: [-4, 20, end]}
+      node106: {cote: point, xy: [546, 510], etiquette: [4, 20]}
   - id: fus-coupleur-servitude
     forme: fusible
     calibre: 40 A
@@ -92,14 +92,14 @@ appareils:
     forme: fusible
     calibre: 50 A
     nodes:
-      node151: {cote: point, xy: [640, 340], etiquette: [-4, 20, end]}
-      node152: {cote: point, xy: [686, 340], etiquette: [4, 20]}
+      node301: {cote: point, xy: [640, 340], etiquette: [-4, 20, end]}
+      node302: {cote: point, xy: [686, 340], etiquette: [4, 20]}
   - id: fus-source-tableau-scheiber
     forme: fusible
     calibre: 30 A
     nodes:
-      node155: {cote: point, xy: [760, 380], etiquette: [-4, 20, end]}
-      node156: {cote: point, xy: [806, 380], etiquette: [4, 20]}
+      node305: {cote: point, xy: [760, 380], etiquette: [-4, 20, end]}
+      node306: {cote: point, xy: [806, 380], etiquette: [4, 20]}
   - id: disj-guindeau
     x: 960
     y: 405
@@ -109,7 +109,7 @@ appareils:
     titre_y: 18
     lignes: ["vers le guindeau : folio 1"]
     nodes:
-      node108: [gauche, 430]
+      node208: [gauche, 430]
 
 # Bornes des coupe-circuits prolongées : un départ par point de raccordement.
 barres:
@@ -117,32 +117,32 @@ barres:
 fils:
   wire002: {etiquette: [225, 130, mid]}
   wire001: {etiquette: [355, 130, mid]}
-  wire100: {trace: [[620, 140]], etiquette: [566, 158, mid]}
+  wire200: {trace: [[620, 140]], etiquette: [566, 158, mid]}
   wire007: {trace: [[504, 140], [544, 100], [620, 100]], etiquette: [584, 92, mid]}
-  wire052: {trace: [[410, 154], [410, 210]], etiquette: [418, 204]}
-  wire051: {trace: [[700, 210]], etiquette: [623, 204, mid]}
+  wire102: {trace: [[410, 154], [410, 210]], etiquette: [418, 204]}
+  wire101: {trace: [[700, 210]], etiquette: [623, 204, mid]}
   wire005: {trace: [[396, 168], [396, 250]], etiquette: [404, 244]}
   wire004: {trace: [[700, 250]], etiquette: [660, 244, mid]}
   wire009: {etiquette: [225, 420, mid]}
   wire008: {etiquette: [355, 420, mid]}
-  wire057: {trace: [[410, 444], [410, 510]], etiquette: [418, 504]}
-  wire055: {trace: [[700, 510]], etiquette: [623, 504, mid]}
+  wire107: {trace: [[410, 444], [410, 510]], etiquette: [418, 504]}
+  wire105: {trace: [[700, 510]], etiquette: [623, 504, mid]}
   wire017: {trace: [[396, 458], [396, 550]], etiquette: [404, 544]}
   wire016: {trace: [[700, 550]], etiquette: [660, 544, mid]}
-  wire157: {trace: [[498, 416], [498, 340]], etiquette: [506, 334]}
-  wire200: {trace: [[950, 340]], etiquette: [850, 334, mid]}
-  wire156: {trace: [[512, 402], [512, 380]], etiquette: [520, 374]}
-  wire158: {trace: [[950, 380]], etiquette: [903, 374, mid]}
-  wire102: {etiquette: [880, 422, mid], texte: "w102 · 35 (inchangé)"}
+  wire307: {trace: [[498, 416], [498, 340]], etiquette: [506, 334]}
+  wire400: {trace: [[950, 340]], etiquette: [850, 334, mid]}
+  wire306: {trace: [[512, 402], [512, 380]], etiquette: [520, 374]}
+  wire308: {trace: [[950, 380]], etiquette: [903, 374, mid]}
+  wire202: {etiquette: [880, 422, mid], texte: "w202 · 35 (inchangé)"}
 
 renvois:
-  - {x: 620, y: 131, w: 250, texte: "→ node100 · démarreur, alternateur · folio 1"}
+  - {x: 620, y: 131, w: 250, texte: "→ node200 · démarreur, alternateur · folio 1"}
   - {x: 620, y: 91, w: 200, texte: "→ node025 · couplage · folio 1"}
-  - {x: 700, y: 201, w: 250, texte: "→ node050 · chargeur, sortie 1 · folio 1"}
+  - {x: 700, y: 201, w: 250, texte: "→ node100 · chargeur, sortie 1 · folio 1"}
   - {x: 700, y: 241, w: 270, texte: "→ node026 · coupleur, entrée moteur · folio 1"}
-  - {x: 950, y: 331, w: 230, texte: "→ node200 · tableau table à carte · folio 1"}
-  - {x: 950, y: 371, w: 230, texte: "→ node159 · tableau Scheiber · folio 1"}
-  - {x: 700, y: 501, w: 250, texte: "→ node051 · chargeur, sortie 2 · folio 1"}
+  - {x: 950, y: 331, w: 230, texte: "→ node400 · tableau table à carte · folio 1"}
+  - {x: 950, y: 371, w: 230, texte: "→ node309 · tableau Scheiber · folio 1"}
+  - {x: 700, y: 501, w: 250, texte: "→ node101 · chargeur, sortie 2 · folio 1"}
   - {x: 700, y: 541, w: 270, texte: "→ node027 · coupleur, entrée servitude · folio 1"}
 
 pastilles:

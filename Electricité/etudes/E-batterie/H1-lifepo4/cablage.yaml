@@ -14,8 +14,8 @@ base: D-H1
 
 supprime:
   equipements: [bat-servitude, fus-bat-servitude, fus-chargeur-moteur, cc-couplage, coupleur, fus-coupleur-moteur, fus-coupleur-servitude, fus-chargeur-servitude]
-  nodes: [node024, node025, node026, node027, node028, node053, node055, node056, node029, node030, node031, node032]
-  fils: [wire004, wire051, wire060, wire016, wire055, wire007, wire015, wire018, wire102, wire052, wire057, wire005, wire017, wire156, wire157]
+  nodes: [node024, node025, node026, node027, node028, node103, node105, node106, node029, node030, node031, node032]
+  fils: [wire004, wire101, wire110, wire016, wire105, wire007, wire015, wire018, wire202, wire102, wire107, wire005, wire017, wire306, wire307]
 
 equipements:
   # --- Batterie et son fusible ---------------------------------------------------
@@ -34,79 +34,79 @@ equipements:
 
   # --- Chargeur de quai LiFePO4 --------------------------------------------------
   - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: descente, emplacement: "Dans la contremarche, avec le shunt (14/10 : déplacé au coffre de cockpit par E-H5)", statut: propose }
-  - { id: disj-chargeur-lifepo4, type: disjoncteur, designation: "Disjoncteur du chargeur de quai LiFePO4", modele: "1P+N C10", zone: cockpit-coffre-tribord, emplacement: "Boîtier d'arrivée 230 V, place libre du rail (Q63)", calibre_A: 10, statut: propose, note: "Retenu le 12/10 : le Blue Smart a son propre C10, le Dolphin garde le sien (node310, node311)" }
+  - { id: disj-chargeur-lifepo4, type: disjoncteur, designation: "Disjoncteur du chargeur de quai LiFePO4", modele: "1P+N C10", zone: cockpit-coffre-tribord, emplacement: "Boîtier d'arrivée 230 V, place libre du rail (Q63)", calibre_A: 10, statut: propose, note: "Retenu le 12/10 : le Blue Smart a son propre C10, le Dolphin garde le sien (node510, node511)" }
   - { id: selecteur-guindeau, type: interrupteur, designation: "Sélecteur de batterie du guindeau, 3 positions 1 / OFF / 2, OFF entre 1 et 2 (300 A continu)", zone: descente, emplacement: "Platine des coupe-circuits, en bas à gauche vu de la descente, à la place du coupe-circuit de couplage déposé (15/10)", statut: propose, note: "Commandé le 13/10 : 300 A en continu, IP66, goujons M10. OFF entre 1 et 2 : pas de liaison entre les batteries au passage (à contrôler au multimètre à réception, aucune continuité entre 1 et 2 en tournant). Basculer guindeau à l'arrêt. Position normale : 1 (moteur) ; 2 : secours" }
   - { id: fus-chargeur-lifepo4, type: fusible, designation: "Fusible de la sortie du chargeur de quai LiFePO4", calibre_A: 25, emplacement: "Contre la borne côté batterie du coupe-circuit de servitude", statut: propose, note: "Calibre à confirmer sur la notice du Blue Smart" }
 
 nodes:
   # --- Dolphin --------------------------------------------------------------------
-  - { id: node053, equipement: fus-chargeur-moteur, borne: "1 (côté batterie)", polarite: "+", monte_sur: node003 }
+  - { id: node103, equipement: fus-chargeur-moteur, borne: "1 (côté batterie)", polarite: "+", monte_sur: node003 }
 
   # --- Orion XS -------------------------------------------------------------------
-  - { id: node061, equipement: orion-xs, borne: "entrée +", polarite: "+" }
-  - { id: node062, equipement: orion-xs, borne: "sortie +", polarite: "+" }
-  - { id: node063, equipement: orion-xs, borne: "−", polarite: "-" }
-  - { id: node064, equipement: orion-xs, borne: "remote H", polarite: commande }
-  - { id: node065, equipement: fus-orion-entree, borne: "1 (côté source)", polarite: "+" }
-  - { id: node066, equipement: fus-orion-entree, borne: "2", polarite: "+" }
-  - { id: node067, equipement: fus-orion-sortie, borne: "1 (côté batterie)", polarite: "+" }
-  - { id: node068, equipement: fus-orion-sortie, borne: "2", polarite: "+" }
-  - { id: node069, equipement: fus-orion-remote, borne: "1 (côté source)", polarite: "+" }
-  - { id: node070, equipement: fus-orion-remote, borne: "2", polarite: "+" }
-  - { id: node071, equipement: inter-orion, borne: "entrée", polarite: "+" }
-  - { id: node072, equipement: inter-orion, borne: "sortie", polarite: commande }
-  - { id: node073, equipement: inter-orion, borne: "masse du voyant", polarite: "-" }
+  - { id: node111, equipement: orion-xs, borne: "entrée +", polarite: "+" }
+  - { id: node112, equipement: orion-xs, borne: "sortie +", polarite: "+" }
+  - { id: node113, equipement: orion-xs, borne: "−", polarite: "-" }
+  - { id: node114, equipement: orion-xs, borne: "remote H", polarite: commande }
+  - { id: node115, equipement: fus-orion-entree, borne: "1 (côté source)", polarite: "+" }
+  - { id: node116, equipement: fus-orion-entree, borne: "2", polarite: "+" }
+  - { id: node117, equipement: fus-orion-sortie, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node118, equipement: fus-orion-sortie, borne: "2", polarite: "+" }
+  - { id: node119, equipement: fus-orion-remote, borne: "1 (côté source)", polarite: "+" }
+  - { id: node120, equipement: fus-orion-remote, borne: "2", polarite: "+" }
+  - { id: node121, equipement: inter-orion, borne: "entrée", polarite: "+" }
+  - { id: node122, equipement: inter-orion, borne: "sortie", polarite: commande }
+  - { id: node123, equipement: inter-orion, borne: "masse du voyant", polarite: "-" }
 
   # --- Chargeur de quai LiFePO4 ------------------------------------------------------
-  - { id: node057, equipement: chargeur-lifepo4, borne: "sortie +", polarite: "+" }
-  - { id: node058, equipement: chargeur-lifepo4, borne: "sortie −", polarite: "-" }
-  - { id: node317, equipement: chargeur-lifepo4, borne: "230 V phase", polarite: 230V-phase }
-  - { id: node318, equipement: chargeur-lifepo4, borne: "230 V neutre", polarite: 230V-neutre }
-  - { id: node319, equipement: chargeur-lifepo4, borne: "230 V terre", polarite: 230V-terre }
-  - { id: node059, equipement: fus-chargeur-lifepo4, borne: "1 (côté batterie)", polarite: "+" }
-  - { id: node060, equipement: fus-chargeur-lifepo4, borne: "2", polarite: "+" }
-  - { id: node315, equipement: disj-chargeur-lifepo4, borne: "entrée", polarite: 230V-phase }
-  - { id: node316, equipement: disj-chargeur-lifepo4, borne: "sortie", polarite: 230V-phase }
-  - { id: node105, equipement: selecteur-guindeau, borne: "1 (batterie moteur)", polarite: "+" }
-  - { id: node106, equipement: selecteur-guindeau, borne: "2 (batterie de servitude)", polarite: "+" }
-  - { id: node107, equipement: selecteur-guindeau, borne: "commun (vers le guindeau)", polarite: commute }
+  - { id: node107, equipement: chargeur-lifepo4, borne: "sortie +", polarite: "+" }
+  - { id: node108, equipement: chargeur-lifepo4, borne: "sortie −", polarite: "-" }
+  - { id: node517, equipement: chargeur-lifepo4, borne: "230 V phase", polarite: 230V-phase }
+  - { id: node518, equipement: chargeur-lifepo4, borne: "230 V neutre", polarite: 230V-neutre }
+  - { id: node519, equipement: chargeur-lifepo4, borne: "230 V terre", polarite: 230V-terre }
+  - { id: node109, equipement: fus-chargeur-lifepo4, borne: "1 (côté batterie)", polarite: "+" }
+  - { id: node110, equipement: fus-chargeur-lifepo4, borne: "2", polarite: "+" }
+  - { id: node515, equipement: disj-chargeur-lifepo4, borne: "entrée", polarite: 230V-phase }
+  - { id: node516, equipement: disj-chargeur-lifepo4, borne: "sortie", polarite: 230V-phase }
+  - { id: node205, equipement: selecteur-guindeau, borne: "1 (batterie moteur)", polarite: "+" }
+  - { id: node206, equipement: selecteur-guindeau, borne: "2 (batterie de servitude)", polarite: "+" }
+  - { id: node207, equipement: selecteur-guindeau, borne: "commun (vers le guindeau)", polarite: commute }
 
 fils:
   # --- Dolphin, au plus près de la batterie moteur ------------------------------------
-  - { id: wire063, de: node054, vers: node050, section_mm2: 6, couleur: rouge, longueur_m: 0.5, remplace: wire051, statut: propose, note: "Le Dolphin est juste au-dessus de la batterie moteur" }
-  - { id: wire050, de: node052, vers: node002, section_mm2: 6, couleur: noir, longueur_m: 0.5, remplace: wire060, statut: propose, note: "Négatif du Dolphin sur la borne − de la batterie moteur" }
+  - { id: wire113, de: node104, vers: node100, section_mm2: 6, couleur: rouge, longueur_m: 0.5, remplace: wire101, statut: propose, note: "Le Dolphin est juste au-dessus de la batterie moteur" }
+  - { id: wire100, de: node102, vers: node002, section_mm2: 6, couleur: noir, longueur_m: 0.5, remplace: wire110, statut: propose, note: "Négatif du Dolphin sur la borne − de la batterie moteur" }
 
   # --- Orion XS -------------------------------------------------------------------------
-  - { id: wire053, de: node006, vers: node065, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Côté charges du coupe-circuit moteur (08/10). Aussi court que possible : non protégé" }
-  - { id: wire065, de: node066, vers: node061, section_mm2: 16, couleur: rouge, longueur_m: 0.5, statut: propose, note: "16 mm² jusqu'à 5 m, d'après la notice (fusible de 60 à 70 A)" }
-  - { id: wire058, de: node020, vers: node067, section_mm2: 16, couleur: rouge, longueur_m: 0.25, statut: propose, note: "Alimente aussi, par le pont wire056, le fusible du Blue Smart (15/10) : 70 A + 25 A, 16 mm² suffisent (au plus 50 + 17 A de charge). Aussi court que possible : non protégé" }
-  - { id: wire066, de: node068, vers: node062, section_mm2: 16, couleur: rouge, longueur_m: 0.5, statut: propose }
-  - { id: wire062, de: node063, vers: node022, section_mm2: 16, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge de la LiFePO4 est comptée" }
-  - { id: wire054, de: node006, vers: node069, section_mm2: 0.75, couleur: rouge, longueur_m: 0.1, statut: propose, note: "+ de l'entrée de l'Orion XS, côté charges du coupe-circuit moteur (notice, 08/10)" }
-  - { id: wire068, de: node070, vers: node071, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose }
-  - { id: wire067, de: node072, vers: node064, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Commande « remote » de l'Orion XS : + commuté sur la broche H, actif au-dessus de 4 V ; cavalier H-L d'origine retiré" }
-  - { id: wire061, de: node073, vers: node022, section_mm2: 0.75, couleur: noir, longueur_m: 0.5, statut: propose, note: "Masse du voyant sur le coupe-circuit des négatifs, côté batteries (08/10)" }
+  - { id: wire103, de: node006, vers: node115, section_mm2: 16, couleur: rouge, longueur_m: 0.15, statut: propose, note: "Côté charges du coupe-circuit moteur (08/10). Aussi court que possible : non protégé" }
+  - { id: wire115, de: node116, vers: node111, section_mm2: 16, couleur: rouge, longueur_m: 0.5, statut: propose, note: "16 mm² jusqu'à 5 m, d'après la notice (fusible de 60 à 70 A)" }
+  - { id: wire108, de: node020, vers: node117, section_mm2: 16, couleur: rouge, longueur_m: 0.25, statut: propose, note: "Alimente aussi, par le pont wire106, le fusible du Blue Smart (15/10) : 70 A + 25 A, 16 mm² suffisent (au plus 50 + 17 A de charge). Aussi court que possible : non protégé" }
+  - { id: wire116, de: node118, vers: node112, section_mm2: 16, couleur: rouge, longueur_m: 0.5, statut: propose }
+  - { id: wire112, de: node113, vers: node022, section_mm2: 16, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge de la LiFePO4 est comptée" }
+  - { id: wire104, de: node006, vers: node119, section_mm2: 0.75, couleur: rouge, longueur_m: 0.1, statut: propose, note: "+ de l'entrée de l'Orion XS, côté charges du coupe-circuit moteur (notice, 08/10)" }
+  - { id: wire118, de: node120, vers: node121, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose }
+  - { id: wire117, de: node122, vers: node114, section_mm2: 0.75, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Commande « remote » de l'Orion XS : + commuté sur la broche H, actif au-dessus de 4 V ; cavalier H-L d'origine retiré" }
+  - { id: wire111, de: node123, vers: node022, section_mm2: 0.75, couleur: noir, longueur_m: 0.5, statut: propose, note: "Masse du voyant sur le coupe-circuit des négatifs, côté batteries (08/10)" }
 
   # --- Guindeau sur le circuit moteur (05/10) ----------------------------------------------
-  - { id: wire101, de: node006, vers: node105, section_mm2: 35, couleur: rouge, longueur_m: 0.5, remplace: wire102, statut: propose, note: "Le guindeau est alimenté par la batterie moteur, côté charges du coupe-circuit moteur, au lieu de la servitude Arrive au sélecteur du guindeau, position 1 (13/10)." }
-  - { id: wire103, de: node021, vers: node106, section_mm2: 35, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Secours du guindeau par la LiFePO4 (13/10), position 2 du sélecteur ; protégé par le MEGA de 300 A" }
-  - { id: wire108, de: node107, vers: node108, section_mm2: 35, couleur: rouge, longueur_m: 0.3, statut: propose, note: "Commun du sélecteur vers le disjoncteur du guindeau" }
+  - { id: wire201, de: node006, vers: node205, section_mm2: 35, couleur: rouge, longueur_m: 0.5, remplace: wire202, statut: propose, note: "Le guindeau est alimenté par la batterie moteur, côté charges du coupe-circuit moteur, au lieu de la servitude Arrive au sélecteur du guindeau, position 1 (13/10)." }
+  - { id: wire203, de: node021, vers: node206, section_mm2: 35, couleur: rouge, longueur_m: 0.5, statut: propose, note: "Secours du guindeau par la LiFePO4 (13/10), position 2 du sélecteur ; protégé par le MEGA de 300 A" }
+  - { id: wire208, de: node207, vers: node208, section_mm2: 35, couleur: rouge, longueur_m: 0.3, statut: propose, note: "Commun du sélecteur vers le disjoncteur du guindeau" }
 
   # --- Chargeur de quai LiFePO4 : 12 V ---------------------------------------------------
-  - { id: wire056, de: node067, vers: node059, section_mm2: 4, couleur: rouge, longueur_m: 0.1, statut: propose, note: "Pont entre les porte-fusibles (15/10) : part de l'entrée du fusible de sortie de l'Orion XS (node067), alimentée par wire058. Câble isolé, cosses serties sous gaine thermorétractable ; ne porte que le courant du fusible de 25 A" }
+  - { id: wire106, de: node117, vers: node109, section_mm2: 4, couleur: rouge, longueur_m: 0.1, statut: propose, note: "Pont entre les porte-fusibles (15/10) : part de l'entrée du fusible de sortie de l'Orion XS (node117), alimentée par wire108. Câble isolé, cosses serties sous gaine thermorétractable ; ne porte que le courant du fusible de 25 A" }
 
   # --- Ponts entre porte-fusibles MIDI (15/10, proposition de l'utilisateur) -----------------
-  # Un pont par potentiel : côté batterie de servitude (node020 : sortie Orion XS, Blue Smart, par wire058
-  # et wire056) et côté charges (node021 : table à carte, Scheiber, par wire157 et wire156). Le câble qui
+  # Un pont par potentiel : côté batterie de servitude (node020 : sortie Orion XS, Blue Smart, par wire108
+  # et wire106) et côté charges (node021 : table à carte, Scheiber, par wire307 et wire306). Le câble qui
   # alimente chaque pont porte la somme des fusibles qu'il dessert : 16 mm². Il n'est protégé que par le
   # MEGA de 300 A, comme les câbles qu'il remplace ; porte-fusibles MIDI capotés.
-  - { id: wire157, de: node021, vers: node151, section_mm2: 16, couleur: rouge, longueur_m: 0.25, statut: propose, note: "Alimente le pont des départs (15/10) : 50 A (table à carte) + 30 A (Scheiber), d'où 16 mm² au lieu de 6. Aussi court que possible : non protégé" }
-  - { id: wire156, de: node151, vers: node155, section_mm2: 6, couleur: rouge, longueur_m: 0.1, statut: propose, note: "Pont entre les porte-fusibles de la table à carte et du Scheiber (15/10). Câble isolé, cosses serties sous gaine thermorétractable ; ne porte que le courant du fusible de 30 A" }
-  - { id: wire064, de: node060, vers: node057, section_mm2: 4, couleur: rouge, longueur_m: 0.5, statut: propose }
-  - { id: wire059, de: node058, vers: node022, section_mm2: 4, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge est comptée" }
+  - { id: wire307, de: node021, vers: node301, section_mm2: 16, couleur: rouge, longueur_m: 0.25, statut: propose, note: "Alimente le pont des départs (15/10) : 50 A (table à carte) + 30 A (Scheiber), d'où 16 mm² au lieu de 6. Aussi court que possible : non protégé" }
+  - { id: wire306, de: node301, vers: node305, section_mm2: 6, couleur: rouge, longueur_m: 0.1, statut: propose, note: "Pont entre les porte-fusibles de la table à carte et du Scheiber (15/10). Câble isolé, cosses serties sous gaine thermorétractable ; ne porte que le courant du fusible de 30 A" }
+  - { id: wire114, de: node110, vers: node107, section_mm2: 4, couleur: rouge, longueur_m: 0.5, statut: propose }
+  - { id: wire109, de: node108, vers: node022, section_mm2: 4, couleur: noir, longueur_m: 0.5, statut: propose, note: "Côté « bord » du shunt : la charge est comptée" }
 
   # --- Chargeur de quai LiFePO4 : 230 V depuis son propre C10 (12/10, Q63) et un câble dédié (Q53) ---
-  - { id: wire315, de: node308, vers: node315, statut: propose, note: "Câblage interne du boîtier d'arrivée, depuis la sortie phase du différentiel, comme wire314" }
-  - { id: wire311, de: node316, vers: node317, section_mm2: 1.5, couleur: marron, longueur_m: 4, statut: propose, note: "Câble 3 × 1,5 mm² dédié, jusqu'à une prise ou un boîtier à bornes Wago près du chargeur (Q53) ; longueur estimée" }
-  - { id: wire312, de: node309, vers: node318, section_mm2: 1.5, couleur: bleu, longueur_m: 4, statut: propose }
-  - { id: wire313, de: node307, vers: node319, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 4, statut: propose }
+  - { id: wire515, de: node508, vers: node515, statut: propose, note: "Câblage interne du boîtier d'arrivée, depuis la sortie phase du différentiel, comme wire514" }
+  - { id: wire511, de: node516, vers: node517, section_mm2: 1.5, couleur: marron, longueur_m: 4, statut: propose, note: "Câble 3 × 1,5 mm² dédié, jusqu'à une prise ou un boîtier à bornes Wago près du chargeur (Q53) ; longueur estimée" }
+  - { id: wire512, de: node509, vers: node518, section_mm2: 1.5, couleur: bleu, longueur_m: 4, statut: propose }
+  - { id: wire513, de: node507, vers: node519, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 4, statut: propose }

@@ -32,10 +32,10 @@ Tout ce que décrit [D-H1](../H1-shunt-connecte/proposition.md#câblage), plus :
 
 | Fil | De → vers | Rôle |
 |---|---|---|
-| wire155 → wire174 | côté charges du coupe-circuit de servitude (node021) → fusible 3 A → Cerbo GX + (node182) | Alimentation du Cerbo GX, 0,75 mm² |
-| wire160 | Cerbo GX − (node183) → coupe-circuit des négatifs, côté charges (node023) | Masse du Cerbo GX, comptée par le shunt |
-| wire151 | port VE.Direct du SmartShunt (node015) → Cerbo GX (node184) | Câble VE.Direct de 1,8 m |
-| wire175 | Cerbo GX (node185) → GX Touch 50 (node186) | Câble de l'écran (2 m fourni, plus une rallonge de 2 m), sur le trajet de wire200 |
+| wire305 → wire324 | côté charges du coupe-circuit de servitude (node021) → fusible 3 A → Cerbo GX + (node332) | Alimentation du Cerbo GX, 0,75 mm² |
+| wire310 | Cerbo GX − (node333) → coupe-circuit des négatifs, côté charges (node023) | Masse du Cerbo GX, comptée par le shunt |
+| wire301 | port VE.Direct du SmartShunt (node015) → Cerbo GX (node334) | Câble VE.Direct de 1,8 m |
+| wire325 | Cerbo GX (node335) → GX Touch 50 (node336) | Câble de l'écran (2 m fourni, plus une rallonge de 2 m), sur le trajet de wire400 |
 
 Points de câblage :
 

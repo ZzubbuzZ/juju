@@ -20,7 +20,7 @@ equipements:
 
 nodes:
   - { id: node015, equipement: shunt-servitude, borne: "données (RJ12)", polarite: commande }
-  - { id: node179, equipement: afficheur-batterie, borne: "données (RJ12)", polarite: commande }
+  - { id: node329, equipement: afficheur-batterie, borne: "données (RJ12)", polarite: commande }
 
 fils:
-  - { id: wire150, de: node015, vers: node179, longueur_m: 4, statut: propose, note: "Câble de données RJ12 fourni avec le moniteur (10 m). Longueur estimée sur le trajet de wire200 (3 m), avec de la marge" }
+  - { id: wire300, de: node015, vers: node329, longueur_m: 4, statut: propose, note: "Câble de données RJ12 fourni avec le moniteur (10 m). Longueur estimée sur le trajet de wire400 (3 m), avec de la marge" }

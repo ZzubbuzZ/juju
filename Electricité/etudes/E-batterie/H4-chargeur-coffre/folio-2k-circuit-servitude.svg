@@ -63,7 +63,7 @@
   <text class="idn end" x="188" y="354">70 A</text>
   <rect class="box-new" x="50" y="420" width="250" height="84" rx="2"/>
   <text class="tb mid tn" x="175" y="460">Orion XS 12/12-50A</text>
-  <text class="ts mid" x="175" y="475">entrée n061, commande n064 : folio 2j</text>
+  <text class="ts mid" x="175" y="475">entrée n111, commande n114 : folio 2j</text>
   <rect class="box-new" x="100" y="560" width="320" height="70" rx="2"/>
   <text class="tb mid tn" x="260" y="582">Shunt 500 A</text>
   <rect class="sw" x="620" y="270" width="60" height="32" rx="2"/>
@@ -87,17 +87,17 @@
   <path class="p w4" d="M466 286 L620 286"/>
   <text class="idn mid" x="543" y="278">w008 · 35</text>
   <path class="p w2" d="M340 310 L340 240"/>
-  <text class="idn end" x="334" y="262">w056 · 4</text>
+  <text class="idn end" x="334" y="262">w106 · 4</text>
   <path class="p w2" d="M340 200 L340 160 L280 160"/>
-  <text class="idn mid" x="310" y="152">w064 · 4</text>
+  <text class="idn mid" x="310" y="152">w114 · 4</text>
   <path class="p w3" d="M340 310 L316 286 L200 286 L200 330"/>
-  <text class="idn mid" x="240" y="278">w058 · 16</text>
+  <text class="idn mid" x="240" y="278">w108 · 16</text>
   <path class="p w3" d="M200 370 L200 420"/>
-  <text class="idn" x="208" y="402">w066 · 16</text>
+  <text class="idn" x="208" y="402">w116 · 16</text>
   <path class="n w3" d="M76 504 L76 566 L100 590"/>
-  <text class="idn" x="82" y="538">w062 · 16</text>
+  <text class="idn" x="82" y="538">w112 · 16</text>
   <path class="n w2" d="M60 160 L34 160 L34 590 L100 590"/>
-  <text class="idn" x="40" y="320">w059 · 4</text>
+  <text class="idn" x="40" y="320">w109 · 4</text>
   <path class="n w4" d="M400 390 L400 560"/>
   <text class="idn end" x="394" y="536">w010 · 35 · 0,2 m</text>
   <path class="n w4" d="M100 590 L84 606 L84 700 L950 700"/>
@@ -107,22 +107,22 @@
   <path class="p w1" d="M510 676 L200 676 L200 630"/>
   <text class="idn mid" x="405" y="668">w013 · 0,75 · 1,2 m</text>
   <path class="p w3" d="M680 286 L716 286 L716 360 L780 360"/>
-  <text class="idn" x="724" y="352">w157 · 16</text>
+  <text class="idn" x="724" y="352">w307 · 16</text>
   <path class="p w2" d="M826 360 L880 360"/>
-  <text class="idn mid" x="853" y="352">w200 · 6</text>
+  <text class="idn mid" x="853" y="352">w400 · 6</text>
   <path class="p w2" d="M780 360 L760 380 L760 400 L780 420"/>
-  <text class="idn end" x="754" y="394">w156 · 6</text>
+  <text class="idn end" x="754" y="394">w306 · 6</text>
   <path class="p w2" d="M826 420 L880 420"/>
-  <text class="idn mid" x="853" y="412">w158 · 6</text>
+  <text class="idn mid" x="853" y="412">w308 · 6</text>
   <path class="n w2" d="M670 72 L240 72 L240 96"/>
   <path class="n w1" d="M447 77 L453 67"/>
   <path class="n w1" d="M452 77 L458 67"/>
   <path class="n w1" d="M457 77 L463 67"/>
-  <text class="idn" x="252" y="88">w311-3 · 3 × 1,5 · 6 m</text>
+  <text class="idn" x="252" y="88">w511-3 · 3 × 1,5 · 6 m</text>
   <rect class="flag" x="670" y="63" width="220" height="18"/>
-  <text class="ts mid" x="780" y="76">C10 n316 · n309 · n307 · folio 2i</text>
+  <text class="ts mid" x="780" y="76">C10 n516 · n509 · n507 · folio 2i</text>
   <rect class="flag" x="880" y="351" width="260" height="18"/>
-  <text class="ts mid" x="1010" y="364">→ n200 · tableau de la table à carte : folio 2b</text>
+  <text class="ts mid" x="1010" y="364">→ n400 · tableau de la table à carte : folio 2b</text>
   <rect class="flag" x="510" y="643" width="230" height="18"/>
   <text class="ts mid" x="625" y="656">← n017, fusible 1 A (platine) : folio 2e</text>
   <rect class="flag" x="510" y="667" width="270" height="18"/>
@@ -158,25 +158,25 @@
   <circle class="term" cx="1130" cy="420" r="3.5"/>
   <circle class="term" cx="950" cy="700" r="3.5"/>
   <circle class="term" cx="1010" cy="700" r="3.5"/>
-  <text class="idn end" x="273" y="159">n057</text>
+  <text class="idn end" x="273" y="159">n107</text>
   <text class="pin end" x="273" y="169">s+</text>
-  <text class="idn" x="67" y="159">n058</text>
+  <text class="idn" x="67" y="159">n108</text>
   <text class="pin" x="67" y="169">s−</text>
-  <text class="idn end" x="235" y="110">n317-9</text>
+  <text class="idn end" x="235" y="110">n517-9</text>
   <text class="pin end" x="235" y="120">230 V</text>
-  <text class="idn" x="348" y="244">n059</text>
-  <text class="idn" x="348" y="204">n060</text>
+  <text class="idn" x="348" y="244">n109</text>
+  <text class="idn" x="348" y="204">n110</text>
   <text class="idn end" x="335" y="324">n007</text>
   <text class="pin end" x="335" y="334">+</text>
   <text class="idn end" x="395" y="374">n008</text>
   <text class="pin end" x="395" y="384">−</text>
   <text class="idn end" x="418" y="306">n009</text>
   <text class="idn" x="468" y="306">n010</text>
-  <text class="idn" x="208" y="334">n067</text>
-  <text class="idn" x="208" y="374">n068</text>
-  <text class="idn end" x="195" y="434">n062</text>
+  <text class="idn" x="208" y="334">n117</text>
+  <text class="idn" x="208" y="374">n118</text>
+  <text class="idn end" x="195" y="434">n112</text>
   <text class="pin end" x="195" y="444">s+</text>
-  <text class="idn" x="81" y="488">n063</text>
+  <text class="idn" x="81" y="488">n113</text>
   <text class="pin" x="81" y="498">−</text>
   <text class="idn end" x="395" y="574">n011</text>
   <text class="pin end" x="395" y="584">− bat</text>
@@ -188,13 +188,13 @@
   <text class="pin" x="205" y="624">aux</text>
   <text class="id end" x="616" y="318">n020</text>
   <text class="id" x="686" y="278">n021</text>
-  <text class="idn end" x="778" y="380">n151</text>
-  <text class="idn" x="828" y="380">n152</text>
-  <text class="idn end" x="778" y="440">n155</text>
-  <text class="idn" x="828" y="440">n156</text>
-  <text class="id" x="887" y="419">n159</text>
+  <text class="idn end" x="778" y="380">n301</text>
+  <text class="idn" x="828" y="380">n302</text>
+  <text class="idn end" x="778" y="440">n305</text>
+  <text class="idn" x="828" y="440">n306</text>
+  <text class="id" x="887" y="419">n309</text>
   <text class="pin" x="887" y="429">+</text>
-  <text class="id end" x="1123" y="419">n160</text>
+  <text class="id end" x="1123" y="419">n310</text>
   <text class="pin end" x="1123" y="429">−</text>
   <text class="id end" x="944" y="718">n022</text>
   <text class="id" x="1014" y="718">n023</text>

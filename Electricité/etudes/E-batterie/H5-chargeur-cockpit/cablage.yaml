@@ -11,17 +11,17 @@ base: E-H1
 
 supprime:
   equipements: [chargeur-lifepo4]
-  fils: [wire064, wire059, wire311, wire312, wire313]
+  fils: [wire114, wire109, wire511, wire512, wire513]
 
 equipements:
   - { id: chargeur-lifepo4, type: chargeur, designation: "Chargeur de quai de la LiFePO4", modele: "Victron Blue Smart IP67 12/17 (BPC121713006)", zone: cockpit-coffre-tribord, emplacement: "Coffre de cockpit tribord, sur une paroi, près du boîtier d'arrivée 230 V", statut: propose, note: "IP67 : convient à un coffre exposé. Câbles 12 V fournis (rouge et noir, 12 AWG, 1,40 m) menés directement jusqu'à la niche ; porte-fusible de 30 A sur le câble rouge, côté chargeur (protection contre l'inversion de polarité, fiche Victron ; Q64, 16/10)" }
 
 fils:
   # --- Sortie 12 V : câbles fournis du chargeur, du coffre de cockpit à la niche (16/10) --------
-  - { id: wire064, de: node060, vers: node057, section_mm2: 3.3, section_indicative: true, couleur: rouge, longueur_m: 1.4, statut: propose, note: "Câble rouge fourni avec le chargeur (12 AWG), du fusible de 25 A (niche, à la source) au chargeur ; son porte-fusible de 30 A reste côté chargeur. Trajet d'environ 1,2 m (Q64, 16/10) : 20 cm de marge, à vérifier à la pose" }
-  - { id: wire059, de: node058, vers: node022, section_mm2: 3.3, section_indicative: true, couleur: noir, longueur_m: 1.4, statut: propose, note: "Câble noir fourni avec le chargeur (12 AWG), retour sur le côté « bord » du shunt (node022) : la charge est comptée" }
+  - { id: wire114, de: node110, vers: node107, section_mm2: 3.3, section_indicative: true, couleur: rouge, longueur_m: 1.4, statut: propose, note: "Câble rouge fourni avec le chargeur (12 AWG), du fusible de 25 A (niche, à la source) au chargeur ; son porte-fusible de 30 A reste côté chargeur. Trajet d'environ 1,2 m (Q64, 16/10) : 20 cm de marge, à vérifier à la pose" }
+  - { id: wire109, de: node108, vers: node022, section_mm2: 3.3, section_indicative: true, couleur: noir, longueur_m: 1.4, statut: propose, note: "Câble noir fourni avec le chargeur (12 AWG), retour sur le côté « bord » du shunt (node022) : la charge est comptée" }
 
   # --- 230 V : câble court, le C10 est dans le même coffre ---------------------------------
-  - { id: wire311, de: node316, vers: node317, section_mm2: 1.5, couleur: marron, longueur_m: 1, statut: propose, note: "Câble 3 × 1,5 mm² du C10 du Blue Smart à une prise ou un boîtier à bornes Wago dans le coffre (Q53) ; longueur estimée" }
-  - { id: wire312, de: node309, vers: node318, section_mm2: 1.5, couleur: bleu, longueur_m: 1, statut: propose }
-  - { id: wire313, de: node307, vers: node319, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 1, statut: propose }
+  - { id: wire511, de: node516, vers: node517, section_mm2: 1.5, couleur: marron, longueur_m: 1, statut: propose, note: "Câble 3 × 1,5 mm² du C10 du Blue Smart à une prise ou un boîtier à bornes Wago dans le coffre (Q53) ; longueur estimée" }
+  - { id: wire512, de: node509, vers: node518, section_mm2: 1.5, couleur: bleu, longueur_m: 1, statut: propose }
+  - { id: wire513, de: node507, vers: node519, section_mm2: 1.5, couleur: vert-jaune, longueur_m: 1, statut: propose }

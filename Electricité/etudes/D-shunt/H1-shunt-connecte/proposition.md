@@ -37,7 +37,7 @@ Emplacement **b** du [README de l'étude](../README.md#deux-emplacements-possibl
 
 Points de câblage :
 
-- **Rien d'autre que wire010 sur la borne côté batterie du shunt.** C'est la condition d'une mesure juste : le chargeur (wire060) reste sur node022, de l'autre côté, et la batterie moteur (wire003), relevée sur le − de la batterie de servitude, y est ramenée.
+- **Rien d'autre que wire010 sur la borne côté batterie du shunt.** C'est la condition d'une mesure juste : le chargeur (wire110) reste sur node022, de l'autre côté, et la batterie moteur (wire003), relevée sur le − de la batterie de servitude, y est ramenée.
 - **Fils de mesure pris en aval des fusibles de 400 A**, sur la borne côté batterie des coupe-circuits : ils sont protégés en amont, et le moniteur reste alimenté coupe-circuits ouverts. Il mesure donc la consommation résiduelle et la charge au quai, bateau coupé.
 - **Fusible de 1 A à la source de chaque fil de mesure**, contre la borne, comme pour les autres départs (règle du dépôt). Le 0,75 mm² est largement protégé par 1 A.
 - Les deux coupe-circuits étant sur la même platine, les fils de mesure ne font que quelques dizaines de centimètres.
