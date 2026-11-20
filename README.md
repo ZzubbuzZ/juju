@@ -5,6 +5,7 @@ Suivi des travaux de Juju, voilier Gib'Sea 31 de 1984.
 | Chantier | État |
 |---|---|
 | [Électricité](Electricité/README.md) | Relevé de l'existant en cours ; sécurisation, chauffe-eau, shunt et batterie décidés ; solaire à l'étude |
+| [Armement](Armement/README.md) | Plan de bord (emplacement des objets de sécurité et d'armement) ; procédures de sécurité |
 
 ## Mise en route après un clone
 

@@ -49,6 +49,10 @@ Juju est un voilier Gib'Sea 31 de 1984, moteur Yanmar 3GMD (plaque signalétique
 - Plan d'implantation (`folio-0-implantation.svg`) : chaque zone porte `data-zone="id"`, chaque équipement placé `data-equipement="id"` (un `<tspan>` vide suffit pour un équipement regroupé avec un autre). Classes `hull`, `zone`, `zone-pont`, `callout`, `leader`. Le vérificateur exige que tout équipement ayant une `zone` y figure. Le folio 5 (`cible/folio-5-implantation-cible.svg`) est son équivalent pour l'installation cible, dessiné à la main de la même façon (nouveau en vert, classe `tn`) et contrôlé avec le modèle cible : le redessiner quand une hypothèse retenue ajoute, déplace ou dépose un équipement.
 - Le bloc `<style>` évolue : quand une classe est ajoutée, la reporter dans tous les folios et dans le gabarit de `outils/page.py`.
 
+## Armement
+
+`Armement/` : ce qui n'est pas électrique, hors du vérificateur et de la page de consultation. `plan-de-bord/` : plan vu de dessus des objets du bord (`objets.yaml`, généré par `plan_bord.py` ; ne pas retoucher les SVG à la main, voir son README) et son PDF ; `procédures/` : procédures de sécurité (PDF). Se modifie sur `main`.
+
 ## Git
 
 - `main` : le relevé et les décisions validées.
