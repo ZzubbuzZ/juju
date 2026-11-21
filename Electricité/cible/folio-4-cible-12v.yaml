@@ -237,36 +237,36 @@ appareils:
     forme: fusible
     calibre: 50 A
     nodes:
-      node301: {cote: point, xy: [560, 610], etiquette: [-2, 20, end]}
-      node302: {cote: point, xy: [606, 610], etiquette: [2, 20]}
+      node301: {cote: point, xy: [520, 670], etiquette: [-2, 20, end]}
+      node302: {cote: point, xy: [566, 670], etiquette: [2, 20]}
   - id: tableau-servitude
     x: 880
-    y: 563
+    y: 643
     w: 220
     h: 60
     titre: Tableau de la table à carte
     titre_y: 18
     lignes: ["12 départs · A-H1 différé : folio 2b"]
     nodes:
-      node400: {cote: gauche, a: 610, fonction: "+"}
-      node401: {cote: droite, a: 610, fonction: "−"}
+      node400: {cote: gauche, a: 690, fonction: "+"}
+      node401: {cote: droite, a: 690, fonction: "−"}
   - id: disj-ballon-12v
     forme: fusible
     calibre: 30 A
     nodes:
-      node325: {cote: point, xy: [520, 670], etiquette: [0, -12, mid]}
-      node326: {cote: point, xy: [566, 670], etiquette: [2, 20]}
+      node325: {cote: point, xy: [560, 610], etiquette: [0, -12, mid]}
+      node326: {cote: point, xy: [606, 610], etiquette: [2, 20]}
   - id: chauffe-eau
     x: 920
-    y: 643
+    y: 563
     w: 180
     h: 60
     titre: CozyWater 10C
     titre_y: 18
     lignes: ["entrée 12 V · 200 W"]
     nodes:
-      node327: {cote: gauche, a: 690, fonction: "+"}
-      node328: {cote: droite, a: 690, fonction: "−"}
+      node327: {cote: gauche, a: 610, fonction: "+"}
+      node328: {cote: droite, a: 610, fonction: "−"}
   - id: fus-source-tableau-scheiber
     forme: fusible
     calibre: 30 A
@@ -480,13 +480,13 @@ fils:
   wire013: {etiquette: [238, 794, mid], texte: w013}
   wire006: {renvoi: de, trace: [[316, 802]], etiquette: [306, 794, mid], texte: w006}
   # départs
-  wire307: {trace: [[544, 610]], etiquette: [536, 598, end]}
-  wire400: {etiquette: [760, 602, mid]}
-  wire304: {etiquette: [502, 688, mid], texte: w304}
-  wire323: {trace: [[720, 670], [740, 690]], etiquette: [640, 662, mid]}
-  wire311: {trace: [[1115, 690], [1115, 970], [1095, 990]], etiquette: [1111, 930, mid, v], texte: w311}
-  wire401: {trace: [[1115, 990], [1135, 970], [1135, 610]], etiquette: [1131, 930, mid, v]}
-  wire306: {trace: [[550, 620], [550, 640], [590, 680], [590, 760], [530, 820]], etiquette: [596, 730]}
+  wire307: {etiquette: [540, 652, mid]}
+  wire400: {trace: [[860, 670]], etiquette: [760, 662, mid]}
+  wire304: {trace: [[544, 610]], etiquette: [510, 628, end], texte: w304}
+  wire323: {etiquette: [640, 602, mid]}
+  wire311: {trace: [[1135, 610], [1135, 970], [1115, 990]], etiquette: [1131, 930, mid, v], texte: w311}
+  wire401: {trace: [[1095, 990], [1115, 970], [1115, 690]], etiquette: [1111, 930, mid, v]}
+  wire306: {trace: [[510, 680], [510, 800]], etiquette: [518, 760]}
   wire308: {etiquette: [618, 822, mid]}
   wire312: {trace: [[750, 990], [770, 970]], etiquette: [776, 960]}
   wire315: {etiquette: [850, 822, mid]}
@@ -495,11 +495,6 @@ fils:
   wire318: {trace: [[750, 920], [750, 863]], etiquette: [746, 892, mid, v]}
   wire321: {etiquette: [995, 890, mid], texte: "w321 / w322 · 3,5"}
   wire322: {}
-
-croisements_admis:
-  # Le pont des départs (15/10) relie le fusible de la table à carte, au-dessus de la ligne du ballon,
-  # à celui du Scheiber, en dessous : il franchit le départ du ballon (wire323).
-  - [wire306, wire323]
 
 renvois:
   - {x: 40, y: 1161, w: 130, texte: "← n309 · + Scheiber"}
@@ -514,8 +509,8 @@ pastilles:
   - {id: A13, x: 565, y: 1100}
   - {id: Q58, x: 370, y: 196}
   - {id: Q58, x: 346, y: 696}
-  - {id: Q58, x: 840, y: 610}
-  - {id: Q57, x: 700, y: 670}
+  - {id: Q58, x: 820, y: 670}
+  - {id: Q57, x: 700, y: 610}
 
 textes:
   - {x: 40, y: 1048, classe: tb, texte: "Jauge à gasoil"}
@@ -528,7 +523,7 @@ textes:
   - {x: 928, y: 1332, classe: "ts mid", texte: "Wago"}
   - {x: 1094, y: 1332, classe: "ts mid", texte: "Wago"}
   - {x: 1110, y: 44, classe: "ts mid", texte: "Guindeau 700 W"}
-  - {x: 870, y: 720, classe: "ts mid", texte: "disjoncteur CC 30 A à côté du disj. guindeau : protection et interrupteur du ballon (folio 2n)"}
+  - {x: 870, y: 548, classe: "ts mid", texte: "disjoncteur CC 30 A à côté du disj. guindeau : protection et interrupteur du ballon (folio 2n)"}
   - {x: 200, y: 1010, classe: "ts mid", texte: "côté batteries (avant le shunt)"}
   - {x: 620, y: 1010, classe: "ts mid", texte: "masse des charges"}
   - {x: 20, y: 1498, texte: "Tableau moteur (relevé, folio 1) : w206 du + démarreur (n200) au fusible de 30 A (n202), puis w207 de n203 au tableau (n204) ; sections à relever (Q65). Horamètre : folio 4b."}
