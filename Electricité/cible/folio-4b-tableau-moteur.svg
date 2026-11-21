@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-label="Tableau moteur, installation cible : pour l&#x27;instant seulement l&#x27;horamètre, branché sur le plus après contact du tableau moteur et sur la masse moteur.">
+  <title>Folio 4b · Tableau moteur</title>
+  <desc>Folio du câblage du tableau moteur, à compléter. Pour l&#x27;instant, seul l&#x27;horamètre GH-521S y figure : + après contact du tableau moteur, masse prise sur la masse moteur par un fil bleu (relevé du 20/11).</desc>
+  <style>
+    /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
+    svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
+    @media (prefers-color-scheme: dark){svg{--sheet:#151b22;--ink:#e3e8ee;--muted:#93a1b0;--pos:#ff5a4f;--unk:#5aa9f5;--warn:#ffa53d;--new:#4fcf85;--new-soft:#15301f;--zone:#1f2832;--ph:#c8915a;--ne:#6aa7ff;--pe:#51cf66;--pey:#ffd43b}}
+    .bg{fill:var(--sheet)}
+    text{font-family:"IBM Plex Sans Condensed","Arial Narrow","Roboto Condensed",sans-serif;fill:var(--ink)}
+    .t{font-size:12.5px}.tb{font-size:13px;font-weight:600}.ts{font-size:11.5px;fill:var(--muted)}
+    .id,.idn,.pin{font-family:"IBM Plex Mono",Consolas,monospace}
+    .id{font-size:10.5px;fill:var(--muted)}.idn{font-size:10.5px;fill:var(--new)}.pin{font-size:8.5px;fill:var(--ink)}
+    .tu{fill:var(--unk)}.tn{fill:var(--new)}.mid{text-anchor:middle}.end{text-anchor:end}
+    .p,.n,.u,.lever,.bound,.ph,.ne,.pe,.pey,.leader{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .p{stroke:var(--pos)}.n{stroke:var(--ink)}
+    .ph{stroke:var(--ph)}.ne{stroke:var(--ne)}.pe{stroke:var(--pe)}.pey{stroke:var(--pey);stroke-dasharray:6 6;stroke-linecap:butt}
+    .u{stroke:var(--unk);stroke-width:1.6;stroke-dasharray:6 4}
+    .bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 4}
+    .w1{stroke-width:1.3}.w2{stroke-width:2}.w3{stroke-width:2.8}.w4{stroke-width:4}.w5{stroke-width:5.5}
+    .box{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .box-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .box-unk{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5;stroke-dasharray:6 4}
+    .fuse{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+    .fuse-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.6}
+    .fx{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round}.fx-new{fill:none;stroke:var(--new);stroke-width:1.4;stroke-linecap:round}
+    .dp{fill:var(--pos)}.dn{fill:var(--ink)}
+    .term{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+    .lever{stroke:var(--ink);stroke-width:2}
+    .sw{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:5 3}
+    .flag{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .flag-new{fill:var(--new-soft);stroke:var(--new);stroke-width:1.4}
+    .hull{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+    .zone{fill:var(--zone);stroke:var(--muted);stroke-width:1}
+    .zone-pont{fill:none;stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+    .leader{stroke:var(--muted);stroke-width:1}
+    .callout{fill:var(--sheet);stroke:var(--ink);stroke-width:1.2}
+    .mk-a circle{fill:var(--warn)}
+    .mk-a text{fill:var(--on-warn);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+    .mk-q circle{fill:var(--sheet);stroke:var(--unk);stroke-width:1.5}
+    .mk-q text{fill:var(--unk);font-family:"IBM Plex Mono",Consolas,monospace;font-size:9.5px;font-weight:500}
+  </style>
+  <rect class="bg" x="0" y="0" width="100%" height="100%"/>
+  <!-- Généré par outils/folio.py depuis folio-4b-tableau-moteur.yaml : ne pas modifier à la main. -->
+  <rect class="box" x="200" y="60" width="200" height="80" rx="2"/>
+  <text class="tb mid" x="300" y="82">Tableau moteur</text>
+  <text class="ts mid" x="300" y="97">contact, démarrage :</text>
+  <text class="ts mid" x="300" y="112">folio 1 (relevé)</text>
+  <rect class="box" x="200" y="190" width="200" height="70" rx="2"/>
+  <text class="tb mid" x="300" y="212">Moteur Yanmar 3GMD</text>
+  <rect class="box" x="560" y="60" width="180" height="150" rx="2"/>
+  <text class="tb mid" x="650" y="116">Horamètre</text>
+  <text class="ts mid" x="650" y="131">GH-521S</text>
+  <path class="u" d="M400 125 L560 125"/>
+  <text class="id mid" x="480" y="117">w217 · + après contact</text>
+  <path class="u" d="M400 240 L485 240 L560 165"/>
+  <text class="id mid" x="440" y="232">w218 · bleu</text>
+  <circle class="term" cx="400" cy="125" r="3.5"/>
+  <circle class="term" cx="400" cy="240" r="3.5"/>
+  <circle class="term" cx="560" cy="125" r="3.5"/>
+  <circle class="term" cx="560" cy="165" r="3.5"/>
+  <text class="id end" x="393" y="124">n224</text>
+  <text class="pin end" x="393" y="134">+ contact</text>
+  <text class="id end" x="393" y="239">n201</text>
+  <text class="pin end" x="393" y="249">−</text>
+  <text class="id" x="567" y="124">n225</text>
+  <text class="pin" x="567" y="134">+</text>
+  <text class="id" x="567" y="164">n226</text>
+  <text class="pin" x="567" y="174">−</text>
+  <text class="ts" x="20" y="312">À compléter avec le câblage du tableau moteur. Pointillés bleus : section non relevée (Q76).</text>
+  <text class="ts" x="20" y="330">Emplacement de l&#x27;horamètre et borne du + après contact à relever (Q76).</text>
+  <g class="mk-q"><circle cx="760" cy="60" r="11"/><text class="mid" x="760" y="63.5">Q76</text></g>
+</svg>

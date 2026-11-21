@@ -6,9 +6,9 @@
 folio: 4
 titre: Installation 12 V cible
 aria: "Installation 12 volts cible : batterie moteur et guindeau, batterie LiFePO4 avec son shunt, chargeur DC/DC Orion XS, chargeur de quai Blue Smart, départs protégés vers les tableaux et l'entrée 12 volts du chauffe-eau."
-desc: "Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Le Blue Smart est au coffre de cockpit (E-H5), relié à la niche de la contremarche par ses câbles fournis (12 AWG, 1,4 m)."
+desc: "Tout le 12 V tel qu'il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Le Blue Smart est au coffre de cockpit (E-H5), relié à la niche de la contremarche par ses câbles fournis (12 AWG, 1,4 m). En bas, la jauge à gasoil, inchangée par rapport au relevé : sa résistance de 150 Ω reste à retirer (A13)."
 modele: cible
-taille: [1200, 1080]
+taille: [1200, 1540]
 
 appareils:
   # ---------------------------------------------------------------- batterie moteur et Dolphin
@@ -326,14 +326,114 @@ appareils:
       node022: {cote: point, xy: [380, 990], etiquette: [-6, -8, end]}
       node023: {cote: point, xy: [440, 990], etiquette: [6, 20]}
 
+  # ---------------------------------------------------------------- jauge à gasoil (relevé du 20/11)
+  - id: fus-jauge-gasoil
+    forme: fusible
+    calibre: 2 A
+    titre: porte-fusible
+    titre_xy: [245, 1148]
+    nodes:
+      node337: {cote: point, xy: [220, 1170], etiquette: [-3, 13, end]}
+      node338: {cote: point, xy: [270, 1170], etiquette: [3, 13]}
+  - id: wago-jauge-1
+    x: 296
+    y: 1190
+    w: 56
+    h: 26
+    nodes:
+      node339: {cote: haut, a: 310, fonction: ""}
+  - id: poussoir-jauge
+    forme: interrupteur
+    titre: poussoir NO
+    titre_xy: [415, 1146]
+    nodes:
+      node340: {cote: point, xy: [390, 1170], etiquette: [-4, 30, end]}
+      node341: {cote: point, xy: [440, 1170], etiquette: [4, 30]}
+  - id: wago-jauge-2
+    x: 476
+    y: 1190
+    w: 56
+    h: 26
+    nodes:
+      node342: {cote: haut, a: 490, fonction: ""}
+  - id: resistance-jauge
+    x: 520
+    y: 1120
+    w: 90
+    h: 60
+    titre: "150 Ω ±1 %"
+    titre_y: 20
+    nodes:
+      node343: {cote: gauche, a: 1160, fonction: ""}
+      node344: {cote: droite, a: 1160, fonction: ""}
+  - id: wago-jauge-3
+    x: 626
+    y: 1190
+    w: 56
+    h: 26
+    nodes:
+      node345: {cote: haut, a: 640, fonction: ""}
+  - id: jauge-gasoil
+    x: 880
+    y: 1030
+    w: 240
+    h: 180
+    titre: Jauge à gasoil
+    titre_y: 92
+    lignes: ["Osculati 27.320.0X (Q74)", "12/24 V", "fil jaune (éclairage) libre"]
+    nodes:
+      node349: {cote: gauche, a: 1070, fonction: "écl. orange"}
+      node346: {cote: gauche, a: 1130, fonction: "+ rouge"}
+      node348: {cote: bas, a: 920, fonction: "sonde noir"}
+      node347: {cote: bas, a: 1080, fonction: "− bleu"}
+  - id: wago-jauge-5
+    x: 906
+    y: 1290
+    w: 44
+    h: 26
+    nodes:
+      node353: {cote: haut, a: 920, fonction: ""}
+  - id: wago-jauge-4
+    x: 1066
+    y: 1290
+    w: 56
+    h: 26
+    nodes:
+      node350: {cote: haut, a: 1080, fonction: ""}
+  - id: sonde-gasoil
+    x: 900
+    y: 1390
+    w: 210
+    h: 80
+    titre: Sonde de niveau
+    titre_y: 44
+    lignes: ["réservoir · câble R2V 3G1,5"]
+    nodes:
+      node351: {cote: haut, a: 960}
+      node352: {cote: haut, a: 1040}
+
 barres:
   - {node: node022, de: [380, 990], a: [8, 990]}
   - {node: node023, de: [440, 990], a: [1175, 990]}
 
 liaisons:
+  - [node342, node343]   # pattes de la résistance enfichées dans les Wago
+  - [node344, node345]
   - [node103, node003]
 
 fils:
+  # jauge à gasoil
+  wire326: {trace: [[170, 1170]], renvoi: de, etiquette: [195, 1162, mid]}
+  wire327: {trace: [[290, 1170]], etiquette: [280, 1162, mid]}
+  wire328: {trace: [[330, 1170]], etiquette: [360, 1162, mid]}
+  wire329: {trace: [[470, 1170]], etiquette: [455, 1162, mid]}
+  wire330: {trace: [[490, 1070]], etiquette: [685, 1062, mid], texte: "w330 · orange (éclairage)"}
+  wire331: {trace: [[660, 1170], [700, 1130]], etiquette: [790, 1122, mid], texte: "w331 · rouge (+)"}
+  wire336: {etiquette: [928, 1255], texte: "w336 · noir"}
+  wire332: {etiquette: [1088, 1255], texte: "w332 · bleu"}
+  wire333: {trace: [[1100, 1270], [1160, 1270], [1160, 1010], [1140, 990]], etiquette: [1172, 1140, mid, v], texte: "w333 · masse jauge et sonde"}
+  wire334: {trace: [[1060, 1270], [1040, 1270]], etiquette: [1048, 1355], texte: "w334 · 1,5 · bleu"}
+  wire335: {trace: [[960, 1290], [940, 1270]], etiquette: [952, 1355, end], texte: "w335 · 1,5 · marron"}
   # batterie moteur et Dolphin
   wire100: {trace: [[24, 95], [24, 204]], etiquette: [30, 135]}
   wire003: {trace: [[8, 220], [8, 970], [28, 990]], etiquette: [18, 335, mid, v]}
@@ -402,22 +502,35 @@ croisements_admis:
   - [wire306, wire323]
 
 renvois:
+  - {x: 40, y: 1161, w: 130, texte: "← n309 · + Scheiber"}
   - {x: 515, y: 185, w: 97, texte: "→ n202 · folio 1"}
   - {x: 520, y: 132, w: 140, nouveau: true, texte: "n021 · servitude, plus bas"}
   - {x: 580, y: 340, w: 130, nouveau: true, texte: "→ node022 · CC masse"}
   - {x: 316, y: 793, w: 150, nouveau: true, texte: "→ node005 · CC moteur"}
 
 pastilles:
+  - {id: Q74, x: 860, y: 1030}
+  - {id: Q75, x: 250, y: 1120}
+  - {id: A13, x: 565, y: 1100}
   - {id: Q58, x: 370, y: 196}
   - {id: Q58, x: 346, y: 696}
   - {id: Q58, x: 840, y: 610}
   - {id: Q57, x: 700, y: 670}
 
 textes:
+  - {x: 40, y: 1048, classe: tb, texte: "Jauge à gasoil"}
+  - {x: 40, y: 1068, texte: "alimentée seulement poussoir enfoncé"}
+  - {x: 40, y: 1084, texte: "résistance à retirer, éclairage sur le fil jaune (A13)"}
+  - {x: 324, y: 1232, classe: "ts mid", texte: "Wago"}
+  - {x: 504, y: 1232, classe: "ts mid", texte: "Wago triple"}
+  - {x: 654, y: 1232, classe: "ts mid", texte: "Wago"}
+  - {x: 565, y: 1258, classe: "ts mid", texte: "pattes de la résistance dans les Wago"}
+  - {x: 928, y: 1332, classe: "ts mid", texte: "Wago"}
+  - {x: 1094, y: 1332, classe: "ts mid", texte: "Wago"}
   - {x: 1110, y: 44, classe: "ts mid", texte: "Guindeau 700 W"}
   - {x: 870, y: 720, classe: "ts mid", texte: "disjoncteur CC 30 A à côté du disj. guindeau : protection et interrupteur du ballon (folio 2n)"}
   - {x: 200, y: 1010, classe: "ts mid", texte: "côté batteries (avant le shunt)"}
   - {x: 620, y: 1010, classe: "ts mid", texte: "masse des charges"}
-  - {x: 20, y: 1028, texte: "Tableau moteur (relevé, folio 1) : w206 du + démarreur (n200) au fusible de 30 A (n202), puis w207 de n203 au tableau (n204) ; sections à relever (Q65)."}
-  - {x: 20, y: 1044, texte: "En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue."}
-  - {x: 20, y: 1062, texte: "Détail : folios 2e (shunt), 2h et 2o (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md."}
+  - {x: 20, y: 1498, texte: "Tableau moteur (relevé, folio 1) : w206 du + démarreur (n200) au fusible de 30 A (n202), puis w207 de n203 au tableau (n204) ; sections à relever (Q65). Horamètre : folio 4b."}
+  - {x: 20, y: 1514, texte: "En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue."}
+  - {x: 20, y: 1532, texte: "Détail : folios 2e (shunt), 2h et 2o (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md."}

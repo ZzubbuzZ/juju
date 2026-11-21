@@ -38,7 +38,7 @@ Démarreur : 60 A à vide, 460 A rotor bloqué (couple maximal, vitesse nulle), 
 Batterie Varta 110Ah au Plomb sans entretien
 Coupe circuit dédié sur pole 12v
 
-### Jauge à gasoil et horamètre (relevé du 20/11, folio 1b)
+### Jauge à gasoil et horamètre (relevé du 20/11 ; jauge en bas des folios 1 et 4, horamètre au folio 4b)
 Jauge à gasoil Osculati 27.320.0X (dernier chiffre à relever, Q74), connecteur à fils rouge (+), bleu (−), noir (sonde), orange et jaune (éclairage, seul l'orange branché). Alimentée depuis le + du tableau Scheiber par des fils marron : porte-fusible de 2 A (fusible de 5 mm de diamètre), Wago, poussoir NO, Wago triple. Sur ce Wago, l'éclairage (fil orange) et une résistance de 150 Ω ±1 %, pattes enfichées, qui rejoint par un autre Wago le fil rouge de la jauge. La jauge n'est donc alimentée que poussoir enfoncé. Fil bleu de la jauge sur un Wago de masse, relié à la borne côté charges du coupe-circuit des négatifs. Sonde de niveau reliée par un câble R2V 3G1,5 mm² : bleu sur le Wago de masse, marron par un Wago au fil noir de la jauge. Résistance à retirer, éclairage à passer sur le fil jaune (A13).
 Horamètre GH-521S : + après contact du tableau moteur, masse prise sur la masse moteur par un fil bleu (Q76).
 

@@ -1,0 +1,55 @@
+# Mise en page du folio 4b, lue par outils/folio.py qui produit le SVG voisin.
+# Modèle « cible » : chaque fil 12 V du modèle doit figurer sur un folio de cible/ (outils/verifier.py).
+# Folio dédié au câblage du tableau moteur, à compléter quand l'utilisateur l'aura décrit ; pour l'instant
+# seul l'horamètre y figure (décision du 21/11 : horamètre sur ce folio, cible uniquement).
+# Nœuds : [côté, coordonnée le long du côté] ; un fil va d'un nœud à l'autre par « trace »
+# (points intermédiaires), en segments à 0, 45 ou 90°.
+folio: 4b
+titre: Tableau moteur
+aria: "Tableau moteur, installation cible : pour l'instant seulement l'horamètre, branché sur le plus après contact du tableau moteur et sur la masse moteur."
+desc: "Folio du câblage du tableau moteur, à compléter. Pour l'instant, seul l'horamètre GH-521S y figure : + après contact du tableau moteur, masse prise sur la masse moteur par un fil bleu (relevé du 20/11)."
+modele: cible
+taille: [1200, 360]
+
+appareils:
+  - id: tableau-moteur
+    x: 200
+    y: 60
+    w: 200
+    h: 80
+    titre: Tableau moteur
+    titre_y: 22
+    lignes: ["contact, démarrage :", "folio 1 (relevé)"]
+    nodes:
+      node224: {cote: droite, a: 125, fonction: "+ contact"}
+  - id: moteur
+    x: 200
+    y: 190
+    w: 200
+    h: 70
+    titre: Moteur Yanmar 3GMD
+    titre_y: 22
+    nodes:
+      node201: [droite, 240]
+  - id: horametre
+    x: 560
+    y: 60
+    w: 180
+    h: 150
+    titre: Horamètre
+    titre_y: 56
+    lignes: ["GH-521S"]
+    nodes:
+      node225: [gauche, 125]
+      node226: [gauche, 165]
+
+fils:
+  wire217: {etiquette: [480, 117, mid], texte: "w217 · + après contact"}
+  wire218: {trace: [[485, 240]], etiquette: [440, 232, mid], texte: "w218 · bleu"}
+
+pastilles:
+  - {id: Q76, x: 760, y: 60}
+
+textes:
+  - {x: 20, y: 312, texte: "À compléter avec le câblage du tableau moteur. Pointillés bleus : section non relevée (Q76)."}
+  - {x: 20, y: 330, texte: "Emplacement de l'horamètre et borne du + après contact à relever (Q76)."}

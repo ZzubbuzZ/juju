@@ -4,9 +4,9 @@
 folio: 1
 titre: Câblage 12 V actuel
 aria: "Câblage 12 V actuel : deux batteries, quatre coupe-circuits, coupleur et chargeur branchés sans fusible, tableau de servitude alimenté sans protection depuis la sortie du coupe-circuit de servitude, tableau Scheiber alimenté directement par les coupe-circuits."
-desc: "Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² directement par la sortie du coupe-circuit de servitude, donc sans aucune protection (A1). Le tableau Scheiber (frigo, pompe de cale) est lui aussi alimenté en 6 mm² directement par les coupe-circuits, sans fusible (A6), la pompe de cale est protégée en 10 A au lieu de 3 A (A10), et la liaison EPS 100 → groupe froid est vissée sans cosse (A7). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n'est plus alimentée. La batterie de servitude, au plomb, est dans un coffre peu aéré sous le matelas de la cabine de poupe (A11)."
+desc: "Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² directement par la sortie du coupe-circuit de servitude, donc sans aucune protection (A1). Le tableau Scheiber (frigo, pompe de cale) est lui aussi alimenté en 6 mm² directement par les coupe-circuits, sans fusible (A6), la pompe de cale est protégée en 10 A au lieu de 3 A (A10), et la liaison EPS 100 → groupe froid est vissée sans cosse (A7). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n'est plus alimentée. La batterie de servitude, au plomb, est dans un coffre peu aéré sous le matelas de la cabine de poupe (A11). En bas, la jauge à gasoil (relevé du 20/11), alimentée par le Scheiber à travers un poussoir et une résistance de 150 Ω à retirer (A13)."
 modele: releve
-taille: [1200, 920]
+taille: [1200, 1380]
 
 appareils:
   # ---- batteries et coupe-circuits
@@ -104,7 +104,7 @@ appareils:
     h: 60
     titre: Tableau moteur
     titre_y: 42
-    lignes: ["contact · horamètre : folio 1b"]
+    lignes: ["contact · horamètre : folio 4b"]
     nodes:
       node204: {cote: haut, a: 980, fonction: "+"}
   - id: fus-tableau-moteur
@@ -190,7 +190,7 @@ appareils:
     h: 100
     titre: Tableau Scheiber
     titre_y: 40
-    lignes: [cale 10 A · frigo 15 A, "jauge à gasoil : folio 1b"]
+    lignes: [cale 10 A · frigo 15 A, "jauge à gasoil : w326, en bas"]
     nodes:
       node309: {cote: haut, a: 600, fonction: "+"}
       node312: {cote: bas, a: 575, fonction: pompe}
@@ -230,6 +230,92 @@ appareils:
       node323: {cote: gauche, a: 770, fonction: "+"}
       node324: {cote: gauche, a: 830, fonction: "−"}
 
+  # ---------------------------------------------------------------- jauge à gasoil (relevé du 20/11)
+  - id: fus-jauge-gasoil
+    forme: fusible
+    calibre: 2 A
+    titre: porte-fusible
+    titre_xy: [245, 1038]
+    nodes:
+      node337: {cote: point, xy: [220, 1060], etiquette: [-3, 13, end]}
+      node338: {cote: point, xy: [270, 1060], etiquette: [3, 13]}
+  - id: wago-jauge-1
+    x: 296
+    y: 1080
+    w: 56
+    h: 26
+    nodes:
+      node339: {cote: haut, a: 310, fonction: ""}
+  - id: poussoir-jauge
+    forme: interrupteur
+    titre: poussoir NO
+    titre_xy: [415, 1036]
+    nodes:
+      node340: {cote: point, xy: [390, 1060], etiquette: [-4, 30, end]}
+      node341: {cote: point, xy: [440, 1060], etiquette: [4, 30]}
+  - id: wago-jauge-2
+    x: 476
+    y: 1080
+    w: 56
+    h: 26
+    nodes:
+      node342: {cote: haut, a: 490, fonction: ""}
+  - id: resistance-jauge
+    x: 520
+    y: 1010
+    w: 90
+    h: 60
+    titre: "150 Ω ±1 %"
+    titre_y: 20
+    nodes:
+      node343: {cote: gauche, a: 1050, fonction: ""}
+      node344: {cote: droite, a: 1050, fonction: ""}
+  - id: wago-jauge-3
+    x: 626
+    y: 1080
+    w: 56
+    h: 26
+    nodes:
+      node345: {cote: haut, a: 640, fonction: ""}
+  - id: jauge-gasoil
+    x: 880
+    y: 920
+    w: 240
+    h: 180
+    titre: Jauge à gasoil
+    titre_y: 92
+    lignes: ["Osculati 27.320.0X (Q74)", "12/24 V", "fil jaune (éclairage) libre"]
+    nodes:
+      node349: {cote: gauche, a: 960, fonction: "écl. orange"}
+      node346: {cote: gauche, a: 1020, fonction: "+ rouge"}
+      node348: {cote: bas, a: 920, fonction: "sonde noir"}
+      node347: {cote: bas, a: 1080, fonction: "− bleu"}
+  - id: wago-jauge-5
+    x: 906
+    y: 1180
+    w: 44
+    h: 26
+    nodes:
+      node353: {cote: haut, a: 920, fonction: ""}
+  - id: wago-jauge-4
+    x: 1066
+    y: 1180
+    w: 56
+    h: 26
+    nodes:
+      node350: {cote: haut, a: 1080, fonction: ""}
+  - id: sonde-gasoil
+    x: 900
+    y: 1280
+    w: 210
+    h: 80
+    titre: Sonde de niveau
+    titre_y: 44
+    lignes: ["réservoir · câble R2V 3G1,5"]
+    nodes:
+      node351: {cote: haut, a: 960}
+      node352: {cote: haut, a: 1040}
+
 barres:
   # masse commune, sortie du coupe-circuit des négatifs : les fils la rejoignent à 45°, vers node023
   - {node: node023, de: [300, 880], a: [1185, 880]}
@@ -246,7 +332,23 @@ croisements_admis:
   # les négatifs des deux batteries (node002 / node008) : l'un des deux doit franchir l'autre.
   - [wire003, wire110]
 
+liaisons:
+  - [node342, node343]   # pattes de la résistance enfichées dans les Wago
+  - [node344, node345]
+
 fils:
+  # jauge à gasoil
+  wire326: {trace: [[170, 1060]], renvoi: de, etiquette: [195, 1052, mid]}
+  wire327: {trace: [[290, 1060]], etiquette: [280, 1052, mid]}
+  wire328: {trace: [[330, 1060]], etiquette: [360, 1052, mid]}
+  wire329: {trace: [[470, 1060]], etiquette: [455, 1052, mid]}
+  wire330: {trace: [[490, 960]], etiquette: [685, 952, mid], texte: "w330 · orange (éclairage)"}
+  wire331: {trace: [[660, 1060], [700, 1020]], etiquette: [790, 1012, mid], texte: "w331 · rouge (+)"}
+  wire336: {etiquette: [928, 1145], texte: "w336 · noir"}
+  wire332: {etiquette: [1088, 1145], texte: "w332 · bleu"}
+  wire333: {trace: [[1100, 1160], [1160, 1160], [1160, 900], [1140, 880]], etiquette: [1172, 1030, mid, v], texte: "w333 · masse jauge et sonde"}
+  wire334: {trace: [[1060, 1160], [1040, 1160]], etiquette: [1048, 1245], texte: "w334 · 1,5 · bleu"}
+  wire335: {trace: [[960, 1180], [940, 1160]], etiquette: [952, 1245, end], texte: "w335 · 1,5 · marron"}
   # + moteur
   wire001: {etiquette: [225, 112, mid]}
   wire101: {trace: [[350, 120], [300, 170]], etiquette: [312, 197, mid, v]}
@@ -291,6 +393,15 @@ fils:
   wire204: {trace: [[1165, 880], [1185, 860], [1185, 200], [760, 200]], etiquette: [1178, 700, mid, v]}
 
 textes:
+  - {x: 40, y: 938, classe: tb, texte: "Jauge à gasoil"}
+  - {x: 40, y: 958, texte: "alimentée seulement poussoir enfoncé"}
+  - {x: 40, y: 974, texte: "résistance à retirer, éclairage sur le fil jaune (A13)"}
+  - {x: 324, y: 1122, classe: "ts mid", texte: "Wago"}
+  - {x: 504, y: 1122, classe: "ts mid", texte: "Wago triple"}
+  - {x: 654, y: 1122, classe: "ts mid", texte: "Wago"}
+  - {x: 565, y: 1148, classe: "ts mid", texte: "pattes de la résistance dans les Wago"}
+  - {x: 928, y: 1222, classe: "ts mid", texte: "Wago"}
+  - {x: 1094, y: 1222, classe: "ts mid", texte: "Wago"}
   - {x: 190, y: 270, classe: "ts end", texte: "entrée 230 V : folio 3"}
   - {x: 190, y: 285, classe: "id end", texte: "n512-4"}
   - {x: 1100, y: 545, classe: "tb mid", texte: "Guindeau Lewmar"}
@@ -301,7 +412,13 @@ textes:
   - {x: 550, y: 810, classe: "ts end", texte: "mise en route manuelle"}
   - {x: 720, y: 905, classe: "ts mid", texte: "node023 · masse côté charges"}
 
+renvois:
+  - {x: 40, y: 1051, w: 130, texte: "← n309 · + Scheiber"}
+
 pastilles:
+  - {id: Q74, x: 860, y: 920}
+  - {id: Q75, x: 250, y: 1010}
+  - {id: A13, x: 565, y: 990}
   - {id: A2, x: 205, y: 88}
   - {id: A3, x: 229, y: 88}
   - {id: Q58, x: 253, y: 88}

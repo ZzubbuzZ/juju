@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1080" role="img" aria-label="Installation 12 volts cible : batterie moteur et guindeau, batterie LiFePO4 avec son shunt, chargeur DC/DC Orion XS, chargeur de quai Blue Smart, départs protégés vers les tableaux et l&#x27;entrée 12 volts du chauffe-eau.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1540" role="img" aria-label="Installation 12 volts cible : batterie moteur et guindeau, batterie LiFePO4 avec son shunt, chargeur DC/DC Orion XS, chargeur de quai Blue Smart, départs protégés vers les tableaux et l&#x27;entrée 12 volts du chauffe-eau.">
   <title>Folio 4 · Installation 12 V cible</title>
-  <desc>Tout le 12 V tel qu&#x27;il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Le Blue Smart est au coffre de cockpit (E-H5), relié à la niche de la contremarche par ses câbles fournis (12 AWG, 1,4 m).</desc>
+  <desc>Tout le 12 V tel qu&#x27;il sera après les études décidées (A, D, E, B-H3) : chaque câble est protégé à sa source, le shunt compte toute la servitude, et le guindeau passe sur la batterie moteur. Le Blue Smart est au coffre de cockpit (E-H5), relié à la niche de la contremarche par ses câbles fournis (12 AWG, 1,4 m). En bas, la jauge à gasoil, inchangée par rapport au relevé : sa résistance de 150 Ω reste à retirer (A13).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -146,8 +146,52 @@
   <rect class="sw" x="380" y="974" width="60" height="32" rx="2"/>
   <path class="lever" d="M380 990 L437 977"/>
   <text class="ts mid" x="410" y="964">CC masse</text>
+  <rect class="fuse" x="220" y="1161" width="50" height="18"/>
+  <path class="fx" d="M224 1170 H266"/>
+  <text class="id mid" x="245" y="1192">2 A</text>
+  <text class="ts mid" x="245" y="1148">porte-fusible</text>
+  <rect class="box" x="296" y="1190" width="56" height="26" rx="2"/>
+  <rect class="sw" x="390" y="1154" width="50" height="32" rx="2"/>
+  <path class="lever" d="M390 1170 L437 1157"/>
+  <text class="ts mid" x="415" y="1146">poussoir NO</text>
+  <rect class="box" x="476" y="1190" width="56" height="26" rx="2"/>
+  <rect class="box" x="520" y="1120" width="90" height="60" rx="2"/>
+  <text class="tb mid" x="565" y="1140">150 Ω ±1 %</text>
+  <rect class="box" x="626" y="1190" width="56" height="26" rx="2"/>
+  <rect class="box" x="880" y="1030" width="240" height="180" rx="2"/>
+  <text class="tb mid" x="1000" y="1122">Jauge à gasoil</text>
+  <text class="ts mid" x="1000" y="1137">Osculati 27.320.0X (Q74)</text>
+  <text class="ts mid" x="1000" y="1152">12/24 V</text>
+  <text class="ts mid" x="1000" y="1167">fil jaune (éclairage) libre</text>
+  <rect class="box" x="906" y="1290" width="44" height="26" rx="2"/>
+  <rect class="box" x="1066" y="1290" width="56" height="26" rx="2"/>
+  <rect class="box" x="900" y="1390" width="210" height="80" rx="2"/>
+  <text class="tb mid" x="1005" y="1434">Sonde de niveau</text>
+  <text class="ts mid" x="1005" y="1449">réservoir · câble R2V 3G1,5</text>
   <path class="n w4" d="M380 990 H8"/>
   <path class="n w4" d="M440 990 H1175"/>
+  <path class="u" d="M170 1170 L220 1170"/>
+  <text class="id mid" x="195" y="1162">w326</text>
+  <path class="u" d="M270 1170 L290 1170 L310 1190"/>
+  <text class="id mid" x="280" y="1162">w327</text>
+  <path class="u" d="M310 1190 L330 1170 L390 1170"/>
+  <text class="id mid" x="360" y="1162">w328</text>
+  <path class="u" d="M440 1170 L470 1170 L490 1190"/>
+  <text class="id mid" x="455" y="1162">w329</text>
+  <path class="u" d="M490 1190 L490 1070 L880 1070"/>
+  <text class="id mid" x="685" y="1062">w330 · orange (éclairage)</text>
+  <path class="u" d="M640 1190 L660 1170 L700 1130 L880 1130"/>
+  <text class="id mid" x="790" y="1122">w331 · rouge (+)</text>
+  <path class="u" d="M920 1290 L920 1210"/>
+  <text class="id" x="928" y="1255">w336 · noir</text>
+  <path class="u" d="M1080 1210 L1080 1290"/>
+  <text class="id" x="1088" y="1255">w332 · bleu</text>
+  <path class="u" d="M1080 1290 L1100 1270 L1160 1270 L1160 1010 L1140 990"/>
+  <text class="id mid" x="1172" y="1140" transform="rotate(-90 1172 1140)">w333 · masse jauge et sonde</text>
+  <path class="n w1" d="M1080 1290 L1060 1270 L1040 1270 L1040 1390"/>
+  <text class="id" x="1048" y="1355">w334 · 1,5 · bleu</text>
+  <path class="p w1" d="M960 1390 L960 1290 L940 1270 L920 1290"/>
+  <text class="id end" x="952" y="1355">w335 · 1,5 · marron</text>
   <path class="n w2" d="M40 95 L24 95 L24 204 L40 220"/>
   <text class="idn" x="30" y="135">w100 · 6</text>
   <path class="n w4" d="M40 220 L8 220 L8 970 L28 990"/>
@@ -254,7 +298,11 @@
   <path class="p w2" d="M980 830 L1010 830"/>
   <text class="id mid" x="995" y="890">w321 / w322 · 3,5</text>
   <path class="n w2" d="M980 855 L1010 855"/>
+  <path class="p w2" d="M490 1190 L520 1160"/>
+  <path class="p w2" d="M610 1160 L640 1190"/>
   <path class="p w2" d="M216 204 L232 220"/>
+  <rect class="flag" x="40" y="1161" width="130" height="18"/>
+  <text class="ts mid" x="105" y="1174">← n309 · + Scheiber</text>
   <rect class="flag" x="515" y="185" width="97" height="18"/>
   <text class="ts mid" x="563.5" y="198">→ n202 · folio 1</text>
   <rect class="flag-new" x="520" y="132" width="140" height="18"/>
@@ -349,6 +397,23 @@
   <circle class="term" cx="708" cy="920" r="3.5"/>
   <circle class="term" cx="380" cy="990" r="3.5"/>
   <circle class="term" cx="440" cy="990" r="3.5"/>
+  <circle class="term" cx="220" cy="1170" r="3.5"/>
+  <circle class="term" cx="270" cy="1170" r="3.5"/>
+  <circle class="term" cx="310" cy="1190" r="3.5"/>
+  <circle class="term" cx="390" cy="1170" r="3.5"/>
+  <circle class="term" cx="440" cy="1170" r="3.5"/>
+  <circle class="term" cx="490" cy="1190" r="3.5"/>
+  <circle class="term" cx="520" cy="1160" r="3.5"/>
+  <circle class="term" cx="610" cy="1160" r="3.5"/>
+  <circle class="term" cx="640" cy="1190" r="3.5"/>
+  <circle class="term" cx="880" cy="1070" r="3.5"/>
+  <circle class="term" cx="880" cy="1130" r="3.5"/>
+  <circle class="term" cx="920" cy="1210" r="3.5"/>
+  <circle class="term" cx="1080" cy="1210" r="3.5"/>
+  <circle class="term" cx="920" cy="1290" r="3.5"/>
+  <circle class="term" cx="1080" cy="1290" r="3.5"/>
+  <circle class="term" cx="960" cy="1390" r="3.5"/>
+  <circle class="term" cx="1040" cy="1390" r="3.5"/>
   <text class="id" x="47" y="94">n102</text>
   <text class="pin" x="47" y="104">−</text>
   <text class="id end" x="211" y="94">n100</text>
@@ -484,13 +549,48 @@
   <text class="pin" x="712" y="948">−</text>
   <text class="id end" x="374" y="982">n022</text>
   <text class="id" x="446" y="1010">n023</text>
+  <text class="id end" x="217" y="1183">n337</text>
+  <text class="id" x="273" y="1183">n338</text>
+  <text class="id" x="315" y="1204">n339</text>
+  <text class="id end" x="386" y="1200">n340</text>
+  <text class="id" x="444" y="1200">n341</text>
+  <text class="id" x="495" y="1204">n342</text>
+  <text class="id" x="527" y="1164">n343</text>
+  <text class="id end" x="603" y="1164">n344</text>
+  <text class="id" x="645" y="1204">n345</text>
+  <text class="id" x="887" y="1069">n349</text>
+  <text class="pin" x="887" y="1079">écl. orange</text>
+  <text class="id" x="887" y="1129">n346</text>
+  <text class="pin" x="887" y="1139">+ rouge</text>
+  <text class="id" x="925" y="1194">n348</text>
+  <text class="pin" x="925" y="1204">sonde noir</text>
+  <text class="id end" x="1075" y="1194">n347</text>
+  <text class="pin end" x="1075" y="1204">− bleu</text>
+  <text class="id" x="925" y="1304">n353</text>
+  <text class="id" x="1085" y="1304">n350</text>
+  <text class="id" x="965" y="1404">n351</text>
+  <text class="pin" x="965" y="1414">signal</text>
+  <text class="id end" x="1035" y="1404">n352</text>
+  <text class="pin end" x="1035" y="1414">−</text>
+  <text class="tb" x="40" y="1048">Jauge à gasoil</text>
+  <text class="ts" x="40" y="1068">alimentée seulement poussoir enfoncé</text>
+  <text class="ts" x="40" y="1084">résistance à retirer, éclairage sur le fil jaune (A13)</text>
+  <text class="ts mid" x="324" y="1232">Wago</text>
+  <text class="ts mid" x="504" y="1232">Wago triple</text>
+  <text class="ts mid" x="654" y="1232">Wago</text>
+  <text class="ts mid" x="565" y="1258">pattes de la résistance dans les Wago</text>
+  <text class="ts mid" x="928" y="1332">Wago</text>
+  <text class="ts mid" x="1094" y="1332">Wago</text>
   <text class="ts mid" x="1110" y="44">Guindeau 700 W</text>
   <text class="ts mid" x="870" y="720">disjoncteur CC 30 A à côté du disj. guindeau : protection et interrupteur du ballon (folio 2n)</text>
   <text class="ts mid" x="200" y="1010">côté batteries (avant le shunt)</text>
   <text class="ts mid" x="620" y="1010">masse des charges</text>
-  <text class="ts" x="20" y="1028">Tableau moteur (relevé, folio 1) : w206 du + démarreur (n200) au fusible de 30 A (n202), puis w207 de n203 au tableau (n204) ; sections à relever (Q65).</text>
-  <text class="ts" x="20" y="1044">En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue.</text>
-  <text class="ts" x="20" y="1062">Détail : folios 2e (shunt), 2h et 2o (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md.</text>
+  <text class="ts" x="20" y="1498">Tableau moteur (relevé, folio 1) : w206 du + démarreur (n200) au fusible de 30 A (n202), puis w207 de n203 au tableau (n204) ; sections à relever (Q65). Horamètre : folio 4b.</text>
+  <text class="ts" x="20" y="1514">En vert : nouveau par rapport au relevé. Identifiants gris : câbles existants, conservés ou repris sur un fusible. En pointillés bleus : section inconnue.</text>
+  <text class="ts" x="20" y="1532">Détail : folios 2e (shunt), 2h et 2o (Orion XS, Blue Smart, guindeau), 2n (ballon). Hypothèses appliquées : cible/cible.yaml. Sections et chutes de tension : commun/dimensionnement.md.</text>
+  <g class="mk-q"><circle cx="860" cy="1030" r="11"/><text class="mid" x="860" y="1033.5">Q74</text></g>
+  <g class="mk-q"><circle cx="250" cy="1120" r="11"/><text class="mid" x="250" y="1123.5">Q75</text></g>
+  <g class="mk-a"><circle cx="565" cy="1100" r="11"/><text class="mid" x="565" y="1103.5">A13</text></g>
   <g class="mk-q"><circle cx="370" cy="196" r="11"/><text class="mid" x="370" y="199.5">Q58</text></g>
   <g class="mk-q"><circle cx="346" cy="696" r="11"/><text class="mid" x="346" y="699.5">Q58</text></g>
   <g class="mk-q"><circle cx="840" cy="610" r="11"/><text class="mid" x="840" y="613.5">Q58</text></g>

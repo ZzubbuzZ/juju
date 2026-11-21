@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" role="img" aria-label="Câblage 12 V actuel : deux batteries, quatre coupe-circuits, coupleur et chargeur branchés sans fusible, tableau de servitude alimenté sans protection depuis la sortie du coupe-circuit de servitude, tableau Scheiber alimenté directement par les coupe-circuits.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1380" role="img" aria-label="Câblage 12 V actuel : deux batteries, quatre coupe-circuits, coupleur et chargeur branchés sans fusible, tableau de servitude alimenté sans protection depuis la sortie du coupe-circuit de servitude, tableau Scheiber alimenté directement par les coupe-circuits.">
   <title>Folio 1 · Câblage 12 V actuel</title>
-  <desc>Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² directement par la sortie du coupe-circuit de servitude, donc sans aucune protection (A1). Le tableau Scheiber (frigo, pompe de cale) est lui aussi alimenté en 6 mm² directement par les coupe-circuits, sans fusible (A6), la pompe de cale est protégée en 10 A au lieu de 3 A (A10), et la liaison EPS 100 → groupe froid est vissée sans cosse (A7). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n&#x27;est plus alimentée. La batterie de servitude, au plomb, est dans un coffre peu aéré sous le matelas de la cabine de poupe (A11).</desc>
+  <desc>Tout part des batteries sans fusible. Le tableau de la table à carte est alimenté en 6 mm² directement par la sortie du coupe-circuit de servitude, donc sans aucune protection (A1). Le tableau Scheiber (frigo, pompe de cale) est lui aussi alimenté en 6 mm² directement par les coupe-circuits, sans fusible (A6), la pompe de cale est protégée en 10 A au lieu de 3 A (A10), et la liaison EPS 100 → groupe froid est vissée sans cosse (A7). Le coupleur prend sa masse côté charges : quand on ouvre le coupe-circuit des négatifs, sa bobine n&#x27;est plus alimentée. La batterie de servitude, au plomb, est dans un coffre peu aéré sous le matelas de la cabine de poupe (A11). En bas, la jauge à gasoil (relevé du 20/11), alimentée par le Scheiber à travers un poussoir et une résistance de 150 Ω à retirer (A13).</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -73,7 +73,7 @@
   <text class="ts mid" x="705" y="105">démarreur + alternateur</text>
   <rect class="box" x="880" y="70" width="200" height="60" rx="2"/>
   <text class="tb mid" x="980" y="112">Tableau moteur</text>
-  <text class="ts mid" x="980" y="127">contact · horamètre : folio 1b</text>
+  <text class="ts mid" x="980" y="127">contact · horamètre : folio 4b</text>
   <rect class="fuse" x="700" y="31" width="60" height="18"/>
   <path class="fx" d="M704 40 H756"/>
   <text class="id mid" x="730" y="62">30 A</text>
@@ -100,7 +100,7 @@
   <rect class="box" x="560" y="580" width="200" height="100" rx="2"/>
   <text class="tb mid" x="660" y="620">Tableau Scheiber</text>
   <text class="ts mid" x="660" y="635">cale 10 A · frigo 15 A</text>
-  <text class="ts mid" x="660" y="650">jauge à gasoil : folio 1b</text>
+  <text class="ts mid" x="660" y="650">jauge à gasoil : w326, en bas</text>
   <circle class="box" cx="575" cy="770" r="20"/>
   <text class="tb mid" x="575" y="775">P</text>
   <rect class="box" x="730" y="750" width="120" height="100" rx="2"/>
@@ -109,7 +109,51 @@
   <rect class="box" x="910" y="750" width="90" height="100" rx="2"/>
   <text class="tb mid" x="955" y="795">Groupe froid</text>
   <text class="ts mid" x="955" y="810">CU-55</text>
+  <rect class="fuse" x="220" y="1051" width="50" height="18"/>
+  <path class="fx" d="M224 1060 H266"/>
+  <text class="id mid" x="245" y="1082">2 A</text>
+  <text class="ts mid" x="245" y="1038">porte-fusible</text>
+  <rect class="box" x="296" y="1080" width="56" height="26" rx="2"/>
+  <rect class="sw" x="390" y="1044" width="50" height="32" rx="2"/>
+  <path class="lever" d="M390 1060 L437 1047"/>
+  <text class="ts mid" x="415" y="1036">poussoir NO</text>
+  <rect class="box" x="476" y="1080" width="56" height="26" rx="2"/>
+  <rect class="box" x="520" y="1010" width="90" height="60" rx="2"/>
+  <text class="tb mid" x="565" y="1030">150 Ω ±1 %</text>
+  <rect class="box" x="626" y="1080" width="56" height="26" rx="2"/>
+  <rect class="box" x="880" y="920" width="240" height="180" rx="2"/>
+  <text class="tb mid" x="1000" y="1012">Jauge à gasoil</text>
+  <text class="ts mid" x="1000" y="1027">Osculati 27.320.0X (Q74)</text>
+  <text class="ts mid" x="1000" y="1042">12/24 V</text>
+  <text class="ts mid" x="1000" y="1057">fil jaune (éclairage) libre</text>
+  <rect class="box" x="906" y="1180" width="44" height="26" rx="2"/>
+  <rect class="box" x="1066" y="1180" width="56" height="26" rx="2"/>
+  <rect class="box" x="900" y="1280" width="210" height="80" rx="2"/>
+  <text class="tb mid" x="1005" y="1324">Sonde de niveau</text>
+  <text class="ts mid" x="1005" y="1339">réservoir · câble R2V 3G1,5</text>
   <path class="n w4" d="M300 880 H1185"/>
+  <path class="u" d="M170 1060 L220 1060"/>
+  <text class="id mid" x="195" y="1052">w326</text>
+  <path class="u" d="M270 1060 L290 1060 L310 1080"/>
+  <text class="id mid" x="280" y="1052">w327</text>
+  <path class="u" d="M310 1080 L330 1060 L390 1060"/>
+  <text class="id mid" x="360" y="1052">w328</text>
+  <path class="u" d="M440 1060 L470 1060 L490 1080"/>
+  <text class="id mid" x="455" y="1052">w329</text>
+  <path class="u" d="M490 1080 L490 960 L880 960"/>
+  <text class="id mid" x="685" y="952">w330 · orange (éclairage)</text>
+  <path class="u" d="M640 1080 L660 1060 L700 1020 L880 1020"/>
+  <text class="id mid" x="790" y="1012">w331 · rouge (+)</text>
+  <path class="u" d="M920 1180 L920 1100"/>
+  <text class="id" x="928" y="1145">w336 · noir</text>
+  <path class="u" d="M1080 1100 L1080 1180"/>
+  <text class="id" x="1088" y="1145">w332 · bleu</text>
+  <path class="u" d="M1080 1180 L1100 1160 L1160 1160 L1160 900 L1140 880"/>
+  <text class="id mid" x="1172" y="1030" transform="rotate(-90 1172 1030)">w333 · masse jauge et sonde</text>
+  <path class="n w1" d="M1080 1180 L1060 1160 L1040 1160 L1040 1280"/>
+  <text class="id" x="1048" y="1245">w334 · 1,5 · bleu</text>
+  <path class="p w1" d="M960 1280 L960 1180 L940 1160 L920 1180"/>
+  <text class="id end" x="952" y="1245">w335 · 1,5 · marron</text>
   <path class="p w4" d="M190 120 L430 120"/>
   <text class="id mid" x="225" y="112">w001 · 35</text>
   <path class="p w2" d="M430 120 L350 120 L300 170 L300 220"/>
@@ -181,6 +225,10 @@
   <text class="id mid" x="870" y="34">w207</text>
   <path class="n w4" d="M1165 880 L1185 860 L1185 200 L760 200 L760 170"/>
   <text class="id mid" x="1178" y="700" transform="rotate(-90 1178 700)">w204 · 35</text>
+  <path class="p w2" d="M490 1080 L520 1050"/>
+  <path class="p w2" d="M610 1050 L640 1080"/>
+  <rect class="flag" x="40" y="1051" width="130" height="18"/>
+  <text class="ts mid" x="105" y="1064">← n309 · + Scheiber</text>
   <circle class="term" cx="190" cy="120" r="3.5"/>
   <circle class="term" cx="60" cy="120" r="3.5"/>
   <circle class="term" cx="190" cy="480" r="3.5"/>
@@ -234,6 +282,23 @@
   <circle class="term" cx="850" cy="830" r="3.5"/>
   <circle class="term" cx="910" cy="770" r="3.5"/>
   <circle class="term" cx="910" cy="830" r="3.5"/>
+  <circle class="term" cx="220" cy="1060" r="3.5"/>
+  <circle class="term" cx="270" cy="1060" r="3.5"/>
+  <circle class="term" cx="310" cy="1080" r="3.5"/>
+  <circle class="term" cx="390" cy="1060" r="3.5"/>
+  <circle class="term" cx="440" cy="1060" r="3.5"/>
+  <circle class="term" cx="490" cy="1080" r="3.5"/>
+  <circle class="term" cx="520" cy="1050" r="3.5"/>
+  <circle class="term" cx="610" cy="1050" r="3.5"/>
+  <circle class="term" cx="640" cy="1080" r="3.5"/>
+  <circle class="term" cx="880" cy="960" r="3.5"/>
+  <circle class="term" cx="880" cy="1020" r="3.5"/>
+  <circle class="term" cx="920" cy="1100" r="3.5"/>
+  <circle class="term" cx="1080" cy="1100" r="3.5"/>
+  <circle class="term" cx="920" cy="1180" r="3.5"/>
+  <circle class="term" cx="1080" cy="1180" r="3.5"/>
+  <circle class="term" cx="960" cy="1280" r="3.5"/>
+  <circle class="term" cx="1040" cy="1280" r="3.5"/>
   <text class="id end" x="183" y="119">n001</text>
   <text class="pin end" x="183" y="129">+</text>
   <text class="id" x="67" y="119">n002</text>
@@ -326,6 +391,38 @@
   <text class="pin" x="917" y="779">+</text>
   <text class="id" x="917" y="829">n324</text>
   <text class="pin" x="917" y="839">−</text>
+  <text class="id end" x="217" y="1073">n337</text>
+  <text class="id" x="273" y="1073">n338</text>
+  <text class="id" x="315" y="1094">n339</text>
+  <text class="id end" x="386" y="1090">n340</text>
+  <text class="id" x="444" y="1090">n341</text>
+  <text class="id" x="495" y="1094">n342</text>
+  <text class="id" x="527" y="1054">n343</text>
+  <text class="id end" x="603" y="1054">n344</text>
+  <text class="id" x="645" y="1094">n345</text>
+  <text class="id" x="887" y="959">n349</text>
+  <text class="pin" x="887" y="969">écl. orange</text>
+  <text class="id" x="887" y="1019">n346</text>
+  <text class="pin" x="887" y="1029">+ rouge</text>
+  <text class="id" x="925" y="1084">n348</text>
+  <text class="pin" x="925" y="1094">sonde noir</text>
+  <text class="id end" x="1075" y="1084">n347</text>
+  <text class="pin end" x="1075" y="1094">− bleu</text>
+  <text class="id" x="925" y="1194">n353</text>
+  <text class="id" x="1085" y="1194">n350</text>
+  <text class="id" x="965" y="1294">n351</text>
+  <text class="pin" x="965" y="1304">signal</text>
+  <text class="id end" x="1035" y="1294">n352</text>
+  <text class="pin end" x="1035" y="1304">−</text>
+  <text class="tb" x="40" y="938">Jauge à gasoil</text>
+  <text class="ts" x="40" y="958">alimentée seulement poussoir enfoncé</text>
+  <text class="ts" x="40" y="974">résistance à retirer, éclairage sur le fil jaune (A13)</text>
+  <text class="ts mid" x="324" y="1122">Wago</text>
+  <text class="ts mid" x="504" y="1122">Wago triple</text>
+  <text class="ts mid" x="654" y="1122">Wago</text>
+  <text class="ts mid" x="565" y="1148">pattes de la résistance dans les Wago</text>
+  <text class="ts mid" x="928" y="1222">Wago</text>
+  <text class="ts mid" x="1094" y="1222">Wago</text>
   <text class="ts end" x="190" y="270">entrée 230 V : folio 3</text>
   <text class="id end" x="190" y="285">n512-4</text>
   <text class="tb mid" x="1100" y="545">Guindeau Lewmar</text>
@@ -335,6 +432,9 @@
   <text class="ts end" x="550" y="795">sans flotteur,</text>
   <text class="ts end" x="550" y="810">mise en route manuelle</text>
   <text class="ts mid" x="720" y="905">node023 · masse côté charges</text>
+  <g class="mk-q"><circle cx="860" cy="920" r="11"/><text class="mid" x="860" y="923.5">Q74</text></g>
+  <g class="mk-q"><circle cx="250" cy="1010" r="11"/><text class="mid" x="250" y="1013.5">Q75</text></g>
+  <g class="mk-a"><circle cx="565" cy="990" r="11"/><text class="mid" x="565" y="993.5">A13</text></g>
   <g class="mk-a"><circle cx="205" cy="88" r="11"/><text class="mid" x="205" y="91.5">A2</text></g>
   <g class="mk-a"><circle cx="229" cy="88" r="11"/><text class="mid" x="229" y="91.5">A3</text></g>
   <g class="mk-q"><circle cx="253" cy="88" r="11"/><text class="mid" x="253" y="91.5">Q58</text></g>
