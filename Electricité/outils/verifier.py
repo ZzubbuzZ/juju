@@ -616,7 +616,9 @@ def main() -> int:
     r.info(f"{len(questions) - len(traitees)} questions ouvertes, {len(traitees)} traitées, {len(anomalies) - len(levees)} anomalies en cours, {len(levees)} levées")
 
     r.section("Schémas du relevé (schemas/)")
-    controler_svg(sorted((RACINE / "schemas").glob("*.svg")), set(releve.fils), set(releve.fils),
+    # un fil du relevé dessiné seulement sur un folio de la cible (folio 4b, tableau moteur) n'est pas signalé
+    sur_cible = ids_svg(sorted(CIBLE.glob("folio-*.svg")))[0]
+    controler_svg(sorted((RACINE / "schemas").glob("*.svg")), set(releve.fils) - sur_cible, set(releve.fils),
                   questions, traitees, anomalies, levees, "schemas", r)
     controler_nodes_svg(sorted((RACINE / "schemas").glob("folio-[1-9]*.svg")), releve, r)
     controler_renvois(sorted((RACINE / "schemas").glob("folio-[1-9]*.svg")), r)
