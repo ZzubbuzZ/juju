@@ -533,9 +533,9 @@ equipements:
   - id: jauge-gasoil
     type: recepteur
     designation: Jauge à gasoil
-    modele: "Osculati 27.320.0X (dernier chiffre à relever, Q74)"
+    modele: "Osculati 27.321.00"
     questions: [Q74]
-    note: "Cadran noir, logo à barre à roue, graduations blanches, cerclage chromé. À l'arrière, un connecteur à fils de couleur : rouge (+), bleu (−), noir (sonde), orange et jaune (éclairage). Seul l'orange est branché ; le jaune est libre (20/11). La gamme 27.320 est donnée pour 12/24 V, avec un éclairage rouge et jaune pour les versions .00 et .01."
+    note: "Cadran noir, logo à barre à roue, graduations blanches, cerclage chromé. À l'arrière, un connecteur à fils de couleur : rouge (+), bleu (−), noir (sonde), orange et jaune (éclairage). Seul l'orange est branché ; le jaune est libre (20/11). Référence 27.321.00, pour une sonde 0-190 Ω (relevé de l'utilisateur, 23/11). Un revendeur la donne pour une sonde 10-180 Ω avec éclairage rouge et jaune (yachtneeds.com, relevé par recherche le 23/11) : même standard européen (vide vers 0-10 Ω, plein vers 180-190 Ω). Alimentation 12/24 V, lue sur l'étiquette (23/11). L'indication paraît juste : la sonde est donc du bon standard (constat de l'utilisateur, 23/11)."
 
   - id: wago-jauge-4
     type: connecteur
@@ -546,7 +546,7 @@ equipements:
     type: capteur
     designation: Sonde de niveau du réservoir de gasoil
     questions: [Q74]
-    note: "Reliée par un câble R2V 3G1,5 mm² : bleu à la masse, marron au signal (20/11). Conducteur vert-jaune et standard de la sonde (10-180 ou 240-33 Ω) à relever (Q74, Q75)."
+    note: "Reliée par un câble R2V 3G1,5 mm² : bleu à la masse, marron au signal (20/11). Conducteur vert-jaune à relever (Q75). Du standard 0-190 Ω de la jauge : l'indication paraît juste (constat de l'utilisateur, 23/11)."
 
   - id: wago-jauge-5
     type: connecteur

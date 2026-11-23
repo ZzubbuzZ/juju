@@ -284,7 +284,7 @@ appareils:
     h: 180
     titre: Jauge à gasoil
     titre_y: 92
-    lignes: ["Osculati 27.320.0X (Q74)", "12/24 V", "fil jaune (éclairage) libre"]
+    lignes: ["Osculati 27.321.00", "sonde 0-190 Ω (Q74)", "fil jaune (éclairage) libre"]
     nodes:
       node349: {cote: gauche, a: 960, fonction: "écl. orange"}
       node346: {cote: gauche, a: 1020, fonction: "+ rouge"}

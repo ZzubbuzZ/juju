@@ -160,8 +160,8 @@
   <rect class="box" x="626" y="1190" width="56" height="26" rx="2"/>
   <rect class="box" x="880" y="1030" width="240" height="180" rx="2"/>
   <text class="tb mid" x="1000" y="1122">Jauge à gasoil</text>
-  <text class="ts mid" x="1000" y="1137">Osculati 27.320.0X (Q74)</text>
-  <text class="ts mid" x="1000" y="1152">12/24 V</text>
+  <text class="ts mid" x="1000" y="1137">Osculati 27.321.00</text>
+  <text class="ts mid" x="1000" y="1152">sonde 0-190 Ω (Q74)</text>
   <text class="ts mid" x="1000" y="1167">fil jaune (éclairage) libre</text>
   <rect class="box" x="906" y="1290" width="44" height="26" rx="2"/>
   <rect class="box" x="1066" y="1290" width="56" height="26" rx="2"/>
