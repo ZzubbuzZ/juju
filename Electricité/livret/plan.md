@@ -39,7 +39,9 @@ Plan proposé le 13/10/2026, rédaction commencée le 16/10. La conduite en cas 
 - Pièces de rechange et outillage à bord, booster compris.
 - Notices utiles, page par page.
 
-**5. Entretien courant** : calendrier d'une page, renvoyant au manuel du bord.
+**5. Entretien courant**
+1. Calendrier d'une page, renvoyant au manuel du bord.
+2. Tester les écrêteurs de l'alternateur (ajouté le 23/11).
 
 ## Décisions du 16/10
 
@@ -51,6 +53,7 @@ Plan proposé le 13/10/2026, rédaction commencée le 16/10. La conduite en cas 
 ## Points à trancher
 
 - **Booster sur une batterie moteur défectueuse** (16/10 ; aucun booster acheté au 17/10) : la procédure prévue le 13/10 (E-H1 : coupe-circuit moteur ouvert, pinces côté charges du coupe-circuit moteur et sur la masse moteur) laisse l'alternateur tourner sans batterie dès qu'on retire le booster, ce qui peut l'abîmer. À arrêter avant de l'écrire dans la fiche 2.3 : garder le booster branché le temps de la manœuvre, remplacer la batterie avant de repartir, ou autre.
+- **Écrêteurs de l'alternateur** (23/11) : deux modules fabriqués (diode 1.5KE18A, fusible MIDI 40 A), pas encore au relevé ni dans le modèle cible. Deux points de conception à trancher : le fusible de 40 A dépasse le courant de l'alternateur (35 A), qui seul ne le fera pas fondre si la diode est en court-circuit ; le fusible est côté masse, donc le câble rouge partant de B+ n'est pas protégé.
 - **Rechanges** : fusibles MEGA de 300 A et MIDI de la niche à prévoir dans la fiche 4.2.
 
 ## Avancement
@@ -62,3 +65,4 @@ Plan proposé le 13/10/2026, rédaction commencée le 16/10. La conduite en cas 
 | [2.7 Vérifier le fonctionnement des organes](fiches/2-7-verification-organes.md) | Rédigée le 16/10 ; seuils du BMS : Q68 |
 | [3.1 Odeur de brûlé, fumée](fiches/3-1-brule-fumee.md) | Rédigée le 16/10 ; attend Q66 (extincteurs) et Q67 (coupure du BMS par l'application) |
 | [3.2 Plus rien sur la servitude](fiches/3-2-panne-servitude.md) | Rédigée le 16/10 ; réarmement du BMS intégré le 17/10 (Q72) ; attend Q73 (matériel de secours, inventaire du plan de bord) |
+| [5.2 Tester les écrêteurs de l'alternateur](fiches/5-2-ecreteurs-alternateur.md) | Rédigée le 23/11 ; modules à saisir au relevé une fois montés |

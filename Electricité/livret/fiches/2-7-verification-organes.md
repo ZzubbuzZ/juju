@@ -51,6 +51,7 @@ Principe : **un circuit à la fois**, en regardant le courant sur le SmartShunt 
 | Organe | Vérifier | Noté |
 |---|---|---|
 | Alternateur | la tension du démarreur monte vers 13,8 à 14,4 V | ___ V |
+| Écrêteurs de l'alternateur | fiche 5.2, une fois par saison | |
 | Orion XS | interrupteur sur marche, voyant allumé, courant de la servitude vers +15 A | ___ A |
 | Guindeau | sélecteur sur **1**, télécommande : un bref essai de montée et de descente, chaîne au repos | |
 

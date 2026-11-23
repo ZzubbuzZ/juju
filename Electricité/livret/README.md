@@ -13,3 +13,4 @@ Plan, décisions et avancement : [plan.md](plan.md).
 - [2.7 Vérifier le fonctionnement des organes](fiches/2-7-verification-organes.md)
 - [3.1 Odeur de brûlé, fumée](fiches/3-1-brule-fumee.md)
 - [3.2 Plus rien sur la servitude](fiches/3-2-panne-servitude.md)
+- [5.2 Tester les écrêteurs de l'alternateur](fiches/5-2-ecreteurs-alternateur.md)
