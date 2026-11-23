@@ -104,7 +104,7 @@ appareils:
     h: 60
     titre: Tableau moteur
     titre_y: 42
-    lignes: ["contact · horamètre : folio 4b"]
+    lignes: ["faisceau, horamètre : folio 4b"]
     nodes:
       node204: {cote: haut, a: 980, fonction: "+"}
   - id: fus-tableau-moteur

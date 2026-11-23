@@ -27,8 +27,18 @@ fils:
   - { id: wire200, de: node006, vers: node200, section_mm2: 35, couleur: rouge, longueur_m: 1 }
   - { id: wire204, de: node023, vers: node201, section_mm2: 35, couleur: noir, longueur_m: 1 }
   - { id: wire206, de: node200, vers: node202, questions: [Q65], note: "Faisceau d'origine Yanmar, du + démarreur au porte-fusible de 30 A (Q1, 13/10) ; section et couleur à relever" }
-  - { id: wire207, de: node203, vers: node204, questions: [Q65], note: "Faisceau d'origine, du porte-fusible au tableau moteur ; section et couleur à relever" }
+  - { id: wire207, de: node203, vers: node204, questions: [Q65], note: "Faisceau d'origine, du porte-fusible au tableau moteur (borne 30 du contacteur) ; rouge d'après le manuel ; section et couleur à relever" }
   - { id: wire018, de: node023, vers: node028, section_mm2: 6, couleur: noir, longueur_m: 1, note: "Masse du coupleur côté charges" }
+
+  # --- Faisceau du tableau moteur (23/11, d'après le manuel Yanmar, Q77) ----------
+  - { id: wire219, de: node230, vers: node227, statut: estime, questions: [Q77], note: "Faisceau d'origine (manuel d'atelier Yanmar, schéma 1-22 p. 10-3) : position START du contacteur → solénoïde du démarreur ; blanc d'après le manuel ; section et couleur à relever" }
+  - { id: wire220, de: node228, vers: node231, statut: estime, questions: [Q77], note: "Faisceau d'origine (manuel d'atelier Yanmar, schéma 1-22 p. 10-3) : borne L de l'alternateur → voyant de charge ; bleu/noir d'après le manuel ; section et couleur à relever" }
+  - { id: wire221, de: node224, vers: node229, statut: estime, questions: [Q77], note: "Faisceau d'origine (manuel d'atelier Yanmar, schéma 1-22 p. 10-3) : + après contact → borne R de l'alternateur ; rouge/noir à l'alternateur, repéré blanc/noir sur le faisceau dans le manuel ; section et couleur à relever" }
+  - { id: wire222, de: node237, vers: node232, statut: estime, questions: [Q77], note: "Faisceau d'origine (manuel d'atelier Yanmar, schéma 1-22 p. 10-3) : thermocontact d'eau → voyant et alarme ; blanc/bleu d'après le manuel ; section et couleur à relever" }
+  - { id: wire223, de: node238, vers: node233, statut: estime, questions: [Q77], note: "Faisceau d'origine (manuel d'atelier Yanmar, schéma 1-22 p. 10-3) : pressostat d'huile → voyant et alarme ; jaune/blanc d'après le manuel ; section et couleur à relever" }
+  - { id: wire224, de: node201, vers: node234, statut: estime, questions: [Q77], note: "Faisceau d'origine (manuel d'atelier Yanmar, schéma 1-22 p. 10-3) : masse du tableau, prise sur la masse moteur ; noir d'après le manuel ; section et couleur à relever" }
+  - { id: wire225, de: node239, vers: node235, statut: estime, questions: [Q77], note: "Faisceau d'origine (manuel d'atelier Yanmar, schéma 1-22 p. 10-3) : capteur → compte-tours ; orange d'après le manuel ; section et couleur à relever" }
+  - { id: wire226, de: node240, vers: node236, statut: estime, questions: [Q77], note: "Faisceau d'origine (manuel d'atelier Yanmar, schéma 1-22 p. 10-3) : capteur → compte-tours ; bleu/rouge d'après le manuel ; section et couleur à relever" }
 
   # --- Horamètre (20/11, Q76) ------------------------------------------------------
   - { id: wire217, de: node224, vers: node225, questions: [Q76], note: "+ après contact du tableau moteur ; couleur et section à relever" }

@@ -33,7 +33,7 @@ Les points suivants sont à revoir sur le circuit 12v :
 
 ### Moteur
 Moteur Yanmar 3GMD, d'après la plaque signalétique (d'abord noté 3GM30). Refroidissement direct à l'eau de mer.
-Alternateur de 35 A (correction du 12/11 ; 20 A notés le 13/10), sans borne W (13/10). Tableau moteur (contact, jauges) alimenté par le faisceau d'origine depuis le + du démarreur, à travers un fusible de 30 A (13/10). Accouplement de l'arbre d'hélice métallique, sans câble de masse sur le tube d'étambot (13/10).
+Alternateur de 35 A (correction du 12/11 ; 20 A notés le 13/10), sans borne W (13/10). Tableau moteur alimenté par le faisceau d'origine depuis le + du démarreur, à travers un fusible de 30 A (13/10). Tableau Yanmar de type B : contacteur à clé, voyants de charge, de température d'eau et de pression d'huile, alarme sonore, compte-tours ; le démarrage est intégré au contacteur à clé (OFF, ON, START avec rappel sur ON), sans le poussoir d'origine (23/11). Faisceau saisi d'après le manuel d'atelier Yanmar (schéma 1-22, p. 10-3), à vérifier à bord (folio 4b, Q77). Accouplement de l'arbre d'hélice métallique, sans câble de masse sur le tube d'étambot (13/10).
 Démarreur : 60 A à vide, 460 A rotor bloqué (couple maximal, vitesse nulle), puissance maximale entre 200 et 275 A ([manuel d'atelier Yanmar](documentation/YANMAR-WORKSHOP-MANUAL-1GM-2GM-3GM-3HM.pdf)).
 Batterie Varta 110Ah au Plomb sans entretien
 Coupe circuit dédié sur pole 12v

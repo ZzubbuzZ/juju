@@ -73,7 +73,7 @@
   <text class="ts mid" x="705" y="105">démarreur + alternateur</text>
   <rect class="box" x="880" y="70" width="200" height="60" rx="2"/>
   <text class="tb mid" x="980" y="112">Tableau moteur</text>
-  <text class="ts mid" x="980" y="127">contact · horamètre : folio 4b</text>
+  <text class="ts mid" x="980" y="127">faisceau, horamètre : folio 4b</text>
   <rect class="fuse" x="700" y="31" width="60" height="18"/>
   <path class="fx" d="M704 40 H756"/>
   <text class="id mid" x="730" y="62">30 A</text>

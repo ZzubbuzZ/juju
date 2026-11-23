@@ -1,55 +1,174 @@
 # Mise en page du folio 4b, lue par outils/folio.py qui produit le SVG voisin.
 # Modèle « cible » : chaque fil 12 V du modèle doit figurer sur un folio de cible/ (outils/verifier.py).
-# Folio dédié au câblage du tableau moteur, à compléter quand l'utilisateur l'aura décrit ; pour l'instant
-# seul l'horamètre y figure (décision du 21/11 : horamètre sur ce folio, cible uniquement).
-# Nœuds : [côté, coordonnée le long du côté] ; un fil va d'un nœud à l'autre par « trace »
+# Folio dédié au câblage du tableau moteur (décision du 21/11 : cible uniquement). Faisceau dessiné le 23/11
+# d'après le manuel d'atelier Yanmar (schéma 1-22, p. 10-3, tableau de type B), avec le démarrage intégré
+# au contacteur à clé (information de l'utilisateur). Intérieur du tableau en traits libres, simplifié.
+# Nœuds : {cote, a} (a = coordonnée absolue le long du côté) ; un fil va d'un nœud à l'autre par « trace »
 # (points intermédiaires), en segments à 0, 45 ou 90°.
 folio: 4b
 titre: Tableau moteur
-aria: "Tableau moteur, installation cible : pour l'instant seulement l'horamètre, branché sur le plus après contact du tableau moteur et sur la masse moteur."
-desc: "Folio du câblage du tableau moteur, à compléter. Pour l'instant, seul l'horamètre GH-521S y figure : + après contact du tableau moteur, masse prise sur la masse moteur par un fil bleu (relevé du 20/11)."
+aria: "Tableau moteur Yanmar, installation cible : faisceau entre le moteur (démarreur, alternateur, capteurs) et le tableau (contacteur à clé, voyants, alarme, compte-tours), et horamètre."
+desc: "Faisceau du tableau moteur d'après le manuel d'atelier Yanmar (schéma 1-22, tableau de type B), démarrage intégré au contacteur à clé (OFF, ON, START avec rappel sur ON). Voyants et alarme s'allument quand un capteur met leur fil à la masse. Horamètre GH-521S sur le + après contact."
 modele: cible
-taille: [1200, 360]
+taille: [1200, 720]
 
 appareils:
-  - id: tableau-moteur
-    x: 200
-    y: 60
+  - id: moteur
+    x: 60
+    y: 170
+    w: 260
+    h: 150
+    titre: Moteur Yanmar 3GMD
+    titre_y: 44
+    lignes: ["démarreur · alternateur 35 A"]
+    nodes:
+      node229: {cote: haut, a: 290, fonction: "R"}
+      node200: {cote: droite, a: 200, fonction: "B+"}
+      node227: {cote: droite, a: 250, fonction: "S"}
+      node228: {cote: droite, a: 300, fonction: "L"}
+      node201: {cote: bas, a: 90, fonction: "masse"}
+  - id: fus-tableau-moteur
+    forme: fusible
+    calibre: 30 A
+    titre: faisceau d'origine
+    titre_xy: [470, 172]
+    nodes:
+      node202: {cote: point, xy: [440, 200], etiquette: [-4, -6, end]}
+      node203: {cote: point, xy: [500, 200], etiquette: [4, -6]}
+  - id: thermocontact-eau
+    x: 120
+    y: 335
+    w: 200
+    h: 30
+    titre: Thermocontact d'eau
+    titre_y: 20
+    nodes:
+      node237: {cote: droite, a: 350, fonction: ""}
+  - id: pressostat-huile
+    x: 120
+    y: 385
+    w: 200
+    h: 30
+    titre: Pressostat d'huile
+    titre_y: 20
+    nodes:
+      node238: {cote: droite, a: 400, fonction: ""}
+  - id: capteur-compte-tours
+    x: 120
+    y: 435
     w: 200
     h: 80
-    titre: Tableau moteur
-    titre_y: 22
-    lignes: ["contact, démarrage :", "folio 1 (relevé)"]
+    titre: Capteur du compte-tours
+    titre_y: 45
     nodes:
-      node224: {cote: droite, a: 125, fonction: "+ contact"}
-  - id: moteur
-    x: 200
-    y: 190
-    w: 200
-    h: 70
-    titre: Moteur Yanmar 3GMD
-    titre_y: 22
+      node239: {cote: droite, a: 450, fonction: "P1"}
+      node240: {cote: droite, a: 500, fonction: "P2"}
+  - id: tableau-moteur
+    x: 700
+    y: 140
+    w: 360
+    h: 480
+    titre: Tableau moteur (type B)
+    titre_y: 24
     nodes:
-      node201: [droite, 240]
+      node224: {cote: haut, a: 730, fonction: "AC"}
+      node204: {cote: gauche, a: 200, fonction: "30"}
+      node230: {cote: gauche, a: 250, fonction: "ST"}
+      node231: {cote: gauche, a: 300, fonction: "L"}
+      node232: {cote: gauche, a: 350, fonction: "temp"}
+      node233: {cote: gauche, a: 400, fonction: "huile"}
+      node235: {cote: gauche, a: 450, fonction: "P1"}
+      node236: {cote: gauche, a: 500, fonction: "P2"}
+      node241: {cote: gauche, a: 540, fonction: "r. seal"}
+      node234: {cote: gauche, a: 580, fonction: "masse"}
   - id: horametre
-    x: 560
-    y: 60
+    x: 900
+    y: 20
     w: 180
-    h: 150
-    titre: Horamètre
-    titre_y: 56
-    lignes: ["GH-521S"]
+    h: 70
+    titre: Horamètre GH-521S
+    titre_y: 24
     nodes:
-      node225: [gauche, 125]
-      node226: [gauche, 165]
+      node225: {cote: bas, a: 920}
+      node226: {cote: bas, a: 1040}
 
 fils:
-  wire217: {etiquette: [480, 117, mid], texte: "w217 · + après contact"}
-  wire218: {trace: [[485, 240]], etiquette: [440, 232, mid], texte: "w218 · bleu"}
+  wire206: {etiquette: [380, 194, mid], texte: "w206"}
+  wire207: {etiquette: [600, 194, mid], texte: "w207 · + permanent"}
+  wire219: {etiquette: [510, 244, mid], texte: "w219 · démarrage (ST → S)"}
+  wire220: {etiquette: [510, 294, mid], texte: "w220 · voyant de charge (L)"}
+  wire222: {etiquette: [510, 344, mid], texte: "w222 · température d'eau"}
+  wire223: {etiquette: [510, 394, mid], texte: "w223 · pression d'huile"}
+  wire225: {etiquette: [510, 444, mid], texte: "w225 · compte-tours P1"}
+  wire226: {etiquette: [510, 494, mid], texte: "w226 · compte-tours P2"}
+  wire224: {trace: [[90, 580]], etiquette: [400, 574, mid], texte: "w224 · masse du tableau"}
+  wire221: {trace: [[710, 120], [290, 120]], etiquette: [520, 114, mid], texte: "w221 · + après contact → R"}
+  wire217: {trace: [[750, 120], [890, 120]], etiquette: [820, 114, mid], texte: "w217"}
+  wire218: {trace: [[75, 335], [75, 650], [1120, 650], [1120, 120], [1070, 120]], etiquette: [600, 644, mid], texte: "w218 · bleu"}
 
-pastilles:
-  - {id: Q76, x: 760, y: 60}
+# Intérieur du tableau (simplifié) : contacteur à clé, + après contact, voyants, alarme, compte-tours.
+traits:
+  # + après contact : de la borne AC au contacteur, puis bus vertical jusqu'au compte-tours
+  - {classe: p w2, points: [[730, 140], [730, 175], [880, 175], [880, 420], [970, 420], [970, 440]]}
+  # contacteur à clé : 30 en entrée, ON vers le bus, START vers la borne ST
+  - {classe: box, points: [[780, 188], [850, 188], [850, 262], [780, 262], [780, 188]]}
+  - {classe: p w2, points: [[755, 200], [780, 200]]}
+  - {classe: p w1, points: [[755, 250], [780, 250]]}
+  - {classe: p w2, points: [[850, 210], [880, 210]]}
+  # voyants : entre le bus et la borne du capteur
+  - {classe: n w1, points: [[755, 300], [801, 300]]}
+  - {classe: n w1, points: [[819, 300], [880, 300]]}
+  - {classe: n, points: [[803.6, 293.6], [816.4, 306.4]]}
+  - {classe: n, points: [[803.6, 306.4], [816.4, 293.6]]}
+  - {classe: n w1, points: [[810, 291], [816.4, 293.6], [819, 300], [816.4, 306.4], [810, 309], [803.6, 306.4], [801, 300], [803.6, 293.6], [810, 291]]}
+  - {classe: n w1, points: [[755, 350], [801, 350]]}
+  - {classe: n w1, points: [[819, 350], [880, 350]]}
+  - {classe: n, points: [[803.6, 343.6], [816.4, 356.4]]}
+  - {classe: n, points: [[803.6, 356.4], [816.4, 343.6]]}
+  - {classe: n w1, points: [[810, 341], [816.4, 343.6], [819, 350], [816.4, 356.4], [810, 359], [803.6, 356.4], [801, 350], [803.6, 343.6], [810, 341]]}
+  - {classe: n w1, points: [[755, 400], [801, 400]]}
+  - {classe: n w1, points: [[819, 400], [880, 400]]}
+  - {classe: n, points: [[803.6, 393.6], [816.4, 406.4]]}
+  - {classe: n, points: [[803.6, 406.4], [816.4, 393.6]]}
+  - {classe: n w1, points: [[810, 391], [816.4, 393.6], [819, 400], [816.4, 406.4], [810, 409], [803.6, 406.4], [801, 400], [803.6, 393.6], [810, 391]]}
+  # voyant « rubber seal » (sail-drive) : présent, non raccordé côté capteur (24/11)
+  - {classe: n w1, points: [[755, 540], [801, 540]]}
+  - {classe: n, points: [[803.6, 533.6], [816.4, 546.4]]}
+  - {classe: n, points: [[803.6, 546.4], [816.4, 533.6]]}
+  - {classe: n w1, points: [[810, 531], [816.4, 533.6], [819, 540], [816.4, 546.4], [810, 549], [803.6, 546.4], [801, 540], [803.6, 533.6], [810, 531]]}
+  # alarme sonore, alimentée par le bus
+  - {classe: box, points: [[905, 315], [1045, 315], [1045, 395], [905, 395], [905, 315]]}
+  - {classe: p w1, points: [[880, 340], [905, 340]]}
+  # compte-tours : P1, P2 depuis le capteur, masse
+  - {classe: box, points: [[905, 440], [1045, 440], [1045, 540], [905, 540], [905, 440]]}
+  - {classe: n w1, points: [[755, 450], [905, 450]]}
+  - {classe: n w1, points: [[755, 500], [905, 500]]}
+  - {classe: n w2, points: [[755, 580], [970, 580], [970, 540]]}
+jonctions: [[880, 210], [880, 300], [880, 350], [880, 400], [880, 340]]
 
 textes:
-  - {x: 20, y: 312, texte: "À compléter avec le câblage du tableau moteur. Pointillés bleus : section non relevée (Q76)."}
-  - {x: 20, y: 330, texte: "Emplacement de l'horamètre et borne du + après contact à relever (Q76)."}
+  - {x: 815, y: 222, texte: "contacteur", classe: ts mid}
+  - {x: 815, y: 236, texte: "à clé", classe: ts mid}
+  - {x: 900, y: 206, texte: "OFF · ON · START", classe: t}
+  - {x: 900, y: 222, texte: "rappel de START sur ON", classe: ts}
+  - {x: 900, y: 237, texte: "(pas de poussoir)", classe: ts}
+  - {x: 810, y: 287, texte: "charge", classe: ts mid}
+  - {x: 810, y: 337, texte: "temp. eau", classe: ts mid}
+  - {x: 810, y: 387, texte: "pression huile", classe: ts mid}
+  - {x: 975, y: 335, texte: "Alarme sonore", classe: tb mid}
+  - {x: 975, y: 353, texte: "température d'eau,", classe: ts mid}
+  - {x: 975, y: 368, texte: "pression d'huile", classe: ts mid}
+  - {x: 975, y: 383, texte: "(capteur à la masse)", classe: ts mid}
+  - {x: 810, y: 527, texte: "rubber seal", classe: ts mid}
+  - {x: 830, y: 562, texte: "sail-drive : sans objet", classe: ts}
+  - {x: 690, y: 544, texte: "fil du voyant rubber seal : connecteur en l'air côté capteur", classe: ts end}
+  - {x: 975, y: 475, texte: "Compte-tours", classe: tb mid}
+  - {x: 975, y: 493, texte: "éclairage par", classe: ts mid}
+  - {x: 975, y: 508, texte: "son interrupteur", classe: ts mid}
+  - {x: 20, y: 684, texte: "D'après le manuel d'atelier Yanmar (schéma 1-22, p. 10-3, tableau de type B), sauf le démarrage, intégré au contacteur à clé. Couleurs d'origine dans les données ; tout est à vérifier à bord (Q77)."}
+  - {x: 20, y: 702, texte: "Pointillés bleus : section non relevée. Intérieur du tableau simplifié : un voyant s'allume quand son capteur met le fil à la masse. Horamètre : emplacement à relever (Q76)."}
+
+pastilles:
+  - {id: Q77, x: 1085, y: 160}
+  - {id: Q76, x: 1100, y: 40}
+  - {id: Q65, x: 650, y: 600}

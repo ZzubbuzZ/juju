@@ -79,8 +79,8 @@ equipements:
     designation: Tableau moteur (contact, jauges)
     zone: descente
     emplacement: "Contremarche de la descente, à gauche de la platine des coupe-circuits (Q70, 17/10)"
-    questions: [Q65]
-    note: "Alimenté par le faisceau d'origine Yanmar depuis le + du démarreur (node200), à travers un fusible de 30 A (Q1, 13/10). Commutateur à clé (tourner dans le sens horaire jusqu'au buzzer), poussoir de démarrage ; étouffoir à tirette marquée d'un S rouge (Q70, 17/10). Masse non relevée (Q65)."
+    questions: [Q65, Q77]
+    note: "Alimenté par le faisceau d'origine Yanmar depuis le + du démarreur (node200), à travers un fusible de 30 A (Q1, 13/10). Tableau Yanmar de type B (grand) : contacteur à clé, voyants de charge, de température d'eau et de pression d'huile, alarme sonore, compte-tours éclairé par son interrupteur ; câblage interne et faisceau d'après le manuel d'atelier Yanmar, schéma 1-22 p. 10-3 (moteurs 3GMD(F) à partir du n° 02710), folio 4b, à vérifier à bord (Q77). Différence avec l'origine (utilisateur, 23/11) : pas de poussoir de démarrage, le démarrage est intégré au contacteur à clé (OFF, ON, START avec rappel sur ON). Clé sur ON : buzzer jusqu'au démarrage ; étouffoir à tirette marquée d'un S rouge (Q70, 17/10). Masse par le fil noir du faisceau d'après le manuel (Q65). Voyant « rubber seal » présent au tableau (node241), prévu pour le détecteur d'eau entre les deux membranes d'un sail-drive : sans objet sur Juju, qui a une ligne d'arbre (Q40) ; le connecteur de son fil, côté capteur, est en l'air (constat de l'utilisateur, 24/11)."
 
   - id: fus-tableau-moteur
     type: fusible
@@ -553,6 +553,30 @@ equipements:
     designation: Borne Wago entre le câble de la sonde et le fil noir de la jauge
 
   # --- Horamètre (relevé du 20/11) ------------------------------------------------
+  - id: thermocontact-eau
+    type: capteur
+    designation: Thermocontact d'eau de refroidissement
+    zone: compartiment-moteur
+    statut: estime
+    questions: [Q77]
+    note: "Contact à la masse quand l'eau de refroidissement est trop chaude : allume le voyant et déclenche l'alarme (manuel d'atelier Yanmar, schéma 1-22 p. 10-3)."
+
+  - id: pressostat-huile
+    type: capteur
+    designation: Pressostat d'huile
+    zone: compartiment-moteur
+    statut: estime
+    questions: [Q77]
+    note: "Contact à la masse sans pression d'huile : voyant et alarme, d'où le buzzer clé sur ON tant que le moteur n'a pas démarré (manuel d'atelier Yanmar, schéma 1-22 p. 10-3)."
+
+  - id: capteur-compte-tours
+    type: capteur
+    designation: Capteur du compte-tours
+    zone: compartiment-moteur
+    statut: estime
+    questions: [Q77]
+    note: "Deux bornes P vers le compte-tours, corps à la masse (manuel d'atelier Yanmar, schéma 1-22 p. 10-3)."
+
   - id: horametre
     type: recepteur
     designation: Horamètre moteur

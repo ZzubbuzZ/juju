@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-label="Tableau moteur, installation cible : pour l&#x27;instant seulement l&#x27;horamètre, branché sur le plus après contact du tableau moteur et sur la masse moteur.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Tableau moteur Yanmar, installation cible : faisceau entre le moteur (démarreur, alternateur, capteurs) et le tableau (contacteur à clé, voyants, alarme, compte-tours), et horamètre.">
   <title>Folio 4b · Tableau moteur</title>
-  <desc>Folio du câblage du tableau moteur, à compléter. Pour l&#x27;instant, seul l&#x27;horamètre GH-521S y figure : + après contact du tableau moteur, masse prise sur la masse moteur par un fil bleu (relevé du 20/11).</desc>
+  <desc>Faisceau du tableau moteur d&#x27;après le manuel d&#x27;atelier Yanmar (schéma 1-22, tableau de type B), démarrage intégré au contacteur à clé (OFF, ON, START avec rappel sur ON). Voyants et alarme s&#x27;allument quand un capteur met leur fil à la masse. Horamètre GH-521S sur le + après contact.</desc>
   <style>
     /* Style autonome : retiré par outils/page.py quand le folio est intégré à la page HTML. */
     svg{--sheet:#fbfcfd;--ink:#18212b;--muted:#5a6776;--pos:#c8231c;--unk:#1f6fbf;--warn:#e58a00;--on-warn:#1a1206;--new:#1d8a4a;--new-soft:#e2f3e8;--zone:#e8edf2;--ph:#8a5a2b;--ne:#2563c4;--pe:#2f9e44;--pey:#e6b800}
@@ -41,32 +41,168 @@
   </style>
   <rect class="bg" x="0" y="0" width="100%" height="100%"/>
   <!-- Généré par outils/folio.py depuis folio-4b-tableau-moteur.yaml : ne pas modifier à la main. -->
-  <rect class="box" x="200" y="60" width="200" height="80" rx="2"/>
-  <text class="tb mid" x="300" y="82">Tableau moteur</text>
-  <text class="ts mid" x="300" y="97">contact, démarrage :</text>
-  <text class="ts mid" x="300" y="112">folio 1 (relevé)</text>
-  <rect class="box" x="200" y="190" width="200" height="70" rx="2"/>
-  <text class="tb mid" x="300" y="212">Moteur Yanmar 3GMD</text>
-  <rect class="box" x="560" y="60" width="180" height="150" rx="2"/>
-  <text class="tb mid" x="650" y="116">Horamètre</text>
-  <text class="ts mid" x="650" y="131">GH-521S</text>
-  <path class="u" d="M400 125 L560 125"/>
-  <text class="id mid" x="480" y="117">w217 · + après contact</text>
-  <path class="u" d="M400 240 L485 240 L560 165"/>
-  <text class="id mid" x="440" y="232">w218 · bleu</text>
-  <circle class="term" cx="400" cy="125" r="3.5"/>
-  <circle class="term" cx="400" cy="240" r="3.5"/>
-  <circle class="term" cx="560" cy="125" r="3.5"/>
-  <circle class="term" cx="560" cy="165" r="3.5"/>
-  <text class="id end" x="393" y="124">n224</text>
-  <text class="pin end" x="393" y="134">+ contact</text>
-  <text class="id end" x="393" y="239">n201</text>
-  <text class="pin end" x="393" y="249">−</text>
-  <text class="id" x="567" y="124">n225</text>
-  <text class="pin" x="567" y="134">+</text>
-  <text class="id" x="567" y="164">n226</text>
-  <text class="pin" x="567" y="174">−</text>
-  <text class="ts" x="20" y="312">À compléter avec le câblage du tableau moteur. Pointillés bleus : section non relevée (Q76).</text>
-  <text class="ts" x="20" y="330">Emplacement de l&#x27;horamètre et borne du + après contact à relever (Q76).</text>
-  <g class="mk-q"><circle cx="760" cy="60" r="11"/><text class="mid" x="760" y="63.5">Q76</text></g>
+  <rect class="box" x="60" y="170" width="260" height="150" rx="2"/>
+  <text class="tb mid" x="190" y="214">Moteur Yanmar 3GMD</text>
+  <text class="ts mid" x="190" y="229">démarreur · alternateur 35 A</text>
+  <rect class="fuse" x="440" y="191" width="60" height="18"/>
+  <path class="fx" d="M444 200 H496"/>
+  <text class="id mid" x="470" y="222">30 A</text>
+  <text class="ts mid" x="470" y="172">faisceau d&#x27;origine</text>
+  <rect class="box" x="120" y="335" width="200" height="30" rx="2"/>
+  <text class="tb mid" x="220" y="355">Thermocontact d&#x27;eau</text>
+  <rect class="box" x="120" y="385" width="200" height="30" rx="2"/>
+  <text class="tb mid" x="220" y="405">Pressostat d&#x27;huile</text>
+  <rect class="box" x="120" y="435" width="200" height="80" rx="2"/>
+  <text class="tb mid" x="220" y="480">Capteur du compte-tours</text>
+  <rect class="box" x="700" y="140" width="360" height="480" rx="2"/>
+  <text class="tb mid" x="880" y="164">Tableau moteur (type B)</text>
+  <rect class="box" x="900" y="20" width="180" height="70" rx="2"/>
+  <text class="tb mid" x="990" y="44">Horamètre GH-521S</text>
+  <path class="p w2" d="M730 140 L730 175 L880 175 L880 420 L970 420 L970 440"/>
+  <path class="box" d="M780 188 L850 188 L850 262 L780 262 L780 188"/>
+  <path class="p w2" d="M755 200 L780 200"/>
+  <path class="p w1" d="M755 250 L780 250"/>
+  <path class="p w2" d="M850 210 L880 210"/>
+  <path class="n w1" d="M755 300 L801 300"/>
+  <path class="n w1" d="M819 300 L880 300"/>
+  <path class="n" d="M803.6 293.6 L816.4 306.4"/>
+  <path class="n" d="M803.6 306.4 L816.4 293.6"/>
+  <path class="n w1" d="M810 291 L816.4 293.6 L819 300 L816.4 306.4 L810 309 L803.6 306.4 L801 300 L803.6 293.6 L810 291"/>
+  <path class="n w1" d="M755 350 L801 350"/>
+  <path class="n w1" d="M819 350 L880 350"/>
+  <path class="n" d="M803.6 343.6 L816.4 356.4"/>
+  <path class="n" d="M803.6 356.4 L816.4 343.6"/>
+  <path class="n w1" d="M810 341 L816.4 343.6 L819 350 L816.4 356.4 L810 359 L803.6 356.4 L801 350 L803.6 343.6 L810 341"/>
+  <path class="n w1" d="M755 400 L801 400"/>
+  <path class="n w1" d="M819 400 L880 400"/>
+  <path class="n" d="M803.6 393.6 L816.4 406.4"/>
+  <path class="n" d="M803.6 406.4 L816.4 393.6"/>
+  <path class="n w1" d="M810 391 L816.4 393.6 L819 400 L816.4 406.4 L810 409 L803.6 406.4 L801 400 L803.6 393.6 L810 391"/>
+  <path class="n w1" d="M755 540 L801 540"/>
+  <path class="n" d="M803.6 533.6 L816.4 546.4"/>
+  <path class="n" d="M803.6 546.4 L816.4 533.6"/>
+  <path class="n w1" d="M810 531 L816.4 533.6 L819 540 L816.4 546.4 L810 549 L803.6 546.4 L801 540 L803.6 533.6 L810 531"/>
+  <path class="box" d="M905 315 L1045 315 L1045 395 L905 395 L905 315"/>
+  <path class="p w1" d="M880 340 L905 340"/>
+  <path class="box" d="M905 440 L1045 440 L1045 540 L905 540 L905 440"/>
+  <path class="n w1" d="M755 450 L905 450"/>
+  <path class="n w1" d="M755 500 L905 500"/>
+  <path class="n w2" d="M755 580 L970 580 L970 540"/>
+  <circle class="dn" cx="880" cy="210" r="3.5"/>
+  <circle class="dn" cx="880" cy="300" r="3.5"/>
+  <circle class="dn" cx="880" cy="350" r="3.5"/>
+  <circle class="dn" cx="880" cy="400" r="3.5"/>
+  <circle class="dn" cx="880" cy="340" r="3.5"/>
+  <path class="u" d="M320 200 L440 200"/>
+  <text class="id mid" x="380" y="194">w206</text>
+  <path class="u" d="M500 200 L700 200"/>
+  <text class="id mid" x="600" y="194">w207 · + permanent</text>
+  <path class="u" d="M700 250 L320 250"/>
+  <text class="id mid" x="510" y="244">w219 · démarrage (ST → S)</text>
+  <path class="u" d="M320 300 L700 300"/>
+  <text class="id mid" x="510" y="294">w220 · voyant de charge (L)</text>
+  <path class="u" d="M320 350 L700 350"/>
+  <text class="id mid" x="510" y="344">w222 · température d&#x27;eau</text>
+  <path class="u" d="M320 400 L700 400"/>
+  <text class="id mid" x="510" y="394">w223 · pression d&#x27;huile</text>
+  <path class="u" d="M320 450 L700 450"/>
+  <text class="id mid" x="510" y="444">w225 · compte-tours P1</text>
+  <path class="u" d="M320 500 L700 500"/>
+  <text class="id mid" x="510" y="494">w226 · compte-tours P2</text>
+  <path class="u" d="M90 320 L90 580 L700 580"/>
+  <text class="id mid" x="400" y="574">w224 · masse du tableau</text>
+  <path class="u" d="M730 140 L710 120 L290 120 L290 170"/>
+  <text class="id mid" x="520" y="114">w221 · + après contact → R</text>
+  <path class="u" d="M730 140 L750 120 L890 120 L920 90"/>
+  <text class="id mid" x="820" y="114">w217</text>
+  <path class="u" d="M90 320 L75 335 L75 650 L1120 650 L1120 120 L1070 120 L1040 90"/>
+  <text class="id mid" x="600" y="644">w218 · bleu</text>
+  <circle class="term" cx="290" cy="170" r="3.5"/>
+  <circle class="term" cx="320" cy="200" r="3.5"/>
+  <circle class="term" cx="320" cy="250" r="3.5"/>
+  <circle class="term" cx="320" cy="300" r="3.5"/>
+  <circle class="term" cx="90" cy="320" r="3.5"/>
+  <circle class="term" cx="440" cy="200" r="3.5"/>
+  <circle class="term" cx="500" cy="200" r="3.5"/>
+  <circle class="term" cx="320" cy="350" r="3.5"/>
+  <circle class="term" cx="320" cy="400" r="3.5"/>
+  <circle class="term" cx="320" cy="450" r="3.5"/>
+  <circle class="term" cx="320" cy="500" r="3.5"/>
+  <circle class="term" cx="730" cy="140" r="3.5"/>
+  <circle class="term" cx="700" cy="200" r="3.5"/>
+  <circle class="term" cx="700" cy="250" r="3.5"/>
+  <circle class="term" cx="700" cy="300" r="3.5"/>
+  <circle class="term" cx="700" cy="350" r="3.5"/>
+  <circle class="term" cx="700" cy="400" r="3.5"/>
+  <circle class="term" cx="700" cy="450" r="3.5"/>
+  <circle class="term" cx="700" cy="500" r="3.5"/>
+  <circle class="term" cx="700" cy="540" r="3.5"/>
+  <circle class="term" cx="700" cy="580" r="3.5"/>
+  <circle class="term" cx="920" cy="90" r="3.5"/>
+  <circle class="term" cx="1040" cy="90" r="3.5"/>
+  <text class="id end" x="285" y="184">n229</text>
+  <text class="pin end" x="285" y="194">R</text>
+  <text class="id end" x="313" y="199">n200</text>
+  <text class="pin end" x="313" y="209">B+</text>
+  <text class="id end" x="313" y="249">n227</text>
+  <text class="pin end" x="313" y="259">S</text>
+  <text class="id end" x="313" y="299">n228</text>
+  <text class="pin end" x="313" y="309">L</text>
+  <text class="id" x="95" y="304">n201</text>
+  <text class="pin" x="95" y="314">masse</text>
+  <text class="id end" x="436" y="194">n202</text>
+  <text class="id" x="504" y="194">n203</text>
+  <text class="id end" x="313" y="354">n237</text>
+  <text class="id end" x="313" y="404">n238</text>
+  <text class="id end" x="313" y="449">n239</text>
+  <text class="pin end" x="313" y="459">P1</text>
+  <text class="id end" x="313" y="499">n240</text>
+  <text class="pin end" x="313" y="509">P2</text>
+  <text class="id" x="735" y="154">n224</text>
+  <text class="pin" x="735" y="164">AC</text>
+  <text class="id" x="707" y="199">n204</text>
+  <text class="pin" x="707" y="209">30</text>
+  <text class="id" x="707" y="249">n230</text>
+  <text class="pin" x="707" y="259">ST</text>
+  <text class="id" x="707" y="299">n231</text>
+  <text class="pin" x="707" y="309">L</text>
+  <text class="id" x="707" y="349">n232</text>
+  <text class="pin" x="707" y="359">temp</text>
+  <text class="id" x="707" y="399">n233</text>
+  <text class="pin" x="707" y="409">huile</text>
+  <text class="id" x="707" y="449">n235</text>
+  <text class="pin" x="707" y="459">P1</text>
+  <text class="id" x="707" y="499">n236</text>
+  <text class="pin" x="707" y="509">P2</text>
+  <text class="id" x="707" y="539">n241</text>
+  <text class="pin" x="707" y="549">r. seal</text>
+  <text class="id" x="707" y="579">n234</text>
+  <text class="pin" x="707" y="589">masse</text>
+  <text class="id" x="925" y="74">n225</text>
+  <text class="pin" x="925" y="84">+</text>
+  <text class="id end" x="1035" y="74">n226</text>
+  <text class="pin end" x="1035" y="84">−</text>
+  <text class="ts mid" x="815" y="222">contacteur</text>
+  <text class="ts mid" x="815" y="236">à clé</text>
+  <text class="t" x="900" y="206">OFF · ON · START</text>
+  <text class="ts" x="900" y="222">rappel de START sur ON</text>
+  <text class="ts" x="900" y="237">(pas de poussoir)</text>
+  <text class="ts mid" x="810" y="287">charge</text>
+  <text class="ts mid" x="810" y="337">temp. eau</text>
+  <text class="ts mid" x="810" y="387">pression huile</text>
+  <text class="tb mid" x="975" y="335">Alarme sonore</text>
+  <text class="ts mid" x="975" y="353">température d&#x27;eau,</text>
+  <text class="ts mid" x="975" y="368">pression d&#x27;huile</text>
+  <text class="ts mid" x="975" y="383">(capteur à la masse)</text>
+  <text class="ts mid" x="810" y="527">rubber seal</text>
+  <text class="ts" x="830" y="562">sail-drive : sans objet</text>
+  <text class="ts end" x="690" y="544">fil du voyant rubber seal : connecteur en l&#x27;air côté capteur</text>
+  <text class="tb mid" x="975" y="475">Compte-tours</text>
+  <text class="ts mid" x="975" y="493">éclairage par</text>
+  <text class="ts mid" x="975" y="508">son interrupteur</text>
+  <text class="ts" x="20" y="684">D&#x27;après le manuel d&#x27;atelier Yanmar (schéma 1-22, p. 10-3, tableau de type B), sauf le démarrage, intégré au contacteur à clé. Couleurs d&#x27;origine dans les données ; tout est à vérifier à bord (Q77).</text>
+  <text class="ts" x="20" y="702">Pointillés bleus : section non relevée. Intérieur du tableau simplifié : un voyant s&#x27;allume quand son capteur met le fil à la masse. Horamètre : emplacement à relever (Q76).</text>
+  <g class="mk-q"><circle cx="1085" cy="160" r="11"/><text class="mid" x="1085" y="163.5">Q77</text></g>
+  <g class="mk-q"><circle cx="1100" cy="40" r="11"/><text class="mid" x="1100" y="43.5">Q76</text></g>
+  <g class="mk-q"><circle cx="650" cy="600" r="11"/><text class="mid" x="650" y="603.5">Q65</text></g>
 </svg>

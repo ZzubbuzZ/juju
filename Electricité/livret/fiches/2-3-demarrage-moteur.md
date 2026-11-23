@@ -18,8 +18,8 @@ Le moteur démarre sur sa propre batterie, au plomb, dans le coffre de cockpit t
 
 Au **tableau moteur**, sur la contremarche de la descente, à gauche de la platine des coupe-circuits :
 
-1. Insérer la clé dans le commutateur et la tourner dans le **sens horaire** jusqu'à entendre le **buzzer**.
-2. Enfoncer le **poussoir de démarrage** jusqu'à ce que le moteur parte, **moins de 10 secondes**.
+1. Insérer la clé dans le contacteur et la tourner dans le **sens horaire** sur **ON** : le **buzzer** sonne (pas encore de pression d'huile).
+2. Tourner la clé d'un cran de plus, sur **START**, et la tenir jusqu'à ce que le moteur parte, **moins de 10 secondes**. La relâcher : elle revient seule sur ON. D'après le manuel Yanmar, le buzzer se tait quand la pression d'huile monte (à confirmer, Q70).
 
 - S'il ne part pas, attendre 30 secondes avant de recommencer.
 - Après trois essais sans succès, ne pas insister : batterie qui s'épuise, démarreur qui chauffe. Voir le verso.

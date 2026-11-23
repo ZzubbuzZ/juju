@@ -60,6 +60,23 @@ nodes:
   - { id: node204, equipement: tableau-moteur, borne: "+", polarite: "+" }
   - { id: node224, equipement: tableau-moteur, borne: "+ après contact", polarite: "+", questions: [Q76] }
 
+  # --- Faisceau du tableau moteur (23/11, d'après le manuel Yanmar, Q77) ----------
+  - { id: node227, equipement: moteur, borne: "S (solénoïde du démarreur)", polarite: commande, statut: estime, questions: [Q77] }
+  - { id: node228, equipement: moteur, borne: "L (alternateur, voyant de charge)", polarite: commande, statut: estime, questions: [Q77] }
+  - { id: node229, equipement: moteur, borne: "R (alternateur)", polarite: "+", statut: estime, questions: [Q77] }
+  - { id: node230, equipement: tableau-moteur, borne: "démarrage (ST)", polarite: commande, statut: estime, questions: [Q77] }
+  - { id: node231, equipement: tableau-moteur, borne: "voyant de charge", polarite: commande, statut: estime, questions: [Q77] }
+  - { id: node232, equipement: tableau-moteur, borne: "température d'eau", polarite: commande, statut: estime, questions: [Q77] }
+  - { id: node233, equipement: tableau-moteur, borne: "pression d'huile", polarite: commande, statut: estime, questions: [Q77] }
+  - { id: node234, equipement: tableau-moteur, borne: "masse", polarite: "-", statut: estime, questions: [Q65, Q77] }
+  - { id: node235, equipement: tableau-moteur, borne: "compte-tours P1", polarite: commande, statut: estime, questions: [Q77] }
+  - { id: node236, equipement: tableau-moteur, borne: "compte-tours P2", polarite: commande, statut: estime, questions: [Q77] }
+  - { id: node241, equipement: tableau-moteur, borne: "voyant rubber seal (non raccordé)", polarite: commande }
+  - { id: node237, equipement: thermocontact-eau, borne: "contact", polarite: commande, statut: estime }
+  - { id: node238, equipement: pressostat-huile, borne: "contact", polarite: commande, statut: estime }
+  - { id: node239, equipement: capteur-compte-tours, borne: "P1", polarite: commande, statut: estime }
+  - { id: node240, equipement: capteur-compte-tours, borne: "P2", polarite: commande, statut: estime }
+
   # --- Horamètre (20/11) ---------------------------------------------------------
   - { id: node225, equipement: horametre, borne: "+", polarite: "+" }
   - { id: node226, equipement: horametre, borne: "-", polarite: "-" }
